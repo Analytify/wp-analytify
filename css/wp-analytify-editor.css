@@ -1,0 +1,32 @@
+.analytify-shortcode-edit-ui-selector {
+	background:#f4f4f4;
+	font-size:110%;
+	color:#555;
+	padding:10px 10px 8px 10px;
+	border-radius:8px;
+}
+.analytify-shortcode-edit-ui-selector select {
+	height:25px;
+	line-height:25px;
+	padding:0;
+	margin:0;
+	width:280px;
+}
+.analytify-shortcode-edit-ui-selector .chzn-container-single .chzn-single span {
+	line-height:22px;
+}
+.analytify-shortcode-edit-ui-selector .chzn-search input {
+	padding-left:0;
+	padding-right:0;
+}
+.analytify-shortcode-edit-ui-selector .ui-message {
+	font-style:italic;
+}
+.analytify-shortcode-edit-popup {
+	clear:both;
+}
+#TB_ajaxContent .analytify-shortcode-edit-popup h3.popup-title {
+	font-size:120%;
+	margin-bottom:10px;
+}
+
