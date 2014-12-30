@@ -1,14 +1,14 @@
-=== Analytify reshaping Google Analytics for WordPress ===
-Contributors: (hiddenpearls,Asif2BD)
+=== Analytify Reshaping Google Analytics for WordPress ===
+Contributors: hiddenpearls, Asif2BD
 Donate link: http://wp-analytify.com/
-Tags: events, dashboard, google analytics, data, analytify, tracking, stats, e-commerce
+Tags: analytics, events, dashboard, google analytics, data, analytify, tracking, stats, e-commerce, 
 Requires at least: 3.0.1
-Tested up to: 4.0
+Tested up to: 4.1
 Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Shows Analytics data in plugin Dashboard and under posts & pages of your WordPress site. Real Time, Top Keywords and plenty more Statistics.
+Shows Google Analytics data in plugin Dashboard and under posts & pages of your WordPress site. Real Time, Top Keywords and plenty more Statistics.
 
 == Description ==
 
