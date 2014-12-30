@@ -154,44 +154,53 @@ if ( isset( $_POST[ 'save_settings_admin' ] ) ) {
 					<th></th>
 						
 					<td>
-						<input type="radio" value="user_keys" name="auth_step" id ="user_keys" />  1. Enter Your API Keys<br />
-						<input type="radio" value="user_access_code" name="auth_step" id ="user_access_code" />  2. Enter Access Code<br />
+						<input type="radio" value="user_keys" name="auth_step" id ="user_keys" />  Step 1. Enter Your API Keys<br />
+						<input type="radio" value="user_access_code" name="auth_step" id ="user_access_code" />  Step 2. Enter Access Code<br />
 
 					</td>
 				</tr>
 
 				<tr class="user_keys">
-					<th><?php esc_html_e('ClientID:')?> </th>
+					<th></th>
+					<td>
+						<span><a href="#nogo" id="populate_keys">Auto Populate following fields</a></span>
+					</td>
+				</tr>
+				<tr class="user_keys">
+					<th></th>
 						<td>
-							<input type="text" name="analytify_clientid" value="<?php echo get_option('ANALYTIFY_CLIENTID'); ?>" style="width:450px;"/>
+							<input type="text" placeholder="<?php esc_html_e('Your ClientID')?>" name="analytify_clientid" id="analytify_clientid" value="<?php echo get_option('ANALYTIFY_CLIENTID'); ?>" style="width:450px;"/>
+							<p class="description"><?php esc_html_e('ClientID:')?></p>
 						</td>
 				</tr>
 
 				<tr class="user_keys">
-					<th><?php esc_html_e('Client Secret:')?> </th>
+					<th></th>
 						<td>
-							<input type="text" name="analytify_clientsecret" value="<?php echo get_option('ANALYTIFY_CLIENTSECRET'); ?>" style="width:450px;"/>
+							<input type="text" placeholder="<?php esc_html_e('Your Client Secret')?>" name="analytify_clientsecret" id="analytify_clientsecret" value="<?php echo get_option('ANALYTIFY_CLIENTSECRET'); ?>" style="width:450px;"/>
+							<p class="description"><?php esc_html_e('Client Secret:')?> </p>
 						</td>
 				</tr>
 
 
 				<tr class="user_keys">
-					<th width="115"><?php esc_html_e( 'API Key:' )?></th>
+					<th width="115"></th>
 							<td width="877">
-								<input type="text" name="analytify_apikey" value="<?php echo get_option('ANALYTIFY_DEV_KEY'); ?>" style="width:450px;"/>
+								<input type="text" placeholder="<?php esc_html_e('Your API Key')?>" name="analytify_apikey" id="analytify_apikey" value="<?php echo get_option('ANALYTIFY_DEV_KEY'); ?>" style="width:450px;"/>
+								<p class="description"><?php esc_html_e( 'API Key:' )?></p>
 							</td>
 				</tr>
 
 				<tr class="user_access_code">
-					<th width="115"><?php esc_html_e( 'Authentication:' )?></th>
+					<th width="115"></th>
 							<td width="877">
-										<a target="_blank" href="javascript:void(0);" onclick="window.open('https://accounts.google.com/o/oauth2/auth?<?php echo $url ?>','activate','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');">Click here to Authenticate</a>
+										<a target="_blank" href="javascript:void(0);" onclick="window.open('https://accounts.google.com/o/oauth2/auth?<?php echo $url ?>','activate','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');">Get Your Access Code</a>
 							</td>
 				</tr>
 				<tr class="user_access_code">
-					<th><?php esc_html_e('Your Access Code:')?> </th>
+					<th></th>
 						<td>
-							<input type="text" name="key_google_token" value="<?php echo get_option( 'post_analytics_token'); ?>" style="width:450px;"/>
+							<input type="text" name="key_google_token" placeholder="<?php esc_html_e('Your Access Code')?>" value="<?php echo get_option( 'post_analytics_token'); ?>" style="width:450px;"/>
 							<p class="description">Paste here Access Code.</p>
 						</td>
 				</tr>

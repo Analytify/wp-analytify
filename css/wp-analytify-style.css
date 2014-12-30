@@ -10,6 +10,15 @@ i.analytify-shortcodes-icon{
 .opt-title{
 	font-size: 18px;
 }
+
+.gray-areas{
+
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	filter: grayscale(100%);
+	padding: 10px 0px;
+}
+
 .analytics-options{
 	margin: -1px 0 5px 0;
 	display: inline-block;

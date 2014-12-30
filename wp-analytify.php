@@ -92,6 +92,11 @@ class WP_Analytify extends Analytify_General{
                     'get_ajax_single_admin_analytics'
                 ));
 
+        add_action( 'wp_ajax_get_ajax_secret_keys', array(
+                    $this,
+                    'get_ajax_secret_keys'
+                ));
+
         if( get_option( 'analytify_disable_front') == 0 ) {
 
             add_filter( 'the_content', array(
@@ -178,6 +183,19 @@ class WP_Analytify extends Analytify_General{
                     'high'      // $priority
                 ); 
         } //$post_types as $post_type
+    }
+
+
+    public static function get_ajax_secret_keys(){
+
+        $response = wp_remote_get( "http://wp-analytify.com/secret/keys.json" );
+        if( is_wp_error( $response ) ) {
+           $error_message = $response->get_error_message();
+           echo "Something went wrong: $error_message";
+        } else {
+           print_r($response['body']);
+        }
+        die();
     }
 
     /* 
