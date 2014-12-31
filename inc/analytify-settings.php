@@ -145,7 +145,11 @@ if ( isset( $_POST[ 'save_settings_admin' ] ) ) {
 					<th></th>
 						
 					<td>
+<<<<<<< .merge_file_hQyuKf
+						<p class="description"> To fully enjoy this plugin, you need to create a Project in Google <a target="_blank" href="https://console.developers.google.com/project">Console</a>. Read this simple 3 minutes <a target="_blank" href="http://wp-analytify.com/get-client-id-client-secret-developer-api-key-google-developers-console-application/?utm_source=analytify-config&utm_medium=wordpressdotorg&utm_term=tutorial&utm_content=post&utm_campaign=cm-analytify-free">tutorial</a> to get your ClientID, Client Secret and API Key and enter them in below inputs.</p>
+=======
 						<p class="description"> To fully enjoy this plugin, you need to create a Project in Google <a target="_blank" href="https://console.developers.google.com/project">Console</a>. Read this simple 3 minutes <a target="_blank" href="http://wp-analytify.com/google-api-tutorial">tutorial</a> to get your ClientID, Client Secret and API Key and enter them in below inputs.</p>
+>>>>>>> .merge_file_UoZT5H
 					</td>
 				</tr>
 
@@ -634,7 +638,11 @@ if( $tab == 'profile' ){
 						<div class="grid_title cen"> UPGRADE to PRO </div>
 								
 							<div class="grid_footer cen" style="background-color:white;">
+<<<<<<< .merge_file_hQyuKf
+								<a href="http://wp-analytify.com/" title="Analytify Support">Buy Now</a> the PRO version of Analytify and get tons of benefits including premium features, support and updates.
+=======
 								<a href="http://wp-analytify.com/upgrade-from-free" title="Analytify Support">Buy Now</a> the PRO version of Analytify and get tons of benefits including premium features, support and updates.
+>>>>>>> .merge_file_UoZT5H
 							</div>
 					</div>
 					<div class="grids_auto_size wpa_side_box" style=" width: 95%;">
