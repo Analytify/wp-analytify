@@ -60,7 +60,7 @@ if( isset( $ed_date ) ) {
 									</form>
 								</div>
 								
-								<a target="_blank" href="http://wp-analytify.com/?utm_source=analytify-live&utm_medium=wordpressdotorg&utm_term=promotion&utm_content=live-stats-img&utm_campaign=cm-analytify-free" title="Upgrade to PRO to enjoy full features of Analytify.">
+								<a target="_blank" href="http://wp-analytify.com/upgrade-from-free" title="Upgrade to PRO to enjoy full features of Analytify.">
 									<img class="gray-areas" src="<?php echo plugins_url('images/live-stats-preview.png', dirname(__FILE__) );?>" width="100%" height="auto" alt="Upgrade to PRO to enjoy full features of Analytify." />
 								</a>
 
