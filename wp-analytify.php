@@ -829,10 +829,14 @@ class WP_Analytify extends Analytify_General{
         <?php
     }
 
+    /*
+     * Activate options by default on installing the plugin. 
+     */
     static function install() {
 
         update_option( 'analytify_posts_stats', array( 'post','page' ));
         update_option( 'post_analytics_disable_back'  ,   1 );
+        update_option( 'analytify_code'  ,   1 );
         update_option( 'post_analytics_settings_back' , array( 'show-overall-back' ) );
         update_option( 'post_analytics_access_back'   , array( 'editor','administrator' ) );
         update_option( 'display_tracking_code'        , array( 'administrator' ) );

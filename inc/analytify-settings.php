@@ -154,9 +154,15 @@ if ( isset( $_POST[ 'save_settings_admin' ] ) ) {
 					<th></th>
 						
 					<td>
-						<input type="radio" value="user_keys" name="auth_step" id ="user_keys" />  Step 1. Enter Your API Keys<br />
-						<input type="radio" value="user_access_code" name="auth_step" id ="user_access_code" />  Step 2. Enter Access Code<br />
+						<input type="radio" value="user_keys" <?php if(!get_option('ANALYTIFY_CLIENTID')) echo 'checked'; ?> name="auth_step" id="user_keys" />  Step 1. Enter Your API Keys<br />
+						<?php
 
+						if( get_option('ANALYTIFY_CLIENTID') and get_option('ANALYTIFY_CLIENTSECRET') and get_option('ANALYTIFY_DEV_KEY') ) {
+							?>
+							<input type="radio" checked value="user_access_code" name="auth_step" id ="user_access_code" />  Step 2. Enter Access Code<br />
+							<?php 
+						}
+							?>
 					</td>
 				</tr>
 

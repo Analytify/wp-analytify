@@ -63,6 +63,14 @@ jQuery(document).ready(function ($) {
 
 	});
 
+
+	$('input[name="auth_step"]').each( function () {
+		console.log($(this).val());
+		if($(this).is(':checked')) $('.' +$(this).val()).show();
+	});
+
+
+
 	$('#populate_keys').on("click",function(){
 
 		$.ajax({
