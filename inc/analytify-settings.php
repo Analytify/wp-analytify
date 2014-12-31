@@ -578,6 +578,54 @@ if( $tab == 'profile' ){
 </div>
 </div>
 <div class="right-area">
+<table class="wa_feature_table">
+<tbody>
+  <tr>
+    <th>
+      Feature
+    </th>
+    <th>
+      Free
+    </th>
+    <th>
+      Pro
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <strong>Dashboard</strong>
+    </td>
+    <td>
+      Yes
+    </td>
+    <td>
+      Yes
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <strong>Extensions</strong>
+    </td>
+    <td>
+      No
+    </td>
+    <td>
+      Yes
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <strong>Front-end</strong>
+    </td>
+    <td>
+      No
+    </td>
+    <td>
+      Yes
+    </td>
+  </tr>
+</tbody>
+</table>
 	<div class="postbox-container side">
 				<div class="metabox-holder">
 					<div class="grids_auto_size wpa_side_box" style="width: 95%;">
