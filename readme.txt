@@ -35,13 +35,13 @@ AJAX processing to fetch stats.
 
 **Premium Version:**
 
-This plugin comes with a premium version, which is more easy to install, and shows realtime stat, more report in backend and frontend. Also pro version has better ecommerce tracking, and campaign management. Get the free version from [WP-Analytify.com](http://wp-analytify.com/)
+This plugin comes with a premium version, which is more easy to install, and shows realtime stat, more report in backend and frontend. Also pro version has better ecommerce tracking, and campaign management. Get the affordable Premium Version from [WP-Analytify.com](http://wp-analytify.com/upgrade-from-free)
 
 == Installation ==
 
 This section describes how to install the plugin and get it working.
 
-= Instal l=
+= Install=
 = Modern Way: =
 1. Go to the WordPress Dashboard "Add New Plugin" section.
 2. Search For "analyify". 
@@ -53,7 +53,7 @@ This section describes how to install the plugin and get it working.
 
 = Configure =
 1. Reach out to the Analytify->settings page and authenticate using your Google Analytics account.
-2. For Authentication, you need to create a Project in Google [Console](https://console.developers.google.com/project). Read this simple 3 minutes [tutorial](http://wp-analytify.com/get-client-id-client-secret-developer-api-key-google-developers-console-application/?utm_source=analytify-config&utm_medium=wordpressdotorg&utm_term=tutorial&utm_content=post&utm_campaign=cm-analytify-free) to get your ClientID, Client Secret and API Key and enter them Settings Page.
+2. For Authentication, you need to create a Project in Google [Console](https://console.developers.google.com/project). Read this simple 3 minutes [tutorial](http://wp-analytify.com/google-api-tutorial) to get your ClientID, Client Secret and API Key and enter them Settings Page.
 3. After Authentication, Select your Profiles for front/admin Statistics from Settings->Profile tab.
 
 == Frequently Asked Questions ==
