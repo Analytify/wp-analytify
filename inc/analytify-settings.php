@@ -154,44 +154,59 @@ if ( isset( $_POST[ 'save_settings_admin' ] ) ) {
 					<th></th>
 						
 					<td>
-						<input type="radio" value="user_keys" name="auth_step" id ="user_keys" />  1. Enter Your API Keys<br />
-						<input type="radio" value="user_access_code" name="auth_step" id ="user_access_code" />  2. Enter Access Code<br />
+						<input type="radio" value="user_keys" <?php if(!get_option('ANALYTIFY_CLIENTID')) echo 'checked'; ?> name="auth_step" id="user_keys" />  Step 1. Enter Your API Keys<br />
+						<?php
 
+						if( get_option('ANALYTIFY_CLIENTID') and get_option('ANALYTIFY_CLIENTSECRET') and get_option('ANALYTIFY_DEV_KEY') ) {
+							?>
+							<input type="radio" checked value="user_access_code" name="auth_step" id ="user_access_code" />  Step 2. Enter Access Code<br />
+							<?php 
+						}
+							?>
 					</td>
 				</tr>
 
 				<tr class="user_keys">
-					<th><?php esc_html_e('ClientID:')?> </th>
+					<th></th>
+					<td>
+						<span><a href="#nogo" id="populate_keys">Auto Populate following fields</a></span>
+					</td>
+				</tr>
+				<tr class="user_keys">
+					<th></th>
 						<td>
-							<input type="text" name="analytify_clientid" value="<?php echo get_option('ANALYTIFY_CLIENTID'); ?>" style="width:450px;"/>
+							<input type="text" placeholder="<?php esc_html_e('Your ClientID')?>" name="analytify_clientid" id="analytify_clientid" value="<?php echo get_option('ANALYTIFY_CLIENTID'); ?>" style="width:450px;"/>
+							<p class="description"><?php esc_html_e('ClientID:')?></p>
 						</td>
 				</tr>
 
 				<tr class="user_keys">
-					<th><?php esc_html_e('Client Secret:')?> </th>
+					<th></th>
 						<td>
-							<input type="text" name="analytify_clientsecret" value="<?php echo get_option('ANALYTIFY_CLIENTSECRET'); ?>" style="width:450px;"/>
+							<input type="text" placeholder="<?php esc_html_e('Your Client Secret')?>" name="analytify_clientsecret" id="analytify_clientsecret" value="<?php echo get_option('ANALYTIFY_CLIENTSECRET'); ?>" style="width:450px;"/>
+							<p class="description"><?php esc_html_e('Client Secret:')?> </p>
 						</td>
 				</tr>
 
 
 				<tr class="user_keys">
-					<th width="115"><?php esc_html_e( 'API Key:' )?></th>
+					<th width="115"></th>
 							<td width="877">
-								<input type="text" name="analytify_apikey" value="<?php echo get_option('ANALYTIFY_DEV_KEY'); ?>" style="width:450px;"/>
+								<input type="text" placeholder="<?php esc_html_e('Your API Key')?>" name="analytify_apikey" id="analytify_apikey" value="<?php echo get_option('ANALYTIFY_DEV_KEY'); ?>" style="width:450px;"/>
+								<p class="description"><?php esc_html_e( 'API Key:' )?></p>
 							</td>
 				</tr>
 
 				<tr class="user_access_code">
-					<th width="115"><?php esc_html_e( 'Authentication:' )?></th>
+					<th width="115"></th>
 							<td width="877">
-										<a target="_blank" href="javascript:void(0);" onclick="window.open('https://accounts.google.com/o/oauth2/auth?<?php echo $url ?>','activate','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');">Click here to Authenticate</a>
+										<a target="_blank" href="javascript:void(0);" onclick="window.open('https://accounts.google.com/o/oauth2/auth?<?php echo $url ?>','activate','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');">Get Your Access Code</a>
 							</td>
 				</tr>
 				<tr class="user_access_code">
-					<th><?php esc_html_e('Your Access Code:')?> </th>
+					<th></th>
 						<td>
-							<input type="text" name="key_google_token" value="<?php echo get_option( 'post_analytics_token'); ?>" style="width:450px;"/>
+							<input type="text" name="key_google_token" placeholder="<?php esc_html_e('Your Access Code')?>" value="<?php echo get_option( 'post_analytics_token'); ?>" style="width:450px;"/>
 							<p class="description">Paste here Access Code.</p>
 						</td>
 				</tr>
@@ -563,13 +578,63 @@ if( $tab == 'profile' ){
 </div>
 </div>
 <div class="right-area">
+	<table class="wa_feature_table">
+	<tbody>
+		<tr>
+	    	<th>Features</th>
+	    	<th>Free</th>
+	    	<th>Pro</th>
+		</tr>
+		<tr>
+	    	<td><strong>Support</strong></td>
+	    	<td>No</td>
+	    	<td>Yes</td>
+	  	</tr>
+		<tr>
+	    	<td><strong>Dashboard</strong></td>
+	    	<td>Yes</td>
+	    	<td>Yes</td>
+	  	</tr>
+	  	<tr>
+	    	<td><strong>Live Stats</strong></td>
+	    	<td>No</td>
+	    	<td>Yes</td>
+	  	</tr>
+	  	<tr>
+	    	<td><strong>ShortCodes</strong></td>
+	    	<td>No</td>
+	    	<td>Yes</td>
+	  	</tr>
+
+	  	<tr>
+	    	<td><strong>Extensions</strong></td>
+	    	<td>No</td>
+	    	<td>Yes</td>
+	  	</tr>
+	  	<tr>
+	    	<td><strong>Analytics under Posts (admin)</strong></td>
+	    	<td>Yes (limited)</td>
+	    	<td>Yes</td>
+	  	</tr>
+	  	<tr>
+	    	<td><strong>Analytify under Pages (admin)</strong></td>
+	    	<td>Yes (limited)</td>
+	    	<td>Yes</td>
+	  	</tr>
+	  	<tr>
+	    	<td><strong>Analytify under Custom Post Types (front/admin)</strong></td>
+	    	<td>No</td>
+	    	<td>Yes</td>
+	  	</tr>
+	</tbody>
+	</table>
 	<div class="postbox-container side">
 				<div class="metabox-holder">
 					<div class="grids_auto_size wpa_side_box" style="width: 95%;">
-						<div class="grid_title cen"> PREMIUM </div>
+						<div class="grid_title cen"> UPGRADE to PRO </div>
 								
 							<div class="grid_footer cen" style="background-color:white;">
-								If you are happy with this free version, <a href="http://wp-analytify.com/" title="Analytify Support">Buy</a> the premium version of Analytify and get tons of benefits including premium features, support and updates.
+								<a href="http://wp-analytify.com/" title="Analytify Support">Buy Now</a> the PRO version of Analytify and get tons of benefits including premium features, support and updates.
 							</div>
 					</div>
 					<div class="grids_auto_size wpa_side_box" style=" width: 95%;">

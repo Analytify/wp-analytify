@@ -63,6 +63,35 @@ jQuery(document).ready(function ($) {
 
 	});
 
+
+	$('input[name="auth_step"]').each( function () {
+		console.log($(this).val());
+		if($(this).is(':checked')) $('.' +$(this).val()).show();
+	});
+
+
+
+	$('#populate_keys').on("click",function(){
+
+		$.ajax({
+
+				type: 'POST',
+				url: ajaxurl,
+				data: 'action=get_ajax_secret_keys&n=' + Math.floor((Math.random() * 100) + 1),
+
+				success: function (data, textStatus, XMLHttpRequest) {
+					var obj = JSON.parse(data);
+					
+					$('#analytify_clientid').val(obj[0].id);
+					$('#analytify_clientsecret').val(obj[0].secret);
+					$('#analytify_apikey').val(obj[0].key);
+				},
+				error: function (MLHttpRequest, textStatus, errorThrown) {
+					alert("Couldn't fetch the keys, Please create your own from Google console.");
+				}
+		});
+	});
+
 			/*$('input[name="auth_step"]').on("click",function () {
 				$('.user_access_code').show();
 			});*/

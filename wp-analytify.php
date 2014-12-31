@@ -92,6 +92,11 @@ class WP_Analytify extends Analytify_General{
                     'get_ajax_single_admin_analytics'
                 ));
 
+        add_action( 'wp_ajax_get_ajax_secret_keys', array(
+                    $this,
+                    'get_ajax_secret_keys'
+                ));
+
         if( get_option( 'analytify_disable_front') == 0 ) {
 
             add_filter( 'the_content', array(
@@ -178,6 +183,19 @@ class WP_Analytify extends Analytify_General{
                     'high'      // $priority
                 ); 
         } //$post_types as $post_type
+    }
+
+
+    public static function get_ajax_secret_keys(){
+
+        $response = wp_remote_get( "http://wp-analytify.com/secret/keys.json" );
+        if( is_wp_error( $response ) ) {
+           $error_message = $response->get_error_message();
+           echo "Something went wrong: $error_message";
+        } else {
+           print_r($response['body']);
+        }
+        die();
     }
 
     /* 
@@ -811,10 +829,14 @@ class WP_Analytify extends Analytify_General{
         <?php
     }
 
+    /*
+     * Activate options by default on installing the plugin. 
+     */
     static function install() {
 
         update_option( 'analytify_posts_stats', array( 'post','page' ));
         update_option( 'post_analytics_disable_back'  ,   1 );
+        update_option( 'analytify_code'  ,   1 );
         update_option( 'post_analytics_settings_back' , array( 'show-overall-back' ) );
         update_option( 'post_analytics_access_back'   , array( 'editor','administrator' ) );
         update_option( 'display_tracking_code'        , array( 'administrator' ) );

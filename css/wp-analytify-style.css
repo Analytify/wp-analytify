@@ -10,6 +10,15 @@ i.analytify-shortcodes-icon{
 .opt-title{
 	font-size: 18px;
 }
+
+.gray-areas{
+
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	filter: grayscale(100%);
+	padding: 10px 0px;
+}
+
 .analytics-options{
 	margin: -1px 0 5px 0;
 	display: inline-block;
@@ -730,4 +739,25 @@ body div.mycalander .ui-datepicker-calendar td:last-child .ui-state-active {
 body div.mycalander .ui-datepicker-calendar tr:last-child .ui-state-active {
 	height: 29px;
 	margin-bottom: 0;
+}
+.wa_feature_table{
+	width:95%;
+	border:0 !important;
+}
+.wa_feature_table{
+	border-collapse:collapse;
+	border:1px solid #e2e5e8;
+	background:#fff;
+}
+.wa_feature_table th,.wa_feature_table td{
+	padding:7px;
+	border:1px solid #e2e5e8;
+}
+.wa_feature_table th{
+	text-align:left;
+	background:#4fca74;
+	color:#fff;
+	font-weight:400;
+	font-size:15px;
+	border-top:0;
 }
