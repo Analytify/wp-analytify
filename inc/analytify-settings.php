@@ -578,61 +578,63 @@ if( $tab == 'profile' ){
 </div>
 </div>
 <div class="right-area">
-<table class="wa_feature_table">
-<tbody>
-  <tr>
-    <th>
-      Feature
-    </th>
-    <th>
-      Free
-    </th>
-    <th>
-      Pro
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <strong>Dashboard</strong>
-    </td>
-    <td>
-      Yes
-    </td>
-    <td>
-      Yes
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <strong>Extensions</strong>
-    </td>
-    <td>
-      No
-    </td>
-    <td>
-      Yes
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <strong>Front-end</strong>
-    </td>
-    <td>
-      No
-    </td>
-    <td>
-      Yes
-    </td>
-  </tr>
-</tbody>
-</table>
+	<table class="wa_feature_table">
+	<tbody>
+		<tr>
+	    	<th>Features</th>
+	    	<th>Free</th>
+	    	<th>Pro</th>
+		</tr>
+		<tr>
+	    	<td><strong>Support</strong></td>
+	    	<td>No</td>
+	    	<td>Yes</td>
+	  	</tr>
+		<tr>
+	    	<td><strong>Dashboard</strong></td>
+	    	<td>Yes</td>
+	    	<td>Yes</td>
+	  	</tr>
+	  	<tr>
+	    	<td><strong>Live Stats</strong></td>
+	    	<td>No</td>
+	    	<td>Yes</td>
+	  	</tr>
+	  	<tr>
+	    	<td><strong>ShortCodes</strong></td>
+	    	<td>No</td>
+	    	<td>Yes</td>
+	  	</tr>
+
+	  	<tr>
+	    	<td><strong>Extensions</strong></td>
+	    	<td>No</td>
+	    	<td>Yes</td>
+	  	</tr>
+	  	<tr>
+	    	<td><strong>Analytics under Posts (admin)</strong></td>
+	    	<td>Yes (limited)</td>
+	    	<td>Yes</td>
+	  	</tr>
+	  	<tr>
+	    	<td><strong>Analytify under Pages (admin)</strong></td>
+	    	<td>Yes (limited)</td>
+	    	<td>Yes</td>
+	  	</tr>
+	  	<tr>
+	    	<td><strong>Analytify under Custom Post Types (front/admin)</strong></td>
+	    	<td>No</td>
+	    	<td>Yes</td>
+	  	</tr>
+	</tbody>
+	</table>
 	<div class="postbox-container side">
 				<div class="metabox-holder">
 					<div class="grids_auto_size wpa_side_box" style="width: 95%;">
-						<div class="grid_title cen"> PREMIUM </div>
+						<div class="grid_title cen"> UPGRADE to PRO </div>
 								
 							<div class="grid_footer cen" style="background-color:white;">
-								If you are happy with this free version, <a href="http://wp-analytify.com/" title="Analytify Support">Buy</a> the premium version of Analytify and get tons of benefits including premium features, support and updates.
+								<a href="http://wp-analytify.com/" title="Analytify Support">Buy Now</a> the PRO version of Analytify and get tons of benefits including premium features, support and updates.
 							</div>
 					</div>
 					<div class="grids_auto_size wpa_side_box" style=" width: 95%;">
