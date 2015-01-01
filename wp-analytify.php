@@ -79,9 +79,9 @@ class WP_Analytify extends Analytify_General{
         if( get_option( 'analytify_code') == 1  ) {
 
             add_action( 'wp_head', array(
-		            $this,
-		            'analytify_add_analytics_code'
-		        ));
+                    $this,
+                    'analytify_add_analytics_code'
+                ));
         }
 
         add_action( 'wp_ajax_nopriv_get_ajax_single_admin_analytics', array(

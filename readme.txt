@@ -68,9 +68,11 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Screenshots ==
 
-1. This is the posts edit screen which shows the Google Analytics data under each post.
-2. This is the pages edit screen which shows the Google Analytics data under each page.
-3. This is the Analytify Plugin Dashboard which shows the Google Analytics data of your Complete Site.
+1. Analytufy Setting Screen.
+2. General Statistics.
+3. Top Countries Stat.
+4. Top Referrers.
+
 
 == Changelog ==
 
