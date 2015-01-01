@@ -1,4 +1,4 @@
-=== Analytify Reshaping Google Analytics for WordPress ===
+=== Analytify Reshaping Google Analytics in WP ===
 Contributors: hiddenpearls, Asif2BD
 Donate link: http://wp-analytify.com/
 Tags: google analytics, analytics, events, dashboard, data, analytify, tracking, stats, e-commerce, 
@@ -8,13 +8,14 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Shows Google Analytics report in your WP Dashboard and install Analytics code in a click. Real Time Stat, Top Keywords and plenty more Statistics.
+Shows Google Analytics report in your WP Dashboard and install Analytics code in a click. Real Time Stat, Top Keywords and plenty more statistics.
 
 == Description ==
 
 [Analytify](http://wp-analytify.com/) -  makes Google Analytics simple for everywhere in WordPress (posts,pages etc). It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. This provides Stats from Country, Referrers, Social media, General stats, New visitors, Returning visitors, Exit pages, Browser wise and Top keywords. This plugin provides the Real Time statistics in a new UI that is easy to understand and looks good. It makes the use of NEW Google APIs Client library for PHP by Google.
 
 This WordPress plugin is created by using **LATEST Google APIs** Client Library for PHP by Google developers which fetches the Statistics from Google Analytics.
+
 
 **Features:**
 
@@ -35,7 +36,7 @@ AJAX processing to fetch stats.
 
 **Premium Version:**
 
-This plugin comes with a premium version, which is more easy to install, and shows realtime stat, more report in backend and frontend. Also pro version has better ecommerce tracking, and campaign management. Get the affordable Premium Version from [WP-Analytify.com](http://wp-analytify.com/upgrade-from-free)
+This plugin has a premium version, which is more easy to install, and shows realtime stat, more report in backend and frontend. Also pro version has better ecommerce tracking, and campaign management. Get the affordable Premium Version from [WP-Analytify.com](http://wp-analytify.com/upgrade-from-free)
 
 == Installation ==
 
