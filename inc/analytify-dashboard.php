@@ -59,11 +59,7 @@ if( isset( $ed_date ) ) {
 										<input type="submit" id="view_data" name="view_data" value="View Data" class="button-primary btn-green">
 									</form>
 								</div>
-<<<<<<< .merge_file_BnUYxQ
-								
-=======
 
->>>>>>> .merge_file_DAFaU9
 								<a target="_blank" href="http://wp-analytify.com/upgrade-from-free" title="Upgrade to PRO to enjoy full features of Analytify.">
 									<img class="gray-areas" src="<?php echo plugins_url('images/live-stats-preview.png', dirname(__FILE__) );?>" width="100%" height="auto" alt="Upgrade to PRO to enjoy full features of Analytify." />
 								</a>

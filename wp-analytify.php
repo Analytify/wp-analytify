@@ -1,16 +1,5 @@
 <?php
 /*
-<<<<<<< .merge_file_v0zj2a
-Plugin Name: Analytify - Reshaping Google Analytics for WordPress
-Plugin URI: http://wp-analytify.com/
-Description: Analytify makes Google Analytics simple for everything in WordPress (posts,pages etc). It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. This provides Stats from Country, Referrers, Social media, General stats, New visitors, Returning visitors, Exit pages, Browser wise and Top keywords. This plugin provides the RealTime statistics in a new UI that is easy to understand and looks good.
-Version: 1.0
-Author: Adnan
-Author URI: http://adnan.pk/
-License: GPLv2+
-Text Domain: wp-analytify
-Domain Path: /lang
-=======
 * Plugin Name: Analytify - Reshaping Google Analytics for WordPress
 * Plugin URI: http://wp-analytify.com/
 * Description: Analytify makes Google Analytics simple for everything in WordPress (posts,pages etc). It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. This provides Stats from Country, Referrers, Social media, General stats, New visitors, Returning visitors, Exit pages, Browser wise and Top keywords. This plugin provides the RealTime statistics in a new UI that is easy to understand and looks good.
@@ -22,7 +11,6 @@ Domain Path: /lang
 * Min WP Version: 3.0.1
 * Max WP Version: 4.1
 * Domain Path: /lang
->>>>>>> .merge_file_Rw98C0
 */
 
 // Exit if accessed directly
@@ -91,9 +79,9 @@ class WP_Analytify extends Analytify_General{
         if( get_option( 'analytify_code') == 1  ) {
 
             add_action( 'wp_head', array(
-		            $this,
-		            'analytify_add_analytics_code'
-		        ));
+                    $this,
+                    'analytify_add_analytics_code'
+                ));
         }
 
         add_action( 'wp_ajax_nopriv_get_ajax_single_admin_analytics', array(
