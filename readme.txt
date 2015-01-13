@@ -1,42 +1,50 @@
-=== Analytify Reshaping Google Analytics in WP ===
+=== Analytify - Google Analytics Dashboard ===
 Contributors: hiddenpearls, Asif2BD
-Donate link: http://wp-analytify.com/
-Tags: google analytics, analytics, events, dashboard, data, analytify, tracking, stats, e-commerce, 
+Donate link: http://wp-analytify.com/details
+Tags: google analytics, WordPress Analytics, dashboard,  analytics, google analytics dashboard, install analytics, analytify, yoast, analyticator, tracking, stats, e-commerce
 Requires at least: 3.0.1
 Tested up to: 4.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Shows Google Analytics report in your WP Dashboard and install Analytics code in a click. Real Time Stat, Top Keywords and plenty more statistics.
+Shows Google Analytics Dashboard inside your WordPress and displays Analytics (Sessions, Referrers, Keywords etc) under Posts and Pages.
 
 == Description ==
 
-[Analytify](http://wp-analytify.com/) -  makes Google Analytics simple for everywhere in WordPress (posts,pages etc). It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. This provides Stats from Country, Referrers, Social media, General stats, New visitors, Returning visitors, Exit pages, Browser wise and Top keywords. This plugin provides the Real Time statistics in a new UI that is easy to understand and looks good. It makes the use of NEW Google APIs Client library for PHP by Google.
+[Analytify](http://wp-analytify.com/details) -  makes Google Analytics simple for everywhere in WordPress (posts,pages and custom post types etc). It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. Now you can get **Google Analytics Dashboard** inside your WordPress Dashboard within a minute. 
 
-This WordPress plugin is created by using **LATEST Google APIs** Client Library for PHP by Google developers which fetches the Statistics from Google Analytics.
+**[PRO Version](http://wp-analytify.com/details)** is available for more Features, Premium support and Add-ons.
+
+> <strong>Development on Github</strong><br>
+> This plugin is also [available on github](https://github.com/hiddenpearls/wp-analytify) and ready to take bugs and pull requests. For Support, you can buy the **PRO version**, this will give access to premium updates, support and features.
 
 
 **Features:**
 
-*  **REAL TIME** Analytics of the site in dashboard.
-*  **SESSIONS, USERS,BOUNCE RATE,AVG TIME ON SITE,AVERAGE PAGES,PAGEVIEWS,NEW/RETURNING VISITORS**
+*  Statistics (**General**) under the single posts/pages as a block in **wp-admin**
+*  Statistics (**Full**) under the single posts,pages & Custom Post Types as a block in **wp-admin** (Premium)
+*  Statistics (**Full**) under the single posts,pages & Custom Post Types as a block at **front-end** (Premium)
+*  **General Statistics** (Sessions, Users, Bounce rate, Average time on site, Average pages, PAGEVIEWS, NEW/RETURNING Visitors)
 *  How people are finding you (**TOP KEYWORDS**)
-*  **TOP COUNTRIES**
-*  **SOCIAL MEDIA STATS**
-*  **BROWSERS STATS**
-*  **TOP REFERRERS**
-*  See What’s happening when users come to your site
+*  **List of top Countries**
+*  **List of top Cities**
+*  **SOCIAL MEDIA Statistics**
+*  **List of top Referrers Browsers**
+*  **List of top Referrers**
+*  **Mobile device Statistics**
+*  See What’s happening when users come to your site (**Bounce rate of top pages**)
+*  **REAL-TIME** Statistics of your site in dashboard.(Premium)
+*  **Campaigns** Statistics (Premium)
+*  **ShortCodes** (Simple and Advanced) for Custom Statistics of your own choice (Premium)
+*  Use ShortCodes in Widgets (Premium)
 *  Helps in SEO optimization and allows you to see traffic data for individual blog posts and pages.
-AJAX processing to fetch stats.
-*  Statistics appears under the single post or page as a block in wp-admin and at front-end and it looks awesome.
 *  It can be easy customizable with CSS, you can give it any shape you want.
+*  **E-commerce Tracking Add-ons( WooCommerce and Easy Digital Downloads)** (Premium)
 *  You can extend it to at any level. Usage of API’s are very easy to work with.
-*  It works with Wordpress versions above 3.0
 
-**Premium Version:**
-
-This plugin has a premium version, which is more easy to install, and shows realtime stat, more report in backend and frontend. Also pro version has better ecommerce tracking, and campaign management. Get the affordable Premium Version from [WP-Analytify.com](http://wp-analytify.com/upgrade-from-free)
+> **Premium Version:**<br>
+> This plugin has a premium version, which is more easy to install, and shows **Real-Time Stats**, **Campaign Stats**, **ShortCodes**, *Front-end Stats*  and more reports in backend and front-end. Also premium version has better e-commerce tracking (Buy [Add-ons](http://wp-analytify.com/add-ons/) with premium), and campaigns management. Get the affordable Premium Version from [WP-Analytify.com](http://wp-analytify.com/upgrade-from-free)
 
 == Installation ==
 
@@ -59,9 +67,15 @@ This section describes how to install the plugin and get it working.
 
 == Frequently Asked Questions ==
 
-= How to Authenticate or Login to my Google Analytics Account ? =
+= How to Authenticate and Connect my Google Analytics Account in this plugin ? =
 
-Go to Analytify->settings and see the Authentication tab. Clicking on 'Click here to Authenticate' link will open a popup to Authenticate to your Google Analytics account. It will give you a access code. Copy that code and Paste it in 'Authentication' input box. Save it.
+Go to Analytify->settings and see the Authentication tab. There are two steps to follow there.
+ 
+In Step 1, You will enter your Google Console Project Credentials. Checkout the [tutorial](http://wp-analytify.com/google-api-tutorial) that how you can get your Keys. You can try the plugin with my keys by clicking on “Auto Populate following fields”.
+
+In Step 2 (Enter Access Code), 
+
+Clicking on 'Get Your Access Code' link will open a popup to Authenticate to your Google Analytics account. It will give you a access code. Copy that code and Paste it in input box. Save it.
 
 = How to select GA profiles ? =
 
@@ -69,24 +83,27 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Screenshots ==
 
-1. Analytufy Setting Screen.
+1. Analytify Setting Screen.
 2. General Statistics.
 3. Top Countries Stat.
-4. Top Referrers.
-
+4. Top Referrers/Browsers
 
 == Changelog ==
 
-= 1.0.0 =
+= 1.0.1 - 2015-01-05 =
+* Minor maintaince build.
+
+= 1.0.0 - 2015-01-01 =
 * Initial Release.
+
 
 == Upgrade Notice ==
 
-= 1.0.0 =
-Initial Release.
+= 1.0.1 =
+Minor issue fix in packaging.
 
 == Donation ==
 
 You may buy the premium version to support us.
 
-http://wp-analytify.com/
+http://wp-analytify.com/details
