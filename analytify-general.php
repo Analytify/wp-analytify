@@ -10,20 +10,19 @@
     define( 'ANALYTIFY_ID', 'wp-analytify-options' );
     define( 'ANALYTIFY_NICK', 'Analytify' );
     define( 'ANALYTIFY_ROOT_PATH', dirname(__FILE__) );
-    define( 'ANALYTIFY_VERSION', '1.0');
+    define( 'ANALYTIFY_VERSION', '1.0.1');
     define( 'ANALYTIFY_TYPE', 'FREE');
     define( 'ANALYTIFY_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
     define( 'ANALYTIFY_REDIRECT', 'urn:ietf:wg:oauth:2.0:oob' );  // This will redirect to window where we can copy Access code.
     define( 'ANALYTIFY_SCOPE', 'https://www.googleapis.com/auth/analytics' ); // readonly scope
-    
 
     define( 'ANALYTIFY_STORE_URL', 'http://wp-analytify.com' );
     define( 'ANALYTIFY_PRODUCT_NAME', 'Analytify WordPress Plugin' );
 
-if (! class_exists( 'Analytify_General' ) ) {
+if (! class_exists( 'Analytify_General_FREE' ) ) {
 
-	class Analytify_General {
+	class Analytify_General_FREE {
 
 		function __construct() {
 

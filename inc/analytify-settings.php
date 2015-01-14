@@ -508,58 +508,11 @@ if( $tab == 'profile' ){
 					</tr>
 					 <tr>
 						 <th width="115"><?php esc_html_e( 'Exclude Analytics on specific pages:', 'wp-analytify' ); ?></th>
-						<td>
-						
-						<select  name="exclude_posts_back[]" class="analytify-chosen" multiple style="width:400px">
-
-								<?php
-								
-								global $post;
-								$args = array(
-														'public' => true
-												);
-
-								$post_types = get_post_types( $args );
-														
-														foreach ($post_types as $post_type) {
-														
-														$post_args = array(
-																								'posts_per_page'   => -1,
-																								'orderby'          => 'post_date',
-																								'order'            => 'DESC',
-																								'post_type'        => $post_type,
-																								'post_status'      => 'publish',
-																							);
-														
-															$exclude_posts = get_posts($post_args);
-													?>
-													<optgroup label="<?php echo $post_type ?>">
-														<?php
-																
-																foreach ( $exclude_posts as $post ) {
-																		
-																		setup_postdata( $post );
-														?>
-															
-																	<option value="<?php echo get_the_ID(); ?>"
-																			<?php
-																				if ( is_array( get_option( 'post_analytics_exclude_posts_back' ) ) ) {
-																						
-																						selected( in_array( get_the_ID(), get_option( 'post_analytics_exclude_posts_back' ) ) );
-																				}
-																			?>>
-																			<?php the_title(); ?>
-																	</option>
-																<?php
-																		
-																		}
-																	}
-																?>
-												</optgroup>
-									</select>
-									<p class="description">Select posts or pages on which you don't want to show Analytics.</p>
+							<td>
+								<input type="text" name="exclude_posts_back" id="exclude_posts_back" value="<?php echo get_option('post_analytics_exclude_posts_back'); ?>" class="regular-text" />
+							<p class="description">Enter ID's of posts or pages separated by commas on which you don't want to show Analytics e.g 11,45,66</p>
 						</td>
-					</tr>         
+					</tr>       
 					<tr>
 						<th></th>
 						<td>
@@ -638,11 +591,8 @@ if( $tab == 'profile' ){
 							</div>
 					</div>
 					<div class="grids_auto_size wpa_side_box" style=" width: 95%;">
-						<div class="grid_title cen"> CREDITS </div>
-								
-								<div class="grid_footer cen" style="background-color:white;">
-									<a href="http://wp-analytify.com" title="Analytify WordPress Plugin" />Analytify - Makes Google Analytics Simple for WordPress.</a><br><br>
-									Product by <a href="http://wpbrigade.com" title="WPBrigade | A Brigade of WordPress Developers." />WPBrigade</a>.
+								<div class="grid_footer cen">
+									made with ♥ by <a href="http://wpbrigade.com" title="WPBrigade | A Brigade of WordPress Developers." />WPBrigade</a>
 								</div>
 					</div>
 			 </div>

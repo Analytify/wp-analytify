@@ -20,12 +20,12 @@ ini_set( 'include_path', dirname(__FILE__) . '/lib/' );
 
 if ( !class_exists( 'WP_Analytify' ) ) {
 
-    if ( !class_exists( 'Analytify_General' ) ){
+    if ( !class_exists( 'Analytify_General_FREE' ) ){
             
         require_once WP_PLUGIN_DIR .'/wp-analytify/analytify-general.php';
     }
 
-class WP_Analytify extends Analytify_General{
+class WP_Analytify extends Analytify_General_FREE{
 
     public $token  = false;
     public $client = null;
@@ -207,11 +207,13 @@ class WP_Analytify extends Analytify_General{
 
         global $post;
 
-        if ( is_array( get_option( 'post_analytics_exclude_posts_back' ) ) ) {
+        $back_exclude_posts = explode( ',', get_option( 'post_analytics_exclude_posts_back' ));
+
+        if ( is_array( $back_exclude_posts ) ) {
                         
-            if ( in_array( $post->ID, get_option( 'post_analytics_exclude_posts_back' ) ) ) {
+            if ( in_array( $post->ID, $back_exclude_posts ) ) {
                             
-                _e('This post is exclude from stats');
+                _e('This post is excluded and will not show Analytics.');
                             
                 return;
             }
