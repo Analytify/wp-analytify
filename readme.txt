@@ -1,18 +1,20 @@
-=== Analytify - Google Analytics Dashboard ===
+=== Analytify - Exclusive Google Analytics ===
 Contributors: hiddenpearls, Asif2BD
 Donate link: http://wp-analytify.com/details
 Tags: google analytics, WordPress Analytics, dashboard,  analytics, google analytics dashboard, install analytics, analytify, yoast, analyticator, tracking, stats, e-commerce
 Requires at least: 3.0.1
 Tested up to: 4.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Shows Google Analytics Dashboard inside your WordPress and displays Analytics (Sessions, Referrers, Keywords etc) under Posts and Pages.
+The ONLY Plugin Brings Per Post/Page Google Analytics Data Inside WordPress Dashboard. This Exclusive Premium Plugin Now Available For FREE.
 
 == Description ==
 
-[Analytify](http://wp-analytify.com/details) -  makes Google Analytics simple for everywhere in WordPress (posts,pages and custom post types etc). It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. Now you can get **Google Analytics Dashboard** inside your WordPress Dashboard within a minute. 
+[Analytify](http://wp-analytify.com/details) - makes Google Analytics simple for everywhere in WordPress (posts,pages and custom post types etc). It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. Now you can get **Google Analytics Dashboard** inside your WordPress Dashboard within a minute. 
+
+> **Google Analytics Premium Partner** - [Read](https://www.google.com/analytics/partners/company/5179388639313920/gadp/5629499534213120/app/5707702298738688/listing/5639274879778816) what Google is saying about us.
 
 **[PRO Version](http://wp-analytify.com/details)** is available for more Features, Premium support and Add-ons.
 
@@ -50,7 +52,8 @@ Shows Google Analytics Dashboard inside your WordPress and displays Analytics (S
 
 This section describes how to install the plugin and get it working.
 
-= Install=
+= 1) Install =
+
 = Modern Way: =
 1. Go to the WordPress Dashboard "Add New Plugin" section.
 2. Search For "analyify". 
@@ -60,10 +63,14 @@ This section describes how to install the plugin and get it working.
 1. Unzip (if it is zipped) and Upload `wp-analyify` folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
-= Configure =
-1. Reach out to the Analytify->settings page and authenticate using your Google Analytics account.
-2. For Authentication, you need to create a Project in Google [Console](https://console.developers.google.com/project). Read this simple 3 minutes [tutorial](http://wp-analytify.com/google-api-tutorial) to get your ClientID, Client Secret and API Key and enter them Settings Page.
-3. After Authentication, Select your Profiles for front/admin Statistics from Settings->Profile tab.
+= 2) Configure =
+1. Reach out to the Analytify-> Settings Page 
+2. Go to "Step 1", click the Magic **Auto Populate following fields** Button for using default app info. *
+3. In "Step 2" click the **Get Your Access Code** Button and authenticate with your Google Account connected with your Google Analytics profile and copy the "Access Code" and paste in the box.
+4. After Authentication, Select your Profiles for front/admin Statistics from Settings-> Profile tab.
+
+*If you want to use your own app, you need to create a Project in Google [Console](https://console.developers.google.com/project). Read this simple 3 minutes [tutorial](http://wp-analytify.com/google-api-tutorial) to get your ClientID, Client Secret and API Key and enter them Settings Page.
+
 
 == Frequently Asked Questions ==
 
@@ -81,6 +88,7 @@ Clicking on 'Get Your Access Code' link will open a popup to Authenticate to you
 
 First, you need to Authenticate your GA account then you can select your web profiles from Profiles tab in Analytify->settings page.
 
+
 == Screenshots ==
 
 1. Analytify Setting Screen.
@@ -88,7 +96,12 @@ First, you need to Authenticate your GA account then you can select your web pro
 3. Top Countries Stat.
 4. Top Referrers/Browsers
 
+
 == Changelog ==
+
+= 1.0.2 - 2015-01-16 =
+* Fixed issues with post exclude function
+* Made transition from free to premium version more stable.
 
 = 1.0.1 - 2015-01-05 =
 * Minor maintaince build.
@@ -99,11 +112,12 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Upgrade Notice ==
 
-= 1.0.1 =
-Minor issue fix in packaging.
+= 1.0.2 =
+* This upgrade improve stability, fixed a function issue with post id exclude function, and stabilize the free to pro version upgrade. Enjoy!
+
 
 == Donation ==
 
-You may buy the premium version to support us.
+You may buy the premium version to support the development.
 
 http://wp-analytify.com/details
