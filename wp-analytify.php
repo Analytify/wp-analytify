@@ -3,13 +3,13 @@
 * Plugin Name: Analytify - Google Analytics Dashboard
 * Plugin URI: hhttp://wp-analytify.com/details
 * Description: Analytify brings a brand new and modern feeling Google Analytics superbly integrated with WordPress Dashboard. It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. This provides Stats from Country, Referrers, Social media, General stats, New visitors, Returning visitors, Exit pages, Browser wise and Top keywords. This plugin provides the RealTime statistics in a new UI which is easy to understand and looks good.
-* Version: 1.0.2
+* Version: 1.0.3
 * Author: WPBrigade
 * Author URI: http://wpbrigade.com/
 * License: GPLv2+
 * Text Domain: wp-analytify
 * Min WP Version: 3.0.1
-* Max WP Version: 4.1
+* Max WP Version: 4.1.1
 * Domain Path: /lang
 */
 
@@ -171,20 +171,22 @@ class WP_Analytify extends Analytify_General_FREE{
 
         $post_types = get_option( 'analytify_posts_stats' );
 
-        foreach ( $post_types as $post_type ) {
-                
-            add_meta_box('pa-single-admin-analytics', // $id
-                    'Analytify: Google Analytics of this page.', // $title
-                    array(
-                        'WP_Analytify',
-                        'show_admin_single_analytics'
-                    ), // $callback
+        // Don't load boxes/sections if no any post type is selected.
+        if( !empty($post_types))
+            foreach ( $post_types as $post_type ) {
                     
-                    $post_type, // $posts
-                    'normal',   // $context
-                    'high'      // $priority
-                ); 
-        } //$post_types as $post_type
+                add_meta_box('pa-single-admin-analytics', // $id
+                        'Analytify: Google Analytics of this page.', // $title
+                        array(
+                            'WP_Analytify',
+                            'show_admin_single_analytics'
+                        ), // $callback
+                        
+                        $post_type, // $posts
+                        'normal',   // $context
+                        'high'      // $priority
+                    ); 
+            } //$post_types as $post_type
     }
 
 
