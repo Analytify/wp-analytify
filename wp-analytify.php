@@ -3,7 +3,7 @@
 * Plugin Name: Analytify - Google Analytics Dashboard
 * Plugin URI: hhttp://wp-analytify.com/details
 * Description: Analytify brings a brand new and modern feeling Google Analytics superbly integrated with WordPress Dashboard. It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. This provides Stats from Country, Referrers, Social media, General stats, New visitors, Returning visitors, Exit pages, Browser wise and Top keywords. This plugin provides the RealTime statistics in a new UI which is easy to understand and looks good.
-* Version: 1.0.3
+* Version: 1.0.4
 * Author: WPBrigade
 * Author URI: http://wpbrigade.com/
 * License: GPLv2+
@@ -866,4 +866,35 @@ $wp_analytify =   new WP_Analytify();
 $wp_analytify->pa_check_warnings();
 
 } //end if
+
+/* Display a notice that can be dismissed */
+
+add_action('admin_notices', 'analytify_admin_notice');
+
+function analytify_admin_notice() {
+if ( current_user_can( 'install_plugins' ) )
+   {
+    global $current_user ;
+        $user_id = $current_user->ID;
+        /* Check that the user hasn't already clicked to ignore the message */
+    if ( ! get_user_meta($user_id, 'analytify_ignore_notice') ) {
+        echo '<div class="updated"><p>'; 
+        printf(__('<b>[Notice]</b> Thank you for using <strong><a href="https://wp-analytify.com/details" target="_blank">Analytify</a>!</strong> Do you know you could get detailed <a href="https://wp-analytify.com/details" target="_blank"><strong>Keyword Analytics</strong></a> per post, right below your <strong>Post Edit Panel</strong>?  Here is <strong>Exclusive $5 off Coupon "<em><a href="https://wp-analytify.com/upgrade-from-free" target="_blank">Analytify2015</a>"</em></strong><a href="https://wp-analytify.com/upgrade-from-free" target="_blank"><em>,</em></a> only for <strong>You</strong>, existing user. <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ));
+        echo "</p></div>";
+    }
+    }
+}
+
+add_action('admin_init', 'analytify_nag_ignore');
+
+function analytify_nag_ignore() {
+    global $current_user;
+        $user_id = $current_user->ID;
+        /* If user clicks to ignore the notice, add that to their user meta */
+        if ( isset($_GET['analytify_nag_ignore']) && '0' == $_GET['analytify_nag_ignore'] ) {
+             add_user_meta($user_id, 'analytify_ignore_notice', 'true', true);
+    }
+}
+
 ?>
+

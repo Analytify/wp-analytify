@@ -1,14 +1,14 @@
-=== Analytify - Google Analytics 2015 ===
+=== Analytify - Google Analytics Dashboard ===
 Contributors: hiddenpearls, Asif2BD
 Donate link: http://wp-analytify.com/details
 Tags: google analytics, WordPress Analytics, dashboard,  analytics, google analytics dashboard, install analytics, analytify, yoast, analyticator, tracking, stats, e-commerce
 Requires at least: 3.0.1
-Tested up to: 4.1.1
+Tested up to: 4.2
 Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The ONLY Plugin Brings Per Post/Page Google Analytics Data Inside WordPress Dashboard. This Exclusive Premium Plugin Now Available For FREE.
+The ONLY Plugin Brings Per Post/Page Google Analytics Data Inside WordPress Dashboard. This Exclusive Premium Plugin Is Now Available For FREE.
 
 == Description ==
 
@@ -121,10 +121,8 @@ First, you need to Authenticate your GA account then you can select your web pro
 == Upgrade Notice ==
 
 = 1.0.4 =
-* Bug fix, must update for accurate AvgTimeOnPage Stats.
+* [Must Update] Bug fix for accurate AvgTimeOnPage Stats.
 
-= 1.0.3 =
-* Big fix, must update.
 
 
 == Donation ==
