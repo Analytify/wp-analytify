@@ -607,7 +607,7 @@ class WP_Analytify extends Analytify_General_FREE{
 
                         if (is_array( $post_analytics_settings_front )){
 
-                            $stats = $this->pa_get_analytics( 'ga:sessions,ga:bounces,ga:newUsers,ga:entrances,ga:pageviews,ga:sessionDuration,ga:avgSessionDuration,ga:users',$start_date, $end_date, false, false, $filter);
+                            $stats = $this->pa_get_analytics( 'ga:sessions,ga:bounces,ga:newUsers,ga:entrances,ga:pageviews,ga:sessionDuration,ga:avgTimeOnPage,ga:users',$start_date, $end_date, false, false, $filter);
 
                             if ( isset( $stats->totalsForAllResults ) ) {
 
@@ -688,7 +688,7 @@ class WP_Analytify extends Analytify_General_FREE{
 
         $show_settings = array();
         $show_settings = get_option('post_analytics_settings_back');
-            
+
         // Stop here, if user has disable backend analytics i.e OFF
         if ( get_option( 'post_analytics_disable_back' ) == 1 and $ajax == 0) {
             return;
@@ -700,10 +700,10 @@ class WP_Analytify extends Analytify_General_FREE{
 
             if (is_array( $show_settings )){
                     
-                if (in_array( 'show-overall-back', $show_settings )) { 
+                if (in_array( 'show-overall-back', $show_settings )) {
                        
-                    $stats = $this->pa_get_analytics( 'ga:sessions,ga:bounces,ga:newUsers,ga:entrances,ga:pageviews,ga:sessionDuration,ga:avgSessionDuration,ga:users',$s_date, $e_date, false, false, $filter);
-                        
+                    $stats = $this->pa_get_analytics( 'ga:sessions,ga:bounces,ga:newUsers,ga:entrances,ga:pageviews,ga:sessionDuration,ga:avgTimeOnPage,ga:users',$s_date, $e_date, false, false, $filter);
+
                     if ( isset( $stats->totalsForAllResults ) ) {
 
                         include ANALYTIFY_ROOT_PATH . '/views/admin/single-general-stats.php'; 

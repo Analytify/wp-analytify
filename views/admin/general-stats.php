@@ -62,7 +62,7 @@ function pa_include_general( $current, $stats) {
                   else {
                 ?>
                 <?php
-                    echo $current->pa_pretty_time($stats->totalsForAllResults['ga:avgSessionDuration']);
+                  echo $current->pa_pretty_time($stats->totalsForAllResults['ga:avgTimeOnPage']);
                 ?>
                 <?php } ?>
             </div>

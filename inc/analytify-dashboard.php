@@ -68,7 +68,7 @@ if( isset( $ed_date ) ) {
 
 								// General stats //
 
-								$stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions,ga:bounces,ga:newUsers,ga:entrances,ga:pageviews,ga:sessionDuration,ga:avgSessionDuration,ga:users', $start_date, $end_date);
+								$stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions,ga:bounces,ga:newUsers,ga:entrances,ga:pageviews,ga:sessionDuration,ga:avgTimeOnPage,ga:users', $start_date, $end_date);
 								if ( isset( $stats->totalsForAllResults ) ) {
 									include ANALYTIFY_ROOT_PATH . '/views/admin/general-stats.php'; 
 									pa_include_general($wp_analytify,$stats);
