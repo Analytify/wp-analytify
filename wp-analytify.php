@@ -3,7 +3,7 @@
 * Plugin Name: Analytify - Google Analytics Dashboard
 * Plugin URI: hhttp://wp-analytify.com/details
 * Description: Analytify brings a brand new and modern feeling Google Analytics superbly integrated with WordPress Dashboard. It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. This provides Stats from Country, Referrers, Social media, General stats, New visitors, Returning visitors, Exit pages, Browser wise and Top keywords. This plugin provides the RealTime statistics in a new UI which is easy to understand and looks good.
-* Version: 1.0.4
+* Version: 1.0.5
 * Author: WPBrigade
 * Author URI: http://wpbrigade.com/
 * License: GPLv2+
@@ -137,6 +137,19 @@ class WP_Analytify extends Analytify_General_FREE{
                     'analytify_textdomain') );
 
         //add_action( 'admin_footer', array( &$this, 'profile_warning' ) );
+        /*add_action( 'admin_footer', array( 
+                    &$this, 
+                    'profile_warning' 
+                ));*/
+        add_action('admin_notices', array( 
+                                            $this,
+                                            'analytify_admin_notice')
+                );
+
+        add_action('admin_init', array( 
+                                            $this,
+                                            'analytify_nag_ignore')
+                );
 
         register_activation_hook( __FILE__,   array( $this, 'install' ) );
         register_deactivation_hook( __FILE__, array( $this, 'uninstall' ) );
@@ -376,7 +389,10 @@ class WP_Analytify extends Analytify_General_FREE{
 
         if ( strpos( $screen->base, 'analytify-settings' ) !== false ) {
             include( ANALYTIFY_ROOT_PATH . '/inc/analytify-settings.php' );
-        } 
+        }
+        else if ( strpos( $screen->base, 'analytify-campaigns' ) !== false ) {
+            include_once( ANALYTIFY_ROOT_PATH . '/inc/analytify-campaigns.php' );
+        }
         else {
             include( ANALYTIFY_ROOT_PATH . '/inc/analytify-dashboard.php' );
         }
@@ -441,7 +457,7 @@ class WP_Analytify extends Analytify_General_FREE{
         }
     }
 
-    /** 
+    /**
      * Create Analytics menu at the left side of dashboard
      */
     public static function wpa_add_menu() {
@@ -451,12 +467,17 @@ class WP_Analytify extends Analytify_General_FREE{
                          'pa_page_file_path'
                         ), plugins_url('images/wp-analytics-logo.png', __FILE__),'2.1.9');
 
-            add_submenu_page( 'analytify-dashboard', ANALYTIFY_NICK . ' Dashboard', ' Dashboard', 'manage_options', 'analytify-dashboard', array(
+        add_submenu_page( 'analytify-dashboard', ANALYTIFY_NICK . ' Dashboard', ' Dashboard', 'manage_options', 'analytify-dashboard', array(
                               __CLASS__,
                              'pa_page_file_path'
                             ));
-            
-            add_submenu_page( 'analytify-dashboard', ANALYTIFY_NICK . ' Settings', '<b style="color:#f9845b">Settings</b>', 'manage_options', 'analytify-settings', array(
+        
+        add_submenu_page( 'analytify-dashboard', ANALYTIFY_NICK . ' Campaign', ' Campaigns', 'manage_options', 'analytify-campaigns', array(
+                                  __CLASS__,
+                                 'pa_page_file_path'
+                                ));
+
+        add_submenu_page( 'analytify-dashboard', ANALYTIFY_NICK . ' Settings', '<b style="color:#f9845b">Settings</b>', 'manage_options', 'analytify-settings', array(
                               __CLASS__,
                              'pa_page_file_path'
                             ));
@@ -835,8 +856,50 @@ class WP_Analytify extends Analytify_General_FREE{
         <?php
     }
 
+    /* Display a notice that can be dismissed */
+
+    function analytify_admin_notice() {
+
+        $profile_id     =   get_option( "pt_webprofile" );
+        $acces_token    =   get_option( "post_analytics_token" );
+
+        if ( current_user_can( 'install_plugins' )) {
+
+            global $current_user ;
+            $user_id = $current_user->ID;
+            /* Check that the user hasn't already clicked to ignore the message */
+            if ( ! get_user_meta($user_id, 'analytify_ignore_notice') ) {
+
+                echo '<div class="updated"><p>';
+                printf(__('<b>[Notice]</b> Thank you for using <strong><a href="https://wp-analytify.com/details" target="_blank">Analytify</a>!</strong> Do you know you could get detailed <a href="https://wp-analytify.com/details" target="_blank"><strong>Keyword Analytics</strong></a> per post, right below your <strong>Post Edit Panel</strong>?  Here is <strong>Exclusive $5 off Coupon "<em><a href="https://wp-analytify.com/upgrade-from-free" target="_blank">Analytify2015</a>"</em></strong><a href="https://wp-analytify.com/upgrade-from-free" target="_blank"><em>,</em></a> only for <strong>You</strong>, existing user. <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ));
+                echo "</p></div>";
+            }
+        }
+
+        if (! isset( $acces_token ) || empty( $acces_token )) {
+               
+           echo "<div class='error'><p><strong>" . __( "Analytify is not active. Please <a href='" . menu_page_url ( 'analytify-settings', false ) ."'>Authenticate</a> in order to get started using this plugin.", 'wp-analytify' )."</strong></p></div>"; 
+        }
+        else{
+
+            if (! isset( $profile_id ) || empty( $profile_id )){
+                echo '<div class="error"><p><strong>' . __( 'You need to set Google Analytics Profile <a href="' . menu_page_url ( 'analytify-settings', false ) . '&tab=profile">here</a> ', 'wp-analytify' ) . '.</strong></p></div>';
+            }
+        }
+    }
+
+    function analytify_nag_ignore() {
+        global $current_user;
+
+        $user_id = $current_user->ID;
+        /* If user clicks to ignore the notice, add that to their user meta */
+        if ( isset($_GET['analytify_nag_ignore']) && '0' == $_GET['analytify_nag_ignore'] ) {
+            add_user_meta($user_id, 'analytify_ignore_notice', 'true', true);
+        }
+    }
+
     /*
-     * Activate options by default on installing the plugin. 
+     * Activate options by default on installing the plugin.
      */
     static function install() {
 
@@ -862,39 +925,5 @@ class WP_Analytify extends Analytify_General_FREE{
 }
 
 $wp_analytify =   new WP_Analytify();
-
-$wp_analytify->pa_check_warnings();
-
 } //end if
-
-/* Display a notice that can be dismissed */
-
-add_action('admin_notices', 'analytify_admin_notice');
-
-function analytify_admin_notice() {
-if ( current_user_can( 'install_plugins' ) )
-   {
-    global $current_user ;
-        $user_id = $current_user->ID;
-        /* Check that the user hasn't already clicked to ignore the message */
-    if ( ! get_user_meta($user_id, 'analytify_ignore_notice') ) {
-        echo '<div class="updated"><p>'; 
-        printf(__('<b>[Notice]</b> Thank you for using <strong><a href="https://wp-analytify.com/details" target="_blank">Analytify</a>!</strong> Do you know you could get detailed <a href="https://wp-analytify.com/details" target="_blank"><strong>Keyword Analytics</strong></a> per post, right below your <strong>Post Edit Panel</strong>?  Here is <strong>Exclusive $5 off Coupon "<em><a href="https://wp-analytify.com/upgrade-from-free" target="_blank">Analytify2015</a>"</em></strong><a href="https://wp-analytify.com/upgrade-from-free" target="_blank"><em>,</em></a> only for <strong>You</strong>, existing user. <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ));
-        echo "</p></div>";
-    }
-    }
-}
-
-add_action('admin_init', 'analytify_nag_ignore');
-
-function analytify_nag_ignore() {
-    global $current_user;
-        $user_id = $current_user->ID;
-        /* If user clicks to ignore the notice, add that to their user meta */
-        if ( isset($_GET['analytify_nag_ignore']) && '0' == $_GET['analytify_nag_ignore'] ) {
-             add_user_meta($user_id, 'analytify_ignore_notice', 'true', true);
-    }
-}
-
 ?>
-

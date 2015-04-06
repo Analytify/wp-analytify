@@ -19,6 +19,38 @@ i.analytify-shortcodes-icon{
 	padding: 10px 0px;
 }
 
+.wrap_pro_section{
+	position: relative;
+	display: inline-block;
+}
+
+.wrap_pro_section:hover .background, .wrap_pro_section:hover .popup{
+	display: block;
+}
+
+.background{
+	position: absolute;
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	background: rgba(0,0,0,0.50);
+	z-index: 1;
+}
+
+.popup{
+	position: absolute;
+	display: none;
+	top: 30%;
+	left: 50%;
+	margin-left: -150px;
+	width: 300px;
+	text-align: center;
+ 	padding: 20px;
+	background: white;
+	z-index: 2;
+}
+
 .analytics-options{
 	margin: -1px 0 5px 0;
 	display: inline-block;

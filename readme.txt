@@ -4,7 +4,7 @@ Donate link: http://wp-analytify.com/details
 Tags: google analytics, WordPress Analytics, dashboard,  analytics, google analytics dashboard, install analytics, analytify, yoast, analyticator, tracking, stats, e-commerce
 Requires at least: 3.0.1
 Tested up to: 4.2
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -100,6 +100,10 @@ First, you need to Authenticate your GA account then you can select your web pro
 == Changelog ==
 
 
+= 1.0.5 - 2015-04-06 =
+* Bug fix: Headers modify error on some hosts for some users.
+* New feature: Campaign Analytics menu option added. Teaser for Free users that Campaign tracking will look like the attached screenshot.
+
 = 1.0.4 - 2015-03-26 =
 * Bug fix: Avg Time on Page under the post/pages stats was showing AvgSessionDuration. So, It should be AvgTimeOnPage.
 * Bug fix: Avg Time on Site in Dashboard stats was showing AvgSessionDuration. So, It should be AvgTimeOnPage.
@@ -119,6 +123,9 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 
 == Upgrade Notice ==
+
+= 1.0.5 =
+* [Must Update] Bug fix for Cannot modify headers error.
 
 = 1.0.4 =
 * [Must Update] Bug fix for accurate AvgTimeOnPage Stats.
