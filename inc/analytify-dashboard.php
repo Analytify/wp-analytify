@@ -68,12 +68,18 @@ if( isset( $ed_date ) ) {
 
 								// General stats //
 
-								$stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions,ga:bounces,ga:newUsers,ga:entrances,ga:pageviews,ga:sessionDuration,ga:avgTimeOnPage,ga:users', $start_date, $end_date);
+								$stats = get_transient( md5('show-overall-dashboard' . $start_date . $end_date) );
+				                if( $stats === false ) {
+
+									$stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions,ga:bounces,ga:newUsers,ga:entrances,ga:pageviews,ga:sessionDuration,ga:avgTimeOnPage,ga:users', $start_date, $end_date);
+									set_transient(  md5('show-overall-dashboard'.$start_date.$end_date) , $stats, 60 * 60 * 20 );
+				                }
+
 								if ( isset( $stats->totalsForAllResults ) ) {
 									include ANALYTIFY_ROOT_PATH . '/views/admin/general-stats.php'; 
-									pa_include_general($wp_analytify,$stats);
+									pa_include_general( $wp_analytify, $stats );
 								}
-								
+				
 								// End General stats //
 								
 								// Top Pages stats //
