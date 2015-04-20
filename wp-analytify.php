@@ -9,7 +9,7 @@
 * License: GPLv2+
 * Text Domain: wp-analytify
 * Min WP Version: 3.0.1
-* Max WP Version: 4.1.1
+* Max WP Version: 4.2
 * Domain Path: /lang
 */
 
@@ -871,7 +871,7 @@ class WP_Analytify extends Analytify_General_FREE{
             if ( ! get_user_meta($user_id, 'analytify_ignore_notice') ) {
 
                 echo '<div class="updated"><p>';
-                printf(__('<b>[Notice]</b> Thank you for using <strong><a href="https://wp-analytify.com/details" target="_blank">Analytify</a>!</strong> Do you know you could get detailed <a href="https://wp-analytify.com/details" target="_blank"><strong>Keyword Analytics</strong></a> per post, right below your <strong>Post Edit Panel</strong>?  Here is <strong>Exclusive $5 off Coupon "<em><a href="https://wp-analytify.com/upgrade-from-free" target="_blank">Analytify2015</a>"</em></strong><a href="https://wp-analytify.com/upgrade-from-free" target="_blank"><em>,</em></a> only for <strong>You</strong>, existing user. <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ));
+                printf(__('<b>[Notice]</b> Thank you for using <strong><a href="https://wp-analytify.com/details" target="_blank">Analytify</a>!</strong> Do you know you could get detailed <a href="https://wp-analytify.com/details" target="_blank"><strong>Social Analytics</strong></a> per post, right below your <strong>Post Edit Panel</strong>?  Here is an <strong>Exclusive $5 off Coupon "<em><a href="https://wp-analytify.com/upgrade-from-free" target="_blank">Analytify2015</a>"</em></strong><a href="https://wp-analytify.com/upgrade-from-free" target="_blank"><em>,</em></a> only for <strong>You</strong>, existing user. <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ));
                 echo "</p></div>";
             }
         }

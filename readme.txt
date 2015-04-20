@@ -1,7 +1,7 @@
 === Analytify - Google Analytics Dashboard ===
 Contributors: hiddenpearls, Asif2BD
 Donate link: http://wp-analytify.com/details
-Tags: google analytics, WordPress Analytics, dashboard,  analytics, google analytics dashboard, install analytics, analytify, yoast, analyticator, tracking, stats, e-commerce
+Tags: google analytics, WordPress Analytics, tracking,  analytics, google analytics dashboard, install analytics, analytify, yoast, analyticator, tracking, stats, e-commerce
 Requires at least: 3.0.1
 Tested up to: 4.2
 Stable tag: 1.0.6
@@ -127,14 +127,7 @@ First, you need to Authenticate your GA account then you can select your web pro
 == Upgrade Notice ==
 
 = 1.0.6 =
-* [Must Update] Added Cache for general stats.
-
-= 1.0.5 =
-* [Must Update] Bug fix for Cannot modify headers error.
-
-= 1.0.4 =
-* [Must Update] Bug fix for accurate AvgTimeOnPage Stats.
-
+* [Must Update] Added Cache for general stats. Performance improvement.
 
 
 == Donation ==
