@@ -3,7 +3,7 @@ Contributors: hiddenpearls, Asif2BD
 Donate link: http://wp-analytify.com/details
 Tags: google analytics, WordPress Analytics, tracking,  analytics, google analytics dashboard, install analytics, analytify, yoast, analyticator, tracking, stats, e-commerce
 Requires at least: 3.0.1
-Tested up to: 4.2
+Tested up to: 4.2.1
 Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -99,6 +99,9 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Changelog ==
 
+= 1.0.7 - 2015-04-30 =
+* New Feature: Added Cache for Top pages stats.
+
 = 1.0.6 - 2015-04-19 =
 * New Feature: Added Cache for general stats.
 
@@ -125,6 +128,9 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 
 == Upgrade Notice ==
+
+= 1.0.7 =
+* [Must Update] Added Cache for Top pages stats, Performance improved.
 
 = 1.0.6 =
 * [Must Update] Added Cache for general stats. Performance improvement.

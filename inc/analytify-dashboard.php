@@ -83,7 +83,14 @@ if( isset( $ed_date ) ) {
 								// End General stats //
 								
 								// Top Pages stats //
-								$top_page_stats = $wp_analytify->pa_get_analytics_dashboard('ga:pageviews', $start_date, $end_date, 'ga:PageTitle', '-ga:pageviews', false, 5);
+
+								$top_page_stats = get_transient( md5('show-top-pages-dashboard' . $start_date . $end_date) );
+				                if( $top_page_stats === false ) {
+				                	$top_page_stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:pageviews', $start_date, $end_date, 'ga:PageTitle', '-ga:pageviews', false, 5);
+				                	set_transient(  md5( 'show-top-pages-dashboard' . $start_date . $end_date ) , $stats, 60 * 60 * 20 );
+
+				                }
+
 								if ( isset( $top_page_stats->totalsForAllResults ) ) {
 									include ANALYTIFY_ROOT_PATH . '/views/admin/top-pages-stats.php'; 
 									pa_include_top_pages_stats( $wp_analytify, $top_page_stats );
