@@ -919,7 +919,7 @@ class WP_Analytify extends Analytify_General_FREE{
 		update_option( 'post_analytics_settings_back' , array( 'show-overall-back' ) );
 		update_option( 'post_analytics_access_back'   , array( 'editor','administrator' ) );
 		update_option( 'display_tracking_code'        , array( 'administrator' ) );
-		send_status_analytify( get_option( 'admin_email' ), 'active');
+		//send_status_analytify( get_option( 'admin_email' ), 'active');
 	}
 
 	function uninstall() {
@@ -928,12 +928,12 @@ class WP_Analytify extends Analytify_General_FREE{
 		delete_option( 'pa_google_token' );
 		delete_option( 'pa_welcome_message' );
 		delete_option( 'post_analytics_token' );
-		send_status_analytify( get_option( 'admin_email' ), 'in-active');
+		//send_status_analytify( get_option( 'admin_email' ), 'in-active');
 	}
 
 	function delete() {
 
-		send_status_analytify( get_option( 'admin_email' ), 'delete');
+		//send_status_analytify( get_option( 'admin_email' ), 'delete');
 	}
 
 	/**
