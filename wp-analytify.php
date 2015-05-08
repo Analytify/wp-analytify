@@ -8,8 +8,8 @@
 * Author URI: http://wpbrigade.com/
 * License: GPLv2+
 * Text Domain: wp-analytify
-* Min WP Version: 3.0.1
-* Max WP Version: 4.2.1
+* Min WP Version: 3.0
+* Max WP Version: 4.2.2
 * Domain Path: /lang
 */
 
@@ -865,10 +865,10 @@ class WP_Analytify extends Analytify_General_FREE{
 			global $current_user ;
 			$user_id = $current_user->ID;
 			/* Check that the user hasn't already clicked to ignore the message */
-			if ( ! get_user_meta($user_id, 'analytify_ignore_notice') ) {
+			if ( ! get_user_meta($user_id, 'analytify_ignore_notice107') ) {
 
 				echo '<div class="updated"><p>';
-				printf(__('<b>[Notice]</b> Thank you for using <strong><a href="https://wp-analytify.com/details" target="_blank">Analytify</a>!</strong> Do you know you could get detailed <a href="https://wp-analytify.com/details" target="_blank"><strong>Social Analytics</strong></a> per post, right below your <strong>Post Edit Panel</strong>?  Here is an <strong>Exclusive $5 off Coupon "<em><a href="https://wp-analytify.com/upgrade-from-free" target="_blank">Analytify2015</a>"</em></strong><a href="https://wp-analytify.com/upgrade-from-free" target="_blank"><em>,</em></a> only for <strong>You</strong>, existing user. <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ));
+				printf(__('<b>Wow!</b> <strong><a href="https://wp-analytify.com/details" target="_blank">Analytify</a> </strong>community growing fast! Very exciting things coming to Analytify  really soon.<strong> To honor our user we extended</strong> <strong>$5 off Coupon "<em><a href="https://wp-analytify.com/upgrade-from-free" target="_blank">Analytify2015</a>"! Feel the full power of Analytify!</em></strong> <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ));
 				echo "</p></div>";
 			}
 		}
@@ -891,7 +891,7 @@ class WP_Analytify extends Analytify_General_FREE{
 		$user_id = $current_user->ID;
 		/* If user clicks to ignore the notice, add that to their user meta */
 		if ( isset($_GET['analytify_nag_ignore']) && '0' == $_GET['analytify_nag_ignore'] ) {
-			add_user_meta($user_id, 'analytify_ignore_notice', 'true', true);
+			add_user_meta($user_id, 'analytify_ignore_notice107', 'true', true);
 		}
 	}
 
