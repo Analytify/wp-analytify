@@ -98,19 +98,32 @@ if( isset( $ed_date ) ) {
 								// End Top Pages stats //
 
 								// Country stats //
-								
-								$country_stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions', $start_date, $end_date, 'ga:country', '-ga:sessions', false, 5);
+
+								$country_stats = get_transient( md5('show-country-dashboard'.$start_date.$end_date) ) ;
+								if( $country_stats === false ) {
+									$country_stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions', $start_date, $end_date, 'ga:country', '-ga:sessions', false, 5);
+									set_transient(  md5('show-country-dashboard'.$start_date.$end_date) , $country_stats, 60 * 60 * 20 );
+								}
+
 								if ( isset( $country_stats->totalsForAllResults )) {
 									include ANALYTIFY_ROOT_PATH . '/views/admin/country-stats.php'; 
 									pa_include_country($wp_analytify,$country_stats);
 								}
-							
+								
+
 								// End Country stats //
 
-								$city_stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions', $start_date, $end_date, 'ga:city', '-ga:sessions', false, 5);
+								// City stats //
+
+								$city_stats = get_transient( md5('show-city-dashboard'.$start_date.$end_date) ) ;
+								if( $city_stats === false ) {
+										$city_stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions', $start_date, $end_date, 'ga:city', '-ga:sessions', false, 5);
+										set_transient(  md5('show-city-dashboard'.$start_date.$end_date) , $city_stats, 60 * 60 * 20 );
+								}
+
 								if ( isset( $city_stats->totalsForAllResults )) {
-									include ANALYTIFY_ROOT_PATH . '/views/admin/city-stats.php'; 
-									pa_include_city($wp_analytify,$city_stats);
+									  include ANALYTIFY_ROOT_PATH . '/views/admin/city-stats.php'; 
+									  pa_include_city($wp_analytify,$city_stats);
 								}
 
 								// Keywords stats //
