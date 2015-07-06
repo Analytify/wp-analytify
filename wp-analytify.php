@@ -59,7 +59,7 @@ class WP_Analytify extends Analytify_General_FREE{
 					$this,
 					'pa_styles'
 				));
-		
+
 		add_action( 'wp_enqueue_scripts', array( 
 					$this,
 					'pa_front_scripts'
@@ -864,11 +864,15 @@ class WP_Analytify extends Analytify_General_FREE{
 			global $current_user ;
 			$user_id = $current_user->ID;
 			/* Check that the user hasn't already clicked to ignore the message */
-			if ( ! get_user_meta($user_id, 'analytify_ignore_notice107') ) {
+			if ( ! get_user_meta($user_id, 'analytify_ignore_notice108') ) {
 
-				echo '<div class="updated"><p>';
-				printf(__('<b>Wow!</b> <strong><a href="https://wp-analytify.com/details" target="_blank">Analytify</a> </strong>community growing fast! Very exciting things coming to Analytify  really soon.<strong> To honor our user we extended</strong> <strong>$5 off Coupon "<em><a href="https://wp-analytify.com/upgrade-from-free" target="_blank">Analytify2015</a>"! Feel the full power of Analytify!</em></strong> <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ));
-				echo "</p></div>";
+				if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+
+					echo '<div class="updated"><p>';
+					printf(__('<b>Announcement: </b> Increase your sales now with <a href="https://wp-analytify.com/upgrade-from-free" target="_blank">WooCommerce Add-on</a> which helps you to Track every click, checkouts and product views. <br /><a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ));
+					echo "</p></div>";
+				}
+
 			}
 		}
 
@@ -890,7 +894,7 @@ class WP_Analytify extends Analytify_General_FREE{
 		$user_id = $current_user->ID;
 		/* If user clicks to ignore the notice, add that to their user meta */
 		if ( isset($_GET['analytify_nag_ignore']) && '0' == $_GET['analytify_nag_ignore'] ) {
-			add_user_meta($user_id, 'analytify_ignore_notice107', 'true', true);
+			add_user_meta($user_id, 'analytify_ignore_notice108', 'true', true);
 		}
 	}
 
