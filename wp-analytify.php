@@ -18,6 +18,8 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 ini_set( 'include_path', dirname(__FILE__) . '/lib/' );
 
+include_once( 'inc/class-wpa-ajax.php' );
+
 if ( !class_exists( 'WP_Analytify' ) ) {
 
 	if ( !class_exists( 'Analytify_General_FREE' ) ) {
@@ -405,11 +407,7 @@ class WP_Analytify extends Analytify_General_FREE{
 			wp_enqueue_style( 'chosen', plugins_url('css/chosen.css', __FILE__));
 		   // wp_enqueue_style( 'jquery-ui-tooltip-css', plugins_url('css/jquery.ui.tooltip.html.css', __FILE__) );
 
-			if ( get_option( 'pa_welcome_message' ) == '0' ) {
-				
-				wp_enqueue_style( 'wp-pointer' );
-			
-			}
+			if ( get_option( 'pa_welcome_message' ) == '0' ) wp_enqueue_style( 'wp-pointer' );
 	}
 
 	public function pa_front_styles( $page ) {
@@ -431,11 +429,9 @@ class WP_Analytify extends Analytify_General_FREE{
 		wp_enqueue_script ( 'script-js', plugins_url('js/wp-analytify.js', __FILE__), false, ANALYTIFY_VERSION );
 		wp_enqueue_script ( 'jquery-ui-tooltip' );
 		wp_enqueue_script ( 'jquery-ui-datepicker');
-			
-		if ( get_option( 'pa_welcome_message' ) == '0' ) {
-			 
-			wp_enqueue_script( 'wp-pointer' );
-		}   
+
+		if ( get_option( 'pa_welcome_message' ) == '0' ) wp_enqueue_script( 'wp-pointer' );
+
 	}
 
 	/**
@@ -830,21 +826,35 @@ class WP_Analytify extends Analytify_General_FREE{
 
 	public function pa_welcome_message() {
 
-		$pointer_content = '<h3>Analytify - Google Analytics for WordPress.</h3>';
-		$pointer_content .= '<p>Thank you for activating Analytify Plugin. Enjoy Google Analytics for everything in WordPress.</p>';
+		$pointer_content  = '<h3>Subscribe to Analytify</h3>';
+		$pointer_content .= '<p>Thank you for using Analytify. Can you please allows us to track the Analytify usage ?</p>';
+		$pointer_content .= '<p>Name: <input type="text" name="wpa_subscribe_name" id="wpa_subscribe_name">';
+		$pointer_content .= '<p>Email: <input type="text" name="wpa_subscribe_email" id="wpa_subscribe_email">';
+		//$pointer_content .= '<p>Thank you for using Analytify Plugin.</p>';
 		?>
 
 		<script type="text/javascript">
 			//<![CDATA[
 			jQuery(document).ready( function($) {
+								/* make sure pointers will actually work and have content */
+				if(typeof(jQuery().pointer) != 'undefined') {
 
-				$('#toplevel_page_pa-dashboard').pointer({
-						content: '<?php echo $pointer_content; ?>',
-						position: 'left',
-						close: function() {
-							<?php update_option("pa_welcome_message",1) ?>
-						}
-				}).pointer('open');
+					$('#toplevel_page_analytify-dashboard').pointer({
+							content: '<?php echo $pointer_content; ?>',
+							position: {
+								edge: 'left',
+								align: 'center'
+							},
+							close: function() {
+								$.post( ajaxurl, {
+									pointer: 'subscribe',
+									name:  $('#wpa_subscribe_name').val(),
+									email: $('#wpa_subscribe_email').val(),
+									action: 'analytify_dismiss_pointer'
+								});
+							}
+					}).pointer('open');
+				};
 			});
 			//]]>
 		</script>
@@ -905,6 +915,9 @@ class WP_Analytify extends Analytify_General_FREE{
 	$wp_analytify = new WP_Analytify();
 
 } //end if
+
+update_option("pa_welcome_message",0);
+//echo get_option("pa_welcome_message");
 
 
 	register_activation_hook( __FILE__,   	'install' );
