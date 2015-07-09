@@ -41,16 +41,20 @@ class WPA_AJAX {
 	}
 
 	/**
-	 * Triggered when clicking the rating footer.
+	 * Triggered when clicking the dismiss button.
 	 * @since 1.0.8
 	 */
 	public static function dismiss_pointer() {
 
-		$email = $_POST['email'];
-		$name = $_POST['name'];
+		$wpa_allow  = isset($_POST['wpa_allow']) ? $_POST['wpa_allow']: 0;
 
-		//print_r(send_status_analytify( $email, $status));
-
+		if( $wpa_allow == 1 ) {
+ 
+			update_option('wpa_allow_tracking', 1);
+			send_status_analytify( get_option( 'admin_email' ), 'active');
+		}
+		
+		update_option('show_tracking_pointer', 1);
 		die();
 	}
 

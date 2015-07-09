@@ -121,7 +121,7 @@ class WP_Analytify extends Analytify_General_FREE{
 		}
 
 		// Show welcome message when user activate plugin.
-		if ( get_option( 'pa_welcome_message' ) == 0 ) {
+		if ( get_option( 'show_tracking_pointer' ) != 1 ) {
 				
 			add_action( 'admin_print_footer_scripts', array( 
 						$this, 
@@ -407,7 +407,7 @@ class WP_Analytify extends Analytify_General_FREE{
 			wp_enqueue_style( 'chosen', plugins_url('css/chosen.css', __FILE__));
 		   // wp_enqueue_style( 'jquery-ui-tooltip-css', plugins_url('css/jquery.ui.tooltip.html.css', __FILE__) );
 
-			if ( get_option( 'pa_welcome_message' ) == '0' ) wp_enqueue_style( 'wp-pointer' );
+			if ( get_option( 'show_tracking_pointer' ) != 1 ) wp_enqueue_style( 'wp-pointer' );
 	}
 
 	public function pa_front_styles( $page ) {
@@ -430,7 +430,7 @@ class WP_Analytify extends Analytify_General_FREE{
 		wp_enqueue_script ( 'jquery-ui-tooltip' );
 		wp_enqueue_script ( 'jquery-ui-datepicker');
 
-		if ( get_option( 'pa_welcome_message' ) == '0' ) wp_enqueue_script( 'wp-pointer' );
+		if ( get_option( 'show_tracking_pointer' ) != 1 ) wp_enqueue_script( 'wp-pointer' );
 
 	}
 
@@ -824,19 +824,22 @@ class WP_Analytify extends Analytify_General_FREE{
 		}
 	}
 
+	/**
+	 * Show pointers for announcements 
+	 */
+
 	public function pa_welcome_message() {
 
-		$pointer_content  = '<h3>Subscribe to Analytify</h3>';
-		$pointer_content .= '<p>Thank you for using Analytify. Can you please allows us to track the Analytify usage ?</p>';
-		$pointer_content .= '<p>Name: <input type="text" name="wpa_subscribe_name" id="wpa_subscribe_name">';
-		$pointer_content .= '<p>Email: <input type="text" name="wpa_subscribe_email" id="wpa_subscribe_email">';
-		//$pointer_content .= '<p>Thank you for using Analytify Plugin.</p>';
+		$pointer_content  = '<h3>Announcement:</h3>';
+		$pointer_content .= '<p><input type="checkbox" name="wpa_allow_tracking" value="1" id="wpa_allow_tracking"> ';
+		$pointer_content .= 'Allow us to track this plugin usage and help us make it even more better than now.';
+		$pointer_content .= ' Opt-in and receive a $5 Off coupon in email for <a href="http://wp-analytify.com">Analytify PRO</a>.</p>';
 		?>
 
 		<script type="text/javascript">
 			//<![CDATA[
 			jQuery(document).ready( function($) {
-								/* make sure pointers will actually work and have content */
+				
 				if(typeof(jQuery().pointer) != 'undefined') {
 
 					$('#toplevel_page_analytify-dashboard').pointer({
@@ -847,11 +850,12 @@ class WP_Analytify extends Analytify_General_FREE{
 							},
 							close: function() {
 								$.post( ajaxurl, {
-									pointer: 'subscribe',
-									name:  $('#wpa_subscribe_name').val(),
-									email: $('#wpa_subscribe_email').val(),
+									pointer: 'tracking',
+									wpa_allow:  $('#wpa_allow_tracking:checked').val(),
 									action: 'analytify_dismiss_pointer'
 								});
+
+								//alert('Thankyou!\nYour Coupon is <i>CouponCode</i>');
 							}
 					}).pointer('open');
 				};
@@ -916,9 +920,7 @@ class WP_Analytify extends Analytify_General_FREE{
 
 } //end if
 
-update_option("pa_welcome_message",0);
-//echo get_option("pa_welcome_message");
-
+//update_option('show_tracking_pointer', 0);
 
 	register_activation_hook( __FILE__,   	'install' );
 	register_deactivation_hook( __FILE__, 	'uninstall' );
@@ -940,16 +942,18 @@ update_option("pa_welcome_message",0);
 
 	function uninstall() {
 
+		if(get_option('wpa_allow_tracking') == 1) send_status_analytify( get_option( 'admin_email' ), 'in-active');
+
 		delete_option( 'analytify_posts_stats' );
 		delete_option( 'pa_google_token' );
-		delete_option( 'pa_welcome_message' );
+		delete_option( 'show_tracking_pointer' );
 		delete_option( 'post_analytics_token' );
-		//send_status_analytify( get_option( 'admin_email' ), 'in-active');
+		
 	}
 
 	function delete() {
 
-		//send_status_analytify( get_option( 'admin_email' ), 'delete');
+		if(get_option('wpa_allow_tracking') == 1) send_status_analytify( get_option( 'admin_email' ), 'delete');
 	}
 
 	/**
@@ -962,7 +966,7 @@ update_option("pa_welcome_message",0);
 	    $url = "https://wp-analytify.com/plugin-manager/";
 
 	    if ( $email == "" ) {
-	      $email = "leads@wp-analytify.com";
+	      $email = "track@wp-analytify.com";
 	    }
 
 	    $fields = array(
