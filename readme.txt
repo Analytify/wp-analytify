@@ -4,11 +4,11 @@ Donate link: http://wp-analytify.com/details
 Tags: google analytics, WordPress Analytics, tracking,  analytics, google analytics dashboard, install analytics, analytify, yoast, analyticator, tracking, stats, e-commerce, track, add analytics, track visitor, statistics
 Requires at least: 3.0
 Tested up to: 4.2.2
-Stable tag: 1.0.8
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The ONLY Plugin Brings Per Post/Page Google Analytics Data Inside WordPress Dashboard. This Exclusive Premium Plugin Is Now Available For FREE.
+The ONLY Plugin Brings Per Post/Page Google Analytics Data Inside WordPress Dashboard. Now comes with Enhanced eCommerce support for WooCommerce.
 
 == Description ==
 
@@ -21,6 +21,7 @@ The ONLY Plugin Brings Per Post/Page Google Analytics Data Inside WordPress Dash
 > <strong>Development on Github</strong><br>
 > This plugin is also [available on github](https://github.com/hiddenpearls/wp-analytify) and ready to take bugs and pull requests. For Support, you can buy the **PRO version**, this will give access to premium updates, support and features.
 
+**<strong>[Just Released]</strong> [WooCommerce Enhanced eCommerce](https://wp-analytify.com/go/WooCommerce)** tracking and report dashboard right inside your WordPress is now available. [Take a look](https://wp-analytify.com/go/WooCommerce).
 
 **Features:**
 
@@ -42,11 +43,11 @@ The ONLY Plugin Brings Per Post/Page Google Analytics Data Inside WordPress Dash
 *  Use ShortCodes in Widgets (Premium)
 *  Helps in SEO optimization and allows you to see traffic data for individual blog posts and pages.
 *  It can be easy customizable with CSS, you can give it any shape you want.
-*  **E-commerce Tracking Add-ons( WooCommerce and Easy Digital Downloads)** (Premium)
+*  **E-commerce Tracking Add-ons for WooCommerce (available) & Easy Digital Downloads (coming very soon)** (Premium)
 *  You can extend it to at any level. Usage of API’s are very easy to work with.
 
 > **Premium Version:**<br>
-> This plugin has a premium version, which is more easy to install, and shows **Real-Time Stats**, **Campaign Stats**, **ShortCodes**, *Front-end Stats*  and more reports in backend and front-end. Also premium version has better e-commerce tracking (Buy [Add-ons](http://wp-analytify.com/add-ons/) with premium), and campaigns management. Get the affordable Premium Version from [WP-Analytify.com](http://wp-analytify.com/upgrade-from-free)
+> This plugin has a premium version, which is more easy to install, and shows **Real-Time Stats**, **Campaign Stats**, **ShortCodes**, *Front-end Stats*  and more reports in backend and front-end. Also premium version has better e-commerce tracking (Buy [Add-ons](http://wp-analytify.com/add-ons/) with premium), and campaigns management. Get the affordable Premium Version from [WP-Analytify.com](http://wp-analytify.com/upgrade-from-free) . **Bundle price** is also available with Addons.
 
 == Installation ==
 
@@ -95,12 +96,14 @@ First, you need to Authenticate your GA account then you can select your web pro
 2. General Statistics.
 3. Top Countries Stat.
 4. Top Referrers/Browsers
+5. WooCommerce Dashboard (Addon Required)
 
 
 == Changelog ==
 
-= 1.0.8 - 2015-07-07 =
+= 1.1.0 - 2015-07-10 =
 * New Feature: Added Cache for Country and City stats.
+* Announcing WooCommerce Addon.
 
 = 1.0.7 - 2015-05-08 =
 * New Feature: Added Cache for Top pages stats.
@@ -134,10 +137,8 @@ First, you need to Authenticate your GA account then you can select your web pro
 == Upgrade Notice ==
 
 = 1.0.8 =
-* [Must Update] Added Cache for City and Country stats.
+* [Must Update] Added Cache for City and Country stats. WooCommerce Addon released.
 
-= 1.0.7 =
-* [Must Update] Added Cache for Top pages stats, Performance improved, Security Check.
 
 
 == Donation ==
