@@ -3,7 +3,7 @@
 * Plugin Name: Analytify - Google Analytics Dashboard
 * Plugin URI: http://wp-analytify.com/details
 * Description: Analytify brings a brand new and modern feeling Google Analytics superbly integrated with WordPress Dashboard. It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. This provides Stats from Country, Referrers, Social media, General stats, New visitors, Returning visitors, Exit pages, Browser wise and Top keywords. This plugin provides the RealTime statistics in a new UI which is easy to understand and looks good.
-* Version: 1.0.7
+* Version: 1.1.0
 * Author: WPBrigade
 * Author URI: http://wpbrigade.com/
 * License: GPLv2+
@@ -878,14 +878,11 @@ class WP_Analytify extends Analytify_General_FREE{
 			global $current_user ;
 			$user_id = $current_user->ID;
 			/* Check that the user hasn't already clicked to ignore the message */
-			if ( ! get_user_meta($user_id, 'analytify_ignore_notice108') ) {
-
-				if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+			if ( ! get_user_meta($user_id, 'analytify_ignore_notice110') ) {
 
 					echo '<div class="updated"><p>';
-					printf(__('<b>Announcement: </b> Increase your sales now with <a href="https://wp-analytify.com/upgrade-from-free" target="_blank">WooCommerce Add-on</a> which helps you to Track every click, checkouts and product views. <br /><a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ));
+					printf(__('<b>Notice:</b> Enhanced eCommerce Tracking for <b><a href="https://wp-analytify.com/go/WooCommerce" target="_blank">WooCommerce</a></b> is finally available with Analytify, <a href="https://wp-analytify.com/go/WooCommerce" target="_blank">check the addon</a>. No setup needed, <a href="https://wp-analytify.com/go/WooCommerce-Announcement-blog" target="_blank">check</a> how its going to change everything, and increase sales! <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ));
 					echo "</p></div>";
-				}
 
 			}
 		}
@@ -908,7 +905,7 @@ class WP_Analytify extends Analytify_General_FREE{
 		$user_id = $current_user->ID;
 		/* If user clicks to ignore the notice, add that to their user meta */
 		if ( isset($_GET['analytify_nag_ignore']) && '0' == $_GET['analytify_nag_ignore'] ) {
-			add_user_meta($user_id, 'analytify_ignore_notice108', 'true', true);
+			add_user_meta($user_id, 'analytify_ignore_notice110', 'true', true);
 		}
 	}
 
