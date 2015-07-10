@@ -832,8 +832,8 @@ class WP_Analytify extends Analytify_General_FREE{
 
 		$pointer_content  = '<h3>Announcement:</h3>';
 		$pointer_content .= '<p><input type="checkbox" name="wpa_allow_tracking" value="1" id="wpa_allow_tracking"> ';
-		$pointer_content .= 'Allow us to track this plugin usage and help us make it even more better than now.';
-		$pointer_content .= ' Opt-in and receive a $5 Off coupon in email for <a href="http://wp-analytify.com">Analytify PRO</a>.</p>';
+		$pointer_content .= 'Help us making Analytify even better by sharing very basic plugin usage data.';
+		$pointer_content .= ' Opt-in and receive a $5 Off coupon in email for <a href="https://wp-analytify.com/upgrade-from-free">Analytify PRO</a>.</p>';
 		?>
 
 		<script type="text/javascript">
