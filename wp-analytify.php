@@ -881,7 +881,7 @@ class WP_Analytify extends Analytify_General_FREE{
 			if ( ! get_user_meta($user_id, 'analytify_ignore_notice110') ) {
 
 					echo '<div class="updated"><p>';
-					printf(__('<b>Notice:</b> Enhanced eCommerce Tracking for <b><a href="https://wp-analytify.com/go/WooCommerce" target="_blank">WooCommerce</a></b> is finally available with Analytify, <a href="https://wp-analytify.com/go/WooCommerce" target="_blank">check the addon</a>. No setup needed, <a href="https://wp-analytify.com/go/WooCommerce-Announcement-blog" target="_blank">check</a> how its going to change everything, and increase sales! <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ));
+					printf(__('<b>Notice:</b> Enhanced eCommerce Tracking for <b><a href="https://wp-analytify.com/go/WooCommerce" target="_blank">WooCommerce</a></b> is finally available with Analytify! Increase sales and track - Product Clicks, Adds to cart, Checkouts and <a href="https://wp-analytify.com/go/WooCommerce-Announcement-blog" target="_blank">many more</a>. <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ));
 					echo "</p></div>";
 
 			}
