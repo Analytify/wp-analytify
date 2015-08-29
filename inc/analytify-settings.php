@@ -200,14 +200,14 @@ if ( isset( $_POST[ 'save_settings_admin' ] ) ) {
 				<tr class="user_access_code">
 					<th width="115"></th>
 							<td width="877">
-										<a target="_blank" href="javascript:void(0);" onclick="window.open('https://accounts.google.com/o/oauth2/auth?<?php echo $url ?>','activate','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');">Get Your Access Code</a>
+										<a target="_blank" id="get_access_code_link" href="javascript:void(0);" onclick="window.open('https://accounts.google.com/o/oauth2/auth?<?php echo $url ?>','activate','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');">Authenticate with your Google account</a>
 							</td>
 				</tr>
-				<tr class="user_access_code">
+				<tr class="user_access_code" id="paste_access_code">
 					<th></th>
 						<td>
-							<input type="text" name="key_google_token" placeholder="<?php esc_html_e('Your Access Code')?>" value="<?php echo get_option( 'post_analytics_token'); ?>" style="width:450px;"/>
-							<p class="description">Paste here Access Code.</p>
+							<input type="text" name="key_google_token" placeholder="<?php esc_html_e('Paste your Google code here')?>" value="<?php echo get_option( 'post_analytics_token'); ?>" style="width:450px;"/>
+							<p class="description">Paste your Google code here.</p>
 						</td>
 				</tr>
 				<tr>

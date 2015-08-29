@@ -4,6 +4,14 @@ jQuery(document).ready(function  ($) {
           new SelectFx(el);
         } );
       })();
+
+
+      $('#get_access_code_link').click(function(){
+
+      		$('#paste_access_code').show();
+      });
+
+
 		$('.test').click(function () {
 			$('#modal-content').modal({
 				show: true

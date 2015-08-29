@@ -843,6 +843,7 @@ class WP_Analytify extends Analytify_General_FREE{
 				if(typeof(jQuery().pointer) != 'undefined') {
 
 					$('#toplevel_page_analytify-dashboard').pointer({
+							
 							content: '<?php echo $pointer_content; ?>',
 							position: {
 								edge: 'left',

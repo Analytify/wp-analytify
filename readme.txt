@@ -102,6 +102,10 @@ First, you need to Authenticate your GA account then you can select your web pro
 == Changelog ==
 
 = 1.1.0 - 2015-07-10 =
+*
+*
+
+= 1.1.0 - 2015-07-10 =
 * New Feature: Added Cache for Country and City stats.
 * Announcing WooCommerce Addon.
 
@@ -136,7 +140,7 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Upgrade Notice ==
 
-= 1.0.8 =
+= 1.1.1 =
 * [Must Update] Added Cache for City and Country stats. WooCommerce Addon released.
 
 
