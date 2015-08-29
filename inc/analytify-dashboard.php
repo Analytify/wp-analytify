@@ -127,21 +127,31 @@ if( isset( $ed_date ) ) {
 								}
 
 								// Keywords stats //
+								$keyword_stats = get_transient( md5('show-keywords-dashboard'.$start_date.$end_date) ) ;
 
-								$keyword_stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions', $start_date, $end_date, 'ga:keyword', '-ga:sessions', false, 10);
+								if( $keyword_stats === false ) {
+									$keyword_stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions', $start_date, $end_date, 'ga:keyword', '-ga:sessions', false, 10);
+									set_transient(  md5('show-keywords-dashboard'.$start_date.$end_date) , $keyword_stats, 60 * 60 * 20 );
+								}
+
 								if ( isset( $keyword_stats->totalsForAllResults )){
-									include ANALYTIFY_ROOT_PATH . '/views/admin/keywords-stats.php'; 
-									pa_include_keywords($wp_analytify,$keyword_stats);
+								  include ANALYTIFY_ROOT_PATH . '/views/admin/keywords-stats.php'; 
+								  pa_include_keywords($wp_analytify,$keyword_stats);
 								}
 
 								// End Keywords stats //
 
 								// Browser stats //
 
-								$browser_stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions', $start_date, $end_date, 'ga:browser,ga:operatingSystem', '-ga:sessions',false,5);
+								$browser_stats = get_transient( md5('show-browser-dashboard'.$start_date.$end_date) ) ;
+								if( $browser_stats === false ) {
+									$browser_stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions', $start_date, $end_date, 'ga:browser,ga:operatingSystem', '-ga:sessions',false,5);
+									set_transient(  md5('show-browser-dashboard'.$start_date.$end_date) , $browser_stats, 60 * 60 * 20 );
+								}
+
 								if ( isset( $browser_stats->totalsForAllResults ) ) {
-									include ANALYTIFY_ROOT_PATH . '/views/admin/browser-stats.php'; 
-									pa_include_browser( $wp_analytify,$browser_stats );
+								  include ANALYTIFY_ROOT_PATH . '/views/admin/browser-stats.php'; 
+								  pa_include_browser( $wp_analytify,$browser_stats );
 								}
 								
 								// End Browser stats //

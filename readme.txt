@@ -101,9 +101,9 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Changelog ==
 
-= 1.1.0 - 2015-07-10 =
-*
-*
+= 1.1.1 - 2015-08-29 =
+* New Feature: Added Cache for Keywords and Browser stats.
+* Compatibility with WordPres 4.3
 
 = 1.1.0 - 2015-07-10 =
 * New Feature: Added Cache for Country and City stats.
@@ -141,7 +141,7 @@ First, you need to Authenticate your GA account then you can select your web pro
 == Upgrade Notice ==
 
 = 1.1.1 =
-* [Must Update] Added Cache for City and Country stats. WooCommerce Addon released.
+* [Must Update] Added Cache for Keywords and Browser stats.
 
 
 
