@@ -60,6 +60,7 @@ if (! class_exists( 'Analytify_General_FREE' ) ) {
 	     */
 
 	    public function pa_connect() {
+
 			
 			$ga_google_authtoken = get_option('pa_google_token');
 
