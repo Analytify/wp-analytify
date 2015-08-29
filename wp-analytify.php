@@ -9,7 +9,7 @@
 * License: GPLv2+
 * Text Domain: wp-analytify
 * Min WP Version: 3.0
-* Max WP Version: 4.2.4
+* Max WP Version: 4.3
 * Domain Path: /lang
 */
 
