@@ -1,7 +1,7 @@
 === Analytify - Google Analytics Dashboard ===
 Contributors: hiddenpearls, Asif2BD
 Donate link: http://wp-analytify.com/details
-Tags: google analytics, WordPress Analytics, tracking,  analytics, google analytics dashboard, install analytics, analytify, yoast, analyticator, tracking, stats, e-commerce, track, add analytics, track visitor, statistics, WooCommerce, WooCommerce analytics, EDD, WooCommerce eCommerce, ecommerce tracking, woocommerce google analytics
+Tags: google analytics, WordPress Analytics, tracking,  analytics, google analytics dashboard, install analytics, analytify, yoast, analyticator, tracking, stats, e-commerce, track, add analytics, track visitor, statistics, WooCommerce, WooCommerce analytics, EDD, WooCommerce eCommerce, better google analytics, best google anylytics, ecommerce tracking, woocommerce google analytics, 
 Requires at least: 3.0
 Tested up to: 4.3
 Stable tag: 1.1.1
@@ -101,7 +101,7 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Changelog ==
 
-= 1.1.1 - 2015-08-29 =
+= 1.1.1 - 2015-08-30 =
 * New Feature: Added Cache for Keywords and Browser stats.
 * Compatibility with WordPres 4.3
 
