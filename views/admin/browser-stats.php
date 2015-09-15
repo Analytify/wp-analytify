@@ -12,7 +12,7 @@ function pa_include_browser( $current, $browser_stats ) {
                     function drawChart() {
                       
                       var data = google.visualization.arrayToDataTable([
-                                ['Broswer (OS)', 'Sessions'],
+                                ['Browser (OS)', 'Sessions'],
                                   <?php
                                   foreach ($browser_stats["rows"] as $b_stats) { ?>
                                               ['<?php echo $b_stats[0];?> (<?php echo $b_stats[1];?>)',  <?php echo $b_stats[2];?>],
@@ -26,12 +26,12 @@ function pa_include_browser( $current, $browser_stats ) {
                       var formatter = new google.visualization.NumberFormat({fractionDigits: 0});
                         formatter.format(data, 1);
 
-                      var chart = new google.visualization.ColumnChart(document.getElementById('broswer_chart'));
+                      var chart = new google.visualization.ColumnChart(document.getElementById('browser_chart'));
                       chart.draw(data, options);
 
                     }
       </script>
-      <div id="broswer_chart" style="width: 600px; height: 400px; margin:0 auto;"></div>
+      <div id="browser_chart" style="width: 600px; height: 400px; margin:0 auto;"></div>
     <?php } ?>
   </div>
   <div class="data_boxes_footer">
