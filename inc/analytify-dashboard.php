@@ -28,8 +28,8 @@ if( isset( $ed_date ) ) {
 	</h2>
 	<?php
 
-	$acces_token  = get_option( "post_analytics_token" );
-	if( $acces_token ) {
+	$access_token  = get_option( "post_analytics_token" );
+	if( $access_token ) {
 	
 	?>
 	<div id="col-container">
