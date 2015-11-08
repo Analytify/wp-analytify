@@ -46,7 +46,7 @@ $url = http_build_query( array(
 	'response_type'   =>	'code',
 	'state'			  => 	get_admin_url() . '/admin.php?page=analytify-settings',
 	'redirect_uri'    =>	ANALYTIFY_REDIRECT,
-	'client_id'       =>	get_option('ANALYTIFY_CLIENTID'),
+	'client_id'       =>	ANALYTIFY_CLIENTID,
 	'access_type'     =>	'offline',
 	'approval_prompt' =>	'auto'
 	)

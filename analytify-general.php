@@ -13,7 +13,8 @@
     define( 'ANALYTIFY_VERSION', '1.1.2');
     define( 'ANALYTIFY_TYPE', 'FREE');
     define( 'ANALYTIFY_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-
+	define( 'ANALYTIFY_CLIENTID', '958799092305-7p6jlsnmv1dn44a03ma00kmdrau2i31q.apps.googleusercontent.com' );
+	define( 'ANALYTIFY_CLIENTSECRET', 'Mzs1ODgJTpjk8mzQ3mbrypD3' );
     define( 'ANALYTIFY_REDIRECT', 'https://wp-analytify.com/api/' );
     define( 'ANALYTIFY_SCOPE', 'https://www.googleapis.com/auth/analytics' ); // readonly scope
 
@@ -38,8 +39,8 @@ if (! class_exists( 'Analytify_General_FREE' ) ) {
 			$this->client->setAccessType( 'offline' );
 			/*$this->client->setClientId( get_option('ANALYTIFY_CLIENTID'));
 			$this->client->setClientSecret( get_option('ANALYTIFY_CLIENTSECRET') );*/
-			$this->client->setClientId('958799092305-7p6jlsnmv1dn44a03ma00kmdrau2i31q.apps.googleusercontent.com');
-			$this->client->setClientSecret( 'Mzs1ODgJTpjk8mzQ3mbrypD3' );
+			$this->client->setClientId( ANALYTIFY_CLIENTID );
+			$this->client->setClientSecret( ANALYTIFY_CLIENTSECRET );
 
 			$this->client->setRedirectUri( ANALYTIFY_REDIRECT );
 			$this->client->setScopes( ANALYTIFY_SCOPE );
