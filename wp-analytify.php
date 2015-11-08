@@ -504,7 +504,7 @@ public function analytify_add_analytics_code() {
 	public function pa_settings_tabs( $current = 'authentication' ) {
 
 		$tabs = array( 
-			'authentication'		=>  'Start', 
+			'authentication'		=>  'Authentication', 
 			'profile'				=>  'Profile',
 			'admin'					=>  'Admin'
 			);
@@ -908,9 +908,10 @@ public function analytify_add_analytics_code() {
 			}
 		}
 
-		if (! isset( $acces_token ) || empty( $acces_token )) {
+		/* Show notices */
+		if (! isset( $acces_token ) || empty( $acces_token ) || empty( $ga_google_authtoken )) {
 
-			echo "<div class='error'><p><strong>" . __( "Analytify is not active. Please <a href='" . menu_page_url ( 'analytify-settings', false ) ."'>Authenticate</a> in order to get started using this plugin.", 'wp-analytify' )."</strong></p></div>"; 
+			echo "<div class='error'><p><b>Notice:</b> " . __( "<b><a style=\"text-decoration:none\" href='" . menu_page_url ( 'analytify-settings', false ) ."'>Connect</a></b> Analytify with your Google account.", 'wp-analytify' )."</p></div>"; 
 		}
 		else{
 
