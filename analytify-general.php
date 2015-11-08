@@ -36,10 +36,10 @@ if (! class_exists( 'Analytify_General_FREE' ) ) {
 			$this->client = new Analytify_Google_Client();
 			$this->client->setApprovalPrompt( 'force' );
 			$this->client->setAccessType( 'offline' );
-			$this->client->setClientId( get_option('ANALYTIFY_CLIENTID'));
-			$this->client->setClientSecret( get_option('ANALYTIFY_CLIENTSECRET') );
-/*			$this->client->setClientId('958799092305-7p6jlsnmv1dn44a03ma00kmdrau2i31q.apps.googleusercontent.com');
-			$this->client->setClientSecret( 'Mzs1ODgJTpjk8mzQ3mbrypD3' );*/
+			/*$this->client->setClientId( get_option('ANALYTIFY_CLIENTID'));
+			$this->client->setClientSecret( get_option('ANALYTIFY_CLIENTSECRET') );*/
+			$this->client->setClientId('958799092305-7p6jlsnmv1dn44a03ma00kmdrau2i31q.apps.googleusercontent.com');
+			$this->client->setClientSecret( 'Mzs1ODgJTpjk8mzQ3mbrypD3' );
 
 			$this->client->setRedirectUri( ANALYTIFY_REDIRECT );
 			$this->client->setScopes( ANALYTIFY_SCOPE );
