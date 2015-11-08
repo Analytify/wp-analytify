@@ -17,7 +17,6 @@
 	define( 'ANALYTIFY_CLIENTSECRET', 'Mzs1ODgJTpjk8mzQ3mbrypD3' );
     define( 'ANALYTIFY_REDIRECT', 'https://wp-analytify.com/api/' );
     define( 'ANALYTIFY_SCOPE', 'https://www.googleapis.com/auth/analytics' ); // readonly scope
-
     define( 'ANALYTIFY_STORE_URL', 'http://wp-analytify.com' );
     define( 'ANALYTIFY_PRODUCT_NAME', 'Analytify WordPress Plugin' );
 

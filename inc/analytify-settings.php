@@ -48,7 +48,7 @@ $url = http_build_query( array(
 	'redirect_uri'    =>	ANALYTIFY_REDIRECT,
 	'client_id'       =>	ANALYTIFY_CLIENTID,
 	'access_type'     =>	'offline',
-	'approval_prompt' =>	'auto'
+	'approval_prompt' =>	'force'
 	)
 );
 
