@@ -12,7 +12,7 @@ if( ! defined('ABSPATH') ){
  */
 class WPA_AJAX {
 
-	public static function init(){
+	public static function init() {
 
 		$ajax_calls = array(
 			'rated'	=> false,

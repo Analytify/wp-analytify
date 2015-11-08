@@ -3,7 +3,7 @@
 * Plugin Name: Analytify - Google Analytics Dashboard
 * Plugin URI: http://wp-analytify.com/details
 * Description: Analytify brings a brand new and modern feeling Google Analytics superbly integrated with WordPress Dashboard. It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. This provides Stats from Country, Referrers, Social media, General stats, New visitors, Returning visitors, Exit pages, Browser wise and Top keywords. This plugin provides the RealTime statistics in a new UI which is easy to understand & looks good.
-* Version: 1.1.1
+* Version: 1.1.2
 * Author: WPBrigade
 * Author URI: http://wpbrigade.com/
 * License: GPLv2+
@@ -27,86 +27,92 @@ if ( !class_exists( 'WP_Analytify' ) ) {
 		require_once WP_PLUGIN_DIR .'/wp-analytify/analytify-general.php';
 	}
 
-class WP_Analytify extends Analytify_General_FREE{
+	class WP_Analytify extends Analytify_General_FREE{
 
-	public $token  = false;
-	public $client = null;
+		public $token  = false;
+		public $client = null;
 
 	// Constructor
-	function __construct() {
-		
-		parent::__construct();
-		
-		if ( !class_exists( 'Analytify_Google_Client' ) ) {
+		function __construct() {
 
-			require_once ANALYTIFY_LIB_PATH . 'Google/Client.php';
-			require_once ANALYTIFY_LIB_PATH . 'Google/Service/Analytics.php';
-		}
+			parent::__construct();
 
-		add_action( 'plugin_action_links', array(
-					$this,
-					'pa_plugin_links'
+			if ( !class_exists( 'Analytify_Google_Client' ) ) {
+
+				require_once ANALYTIFY_LIB_PATH . 'Google/Client.php';
+				require_once ANALYTIFY_LIB_PATH . 'Google/Service/Analytics.php';
+			}
+
+			add_action( 'plugin_action_links', array(
+				$this,
+				'pa_plugin_links'
 				),10,2);
 
-		add_action( 'plugin_row_meta', array( 
-					$this,
-					'analytify_plugin_row_meta'
+			add_action( 'plugin_row_meta', array( 
+				$this,
+				'analytify_plugin_row_meta'
 				),10,2);
 
-		add_action( 'admin_enqueue_scripts', array( 
-					$this,
-					'pa_scripts'
+			add_action( 'admin_enqueue_scripts', array( 
+				$this,
+				'pa_scripts'
 				));
-		add_action( 'admin_enqueue_scripts', array( 
-					$this,
-					'pa_styles'
+			add_action( 'admin_enqueue_scripts', array( 
+				$this,
+				'pa_styles'
 				));
 
-		add_action( 'wp_enqueue_scripts', array( 
-					$this,
-					'pa_front_scripts'
+			add_action( 'wp_enqueue_scripts', array( 
+				$this,
+				'pa_front_scripts'
 				));
-		add_action( 'wp_enqueue_scripts', array( 
-					$this,
-					'pa_front_styles'
+			add_action( 'wp_enqueue_scripts', array( 
+				$this,
+				'pa_front_styles'
 				));
-	
-		add_action( 'admin_menu', array(
-					$this,
-					'wpa_add_menu'
+
+			add_action( 'admin_menu', array(
+				$this,
+				'wpa_add_menu'
 				));
+
+			add_action( 'admin_init', array(
+				$this,
+				'wpa_check_authentication'
+				));
+
 
 		// Insert Google Analytics Code
-		if( get_option( 'analytify_code') == 1  ) {
+			if( get_option( 'analytify_code') == 1  ) {
 
-			add_action( 'wp_head', array(
+				add_action( 'wp_head', array(
 					$this,
 					'analytify_add_analytics_code'
-				));
-		}
+					));
+			}
 
-		add_action( 'wp_ajax_nopriv_get_ajax_single_admin_analytics', array(
+			add_action( 'wp_ajax_nopriv_get_ajax_single_admin_analytics', array(
+				$this,
+				'get_ajax_single_admin_analytics'
+				));
+
+			add_action( 'wp_ajax_get_ajax_single_admin_analytics', array(
+				$this,
+				'get_ajax_single_admin_analytics'
+				));
+
+			add_action( 'wp_ajax_get_ajax_secret_keys', array(
+				$this,
+				'get_ajax_secret_keys'
+				));
+
+			if( get_option( 'analytify_disable_front') == 0 ) {
+
+				add_filter( 'the_content', array(
 					$this,
-					'get_ajax_single_admin_analytics'
-				));
-
-		add_action( 'wp_ajax_get_ajax_single_admin_analytics', array(
-					$this,
-					'get_ajax_single_admin_analytics'
-				));
-
-		add_action( 'wp_ajax_get_ajax_secret_keys', array(
-					$this,
-					'get_ajax_secret_keys'
-				));
-
-		if( get_option( 'analytify_disable_front') == 0 ) {
-
-			add_filter( 'the_content', array(
-						$this,
-						'get_single_front_analytics'
-			));        
-		}
+					'get_single_front_analytics'
+					));        
+			}
 
 		/* 
 		 * load Analytics under the EDIT POST Screen
@@ -115,18 +121,18 @@ class WP_Analytify extends Analytify_General_FREE{
 
 		if ( is_admin() ) {
 			add_action( 'load-post.php', array(
-						$this,
-						'load_metaboxes'
-					));
+				$this,
+				'load_metaboxes'
+				));
 		}
 
 		// Show welcome message when user activate plugin.
 		if ( get_option( 'show_tracking_pointer' ) != 1 ) {
-				
+
 			add_action( 'admin_print_footer_scripts', array( 
-						$this, 
-						'pa_welcome_message' 
-					   ) );
+				$this, 
+				'pa_welcome_message' 
+				) );
 		}    
 
 		/*
@@ -134,23 +140,38 @@ class WP_Analytify extends Analytify_General_FREE{
 		 */
 
 		add_action( 'init', array( 
-					$this, 
-					'analytify_textdomain') );
+			$this, 
+			'analytify_textdomain') );
 
 		//add_action( 'admin_footer', array( &$this, 'profile_warning' ) );
 		/*add_action( 'admin_footer', array( 
 					&$this, 
 					'profile_warning' 
-				));*/
-		add_action('admin_notices', array( 
-											$this,
-											'analytify_admin_notice')
-				);
+					));*/
+add_action('admin_notices', array( 
+	$this,
+	'analytify_admin_notice')
+);
 
-		add_action('admin_init', array( 
-											$this,
-											'analytify_nag_ignore')
-				);
+add_action('admin_init', array( 
+	$this,
+	'analytify_nag_ignore')
+);
+
+}
+
+	/**
+	 * Save Authentication code on return
+	 * @since 1.2.8
+	 */
+	public function wpa_check_authentication() {
+
+		if( isset($_GET['code']) && isset($_GET['state']) ) {
+
+			$key_google_token = sanitize_text_field( $_GET['code'] );
+			WP_Analytify::pt_save_data( $key_google_token );
+			wp_redirect( $_GET['state'].'&tab=profile' );
+		}
 	}
 
 	/*
@@ -167,12 +188,12 @@ class WP_Analytify extends Analytify_General_FREE{
 	 * Show analytics sections under the posts/pages in the metabox.
 	 */
 
-	function load_metaboxes() {
+	public function load_metaboxes() {
 
 		add_action( 'add_meta_boxes', array(
-					$this,
-					'show_admin_single_analytics_add_metabox'
-		));
+			$this,
+			'show_admin_single_analytics_add_metabox'
+			));
 	}
 
 	/* 
@@ -185,7 +206,7 @@ class WP_Analytify extends Analytify_General_FREE{
 		// Don't load boxes/sections if no any post type is selected.
 		if( !empty($post_types))
 			foreach ( $post_types as $post_type ) {
-					
+
 				add_meta_box('pa-single-admin-analytics', // $id
 						'Analytify: Google Analytics of this page.', // $title
 						array(
@@ -196,22 +217,22 @@ class WP_Analytify extends Analytify_General_FREE{
 						$post_type, // $posts
 						'normal',   // $context
 						'high'      // $priority
-					); 
+						); 
 			} //$post_types as $post_type
-	}
-
-
-	public static function get_ajax_secret_keys(){
-
-		$response = wp_remote_get( "http://wp-analytify.com/secret/keys.json" );
-		if( is_wp_error( $response ) ) {
-		   $error_message = $response->get_error_message();
-		   echo "Something went wrong: $error_message";
-		} else {
-		   print_r($response['body']);
 		}
-		die();
-	}
+
+
+		public static function get_ajax_secret_keys(){
+
+			$response = wp_remote_get( "http://wp-analytify.com/secret/keys.json" );
+			if( is_wp_error( $response ) ) {
+				$error_message = $response->get_error_message();
+				echo "Something went wrong: $error_message";
+			} else {
+				print_r($response['body']);
+			}
+			die();
+		}
 
 	/* 
 	 * Show Analytics of single post/page in wp-admin under EDIT screen.
@@ -223,84 +244,84 @@ class WP_Analytify extends Analytify_General_FREE{
 		$back_exclude_posts = explode( ',', get_option( 'post_analytics_exclude_posts_back' ));
 
 		if ( is_array( $back_exclude_posts ) ) {
-						
+
 			if ( in_array( $post->ID, $back_exclude_posts ) ) {
-							
+
 				_e('This post is excluded and will not show Analytics.');
-							
+
 				return;
 			}
 		}
-			
+
 		$urlPost = '';
 		$wp_analytify  = new WP_Analytify();
 		$urlPost = parse_url( get_permalink( $post->ID ) );
 		$start_date = ''; $end_date = ''; $urlpost = '' ;
 		$is_access_level = get_option( 'post_analytics_access_back' );
-			
+
 		if( $wp_analytify->pa_check_roles( $is_access_level ) ){ ?>
 
-			<div class="pa-filter">
-				<table cellspacing="0" cellpadding="0" width="400">
-					<tbody>
-						<tr>
-							<td width="0">
-								<input type="text" id="start_date" name="start_date">
-							</td>
-							<td width="0">
-								<input type="text" id="end_date" name="end_date">
-							</td>
-								<input type="hidden" name="urlpost" id="urlpost" value="<?php echo $urlPost['path']; ?>">
-							<td width="0">
-								<input type="button" id="view_analytics" name="view_analytics" value="View Analytics" class="button-primary btn-green">
-							</td>
-					   </tr>
-					</tbody>
-				</table>
-			</div>
-			<div class="loading" style="display:none">
-				<img src="<?php echo plugins_url('images/loading.gif', __FILE__);?>">
-			</div>
-			<div class="show-hide">
-					<?php $wp_analytify->get_single_admin_analytics( $start_date, $end_date, $post->ID, 0 ); ?>
-			</div>
-			<?php
-		}
-		else{
-			echo _e( 'You are not allowed to see stats', 'wp-analytify' );
-		}
+		<div class="pa-filter">
+			<table cellspacing="0" cellpadding="0" width="400">
+				<tbody>
+					<tr>
+						<td width="0">
+							<input type="text" id="start_date" name="start_date">
+						</td>
+						<td width="0">
+							<input type="text" id="end_date" name="end_date">
+						</td>
+						<input type="hidden" name="urlpost" id="urlpost" value="<?php echo $urlPost['path']; ?>">
+						<td width="0">
+							<input type="button" id="view_analytics" name="view_analytics" value="View Analytics" class="button-primary btn-green">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="loading" style="display:none">
+			<img src="<?php echo plugins_url('images/loading.gif', __FILE__);?>">
+		</div>
+		<div class="show-hide">
+			<?php $wp_analytify->get_single_admin_analytics( $start_date, $end_date, $post->ID, 0 ); ?>
+		</div>
+		<?php
 	}
+	else{
+		echo _e( 'You are not allowed to see stats', 'wp-analytify' );
+	}
+}
 
 	// Add Google Analytics JS code
-	public function analytify_add_analytics_code() {
-   
-		global $current_user;
+public function analytify_add_analytics_code() {
 
-		$roles = $current_user->roles;
+	global $current_user;
 
-		if ( isset( $roles[0] ) and in_array( $roles[0], get_option( 'display_tracking_code' ) )) {
+	$roles = $current_user->roles;
 
-		}
-		else{
+	if ( isset( $roles[0] ) and in_array( $roles[0], get_option( 'display_tracking_code' ) )) {
 
-			echo '<!-- This code is added by Analytify v - ' . ANALYTIFY_VERSION . ' http://wp-analytify.com/ !--> ';
+	}
+	else{
 
-			if ( get_option( 'analytify_tracking_code' ) == 'universal' ) { ?>
+		echo '<!-- This code is added by Analytify v - ' . ANALYTIFY_VERSION . ' http://wp-analytify.com/ !--> ';
 
-				<script>
-					  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-					  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-					  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-					  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-					  ga('create', '<?php echo get_option( "webPropertyId" );?>', 'auto');
-					  ga('send', 'pageview');
-				</script>
+		if ( get_option( 'analytify_tracking_code' ) == 'universal' ) { ?>
 
-			<?php 
-			}
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', '<?php echo get_option( "webPropertyId" );?>', 'auto');
+			ga('send', 'pageview');
+		</script>
 
-			if ( get_option( 'analytify_tracking_code' ) == 'ga' ) { ?>
-				
+		<?php 
+	}
+
+	if ( get_option( 'analytify_tracking_code' ) == 'ga' ) { ?>
+
 				<script type="text/javascript">//<![CDATA[
 					var _gaq = _gaq || [];
 					_gaq.push(['_setAccount', '<?php echo get_option( "webPropertyId" );?>']);
@@ -316,7 +337,7 @@ class WP_Analytify extends Analytify_General_FREE{
 					//]]>
 				</script>
 
-			<?php
+				<?php
 			}
 
 			echo '<!-- This code is added by Analytify  v - ' . ANALYTIFY_VERSION . ' !-->';
@@ -328,20 +349,20 @@ class WP_Analytify extends Analytify_General_FREE{
 	*/
 	public function pa_plugin_links( $links, $file ) {
 
-			static $this_plugin;
-			
-			if ( empty( $this_plugin ) ){ 
-				
-				$this_plugin = 'wp-analytify/wp-analytify.php';
-			}
+		static $this_plugin;
 
-			if ( $file == $this_plugin ) {
-				
-				$settings_link = '<a href="' . admin_url("admin.php?page=analytify-settings") . '">' . __( 'Settings', 'wp-analytify' ) . '</a> | <a href="' . admin_url("admin.php?page=analytify-dashboard") . '">' . __( 'Dashboard', 'wp-analytify' ) . '</a>';
-				array_unshift( $links, $settings_link );
-			}
-			
-			return $links;
+		if ( empty( $this_plugin ) ){ 
+
+			$this_plugin = 'wp-analytify/wp-analytify.php';
+		}
+
+		if ( $file == $this_plugin ) {
+
+			$settings_link = '<a href="' . admin_url("admin.php?page=analytify-settings") . '">' . __( 'Settings', 'wp-analytify' ) . '</a> | <a href="' . admin_url("admin.php?page=analytify-dashboard") . '">' . __( 'Dashboard', 'wp-analytify' ) . '</a>';
+			array_unshift( $links, $settings_link );
+		}
+
+		return $links;
 	}
 
 	/**
@@ -359,7 +380,7 @@ class WP_Analytify extends Analytify_General_FREE{
 		$links = array(
 			'<a href="http://wp-analytify.com/">' . esc_html__( 'Buy Pro Version', 'edd' ) . '</a>',
 			'<a href="http://wp-analytify.com/add-ons/">' . esc_html__( 'Add Ons', 'edd' ) . '</a>',
-		);
+			);
 
 		$input = array_merge( $input, $links );
 
@@ -371,18 +392,18 @@ class WP_Analytify extends Analytify_General_FREE{
 	 * Display warning if profiles are not selected.
 	 */
 	public function pa_check_warnings(){
-			
+
 		add_action( 'admin_footer', array( 
-					&$this, 
-					'profile_warning' 
-				));
+			&$this, 
+			'profile_warning' 
+			));
 	}
 
 	/**
 	 * Get current screen details
 	 */
 	public static function pa_page_file_path() {
-	
+
 		$screen = get_current_screen();
 
 		if ( strpos( $screen->base, 'analytify-settings' ) !== false ) {
@@ -400,14 +421,14 @@ class WP_Analytify extends Analytify_General_FREE{
 	 * Styling: loading stylesheets for the plugin.
 	 */
 	public function pa_styles( $page ) {
-			
-			wp_enqueue_style( 'wp-analytify-style', plugins_url('css/wp-analytify-style.css', __FILE__));
+
+		wp_enqueue_style( 'wp-analytify-style', plugins_url('css/wp-analytify-style.css', __FILE__));
 
 		   // wp_enqueue_style( 'ui-css', plugins_url('jquery-ui-theme/jquery-ui.css', __FILE__));
-			wp_enqueue_style( 'chosen', plugins_url('css/chosen.css', __FILE__));
+		wp_enqueue_style( 'chosen', plugins_url('css/chosen.css', __FILE__));
 		   // wp_enqueue_style( 'jquery-ui-tooltip-css', plugins_url('css/jquery.ui.tooltip.html.css', __FILE__) );
 
-			if ( get_option( 'show_tracking_pointer' ) != 1 ) wp_enqueue_style( 'wp-pointer' );
+		if ( get_option( 'show_tracking_pointer' ) != 1 ) wp_enqueue_style( 'wp-pointer' );
 	}
 
 	public function pa_front_styles( $page ) {
@@ -455,24 +476,24 @@ class WP_Analytify extends Analytify_General_FREE{
 	public static function wpa_add_menu() {
 
 		add_menu_page( ANALYTIFY_NICK, 'Analytify', 'manage_options', 'analytify-dashboard', array(
-						  __CLASS__,
-						 'pa_page_file_path'
-						), plugins_url('images/wp-analytics-logo.png', __FILE__),'2.1.9');
+			__CLASS__,
+			'pa_page_file_path'
+			), plugins_url('images/wp-analytics-logo.png', __FILE__),'2.1.9');
 
 		add_submenu_page( 'analytify-dashboard', ANALYTIFY_NICK . ' Dashboard', ' Dashboard', 'manage_options', 'analytify-dashboard', array(
-							  __CLASS__,
-							 'pa_page_file_path'
-							));
+			__CLASS__,
+			'pa_page_file_path'
+			));
 		
 		add_submenu_page( 'analytify-dashboard', ANALYTIFY_NICK . ' Campaign', ' Campaigns', 'manage_options', 'analytify-campaigns', array(
-								  __CLASS__,
-								 'pa_page_file_path'
-								));
+			__CLASS__,
+			'pa_page_file_path'
+			));
 
 		add_submenu_page( 'analytify-dashboard', ANALYTIFY_NICK . ' Settings', '<b style="color:#f9845b">Settings</b>', 'manage_options', 'analytify-settings', array(
-							  __CLASS__,
-							 'pa_page_file_path'
-							));
+			__CLASS__,
+			'pa_page_file_path'
+			));
 	}
 
 	/** 
@@ -481,25 +502,24 @@ class WP_Analytify extends Analytify_General_FREE{
 	 */
 
 	public function pa_settings_tabs( $current = 'authentication' ) {
-			
-			$tabs = array( 'authentication' =>  'Authentication', 
-							'profile'       =>  'Profile',
-							
-							'admin'         =>  'Admin'
-					);
 
-			echo '<div class="left-area">';
+		$tabs = array( 
+			'authentication'		=>  'Start', 
+			'profile'				=>  'Profile',
+			'admin'					=>  'Admin'
+			);
 
-			echo '<div id="icon-themes" class="icon32"><br></div>';
-			echo '<h2 class="nav-tab-wrapper">';
+		echo '<div class="left-area">';
+		echo '<div id="icon-themes" class="icon32"><br></div>';
+		echo '<h2 class="nav-tab-wrapper">';
 
-			foreach( $tabs as $tab => $name ) {
+		foreach( $tabs as $tab => $name ) {
 
-				$class = ( $tab == $current ) ? ' nav-tab-active' : '';
-				echo "<a class='nav-tab$class' href='?page=analytify-settings&tab=$tab'>$name</a>";
-			}
+			$class = ( $tab == $current ) ? ' nav-tab-active' : '';
+			echo "<a class='nav-tab$class' href='?page=analytify-settings&tab=$tab'>$name</a>";
+		}
 
-			echo '</h2>';
+		echo '</h2>';
 	}
 
 	/**
@@ -507,28 +527,28 @@ class WP_Analytify extends Analytify_General_FREE{
 	 */
 	public function pt_get_analytics_accounts() {
 
-			try {
+		try {
 
-				if( get_option( 'pa_google_token' ) !='' ) {
-					$profiles = $this->service->management_profiles->listManagementProfiles( "~all", "~all" );
-					return $profiles;
-				}
-				
-				else{
-					echo '<br /><p class="description">' . __( 'You must authenticate to access your web profiles.', 'wp-analytify' ) . '</p>';
-				}
+			if( get_option( 'pa_google_token' ) !='' ) {
+				$profiles = $this->service->management_profiles->listManagementProfiles( "~all", "~all" );
+				return $profiles;
+			}
 
+			else{
+				echo '<br /><p class="description">' . __( 'You must authenticate to access your web profiles.', 'wp-analytify' ) . '</p>';
 			}
-			
-			catch (Exception $e) {
-				die('An error occured: ' . $e->getMessage() . '\n');
-			}
+
+		}
+
+		catch (Exception $e) {
+			die('An error occured: ' . $e->getMessage() . '\n');
+		}
 	}
 
 	public function pa_setting_url() {
 		
 		return admin_url('admin.php?page=analytify-settings');
-	
+
 	}
 
 
@@ -545,19 +565,19 @@ class WP_Analytify extends Analytify_General_FREE{
 	 */
 	public function profile_warning() {
 
-			$profile_id     =   get_option( "pt_webprofile" );
-			$acces_token    =   get_option( "post_analytics_token" );
+		$profile_id     =   get_option( "pt_webprofile" );
+		$acces_token    =   get_option( "post_analytics_token" );
 
-			if (! isset( $acces_token ) || empty( $acces_token )) {
-			   
-			   echo "<div id='message' class='error'><p><strong>" . __( "Analytify is not active. Please <a href='" . menu_page_url ( 'analytify-settings', false ) ."'>Authenticate</a> in order to get started using this plugin.", 'wp-analytify' )."</p></div>"; 
+		if (! isset( $acces_token ) || empty( $acces_token )) {
+
+			echo "<div id='message' class='error'><p><strong>" . __( "Analytify is not active. Please <a href='" . menu_page_url ( 'analytify-settings', false ) ."'>Authenticate</a> in order to get started using this plugin.", 'wp-analytify' )."</p></div>"; 
+		}
+		else{
+
+			if (! isset( $profile_id ) || empty( $profile_id )){
+				echo '<div class="error"><p><strong>' . __( 'Google Analytics Profile is not set. Set the <a href="' . menu_page_url ( 'analytify-settings', false ) . '&tab=profile">Profile</a> ', 'wp-analytify' ) . '</p></div>';
 			}
-			else{
-				
-				if (! isset( $profile_id ) || empty( $profile_id )){
-					echo '<div class="error"><p><strong>' . __( 'Google Analytics Profile is not set. Set the <a href="' . menu_page_url ( 'analytify-settings', false ) . '&tab=profile">Profile</a> ', 'wp-analytify' ) . '</p></div>';
-				}
-			}
+		}
 	}
 
 
@@ -581,9 +601,9 @@ class WP_Analytify extends Analytify_General_FREE{
 			}
 
 			if ( is_array( get_option( 'post_analytics_exclude_posts_front' ) ) ) {
-					
+
 				if ( in_array( get_the_ID(), get_option( 'post_analytics_exclude_posts_front' ) ) ) {
-							
+
 					return $content;
 				}
 			}
@@ -593,9 +613,9 @@ class WP_Analytify extends Analytify_General_FREE{
 				
 				$post_analytics_settings_front = array();
 				$post_analytics_settings_front = get_option( 'post_analytics_settings_front' );
-			  
+
 				$urlPost =  parse_url( get_permalink( $post->ID ) );
-			
+
 				if ( $urlPost['host'] == 'localhost' ) 
 					$filter = 'ga:pagePath==/'; //.$u_post['path'];
 				else 
@@ -607,7 +627,7 @@ class WP_Analytify extends Analytify_General_FREE{
 				}
 				else {
 
-					 $start_date = get_the_time('Y-m-d', $post->ID);   
+					$start_date = get_the_time('Y-m-d', $post->ID);   
 				}
 
 				$end_date = date('Y-m-d');
@@ -618,18 +638,18 @@ class WP_Analytify extends Analytify_General_FREE{
 
 				if(! empty( $post_analytics_settings_front )){
 
-						if (is_array( $post_analytics_settings_front )){
+					if (is_array( $post_analytics_settings_front )){
 
-							$stats = $this->pa_get_analytics( 'ga:sessions,ga:bounces,ga:newUsers,ga:entrances,ga:pageviews,ga:sessionDuration,ga:avgTimeOnPage,ga:users',$start_date, $end_date, false, false, $filter);
+						$stats = $this->pa_get_analytics( 'ga:sessions,ga:bounces,ga:newUsers,ga:entrances,ga:pageviews,ga:sessionDuration,ga:avgTimeOnPage,ga:users',$start_date, $end_date, false, false, $filter);
 
-							if ( isset( $stats->totalsForAllResults ) ) {
+						if ( isset( $stats->totalsForAllResults ) ) {
 
-								include ANALYTIFY_ROOT_PATH . '/views/front/general-stats.php'; 
-								pa_include_general( $this, $stats);
-							}
+							include ANALYTIFY_ROOT_PATH . '/views/front/general-stats.php'; 
+							pa_include_general( $this, $stats);
 						}
+					}
 				}
-					  
+
 				$content .= ob_get_contents();
 				ob_get_clean();
 			}
@@ -665,9 +685,9 @@ class WP_Analytify extends Analytify_General_FREE{
 	public function get_single_admin_analytics( $start_date = '', $end_date = '', $postID = 0, $ajax = 0 ) {
 
 		global $post;
-			
+
 			//$urlPost = parse_url( get_permalink( $post->ID ) );
-			
+
 		if ( $postID == 0 ) {
 			$u_post = '/'; //$urlPost['path'];
 		}
@@ -678,7 +698,7 @@ class WP_Analytify extends Analytify_General_FREE{
 		if ( $u_post['host'] == 'localhost' ) 
 			$filter = false;
 		else
-		   $filter = 'ga:pagePath==' .$u_post['path']. '';
+			$filter = 'ga:pagePath==' .$u_post['path']. '';
 
 
 		if ( $start_date == '' ) {
@@ -696,7 +716,7 @@ class WP_Analytify extends Analytify_General_FREE{
 			$e_date = date('Y-m-d');
 		}   
 		else{
-				$e_date = $end_date;
+			$e_date = $end_date;
 		}
 
 		$show_settings = array();
@@ -712,9 +732,9 @@ class WP_Analytify extends Analytify_General_FREE{
 		if( !empty( $show_settings )){
 
 			if (is_array( $show_settings )){
-					
+
 				if (in_array( 'show-overall-back', $show_settings )) {
-					   
+
 					$stats = $this->pa_get_analytics( 'ga:sessions,ga:bounces,ga:newUsers,ga:entrances,ga:pageviews,ga:sessionDuration,ga:avgTimeOnPage,ga:users',$s_date, $e_date, false, false, $filter);
 
 					if ( isset( $stats->totalsForAllResults ) ) {
@@ -750,79 +770,79 @@ class WP_Analytify extends Analytify_General_FREE{
 	function pa_pretty_time( $time ) {
 
 			// Check if numeric
-			if ( is_numeric($time) ) {
+		if ( is_numeric($time) ) {
 
-				$value = array(
-					"years" => '00',
-					"days" => '00',
-					"hours" => '',
-					"minutes" => '',
-					"seconds" => ''
+			$value = array(
+				"years" => '00',
+				"days" => '00',
+				"hours" => '',
+				"minutes" => '',
+				"seconds" => ''
 				);
-				
-				if ($time >= 31556926) {
-					$value["years"] = floor($time / 31556926);
-					$time           = ($time % 31556926);
+
+			if ($time >= 31556926) {
+				$value["years"] = floor($time / 31556926);
+				$time           = ($time % 31556926);
 				} //$time >= 31556926
 
 				if ($time >= 86400)
-					{
+				{
 					$value["days"] = floor($time / 86400);
 					$time          = ($time % 86400);
 					} //$time >= 86400
-				if ($time >= 3600)
+					if ($time >= 3600)
 					{
-					$value["hours"] = str_pad(floor($time / 3600), 1, 0, STR_PAD_LEFT);
-					$time           = ($time % 3600);
+						$value["hours"] = str_pad(floor($time / 3600), 1, 0, STR_PAD_LEFT);
+						$time           = ($time % 3600);
 					} //$time >= 3600
-				if ($time >= 60)
+					if ($time >= 60)
 					{
-					$value["minutes"] = str_pad(floor($time / 60), 1, 0, STR_PAD_LEFT);
-					$time             = ($time % 60);
+						$value["minutes"] = str_pad(floor($time / 60), 1, 0, STR_PAD_LEFT);
+						$time             = ($time % 60);
 					} //$time >= 60
 					$value["seconds"] = str_pad(floor($time), 1, 0, STR_PAD_LEFT);
 				# Get the hour:minute:second version
-				if($value['hours']!=''){
-					$attach_hours='<sub>h</sub> ';
-				}
-				if($value['minutes']!=''){
-					$attach_min='<sub>min</sub> ';
-				}
-				if($value['seconds']!=''){
-					$attach_sec='<sub>sec</sub>';
-				}
-				return $value['hours'] .@$attach_hours. $value['minutes'] .@$attach_min. $value['seconds'].$attach_sec;
+					if($value['hours']!=''){
+						$attach_hours='<sub>h</sub> ';
+					}
+					if($value['minutes']!=''){
+						$attach_min='<sub>min</sub> ';
+					}
+					if($value['seconds']!=''){
+						$attach_sec='<sub>sec</sub>';
+					}
+					return $value['hours'] .@$attach_hours. $value['minutes'] .@$attach_min. $value['seconds'].$attach_sec;
 				//return $value['hours'] . ':' . $value['minutes'] . ':' . $value['seconds'];
 				} //is_numeric($time)
-			else
+				else
 				{
-				return false;
+					return false;
 				}
-	}
+			}
 
 
-	public function pa_check_roles( $access_level ) {
-			
-		if ( is_user_logged_in () && isset ( $access_level ) ) {
-				
-			global $current_user;
-			$roles = $current_user->roles;
+			public function pa_check_roles( $access_level ) {
+
+				if ( is_user_logged_in () && isset ( $access_level ) ) {
+
+					global $current_user;
+					$roles = $current_user->roles;
 
 				/*if ( ( current_user_can ( 'manage_options' ) ) ) {
 					
 					return true;
 				}*/
 				
-			if ( in_array ( $roles[0], $access_level ) ) {
+				if ( in_array ( $roles[0], $access_level ) ) {
 					
-				return true;
-			}
-			else {
+					return true;
+				}
+				else {
 					
-				return false;
+					return false;
+				}
 			}
 		}
-	}
 
 	/**
 	 * Show pointers for announcements 
@@ -843,22 +863,22 @@ class WP_Analytify extends Analytify_General_FREE{
 				if(typeof(jQuery().pointer) != 'undefined') {
 
 					$('#toplevel_page_analytify-dashboard').pointer({
-							
-							content: '<?php echo $pointer_content; ?>',
-							position: {
-								edge: 'left',
-								align: 'center'
-							},
-							close: function() {
-								$.post( ajaxurl, {
-									pointer: 'tracking',
-									wpa_allow:  $('#wpa_allow_tracking:checked').val(),
-									action: 'analytify_dismiss_pointer'
-								});
+
+						content: '<?php echo $pointer_content; ?>',
+						position: {
+							edge: 'left',
+							align: 'center'
+						},
+						close: function() {
+							$.post( ajaxurl, {
+								pointer: 'tracking',
+								wpa_allow:  $('#wpa_allow_tracking:checked').val(),
+								action: 'analytify_dismiss_pointer'
+							});
 
 								//alert('Thankyou!\nYour Coupon is <i>CouponCode</i>');
 							}
-					}).pointer('open');
+						}).pointer('open');
 				};
 			});
 			//]]>
@@ -881,16 +901,16 @@ class WP_Analytify extends Analytify_General_FREE{
 			/* Check that the user hasn't already clicked to ignore the message */
 			if ( ! get_user_meta($user_id, 'analytify_ignore_notice110') ) {
 
-					echo '<div class="updated"><p>';
-					printf(__('<b>Notice:</b> Enhanced eCommerce Tracking for <b><a href="https://wp-analytify.com/go/WooCommerce" target="_blank">WooCommerce</a></b> is finally available with Analytify! Increase sales and track - Product Clicks, Adds to cart, Checkouts and <a href="https://wp-analytify.com/go/WooCommerce-Announcement-blog" target="_blank">many more</a>. <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ));
-					echo "</p></div>";
+				echo '<div class="updated"><p>';
+				printf(__('<b>Notice:</b> Enhanced eCommerce Tracking for <b><a href="https://wp-analytify.com/go/WooCommerce" target="_blank">WooCommerce</a></b> is finally available with Analytify! Increase sales and track - Product Clicks, Adds to cart, Checkouts and <a href="https://wp-analytify.com/go/WooCommerce-Announcement-blog" target="_blank">many more</a>. <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ));
+				echo "</p></div>";
 
 			}
 		}
 
 		if (! isset( $acces_token ) || empty( $acces_token )) {
-			   
-		   echo "<div class='error'><p><strong>" . __( "Analytify is not active. Please <a href='" . menu_page_url ( 'analytify-settings', false ) ."'>Authenticate</a> in order to get started using this plugin.", 'wp-analytify' )."</strong></p></div>"; 
+
+			echo "<div class='error'><p><strong>" . __( "Analytify is not active. Please <a href='" . menu_page_url ( 'analytify-settings', false ) ."'>Authenticate</a> in order to get started using this plugin.", 'wp-analytify' )."</strong></p></div>"; 
 		}
 		else{
 
@@ -914,15 +934,15 @@ class WP_Analytify extends Analytify_General_FREE{
 
 }
 
-	$wp_analytify = new WP_Analytify();
+$wp_analytify = new WP_Analytify();
 
 } //end if
 
 //update_option('show_tracking_pointer', 0);
 
-	register_activation_hook( __FILE__,   	'install' );
-	register_deactivation_hook( __FILE__, 	'uninstall' );
-	register_uninstall_hook( __FILE__, 		'delete' );
+register_activation_hook( __FILE__,   	'install' );
+register_deactivation_hook( __FILE__, 	'uninstall' );
+register_uninstall_hook( __FILE__, 		'delete' );
 
 	/*
 	 * Activate options by default on installing the plugin.
@@ -961,27 +981,27 @@ class WP_Analytify extends Analytify_General_FREE{
 
 	function send_status_analytify( $email, $status ) {
 
-	    $url = "https://wp-analytify.com/plugin-manager/";
+		$url = "https://wp-analytify.com/plugin-manager/";
 
-	    if ( $email == "" ) {
-	      $email = "track@wp-analytify.com";
-	    }
+		if ( $email == "" ) {
+			$email = "track@wp-analytify.com";
+		}
 
-	    $fields = array(
-	        "email" 		=> $email ,
-	        "site" 			=> get_site_url(),
-	        "status" 		=> $status,
-	        "type"			=> 'FREE'
-	    );
+		$fields = array(
+			"email" 		=> $email ,
+			"site" 			=> get_site_url(),
+			"status" 		=> $status,
+			"type"			=> 'FREE'
+			);
 
-	    wp_remote_post( $url, array(
-	        "method" => "POST",
-	        "timeout" => 5,
-	        "httpversion" => "1.0",
-	        "blocking" => false,
-	        "headers" => array(),
-	        "body" => $fields
-	        )
-	    );
+		wp_remote_post( $url, array(
+			"method" => "POST",
+			"timeout" => 5,
+			"httpversion" => "1.0",
+			"blocking" => false,
+			"headers" => array(),
+			"body" => $fields
+			)
+		);
 	}
-?>
+	?>
