@@ -142,8 +142,45 @@ if (isset($_POST[ "clear" ])) {
 
 					<tr>
 						<td width="877" colspan="2">
-						<input type="checkbox" name="" id="" value="" />
+						<input type="checkbox" name="auth_step" id="auth_step" value="Yes" />
 							<?php echo esc_html_e( 'Do you want to use your own API keys ?', 'wp-analytify' ); ?>
+						</td>
+					</tr>
+
+					<tr class="user_keys">
+						<td colspan="2"><p class="description"> You need to create a Project in Google <a target="_blank" href="https://console.developers.google.com/project">Console</a>. Read this simple 3 minutes <a target="_blank" href="http://wp-analytify.com/google-api-tutorial">tutorial</a> to get your ClientID, Client Secret and API Key and enter them in below inputs.</p></td>
+					</tr>
+
+					<tr class="user_keys">
+
+						<th><?php esc_html_e('ClientID:')?></th>
+						<td>
+							<input type="text" placeholder="<?php esc_html_e('Your ClientID')?>" name="analytify_clientid" id="analytify_clientid" value="<?php echo get_option('ANALYTIFY_CLIENTID'); ?>" style="width:450px;"/>
+						</td>
+					</tr>
+
+					
+
+					<tr class="user_keys">
+						<th><?php esc_html_e('Client Secret:')?></th>
+						<td>
+							<input type="text" placeholder="<?php esc_html_e('Your Client Secret')?>" name="analytify_clientsecret" id="analytify_clientsecret" value="<?php echo get_option('ANALYTIFY_CLIENTSECRET'); ?>" style="width:450px;"/>
+						</td>
+					</tr>
+
+					<tr class="user_keys">
+						<th width="115"><?php esc_html_e( 'API Key:' )?></th>
+						<td width="877">
+							<input type="text" placeholder="<?php esc_html_e('Your API Key')?>" name="analytify_apikey" id="analytify_apikey" value="<?php echo get_option('ANALYTIFY_DEV_KEY'); ?>" style="width:450px;"/>
+						</td>
+					</tr>
+
+					<tr class="user_keys">
+						<th></th>
+						<td>
+							<p class="submit">
+								<input type="submit" class="button-primary" value="Save Changes" name="save_code" />
+							</p>
 						</td>
 					</tr>
 
@@ -153,82 +190,6 @@ if (isset($_POST[ "clear" ])) {
 						</td>
 					</tr>
 
-					<!-- <tr>
-						<th></th>
-						
-						<td>
-							<p class="description"> To fully enjoy this plugin, you need to create a Project in Google <a target="_blank" href="https://console.developers.google.com/project">Console</a>. Read this simple 3 minutes <a target="_blank" href="http://wp-analytify.com/google-api-tutorial">tutorial</a> to get your ClientID, Client Secret and API Key and enter them in below inputs.</p>
-						</td>
-					</tr> -->
-
-					<!-- <tr>
-						<th></th>
-						
-						<td>
-							<input type="radio" value="user_keys" <?php if(!get_option('ANALYTIFY_CLIENTID')) echo 'checked'; ?> name="auth_step" id="user_keys" />  Step 1. Enter Your API Keys<br />
-							<?php
-
-							if( get_option('ANALYTIFY_CLIENTID') and get_option('ANALYTIFY_CLIENTSECRET') and get_option('ANALYTIFY_DEV_KEY') ) {
-								?>
-								<input type="radio" checked value="user_access_code" name="auth_step" id ="user_access_code" />  Step 2. Enter Access Code<br />
-								<?php 
-							}
-							?>
-						</td>
-					</tr> -->
-
-					<!-- <tr class="user_keys">
-						<th></th>
-						<td>
-							<span><a href="#nogo" id="populate_keys">Auto Populate following fields</a></span>
-						</td>
-					</tr>
-					<tr class="user_keys">
-						<th></th>
-						<td>
-							<input type="text" placeholder="<?php esc_html_e('Your ClientID')?>" name="analytify_clientid" id="analytify_clientid" value="<?php echo get_option('ANALYTIFY_CLIENTID'); ?>" style="width:450px;"/>
-							<p class="description"><?php esc_html_e('ClientID:')?></p>
-						</td>
-					</tr>
-
-					<tr class="user_keys">
-						<th></th>
-						<td>
-							<input type="text" placeholder="<?php esc_html_e('Your Client Secret')?>" name="analytify_clientsecret" id="analytify_clientsecret" value="<?php echo get_option('ANALYTIFY_CLIENTSECRET'); ?>" style="width:450px;"/>
-							<p class="description"><?php esc_html_e('Client Secret:')?> </p>
-						</td>
-					</tr>
-
-
-					<tr class="user_keys">
-						<th width="115"></th>
-						<td width="877">
-							<input type="text" placeholder="<?php esc_html_e('Your API Key')?>" name="analytify_apikey" id="analytify_apikey" value="<?php echo get_option('ANALYTIFY_DEV_KEY'); ?>" style="width:450px;"/>
-							<p class="description"><?php esc_html_e( 'API Key:' )?></p>
-						</td>
-					</tr>
-
-					<tr class="user_access_code">
-						<th width="115"></th>
-						<td width="877">
-							<a target="_blank" id="get_access_code_link" href="javascript:void(0);" onclick="window.open('https://accounts.google.com/o/oauth2/auth?<?php echo $url ?>','activate','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');">Authenticate with your Google account</a>
-						</td>
-					</tr>
-					<tr class="user_access_code" id="paste_access_code">
-						<th></th>
-						<td>
-							<input type="text" name="key_google_token" placeholder="<?php esc_html_e('Paste your Google code here')?>" value="<?php echo get_option( 'post_analytics_token'); ?>" style="width:450px;"/>
-							<p class="description">Paste your Google code here.</p>
-						</td>
-					</tr>
-					<tr>
-						<th></th>
-						<td>
-							<p class="submit">
-								<input type="submit" class="button-primary" value="Save Changes" name="save_code" />
-							</p>
-						</td>
-					</tr> -->
 					<?php } ?>
 				</tbody>
 			</table>

@@ -4,7 +4,7 @@ height2 = 0,
 height3 = 0;
 
 jQuery(document).ready(function ($) {
-	
+
 	$(".analytify-chosen").chosen();
 	$('.remove-stats').remove();
 	$("#start_date").datepicker({
@@ -26,7 +26,7 @@ jQuery(document).ready(function ($) {
 		},
 		yearRange: '-9y:c+nn'       
 	}).datepicker('setDate',new Date());
-	
+
 
 	$("#view_analytics").click(function () {
 
@@ -56,19 +56,20 @@ jQuery(document).ready(function ($) {
 
 	});
 
-	$('input[name="auth_step"]').on("change",function () {
+	
 
-		$('.' + $('input[name="auth_step"]:checked').val()).show();
-		$('.' + $('input[name="auth_step"]:not(:checked)').val()).hide();
+	$( "input[name=auth_step]" ).on( "change", function() {
+
+		if( $('#auth_step').is(":checked") ) {
+
+			$('.user_keys').show();
+		
+		}else{
+
+			$('.user_keys').hide();
+		}
 
 	});
-
-
-	$('input[name="auth_step"]').each( function () {
-		console.log($(this).val());
-		if($(this).is(':checked')) $('.' +$(this).val()).show();
-	});
-
 
 
 	$('#populate_keys').on("click",function(){
@@ -81,7 +82,7 @@ jQuery(document).ready(function ($) {
 
 			success: function (data, textStatus, XMLHttpRequest) {
 				var obj = JSON.parse(data);
-				
+
 				$('#analytify_clientid').val(obj[0].id);
 				$('#analytify_clientsecret').val(obj[0].secret);
 				$('#analytify_apikey').val(obj[0].key);
@@ -149,7 +150,7 @@ jQuery(window).resize(function($){
 	jQuery(".keywordscont").each(function(){
 		jQuery(this).css("min-height",height2);
 	});
-	
+
 	jQuery(".stats").each(function(){
 		jQuery(this).css("min-height",height3);
 	});
