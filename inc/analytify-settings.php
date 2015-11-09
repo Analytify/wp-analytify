@@ -493,7 +493,7 @@ if ( is_array ( get_option( 'post_analytics_settings_back' ) ) ) {
 					</tr>
 
 					<tr class="user_keys">
-						<td colspan="2"><p class="description"> You need to create a Project in Google <a target="_blank" href="https://console.developers.google.com/project">Console</a>. Read this simple 3 minutes <a target="_blank" href="http://wp-analytify.com/google-api-tutorial">tutorial</a> to get your ClientID, Client Secret and API Key and enter them in below inputs.</p></td>
+						<td colspan="2"><p class="description"> You need to create a Project in Google <a target="_blank" href="https://console.developers.google.com/project">Console</a>. Read this simple 3 minutes <a target="_blank" href="http://wp-analytify.com/google-api-tutorial-new">tutorial</a> to get your ClientID, Client Secret, Redirect URI and API Key and enter them in below inputs.</p></td>
 					</tr>
 
 					<tr class="user_keys">
@@ -515,6 +515,7 @@ if ( is_array ( get_option( 'post_analytics_settings_back' ) ) ) {
 						<th width="115"><?php esc_html_e( 'API Key:' )?></th>
 						<td width="877">
 							<input type="text" placeholder="<?php esc_html_e('Your API Key')?>" name="analytify_apikey" id="analytify_apikey" value="<?php echo get_option('ANALYTIFY_DEV_KEY'); ?>" style="width:450px;"/>
+							<p class="description">(Optional)</p>
 						</td>
 					</tr>
 
@@ -522,6 +523,7 @@ if ( is_array ( get_option( 'post_analytics_settings_back' ) ) ) {
 						<th width="115"><?php esc_html_e( 'Redirect URI:' )?></th>
 						<td width="877">
 							<input type="text" placeholder="<?php esc_html_e('Your Redirect URI')?>" name="analytify_redirect_uri" id="analytify_redirect_uri" value="<?php echo get_option('ANALYTIFY_REDIRECT_URI'); ?>" style="width:450px;"/>
+							<p class="description">(Redirect URI is very important when you are using your own Keys)</p>
 						</td>
 					</tr>					
 
