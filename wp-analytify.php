@@ -32,7 +32,6 @@ if ( !class_exists( 'WP_Analytify' ) ) {
 		public $token  = false;
 		public $client = null;
 
-	// Constructor
 		function __construct() {
 
 			parent::__construct();
@@ -82,7 +81,7 @@ if ( !class_exists( 'WP_Analytify' ) ) {
 				));
 
 
-		// Insert Google Analytics Code
+			/*Insert Google Analytics Code*/
 			if( get_option( 'analytify_code') == 1  ) {
 
 				add_action( 'wp_head', array(
@@ -114,10 +113,10 @@ if ( !class_exists( 'WP_Analytify' ) ) {
 					));        
 			}
 
-		/* 
+		/**
 		 * load Analytics under the EDIT POST Screen
 		 * add action runs only for admin section and load metabox.
-		*/
+		 */
 
 		if ( is_admin() ) {
 			add_action( 'load-post.php', array(
@@ -127,7 +126,7 @@ if ( !class_exists( 'WP_Analytify' ) ) {
 		}
 
 		// Show welcome message when user activate plugin.
-		if ( get_option( 'show_tracking_pointer' ) != 1 ) {
+		if ( get_option( 'show_tracking_pointer_1' ) != 1 ) {
 
 			add_action( 'admin_print_footer_scripts', array( 
 				$this, 
@@ -428,11 +427,11 @@ public function analytify_add_analytics_code() {
 		wp_enqueue_style( 'chosen', plugins_url('css/chosen.css', __FILE__));
 		   // wp_enqueue_style( 'jquery-ui-tooltip-css', plugins_url('css/jquery.ui.tooltip.html.css', __FILE__) );
 
-		if ( get_option( 'show_tracking_pointer' ) != 1 ) wp_enqueue_style( 'wp-pointer' );
+		if ( get_option( 'show_tracking_pointer_1' ) != 1 ) wp_enqueue_style( 'wp-pointer' );
 	}
 
 	public function pa_front_styles( $page ) {
-		
+
 		if( get_option( 'analytify_disable_front') == 0 ) {
 
 			wp_enqueue_style( 'front-end-style', plugins_url('css/frontend_styles.css', __FILE__),false,ANALYTIFY_VERSION);            
@@ -451,7 +450,7 @@ public function analytify_add_analytics_code() {
 		wp_enqueue_script ( 'jquery-ui-tooltip' );
 		wp_enqueue_script ( 'jquery-ui-datepicker');
 
-		if ( get_option( 'show_tracking_pointer' ) != 1 ) wp_enqueue_script( 'wp-pointer' );
+		if ( get_option( 'show_tracking_pointer_1' ) != 1 ) wp_enqueue_script( 'wp-pointer' );
 
 	}
 
@@ -854,7 +853,7 @@ public function analytify_add_analytics_code() {
 		$pointer_content  = '<h3>Announcement:</h3>';
 		$pointer_content .= '<p><input type="checkbox" name="wpa_allow_tracking" value="1" id="wpa_allow_tracking"> ';
 		$pointer_content .= 'Help us making Analytify even better by sharing very basic plugin usage data.';
-		$pointer_content .= ' Opt-in and receive a $5 Off coupon in email for <a href="https://wp-analytify.com/upgrade-from-free">Analytify PRO</a>.</p>';
+		$pointer_content .= ' Opt-in and receive a $5 Off coupon for <a href="https://wp-analytify.com/upgrade-from-free">Analytify PRO</a>.</p>';
 		?>
 
 		<script type="text/javascript">
@@ -877,9 +876,9 @@ public function analytify_add_analytics_code() {
 								action: 'analytify_dismiss_pointer'
 							});
 
-								//alert('Thankyou!\nYour Coupon is <i>CouponCode</i>');
-							}
-						}).pointer('open');
+							if($('#wpa_allow_tracking:checked').val() == 1) alert('Thankyou!\nYour Coupon code is Analytify2015');
+						}
+					}).pointer('open');
 				};
 			});
 			//]]>
@@ -941,7 +940,7 @@ $wp_analytify = new WP_Analytify();
 
 } //end if
 
-//update_option('show_tracking_pointer', 0);
+//update_option('show_tracking_pointer_1', 0);
 
 register_activation_hook( __FILE__,   	'install' );
 register_deactivation_hook( __FILE__, 	'uninstall' );
@@ -967,7 +966,7 @@ register_uninstall_hook( __FILE__, 		'delete' );
 
 		delete_option( 'analytify_posts_stats' );
 		delete_option( 'pa_google_token' );
-		delete_option( 'show_tracking_pointer' );
+		delete_option( 'show_tracking_pointer_1' );
 		delete_option( 'post_analytics_token' );
 		
 	}

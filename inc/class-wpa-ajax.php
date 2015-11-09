@@ -53,8 +53,8 @@ class WPA_AJAX {
 			update_option('wpa_allow_tracking', 1);
 			send_status_analytify( get_option( 'admin_email' ), 'active');
 		}
-		
-		update_option('show_tracking_pointer', 1);
+
+		update_option('show_tracking_pointer_1', 1);
 		die();
 	}
 
