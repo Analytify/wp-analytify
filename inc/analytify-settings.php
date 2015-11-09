@@ -493,7 +493,7 @@ if ( is_array ( get_option( 'post_analytics_settings_back' ) ) ) {
 					</tr>
 
 					<tr class="user_keys">
-						<td colspan="2"><p class="description"> You need to create a Project in Google <a target="_blank" href="https://console.developers.google.com/project">Console</a>. Read this simple 3 minutes <a target="_blank" href="http://wp-analytify.com/google-api-tutorial-new">tutorial</a> to get your ClientID, Client Secret, Redirect URI and API Key and enter them in below inputs.</p></td>
+						<td colspan="2"><p class="description"> You need to create a Project in Google <a target="_blank" href="https://console.developers.google.com/project">Console</a>. Read this simple 3 minutes <a target="_blank" href="http://wp-analytify.com/google-api-tutorial">tutorial</a> to get your ClientID, Client Secret, Redirect URI and API Key and enter them in below inputs.</p></td>
 					</tr>
 
 					<tr class="user_keys">
