@@ -145,7 +145,7 @@ if ( !class_exists( 'WP_Analytify' ) ) {
 
 		//add_action( 'admin_footer', array( &$this, 'profile_warning' ) );
 		/*add_action( 'admin_footer', array( 
-					&$this, 
+					&$this,
 					'profile_warning' 
 					));*/
 add_action('admin_notices', array( 
@@ -506,7 +506,8 @@ public function analytify_add_analytics_code() {
 		$tabs = array( 
 			'authentication'		=>  'Authentication', 
 			'profile'				=>  'Profile',
-			'admin'					=>  'Admin'
+			'admin'					=>  'Admin',
+			'advanced'				=>  'Advanced'
 			);
 
 		echo '<div class="left-area">';
@@ -909,14 +910,15 @@ public function analytify_add_analytics_code() {
 		}
 
 		/* Show notices */
-		if (! isset( $acces_token ) || empty( $acces_token ) || empty( $ga_google_authtoken )) {
+		if (! isset( $acces_token ) || empty( $acces_token ) || empty( get_option( 'pa_google_token' ) )) {
 
 			echo "<div class='error'><p><b>Notice:</b> " . __( "<b><a style=\"text-decoration:none\" href='" . menu_page_url ( 'analytify-settings', false ) ."'>Connect</a></b> Analytify with your Google account.", 'wp-analytify' )."</p></div>"; 
 		}
 		else{
 
-			if (! isset( $profile_id ) || empty( $profile_id )){
-				echo '<div class="error"><p><strong>' . __( 'You need to set Google Analytics Profile <a href="' . menu_page_url ( 'analytify-settings', false ) . '&tab=profile">here</a> ', 'wp-analytify' ) . '.</strong></p></div>';
+			if ((! isset( $profile_id ) || empty( $profile_id )) && ! isset($_POST[ 'save_profile' ]) ) {
+
+				echo '<div class="error"><p>' . __( 'Congratulations! Analytify is now authenticated. Select your website profile <a href="' . menu_page_url ( 'analytify-settings', false ) . '&tab=profile">here</a> ', 'wp-analytify' ) . '</p></div>';
 			}
 		}
 	}

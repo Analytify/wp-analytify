@@ -16,37 +16,56 @@ if (! function_exists( 'http_build_query' )) {
 	return false;
 }
 
-	// Save access code
+/* Save user specific Keys, ID's and Redirect URI */
 if ( isset( $_POST[ 'save_code' ] ) ) {
 
-	if( isset($_POST['auth_step']) and $_POST['auth_step'] == 'user_keys' ) {
+	if( isset($_POST['auth_step']) and $_POST['auth_step'] == 'Yes' ) {
 
-		update_option('ANALYTIFY_CLIENTID' , $_POST['analytify_clientid']);
-		update_option('ANALYTIFY_CLIENTSECRET' , $_POST['analytify_clientsecret']);
-		update_option('ANALYTIFY_DEV_KEY' , $_POST['analytify_apikey']);
+		update_option('ANALYTIFY_USER_KEYS' , 		sanitize_text_field( $_POST['auth_step'] ));
+		update_option('ANALYTIFY_CLIENTID' , 		sanitize_text_field( $_POST['analytify_clientid'] ));
+		update_option('ANALYTIFY_CLIENTSECRET' , 	sanitize_text_field( $_POST['analytify_clientsecret'] ));
+		update_option('ANALYTIFY_DEV_KEY' , 		sanitize_text_field( $_POST['analytify_apikey'] ));
+		update_option('ANALYTIFY_REDIRECT_URI' , 	sanitize_text_field( $_POST['analytify_redirect_uri'] ));
 
 	}
 
+	if( !isset($_POST['auth_step']) ) {
 
-	if( isset($_POST['auth_step']) and $_POST['auth_step'] == 'user_access_code' ) {
+		update_option('ANALYTIFY_USER_KEYS' , 'No' );
+	}
+
+/*	if( isset($_POST['auth_step']) and $_POST['auth_step'] == 'user_access_code' ) {
 
 		$key_google_token = $_POST[ 'key_google_token' ];
 
 		if( $wp_analytify->pt_save_data( $key_google_token )){
 			$update_message = '<div id="setting-error-settings_updated" class="updated settings-error below-h2"><p><strong>Access code saved.</strong></p></div>';
 		}
-	}
+	}*/
 
 
 }
+
+
+if( get_option( 'ANALYTIFY_USER_KEYS') == 'Yes' ) {
+
+	$redirect_url	= get_option('ANALYTIFY_REDIRECT_URI');
+	$client_id		= get_option('ANALYTIFY_CLIENTID');
+
+}else{
+
+	$redirect_url	= ANALYTIFY_REDIRECT;
+	$client_id		= ANALYTIFY_CLIENTID;
+}
+
 
 $url = http_build_query( array(
 	'next'            =>	$wp_analytify->pa_setting_url(),
 	'scope'           =>	ANALYTIFY_SCOPE,
 	'response_type'   =>	'code',
-	'state'			  => 	get_admin_url() . '/admin.php?page=analytify-settings',
-	'redirect_uri'    =>	ANALYTIFY_REDIRECT,
-	'client_id'       =>	ANALYTIFY_CLIENTID,
+	'state'			  => 	get_admin_url() . 'admin.php?page=analytify-settings',
+	'redirect_uri'    =>	$redirect_url,
+	'client_id'       =>	$client_id,
 	'access_type'     =>	'offline',
 	'approval_prompt' =>	'force'
 	)
@@ -88,8 +107,9 @@ if (isset($_POST[ 'save_profile' ])) {
 	else{
 		update_option( 'analytify_code', 0 );
 	}
+
 	$update_message = '<div id="setting-error-settings_updated" class="updated settings-error below-h2"> 
-	<p><strong>Your Google Analytics Profile Saved.</strong></p></div>';
+	<p><strong>Success:</strong> Your Profile tab settings are saved.</p></div>';
 }
 
 	// Clear Authorization and other data
@@ -101,6 +121,7 @@ if (isset($_POST[ "clear" ])) {
 	delete_option( 'pa_google_token' );
 	delete_option( 'pa_welcome_message' );
 	delete_option( 'post_analytics_token' );
+
 	$update_message = '<div id="setting-error-settings_updated" class="updated settings-error below-h2"> 
 	<p><strong>Authentication Cleared login again.</strong></p></div>';
 }
@@ -142,50 +163,6 @@ if (isset($_POST[ "clear" ])) {
 
 					<tr>
 						<td width="877" colspan="2">
-						<input type="checkbox" name="auth_step" id="auth_step" value="Yes" />
-							<?php echo esc_html_e( 'Do you want to use your own API keys ?', 'wp-analytify' ); ?>
-						</td>
-					</tr>
-
-					<tr class="user_keys">
-						<td colspan="2"><p class="description"> You need to create a Project in Google <a target="_blank" href="https://console.developers.google.com/project">Console</a>. Read this simple 3 minutes <a target="_blank" href="http://wp-analytify.com/google-api-tutorial">tutorial</a> to get your ClientID, Client Secret and API Key and enter them in below inputs.</p></td>
-					</tr>
-
-					<tr class="user_keys">
-
-						<th><?php esc_html_e('ClientID:')?></th>
-						<td>
-							<input type="text" placeholder="<?php esc_html_e('Your ClientID')?>" name="analytify_clientid" id="analytify_clientid" value="<?php echo get_option('ANALYTIFY_CLIENTID'); ?>" style="width:450px;"/>
-						</td>
-					</tr>
-
-					
-
-					<tr class="user_keys">
-						<th><?php esc_html_e('Client Secret:')?></th>
-						<td>
-							<input type="text" placeholder="<?php esc_html_e('Your Client Secret')?>" name="analytify_clientsecret" id="analytify_clientsecret" value="<?php echo get_option('ANALYTIFY_CLIENTSECRET'); ?>" style="width:450px;"/>
-						</td>
-					</tr>
-
-					<tr class="user_keys">
-						<th width="115"><?php esc_html_e( 'API Key:' )?></th>
-						<td width="877">
-							<input type="text" placeholder="<?php esc_html_e('Your API Key')?>" name="analytify_apikey" id="analytify_apikey" value="<?php echo get_option('ANALYTIFY_DEV_KEY'); ?>" style="width:450px;"/>
-						</td>
-					</tr>
-
-					<tr class="user_keys">
-						<th></th>
-						<td>
-							<p class="submit">
-								<input type="submit" class="button-primary" value="Save Changes" name="save_code" />
-							</p>
-						</td>
-					</tr>
-
-					<tr>
-						<td width="877" colspan="2">
 							<a target="_self" class="button-primary authentication_btn" href="https://accounts.google.com/o/oauth2/auth?<?php echo $url ?>">Log in with Google Analytics Account</a>
 						</td>
 					</tr>
@@ -194,6 +171,7 @@ if (isset($_POST[ "clear" ])) {
 				</tbody>
 			</table>
 		</form>
+
 		<?php
 	} // endif
 // Choose profiles for dashboard and posts at front/back.
@@ -498,6 +476,70 @@ if ( is_array ( get_option( 'post_analytics_settings_back' ) ) ) {
 </form>
 <?php 
 }
+
+
+	// Advanced Tab section
+	if( $tab == 'advanced' ) {
+		?>
+
+		<form action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>" method="post" name="settings_form" id="settings_form">
+			<table width="1004" class="form-table">
+				<tbody>
+					<tr>
+						<td width="877" colspan="2">
+						<input type="checkbox" <?php if( get_option( 'ANALYTIFY_USER_KEYS' ) == 'Yes') echo 'checked'; ?> name="auth_step" id="auth_step" value="Yes" />
+							<?php echo esc_html_e( 'Do you want to use your own API keys ?', 'wp-analytify' ); ?>
+						</td>
+					</tr>
+
+					<tr class="user_keys">
+						<td colspan="2"><p class="description"> You need to create a Project in Google <a target="_blank" href="https://console.developers.google.com/project">Console</a>. Read this simple 3 minutes <a target="_blank" href="http://wp-analytify.com/google-api-tutorial">tutorial</a> to get your ClientID, Client Secret and API Key and enter them in below inputs.</p></td>
+					</tr>
+
+					<tr class="user_keys">
+
+						<th><?php esc_html_e('ClientID:')?></th>
+						<td>
+							<input type="text" placeholder="<?php esc_html_e('Your ClientID')?>" name="analytify_clientid" id="analytify_clientid" value="<?php echo get_option('ANALYTIFY_CLIENTID'); ?>" style="width:450px;"/>
+						</td>
+					</tr>
+
+					<tr class="user_keys">
+						<th><?php esc_html_e('Client Secret:')?></th>
+						<td>
+							<input type="text" placeholder="<?php esc_html_e('Your Client Secret')?>" name="analytify_clientsecret" id="analytify_clientsecret" value="<?php echo get_option('ANALYTIFY_CLIENTSECRET'); ?>" style="width:450px;"/>
+						</td>
+					</tr>
+
+					<tr class="user_keys">
+						<th width="115"><?php esc_html_e( 'API Key:' )?></th>
+						<td width="877">
+							<input type="text" placeholder="<?php esc_html_e('Your API Key')?>" name="analytify_apikey" id="analytify_apikey" value="<?php echo get_option('ANALYTIFY_DEV_KEY'); ?>" style="width:450px;"/>
+						</td>
+					</tr>
+
+					<tr class="user_keys">
+						<th width="115"><?php esc_html_e( 'Redirect URI:' )?></th>
+						<td width="877">
+							<input type="text" placeholder="<?php esc_html_e('Your Redirect URI')?>" name="analytify_redirect_uri" id="analytify_redirect_uri" value="<?php echo get_option('ANALYTIFY_REDIRECT_URI'); ?>" style="width:450px;"/>
+						</td>
+					</tr>					
+
+					<tr>
+						<th></th>
+						<td>
+							<p class="submit">
+								<input type="submit" class="button-primary" value="Save Changes" name="save_code" />
+							</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+
+		<?php
+	} // endif
+
 ?>
 
 </div>

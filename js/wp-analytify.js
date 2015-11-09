@@ -71,6 +71,9 @@ jQuery(document).ready(function ($) {
 
 	});
 
+	if( $('#auth_step').is(":checked") ) {
+			$('.user_keys').show();
+	}
 
 	$('#populate_keys').on("click",function(){
 
