@@ -16,6 +16,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 > **Google Analytics Premium Partner** - [Read](https://www.google.com/analytics/partners/company/5179388639313920/gadp/5629499534213120/app/5707702298738688/listing/5639274879778816) what Google is saying about us.
 
+**1-Click Install is now available in free version too**
 
 > **Premium Version:**<br>
 > This plugin has a premium version, which is more easy to install, and shows **Real-Time Stats**, **Campaign Stats**, **ShortCodes**, *Front-end Stats*  and more reports in backend and front-end. Also premium version has better e-commerce tracking (Buy [Add-ons](http://wp-analytify.com/add-ons/) with premium), and campaigns management. Get the affordable Premium Version from [WP-Analytify.com](http://wp-analytify.com/upgrade-from-free) . **Bundle price** is also available with Addons.
@@ -24,7 +25,6 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 **[WooCommerce Enhanced eCommerce](https://wp-analytify.com/go/WooCommerce)** tracking and report dashboard right inside your WordPress is now available. [Take a look](https://wp-analytify.com/go/WooCommerce).
 
 
-**1-Click Install is now available in free version too**
 
 **Features:**
 
