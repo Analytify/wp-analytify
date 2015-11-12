@@ -19,7 +19,8 @@ if ( !defined( 'ABSPATH' ) ) exit;
 ini_set( 'include_path', dirname(__FILE__) . '/lib/' );
 
 include_once( 'inc/class-wpa-ajax.php' );
-include_once( 'inc/class-wpa-admin-bar.php' );
+include_once( 'inc/wpa-core-functions.php' );
+include_once( 'inc/class-wpa-adminbar.php' );
 
 if ( !class_exists( 'WP_Analytify' ) ) {
 
@@ -710,7 +711,8 @@ public function analytify_add_analytics_code() {
 
 		global $post;
 
-			//$urlPost = parse_url( get_permalink( $post->ID ) );
+		if( wpa_check_profile_selection('Analytify', '<br /><b class="wpa_notice_error">Select your website profile at Analytify->settings->profile tab to load stats.</b>') ) return;
+		
 
 		if ( $postID == 0 ) {
 			$u_post = '/'; //$urlPost['path'];

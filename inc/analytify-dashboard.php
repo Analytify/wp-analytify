@@ -28,11 +28,7 @@ if( isset( $ed_date ) ) {
 	</h2>
 	<?php
 
-	if(! get_option( "pt_webprofile" )) {
-
-        echo '<div class="error"><p>' . __( 'Analytify Dashboard can\'t be loaded until your select your website profile <a href="' . menu_page_url ( 'analytify-settings', false ) . '&tab=profile">here</a> ', 'wp-analytify' ) . '</p></div>';
-        return ;
-    }
+	if( wpa_check_profile_selection('Analytify') ) return;
 
 	$access_token  = get_option( "post_analytics_token" );
 	if( $access_token ) {

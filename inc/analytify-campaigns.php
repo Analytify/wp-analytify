@@ -1,5 +1,5 @@
 <div class="wrap">
-	<h2 class='opt-title'><span id='icon-options-general' class='analytics-options'><img src="<?php echo plugins_url('wp-analytify-pro/images/wp-analytics-logo.png');?>" alt=""></span>
+	<h2 class='opt-title'><span id='icon-options-general' class='analytics-options'><img src="<?php echo plugins_url('wp-analytify/images/wp-analytics-logo.png');?>" alt=""></span>
 		<?php echo __( 'Analytify Campaigns Dashboard', 'wp-analytify' ); ?>
  	</h2>
 
