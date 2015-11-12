@@ -35,20 +35,22 @@ class WPA_ADMIN_BAR {
 
 
 			$wp_admin_bar->add_menu( array() );
-			$menus = array(
-				'editpage' => esc_html__( 'Edit Post' , 'wp-analytify' ),
-			);
 
-			foreach ($menus as $id => $title)
-			{
-				$wp_admin_bar->add_node(array(
-					'parent' => 'analytify',
-					'id'     => $id,
-					'title'  => $title,
-					'href'   => $edit_post_link.'#normal-sortables'
-				));
-			}
-		} else {
+			$wp_admin_bar->add_node(array(
+				'parent' => 'analytify',
+				'id'     => 'editpage',
+				'title'  => 'Edit Post',
+				'href'   => $edit_post_link.'#normal-sortables',
+				'meta'   => array( 'class' => 'wpa_admin_color')
+			) );
+
+				echo '<style>
+				#wpadminbar .quicklinks .menupop.hover ul .wpa_admin_color a{
+				 color : orange
+				 }
+				</style>';
+
+		}
 
 			$menus = array(
 				'dashboard' => esc_html__( 'Dashboard' , 'wp-analytify' ),
@@ -65,7 +67,7 @@ class WPA_ADMIN_BAR {
 
 				));
 			}
-		}
+
 	}
 
 }
