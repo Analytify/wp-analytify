@@ -4,7 +4,7 @@
 }
 
 i.analytify-shortcodes-icon{
-	
+
 	background-image: url('analytify-shortcode-button.png');
 }
 .opt-title{
@@ -58,13 +58,13 @@ i.analytify-shortcodes-icon{
 	float: left;
 }
 .wrap p.description {
-	
+
 	font-size: 15px;
 	margin-bottom: 20px;
 }
 .chosen-container-multi .chosen-choices,.chosen-container-active .chosen-choices{
 	padding: 5px !important;
-	
+
 }
 .chosen-container{
 	min-width: 300px;
@@ -128,7 +128,7 @@ i.analytify-shortcodes-icon{
 	-moz-border-radius: 5px;
 	-ms-border-radius: 5px;
 	-o-border-radius: 5px;
-	border-radius: 5px;	
+	border-radius: 5px;
 	}
 .arrow_btn{
 	width:25px;
@@ -206,18 +206,18 @@ i.analytify-shortcodes-icon{
 	padding:10px;
 }
 .chart {
-  width: 100%; 
+  width: 100%;
   height: 600px;
 }
 #tagcloud a:link, #tagcloud a:visited {
     text-decoration:none;
     color: #333;
 }
- 
+
 #tagcloud a:hover {
     text-decoration: underline;
 }
- 
+
 #tagcloud .keywordscont {
     color: #000;
 	padding: 0 10px;
@@ -240,22 +240,22 @@ i.analytify-shortcodes-icon{
     font-size: 25px;
  	position: relative;
 }
- 
+
 #tagcloud .small span{
     font-size: 30px;
     position: relative;
 }
- 
+
 #tagcloud .medium span{
     font-size:40px;
  	position: relative;
 }
- 
+
 #tagcloud .large span{
     font-size:50px;
  	position: relative;
 }
- 
+
 #tagcloud .largest span{
     font-size:55px;
   	position: relative;
@@ -538,7 +538,7 @@ i.analytify-shortcodes-icon{
 		width: 30%;
 		font-size: 12px;
 	}
-	
+
 }
 .selector-item{
 	margin-top: 10px;
@@ -556,7 +556,7 @@ i.analytify-shortcodes-icon{
 	width: 300px;
 }
 #TB_window,#TB_ajaxContent{
- 
+
 	-webkit-box-shadow:none  !important;
 	-moz-box-shadow:none !important;
 	-o-box-shadow:none !important;
@@ -572,14 +572,14 @@ i.analytify-shortcodes-icon{
 	-o-box-sizing: border-box;
 	box-sizing: border-box;
 	right: 0;
- 
+
 	overflow: auto;
 }
 .analytify-shortcode-edit-popup .popup-title{
 	margin-top: 0;
 }
 #TB_title{
- 
+
 	margin: 0 auto;
 	position: relative;
 	bottom: -3px;
@@ -792,4 +792,23 @@ body div.mycalander .ui-datepicker-calendar tr:last-child .ui-state-active {
 	font-weight:400;
 	font-size:15px;
 	border-top:0;
+}
+#wpadminbar>#wp-toolbar>#wp-admin-bar-root-default #wp-admin-bar-analytify .ab-icon{
+background:url("../images/wp-analytics-logo.png") no-repeat center 8px !important;
+width :20px;
+height :20px;
+background-size :20px;
+display : inline-block;
+top: 1px;
+	}
+
+@media screen and (max-width: 782px) {
+	#wpadminbar>#wp-toolbar>#wp-admin-bar-root-default #wp-admin-bar-analytify {
+		display: block;
+	}
+	#wpadminbar>#wp-toolbar>#wp-admin-bar-root-default #wp-admin-bar-analytify .ab-icon {
+		width :50px;
+		height :50px;
+		background-size :25px auto !important;
+	}
 }

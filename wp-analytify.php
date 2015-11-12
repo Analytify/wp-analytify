@@ -19,6 +19,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 ini_set( 'include_path', dirname(__FILE__) . '/lib/' );
 
 include_once( 'inc/class-wpa-ajax.php' );
+include_once( 'inc/class-wpa-admin-bar.php' );
 
 if ( !class_exists( 'WP_Analytify' ) ) {
 
@@ -47,25 +48,25 @@ if ( !class_exists( 'WP_Analytify' ) ) {
 				'pa_plugin_links'
 				),10,2);
 
-			add_action( 'plugin_row_meta', array( 
+			add_action( 'plugin_row_meta', array(
 				$this,
 				'analytify_plugin_row_meta'
 				),10,2);
 
-			add_action( 'admin_enqueue_scripts', array( 
+			add_action( 'admin_enqueue_scripts', array(
 				$this,
 				'pa_scripts'
 				));
-			add_action( 'admin_enqueue_scripts', array( 
+			add_action( 'admin_enqueue_scripts', array(
 				$this,
 				'pa_styles'
 				));
 
-			add_action( 'wp_enqueue_scripts', array( 
+			add_action( 'wp_enqueue_scripts', array(
 				$this,
 				'pa_front_scripts'
 				));
-			add_action( 'wp_enqueue_scripts', array( 
+			add_action( 'wp_enqueue_scripts', array(
 				$this,
 				'pa_front_styles'
 				));
@@ -110,7 +111,7 @@ if ( !class_exists( 'WP_Analytify' ) ) {
 				add_filter( 'the_content', array(
 					$this,
 					'get_single_front_analytics'
-					));        
+					));
 			}
 
 		/**
@@ -128,31 +129,31 @@ if ( !class_exists( 'WP_Analytify' ) ) {
 		// Show welcome message when user activate plugin.
 		if ( get_option( 'show_tracking_pointer_1' ) != 1 ) {
 
-			add_action( 'admin_print_footer_scripts', array( 
-				$this, 
-				'pa_welcome_message' 
+			add_action( 'admin_print_footer_scripts', array(
+				$this,
+				'pa_welcome_message'
 				) );
-		}    
+		}
 
 		/*
 		 * localization language file filter
 		 */
 
-		add_action( 'init', array( 
-			$this, 
+		add_action( 'init', array(
+			$this,
 			'analytify_textdomain') );
 
 		//add_action( 'admin_footer', array( &$this, 'profile_warning' ) );
-		/*add_action( 'admin_footer', array( 
+		/*add_action( 'admin_footer', array(
 					&$this,
-					'profile_warning' 
+					'profile_warning'
 					));*/
-add_action('admin_notices', array( 
+add_action('admin_notices', array(
 	$this,
 	'analytify_admin_notice')
 );
 
-add_action('admin_init', array( 
+add_action('admin_init', array(
 	$this,
 	'analytify_nag_ignore')
 );
@@ -195,7 +196,7 @@ add_action('admin_init', array(
 			));
 	}
 
-	/* 
+	/*
 	 * Show metabox under each Post type to display Analytics of single post/page in wp-admin
 	 */
 	public function show_admin_single_analytics_add_metabox() {
@@ -212,11 +213,11 @@ add_action('admin_init', array(
 							'WP_Analytify',
 							'show_admin_single_analytics'
 						), // $callback
-						
+
 						$post_type, // $posts
 						'normal',   // $context
 						'high'      // $priority
-						); 
+						);
 			} //$post_types as $post_type
 		}
 
@@ -233,7 +234,7 @@ add_action('admin_init', array(
 			die();
 		}
 
-	/* 
+	/*
 	 * Show Analytics of single post/page in wp-admin under EDIT screen.
 	 */
 	public static function show_admin_single_analytics() {
@@ -316,7 +317,7 @@ public function analytify_add_analytics_code() {
 			ga('send', 'pageview');
 		</script>
 
-		<?php 
+		<?php
 	}
 
 	if ( get_option( 'analytify_tracking_code' ) == 'ga' ) { ?>
@@ -350,7 +351,7 @@ public function analytify_add_analytics_code() {
 
 		static $this_plugin;
 
-		if ( empty( $this_plugin ) ){ 
+		if ( empty( $this_plugin ) ){
 
 			$this_plugin = 'wp-analytify/wp-analytify.php';
 		}
@@ -392,9 +393,9 @@ public function analytify_add_analytics_code() {
 	 */
 	public function pa_check_warnings(){
 
-		add_action( 'admin_footer', array( 
-			&$this, 
-			'profile_warning' 
+		add_action( 'admin_footer', array(
+			&$this,
+			'profile_warning'
 			));
 	}
 
@@ -434,7 +435,7 @@ public function analytify_add_analytics_code() {
 
 		if( get_option( 'analytify_disable_front') == 0 ) {
 
-			wp_enqueue_style( 'front-end-style', plugins_url('css/frontend_styles.css', __FILE__),false,ANALYTIFY_VERSION);            
+			wp_enqueue_style( 'front-end-style', plugins_url('css/frontend_styles.css', __FILE__),false,ANALYTIFY_VERSION);
 		}
 	}
 
@@ -458,7 +459,7 @@ public function analytify_add_analytics_code() {
 	 * Loading scripts js for the plugin.
 	 */
 	public function pa_front_scripts( $page ) {
-		
+
 		if( get_option( 'analytify_disable_front') == 0 ){
 
 			wp_enqueue_script ('jquery');
@@ -483,7 +484,7 @@ public function analytify_add_analytics_code() {
 			__CLASS__,
 			'pa_page_file_path'
 			));
-		
+
 		add_submenu_page( 'analytify-dashboard', ANALYTIFY_NICK . ' Campaign', ' Campaigns', 'manage_options', 'analytify-campaigns', array(
 			__CLASS__,
 			'pa_page_file_path'
@@ -495,18 +496,18 @@ public function analytify_add_analytics_code() {
 			));
 	}
 
-	/** 
+	/**
 	 * Creating tabs for settings
 	 * @since 1.0
 	 */
 
 	public function pa_settings_tabs( $current = 'authentication' ) {
 
-		$tabs = array( 
-			'authentication'		=>  'Authentication', 
-			'profile'				=>  'Profile',
-			'admin'					=>  'Admin',
-			'advanced'				=>  'Advanced'
+		$tabs = array(
+			'authentication'		 => 'Authentication',
+			'profile'				     => 'Profile',
+			'admin'					     => 'Admin',
+			'advanced'				   => 'Advanced'
 			);
 
 		echo '<div class="left-area">';
@@ -546,7 +547,7 @@ public function analytify_add_analytics_code() {
 	}
 
 	public function pa_setting_url() {
-		
+
 		return admin_url('admin.php?page=analytify-settings');
 
 	}
@@ -570,7 +571,7 @@ public function analytify_add_analytics_code() {
 
 		if (! isset( $acces_token ) || empty( $acces_token )) {
 
-			echo "<div id='message' class='error'><p><strong>" . __( "Analytify is not active. Please <a href='" . menu_page_url ( 'analytify-settings', false ) ."'>Authenticate</a> in order to get started using this plugin.", 'wp-analytify' )."</p></div>"; 
+			echo "<div id='message' class='error'><p><strong>" . __( "Analytify is not active. Please <a href='" . menu_page_url ( 'analytify-settings', false ) ."'>Authenticate</a> in order to get started using this plugin.", 'wp-analytify' )."</p></div>";
 		}
 		else{
 
@@ -582,15 +583,15 @@ public function analytify_add_analytics_code() {
 
 
 	public function get_single_front_analytics( $content ) {
-		
+
 		global $post, $wp_analytify;
 
 		$front_access = get_option( 'post_analytics_access' );
 
 		if ( is_single() || is_page() ) {
-			
+
 			$post_type = get_post_type( $post->ID );
-			
+
 			if( strlen( get_option( 'analytify_posts_stats_front' ) < 3) ) {
 				return $content;
 			}
@@ -610,16 +611,16 @@ public function analytify_add_analytics_code() {
 
 			// Showing stats to guests
 			if ( $front_access[0] == 'every-one' || $this->pa_check_roles( $front_access )) {
-				
+
 				$post_analytics_settings_front = array();
 				$post_analytics_settings_front = get_option( 'post_analytics_settings_front' );
 
 				$urlPost =  parse_url( get_permalink( $post->ID ) );
 
-				if ( $urlPost['host'] == 'localhost' ) 
+				if ( $urlPost['host'] == 'localhost' )
 					$filter = 'ga:pagePath==/'; //.$u_post['path'];
-				else 
-					$filter = 'ga:pagePath==' .$urlPost['path']. '';  
+				else
+					$filter = 'ga:pagePath==' .$urlPost['path']. '';
 
 				if( get_the_time('Y', $post->ID) < 2005 ) {
 
@@ -627,11 +628,11 @@ public function analytify_add_analytics_code() {
 				}
 				else {
 
-					$start_date = get_the_time('Y-m-d', $post->ID);   
+					$start_date = get_the_time('Y-m-d', $post->ID);
 				}
 
 				$end_date = date('Y-m-d');
-				
+
 				ob_start();
 
 				include ANALYTIFY_ROOT_PATH . '/inc/front-menus.php';
@@ -644,7 +645,7 @@ public function analytify_add_analytics_code() {
 
 						if ( isset( $stats->totalsForAllResults ) ) {
 
-							include ANALYTIFY_ROOT_PATH . '/views/front/general-stats.php'; 
+							include ANALYTIFY_ROOT_PATH . '/views/front/general-stats.php';
 							pa_include_general( $this, $stats);
 						}
 					}
@@ -655,14 +656,14 @@ public function analytify_add_analytics_code() {
 			}
 
 		}
-		
+
 		return $content;
 
 	}
 
 	/*
 	 * get the Analytics data from ajax() call
-	 * 
+	 *
 	 */
 
 	public function get_ajax_single_admin_analytics() {
@@ -680,7 +681,7 @@ public function analytify_add_analytics_code() {
 
 	/*
 	 * get the Analytics data for wp-admin posts/pages.
-	 * 
+	 *
 	 */
 	public function get_single_admin_analytics( $start_date = '', $end_date = '', $postID = 0, $ajax = 0 ) {
 
@@ -695,14 +696,14 @@ public function analytify_add_analytics_code() {
 			$u_post = parse_url( get_permalink( $postID ) );
 		}
 
-		if ( $u_post['host'] == 'localhost' ) 
+		if ( $u_post['host'] == 'localhost' )
 			$filter = false;
 		else
 			$filter = 'ga:pagePath==' .$u_post['path']. '';
 
 
 		if ( $start_date == '' ) {
-			
+
 			$s_date = get_the_time('Y-m-d', $post->ID);
 			if(get_the_time('Y', $post->ID) < 2005){
 				$s_date = '2005-01-01';
@@ -714,7 +715,7 @@ public function analytify_add_analytics_code() {
 
 		if ( $end_date == '' ) {
 			$e_date = date('Y-m-d');
-		}   
+		}
 		else{
 			$e_date = $end_date;
 		}
@@ -739,15 +740,15 @@ public function analytify_add_analytics_code() {
 
 					if ( isset( $stats->totalsForAllResults ) ) {
 
-						include ANALYTIFY_ROOT_PATH . '/views/admin/single-general-stats.php'; 
-						wpa_single_include_general( $this, $stats);                      
+						include ANALYTIFY_ROOT_PATH . '/views/admin/single-general-stats.php';
+						wpa_single_include_general( $this, $stats);
 					}
 				}
 			}
 		}
 	}
 
-	
+
 	/*
 	 * Pretty numbers
 	 */
@@ -829,23 +830,23 @@ public function analytify_add_analytics_code() {
 					$roles = $current_user->roles;
 
 				/*if ( ( current_user_can ( 'manage_options' ) ) ) {
-					
+
 					return true;
 				}*/
-				
+
 				if ( in_array ( $roles[0], $access_level ) ) {
-					
+
 					return true;
 				}
 				else {
-					
+
 					return false;
 				}
 			}
 		}
 
 	/**
-	 * Show pointers for announcements 
+	 * Show pointers for announcements
 	 */
 
 	public function pa_welcome_message() {
@@ -859,7 +860,7 @@ public function analytify_add_analytics_code() {
 		<script type="text/javascript">
 			//<![CDATA[
 			jQuery(document).ready( function($) {
-				
+
 				if(typeof(jQuery().pointer) != 'undefined') {
 
 					$('#toplevel_page_analytify-dashboard').pointer({
@@ -883,7 +884,7 @@ public function analytify_add_analytics_code() {
 			});
 			//]]>
 		</script>
-		
+
 		<?php
 	}
 
@@ -911,7 +912,7 @@ public function analytify_add_analytics_code() {
 		/* Show notices */
         if (! isset( $acces_token ) || empty( $acces_token ) || ! get_option( 'pa_google_token' ) ) {
 
-			echo "<div class='error'><p><b>Notice:</b> " . __( "<b><a style=\"text-decoration:none\" href='" . menu_page_url ( 'analytify-settings', false ) ."'>Connect</a></b> Analytify with your Google account.", 'wp-analytify' )."</p></div>"; 
+			echo "<div class='error'><p><b>Notice:</b> " . __( "<b><a style=\"text-decoration:none\" href='" . menu_page_url ( 'analytify-settings', false ) ."'>Connect</a></b> Analytify with your Google account.", 'wp-analytify' )."</p></div>";
 		}
 		else{
 
@@ -932,7 +933,7 @@ public function analytify_add_analytics_code() {
 		}
 	}
 
-	
+
 
 }
 
@@ -968,7 +969,7 @@ register_uninstall_hook( __FILE__, 		'delete' );
 		delete_option( 'pa_google_token' );
 		delete_option( 'show_tracking_pointer_1' );
 		delete_option( 'post_analytics_token' );
-		
+
 	}
 
 	function delete() {
@@ -977,7 +978,7 @@ register_uninstall_hook( __FILE__, 		'delete' );
 	}
 
 	/**
-	 * @param $email 
+	 * @param $email
 	 * @param $status
 	 */
 

@@ -90,7 +90,7 @@
 	-moz-transition-duration: 0.8s;
 	-o-transition-duration: 0.8s;
 	transition-duration: 0.8s;
-	 
+
 	-webkit-transition-property: -webkit-transform;
 	-moz-transition-property: -moz-transform;
 	-o-transition-property: -o-transform;
@@ -440,4 +440,23 @@ div.cs-skin-underline {
 	text-indent:-9999px;
 	border:0;
 	outline: none;
+}
+#wpadminbar>#wp-toolbar>#wp-admin-bar-root-default #wp-admin-bar-analytify .ab-icon{
+background:url("../images/wp-analytics-logo.png") no-repeat center 8px !important;
+width :20px;
+height :20px;
+background-size :20px;
+display : inline-block;
+top: 1px;
+	}
+
+@media screen and (max-width: 782px) {
+	#wpadminbar>#wp-toolbar>#wp-admin-bar-root-default #wp-admin-bar-analytify {
+		display: block;
+	}
+	#wpadminbar>#wp-toolbar>#wp-admin-bar-root-default #wp-admin-bar-analytify .ab-icon {
+		width :50px;
+		height :50px;
+		background-size :25px auto !important;
+	}
 }
