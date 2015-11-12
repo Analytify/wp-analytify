@@ -1,14 +1,14 @@
-=== Analytify - Google Analytics Dashboard ===
+=== Google Analytics Dashboard By Analytify ===
 Contributors: hiddenpearls, Asif2BD
 Donate link: http://paypal.me/Analytify
 Tags: google analytics, WordPress Analytics, tracking,  analytics, google analytics dashboard, install analytics, analytify, yoast, analyticator, tracking, stats, e-commerce, track, add analytics, track visitor, statistics, WooCommerce, WooCommerce analytics, EDD, WooCommerce eCommerce, better google analytics, best google anylytics, ecommerce tracking, woocommerce google analytics, 
 Requires at least: 3.0
 Tested up to: 4.3.1
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-1-Click setup and you get Google Analytics Dashboard inside your WordPress Admin Panel. Enhanced eCommerce support for WooCommerce is available too.
+Just 1-Click and you get Google Analytics Dashboard inside your WordPress Admin Panel. eCommerce Analytics for WooCommerce is available too.
 
 == Description ==
 
@@ -100,6 +100,12 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Changelog ==
 
+= 1.2.1 - 2015-11-13 =
+* Added brand new addons page.
+* Better dashboard loading check.
+* New Analytify Menu in Admin Bar.
+* Calendar start date is now post date for per post analytics.
+
 = 1.2.0 - 2015-11-10 =
 * 1-Click setup is now available.
 * Get install access to discount coupon if you share usage data with us.
@@ -145,8 +151,8 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Upgrade Notice ==
 
-= 1.2.0 =
-* [Must Update] Multiple bug fix, spelling correction, easy process for setup, and get $5 off coupon instantly.
+= 1.2.1 =
+* [Must Update] Multiple new features, better dashboard loading, new Admin Bar, new Addons page.
 
 
 == Donation ==
