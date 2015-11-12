@@ -15,7 +15,7 @@ jQuery(document).ready(function ($) {
 			$('#ui-datepicker-div').addClass('mycalander');
 		},
 		yearRange: '-9y:c+nn'       
-	}).datepicker('setDate',new Date());
+	});
 
 	$("#end_date").datepicker({
 		dateFormat : 'yy-mm-dd',

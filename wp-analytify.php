@@ -254,10 +254,24 @@ if ( !class_exists( 'WP_Analytify' ) ) {
 			}
 		}
 
-		$urlPost = '';
+		$urlPost 	= '';
+		$start_date = ''; 
+		$end_date 	= '';
+
 		$wp_analytify  = new WP_Analytify();
 		$urlPost = parse_url( get_permalink( $post->ID ) );
-		$start_date = ''; $end_date = ''; $urlpost = '' ;
+		
+		if( get_the_time('Y', $post->ID) < 2005 ) {
+
+			$start_date = '2005-01-01';
+		}
+		else {
+
+			$start_date = get_the_time('Y-m-d', $post->ID);   
+		}
+
+		$end_date = date('Y-m-d');
+
 		$is_access_level = get_option( 'post_analytics_access_back' );
 
 		if( $wp_analytify->pa_check_roles( $is_access_level ) ){ ?>
@@ -267,10 +281,10 @@ if ( !class_exists( 'WP_Analytify' ) ) {
 				<tbody>
 					<tr>
 						<td width="0">
-							<input type="text" id="start_date" name="start_date">
+							<input type="text" id="start_date" name="start_date" value="<?php echo $start_date;?>">
 						</td>
 						<td width="0">
-							<input type="text" id="end_date" name="end_date">
+							<input type="text" id="end_date" name="end_date" value="<?php echo $end_date;?>">
 						</td>
 						<input type="hidden" name="urlpost" id="urlpost" value="<?php echo $urlPost['path']; ?>">
 						<td width="0">
