@@ -812,3 +812,50 @@ top: 1px;
 		background-size :25px auto !important;
 	}
 }
+.wp-extension {
+	float: left;
+	box-sizing: border-box;
+	width: 350px;
+	height: 230px;
+	margin: 10px 20px 10px 0;
+	border: 1px solid #ccc;
+}
+.wp_analytify_woo,.wp_analytify_dash{
+	
+}
+.wp_analytify_woo .button-primary,.wp_analytify_dash .button-primary{
+	margin-bottom: -14px;
+  float: left;
+}
+.wp-extension p {
+	margin: 0;
+	padding: 10px;
+}
+
+.wp-extension h3 {
+	box-sizing: border-box;
+	height: 110px;
+	margin: 0;
+	padding: 20px 10px 0 135px;
+	border-bottom: 1px solid #ccc;
+	background: #fff no-repeat left 5px top 5px;
+	background-size: 115px 100px;
+}
+
+.wp-extension a {
+	text-decoration: none;
+}
+.wp_analytify_woo h3 {
+	background-image: url(../images/woo-commerc-logo.png) !important;
+}
+.wp_analytify_dash h3 {
+	background-image: url(../images/dbstats.png) !important;
+}
+
+.show-hide{
+	text-align: center;
+}
+.wpa_notice_error{
+
+	color: #dd3d36;
+}

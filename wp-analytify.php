@@ -148,15 +148,16 @@ if ( !class_exists( 'WP_Analytify' ) ) {
 					&$this,
 					'profile_warning'
 					));*/
-add_action('admin_notices', array(
-	$this,
-	'analytify_admin_notice')
-);
+		
+		add_action('admin_notices', array(
+			$this,
+			'analytify_admin_notice')
+		);
 
-add_action('admin_init', array(
-	$this,
-	'analytify_nag_ignore')
-);
+		add_action('admin_init', array(
+			$this,
+			'analytify_nag_ignore')
+		);
 
 }
 
@@ -412,6 +413,9 @@ public function analytify_add_analytics_code() {
 		else if ( strpos( $screen->base, 'analytify-campaigns' ) !== false ) {
 			include_once( ANALYTIFY_ROOT_PATH . '/inc/analytify-campaigns.php' );
 		}
+		else if ( strpos( $screen->base, 'analytify-addons' ) !== false ) {
+			include_once( ANALYTIFY_ROOT_PATH . '/inc/page-addons.php' );
+		}
 		else {
 			include( ANALYTIFY_ROOT_PATH . '/inc/analytify-dashboard.php' );
 		}
@@ -491,6 +495,11 @@ public function analytify_add_analytics_code() {
 			));
 
 		add_submenu_page( 'analytify-dashboard', ANALYTIFY_NICK . ' Settings', '<b style="color:#f9845b">Settings</b>', 'manage_options', 'analytify-settings', array(
+			__CLASS__,
+			'pa_page_file_path'
+			));
+
+		add_submenu_page( 'analytify-dashboard', ANALYTIFY_NICK . ' Addons', '<b>Add-ons</b>', 'manage_options', 'analytify-addons', array(
 			__CLASS__,
 			'pa_page_file_path'
 			));
