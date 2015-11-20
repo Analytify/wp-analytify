@@ -100,10 +100,10 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Changelog ==
 
-= 1.2.1 - 2015-11-13 =
-* Bug Fix : Top Pages option in Dashboard show incorrect values.
-* Bug Fix : Analytify Menu in Admin Bar redirect to wrong page.
-* New Feature : Added Cache For Operating System stats, Mobile Devices stats and Top Referrers stats
+= 1.2.2 - 2015-11-20 =
+* Bug Fix     : Top Pages option in Dashboard show incorrect values.
+* Bug Fix     : Analytify Menu in Admin Bar redirect to wrong page.
+* New Feature : Added Cache For Operating System stats, Mobile Devices stats and Top Referrers stats.
 
 = 1.2.1 - 2015-11-13 =
 * Added brand new addons page.
