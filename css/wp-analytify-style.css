@@ -799,7 +799,13 @@ width :20px;
 height :20px;
 background-size :20px;
 display : inline-block;
-top: 1px;
+top: -1px;
+	}
+	#toplevel_page_analytify-dashboard .wp-menu-image.dashicons-before {
+		line-height: 38px;
+	}
+	#toplevel_page_analytify-dashboard .wp-menu-image.dashicons-before img {
+		padding: 0;
 	}
 
 @media screen and (max-width: 782px) {
@@ -809,7 +815,7 @@ top: 1px;
 	#wpadminbar>#wp-toolbar>#wp-admin-bar-root-default #wp-admin-bar-analytify .ab-icon {
 		width :50px;
 		height :50px;
-		background-size :25px auto !important;
+		background-size :32px auto !important;
 	}
 }
 .wp-extension {
@@ -821,7 +827,7 @@ top: 1px;
 	border: 1px solid #ccc;
 }
 .wp_analytify_woo,.wp_analytify_dash{
-	
+
 }
 .wp_analytify_woo .button-primary,.wp_analytify_dash .button-primary{
 	margin-bottom: -14px;

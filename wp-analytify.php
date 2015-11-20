@@ -149,7 +149,7 @@ if ( !class_exists( 'WP_Analytify' ) ) {
 					&$this,
 					'profile_warning'
 					));*/
-		
+
 		add_action('admin_notices', array(
 			$this,
 			'analytify_admin_notice')
@@ -256,19 +256,19 @@ if ( !class_exists( 'WP_Analytify' ) ) {
 		}
 
 		$urlPost 	= '';
-		$start_date = ''; 
+		$start_date = '';
 		$end_date 	= '';
 
 		$wp_analytify  = new WP_Analytify();
 		$urlPost = parse_url( get_permalink( $post->ID ) );
-		
+
 		if( get_the_time('Y', $post->ID) < 2005 ) {
 
 			$start_date = '2005-01-01';
 		}
 		else {
 
-			$start_date = get_the_time('Y-m-d', $post->ID);   
+			$start_date = get_the_time('Y-m-d', $post->ID);
 		}
 
 		$end_date = date('Y-m-d');
@@ -712,7 +712,7 @@ public function analytify_add_analytics_code() {
 		global $post;
 
 		if( wpa_check_profile_selection('Analytify', '<br /><b class="wpa_notice_error">Select your website profile at Analytify->settings->profile tab to load stats.</b>') ) return;
-		
+
 
 		if ( $postID == 0 ) {
 			$u_post = '/'; //$urlPost['path'];
