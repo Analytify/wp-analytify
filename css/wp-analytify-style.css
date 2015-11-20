@@ -20,8 +20,10 @@ i.analytify-shortcodes-icon{
 }
 
 .wrap_pro_section{
-	position: relative;
-	display: inline-block;
+    position: relative;
+    display: block;
+    margin: -8px auto;
+    text-align: center;
 }
 
 .wrap_pro_section:hover .background, .wrap_pro_section:hover .popup{
