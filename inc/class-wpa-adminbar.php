@@ -23,7 +23,7 @@ class WPA_ADMIN_BAR {
 		$wp_admin_bar->add_node(array(
 			'id' => 'analytify',
 			'title' => '<span class="ab-icon"></span><span id="ab-analytify" class="ab-label">' . esc_html__('Analytify' , 'wp-analytify') . '</span>',
-			'href' => get_admin_url(null, 'admin.php?page=analytify-dashboard' . urlencode($_SERVER['REQUEST_URI'])),
+			'href' => get_admin_url(null, 'admin.php?page=analytify-dashboard' ),
 			'meta' => array('target' => '_blank', 'title' => __('Analytify' , 'wp-analytify'))
 		));
 

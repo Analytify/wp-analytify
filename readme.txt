@@ -1,7 +1,7 @@
 === Google Analytics Dashboard By Analytify ===
 Contributors: hiddenpearls, Asif2BD
 Donate link: http://paypal.me/Analytify
-Tags: google analytics, WordPress Analytics, tracking,  analytics, google analytics dashboard, install analytics, analytify, yoast, analyticator, tracking, stats, e-commerce, track, add analytics, track visitor, statistics, WooCommerce, WooCommerce analytics, EDD, WooCommerce eCommerce, better google analytics, best google anylytics, ecommerce tracking, woocommerce google analytics, 
+Tags: google analytics, WordPress Analytics, tracking,  analytics, google analytics dashboard, install analytics, analytify, yoast, analyticator, tracking, stats, e-commerce, track, add analytics, track visitor, statistics, WooCommerce, WooCommerce analytics, EDD, WooCommerce eCommerce, better google analytics, best google anylytics, ecommerce tracking, woocommerce google analytics,
 Requires at least: 3.0
 Tested up to: 4.3.1
 Stable tag: 1.2.1
@@ -12,7 +12,7 @@ Just 1-Click and you get Google Analytics Dashboard inside your WordPress Admin 
 
 == Description ==
 
-[Analytify](http://wp-analytify.com/details) - makes Google Analytics simple for everywhere in WordPress (posts,pages and custom post types etc). It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. Now you can get **Google Analytics Dashboard** inside your WordPress Dashboard within a minute. 
+[Analytify](http://wp-analytify.com/details) - makes Google Analytics simple for everywhere in WordPress (posts,pages and custom post types etc). It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. Now you can get **Google Analytics Dashboard** inside your WordPress Dashboard within a minute.
 
 > **Google Analytics Premium Partner** - [Read](https://www.google.com/analytics/partners/company/5179388639313920/gadp/5629499534213120/app/5707702298738688/listing/5639274879778816) what Google is saying about us.
 
@@ -62,7 +62,7 @@ This section describes how to install the plugin and get it working.
 
 = Modern Way: =
 1. Go to the WordPress Dashboard "Add New Plugin" section.
-2. Search For "analyify". 
+2. Search For "analyify".
 3. Install, then Activate it.
 
 = Old Way: =
@@ -70,7 +70,7 @@ This section describes how to install the plugin and get it working.
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 = 2) Configure =
-1. Reach out to the Analytify-> Settings Page 
+1. Reach out to the Analytify-> Settings Page
 2. Go to "Step 1", click the "Log in with Google Analytics Account" button
 3. Connect and give Analytify App access to your Google Analytics account.
 4. After Authentication, Select your Profiles for front/admin Statistics from Settings-> Profile tab.
@@ -82,7 +82,7 @@ This section describes how to install the plugin and get it working.
 
 = How to Authenticate and Connect my Google Analytics Account in this plugin ? =
 
-Go to Analytify->settings and see the Authentication tab. 
+Go to Analytify->settings and see the Authentication tab.
 
 = How to select GA profiles ? =
 
@@ -99,6 +99,11 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 
 == Changelog ==
+
+= 1.2.1 - 2015-11-13 =
+* Bug Fix : Top Pages option in Dashboard show incorrect values.
+* Bug Fix : Analytify Menu in Admin Bar redirect to wrong page.
+* New Feature : Added Cache For Operating System stats, Mobile Devices stats and Top Referrers stats
 
 = 1.2.1 - 2015-11-13 =
 * Added brand new addons page.
