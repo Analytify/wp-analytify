@@ -160,7 +160,14 @@ if ( !class_exists( 'WP_Analytify' ) ) {
 			'analytify_nag_ignore')
 		);
 
+		add_action( 'admin_init', array(
+			$this,
+			'analytify_review_notice'
+		) );
+
 }
+
+
 
 	/**
 	 * Save Authentication code on return
@@ -958,6 +965,62 @@ public function analytify_add_analytics_code() {
 		}
 	}
 
+	/**
+	 * Show Review Message
+	 * @since 1.2.2
+	 */
+	public function analytify_review_notice() {
+
+		if (!is_admin() || !current_user_can('manage_options')) {
+			return;
+		}
+
+		if ( sanitize_text_field( isset(  $_GET['deny'] ) && $_GET['deny'] == 'yes' )) {
+			add_site_option( 'wpa_review_dismisal' , true );
+			return;
+		}
+
+		$activation_time = get_site_option('wpa_active_time');
+		$review_dismissal = get_site_option('wpa_review_dismisal');
+
+		if ($review_dismissal == true) {
+			return;
+		}
+
+
+		if (!$activation_time) {
+			$activation_time = time();
+			add_site_option( 'wpa_active_time', $activation_time );
+		}
+
+		// 1296000 = 15 Days in seconds
+		if (time() - $activation_time > 1296000 ) {
+		add_action( 'admin_notices' , array( $this , 'analytify_review_notice_message' ) );
+		}
+	}
+
+	public function analytify_review_notice_message() {
+
+		  $dismiss_url = $_SERVER["REQUEST_URI"];
+			$deny_url = '';
+			$position = strpos ( $dismiss_url , '?');
+			if ($position) {
+				$deny_url = $dismiss_url."&deny=yes";
+			} else {
+				$deny_url = $dismiss_url."?deny=yes";
+			}
+
+
+		echo '
+	<div class="updated">
+		<p>' . __('You have been using the ', 'wp-analytify') . '<a href="' . admin_url('admin.php?page=analytify-dashboard') . '">WordPress Analytify</a>' . __(' for some time now, do you like it? If so, please consider leaving us a review on WordPress.org! It would help us out a lot and we would really appreciate it.', 'wp-analytify') . '
+			<br><br>
+			<a onclick="location.href=\'' . '' . '\';" class="button button-primary" href="' . esc_url('https://wordpress.org/support/view/plugin-reviews/wp-analytify?rate=5#postform') . '" target="_blank">' . __('Leave a Review', 'wp-analytify') . '</a>
+			<a href="' .  esc_url($deny_url) . '">' . __('No thanks', 'wp-analytify') . '</a>
+		</p>
+	</div>';
+
+	}
 
 
 }
