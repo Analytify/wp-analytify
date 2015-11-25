@@ -167,8 +167,6 @@ if ( !class_exists( 'WP_Analytify' ) ) {
 
 }
 
-
-
 	/**
 	 * Save Authentication code on return
 	 * @since 1.2.8
@@ -966,59 +964,74 @@ public function analytify_add_analytics_code() {
 	}
 
 	/**
-	 * Show Review Message
+	 *	Check and Dismiss review message.
+	 * 
+	 *	@since 1.2.2
+	 */
+	private function review_dismissal() {
+
+		//delete_site_option( 'wp_analytify_review_dismiss' );
+
+		if (!is_admin() ||
+			!current_user_can('manage_options') ||
+			!isset($_GET['_wpnonce']) ||
+			!wp_verify_nonce($_GET['_wpnonce'], 'analytify-review-nonce') ||
+			!isset($_GET['wp_analytify_review_dismiss'])) {
+			
+			return;
+		}
+
+		add_site_option( 'wp_analytify_review_dismiss', 'yes' );
+	}
+
+	/**
+	 * Ask users to review our plugin on .org
+	 * 
 	 * @since 1.2.2
+	 * @return boolean false
 	 */
 	public function analytify_review_notice() {
 
-		if (!is_admin() || !current_user_can('manage_options')) {
-			return;
-		}
+		$this->review_dismissal();
 
-		if ( sanitize_text_field( isset(  $_GET['deny'] ) && $_GET['deny'] == 'yes' )) {
-			add_site_option( 'wpa_review_dismisal' , true );
-			return;
-		}
+		$activation_time 	= get_site_option( 'wp_analytify_active_time' );
+		$review_dismissal	= get_site_option( 'wp_analytify_review_dismiss' );
 
-		$activation_time = get_site_option('wpa_active_time');
-		$review_dismissal = get_site_option('wpa_review_dismisal');
-
-		if ($review_dismissal == true) {
+		if ($review_dismissal == 'yes') {
 			return;
 		}
 
 
-		if (!$activation_time) {
+		if ( !$activation_time ) {
+			
 			$activation_time = time();
-			add_site_option( 'wpa_active_time', $activation_time );
+			add_site_option( 'wp_analytify_active_time', $activation_time );
 		}
 
 		// 1296000 = 15 Days in seconds
-		if (time() - $activation_time > 1296000 ) {
-		add_action( 'admin_notices' , array( $this , 'analytify_review_notice_message' ) );
+		if ( time() - $activation_time > 1296000 ) {
+			add_action( 'admin_notices' , array( $this , 'analytify_review_notice_message' ) );
 		}
+
 	}
 
+	/**
+	 * Review notice message
+	 * 
+	 * @since  1.2.2
+	 * @return NULL
+	 */
 	public function analytify_review_notice_message() {
 
-		  $dismiss_url = $_SERVER["REQUEST_URI"];
-			$deny_url = '';
-			$position = strpos ( $dismiss_url , '?');
-			if ($position) {
-				$deny_url = $dismiss_url."&deny=yes";
-			} else {
-				$deny_url = $dismiss_url."?deny=yes";
-			}
+		$dismiss_url = wp_nonce_url('?wp_analytify_review_dismiss=yes', 'analytify-review-nonce');
 
-
-		echo '
-	<div class="updated">
-		<p>' . __('You have been using the ', 'wp-analytify') . '<a href="' . admin_url('admin.php?page=analytify-dashboard') . '">WordPress Analytify</a>' . __(' for some time now, do you like it? If so, please consider leaving us a review on WordPress.org! It would help us out a lot and we would really appreciate it.', 'wp-analytify') . '
-			<br><br>
-			<a onclick="location.href=\'' . '' . '\';" class="button button-primary" href="' . esc_url('https://wordpress.org/support/view/plugin-reviews/wp-analytify?rate=5#postform') . '" target="_blank">' . __('Leave a Review', 'wp-analytify') . '</a>
-			<a href="' .  esc_url($deny_url) . '">' . __('No thanks', 'wp-analytify') . '</a>
-		</p>
-	</div>';
+		echo '<div class="updated">
+					<p>' . __('You have been using the ', 'wp-analytify') . '<a href="' . admin_url( 'admin.php?page=analytify-dashboard' ) . '">WP Analytify</a>' . __( ' for some time now, do you like it? If so, please consider leaving us a review on WordPress.org! It would help us out a lot and we would really appreciate it.', 'wp-analytify' ) . '
+						<br><br>
+						<a onclick="location.href=\'' . $dismiss_url . '\';" class="button button-primary" href="' . esc_url( 'https://wordpress.org/support/view/plugin-reviews/wp-analytify?rate=5#postform' ) . '" target="_blank">' . __( 'Leave a Review', 'wp-analytify' ) . '</a>
+						<a href="' .  esc_url( $dismiss_url ) . '">' . __( 'No thanks', 'wp-analytify' ) . '</a>
+					</p>
+				</div>';
 
 	}
 
