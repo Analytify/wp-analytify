@@ -1012,7 +1012,7 @@ public function analytify_add_analytics_code() {
 		}
 
 		// 1296000 = 15 Days in seconds
-		if ( time() - $activation_time > 1 ) {
+		if ( time() - $activation_time > 1296000 ) {
 			add_action( 'admin_notices' , array( $this , 'analytify_review_notice_message' ) );
 		}
 
