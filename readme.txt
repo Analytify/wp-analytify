@@ -100,7 +100,8 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Changelog ==
 
-= 1.2.2 - 2015-11-20 =
+= 1.2.2 - 2015-11-25 =
+* Bug Fix     : encoded URL on redirecting after connecting with Google Analytics.
 * Bug Fix     : Top Pages option in Dashboard show incorrect values.
 * Bug Fix     : Analytify Menu in Admin Bar redirect to wrong page.
 * New Feature : Added Cache For Operating System stats, Mobile Devices stats and Top Referrers stats.

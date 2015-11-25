@@ -13,6 +13,9 @@
 * Domain Path: /lang
 */
 
+
+//echo esc_url_raw(urlencode( 'http://dbj.org/wp-admin/admin.php?page=analytify-settings&state=http://dbj.org/wp-admin/admin.php?page=analytify-settings&code=4/osadbcIZd-hf9AQu6RNGlyz5OZi0om2wdL13PC86OjU' ));
+
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) exit;
 
@@ -169,7 +172,7 @@ if ( !class_exists( 'WP_Analytify' ) ) {
 
 	/**
 	 * Save Authentication code on return
-	 * @since 1.2.8
+	 * @since 1.2.0
 	 */
 	public function wpa_check_authentication() {
 
@@ -177,7 +180,7 @@ if ( !class_exists( 'WP_Analytify' ) ) {
 
 			$key_google_token = sanitize_text_field( $_GET['code'] );
 			WP_Analytify::pt_save_data( $key_google_token );
-			wp_redirect( $_GET['state'].'&tab=profile' );
+			wp_redirect( esc_url_raw( $_GET['state'] .'&tab=profile' ) );
 		}
 	}
 
