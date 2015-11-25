@@ -1012,7 +1012,7 @@ public function analytify_add_analytics_code() {
 		}
 
 		// 1296000 = 15 Days in seconds
-		if ( time() - $activation_time > 1296000 ) {
+		if ( time() - $activation_time > 1 ) {
 			add_action( 'admin_notices' , array( $this , 'analytify_review_notice_message' ) );
 		}
 
@@ -1026,7 +1026,9 @@ public function analytify_add_analytics_code() {
 	 */
 	public function analytify_review_notice_message() {
 
-		$dismiss_url = wp_nonce_url('?wp_analytify_review_dismiss=yes', 'analytify-review-nonce');
+		$scheme      = (parse_url( $_SERVER['REQUEST_URI'], PHP_URL_QUERY)) ? '&' : '?';
+		$url         = $_SERVER['REQUEST_URI'] . $scheme . 'wp_analytify_review_dismiss=yes';		
+		$dismiss_url = wp_nonce_url( $url, 'analytify-review-nonce');
 
 		echo '<div class="updated">
 					<p>' . __('You have been using the ', 'wp-analytify') . '<a href="' . admin_url( 'admin.php?page=analytify-dashboard' ) . '">WP Analytify</a>' . __( ' for some time now, do you like it? If so, please consider leaving us a review on WordPress.org! It would help us out a lot and we would really appreciate it.', 'wp-analytify' ) . '
