@@ -161,8 +161,8 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Upgrade Notice ==
 
-= 1.2.2 =
-* [Must Update] Bug fixes and add cache for Operating System stats, Mobile Devices stats and Top Referrers stats.
+= 1.2.3 =
+* [Must Update] Minor Bug fixes and compatibility for WordPress 4.4
 
 
 == Donation ==
