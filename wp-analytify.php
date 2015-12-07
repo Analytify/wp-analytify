@@ -3,18 +3,15 @@
 * Plugin Name: Google Analytics Dashboard By Analytify
 * Plugin URI: http://wp-analytify.com/details
 * Description: Analytify brings a brand new and modern feeling Google Analytics superbly integrated with WordPress Dashboard. It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. This provides Stats from Country, Referrers, Social media, General stats, New visitors, Returning visitors, Exit pages, Browser wise and Top keywords. This plugin provides the RealTime statistics in a new UI which is easy to understand & looks good.
-* Version: 1.2.2
+* Version: 1.2.3
 * Author: WPBrigade
 * Author URI: http://wpbrigade.com/
 * License: GPLv3
 * Text Domain: wp-analytify
 * Min WP Version: 3.0
-* Max WP Version: 4.3.1
+* Max WP Version: 4.4
 * Domain Path: /lang
 */
-
-
-//echo esc_url_raw(urlencode( 'http://dbj.org/wp-admin/admin.php?page=analytify-settings&state=http://dbj.org/wp-admin/admin.php?page=analytify-settings&code=4/osadbcIZd-hf9AQu6RNGlyz5OZi0om2wdL13PC86OjU' ));
 
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) exit;
@@ -936,7 +933,7 @@ public function analytify_add_analytics_code() {
 			if ( ! get_user_meta($user_id, 'analytify_ignore_notice110') ) {
 
 				echo '<div class="updated"><p>';
-				printf(__('<b>Notice:</b> Enhanced eCommerce Tracking for <b><a href="https://wp-analytify.com/go/WooCommerce" target="_blank">WooCommerce</a></b> is finally available with Analytify! Increase sales and track - Product Clicks, Adds to cart, Checkouts and <a href="https://wp-analytify.com/go/WooCommerce-Announcement-blog" target="_blank">many more</a>. <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ));
+				printf(__('<b>Note:</b> Enhanced eCommerce Tracking for <b><a href="https://wp-analytify.com/go/WooCommerce" target="_blank">WooCommerce</a></b> is finally available with Analytify! Increase sales and track - Product Clicks, Adds to cart, Checkouts and <a href="https://wp-analytify.com/go/WooCommerce-Announcement-blog" target="_blank">many more</a>. <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ));
 				echo "</p></div>";
 
 			}
@@ -945,13 +942,13 @@ public function analytify_add_analytics_code() {
 		/* Show notices */
         if (! isset( $acces_token ) || empty( $acces_token ) || ! get_option( 'pa_google_token' ) ) {
 
-			echo "<div class='error'><p><b>Notice:</b> " . __( "<b><a style=\"text-decoration:none\" href='" . menu_page_url ( 'analytify-settings', false ) ."'>Connect</a></b> Analytify with your Google account.", 'wp-analytify' )."</p></div>";
+			echo "<div class='error notice is-dismissible'><p><b>Notice:</b> " . __( "<b><a style=\"text-decoration:none\" href='" . menu_page_url ( 'analytify-settings', false ) ."'>Connect</a></b> Analytify with your Google account.", 'wp-analytify' )."</p></div>";
 		}
 		else{
 
 			if ((! isset( $profile_id ) || empty( $profile_id )) && ! isset($_POST[ 'save_profile' ]) ) {
 
-				echo '<div class="error"><p>' . __( 'Congratulations! Analytify is now authenticated. Select your website profile <a href="' . menu_page_url ( 'analytify-settings', false ) . '&tab=profile">here</a> ', 'wp-analytify' ) . '</p></div>';
+				echo '<div class="error notice is-dismissible"><p>' . __( 'Congratulations! Analytify is now authenticated. Select your website profile <a href="' . menu_page_url ( 'analytify-settings', false ) . '&tab=profile">here</a> ', 'wp-analytify' ) . '</p></div>';
 			}
 		}
 	}

@@ -3,8 +3,8 @@ Contributors: hiddenpearls, Asif2BD
 Donate link: http://paypal.me/Analytify
 Tags: google analytics, WordPress Analytics, tracking,  analytics, google analytics dashboard, install analytics, analytify, yoast, analyticator, tracking, stats, e-commerce, track, add analytics, track visitor, statistics, WooCommerce, WooCommerce analytics, EDD, WooCommerce eCommerce, better google analytics, best google anylytics, ecommerce tracking, woocommerce google analytics,
 Requires at least: 3.0
-Tested up to: 4.3.1
-Stable tag: 1.2.2
+Tested up to: 4.4
+Stable tag: 1.2.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -99,6 +99,10 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 
 == Changelog ==
+
+= 1.2.3 - 2015-12-06 =
+* Bug Fix     : Update Notice messages for settings page.
+* New Feature : Compatible for WordPress 4.4
 
 = 1.2.2 - 2015-11-25 =
 * Bug Fix     : encoded URL on redirecting after connecting with Google Analytics.

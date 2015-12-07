@@ -108,7 +108,7 @@ if (isset($_POST[ 'save_profile' ])) {
 		update_option( 'analytify_code', 0 );
 	}
 
-	$update_message = '<div id="setting-error-settings_updated" class="updated settings-error below-h2"> 
+	$update_message = '<div id="setting-error-settings_updated" class="updated notice is-dismissible settings-error below-h2"> 
 	<p><strong>Success:</strong> Your Profile tab settings are saved.</p></div>';
 }
 
@@ -122,7 +122,7 @@ if (isset($_POST[ "clear" ])) {
 	delete_option( 'pa_welcome_message' );
 	delete_option( 'post_analytics_token' );
 
-	$update_message = '<div id="setting-error-settings_updated" class="updated settings-error below-h2"> 
+	$update_message = '<div id="setting-error-settings_updated" class="updated notice is-dismissible settings-error below-h2"> 
 	<p><strong>Authentication Cleared login again.</strong></p></div>';
 }
 ?>
