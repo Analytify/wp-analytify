@@ -208,6 +208,14 @@ if ( !class_exists( 'WP_Analytify' ) ) {
 	 */
 	public function show_admin_single_analytics_add_metabox() {
 
+		global $post;
+
+		if(! isset( $post ) )
+			return false;
+
+		// Don't show statistics on posts which are not published.
+		if( $post->post_status !== 'publish') return false;
+
 		$post_types = get_option( 'analytify_posts_stats' );
 
 		// Don't load boxes/sections if no any post type is selected.
@@ -248,6 +256,13 @@ if ( !class_exists( 'WP_Analytify' ) ) {
 
 		global $post;
 
+		// // Don't show statistics on posts which are not published.
+		// if ( get_post_status ( $post->ID ) != 'publish' ) {
+		// 	esc_html_e( 'Statistics will be loaded after you publish this content.', 'wp-analytify' );
+		// 	return false;
+		// }
+
+
 		$back_exclude_posts = explode( ',', get_option( 'post_analytics_exclude_posts_back' ));
 
 		if ( is_array( $back_exclude_posts ) ) {
@@ -266,7 +281,7 @@ if ( !class_exists( 'WP_Analytify' ) ) {
 
 		$wp_analytify  = new WP_Analytify();
 		$urlPost = parse_url( get_permalink( $post->ID ) );
-
+		
 		if( get_the_time('Y', $post->ID) < 2005 ) {
 
 			$start_date = '2005-01-01';
@@ -716,7 +731,7 @@ public function analytify_add_analytics_code() {
 
 		global $post;
 
-		if( wpa_check_profile_selection('Analytify', '<br /><b class="wpa_notice_error">Select your website profile at Analytify->settings->profile tab to load stats.</b>') ) return;
+		if( wpa_check_profile_selection( 'Analytify', '<br /><b class="wpa_notice_error">Select your website profile at Analytify->settings->profile tab to load stats.</b>') ) return;
 
 
 		if ( $postID == 0 ) {

@@ -101,6 +101,7 @@ First, you need to Authenticate your GA account then you can select your web pro
 == Changelog ==
 
 = 1.2.3 - 2015-12-06 =
+* Bug Fix     : Don't load statistics for draft/trash/new posts. Load only for Published posts/pages.
 * Bug Fix     : Update Notice messages for settings page.
 * New Feature : Compatible for WordPress 4.4
 
