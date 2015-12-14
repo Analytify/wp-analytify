@@ -62,7 +62,7 @@ if( isset( $ed_date ) ) {
 									</form>
 								</div>
 
-								<a target="_blank" class="wrap_pro_section" href="http://wp-analytify.com/upgrade-from-free" title="Upgrade to PRO to enjoy full features of Analytify.">
+								<!-- <a target="_blank" class="wrap_pro_section" href="http://wp-analytify.com/upgrade-from-free" title="Upgrade to PRO to enjoy full features of Analytify.">
 
 									<div class="popup">
 										<h2>Get PRO Version!</h2>
@@ -71,7 +71,7 @@ if( isset( $ed_date ) ) {
 									<div class="background"></div>
 
 									<img class="gray-areas" src="<?php echo plugins_url('images/live-stats-preview.png', dirname(__FILE__) );?>" width="100%" height="auto" alt="Upgrade to PRO to enjoy full features of Analytify." />
-								</a>
+								</a> -->
 
 								<?php
 
