@@ -84,20 +84,31 @@ if ( isset( $_POST[ 'save_settings_admin' ] ) ) {
 	
 } // endif
 
-	// Saving Profiles
+
+
+// Saving Profiles
 if (isset($_POST[ 'save_profile' ])) {
 
-	$profile_id            = $_POST[ 'webprofile' ];
-	$display_tracking_code = $_POST[ 'display_tracking_code' ];
-	$tracking_code         = $_POST[ 'tracking_code' ];
-	$web_profile_dashboard = $_POST[ 'webprofile_dashboard' ];
-	$web_profile_url       = $_POST[ $web_profile_dashboard ];
-	$webPropertyId         = $_POST[ $profile_id."-1"];
+	$profile_id 	        =	$_POST[ 'webprofile' ];
+	$postsProfileName		=	$_POST[ $profile_id."-1-profile-name"];
+	$display_tracking_code  =	$_POST[ 'display_tracking_code' ];
+	$tracking_code          =	$_POST[ 'tracking_code' ];
+	$web_profile_dashboard  =	$_POST[ 'webprofile_dashboard' ];
+	$web_profile_url        =	$_POST[ $web_profile_dashboard ];
+	$dashboardProfileName 	= 	$_POST[ $web_profile_dashboard . "-profile-name" ];
+	$webPropertyId          =	$_POST[ $profile_id."-1"];
+
+
+	// pt_webprofile_dashboard  === Dashboard Profile ID
+	// pt_webprofile 			=== Posts Profile ID
 
 	update_option( 'pt_webprofile', $profile_id );
 	update_option( 'webPropertyId', $webPropertyId);
 	update_option( 'pt_webprofile_dashboard', $web_profile_dashboard );
 	update_option( 'pt_webprofile_url', urldecode( urldecode( $web_profile_url )));
+	update_option( 'wp-analytify-dashboard-profile-name', $dashboardProfileName);
+	update_option( 'wp-analytify-posts-profile-name', $postsProfileName);
+
 	update_option( 'analytify_tracking_code', $tracking_code);
 	update_option( 'display_tracking_code', $display_tracking_code);
 
@@ -179,6 +190,8 @@ if (isset($_POST[ "clear" ])) {
 
 		$profiles = $wp_analytify->pt_get_analytics_accounts();
 
+		//print_r($profiles);
+
 		if( isset( $profiles ) ) { ?>
 		<p class="description"><br /><?php esc_html_e( 'Select your profiles for front-end and backend sections.', 'wp-analytify' ); ?></p>
 
@@ -256,7 +269,8 @@ if (isset($_POST[ "clear" ])) {
 						</select>
 						<?php 
 						foreach ( $profiles->items as $profile ) { ?>
-						<input type="hidden" name="<?php echo $profile[ 'id' ]; ?>-1" value="<?php echo $profile['webPropertyId'] ?>">
+							<input type="hidden" name="<?php echo $profile[ 'id' ]; ?>-1" value="<?php echo $profile['webPropertyId'] ?>">
+							<input type="hidden" name="<?php echo $profile[ 'id' ]; ?>-1-profile-name" value="<?php echo $profile['name'] ?>">
 						<?php } ?>
 						<p class="description">Select your website profile for wp-admin edit pages and fron-end pages. Select profile which matches your current WordPress website.</p>
 					</td>
@@ -276,7 +290,8 @@ if (isset($_POST[ "clear" ])) {
 						</select>
 						<?php 
 						foreach ( $profiles->items as $profile ) { ?>
-						<input type="hidden" name="<?php echo $profile[ 'id' ]; ?>" value="<?php echo urlencode(urlencode($profile[ 'websiteUrl' ])); ?>">
+							<input type="hidden" name="<?php echo $profile[ 'id' ]; ?>" value="<?php echo urlencode(urlencode($profile[ 'websiteUrl' ])); ?>">
+							<input type="hidden" name="<?php echo $profile[ 'id' ]; ?>-profile-name" value="<?php echo $profile['name'] ?>">
 						<?php } ?>
 						<p class="description">Select your website profile for Dashboard Stats. You can select your any Website profile. It will show Analytics for your selected website profile.</p>
 					</td>
@@ -547,6 +562,11 @@ if ( is_array ( get_option( 'post_analytics_settings_back' ) ) ) {
 </div>
 </div>
 <div class="right-area">
+
+<div class="cen" style="margin-bottom:10px;">
+	Tweet us <a href="https://twitter.com/wpanalytify" style="text-decoration:none;"> @twitter </a> and Like us <a href="https://fb.com/analytify" style="text-decoration:none;">@facebook</a>
+</div>
+
 	<table class="wa_feature_table">
 		<tbody>
 			<tr>
@@ -599,6 +619,8 @@ if ( is_array ( get_option( 'post_analytics_settings_back' ) ) ) {
 	</table>
 	<div class="postbox-container side">
 		<div class="metabox-holder">
+		
+
 			<div class="grids_auto_size wpa_side_box" style="width: 95%;">
 				<div class="grid_title cen"> UPGRADE to PRO </div>
 

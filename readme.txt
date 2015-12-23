@@ -100,6 +100,10 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Changelog ==
 
+= 1.2.4 - 2015-12-24 =
+* New Feature : Cache dashboard based on Profile selection
+* Bug Fixed   : Code cleanup and indentation
+
 = 1.2.3 - 2015-12-06 =
 * Bug Fix     : Don't load statistics for draft/trash/new posts. Load only for Published posts/pages.
 * Bug Fix     : Update Notice messages for settings page.
@@ -162,8 +166,8 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Upgrade Notice ==
 
-= 1.2.3 =
-* [Must Update] Minor Bug fixes and compatibility for WordPress 4.4
+= 1.2.4 =
+* [Must Update] Minor Bug fixes and New feature for dashboard.
 
 
 == Donation ==

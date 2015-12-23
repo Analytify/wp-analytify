@@ -1,10 +1,10 @@
 <?php
-$wp_analytify = new WP_Analytify();
+$wp_analytify   = new WP_Analytify();
 
-$start_date_val =   strtotime("- 30 days");
-$end_date_val   =   strtotime("now");
-$start_date     =   date( "Y-m-d", $start_date_val);
-$end_date       =   date( "Y-m-d", $end_date_val);
+$start_date_val = strtotime("- 30 days");
+$end_date_val   = strtotime("now");
+$start_date     = date( "Y-m-d", $start_date_val);
+$end_date       = date( "Y-m-d", $end_date_val);
 
 if( isset( $_POST["view_data"] ) ) {
 
@@ -20,6 +20,9 @@ if( isset( $s_date ) ) {
 if( isset( $ed_date ) ) {
 	$end_date = $ed_date;
 }
+
+// Fetch Dashboard Profile ID
+$dashboard_profile_ID = get_option( 'pt_webprofile_dashboard' );
 
 ?>
 <div class="wrap">
@@ -43,14 +46,9 @@ if( isset( $ed_date ) ) {
 							</div>
 							<h3 class="hndle">
 								<span>
-										<?php
-										echo _e('Complete Statistics of the Site ', 'wp-analytify');
-										echo _e(get_option("pt_webprofile_url"));
-										echo _e(' Starting From ', 'wp-analytify');
-										echo _e(date("jS F, Y", strtotime($start_date)));
-										echo _e(' to ', 'wp-analytify');
-										echo _e(date("jS F, Y", strtotime($end_date)));
-										?>
+								<?php
+									echo sprintf( esc_html__( 'Complete Statistics of the Site (%1$s) and profile view (%4$s) Starting From %2$s to %3$s', 'wp-analytify'), get_option("pt_webprofile_url"), date("jS F, Y", strtotime($start_date)), date("jS F, Y", strtotime($end_date)), get_option("wp-analytify-dashboard-profile-name") );
+								?>
 								</span>
 							</h3>
 							<div class="inside">
@@ -77,11 +75,11 @@ if( isset( $ed_date ) ) {
 
 								// General stats //
 
-								$stats = get_transient( md5('show-overall-dashboard' . $start_date . $end_date) );
+								$stats = get_transient( md5('show-overall-dashboard' . $dashboard_profile_ID . $start_date . $end_date) );
 				                if( $stats === false ) {
 
 									$stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions,ga:bounces,ga:newUsers,ga:entrances,ga:pageviews,ga:sessionDuration,ga:avgTimeOnPage,ga:users', $start_date, $end_date);
-									set_transient(  md5('show-overall-dashboard'.$start_date.$end_date) , $stats, 60 * 60 * 20 );
+									set_transient(  md5('show-overall-dashboard' . $dashboard_profile_ID . $start_date . $end_date ) , $stats, 60 * 60 * 20 );
 				                }
 
 								if ( isset( $stats->totalsForAllResults ) ) {
@@ -93,10 +91,10 @@ if( isset( $ed_date ) ) {
 
 								// Top Pages stats //
 
-								$top_page_stats = get_transient( md5('show-top-pages-dashboard' . $start_date . $end_date) );
+								$top_page_stats = get_transient( md5('show-top-pages-dashboard' . $dashboard_profile_ID . $start_date . $end_date) );
 				                if( $top_page_stats === false ) {
 				                	$top_page_stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:pageviews', $start_date, $end_date, 'ga:PageTitle', '-ga:pageviews', false, 5);
-				                	set_transient(  md5( 'show-top-pages-dashboard' . $start_date . $end_date ) , $top_page_stats, 60 * 60 * 20 );
+				                	set_transient(  md5( 'show-top-pages-dashboard' . $dashboard_profile_ID . $start_date . $end_date ) , $top_page_stats, 60 * 60 * 20 );
 
 				                }
 
@@ -108,10 +106,10 @@ if( isset( $ed_date ) ) {
 
 								// Country stats //
 
-								$country_stats = get_transient( md5('show-country-dashboard'.$start_date.$end_date) ) ;
+								$country_stats = get_transient( md5('show-country-dashboard' . $dashboard_profile_ID . $start_date . $end_date ) ) ;
 								if( $country_stats === false ) {
 									$country_stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions', $start_date, $end_date, 'ga:country', '-ga:sessions', false, 5);
-									set_transient(  md5('show-country-dashboard'.$start_date.$end_date) , $country_stats, 60 * 60 * 20 );
+									set_transient(  md5('show-country-dashboard' . $dashboard_profile_ID . $start_date . $end_date) , $country_stats, 60 * 60 * 20 );
 								}
 
 								if ( isset( $country_stats->totalsForAllResults )) {
@@ -124,10 +122,10 @@ if( isset( $ed_date ) ) {
 
 								// City stats //
 
-								$city_stats = get_transient( md5('show-city-dashboard'.$start_date.$end_date) ) ;
+								$city_stats = get_transient( md5('show-city-dashboard' . $dashboard_profile_ID . $start_date . $end_date ) ) ;
 								if( $city_stats === false ) {
 										$city_stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions', $start_date, $end_date, 'ga:city', '-ga:sessions', false, 5);
-										set_transient(  md5('show-city-dashboard'.$start_date.$end_date) , $city_stats, 60 * 60 * 20 );
+										set_transient(  md5('show-city-dashboard' . $dashboard_profile_ID . $start_date . $end_date ) , $city_stats, 60 * 60 * 20 );
 								}
 
 								if ( isset( $city_stats->totalsForAllResults )) {
@@ -136,11 +134,11 @@ if( isset( $ed_date ) ) {
 								}
 
 								// Keywords stats //
-								$keyword_stats = get_transient( md5('show-keywords-dashboard'.$start_date.$end_date) ) ;
+								$keyword_stats = get_transient( md5('show-keywords-dashboard' . $dashboard_profile_ID . $start_date . $end_date ) ) ;
 
 								if( $keyword_stats === false ) {
 									$keyword_stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions', $start_date, $end_date, 'ga:keyword', '-ga:sessions', false, 10);
-									set_transient(  md5('show-keywords-dashboard'.$start_date.$end_date) , $keyword_stats, 60 * 60 * 20 );
+									set_transient(  md5('show-keywords-dashboard' . $dashboard_profile_ID . $start_date . $end_date ) , $keyword_stats, 60 * 60 * 20 );
 								}
 
 								if ( isset( $keyword_stats->totalsForAllResults )){
@@ -152,10 +150,10 @@ if( isset( $ed_date ) ) {
 
 								// Browser stats //
 
-								$browser_stats = get_transient( md5('show-browser-dashboard'.$start_date.$end_date) ) ;
+								$browser_stats = get_transient( md5('show-browser-dashboard' . $dashboard_profile_ID . $start_date . $end_date ) ) ;
 								if( $browser_stats === false ) {
 									$browser_stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions', $start_date, $end_date, 'ga:browser,ga:operatingSystem', '-ga:sessions',false,5);
-									set_transient(  md5('show-browser-dashboard'.$start_date.$end_date) , $browser_stats, 60 * 60 * 20 );
+									set_transient(  md5('show-browser-dashboard' . $dashboard_profile_ID . $start_date . $end_date ) , $browser_stats, 60 * 60 * 20 );
 								}
 
 								if ( isset( $browser_stats->totalsForAllResults ) ) {
@@ -167,11 +165,11 @@ if( isset( $ed_date ) ) {
 
 
 								// Operating System Stats
-								$operating_stats = get_transient( md5('show-operating-dashboard'.$start_date.$end_date) );
+								$operating_stats = get_transient( md5('show-operating-dashboard' . $dashboard_profile_ID . $start_date . $end_date ) );
 
 								if($operating_stats === false){
 									$operating_stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions', $start_date, $end_date, 'ga:operatingSystem,ga:operatingSystemVersion', '-ga:sessions', false, 5);
-									set_transient(md5('show-operating-dashboard'.$start_date.$end_date), $operating_stats, 60 * 60 * 20 );
+									set_transient(md5('show-operating-dashboard' . $dashboard_profile_ID . $start_date . $end_date ), $operating_stats, 60 * 60 * 20 );
 								}
 
 								if ( isset( $city_stats->totalsForAllResults )) {
@@ -182,11 +180,11 @@ if( isset( $ed_date ) ) {
 								// End Operating System Stats
 
 								// Mobile Stats
-								$mobile_stats = get_transient( md5('show-mobile-dashborad'.$start_date.$end_date) );
+								$mobile_stats = get_transient( md5('show-mobile-dashborad' . $dashboard_profile_ID . $start_date . $end_date ) );
 
 								if($mobile_stats === false) {
 									$mobile_stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions', $start_date, $end_date, 'ga:mobileDeviceInfo', '-ga:sessions', false, 5);
-									set_transient( md5('show-mobile-dashborad'.$start_date.$end_date), $mobile_stats, 60 * 60 * 20 );
+									set_transient( md5('show-mobile-dashborad' . $dashboard_profile_ID . $start_date . $end_date ), $mobile_stats, 60 * 60 * 20 );
 								}
 
 								if ( isset( $city_stats->totalsForAllResults )) {
@@ -197,11 +195,11 @@ if( isset( $ed_date ) ) {
 								// End Mobile Stats
 
 								// Referral stats //
-								$referr_stats = get_transient( md5('show-referral-dashborad'.$start_date.$end_date) );
+								$referr_stats = get_transient( md5('show-referral-dashborad' . $dashboard_profile_ID . $start_date . $end_date ) );
 
 								if($referr_stats === false) {
 										$referr_stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions', $start_date, $end_date, 'ga:source,ga:medium', '-ga:sessions', false, 10);
-										set_transient( md5('show-referral-dashborad'.$start_date.$end_date), $referr_stats, 60 * 60 * 20 );
+										set_transient( md5('show-referral-dashborad' . $dashboard_profile_ID . $start_date . $end_date ), $referr_stats, 60 * 60 * 20 );
 								}
 
 								if ( isset( $referr_stats->totalsForAllResults ) ) {
@@ -213,15 +211,15 @@ if( isset( $ed_date ) ) {
 
 
 								// Exit stats //
-								$page_stats =  get_transient( md5('show-page-dashborad'.$start_date.$end_date) );
-								$top_page_stats = get_transient( md5('show-top-page-dashborad'.$start_date.$end_date) );
+								$page_stats =  get_transient( md5('show-page-dashborad' . $dashboard_profile_ID . $start_date . $end_date ) );
+								$top_page_stats = get_transient( md5('show-top-page-dashborad' . $dashboard_profile_ID . $start_date . $end_date ) );
 
 								if ($top_page_stats && $page_stats === false ) {
 									$page_stats = $wp_analytify->pa_get_analytics_dashboard('ga:entrances,ga:pageviews,ga:exits', $start_date, $end_date, 'ga:PagePath', '-ga:exits', false, 5);
 									$top_page_stats = $wp_analytify->pa_get_analytics_dashboard('ga:pageviews', $start_date, $end_date, 'ga:PageTitle', '-ga:pageviews', false, 5);
 
-									set_transient( md5('show-page-dashborad'.$start_date.$end_date) , $page_stats , 60 * 60 * 20 );
-									set_transient( md5('show-top-page-dashborad'.$start_date.$end_date) , $top_page_stats , 60 * 60 * 20 );
+									set_transient( md5('show-page-dashborad' . $dashboard_profile_ID . $start_date . $end_date ) , $page_stats , 60 * 60 * 20 );
+									set_transient( md5('show-top-page-dashborad' . $dashboard_profile_ID . $start_date . $end_date ) , $top_page_stats , 60 * 60 * 20 );
 								}
 
 								if ( isset( $page_stats->totalsForAllResults ) ) {
