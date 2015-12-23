@@ -101,7 +101,7 @@ First, you need to Authenticate your GA account then you can select your web pro
 == Changelog ==
 
 = 1.2.4 - 2015-12-24 =
-* New Feature : Cache dashboard based on Profile selection
+* New Feature : Cache Analytify dashboard stats based on Profile selection
 * Bug Fixed   : Code cleanup and indentation
 
 = 1.2.3 - 2015-12-06 =
