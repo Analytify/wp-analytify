@@ -47,7 +47,12 @@ $dashboard_profile_ID = get_option( 'pt_webprofile_dashboard' );
 							<h3 class="hndle">
 								<span>
 								<?php
+
+								if( get_option("wp-analytify-dashboard-profile-name") )
 									echo sprintf( esc_html__( 'Complete Statistics of the Site (%1$s) and profile view (%4$s) Starting From %2$s to %3$s', 'wp-analytify'), get_option("pt_webprofile_url"), date("jS F, Y", strtotime($start_date)), date("jS F, Y", strtotime($end_date)), get_option("wp-analytify-dashboard-profile-name") );
+								else
+									echo sprintf( esc_html__( 'Complete Statistics of the Site (%1$s) Starting From %2$s to %3$s', 'wp-analytify'), get_option("pt_webprofile_url"), date("jS F, Y", strtotime($start_date)), date("jS F, Y", strtotime($end_date)) );
+
 								?>
 								</span>
 							</h3>
