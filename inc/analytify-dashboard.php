@@ -61,7 +61,7 @@ $dashboard_profile_ID = get_option( 'pt_webprofile_dashboard' );
 									<form action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>" method="post">
 										<input type="text" id="st_date" name="st_date" value="<?php echo $start_date; ?>">
 										<input type="text" id="ed_date" name="ed_date" value="<?php echo $end_date; ?>">
-										<input type="submit" id="view_data" name="view_data" value="View Data" class="button-primary btn-green">
+										<input type="submit" id="view_data" name="view_data" value="View Stats" class="button-primary btn-green">
 									</form>
 								</div>
 
