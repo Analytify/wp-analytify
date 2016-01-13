@@ -139,7 +139,7 @@ if (isset($_POST[ "clear" ])) {
 ?>
 
 <div class="wrap">
-	<h2 class='opt-title'><span id='icon-options-general' class='analytics-options'><img src="<?php echo plugins_url('wp-analytify/images/wp-analytics-logo.png');?>" alt=""></span>
+	<h2 class='opt-title'><span id='icon-options-general' class='analytics-options'><img src="<?php echo plugins_url( 'images/wp-analytics-logo.png', dirname(__FILE__) );?>" alt=""></span>
 		<?php echo __( 'Analytify Settings', 'wp-analytify'); ?>
 	</h2>
 
@@ -190,7 +190,7 @@ if (isset($_POST[ "clear" ])) {
 
 		$profiles = $wp_analytify->pt_get_analytics_accounts();
 
-		//print_r($profiles);
+		//echo count($profiles);
 
 		if( isset( $profiles ) ) { ?>
 		<p class="description"><br /><?php esc_html_e( 'Select your profiles for front-end and backend sections.', 'wp-analytify' ); ?></p>

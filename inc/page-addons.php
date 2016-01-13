@@ -81,7 +81,7 @@ $addons = $obj_wp_analytify_addons->addons();
 
 <div class="wrap">
 
-  <h2 class='opt-title'><span id='icon-options-general' class='analytics-options'><img src="<?php echo plugins_url('wp-analytify/images/wp-analytics-logo.png');?>" alt=""></span>
+  <h2 class='opt-title'><span id='icon-options-general' class='analytics-options'><img src="<?php echo plugins_url( 'images/wp-analytics-logo.png', dirname(__FILE__) );?>" alt=""></span>
 	<?php echo __( 'Extend the functionality of Analytify with these awesome Add-ons', 'wp-analytify' ); ?>
   </h2>
 

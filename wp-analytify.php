@@ -575,7 +575,7 @@ public function analytify_add_analytics_code() {
 		try {
 
 			if( get_option( 'pa_google_token' ) !='' ) {
-				$profiles = $this->service->management_profiles->listManagementProfiles( "~all", "~all" );
+				$profiles = $this->service->management_profiles->listManagementProfiles( "~all", "~all", array('max-results' => 1000) );
 				return $profiles;
 			}
 

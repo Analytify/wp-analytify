@@ -26,7 +26,7 @@ $dashboard_profile_ID = get_option( 'pt_webprofile_dashboard' );
 
 ?>
 <div class="wrap">
-	<h2 class='opt-title'><span id='icon-options-general' class='analytics-options'><img src="<?php echo plugins_url('wp-analytify/images/wp-analytics-logo.png');?>" alt=""></span>
+	<h2 class='opt-title'><span id='icon-options-general' class='analytics-options'><img src="<?php echo plugins_url( 'images/wp-analytics-logo.png', dirname(__FILE__) );?>" alt=""></span>
 		<?php echo __( 'Analytify Dashboard', 'wp-analytify' ); ?>
 	</h2>
 	<?php
