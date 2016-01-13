@@ -22,9 +22,9 @@ if ( isset( $_POST[ 'save_code' ] ) ) {
 	if( isset($_POST['auth_step']) and $_POST['auth_step'] == 'Yes' ) {
 
 		update_option('ANALYTIFY_USER_KEYS' , 		sanitize_text_field( $_POST['auth_step'] ));
-		update_option('ANALYTIFY_CLIENTID' , 		sanitize_text_field( $_POST['analytify_clientid'] ));
-		update_option('ANALYTIFY_CLIENTSECRET' , 	sanitize_text_field( $_POST['analytify_clientsecret'] ));
-		update_option('ANALYTIFY_DEV_KEY' , 		sanitize_text_field( $_POST['analytify_apikey'] ));
+		update_option('ANALYTIFY_CLIENTID' , 		sanitize_key( $_POST['analytify_clientid'] ));
+		update_option('ANALYTIFY_CLIENTSECRET' , 	sanitize_key( $_POST['analytify_clientsecret'] ));
+		update_option('ANALYTIFY_DEV_KEY' , 		sanitize_key( $_POST['analytify_apikey'] ));
 		update_option('ANALYTIFY_REDIRECT_URI' , 	sanitize_text_field( $_POST['analytify_redirect_uri'] ));
 
 	}
