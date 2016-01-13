@@ -18,15 +18,20 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 ini_set( 'include_path', dirname(__FILE__) . '/lib/' );
 
+define( 'WP_ANALYTIFY_FILE', __FILE__ );
+
+
 include_once( 'inc/class-wpa-ajax.php' );
 include_once( 'inc/wpa-core-functions.php' );
 include_once( 'inc/class-wpa-adminbar.php' );
+
+//echo dirname( WP_ANALYTIFY_FILE );
 
 if ( !class_exists( 'WP_Analytify' ) ) {
 
 	if ( !class_exists( 'Analytify_General_FREE' ) ) {
 
-		require_once WP_PLUGIN_DIR .'/wp-analytify/analytify-general.php';
+		require_once 'analytify-general.php';
 	}
 
 	class WP_Analytify extends Analytify_General_FREE{
