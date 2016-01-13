@@ -28,7 +28,7 @@ if ( isset( $_POST[ 'save_code' ] ) ) {
 		update_option('ANALYTIFY_CLIENTID' , 		sanitize_key( $_POST['analytify_clientid'] ));
 		update_option('ANALYTIFY_CLIENTSECRET' , 	sanitize_key( $_POST['analytify_clientsecret'] ));
 		update_option('ANALYTIFY_DEV_KEY' , 		sanitize_key( $_POST['analytify_apikey'] ));
-		update_option('ANALYTIFY_REDIRECT_URI' , 	sanitize_text_field( $_POST['analytify_redirect_uri'] ));
+		update_option('ANALYTIFY_REDIRECT_URI' , 	esc_url( $_POST['analytify_redirect_uri'] ));
 
 	}
 
