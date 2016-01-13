@@ -1,4 +1,7 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 $wp_analytify   = new WP_Analytify();
 
 $start_date_val = strtotime("- 30 days");

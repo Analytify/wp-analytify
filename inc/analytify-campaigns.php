@@ -1,3 +1,9 @@
+<?php
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
+?>
+
 <div class="wrap">
 	<h2 class='opt-title'><span id='icon-options-general' class='analytics-options'><img src="<?php echo plugins_url( 'images/wp-analytics-logo.png', dirname(__FILE__) );?>" alt=""></span>
 		<?php echo __( 'Analytify Campaigns Dashboard', 'wp-analytify' ); ?>

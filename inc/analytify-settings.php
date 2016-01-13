@@ -1,4 +1,7 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 $wp_analytify = new WP_Analytify();
 
 if (! function_exists( 'curl_init' ) ) {

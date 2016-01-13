@@ -1,4 +1,7 @@
 <?php 
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 // View of Country wise Statistics
 function pa_include_country( $current, $country_stats ) {
 ?>

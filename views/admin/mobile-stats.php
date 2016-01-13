@@ -1,5 +1,7 @@
 <?php 
-// 
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+ 
 function pa_include_mobile( $current, $mobile_stats ) {
 
 ?>

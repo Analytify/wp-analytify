@@ -1,4 +1,7 @@
 <?php 
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 // View of Operating System wise Statistics
 function pa_include_operating( $current, $operating_stats ) {
 ?>

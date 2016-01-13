@@ -1,4 +1,7 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 // View of Browser Statistics
 function pa_include_browser( $current, $browser_stats ) {
 ?>

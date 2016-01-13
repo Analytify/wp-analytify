@@ -1,5 +1,6 @@
 <?php 
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 function pa_include_pages_stats( $current, $page_stats) {
 ?>

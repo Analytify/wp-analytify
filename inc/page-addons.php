@@ -1,5 +1,7 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 if (! class_exists( 'WP_Analytify_Addons' ) ) {
 
 	class WP_Analytify_Addons {

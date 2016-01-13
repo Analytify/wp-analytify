@@ -1,4 +1,7 @@
 <?php 
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 // View of City wise Statistics
 function pa_include_city( $current, $city_stats ) {
 ?>

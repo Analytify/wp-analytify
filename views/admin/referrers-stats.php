@@ -1,5 +1,8 @@
  <?php 
- function pa_include_referrers($current,$referr_stats)
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
+function pa_include_referrers($current,$referr_stats)
         {
 ?> 
     <div class="data_boxes">

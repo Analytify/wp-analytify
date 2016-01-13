@@ -1,3 +1,9 @@
+<?php
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
+?>
+
 <section>
     <select class="cs-select cs-skin-slide">
     <?php

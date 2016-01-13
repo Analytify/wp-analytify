@@ -1,10 +1,6 @@
 <?php
 
-
-if( ! defined('ABSPATH') ){
-	// exit if accessed directly
-	exit;
-}
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 
 class WPA_ADMIN_BAR {
