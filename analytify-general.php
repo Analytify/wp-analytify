@@ -1,53 +1,53 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
+if ( ! defined( 'ABSPATH' ) ) { exit; // Exit if accessed directly
+}
 /**
  * Base Class to use for the Add-ons
  * It will be used to extend the functionality of Analytify WordPress Plugin.
  */
 
 // Setting Global Values
-define( 'ANALYTIFY_LIB_PATH', dirname(__FILE__) . '/lib/' );
+define( 'ANALYTIFY_LIB_PATH', dirname( __FILE__ ) . '/lib/' );
 define( 'ANALYTIFY_ID', 'wp-analytify-options' );
 define( 'ANALYTIFY_NICK', 'Analytify' );
-define( 'ANALYTIFY_ROOT_PATH', dirname(__FILE__) );
-define( 'ANALYTIFY_VERSION', '1.2.4');
-define( 'ANALYTIFY_TYPE', 'FREE');
+define( 'ANALYTIFY_ROOT_PATH', dirname( __FILE__ ) );
+define( 'ANALYTIFY_VERSION', '1.2.4' );
+define( 'ANALYTIFY_TYPE', 'FREE' );
 define( 'ANALYTIFY_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'ANALYTIFY_CLIENTID', '958799092305-7p6jlsnmv1dn44a03ma00kmdrau2i31q.apps.googleusercontent.com' );
 define( 'ANALYTIFY_CLIENTSECRET', 'Mzs1ODgJTpjk8mzQ3mbrypD3' );
 define( 'ANALYTIFY_REDIRECT', 'https://wp-analytify.com/api/' );
-define( 'ANALYTIFY_DEV_KEY', 'AIzaSyAn-70Vah_wB9qifJqjrOhkl77qzWhAR_w');
+define( 'ANALYTIFY_DEV_KEY', 'AIzaSyAn-70Vah_wB9qifJqjrOhkl77qzWhAR_w' );
 define( 'ANALYTIFY_SCOPE', 'https://www.googleapis.com/auth/analytics' ); // readonly scope
 define( 'ANALYTIFY_STORE_URL', 'http://wp-analytify.com' );
 define( 'ANALYTIFY_PRODUCT_NAME', 'Analytify WordPress Plugin' );
 
-if (! class_exists( 'Analytify_General_FREE' ) ) {
+if ( ! class_exists( 'Analytify_General_FREE' ) ) {
 
 	class Analytify_General_FREE {
 
 		function __construct() {
 
-			if (! class_exists('Analytify_Google_Client') ) {
+			if ( ! class_exists( 'Analytify_Google_Client' ) ) {
 
 				require_once ANALYTIFY_LIB_PATH . 'Google/Client.php';
 				require_once ANALYTIFY_LIB_PATH . 'Google/Service/Analytics.php';
 
-		   }
+			}
 
 			$this->client = new Analytify_Google_Client();
 			$this->client->setApprovalPrompt( 'force' );
 			$this->client->setAccessType( 'offline' );
-			
-			if( get_option( 'ANALYTIFY_USER_KEYS') == 'Yes' ) {
 
-				$this->client->setClientId( get_option('ANALYTIFY_CLIENTID'));
-				$this->client->setClientSecret( get_option('ANALYTIFY_CLIENTSECRET') );
-				$this->client->setRedirectUri( get_option('ANALYTIFY_REDIRECT_URI') );
-				$this->client->setDeveloperKey( get_option('ANALYTIFY_DEV_KEY') );
+			if ( get_option( 'ANALYTIFY_USER_KEYS' ) == 'Yes' ) {
 
-			}else{
+				$this->client->setClientId( get_option( 'ANALYTIFY_CLIENTID' ) );
+				$this->client->setClientSecret( get_option( 'ANALYTIFY_CLIENTSECRET' ) );
+				$this->client->setRedirectUri( get_option( 'ANALYTIFY_REDIRECT_URI' ) );
+				$this->client->setDeveloperKey( get_option( 'ANALYTIFY_DEV_KEY' ) );
+
+			} else {
 
 				$this->client->setClientId( ANALYTIFY_CLIENTID );
 				$this->client->setClientSecret( ANALYTIFY_CLIENTSECRET );
@@ -55,21 +55,19 @@ if (! class_exists( 'Analytify_General_FREE' ) ) {
 				$this->client->setDeveloperKey( ANALYTIFY_DEV_KEY );
 
 			}
-			
 
-			$this->client->setScopes( ANALYTIFY_SCOPE ); 
+			$this->client->setScopes( ANALYTIFY_SCOPE );
 
-			try{
-				
+			try {
+
 				$this->service = new Analytify_Google_Service_Analytics( $this->client );
 
 				$this->pa_connect();
-				
+
+			} catch ( Analytify_Google_Service_Exception $e ) {
+
 			}
-			catch ( Analytify_Google_Service_Exception $e ) {
-				
-			}
-			
+
 		}
 
 	    /**
@@ -78,131 +76,121 @@ if (! class_exists( 'Analytify_General_FREE' ) ) {
 
 	    public function pa_connect() {
 
-			
-			$ga_google_authtoken = get_option('pa_google_token');
+			$ga_google_authtoken = get_option( 'pa_google_token' );
 
-	        if (! empty( $ga_google_authtoken )) {
-	                
+	        if ( ! empty( $ga_google_authtoken ) ) {
+
 	                $this->client->setAccessToken( $ga_google_authtoken );
-	        } 
-	        else{
-	                
+	        } else {
+
 	        	$authCode = get_option( 'post_analytics_token' );
-	                
-	                if ( empty( $authCode ) ) return false;
 
-	                try {
+				if ( empty( $authCode ) ) { return false; }
 
-	                    $accessToken = $this->client->authenticate( $authCode );
-	                }
-	                catch ( Exception $e ) {
-	                    return false;
-	                }
+				try {
 
-	                if ( $accessToken ) {
-	                    
-	                    $this->client->setAccessToken( $accessToken );
-	                    
-	                    update_option( 'pa_google_token', $accessToken );
-	                    
-	                    return true;
-	                } //$accessToken
-	                else {
+					$accessToken = $this->client->authenticate( $authCode );
+				} catch ( Exception $e ) {
+					return false;
+				}
 
-	                    return false;
-	                }
-	            }
+				if ( $accessToken ) {
 
-	            $this->token = json_decode($this->client->getAccessToken());
+					$this->client->setAccessToken( $accessToken );
+
+					update_option( 'pa_google_token', $accessToken );
+
+					return true;
+				} //$accessToken
+				else {
+
+					return false;
+				}
+			}
+
+	            $this->token = json_decode( $this->client->getAccessToken() );
 
 	    	return true;
 	    }
 
 	    /*
-	     * This function grabs the data from Google Analytics
-	     * For individual posts/pages.
+         * This function grabs the data from Google Analytics
+         * For individual posts/pages.
 	     */
 	    public function pa_get_analytics( $metrics, $startDate, $endDate, $dimensions = false, $sort = false, $filter = false, $limit = false ) {
 
-	    	try{
-				
-				$this->service = new Analytify_Google_Service_Analytics($this->client);
+	    	try {
+
+				$this->service = new Analytify_Google_Service_Analytics( $this->client );
 	            $params        = array();
-	           
-	            if ($dimensions){
+
+	            if ( $dimensions ) {
 	                $params['dimensions'] = $dimensions;
 	            } //$dimensions
-	           
-	            if ($sort){
+
+	            if ( $sort ) {
 	                $params['sort'] = $sort;
 	            } //$sort
-	            
-	            if ($filter){
+
+	            if ( $filter ) {
 	                $params['filters'] = $filter;
 	            } //$filter
-	            
-	            if ($limit){
+
+	            if ( $limit ) {
 	                $params['max-results'] = $limit;
 	            } //$limit
 
-	            $profile_id = get_option("pt_webprofile");
+	            $profile_id = get_option( 'pt_webprofile' );
 
-	            if (!$profile_id){
+	            if ( ! $profile_id ) {
 	                return false;
 	            }
-	            
-	            return $this->service->data_ga->get('ga:' . $profile_id, $startDate, $endDate, $metrics, $params);
-	        }
 
-	        catch ( Analytify_Google_Service_Exception $e ) {
+	            return $this->service->data_ga->get( 'ga:' . $profile_id, $startDate, $endDate, $metrics, $params );
+	        } catch ( Analytify_Google_Service_Exception $e ) {
 
 	        	// Show error message only for logged in users.
-	        	if ( is_user_logged_in() ) echo $e->getMessage();
-
-	        }
+	        	if ( is_user_logged_in() ) { echo $e->getMessage(); }
+			}
 		}
 
 	    /*
-	     * This function grabs the data from Google Analytics
-	     * For dashboard.
+         * This function grabs the data from Google Analytics
+         * For dashboard.
 	     */
 	    public function pa_get_analytics_dashboard( $metrics, $startDate, $endDate, $dimensions = false, $sort = false, $filter = false, $limit = false ) {
 
-	    	try{
+	    	try {
 
 	            $this->service = new Analytify_Google_Service_Analytics( $this->client );
 	            $params        = array();
 
-	            if ($dimensions){
+	            if ( $dimensions ) {
 	                $params['dimensions'] = $dimensions;
 	            }
-	            if ($sort){
+	            if ( $sort ) {
 	                $params['sort'] = $sort;
-	            } 
-	            if ($filter){
+	            }
+	            if ( $filter ) {
 	                $params['filters'] = $filter;
 	            }
-	            if ($limit){
+	            if ( $limit ) {
 	                $params['max-results'] = $limit;
-	            } 
-	            
-	            $profile_id = get_option("pt_webprofile_dashboard");
-	            if (!$profile_id){
+	            }
+
+	            $profile_id = get_option( 'pt_webprofile_dashboard' );
+	            if ( ! $profile_id ) {
 	                return false;
 	            }
-	            
-	            return $this->service->data_ga->get('ga:' . $profile_id, $startDate, $endDate, $metrics, $params);
 
-	        }
+	            return $this->service->data_ga->get( 'ga:' . $profile_id, $startDate, $endDate, $metrics, $params );
 
-	        catch ( Analytify_Google_Service_Exception $e ) {
-	        	
+	        } catch ( Analytify_Google_Service_Exception $e ) {
+
 	        	// Show error message only for logged in users.
-	        	if ( is_user_logged_in() ) echo $e->getMessage();
-
-	        }
+	        	if ( is_user_logged_in() ) { echo $e->getMessage(); }
+			}
 	    }
-
 	}
 }
 ?>

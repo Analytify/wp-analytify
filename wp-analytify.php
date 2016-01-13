@@ -1126,7 +1126,7 @@ register_uninstall_hook( __FILE__, 		'delete' );
 			"httpversion" => "1.0",
 			"blocking" => false,
 			"headers" => array(),
-			"body" => $fields
+			"body" => $fields,
 			)
 		);
 	}
