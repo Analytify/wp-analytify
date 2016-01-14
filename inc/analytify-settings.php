@@ -117,8 +117,7 @@ if ( filter_input( INPUT_POST, 'save_profile' ) && wp_verify_nonce( filter_input
 		update_option( 'analytify_code', 0 );
 	}
 
-	$update_message = '<div id="setting-error-settings_updated" class="updated notice is-dismissible settings-error below-h2">
-	<p><strong>Success:</strong> Your Profile tab settings are saved.</p></div>';
+	$update_message = esc_html__( 'Your Profile tab settings are saved.', 'wp-analytify' );
 }
 
 /**
@@ -133,8 +132,7 @@ if ( filter_input( INPUT_POST, 'clear' ) && wp_verify_nonce( filter_input( INPUT
 	delete_option( 'pa_welcome_message' );
 	delete_option( 'post_analytics_token' );
 
-	$update_message = '<div id="setting-error-settings_updated" class="updated notice is-dismissible settings-error below-h2">
-	<p><strong>Authentication Cleared login again.</strong></p></div>';
+	$update_message = esc_html__( 'Authentication Cleared login again.', 'wp-analytify' );
 }
 ?>
 
@@ -237,7 +235,7 @@ if ( filter_input( INPUT_POST, 'clear' ) && wp_verify_nonce( filter_input( INPUT
 										}
 
 										?>>
-										<?php echo $name; ?>
+										<?php echo esc_html( $name ); ?>
 									</option>
 									<?php
 									}
@@ -268,7 +266,7 @@ if ( filter_input( INPUT_POST, 'clear' ) && wp_verify_nonce( filter_input( INPUT
 							<?php foreach ( $profiles->items as $profile ) { ?>
 							<option value="<?php echo esc_attr( $profile['id'] );?>"
 								<?php selected( $profile['id'], get_option( 'pt_webprofile' ) ); ?>>
-								<?php echo $profile['websiteUrl'];?> - <?php echo $profile['name'];?>
+								<?php echo esc_html( $profile['websiteUrl'] );?> - <?php echo esc_html( $profile['name'] );?>
                             </option>
 							<?php } ?>
 							</select>
@@ -289,7 +287,7 @@ if ( filter_input( INPUT_POST, 'clear' ) && wp_verify_nonce( filter_input( INPUT
 							<option value="<?php echo esc_attr( $profile['id'] );?>"
 								<?php selected( $profile['id'], get_option( 'pt_webprofile_dashboard' ) ); ?>
                                 >
-								<?php echo $profile['websiteUrl'];?> - <?php echo $profile['name'];?>
+								<?php echo esc_html( $profile['websiteUrl'] );?> - <?php echo esc_html( $profile['name'] );?>
                             </option>
 							<?php } ?>
 							</select>
@@ -357,7 +355,7 @@ if ( filter_input( INPUT_POST, 'clear' ) && wp_verify_nonce( filter_input( INPUT
 											selected( in_array( $role, get_option( 'post_analytics_access_back' ), true ) );
 										}
 										?>>
-										<?php echo $name; ?>
+										<?php echo esc_html( $name ); ?>
 										</option>
 										<?php
 									}
