@@ -84,7 +84,7 @@ if ( filter_input( INPUT_POST, 'save_settings_admin' ) && wp_verify_nonce( filte
 /**
  * Saving Profiles
  */
-if ( filter_input( INPUT_POST, 'save_profile' ) && wp_verify_nonce( filter_input( INPUT_POST, 'admin_tab_nonce' ), 'admin_tab_action' ) ) {
+if ( filter_input( INPUT_POST, 'save_profile' ) && wp_verify_nonce( filter_input( INPUT_POST, 'profile_tab_nonce' ), 'profile_tab_action' ) ) {
 
 	$profile_id 	        = filter_input( INPUT_POST, 'webprofile' );
 	$posts_profile_name		= filter_input( INPUT_POST,  $profile_id . '-1-profile-name' );
@@ -124,7 +124,7 @@ if ( filter_input( INPUT_POST, 'save_profile' ) && wp_verify_nonce( filter_input
 /**
  * Clear Authorization and other data
  */
-if ( filter_input( INPUT_POST, 'clear' ) && check_admin_referer( filter_input( INPUT_POST, 'advanced_tab_nonce' ), 'advanced_tab_action' ) ) {
+if ( filter_input( INPUT_POST, 'clear' ) && wp_verify_nonce( filter_input( INPUT_POST, 'advanced_tab_nonce' ), 'advanced_tab_action' ) ) {
 
 	delete_option( 'pt_webprofile' );
 	delete_option( 'pt_webprofile_dashboard' );
@@ -198,6 +198,8 @@ if ( filter_input( INPUT_POST, 'clear' ) && check_admin_referer( filter_input( I
 			<p class="description"><br /><?php esc_html_e( 'Select your profiles for front-end and backend sections.', 'wp-analytify' ); ?></p>
 
 			<form action="" method="post">
+            <?php wp_nonce_field( 'profile_tab_action', 'profile_tab_nonce' );?>
+
 				<table width="1004" class="form-table">
 					<tbody>
 						<tr>
