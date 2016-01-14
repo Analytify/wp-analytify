@@ -1,16 +1,31 @@
 <?php
+/**
+ * Analytify admin bar file.
+ * @package WP_Analytify
+ */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) { exit; // Exit if accessed directly.
+}
 
-
+/**
+ * This class is used to display a shortcut menu at admin bar.
+ */
 class WPA_ADMIN_BAR {
 
+	/**
+	 * Initialization
+	 * @return void
+	 */
 	public function init() {
-		add_action( 'admin_bar_menu' , array($this , 'admin_bar_menu') , 90 );
+		add_action( 'admin_bar_menu' , array( $this, 'admin_bar_menu' ) , 90 );
 	}
 
-
-	public function admin_bar_menu($wp_admin_bar) {
+	/**
+	 * Menu
+	 * @param  string $wp_admin_bar passed admin bar.
+	 * @return void
+	 */
+	public function admin_bar_menu( $wp_admin_bar ) {
 
 		global $tag, $wp_the_query;
 
@@ -18,17 +33,16 @@ class WPA_ADMIN_BAR {
 
 		$wp_admin_bar->add_node(array(
 			'id' => 'analytify',
-			'title' => '<span class="ab-icon"></span><span id="ab-analytify" class="ab-label">' . esc_html__('Analytify' , 'wp-analytify') . '</span>',
-			'href' => get_admin_url(null, 'admin.php?page=analytify-dashboard' ),
-			'meta' => array('target' => '_blank', 'title' => __('Analytify' , 'wp-analytify'))
+			'title' => '<span class="ab-icon"></span><span id="ab-analytify" class="ab-label">' . esc_html__( 'Analytify' , 'wp-analytify' ) . '</span>',
+			'href' => get_admin_url( null, 'admin.php?page=analytify-dashboard' ),
+			'meta' => array( 'target' => '_blank', 'title' => __( 'Analytify' , 'wp-analytify' ) ),
 		));
 
 		if ( ( ! empty( $current_object->post_type )
 		&& ( $post_type_object = get_post_type_object( $current_object->post_type ) )
 		&& current_user_can( 'edit_post', $current_object->ID )
 		&& $post_type_object->show_ui && $post_type_object->show_in_admin_bar
-		&& $edit_post_link = get_edit_post_link( $current_object->ID ) )) {
-
+		&& $edit_post_link = get_edit_post_link( $current_object->ID ) ) ) {
 
 			$wp_admin_bar->add_menu( array() );
 
@@ -37,7 +51,7 @@ class WPA_ADMIN_BAR {
 				'id'     => 'editpage',
 				'title'  => 'Edit Post',
 				'href'   => $edit_post_link.'#normal-sortables',
-				'meta'   => array( 'class' => 'wpa_admin_color')
+				'meta'   => array( 'class' => 'wpa_admin_color' ),
 			) );
 
 				echo '<style>
@@ -53,21 +67,18 @@ class WPA_ADMIN_BAR {
 				'campaigns' => esc_html__( 'Campaigns' , 'wp-analytify' ),
 				'settings'  => esc_html__( 'Settings' , 'wp-analytify' ),
 			);
-			foreach ($menus as $id => $title)
-			{
+			foreach ( $menus as $id => $title ) {
 				$wp_admin_bar->add_node(array(
 					'parent' => 'analytify',
 					'id'     => $id,
 					'title'  => $title,
-					'href'   => get_admin_url(null, 'admin.php?page=analytify-' . $id )
-
+					'href'   => get_admin_url( null, 'admin.php?page=analytify-' . $id ),
 				));
 			}
 
 	}
-
 }
 
 $admin_bar = new WPA_ADMIN_BAR();
 $admin_bar->init();
- ?>
+	?>

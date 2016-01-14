@@ -29,11 +29,11 @@ if ( filter_input( INPUT_POST, 'save_code' ) && wp_verify_nonce( filter_input( I
 
 	if ( 'Yes' === filter_input( INPUT_POST, 'auth_step' ) ) {
 
-		update_option( 'ANALYTIFY_USER_KEYS' , 		sanitize_text_field( wp_unslash( filter_input( INPUT_POST, 'auth_step' ) ) ) );
+		update_option( 'ANALYTIFY_USER_KEYS' , 		sanitize_text_field( filter_input( INPUT_POST, 'auth_step' ) ) );
 		update_option( 'ANALYTIFY_CLIENTID' , 		sanitize_text_field( filter_input( INPUT_POST, 'analytify_clientid' ) ) );
 		update_option( 'ANALYTIFY_CLIENTSECRET' , 	sanitize_text_field( filter_input( INPUT_POST, 'analytify_clientsecret' ) ) );
 		update_option( 'ANALYTIFY_DEV_KEY' , 		sanitize_text_field( filter_input( INPUT_POST, 'analytify_apikey' ) ) );
-		update_option( 'ANALYTIFY_REDIRECT_URI' , 	esc_url( wp_unslash( filter_input( INPUT_POST, 'analytify_redirect_uri' ) ) ) );
+		update_option( 'ANALYTIFY_REDIRECT_URI' , 	esc_url( filter_input( INPUT_POST, 'analytify_redirect_uri' ) ) );
 
 	} else {
 
@@ -91,10 +91,9 @@ if ( filter_input( INPUT_POST, 'save_profile' ) && wp_verify_nonce( filter_input
 	$display_tracking_code  = filter_input( INPUT_POST, 'display_tracking_code' );
 	$tracking_code          = filter_input( INPUT_POST, 'tracking_code' );
 	$web_profile_dashboard  = filter_input( INPUT_POST, 'webprofile_dashboard' );
-	$web_profile_url        = filter_input( INPUT_POST,  $web_profile_dashboard );
+	$web_profile_url        = esc_url( $_POST[ $web_profile_dashboard ] );
 	$dashboard_profile_pame = filter_input( INPUT_POST,  $web_profile_dashboard . '-profile-name' );
 	$web_property_id        = filter_input( INPUT_POST,  $profile_id.'-1' );
-
 
 	/**
 	 * Variable pt_webprofile_dashboard  is  Dashboard Profile ID
@@ -104,7 +103,7 @@ if ( filter_input( INPUT_POST, 'save_profile' ) && wp_verify_nonce( filter_input
 	update_option( 'pt_webprofile', $profile_id );
 	update_option( 'web_property_id', $web_property_id );
 	update_option( 'pt_webprofile_dashboard', $web_profile_dashboard );
-	update_option( 'pt_webprofile_url', urldecode( urldecode( $web_profile_url ) ) );
+	update_option( 'pt_webprofile_url', $web_profile_url );
 	update_option( 'wp-analytify-dashboard-profile-name', $dashboard_profile_pame );
 	update_option( 'wp-analytify-posts-profile-name', $posts_profile_name );
 
@@ -293,7 +292,7 @@ if ( filter_input( INPUT_POST, 'clear' ) && wp_verify_nonce( filter_input( INPUT
 							</select>
 							<?php
 							foreach ( $profiles->items as $profile ) { ?>
-								<input type="hidden" name="<?php echo esc_attr( $profile['id'] ); ?>" value="<?php echo urlencode( urlencode( $profile['websiteUrl'] ) ); ?>">
+								<input type="hidden" name="<?php echo esc_attr( $profile['id'] ); ?>" value="<?php echo esc_url( $profile['websiteUrl'] ); ?>">
 								<input type="hidden" name="<?php echo esc_attr( $profile['id'] ); ?>-profile-name" value="<?php echo esc_attr( $profile['name'] ); ?>">
 							<?php } ?>
 							<p class="description">Select your website profile for Dashboard Stats. You can select your any Website profile. It will show Analytics for your selected website profile.</p>
