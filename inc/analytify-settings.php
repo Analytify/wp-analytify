@@ -6,6 +6,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; // Exit if accessed directly.
 }
+
 $wp_analytify = new WP_Analytify();
 
 if ( ! function_exists( 'curl_init' ) ) {
@@ -24,38 +25,23 @@ if ( ! function_exists( 'http_build_query' ) ) {
 }
 
 /* Save user specific Keys, ID's and Redirect URI */
-if ( isset( $_POST['save_code'] ) && check_admin_referer( 'advanced_tab_action', 'advanced_tab_nonce' ) ) {
+if ( filter_input( INPUT_POST, 'save_code' ) && wp_verify_nonce( filter_input( INPUT_POST, 'advanced_tab_nonce' ), 'advanced_tab_action' ) ) {
 
-	if ( isset( $_POST['auth_step'] ) && 'Yes' === $_POST['auth_step'] ) {
+	if ( 'Yes' === filter_input( INPUT_POST, 'auth_step' ) ) {
 
-		update_option( 'ANALYTIFY_USER_KEYS' , 		sanitize_text_field( wp_unslash( $_POST['auth_step'] ) ) );
-		update_option( 'ANALYTIFY_CLIENTID' , 		sanitize_key( $_POST['analytify_clientid'] ) );
-		update_option( 'ANALYTIFY_CLIENTSECRET' , 	sanitize_key( $_POST['analytify_clientsecret'] ) );
-		update_option( 'ANALYTIFY_DEV_KEY' , 		sanitize_key( $_POST['analytify_apikey'] ) );
-		update_option( 'ANALYTIFY_REDIRECT_URI' , 	esc_url( wp_unslash( $_POST['analytify_redirect_uri'] ) ) );
+		update_option( 'ANALYTIFY_USER_KEYS' , 		sanitize_text_field( wp_unslash( filter_input( INPUT_POST, 'auth_step' ) ) ) );
+		update_option( 'ANALYTIFY_CLIENTID' , 		sanitize_text_field( filter_input( INPUT_POST, 'analytify_clientid' ) ) );
+		update_option( 'ANALYTIFY_CLIENTSECRET' , 	sanitize_text_field( filter_input( INPUT_POST, 'analytify_clientsecret' ) ) );
+		update_option( 'ANALYTIFY_DEV_KEY' , 		sanitize_text_field( filter_input( INPUT_POST, 'analytify_apikey' ) ) );
+		update_option( 'ANALYTIFY_REDIRECT_URI' , 	esc_url( wp_unslash( filter_input( INPUT_POST, 'analytify_redirect_uri' ) ) ) );
 
-	}
-
-	if ( ! isset( $_POST['auth_step'] ) ) {
+	} else {
 
 		update_option( 'ANALYTIFY_USER_KEYS' , 'No' );
 	}
-
-	/*
-	if( isset($_POST['auth_step']) and $_POST['auth_step'] == 'user_access_code' ) {
-
-        $key_google_token = $_POST[ 'key_google_token' ];
-
-        if( $wp_analytify->pt_save_data( $key_google_token )){
-            $update_message = '<div id="setting-error-settings_updated" class="updated settings-error below-h2"><p><strong>Access code saved.</strong></p></div>';
-        }
-	}*/
-
-
 }
 
-
-if ( get_option( 'ANALYTIFY_USER_KEYS' ) === 'Yes' ) {
+if ( 'Yes' === get_option( 'ANALYTIFY_USER_KEYS' ) ) {
 
 	$redirect_url	= get_option( 'ANALYTIFY_REDIRECT_URI' );
 	$client_id		= get_option( 'ANALYTIFY_CLIENTID' );
@@ -79,47 +65,53 @@ $url = http_build_query( array(
 	)
 );
 
-// Saving settings for back end Analytics for Posts and Pages.
-if ( isset( $_POST['save_settings_admin'] ) ) {
+/**
+ * Saving settings for back end Analytics for Posts and Pages.
+ */
+if ( filter_input( INPUT_POST, 'save_settings_admin' ) && wp_verify_nonce( filter_input( INPUT_POST, 'admin_tab_nonce' ), 'admin_tab_action' ) ) {
 
-	update_option( 'post_analytics_settings_back' , $_POST['backend'] );
-	update_option( 'analytify_posts_stats' , $_POST['posts'] );
-	update_option( 'post_analytics_access_back' , $_POST['access_role_back'] );
-	update_option( 'post_analytics_disable_back' , $_POST['disable_back'] );
-	update_option( 'post_analytics_exclude_posts_back', @$_POST['exclude_posts_back'] );
+	update_option( 'post_analytics_settings_back' , filter_input( INPUT_POST, 'backend' ) );
+	update_option( 'analytify_posts_stats' , filter_input( INPUT_POST, 'posts' ) );
+	update_option( 'post_analytics_access_back' , filter_input( INPUT_POST, 'access_role_back' ) );
+	update_option( 'post_analytics_disable_back' , filter_input( INPUT_POST, 'disable_back' ) );
+	update_option( 'post_analytics_exclude_posts_back', filter_input( INPUT_POST, 'exclude_posts_back' ) );
 
-	$update_message = '<div id="setting-error-settings_updated" class="updated settings-error below-h2"><p><strong>Admin changes are saved.</strong></p></div>';
+	$update_message = sprintf( esc_html__( '%1$s %2$s Admin changes are saved. %3$s %4$s', 'wp-analytify' ), '<div id="setting-error-settings_updated" class="updated notice is-dismissible settings-error below-h2">', '<p>', '</p>', '</div>');
 
-} // endif
-
-
-
-// Saving Profiles
-if ( isset( $_POST['save_profile'] ) ) {
-
-	$profile_id 	        = $_POST['webprofile'];
-	$postsProfileName		= $_POST[ $profile_id.'-1-profile-name' ];
-	$display_tracking_code  = $_POST['display_tracking_code'];
-	$tracking_code          = $_POST['tracking_code'];
-	$web_profile_dashboard  = $_POST['webprofile_dashboard'];
-	$web_profile_url        = $_POST[ $web_profile_dashboard ];
-	$dashboardProfileName 	= $_POST[ $web_profile_dashboard . '-profile-name' ];
-	$webPropertyId          = $_POST[ $profile_id.'-1' ];
+}
 
 
-	// pt_webprofile_dashboard  === Dashboard Profile ID
-	// pt_webprofile            === Posts Profile ID
+/**
+ * Saving Profiles
+ */
+if ( filter_input( INPUT_POST, 'save_profile' ) && wp_verify_nonce( filter_input( INPUT_POST, 'admin_tab_nonce' ), 'admin_tab_action' ) ) {
+
+	$profile_id 	        = filter_input( INPUT_POST, 'webprofile' );
+	$posts_profile_name		= filter_input( INPUT_POST,  $profile_id . '-1-profile-name' );
+	$display_tracking_code  = filter_input( INPUT_POST, 'display_tracking_code' );
+	$tracking_code          = filter_input( INPUT_POST, 'tracking_code' );
+	$web_profile_dashboard  = filter_input( INPUT_POST, 'webprofile_dashboard' );
+	$web_profile_url        = filter_input( INPUT_POST,  $web_profile_dashboard );
+	$dashboard_profile_pame = filter_input( INPUT_POST,  $web_profile_dashboard . '-profile-name' );
+	$web_property_id        = filter_input( INPUT_POST,  $profile_id.'-1' );
+
+
+	/**
+	 * Variable pt_webprofile_dashboard  is  Dashboard Profile ID
+	 * Variable pt_webprofile            is Posts Profile ID
+	 */
+
 	update_option( 'pt_webprofile', $profile_id );
-	update_option( 'webPropertyId', $webPropertyId );
+	update_option( 'web_property_id', $web_property_id );
 	update_option( 'pt_webprofile_dashboard', $web_profile_dashboard );
 	update_option( 'pt_webprofile_url', urldecode( urldecode( $web_profile_url ) ) );
-	update_option( 'wp-analytify-dashboard-profile-name', $dashboardProfileName );
-	update_option( 'wp-analytify-posts-profile-name', $postsProfileName );
+	update_option( 'wp-analytify-dashboard-profile-name', $dashboard_profile_pame );
+	update_option( 'wp-analytify-posts-profile-name', $posts_profile_name );
 
 	update_option( 'analytify_tracking_code', $tracking_code );
 	update_option( 'display_tracking_code', $display_tracking_code );
 
-	if ( isset( $_POST['ga_code'] ) ) {
+	if ( filter_input( INPUT_POST, 'ga_code' ) ) {
 		update_option( 'analytify_code', 1 );
 	} else {
 		update_option( 'analytify_code', 0 );
@@ -129,8 +121,10 @@ if ( isset( $_POST['save_profile'] ) ) {
 	<p><strong>Success:</strong> Your Profile tab settings are saved.</p></div>';
 }
 
-	// Clear Authorization and other data
-if ( isset( $_POST['clear'] ) ) {
+/**
+ * Clear Authorization and other data
+ */
+if ( filter_input( INPUT_POST, 'clear' ) && check_admin_referer( filter_input( INPUT_POST, 'advanced_tab_nonce' ), 'advanced_tab_action' ) ) {
 
 	delete_option( 'pt_webprofile' );
 	delete_option( 'pt_webprofile_dashboard' );
@@ -145,25 +139,29 @@ if ( isset( $_POST['clear'] ) ) {
 ?>
 
 <div class="wrap">
-	<h2 class='opt-title'><span id='icon-options-general' class='analytics-options'><img src="<?php echo plugins_url( 'images/wp-analytics-logo.png', dirname( __FILE__ ) );?>" alt=""></span>
-		<?php echo __( 'Analytify Settings', 'wp-analytify' ); ?>
+	<h2 class='opt-title'><span id='icon-options-general' class='analytics-options'><img src="<?php echo esc_url( plugins_url( 'images/wp-analytics-logo.png', dirname( __FILE__ ) ) );?>" alt=""></span>
+		<?php esc_html_e( 'Analytify Settings', 'wp-analytify' ); ?>
     </h2>
 
 	<?php
-	if ( isset( $update_message ) ) { echo $update_message; }
+	if ( isset( $update_message ) ) {
+		echo $update_message;
+	}
 
-	if ( isset( $_GET['tab'] ) ) { $wp_analytify->pa_settings_tabs( $_GET['tab'] );
+	$current_tab = filter_input( INPUT_GET, 'tab' );
+
+	if ( $current_tab ) { $wp_analytify->pa_settings_tabs( $current_tab );
 	} else { $wp_analytify->pa_settings_tabs( 'authentication' ); }
 
-	if ( isset( $_GET['tab'] ) ) {
-		$tab = $_GET['tab']; } else {
+	if ( isset( $current_tab ) ) {
+		$tab = $current_tab; } else {
 		$tab = 'authentication'; }
 
-		// Authentication Tab section
-		if ( $tab == 'authentication' ) {
+		// Authentication Tab section.
+		if ( 'authentication' === $tab ) {
 			?>
 
-			<form action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI'] ); ?>" method="post" name="settings_form" id="settings_form">
+			<form action=">" method="post" name="settings_form" id="settings_form">
             <table width="1004" class="form-table">
                 <tbody>
 					<?php if ( get_option( 'pa_google_token' ) ) { ?>
@@ -188,24 +186,25 @@ if ( isset( $_POST['clear'] ) ) {
 			</form>
 
 			<?php
-		} // endif
-		// Choose profiles for dashboard and posts at front/back.
-		if ( $tab == 'profile' ) {
+		}
+		/**
+		 * Choose profiles for dashboard and posts at front/back.
+		 */
+		if ( 'profile' === $tab ) {
 
 			$profiles = $wp_analytify->pt_get_analytics_accounts();
 
-			// echo count($profiles);
 			if ( isset( $profiles ) ) { ?>
 			<p class="description"><br /><?php esc_html_e( 'Select your profiles for front-end and backend sections.', 'wp-analytify' ); ?></p>
 
-			<form action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI'] ); ?>" method="post">
+			<form action="" method="post">
 				<table width="1004" class="form-table">
 					<tbody>
 						<tr>
 							<th width="115"><?php esc_html_e( 'Install Google Analytics tracking code :', 'wp-analytify' ); ?></th>
 							<td width="877">
 								<input type="checkbox" name="ga_code" value="1" 
-								<?php if ( get_option( 'analytify_code' ) == 1 ) { echo 'checked'; } ?>>
+								<?php if ( 1 === get_option( 'analytify_code' ) ) { echo 'checked'; } ?>>
 								<p class="description">Insert Google Analytics JS code in header to track the visitors. You can uncheck this option if you have already insert the GA code in your website.</p>
 							</td>
 						</tr>
@@ -272,7 +271,7 @@ if ( isset( $_POST['clear'] ) ) {
 							</select>
 							<?php
 							foreach ( $profiles->items as $profile ) { ?>
-								<input type="hidden" name="<?php echo $profile['id']; ?>-1" value="<?php echo $profile['webPropertyId'] ?>">
+								<input type="hidden" name="<?php echo $profile['id']; ?>-1" value="<?php echo $profile['web_property_id'] ?>">
 								<input type="hidden" name="<?php echo $profile['id']; ?>-1-profile-name" value="<?php echo $profile['name'] ?>">
 							<?php } ?>
 							<p class="description">Select your website profile for wp-admin edit pages and fron-end pages. Select profile which matches your current WordPress website.</p>
@@ -319,6 +318,7 @@ if ( isset( $_POST['clear'] ) ) {
 		<p class="description"><br /><?php esc_html_e( 'Following are the settings for Admin side. Google Analytics will appear under the posts, custom post types or pages.', 'wp-analytify' ); ?></p>
 
 		<form action="" method="post">
+		<?php wp_nonce_field( 'admin_tab_action', 'admin_tab_nonce' );?>
 			<table width="1004" class="form-table">
 				<tbody>
 					<tr></tr>
@@ -500,7 +500,7 @@ if ( is_array( get_option( 'post_analytics_settings_back' ) ) ) {
 		if ( $tab == 'advanced' ) {
 			?>
 
-			<form action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI'] ); ?>" method="post" name="settings_form" id="settings_form">
+			<form action="" method="post" name="settings_form" id="settings_form">
             <?php wp_nonce_field( 'advanced_tab_action', 'advanced_tab_nonce' );?>
             <table width="1004" class="form-table">
                 <tbody>
