@@ -25,15 +25,15 @@ if ( ! function_exists( 'http_build_query' ) ) {
 }
 
 /* Save user specific Keys, ID's and Redirect URI */
-if ( filter_input( INPUT_POST, 'save_code' ) && wp_verify_nonce( filter_input( INPUT_POST, 'advanced_tab_nonce' ), 'advanced_tab_action' ) ) {
+if ( isset( $_POST['save_code'] ) && wp_verify_nonce( $_POST['advanced_tab_nonce'], 'advanced_tab_action' ) ) {
 
-	if ( 'Yes' === filter_input( INPUT_POST, 'auth_step' ) ) {
+	if ( 'Yes' === $_POST['auth_step'] ) {
 
-		update_option( 'ANALYTIFY_USER_KEYS' , 		sanitize_text_field( filter_input( INPUT_POST, 'auth_step' ) ) );
-		update_option( 'ANALYTIFY_CLIENTID' , 		sanitize_text_field( filter_input( INPUT_POST, 'analytify_clientid' ) ) );
-		update_option( 'ANALYTIFY_CLIENTSECRET' , 	sanitize_text_field( filter_input( INPUT_POST, 'analytify_clientsecret' ) ) );
-		update_option( 'ANALYTIFY_DEV_KEY' , 		sanitize_text_field( filter_input( INPUT_POST, 'analytify_apikey' ) ) );
-		update_option( 'ANALYTIFY_REDIRECT_URI' , 	esc_url( filter_input( INPUT_POST, 'analytify_redirect_uri' ) ) );
+		update_option( 'ANALYTIFY_USER_KEYS' , 		sanitize_text_field( $_POST['auth_step'] ) );
+		update_option( 'ANALYTIFY_CLIENTID' , 		sanitize_text_field( $_POST['analytify_clientid'] ) );
+		update_option( 'ANALYTIFY_CLIENTSECRET' , 	sanitize_text_field( $_POST['analytify_clientsecret'] ) );
+		update_option( 'ANALYTIFY_DEV_KEY' , 		sanitize_text_field( $_POST['analytify_apikey'] ) );
+		update_option( 'ANALYTIFY_REDIRECT_URI' , 	esc_url( $_POST['analytify_redirect_uri'] ) );
 
 	} else {
 
@@ -43,38 +43,39 @@ if ( filter_input( INPUT_POST, 'save_code' ) && wp_verify_nonce( filter_input( I
 
 if ( 'Yes' === get_option( 'ANALYTIFY_USER_KEYS' ) ) {
 
-	$redirect_url	= get_option( 'ANALYTIFY_REDIRECT_URI' );
-	$client_id		= get_option( 'ANALYTIFY_CLIENTID' );
+	$redirect_url = get_option( 'ANALYTIFY_REDIRECT_URI' );
+	$client_id    = get_option( 'ANALYTIFY_CLIENTID' );
 
 } else {
 
-	$redirect_url	= ANALYTIFY_REDIRECT;
-	$client_id		= ANALYTIFY_CLIENTID;
+	$redirect_url = ANALYTIFY_REDIRECT;
+	$client_id    = ANALYTIFY_CLIENTID;
 }
 
 
-$url = http_build_query( array(
-	'next'            => $wp_analytify->pa_setting_url(),
-	'scope'           => ANALYTIFY_SCOPE,
-	'response_type'   => 'code',
-	'state'			  => get_admin_url() . 'admin.php?page=analytify-settings',
-	'redirect_uri'    => $redirect_url,
-	'client_id'       => $client_id,
-	'access_type'     => 'offline',
-	'approval_prompt' => 'force',
+$url = http_build_query(
+	array(
+		'next'            => $wp_analytify->pa_setting_url(),
+		'scope'           => ANALYTIFY_SCOPE,
+		'response_type'   => 'code',
+		'state'			  => get_admin_url() . 'admin.php?page=analytify-settings',
+		'redirect_uri'    => esc_url( $redirect_url ),
+		'client_id'       => $client_id,
+		'access_type'     => 'offline',
+		'approval_prompt' => 'force',
 	)
 );
 
 /**
  * Saving settings for back end Analytics for Posts and Pages.
  */
-if ( filter_input( INPUT_POST, 'save_settings_admin' ) && wp_verify_nonce( filter_input( INPUT_POST, 'admin_tab_nonce' ), 'admin_tab_action' ) ) {
+if ( $_POST['save_settings_admin'] && wp_verify_nonce( $_POST['admin_tab_nonce'], 'admin_tab_action' ) ) {
 
-	update_option( 'post_analytics_settings_back' , filter_input( INPUT_POST, 'backend' ) );
-	update_option( 'analytify_posts_stats' , filter_input( INPUT_POST, 'posts' ) );
-	update_option( 'post_analytics_access_back' , filter_input( INPUT_POST, 'access_role_back' ) );
-	update_option( 'post_analytics_disable_back' , filter_input( INPUT_POST, 'disable_back' ) );
-	update_option( 'post_analytics_exclude_posts_back', filter_input( INPUT_POST, 'exclude_posts_back' ) );
+	update_option( 'post_analytics_settings_back', sanitize_text_field( $_POST['backend'] ) );
+	update_option( 'analytify_posts_stats', sanitize_text_field( $_POST['posts'] ) );
+	update_option( 'post_analytics_access_back', sanitize_text_field( $_POST['access_role_back'] ) );
+	update_option( 'post_analytics_disable_back', sanitize_text_field( $_POST['disable_back'] ) );
+	update_option( 'post_analytics_exclude_posts_back', sanitize_text_field( $_POST['exclude_posts_back'] ) );
 
 	$update_message = esc_html__( 'Admin changes are saved.', 'wp-analytify' );
 
@@ -84,33 +85,33 @@ if ( filter_input( INPUT_POST, 'save_settings_admin' ) && wp_verify_nonce( filte
 /**
  * Saving Profiles
  */
-if ( filter_input( INPUT_POST, 'save_profile' ) && wp_verify_nonce( filter_input( INPUT_POST, 'profile_tab_nonce' ), 'profile_tab_action' ) ) {
+if ( isset( $_POST['save_profile'] ) && wp_verify_nonce( $_POST['profile_tab_nonce'], 'profile_tab_action' ) ) {
 
-	$profile_id 	        = filter_input( INPUT_POST, 'webprofile' );
-	$posts_profile_name		= filter_input( INPUT_POST,  $profile_id . '-1-profile-name' );
-	$display_tracking_code  = filter_input( INPUT_POST, 'display_tracking_code' );
-	$tracking_code          = filter_input( INPUT_POST, 'tracking_code' );
-	$web_profile_dashboard  = filter_input( INPUT_POST, 'webprofile_dashboard' );
-	$web_profile_url        = esc_url( $_POST[ $web_profile_dashboard ] );
-	$dashboard_profile_pame = filter_input( INPUT_POST,  $web_profile_dashboard . '-profile-name' );
-	$web_property_id        = filter_input( INPUT_POST,  $profile_id.'-1' );
+	$profile_id             = $_POST['webprofile'];
+	$posts_profile_name     = $_POST[$profile_id . '-1-profile-name'];
+	$display_tracking_code  = $_POST['display_tracking_code'];
+	$tracking_code          = $_POST['tracking_code'];
+	$web_profile_dashboard  = $_POST['webprofile_dashboard'];
+	$web_profile_url        = $_POST[ $web_profile_dashboard ];
+	$dashboard_profile_pame = $_POST[$web_profile_dashboard . '-profile-name'];
+	$web_property_id        = $_POST[$profile_id.'-1'];
 
 	/**
 	 * Variable pt_webprofile_dashboard  is  Dashboard Profile ID
 	 * Variable pt_webprofile            is Posts Profile ID
 	 */
 
-	update_option( 'pt_webprofile', $profile_id );
-	update_option( 'web_property_id', $web_property_id );
-	update_option( 'pt_webprofile_dashboard', $web_profile_dashboard );
-	update_option( 'pt_webprofile_url', $web_profile_url );
-	update_option( 'wp-analytify-dashboard-profile-name', $dashboard_profile_pame );
-	update_option( 'wp-analytify-posts-profile-name', $posts_profile_name );
+	update_option( 'pt_webprofile', sanitize_text_field( $profile_id ) );
+	update_option( 'web_property_id', sanitize_text_field( $web_property_id ) );
+	update_option( 'pt_webprofile_dashboard', sanitize_text_field( $web_profile_dashboard ) );
+	update_option( 'pt_webprofile_url', esc_url( $web_profile_url ) );
+	update_option( 'wp-analytify-dashboard-profile-name', sanitize_text_field( $dashboard_profile_pame ) );
+	update_option( 'wp-analytify-posts-profile-name', sanitize_text_field( $posts_profile_name ) );
 
-	update_option( 'analytify_tracking_code', $tracking_code );
-	update_option( 'display_tracking_code', $display_tracking_code );
+	update_option( 'analytify_tracking_code', sanitize_text_field( $tracking_code ) );
+	update_option( 'display_tracking_code', sanitize_text_field( $display_tracking_code ) );
 
-	if ( filter_input( INPUT_POST, 'ga_code' ) ) {
+	if ( isset( $_POST['ga_code'] ) ) {
 		update_option( 'analytify_code', 1 );
 	} else {
 		update_option( 'analytify_code', 0 );
@@ -122,7 +123,7 @@ if ( filter_input( INPUT_POST, 'save_profile' ) && wp_verify_nonce( filter_input
 /**
  * Clear Authorization and other data
  */
-if ( filter_input( INPUT_POST, 'clear' ) && wp_verify_nonce( filter_input( INPUT_POST, 'logout_tab_nonce' ), 'logout_tab_action' ) ) {
+if ( isset( $_POST['clear'] ) && wp_verify_nonce( $_POST['logout_tab_nonce'] ), 'logout_tab_action' ) ) {
 
 	delete_option( 'pt_webprofile' );
 	delete_option( 'pt_webprofile_dashboard' );
@@ -145,7 +146,7 @@ if ( filter_input( INPUT_POST, 'clear' ) && wp_verify_nonce( filter_input( INPUT
 		echo '<div id="setting-error-settings_updated" class="updated notice is-dismissible settings-error below-h2"><p>' . esc_html( $update_message ) . '</p></div>';
 	}
 
-	$current_tab = filter_input( INPUT_GET, 'tab' );
+	$current_tab = $_GET['tab'];
 
 	if ( $current_tab ) { $wp_analytify->pa_settings_tabs( $current_tab );
 	} else { $wp_analytify->pa_settings_tabs( 'authentication' ); }
