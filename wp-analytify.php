@@ -21,7 +21,6 @@ ini_set( 'include_path', dirname( __FILE__ ) . '/lib/' );
 
 define( 'WP_ANALYTIFY_FILE', __FILE__ );
 
-
 include_once( 'inc/class-wpa-ajax.php' );
 include_once( 'inc/wpa-core-functions.php' );
 include_once( 'inc/class-wpa-adminbar.php' );
@@ -102,7 +101,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			));
 
 			/*Insert Google Analytics Code*/
-			if ( 1 === get_option( 'analytify_code' ) ) {
+			if ( '1' === get_option( 'analytify_code' ) ) {
 
 				add_action( 'wp_head', array(
 					$this,
@@ -353,10 +352,10 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			$roles = $current_user->roles;
 
 			if ( isset( $roles[0] ) and in_array( $roles[0], get_option( 'display_tracking_code' ) ) ) {
-
+				echo '<!-- This user is disabled from tracking by Analytify !-->';
 			} else {
 
-				echo '<!-- This code is added by Analytify v - ' . ANALYTIFY_VERSION . ' http://wp-analytify.com/ !--> ';
+				echo '<!-- This site uses Google Analytics code by Analytify version - ' . ANALYTIFY_VERSION . ' https://wp-analytify.com/ !--> ';
 
 				if ( get_option( 'analytify_tracking_code' ) == 'universal' ) { ?>
 
@@ -392,7 +391,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 							<?php
 				}
 
-				echo '<!-- This code is added by Analytify  v - ' . ANALYTIFY_VERSION . ' !-->';
+				echo '<!-- Google Analytics code by Analytify version - ' . ANALYTIFY_VERSION . ' !-->';
 			}
 		}
 

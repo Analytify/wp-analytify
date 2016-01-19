@@ -82,77 +82,82 @@ $url = http_build_query(
  */
 if ( isset( $_POST['save_settings_admin'] ) && isset( $_POST['admin_tab_nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['admin_tab_nonce'] ) ), 'admin_tab_action' ) ) { // Input var okay.
 
-	if ( isset( $_POST['backend'] ) ) { // Input var okay.
-		update_option( 'post_analytics_settings_back', sanitize_text_field( wp_unslash( $_POST['backend'] ) ) ); // Input var okay.
-	}
-	if ( isset( $_POST['posts'] ) ) { // Input var okay.
-		update_option( 'analytify_posts_stats', sanitize_text_field( wp_unslash( $_POST['posts'] ) ) ); // Input var okay.
-	}
-	if ( isset( $_POST['access_role_back'] ) ) { // Input var okay.
-		update_option( 'post_analytics_access_back', sanitize_text_field( wp_unslash( $_POST['access_role_back'] ) ) ); // Input var okay.
-	}
 	if ( isset( $_POST['disable_back'] ) ) { // Input var okay.
-		update_option( 'post_analytics_disable_back', sanitize_text_field( wp_unslash( $_POST['disable_back'] ) ) ); // Input var okay.
+		update_option( 'post_analytics_disable_back', '1' );
+	} else {
+		update_option( 'post_analytics_disable_back', '0' );
 	}
+
+	if ( isset( $_POST['access_role_back'] ) ) { // Input var okay.
+		update_option( 'post_analytics_access_back', array_map( 'sanitize_text_field', wp_unslash( $_POST['access_role_back'] ) ) ); // Input var okay.
+	}
+
+	if ( isset( $_POST['posts'] ) ) { // Input var okay.
+		update_option( 'analytify_posts_stats', array_map( 'sanitize_text_field', wp_unslash( $_POST['posts'] ) ) ); // Input var okay.
+	}
+
+	if ( isset( $_POST['backend'] ) ) { // Input var okay.
+		update_option( 'post_analytics_settings_back', array_map( 'sanitize_text_field', wp_unslash( $_POST['backend'] ) ) ); // Input var okay.
+	}
+
 	if ( isset( $_POST['exclude_posts_back'] ) ) { // Input var okay.
 		update_option( 'post_analytics_exclude_posts_back', sanitize_text_field( wp_unslash( $_POST['exclude_posts_back'] ) ) ); // Input var okay.
 	}
 
-	$update_message = esc_html__( 'Admin changes are saved.', 'wp-analytify' );
+	$update_message = esc_html__( 'Admin tab settings are saved.', 'wp-analytify' );
 
 }
 
 
 /**
  * Saving Profiles
+ * Variable pt_webprofile_dashboard  is  Dashboard Profile ID
+ * Variable pt_webprofile            is Posts Profile ID
  */
 if ( isset( $_POST['save_profile'] ) && isset( $_POST['profile_tab_nonce'] ) && wp_verify_nonce( sanitize_key( $_POST['profile_tab_nonce'] ), 'profile_tab_action' ) ) { // Input var okay.
 
 	if ( isset( $_POST['ga_code'] ) ) { // Input var okay.
-		update_option( 'analytify_code', 1 );
+		update_option( 'analytify_code', '1' );
 	} else {
-		update_option( 'analytify_code', 0 );
+		update_option( 'analytify_code', '0' );
 	}
 
-	$display_tracking_code  = isset( $_POST['display_tracking_code'] ) ? $_POST['display_tracking_code'] : false ; // Input var okay.
-
+	if ( isset( $_POST['display_tracking_code'] ) ) { // Input var okay.
+		$exclude_role_array = array_map( 'sanitize_text_field', wp_unslash( $_POST['display_tracking_code'] ) ); // Input var okay.
+		update_option( 'display_tracking_code', $exclude_role_array );  // Input var okay.
+	} else {
+		update_option( 'display_tracking_code', array() );
+	}
 
 	if ( isset( $_POST['webprofile'] ) ) { // Input var okay.
-		$profile_id             = sanitize_text_field( wp_unslash( $_POST['webprofile'] ) ); // Input var okay.
+
+		$profile_id = sanitize_text_field( wp_unslash( $_POST['webprofile'] ) ); // Input var okay.
+		update_option( 'pt_webprofile',  $profile_id );
+
+		if ( isset( $_POST[ $profile_id . '-1-profile-name' ] ) ) { // Input var okay.
+			update_option( 'wp-analytify-posts-profile-name', sanitize_text_field( wp_unslash( $_POST[ $profile_id . '-1-profile-name' ] ) ) ); // Input var okay.
+		}
+
+		if ( isset( $_POST[ $profile_id . '-1' ] ) ) { // Input var okay.
+			update_option( 'web_property_id', sanitize_text_field( wp_unslash( $_POST[ $profile_id . '-1' ] ) ) ); // Input var okay.
+		}
 	}
-	if ( isset( $_POST[ $profile_id . '-1-profile-name' ] ) ) {
-		$posts_profile_name     = sanitize_text_field( wp_unslash( $_POST[ $profile_id . '-1-profile-name' ] ) ); // Input var okay.
+
+	if ( isset( $_POST['tracking_code'] ) ) { // Input var okay.
+		update_option( 'analytify_tracking_code', sanitize_text_field( wp_unslash( $_POST['tracking_code'] ) ) ); // Input var okay.
 	}
-	if ( isset( $_POST['tracking_code'] ) ) {
-		$tracking_code          = sanitize_text_field( wp_unslash( $_POST['tracking_code'] ) ); // Input var okay.
-	}
-	if ( isset( $_POST['webprofile_dashboard'] ) ) {
+
+	if ( isset( $_POST['webprofile_dashboard'] ) ) { // Input var okay.
 		$web_profile_dashboard  = sanitize_text_field( wp_unslash( $_POST['webprofile_dashboard'] ) ); // Input var okay.
-	}
-	if ( isset( $_POST[ $web_profile_dashboard ] ) ) {
-		$web_profile_url        = sanitize_text_field( wp_unslash( $_POST[ $web_profile_dashboard ] ) ); // Input var okay.
-	}
-	if ( isset( $_POST[ $web_profile_dashboard . '-profile-name' ] ) ) {
-		$dashboard_profile_pame = sanitize_text_field( wp_unslash( $_POST[ $web_profile_dashboard . '-profile-name' ] ) ); // Input var okay.
-	}
-	if ( isset( $_POST[ $profile_id . '-1' ] ) ) {
-		$web_property_id        = sanitize_text_field( wp_unslash( $_POST[ $profile_id . '-1' ] ) ); // Input var okay.
-	}
+		update_option( 'pt_webprofile_dashboard', sanitize_text_field( $web_profile_dashboard ) );
 
-	/**
-	 * Variable pt_webprofile_dashboard  is  Dashboard Profile ID
-	 * Variable pt_webprofile            is Posts Profile ID
-	 */
-
-	update_option( 'pt_webprofile', sanitize_text_field( $profile_id ) );
-	update_option( 'web_property_id', sanitize_text_field( $web_property_id ) );
-	update_option( 'pt_webprofile_dashboard', sanitize_text_field( $web_profile_dashboard ) );
-	update_option( 'pt_webprofile_url', esc_url( $web_profile_url ) );
-	update_option( 'wp-analytify-dashboard-profile-name', sanitize_text_field( $dashboard_profile_pame ) );
-	update_option( 'wp-analytify-posts-profile-name', sanitize_text_field( $posts_profile_name ) );
-
-	update_option( 'analytify_tracking_code', sanitize_text_field( $tracking_code ) );
-	update_option( 'display_tracking_code', $display_tracking_code );
+		if ( isset( $_POST[ $web_profile_dashboard ] ) ) { // Input var okay.
+			update_option( 'pt_webprofile_url', sanitize_text_field( wp_unslash( $_POST[ $web_profile_dashboard ] ) ) ); // Input var okay.
+		}
+		if ( isset( $_POST[ $web_profile_dashboard . '-profile-name' ] ) ) { // Input var okay.
+			update_option( 'wp-analytify-dashboard-profile-name', sanitize_text_field( wp_unslash( $_POST[ $web_profile_dashboard . '-profile-name' ] ) ) ); // Input var okay.
+		}
+	}
 
 	$update_message = esc_html__( 'Your Profile tab settings are saved.', 'wp-analytify' );
 }
@@ -185,7 +190,7 @@ if ( isset( $_POST['clear'] ) && isset( $_POST['logout_tab_nonce'] ) && wp_verif
 
 	$current_tab = 'authentication';
 
-	if ( isset( $_GET['tab'] ) ) {
+	if ( isset( $_GET['tab'] ) ) { // Input var okay.
 		$current_tab = sanitize_text_field( wp_unslash( $_GET['tab'] ) ); // Input var okay.
 	}
 
@@ -229,10 +234,6 @@ if ( isset( $_POST['clear'] ) && isset( $_POST['logout_tab_nonce'] ) && wp_verif
 	 */
 	if ( 'profile' === $current_tab ) {
 
-		//var_dump(get_option( 'display_tracking_code' ));
-
-		//var_dump($_POST['display_tracking_code']);
-
 		$profiles = $wp_analytify->pt_get_analytics_accounts();
 
 		if ( isset( $profiles ) ) { ?>
@@ -245,9 +246,10 @@ if ( isset( $_POST['clear'] ) && isset( $_POST['logout_tab_nonce'] ) && wp_verif
 					<tbody>
 						<tr>
 							<th width="115"><?php esc_html_e( 'Install Google Analytics tracking code :', 'wp-analytify' ); ?></th>
-							<td width="877">
+							<td width="877"><?php ?>
 								<input type="checkbox" name="ga_code" value="1"
-								<?php if ( '1' === get_option( 'analytify_code' ) ) { echo 'checked'; } ?>>
+								<?php
+								if ( '1' === get_option( 'analytify_code' ) ) { echo 'checked'; } ?>>
 								<p class="description">Insert Google Analytics JS code in header to track the visitors. You can uncheck this option if you have already insert the GA code in your website.</p>
 							</td>
 						</tr>
@@ -354,8 +356,10 @@ if ( isset( $_POST['clear'] ) && isset( $_POST['logout_tab_nonce'] ) && wp_verif
 		</form>
 		<?php }
 
-		// Choose metrics for posts at admin.
-	if (  'admin' === $current_tab ) { ?>
+	// Choose metrics for posts at admin.
+	if (  'admin' === $current_tab ) {
+
+		?>
 
 		<p class="description"><br /><?php esc_html_e( 'Following are the settings for Admin side. Google Analytics will appear under the posts, custom post types or pages.', 'wp-analytify' ); ?></p>
 
@@ -367,7 +371,7 @@ if ( isset( $_POST['clear'] ) && isset( $_POST['logout_tab_nonce'] ) && wp_verif
 					<tr>
 						<th><?php esc_html_e( 'Disable Analytics under posts/pages (wp-admin):', 'wp-analytify' ) ?></th>
 						<td>
-							<input type="checkbox" name="disable_back" value="1" <?php if ( 1 === get_option( 'post_analytics_disable_back' ) ) { ?> checked <?php } ?>>
+							<input type="checkbox" name="disable_back" value="1" <?php if ( '1' === get_option( 'post_analytics_disable_back' ) ) { echo 'checked'; } ?>>
 							<p class="description">Check it, If you don't want to load Stats by default on all pages. Remember, There is a section under each post/page. You can still view Stats on pages you want.</p>
 						</td>
 
@@ -454,90 +458,89 @@ if ( isset( $_POST['clear'] ) && isset( $_POST['logout_tab_nonce'] ) && wp_verif
 						}
 						?>>
 						<?php esc_html_e( 'Keywords Stats' ); ?>
-					</option>
-					<option value="show-social-back"
-					<?php
-					if ( is_array( get_option( 'post_analytics_settings_back' ) ) ) {
-						selected( in_array( 'show-social-back', get_option( 'post_analytics_settings_back' ), true ) );
-					}
-					?>>
-					<?php esc_html_e( 'Social Media Stats' ); ?>
-				</option>
-				<option value="show-browser-back"
-				<?php
-				if ( is_array( get_option( 'post_analytics_settings_back' ) ) ) {
-					selected( in_array( 'show-browser-back', get_option( 'post_analytics_settings_back' ), true ) );
-				}
-				?>>
-				<?php esc_html_e( 'Browser Stats' ); ?>
-			</option>
-			<option value="show-referrer-back"
-			<?php
-			if ( is_array( get_option( 'post_analytics_settings_back' ) ) ) {
-				selected( in_array( 'show-referrer-back', get_option( 'post_analytics_settings_back' ), true ) );
-			}
-			?>>
-			<?php esc_html_e( 'Referrers' ); ?>
-		</option>
-		<option value="show-pages-back"
+						</option>
+						<option value="show-social-back"
+						<?php
+						if ( is_array( get_option( 'post_analytics_settings_back' ) ) ) {
+							selected( in_array( 'show-social-back', get_option( 'post_analytics_settings_back' ), true ) );
+						}
+						?>>
+						<?php esc_html_e( 'Social Media Stats' ); ?>
+						</option>
+						<option value="show-browser-back"
+						<?php
+						if ( is_array( get_option( 'post_analytics_settings_back' ) ) ) {
+							selected( in_array( 'show-browser-back', get_option( 'post_analytics_settings_back' ), true ) );
+						}
+						?>>
+						<?php esc_html_e( 'Browser Stats' ); ?>
+						</option>
+						<option value="show-referrer-back"
+						<?php
+						if ( is_array( get_option( 'post_analytics_settings_back' ) ) ) {
+							selected( in_array( 'show-referrer-back', get_option( 'post_analytics_settings_back' ), true ) );
+						}
+						?>>
+						<?php esc_html_e( 'Referrers' ); ?>
+						</option>
+						<option value="show-pages-back"
+						<?php
+						if ( is_array( get_option( 'post_analytics_settings_back' ) ) ) {
+							selected( in_array( 'show-pages-back', get_option( 'post_analytics_settings_back' ), true ) );
+						}
+						?>>
+						<?php esc_html_e( ' Page bounce and exit stats ' ); ?>
+						</option>
+						<option value="show-mobile-back"
+						<?php
+						if ( is_array( get_option( 'post_analytics_settings_back' ) ) ) {
+							selected( in_array( 'show-mobile-back', get_option( 'post_analytics_settings_back' ), true ) );
+						}
+						?>>
+						<?php esc_html_e( 'Mobile Devices Stats' ); ?>
+						</option>
+						<option value="show-os-back"
+						<?php
+						if ( is_array( get_option( 'post_analytics_settings_back' ) ) ) {
+							selected( in_array( 'show-os-back', get_option( 'post_analytics_settings_back' ), true ) );
+						}
+						?>>
+						<?php esc_html_e( 'Operating System Stats' ); ?>
+						</option>
+						<option value="show-city-back"
+						<?php
+						if ( is_array( get_option( 'post_analytics_settings_back' ) ) ) {
+							selected( in_array( 'show-city-back', get_option( 'post_analytics_settings_back' ), true ) );
+						}
+						?>>
+						<?php esc_html_e( 'City Stats' ); ?>
+						</option>
+					</select>
+					<p class="description">Select which Stats panels you want to display under posts/pages. Only 'General Stats' will visible in Free Version. Buy <a href="http://wp-analytify.com/" target="_blank">Premium</a> version to see the full statistics.</p>
+					</td>
+			</tr>
+			<tr>
+			<th width="115"><?php esc_html_e( 'Exclude Analytics on specific pages:', 'wp-analytify' ); ?></th>
+			<td>
+				<input type="text" name="exclude_posts_back" id="exclude_posts_back" value="<?php echo esc_attr( get_option( 'post_analytics_exclude_posts_back' ) ); ?>" class="regular-text" />
+				<p class="description">Enter ID's of posts or pages separated by commas on which you don't want to show Analytics e.g 11,45,66</p>
+			</td>
+			</tr>
+			<tr>
+			<th></th>
+			<td>
+				<p class="submit">
+					<input type="submit" name="save_settings_admin" value="Save Changes" class="button-primary">
+				</p>
+			</td>
+			</tr>
+		</tbody>
+		</table>
+		</form>
 		<?php
-		if ( is_array( get_option( 'post_analytics_settings_back' ) ) ) {
-			selected( in_array( 'show-pages-back', get_option( 'post_analytics_settings_back' ), true ) );
-		}
-		?>>
-		<?php esc_html_e( ' Page bounce and exit stats ' ); ?>
-	</option>
-	<option value="show-mobile-back"
-	<?php
-	if ( is_array( get_option( 'post_analytics_settings_back' ) ) ) {
-		selected( in_array( 'show-mobile-back', get_option( 'post_analytics_settings_back' ), true ) );
-	}
-	?>>
-	<?php esc_html_e( 'Mobile Devices Stats' ); ?>
-</option>
-<option value="show-os-back"
-<?php
-if ( is_array( get_option( 'post_analytics_settings_back' ) ) ) {
-	selected( in_array( 'show-os-back', get_option( 'post_analytics_settings_back' ), true ) );
-}
-?>>
-<?php esc_html_e( 'Operating System Stats' ); ?>
-</option>
-<option value="show-city-back"
-<?php
-if ( is_array( get_option( 'post_analytics_settings_back' ) ) ) {
-	selected( in_array( 'show-city-back', get_option( 'post_analytics_settings_back' ), true ) );
-}
-?>>
-<?php esc_html_e( 'City Stats' ); ?>
-</option>
-</select>
-<p class="description">Select which Stats panels you want to display under posts/pages. Only 'General Stats' will visible in Free Version. Buy <a href="http://wp-analytify.com/" target="_blank">Premium</a> version to see the full statistics.</p>
-</td>
-</tr>
-<tr>
-<th width="115"><?php esc_html_e( 'Exclude Analytics on specific pages:', 'wp-analytify' ); ?></th>
-<td>
-	<input type="text" name="exclude_posts_back" id="exclude_posts_back" value="<?php echo esc_attr( get_option( 'post_analytics_exclude_posts_back' ) ); ?>" class="regular-text" />
-	<p class="description">Enter ID's of posts or pages separated by commas on which you don't want to show Analytics e.g 11,45,66</p>
-</td>
-</tr>
-<tr>
-<th></th>
-<td>
-	<p class="submit">
-		<input type="submit" name="save_settings_admin" value="Save Changes" class="button-primary">
-	</p>
-</td>
-</tr>
-</tbody>
-</table>
-</form>
-<?php
 	}
 
-
-		// Advanced Tab section.
+	// Advanced Tab section.
 	if ( 'advanced' === $current_tab ) {
 		?>
 
@@ -609,7 +612,7 @@ if ( is_array( get_option( 'post_analytics_settings_back' ) ) ) {
 <div class="right-area">
 
 <div class="cen" style="margin-bottom:10px;">
-    Tweet us <a href="https://twitter.com/wpanalytify" style="text-decoration:none;"> @twitter </a> and Like us <a href="https://fb.com/analytify" style="text-decoration:none;">@facebook</a>
+    Tweet us <a href="https://twitter.com/wpanalytify" style="text-decoration:none;"> @wpanalytify </a> and Like us <a href="https://fb.com/analytify" style="text-decoration:none;">@analytify</a>
 </div>
 
     <table class="wa_feature_table">
