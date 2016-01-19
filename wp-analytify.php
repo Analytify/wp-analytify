@@ -898,7 +898,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
                     $('#toplevel_page_analytify-dashboard').pointer({
 
-						content: '<?php echo esc_js( $pointer_content ); ?>',
+						content: '<?php echo $pointer_content; ?>',
                         position: {
                             edge: 'left',
                             align: 'center'
@@ -938,7 +938,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				if ( ! get_user_meta( $user_id, 'analytify_ignore_notice110' ) ) {
 
 					echo '<div class="updated"><p>';
-					printf( esc_html__( '<b>Note:</b> Enhanced eCommerce Tracking for <b><a href="https://wp-analytify.com/go/WooCommerce" target="_blank">WooCommerce</a></b> is finally available with Analytify! Increase sales and track - Product Clicks, Adds to cart, Checkouts and <a href="https://wp-analytify.com/go/WooCommerce-Announcement-blog" target="_blank">many more</a>. <a href="%1$s">[Hide Notice]</a>' ),  esc_url( admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ) ) );
+					printf( __( '<b>Note:</b> Enhanced eCommerce Tracking for <b><a href="https://wp-analytify.com/go/WooCommerce" target="_blank">WooCommerce</a></b> is finally available with Analytify! Increase sales and track - Product Clicks, Adds to cart, Checkouts and <a href="https://wp-analytify.com/go/WooCommerce-Announcement-blog" target="_blank">many more</a>. <a href="%1$s">[Hide Notice]</a>' ),  esc_url( admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ) ) );
 					echo '</p></div>';
 
 				}

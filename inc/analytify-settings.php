@@ -108,6 +108,15 @@ if ( isset( $_POST['save_settings_admin'] ) && isset( $_POST['admin_tab_nonce'] 
  */
 if ( isset( $_POST['save_profile'] ) && isset( $_POST['profile_tab_nonce'] ) && wp_verify_nonce( sanitize_key( $_POST['profile_tab_nonce'] ), 'profile_tab_action' ) ) { // Input var okay.
 
+	if ( isset( $_POST['ga_code'] ) ) { // Input var okay.
+		update_option( 'analytify_code', 1 );
+	} else {
+		update_option( 'analytify_code', 0 );
+	}
+
+	$display_tracking_code  = isset( $_POST['display_tracking_code'] ) ? $_POST['display_tracking_code'] : false ; // Input var okay.
+
+
 	if ( isset( $_POST['webprofile'] ) ) { // Input var okay.
 		$profile_id             = sanitize_text_field( wp_unslash( $_POST['webprofile'] ) ); // Input var okay.
 	}
@@ -143,13 +152,7 @@ if ( isset( $_POST['save_profile'] ) && isset( $_POST['profile_tab_nonce'] ) && 
 	update_option( 'wp-analytify-posts-profile-name', sanitize_text_field( $posts_profile_name ) );
 
 	update_option( 'analytify_tracking_code', sanitize_text_field( $tracking_code ) );
-	update_option( 'display_tracking_code', sanitize_text_field( $display_tracking_code ) );
-
-	if ( isset( $_POST['ga_code'] ) ) { // Input var okay.
-		update_option( 'analytify_code', 1 );
-	} else {
-		update_option( 'analytify_code', 0 );
-	}
+	update_option( 'display_tracking_code', $display_tracking_code );
 
 	$update_message = esc_html__( 'Your Profile tab settings are saved.', 'wp-analytify' );
 }
@@ -205,13 +208,13 @@ if ( isset( $_POST['clear'] ) && isset( $_POST['logout_tab_nonce'] ) && wp_verif
                             <td colspan="2"><input type="submit" class="button-primary" value="Logout" name="clear" /></td>
                         </tr>
 					<?php
-	
-	} else { ?>
+
+} else { ?>
 
 				<tr>
-					<td width="877" colspan="2">
-						<a target="_self" class="button-primary authentication_btn" href="<?php echo esc_url( 'https://accounts.google.com/o/oauth2/auth?' . $url ); ?>">Log in with Google Analytics Account</a>
-					</td>
+				<td width="877" colspan="2">
+					<a target="_self" class="button-primary authentication_btn" href="<?php echo esc_url( 'https://accounts.google.com/o/oauth2/auth?' . $url ); ?>">Log in with Google Analytics Account</a>
+				</td>
 				</tr>
 
 				<?php } ?>
@@ -220,15 +223,19 @@ if ( isset( $_POST['clear'] ) && isset( $_POST['logout_tab_nonce'] ) && wp_verif
 			</form>
 
 			<?php
-		}
-		/**
-		 * Choose profiles for dashboard and posts at front/back.
-		 */
-		if ( 'profile' === $current_tab ) {
+	}
+	/**
+	 * Choose profiles for dashboard and posts at front/back.
+	 */
+	if ( 'profile' === $current_tab ) {
 
-			$profiles = $wp_analytify->pt_get_analytics_accounts();
+		//var_dump(get_option( 'display_tracking_code' ));
 
-			if ( isset( $profiles ) ) { ?>
+		//var_dump($_POST['display_tracking_code']);
+
+		$profiles = $wp_analytify->pt_get_analytics_accounts();
+
+		if ( isset( $profiles ) ) { ?>
 			<p class="description"><br /><?php esc_html_e( 'Select your profiles for front-end and backend sections.', 'wp-analytify' ); ?></p>
 
 			<form action="" method="post">
@@ -240,7 +247,7 @@ if ( isset( $_POST['clear'] ) && isset( $_POST['logout_tab_nonce'] ) && wp_verif
 							<th width="115"><?php esc_html_e( 'Install Google Analytics tracking code :', 'wp-analytify' ); ?></th>
 							<td width="877">
 								<input type="checkbox" name="ga_code" value="1"
-								<?php if ( 1 === get_option( 'analytify_code' ) ) { echo 'checked'; } ?>>
+								<?php if ( '1' === get_option( 'analytify_code' ) ) { echo 'checked'; } ?>>
 								<p class="description">Insert Google Analytics JS code in header to track the visitors. You can uncheck this option if you have already insert the GA code in your website.</p>
 							</td>
 						</tr>
@@ -348,7 +355,7 @@ if ( isset( $_POST['clear'] ) && isset( $_POST['logout_tab_nonce'] ) && wp_verif
 		<?php }
 
 		// Choose metrics for posts at admin.
-		if (  'admin' === $current_tab ) { ?>
+	if (  'admin' === $current_tab ) { ?>
 
 		<p class="description"><br /><?php esc_html_e( 'Following are the settings for Admin side. Google Analytics will appear under the posts, custom post types or pages.', 'wp-analytify' ); ?></p>
 
@@ -408,28 +415,28 @@ if ( isset( $_POST['clear'] ) && isset( $_POST['logout_tab_nonce'] ) && wp_verif
 							<option value="post" <?php if ( is_array( get_option( 'analytify_posts_stats' ) ) ) {
 								selected( in_array( 'post', get_option( 'analytify_posts_stats' ), true ) );
 }  ?>
-                            >Posts</option>
-							<option value="page" <?php if ( is_array( get_option( 'analytify_posts_stats' ) ) ) {
+						>Posts</option>
+						<option value="page" <?php if ( is_array( get_option( 'analytify_posts_stats' ) ) ) {
 								selected( in_array( 'page', get_option( 'analytify_posts_stats' ), true ) );
 }  ?>
-                            >Pages</option>
+						>Pages</option>
 
-                        </select>
-                        <p class="description">Show Analytics under the above post types only. Buy <a href="http://wp-analytify.com/" target="_blank">Premium</a> version for Custom Post Types.</p>
-                    </td>
-                </tr>
-                <tr>
-                    <!-- Area For backend settings -->
-					<th width="115"><?php esc_html_e( 'Edit pages/posts Analytics panels:' ); ?></th>
-                    <td>
-                        <select class="analytify-chosen" name="backend[]" multiple="multiple" style="width:400px">
-                            <option value="show-overall-back"
-							<?php
-							if ( is_array( get_option( 'post_analytics_settings_back' ) ) ) {
-								selected( in_array( 'show-overall-back', get_option( 'post_analytics_settings_back' ), true ) );
-							}
-							?>>
-							<?php esc_html_e( 'General Stats' )?>
+					</select>
+					<p class="description">Show Analytics under the above post types only. Buy <a href="http://wp-analytify.com/" target="_blank">Premium</a> version for Custom Post Types.</p>
+				</td>
+			</tr>
+			<tr>
+				<!-- Area For backend settings -->
+				<th width="115"><?php esc_html_e( 'Edit pages/posts Analytics panels:' ); ?></th>
+				<td>
+					<select class="analytify-chosen" name="backend[]" multiple="multiple" style="width:400px">
+						<option value="show-overall-back"
+						<?php
+						if ( is_array( get_option( 'post_analytics_settings_back' ) ) ) {
+							selected( in_array( 'show-overall-back', get_option( 'post_analytics_settings_back' ), true ) );
+						}
+						?>>
+						<?php esc_html_e( 'General Stats' )?>
 							</option>
 							<option value="show-country-back"
 							<?php
@@ -509,91 +516,91 @@ if ( is_array( get_option( 'post_analytics_settings_back' ) ) ) {
 </td>
 </tr>
 <tr>
-	<th width="115"><?php esc_html_e( 'Exclude Analytics on specific pages:', 'wp-analytify' ); ?></th>
-    <td>
-		<input type="text" name="exclude_posts_back" id="exclude_posts_back" value="<?php echo esc_attr( get_option( 'post_analytics_exclude_posts_back' ) ); ?>" class="regular-text" />
-        <p class="description">Enter ID's of posts or pages separated by commas on which you don't want to show Analytics e.g 11,45,66</p>
-    </td>
+<th width="115"><?php esc_html_e( 'Exclude Analytics on specific pages:', 'wp-analytify' ); ?></th>
+<td>
+	<input type="text" name="exclude_posts_back" id="exclude_posts_back" value="<?php echo esc_attr( get_option( 'post_analytics_exclude_posts_back' ) ); ?>" class="regular-text" />
+	<p class="description">Enter ID's of posts or pages separated by commas on which you don't want to show Analytics e.g 11,45,66</p>
+</td>
 </tr>
 <tr>
-    <th></th>
-    <td>
-        <p class="submit">
-            <input type="submit" name="save_settings_admin" value="Save Changes" class="button-primary">
-        </p>
-    </td>
+<th></th>
+<td>
+	<p class="submit">
+		<input type="submit" name="save_settings_admin" value="Save Changes" class="button-primary">
+	</p>
+</td>
 </tr>
 </tbody>
 </table>
 </form>
 <?php
-		}
+	}
 
 
 		// Advanced Tab section.
-		if ( 'advanced' === $current_tab ) {
-			?>
+	if ( 'advanced' === $current_tab ) {
+		?>
 
-			<form action="" method="post" name="settings_form" id="settings_form">
-            <?php wp_nonce_field( 'advanced_tab_action', 'advanced_tab_nonce' );?>
+		<form action="" method="post" name="settings_form" id="settings_form">
+		<?php wp_nonce_field( 'advanced_tab_action', 'advanced_tab_nonce' );?>
             <table width="1004" class="form-table">
-                <tbody>
-                    <tr>
-                        <td width="877" colspan="2">
-						<input type="checkbox" <?php if ( 'Yes' === get_option( 'ANALYTIFY_USER_KEYS' ) ) { echo 'checked'; } ?> name="auth_step" id="auth_step" value="Yes" />
-							<?php echo esc_html_e( 'Do you want to use your own API keys ?', 'wp-analytify' ); ?>
-                        </td>
-                    </tr>
+			<tbody>
+				<tr>
+					<td width="877" colspan="2">
+					<input type="checkbox" <?php if ( 'Yes' === get_option( 'ANALYTIFY_USER_KEYS' ) ) { echo 'checked'; } ?> name="auth_step" id="auth_step" value="Yes" />
+						<?php echo esc_html_e( 'Do you want to use your own API keys ?', 'wp-analytify' ); ?>
+					</td>
+				</tr>
 
-                    <tr class="user_keys">
-                        <td colspan="2"><p class="description"> You need to create a Project in Google <a target="_blank" href="https://console.developers.google.com/project">Console</a>. Read this simple 3 minutes <a target="_blank" href="http://wp-analytify.com/google-api-tutorial">tutorial</a> to get your ClientID, Client Secret, Redirect URI and API Key and enter them in below inputs.</p></td>
-                    </tr>
+				<tr class="user_keys">
+					<td colspan="2"><p class="description"> You need to create a Project in Google <a target="_blank" href="https://console.developers.google.com/project">Console</a>. Read this simple 3 minutes <a target="_blank" href="http://wp-analytify.com/google-api-tutorial">tutorial</a> to get your ClientID, Client Secret, Redirect URI and API Key and enter them in below inputs.</p></td>
+				</tr>
 
-                    <tr class="user_keys">
+				<tr class="user_keys">
 
-						<th><?php esc_html_e( 'ClientID:' )?></th>
-                        <td>
-							<input type="text" placeholder="<?php esc_html_e( 'Your ClientID' )?>" name="analytify_clientid" id="analytify_clientid" value="<?php echo esc_attr( get_option( 'ANALYTIFY_CLIENTID' ) ); ?>" style="width:450px;"/>
-                        </td>
-                    </tr>
+					<th><?php esc_html_e( 'ClientID:' )?></th>
+					<td>
+						<input type="text" placeholder="<?php esc_html_e( 'Your ClientID' )?>" name="analytify_clientid" id="analytify_clientid" value="<?php echo esc_attr( get_option( 'ANALYTIFY_CLIENTID' ) ); ?>" style="width:450px;"/>
+					</td>
+				</tr>
 
-                    <tr class="user_keys">
-						<th><?php esc_html_e( 'Client Secret:' )?></th>
-                        <td>
-							<input type="text" placeholder="<?php esc_html_e( 'Your Client Secret' )?>" name="analytify_clientsecret" id="analytify_clientsecret" value="<?php echo esc_attr( get_option( 'ANALYTIFY_CLIENTSECRET' ) ); ?>" style="width:450px;"/>
-                        </td>
-                    </tr>
+				<tr class="user_keys">
+					<th><?php esc_html_e( 'Client Secret:' )?></th>
+					<td>
+						<input type="text" placeholder="<?php esc_html_e( 'Your Client Secret' )?>" name="analytify_clientsecret" id="analytify_clientsecret" value="<?php echo esc_attr( get_option( 'ANALYTIFY_CLIENTSECRET' ) ); ?>" style="width:450px;"/>
+					</td>
+				</tr>
 
-                    <tr class="user_keys">
-						<th width="115"><?php esc_html_e( 'API Key:' )?></th>
-                        <td width="877">
-							<input type="text" placeholder="<?php esc_html_e( 'Your API Key' )?>" name="analytify_apikey" id="analytify_apikey" value="<?php echo esc_attr( get_option( 'ANALYTIFY_DEV_KEY' ) ); ?>" style="width:450px;"/>
-                            <p class="description">(Optional)</p>
-                        </td>
-                    </tr>
+				<tr class="user_keys">
+					<th width="115"><?php esc_html_e( 'API Key:' )?></th>
+					<td width="877">
+						<input type="text" placeholder="<?php esc_html_e( 'Your API Key' )?>" name="analytify_apikey" id="analytify_apikey" value="<?php echo esc_attr( get_option( 'ANALYTIFY_DEV_KEY' ) ); ?>" style="width:450px;"/>
+						<p class="description">(Optional)</p>
+					</td>
+				</tr>
 
-                    <tr class="user_keys">
-						<th width="115"><?php esc_html_e( 'Redirect URI:' )?></th>
-                        <td width="877">
-							<input type="text" placeholder="<?php esc_html_e( 'Your Redirect URI' )?>" name="analytify_redirect_uri" id="analytify_redirect_uri" value="<?php echo esc_attr( get_option( 'ANALYTIFY_REDIRECT_URI' ) ); ?>" style="width:450px;"/>
-                            <p class="description">(Redirect URI is very important when you are using your own Keys)</p>
-                        </td>
-                    </tr>
+				<tr class="user_keys">
+					<th width="115"><?php esc_html_e( 'Redirect URI:' )?></th>
+					<td width="877">
+						<input type="text" placeholder="<?php esc_html_e( 'Your Redirect URI' )?>" name="analytify_redirect_uri" id="analytify_redirect_uri" value="<?php echo esc_attr( get_option( 'ANALYTIFY_REDIRECT_URI' ) ); ?>" style="width:450px;"/>
+						<p class="description">(Redirect URI is very important when you are using your own Keys)</p>
+					</td>
+				</tr>
 
-                    <tr>
-                        <th></th>
-                        <td>
-                            <p class="submit">
-                                <input type="submit" class="button-primary" value="Save Changes" name="save_code" />
-                            </p>
-                        </td>
-                    </tr>
-                </tbody>
+				<tr>
+					<th></th>
+					<td>
+						<p class="submit">
+							<input type="submit" class="button-primary" value="Save Changes" name="save_code" />
+						</p>
+					</td>
+				</tr>
+			</tbody>
             </table>
         </form>
 
 		<?php
-		}
+	}
 
 ?>
 
