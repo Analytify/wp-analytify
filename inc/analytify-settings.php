@@ -181,7 +181,7 @@ if ( isset( $_POST['clear'] ) && isset( $_POST['logout_tab_nonce'] ) && wp_verif
 	}
 
 	if ( isset( $_GET['tab'] ) ) {
-		$current_tab = sanitize_text_field( absint( $_GET['tab'] ) ); // Input var okay.
+		$current_tab = sanitize_text_field( wp_unslash( $_GET['tab'] ) ); // Input var okay.
 	}
 
 	if ( $current_tab ) { $wp_analytify->pa_settings_tabs( $current_tab );
