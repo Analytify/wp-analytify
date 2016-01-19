@@ -180,19 +180,16 @@ if ( isset( $_POST['clear'] ) && isset( $_POST['logout_tab_nonce'] ) && wp_verif
 		echo '<div id="setting-error-settings_updated" class="updated notice is-dismissible settings-error below-h2"><p>' . esc_html( $update_message ) . '</p></div>';
 	}
 
+	$current_tab = 'authentication';
+
 	if ( isset( $_GET['tab'] ) ) {
 		$current_tab = sanitize_text_field( wp_unslash( $_GET['tab'] ) ); // Input var okay.
 	}
 
-	if ( $current_tab ) { $wp_analytify->pa_settings_tabs( $current_tab );
-	} else { $wp_analytify->pa_settings_tabs( 'authentication' ); }
+	$wp_analytify->pa_settings_tabs( $current_tab );
 
-	if ( isset( $current_tab ) ) {
-		$tab = $current_tab; } else {
-		$tab = 'authentication'; }
-
-		// Authentication Tab section.
-		if ( 'authentication' === $tab ) {
+	// Authentication Tab section.
+	if ( 'authentication' === $current_tab ) {
 			?>
 
 			<form action="" method="post" name="settings_form" id="settings_form">
@@ -208,7 +205,8 @@ if ( isset( $_POST['clear'] ) && isset( $_POST['logout_tab_nonce'] ) && wp_verif
                             <td colspan="2"><input type="submit" class="button-primary" value="Logout" name="clear" /></td>
                         </tr>
 					<?php
-} else { ?>
+	
+	} else { ?>
 
 				<tr>
 					<td width="877" colspan="2">
@@ -226,7 +224,7 @@ if ( isset( $_POST['clear'] ) && isset( $_POST['logout_tab_nonce'] ) && wp_verif
 		/**
 		 * Choose profiles for dashboard and posts at front/back.
 		 */
-		if ( 'profile' === $tab ) {
+		if ( 'profile' === $current_tab ) {
 
 			$profiles = $wp_analytify->pt_get_analytics_accounts();
 
@@ -350,7 +348,7 @@ if ( isset( $_POST['clear'] ) && isset( $_POST['logout_tab_nonce'] ) && wp_verif
 		<?php }
 
 		// Choose metrics for posts at admin.
-		if (  'admin' === $tab ) { ?>
+		if (  'admin' === $current_tab ) { ?>
 
 		<p class="description"><br /><?php esc_html_e( 'Following are the settings for Admin side. Google Analytics will appear under the posts, custom post types or pages.', 'wp-analytify' ); ?></p>
 
@@ -533,7 +531,7 @@ if ( is_array( get_option( 'post_analytics_settings_back' ) ) ) {
 
 
 		// Advanced Tab section.
-		if ( 'advanced' === $tab ) {
+		if ( 'advanced' === $current_tab ) {
 			?>
 
 			<form action="" method="post" name="settings_form" id="settings_form">

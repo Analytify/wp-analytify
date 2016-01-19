@@ -947,7 +947,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			/* Show notices */
 			if ( ! isset( $acces_token ) || empty( $acces_token ) || ! get_option( 'pa_google_token' ) ) { // Input var okay.
 
-				echo "<div class='error notice is-dismissible'><p><b>Notice:</b> " . esc_html__( "<b><a style=\"text-decoration:none\" href='" . esc_url( menu_page_url( 'analytify-settings', false ) ) ."'>Connect</a></b> Analytify with your Google account.", 'wp-analytify' ).'</p></div>';
+				echo '<div class="error notice is-dismissible"><p><b>Notice:</b> <b><a style="text-decoration:none" href="' . esc_url( menu_page_url( 'analytify-settings', false ) ) . '">Connect</a></b> Analytify with your Google account.</p></div>';
 			} else {
 
 				if ( ( ! isset( $profile_id ) || empty( $profile_id )) && ! isset( $_POST['save_profile'] ) ) { // Input var okay.
