@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: Google Analytics Dashboard By Analytify
  * Plugin URI: http://wp-analytify.com/details
@@ -12,6 +11,7 @@
  * Min WP Version: 3.0
  * Max WP Version: 4.4
  * Domain Path: /lang
+ * @package WP_ANALYTIFY
  */
 
 // Exit if accessed directly.
@@ -34,13 +34,25 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 	}
 
 	/**
-	 * WP_Analytify Class
+	 * WP_Analytify Extending class from General class.
 	 */
 	class WP_Analytify extends Analytify_General_FREE{
 
+		/**
+		 * [$token access token.]
+		 * @var boolean
+		 */
 		public $token  = false;
+
+		/**
+		 * [$client client object.]
+		 * @var null
+		 */
 		public $client = null;
 
+		/**
+		 * Initialize code.
+		 */
 		function __construct() {
 
 			parent::__construct();
@@ -90,7 +102,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			));
 
 			/*Insert Google Analytics Code*/
-			if ( get_option( 'analytify_code' ) == 1  ) {
+			if ( 1 === get_option( 'analytify_code' ) ) {
 
 				add_action( 'wp_head', array(
 					$this,
@@ -113,7 +125,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				'get_ajax_secret_keys',
 			));
 
-			if ( get_option( 'analytify_disable_front' ) == 0 ) {
+			if ( 0 === get_option( 'analytify_disable_front' ) ) {
 
 				add_filter( 'the_content', array(
 					$this,
@@ -122,9 +134,9 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			}
 
 			/**
-		 * load Analytics under the EDIT POST Screen
-		 * add action runs only for admin section and load metabox.
-		 */
+			 * Load Analytics under the EDIT POST Screen
+			 * Add action runs only for admin section and load metabox.
+			 */
 
 			if ( is_admin() ) {
 				add_action( 'load-post.php', array(
@@ -134,7 +146,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			}
 
 			// Show welcome message when user activate plugin.
-			if ( get_option( 'show_tracking_pointer_1' ) != 1 ) {
+			if ( 1 !== get_option( 'show_tracking_pointer_1' ) ) {
 
 				add_action( 'admin_print_footer_scripts', array(
 					$this,
@@ -178,7 +190,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		}
 
 		/**
-		 * Save Authentication code on return
+		 * Save Authentication code on return from redirecting url after login.
 		 * @since 1.2.0
 		 */
 		public function wpa_check_authentication() {
@@ -856,13 +868,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				global $current_user;
 				$roles = $current_user->roles;
 
-				/*
-				if ( ( current_user_can ( 'manage_options' ) ) ) {
-
-                return true;
-				}*/
-
-				if ( in_array( $roles[0], $access_level ) ) {
+				if ( in_array( $roles[0], $access_level, true ) ) {
 
 					return true;
 				} else {
@@ -873,9 +879,9 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		}
 
 		/**
-		 * Show pointers for announcements
+		 * [pa_welcome_message Show pointers for announcements. ]
+		 * @return void
 		 */
-
 		public function pa_welcome_message() {
 
 			$pointer_content  = '<h3>Announcement:</h3>';
@@ -892,7 +898,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
                     $('#toplevel_page_analytify-dashboard').pointer({
 
-						content: '<?php echo $pointer_content; ?>',
+						content: '<?php echo esc_js( $pointer_content ); ?>',
                         position: {
                             edge: 'left',
                             align: 'center'
@@ -915,8 +921,10 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		<?php
 		}
 
-		/* Display a notice that can be dismissed */
-
+		/**
+		 * [analytify_admin_notice Display a notice that can be dismissed.]
+		 * @return void
+		 */
 		function analytify_admin_notice() {
 
 			$profile_id     = get_option( 'pt_webprofile' );
@@ -930,31 +938,36 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				if ( ! get_user_meta( $user_id, 'analytify_ignore_notice110' ) ) {
 
 					echo '<div class="updated"><p>';
-					printf( __( '<b>Note:</b> Enhanced eCommerce Tracking for <b><a href="https://wp-analytify.com/go/WooCommerce" target="_blank">WooCommerce</a></b> is finally available with Analytify! Increase sales and track - Product Clicks, Adds to cart, Checkouts and <a href="https://wp-analytify.com/go/WooCommerce-Announcement-blog" target="_blank">many more</a>. <a href="%1$s">[Hide Notice]</a>' ),  admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ) );
+					printf( esc_html__( '<b>Note:</b> Enhanced eCommerce Tracking for <b><a href="https://wp-analytify.com/go/WooCommerce" target="_blank">WooCommerce</a></b> is finally available with Analytify! Increase sales and track - Product Clicks, Adds to cart, Checkouts and <a href="https://wp-analytify.com/go/WooCommerce-Announcement-blog" target="_blank">many more</a>. <a href="%1$s">[Hide Notice]</a>' ),  esc_url( admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ) ) );
 					echo '</p></div>';
 
 				}
 			}
 
 			/* Show notices */
-			if ( ! isset( $acces_token ) || empty( $acces_token ) || ! get_option( 'pa_google_token' ) ) {
+			if ( ! isset( $acces_token ) || empty( $acces_token ) || ! get_option( 'pa_google_token' ) ) { // Input var okay.
 
-				echo "<div class='error notice is-dismissible'><p><b>Notice:</b> " . __( "<b><a style=\"text-decoration:none\" href='" . menu_page_url( 'analytify-settings', false ) ."'>Connect</a></b> Analytify with your Google account.", 'wp-analytify' ).'</p></div>';
+				echo "<div class='error notice is-dismissible'><p><b>Notice:</b> " . esc_html__( "<b><a style=\"text-decoration:none\" href='" . esc_url( menu_page_url( 'analytify-settings', false ) ) ."'>Connect</a></b> Analytify with your Google account.", 'wp-analytify' ).'</p></div>';
 			} else {
 
-				if ( ( ! isset( $profile_id ) || empty( $profile_id )) && ! isset( $_POST['save_profile'] ) ) {
+				if ( ( ! isset( $profile_id ) || empty( $profile_id )) && ! isset( $_POST['save_profile'] ) ) { // Input var okay.
 
-					echo '<div class="error notice is-dismissible"><p>' . __( 'Congratulations! Analytify is now authenticated. Select your website profile <a href="' . menu_page_url( 'analytify-settings', false ) . '&tab=profile">here</a> ', 'wp-analytify' ) . '</p></div>';
+					echo '<div class="error notice is-dismissible"><p>' . esc_html__( 'Congratulations! Analytify is now authenticated. Select your website profile <a href="' . esc_url( menu_page_url( 'analytify-settings', false ) ) . '&tab=profile">here</a> ', 'wp-analytify' ) . '</p></div>';
 				}
 			}
 		}
 
+		/**
+		 * [analytify_nag_ignore Ignore notice]
+		 * @return void
+		 */
 		function analytify_nag_ignore() {
+
 			global $current_user;
 
 			$user_id = $current_user->ID;
 			/* If user clicks to ignore the notice, add that to their user meta */
-			if ( isset( $_GET['analytify_nag_ignore'] ) && '0' == $_GET['analytify_nag_ignore'] ) {
+			if ( isset( $_GET['analytify_nag_ignore'] ) && '0' === $_GET['analytify_nag_ignore'] ) { // Input var okay.
 				add_user_meta( $user_id, 'analytify_ignore_notice110', 'true', true );
 			}
 		}
@@ -966,12 +979,11 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		 */
 		private function review_dismissal() {
 
-			// delete_site_option( 'wp_analytify_review_dismiss' );
 			if ( ! is_admin() ||
 			! current_user_can( 'manage_options' ) ||
-			! isset( $_GET['_wpnonce'] ) ||
-			! wp_verify_nonce( $_GET['_wpnonce'], 'analytify-review-nonce' ) ||
-			! isset( $_GET['wp_analytify_review_dismiss'] ) ) {
+			! isset( $_GET['_wpnonce'] ) || // Input var okay.
+			! wp_verify_nonce( sanitize_key( $_GET['_wpnonce'] ), 'analytify-review-nonce' ) || // Input var okay.
+			! isset( $_GET['wp_analytify_review_dismiss'] ) ) { // Input var okay.
 
 				return;
 			}
@@ -992,7 +1004,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			$activation_time 	= get_site_option( 'wp_analytify_active_time' );
 			$review_dismissal	= get_site_option( 'wp_analytify_review_dismiss' );
 
-			if ( $review_dismissal == 'yes' ) {
+			if ( 'yes' === $review_dismissal ) {
 				return;
 			}
 
@@ -1013,19 +1025,20 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		 * Review notice message
 		 *
 		 * @since  1.2.2
-		 * @return NULL
+		 * @return void
 		 */
 		public function analytify_review_notice_message() {
 
-			$scheme      = (parse_url( $_SERVER['REQUEST_URI'], PHP_URL_QUERY )) ? '&' : '?';
-			$url         = $_SERVER['REQUEST_URI'] . $scheme . 'wp_analytify_review_dismiss=yes';
+			$request_uri = isset( $_SERVER['REQUEST_URI'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ) ) : false; // Input var okay.
+			$scheme      = ( parse_url( $request_uri, PHP_URL_QUERY ) ) ? '&' : '?';
+			$url         = $request_uri . $scheme . 'wp_analytify_review_dismiss=yes';
 			$dismiss_url = wp_nonce_url( $url, 'analytify-review-nonce' );
 
 			echo '<div class="updated">
-					<p>' . __( 'You have been using the ', 'wp-analytify' ) . '<a href="' . admin_url( 'admin.php?page=analytify-dashboard' ) . '">WP Analytify</a>' . __( ' for some time now, do you like it? If so, please consider leaving us a review on WordPress.org! It would help us out a lot and we would really appreciate it.', 'wp-analytify' ) . '
+					<p>' . esc_html__( 'You have been using the ', 'wp-analytify' ) . '<a href="' . esc_url( admin_url( 'admin.php?page=analytify-dashboard' ) ) . '">WP Analytify</a>' . esc_html__( ' for some time now, do you like it? If so, please consider leaving us a review on WordPress.org! It would help us out a lot and we would really appreciate it.', 'wp-analytify' ) . '
                         <br><br>
-						<a onclick="location.href=\'' . $dismiss_url . '\';" class="button button-primary" href="' . esc_url( 'https://wordpress.org/support/view/plugin-reviews/wp-analytify?rate=5#postform' ) . '" target="_blank">' . __( 'Leave a Review', 'wp-analytify' ) . '</a>
-						<a href="' .  esc_url( $dismiss_url ) . '">' . __( 'No thanks', 'wp-analytify' ) . '</a>
+						<a onclick="location.href=\'' . esc_url( $dismiss_url ) . '\';" class="button button-primary" href="' . esc_url( 'https://wordpress.org/support/view/plugin-reviews/wp-analytify?rate=5#postform' ) . '" target="_blank">' . esc_html__( 'Leave a Review', 'wp-analytify' ) . '</a>
+						<a href="' .  esc_url( $dismiss_url ) . '">' . esc_html__( 'No thanks', 'wp-analytify' ) . '</a>
                     </p>
 				</div>';
 
@@ -1036,14 +1049,14 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 } //end if
 
-// update_option('show_tracking_pointer_1', 0);
 register_activation_hook( __FILE__,   	'install' );
 register_deactivation_hook( __FILE__, 	'uninstall' );
 register_uninstall_hook( __FILE__, 		'delete' );
 
-	/*
-     * Activate options by default on installing the plugin.
-	 */
+/**
+ * [install Activate options by default on installing the plugin.]
+ * @return void
+ */
 function install() {
 
 	update_option( 'analytify_posts_stats', array( 'post', 'page' ) );
@@ -1052,12 +1065,15 @@ function install() {
 	update_option( 'post_analytics_settings_back' , array( 'show-overall-back' ) );
 	update_option( 'post_analytics_access_back'   , array( 'editor', 'administrator' ) );
 	update_option( 'display_tracking_code'        , array( 'administrator' ) );
-	// send_status_analytify( get_option( 'admin_email' ), 'active');
 }
 
+/**
+ * [uninstall unisntall status]
+ * @return void
+ */
 function uninstall() {
 
-	if ( get_option( 'wpa_allow_tracking' ) == 1 ) { send_status_analytify( get_option( 'admin_email' ), 'in-active' ); }
+	if ( 1 === get_option( 'wpa_allow_tracking' ) ) { send_status_analytify( get_option( 'admin_email' ), 'in-active' ); }
 
 	delete_option( 'analytify_posts_stats' );
 	delete_option( 'pa_google_token' );
@@ -1066,21 +1082,25 @@ function uninstall() {
 
 }
 
+/**
+ * [delete delete]
+ * @return void
+ */
 function delete() {
 
-	if ( get_option( 'wpa_allow_tracking' ) == 1 ) { send_status_analytify( get_option( 'admin_email' ), 'delete' ); }
+	if ( 1 === get_option( 'wpa_allow_tracking' ) ) { send_status_analytify( get_option( 'admin_email' ), 'delete' ); }
 }
 
-	/**
-	 * @param $email
-	 * @param $status
-	 */
-
+/**
+ * [send_status_analytify Send status email.]
+ * @param string $email  users email.
+ * @param string $status plugin status.
+ */
 function send_status_analytify( $email, $status ) {
 
 	$url = 'https://wp-analytify.com/plugin-manager/';
 
-	if ( $email == '' ) {
+	if ( '' === $email ) {
 		$email = 'track@wp-analytify.com';
 	}
 
@@ -1101,4 +1121,4 @@ function send_status_analytify( $email, $status ) {
 		)
 	);
 }
-	?>
+?>
