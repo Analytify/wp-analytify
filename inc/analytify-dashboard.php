@@ -13,11 +13,15 @@ $end_date_val   = strtotime( 'now' );
 $start_date     = date( 'Y-m-d', $start_date_val );
 $end_date       = date( 'Y-m-d', $end_date_val );
 
-if ( filter_input( INPUT_POST, 'view_data' ) && wp_verify_nonce( filter_input( INPUT_POST, 'analytify_dashboard_nonce' ), 'analytify_dashboard_action' ) ) {
+if ( isset( $_POST['view_data'] ) && isset( $_POST['analytify_dashboard_nonce'] ) && wp_verify_nonce( sanitize_key( $_POST['analytify_dashboard_nonce'] ), 'analytify_dashboard_action' ) ) { // Input var okay.
 
-	$s_date   = filter_input( INPUT_POST, 'st_date' );
-	$ed_date  = filter_input( INPUT_POST, 'ed_date' );
+	if ( isset( $_POST['st_date'] ) ) { // Input var okay.
+		$s_date   = sanitize_text_field( wp_unslash( $_POST['st_date'] ) ); // Input var okay.
+	}
 
+	if ( isset( $_POST['ed_date'] ) ) { // Input var okay.
+		$ed_date  = sanitize_text_field( wp_unslash( $_POST['ed_date'] ) ); // Input var okay.
+	}
 }
 
 if ( isset( $s_date ) ) {
@@ -166,7 +170,7 @@ $dashboard_profile_id = get_option( 'pt_webprofile_dashboard' );
 								}
 
 								// End Browser stats.
-								// Operating System Stats
+								// Operating System Stats.
 								$operating_stats = get_transient( md5( 'show-operating-dashboard' . $dashboard_profile_id . $start_date . $end_date ) );
 
 								if ( false === $operating_stats ) {
@@ -179,8 +183,8 @@ $dashboard_profile_id = get_option( 'pt_webprofile_dashboard' );
 									pa_include_operating( $wp_analytify,$operating_stats );
 								}
 
-								// End Operating System Stats
-								// Mobile Stats
+								// End Operating System Stats.
+								// Mobile Stats.
 								$mobile_stats = get_transient( md5( 'show-mobile-dashborad' . $dashboard_profile_id . $start_date . $end_date ) );
 
 								if ( false === $mobile_stats ) {
@@ -193,7 +197,7 @@ $dashboard_profile_id = get_option( 'pt_webprofile_dashboard' );
 									pa_include_mobile( $wp_analytify,$mobile_stats );
 								}
 
-								// End Mobile Stats
+								// End Mobile Stats.
 								// Referral stats.
 								$referr_stats = get_transient( md5( 'show-referral-dashborad' . $dashboard_profile_id . $start_date . $end_date ) );
 
