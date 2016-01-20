@@ -4,7 +4,7 @@ Donate link: http://paypal.me/Analytify
 Tags: google analytics, WordPress Analytics, analytify, tracking,  analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google anylytics, ecommerce tracking
 Requires at least: 3.0
 Tested up to: 4.4
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -101,6 +101,9 @@ First, you need to Authenticate your GA account then you can select your web pro
 == Changelog ==
 
 = 1.2.4 - 2015-12-24 =
+* Bug Fixed   : Security update
+
+= 1.2.4 - 2015-12-24 =
 * New Feature : Cache Analytify dashboard stats based on Profile selection
 * Bug Fixed   : Code cleanup and indentation
 
@@ -166,8 +169,8 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Upgrade Notice ==
 
-= 1.2.4 =
-* [Must Update] Minor Bug fixes and New feature for dashboard.
+= 1.2.5 =
+* [Must Update] Major security update.
 
 
 == Donation ==
