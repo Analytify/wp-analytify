@@ -951,7 +951,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 				if ( ( ! isset( $profile_id ) || empty( $profile_id )) && ! isset( $_POST['save_profile'] ) ) { // Input var okay.
 
-					echo '<div class="error notice is-dismissible"><p>' . esc_html__( 'Congratulations! Analytify is now authenticated. Select your website profile <a href="' . esc_url( menu_page_url( 'analytify-settings', false ) ) . '&tab=profile">here</a> ', 'wp-analytify' ) . '</p></div>';
+					echo '<div class="error notice is-dismissible"><p>Congratulations! Analytify is now authenticated. Select your website profile <a href="' . esc_url( menu_page_url( 'analytify-settings', false ) ) . '&tab=profile">here</a></p></div>';
 				}
 			}
 		}
