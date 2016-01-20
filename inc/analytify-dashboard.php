@@ -201,7 +201,7 @@ $dashboard_profile_id = get_option( 'pt_webprofile_dashboard' );
 								// Referral stats.
 								$referr_stats = get_transient( md5( 'show-referral-dashborad' . $dashboard_profile_id . $start_date . $end_date ) );
 
-								if ( $referr_stats ) {
+								if ( false === $referr_stats ) {
 										$referr_stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions', $start_date, $end_date, 'ga:source,ga:medium', '-ga:sessions', false, 10 );
 										set_transient( md5( 'show-referral-dashborad' . $dashboard_profile_id . $start_date . $end_date ), $referr_stats, 60 * 60 * 20 );
 								}
