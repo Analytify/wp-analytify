@@ -17,8 +17,6 @@
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-ini_set( 'include_path', dirname( __FILE__ ) . '/lib/' );
-
 define( 'WP_ANALYTIFY_FILE', __FILE__ );
 
 include_once( 'inc/class-wpa-ajax.php' );
