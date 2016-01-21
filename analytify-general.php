@@ -23,8 +23,7 @@ define( 'ANALYTIFY_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'ANALYTIFY_CLIENTID', '958799092305-7p6jlsnmv1dn44a03ma00kmdrau2i31q.apps.googleusercontent.com' );
 define( 'ANALYTIFY_CLIENTSECRET', 'Mzs1ODgJTpjk8mzQ3mbrypD3' );
 define( 'ANALYTIFY_REDIRECT', 'https://wp-analytify.com/api/' );
-define( 'ANALYTIFY_DEV_KEY', 'AIzaSyAn-70Vah_wB9qifJqjrOhkl77qzWhAR_w' );
-define( 'ANALYTIFY_SCOPE', 'https://www.googleapis.com/auth/analytics' ); // Readonly scope.
+define( 'ANALYTIFY_SCOPE', 'https://www.googleapis.com/auth/analytics.readonly' ); // Readonly scope.
 define( 'ANALYTIFY_STORE_URL', 'http://wp-analytify.com' );
 define( 'ANALYTIFY_PRODUCT_NAME', 'Analytify WordPress Plugin' );
 
@@ -56,14 +55,12 @@ if ( ! class_exists( 'Analytify_General_FREE' ) ) {
 				$this->client->setClientId( get_option( 'ANALYTIFY_CLIENTID' ) );
 				$this->client->setClientSecret( get_option( 'ANALYTIFY_CLIENTSECRET' ) );
 				$this->client->setRedirectUri( get_option( 'ANALYTIFY_REDIRECT_URI' ) );
-				$this->client->setDeveloperKey( get_option( 'ANALYTIFY_DEV_KEY' ) );
 
 			} else {
 
 				$this->client->setClientId( ANALYTIFY_CLIENTID );
 				$this->client->setClientSecret( ANALYTIFY_CLIENTSECRET );
 				$this->client->setRedirectUri( ANALYTIFY_REDIRECT );
-				$this->client->setDeveloperKey( ANALYTIFY_DEV_KEY );
 
 			}
 

@@ -39,10 +39,6 @@ if ( isset( $_POST['save_code'] ) && isset( $_POST['advanced_tab_nonce'] ) && wp
 			update_option( 'ANALYTIFY_CLIENTSECRET' , 	sanitize_text_field( wp_unslash( $_POST['analytify_clientsecret'] ) ) ); // Input var okay.
 		}
 
-		if ( isset( $_POST['analytify_apikey'] ) ) { // Input var okay.
-			update_option( 'ANALYTIFY_DEV_KEY' , 		sanitize_text_field( wp_unslash( $_POST['analytify_apikey'] ) ) ); // Input var okay.
-		}
-
 		if ( isset( $_POST['analytify_redirect_uri'] ) ) { // Input var okay.
 			update_option( 'ANALYTIFY_REDIRECT_URI' , 	esc_url_raw( wp_unslash( $_POST['analytify_redirect_uri'] ) ) ); // Input var okay.
 		}
@@ -571,14 +567,6 @@ if ( isset( $_POST['clear'] ) && isset( $_POST['logout_tab_nonce'] ) && wp_verif
 					<th><?php esc_html_e( 'Client Secret:' )?></th>
 					<td>
 						<input type="text" placeholder="<?php esc_html_e( 'Your Client Secret' )?>" name="analytify_clientsecret" id="analytify_clientsecret" value="<?php echo esc_attr( get_option( 'ANALYTIFY_CLIENTSECRET' ) ); ?>" style="width:450px;"/>
-					</td>
-				</tr>
-
-				<tr class="user_keys">
-					<th width="115"><?php esc_html_e( 'API Key:' )?></th>
-					<td width="877">
-						<input type="text" placeholder="<?php esc_html_e( 'Your API Key' )?>" name="analytify_apikey" id="analytify_apikey" value="<?php echo esc_attr( get_option( 'ANALYTIFY_DEV_KEY' ) ); ?>" style="width:450px;"/>
-						<p class="description">(Optional)</p>
 					</td>
 				</tr>
 
