@@ -143,7 +143,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			}
 
 			// Show welcome message when user activate plugin.
-			if ( 1 !== get_option( 'show_tracking_pointer_1' ) ) {
+			if ( 1 != get_option( 'show_tracking_pointer_1' ) ) {
 
 				add_action( 'admin_print_footer_scripts', array(
 					$this,
