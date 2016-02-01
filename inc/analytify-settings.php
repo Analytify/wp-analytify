@@ -135,7 +135,7 @@ if ( isset( $_POST['save_profile'] ) && isset( $_POST['profile_tab_nonce'] ) && 
 		}
 
 		if ( isset( $_POST[ $profile_id . '-1' ] ) ) { // Input var okay.
-			update_option( 'web_property_id', sanitize_text_field( wp_unslash( $_POST[ $profile_id . '-1' ] ) ) ); // Input var okay.
+			update_option( 'webPropertyId', sanitize_text_field( wp_unslash( $_POST[ $profile_id . '-1' ] ) ) ); // Input var okay.
 		}
 	}
 
@@ -311,7 +311,7 @@ if ( isset( $_POST['clear'] ) && isset( $_POST['logout_tab_nonce'] ) && wp_verif
 							</select>
 							<?php
 							foreach ( $profiles->items as $profile ) { ?>
-								<input type="hidden" name="<?php echo esc_attr( $profile['id'] ); ?>-1" value="<?php echo esc_attr( $profile['web_property_id'] ); ?>">
+								<input type="hidden" name="<?php echo esc_attr( $profile['id'] ); ?>-1" value="<?php echo esc_attr( $profile['webPropertyId'] ); ?>">
 								<input type="hidden" name="<?php echo esc_attr( $profile['id'] ); ?>-1-profile-name" value="<?php echo esc_attr( $profile['name'] ); ?>">
 							<?php } ?>
 							<p class="description">Select your website profile for wp-admin edit pages and fron-end pages. Select profile which matches your current WordPress website.</p>
