@@ -148,7 +148,8 @@ if ( isset( $_POST['save_profile'] ) && isset( $_POST['profile_tab_nonce'] ) && 
 		update_option( 'pt_webprofile_dashboard', sanitize_text_field( $web_profile_dashboard ) );
 
 		if ( isset( $_POST[ $web_profile_dashboard ] ) ) { // Input var okay.
-			update_option( 'pt_webprofile_url', sanitize_text_field( wp_unslash( $_POST[ $web_profile_dashboard ] ) ) ); // Input var okay.
+			//update_option( 'pt_webprofile_url', sanitize_text_field( wp_unslash( $_POST[ $web_profile_dashboard ] ) ) ); // Input var okay.
+			update_option( 'pt_webprofile_url', sanitize_text_field( wp_unslash( urldecode( urldecode( $_POST[ $web_profile_dashboard ] )) ))); // Input var okay.
 		}
 		if ( isset( $_POST[ $web_profile_dashboard . '-profile-name' ] ) ) { // Input var okay.
 			update_option( 'wp-analytify-dashboard-profile-name', sanitize_text_field( wp_unslash( $_POST[ $web_profile_dashboard . '-profile-name' ] ) ) ); // Input var okay.
@@ -332,7 +333,7 @@ if ( isset( $_POST['clear'] ) && isset( $_POST['logout_tab_nonce'] ) && wp_verif
 							</select>
 							<?php
 							foreach ( $profiles->items as $profile ) { ?>
-								<input type="hidden" name="<?php echo esc_attr( $profile['id'] ); ?>" value="<?php echo esc_url( $profile['websiteUrl'] ); ?>">
+								<input type="hidden" name="<?php echo esc_attr( $profile['id'] ); ?>" value="<?php echo urlencode( urlencode( $profile['websiteUrl'] ) ); ?>">
 								<input type="hidden" name="<?php echo esc_attr( $profile['id'] ); ?>-profile-name" value="<?php echo esc_attr( $profile['name'] ); ?>">
 							<?php } ?>
 							<p class="description">Select your website profile for Dashboard Stats. You can select your any Website profile. It will show Analytics for your selected website profile.</p>
