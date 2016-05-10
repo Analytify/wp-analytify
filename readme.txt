@@ -103,6 +103,7 @@ First, you need to Authenticate your GA account then you can select your web pro
 = 1.5 - 2016-02-01 =
 * Bug Fix   : 404 error on profile settings
 * Enhancement : Getting ready for 2.0 update
+* Enhancement : Compatible with 4.5.2
 
 = 1.3.2 - 2016-02-01 =
 * Bug Fix   : Web Property fix - Important update
@@ -183,7 +184,7 @@ First, you need to Authenticate your GA account then you can select your web pro
 == Upgrade Notice ==
 
 = 1.5 =
-* [Must Update] BugFix update and getting ready for 2.0 update.
+* [Must Update] BugFix update, Compatible with 4.5.2 and getting ready for 2.0 update.
 
 
 == Donation ==
