@@ -100,7 +100,7 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Changelog ==
 
-= 1.5 - 2016-02-01 =
+= 1.5 - 2016-05-10 =
 * Bug Fix   : 404 error on profile settings
 * Enhancement : Getting ready for 2.0 update
 * Enhancement : Compatible with 4.5.2
