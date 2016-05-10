@@ -184,6 +184,11 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				'analytify_review_notice',
 			) );
 
+			add_action( 'admin_init', array(
+				$this,
+				'wp_analytify_save_version'
+			) );
+
 		}
 
 		/**
@@ -1040,6 +1045,23 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				</div>';
 
 		}
+
+
+		/**
+		 * Save version number of the plugin and show a custom message for 2.0 version.
+		 * @since 1.5
+		 */
+
+		public function wp_analytify_save_version() {
+
+			if( ANALYTIFY_VERSION != get_option( 'WP_ANALYTIFY_FREE_VERSION' ) ) {
+
+				update_option( 'WP_ANALYTIFY_FREE_VERSION', ANALYTIFY_VERSION );
+			}
+
+		}
+
+
 	}
 
 	$wp_analytify = new WP_Analytify();
