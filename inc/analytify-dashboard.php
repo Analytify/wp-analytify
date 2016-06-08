@@ -77,7 +77,7 @@ $dashboard_profile_id = get_option( 'pt_webprofile_dashboard' );
                                     </form>
                                 </div>
 
-                                <!-- <a target="_blank" class="wrap_pro_section" href="http://wp-analytify.com/upgrade-from-free" title="Upgrade to PRO to enjoy full features of Analytify.">
+                                <a target="_blank" class="wrap_pro_section" href="http://wp-analytify.com/upgrade-from-free" title="Upgrade to PRO to enjoy full features of Analytify.">
 
                                     <div class="popup">
                                         <h2>Get PRO Version!</h2>
@@ -86,7 +86,7 @@ $dashboard_profile_id = get_option( 'pt_webprofile_dashboard' );
                                     <div class="background"></div>
 
 									<img class="gray-areas" src="<?php echo esc_url( plugins_url( 'images/live-stats-preview.png', dirname( __FILE__ ) ) );?>" width="100%" height="auto" alt="Upgrade to PRO to enjoy full features of Analytify." />
-                                </a> -->
+                                </a>
 
 								<?php
 
