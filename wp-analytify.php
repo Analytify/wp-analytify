@@ -889,7 +889,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			$pointer_content  = '<h3>Announcement:</h3>';
 			$pointer_content .= '<p><input type="checkbox" name="wpa_allow_tracking" value="1" id="wpa_allow_tracking"> ';
 			$pointer_content .= 'Help us making Analytify even better by sharing very basic plugin usage data.';
-			$pointer_content .= ' Opt-in and receive a $5 Off coupon for <a href="https://wp-analytify.com/upgrade-from-free">Analytify PRO</a>.</p>';
+			$pointer_content .= ' Opt-in and receive a $10 Off coupon for <a href="https://wp-analytify.com/upgrade-from-free">Analytify PRO</a>.</p>';
 			?>
 
 			<script type="text/javascript">
@@ -912,7 +912,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
                                 action: 'analytify_dismiss_pointer'
                             });
 
-                            if($('#wpa_allow_tracking:checked').val() == 1) alert('Thankyou!\nYour Coupon code is Analytify2015');
+                            if($('#wpa_allow_tracking:checked').val() == 1) alert('Thankyou!\nYour Coupon code is Analytify2016');
                         }
                     }).pointer('open');
                 };
