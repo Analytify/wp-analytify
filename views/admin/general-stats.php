@@ -37,12 +37,12 @@ function pa_include_general( $current, $stats) {
             <div class="grid_title"> BOUNCE RATE </div>
             <div class="grid_data cen">
                 <div class="data_value">
-                    <?php if ($stats->totalsForAllResults['ga:entrances'] <= 0) { ?>
+                    <?php if ($stats->totalsForAllResults['ga:bounceRate'] <= 0) { ?>
                         0.00%
                     <?php
                       } //$stats->totalsForAllResults['ga:entrances'] <= 0
                       else {
-                        echo number_format(round(($stats->totalsForAllResults['ga:bounces'] / $stats->totalsForAllResults['ga:entrances']) * 100, 2), 2);
+                        echo number_format( round( ( $stats->totalsForAllResults['ga:bounceRate'] ), 2), 2);
                     ?>%                     
             <?php } ?>
                 </div>
@@ -52,11 +52,11 @@ function pa_include_general( $current, $stats) {
                 </div>
     </div> 
       <div class="grids_auto_size">
-            <div class="grid_title"> AVG TIME ON SITE </div>
+            <div class="grid_title"> AVG SESSION DURATION </div>
         <div class="grid_data cen">
             <div class="data_value">
                 <?php
-                  if ($stats->totalsForAllResults['ga:sessions'] <= 0) {
+                  if ($stats->totalsForAllResults['ga:avgSessionDuration'] <= 0) {
                 ?>
                     00:00:00
                 <?php
@@ -64,12 +64,12 @@ function pa_include_general( $current, $stats) {
                   else {
                 ?>
                 <?php
-                  echo $current->pa_pretty_time($stats->totalsForAllResults['ga:avgTimeOnPage']);
+                  echo $current->pa_pretty_time($stats->totalsForAllResults['ga:avgSessionDuration']);
                 ?>
                 <?php } ?>
             </div>
         </div>
-                <div class="grid_footer cen"> <?php echo _e('The amount of time someone spends on your site.' , 'wp-analytify')?> </div>
+                <div class="grid_footer cen"> <?php echo _e('The average amount of time someone spends on your site.' , 'wp-analytify')?> </div>
     </div>
         <div class="grids_auto_size">
             <div class="grid_title"> <?php echo _e('AVERAGE PAGES' , 'wp-analytify')?> </div>

@@ -601,7 +601,7 @@ if ( isset( $_POST['clear'] ) && isset( $_POST['logout_tab_nonce'] ) && wp_verif
 <div class="right-area">
 
 <div class="cen" style="margin-bottom:10px;">
-    Tweet us <a href="https://twitter.com/wpanalytify" style="text-decoration:none;"> @wpanalytify </a> and Like us <a href="https://fb.com/analytify" style="text-decoration:none;">@analytify</a>
+    Tweet us <a href="https://twitter.com/analytify" style="text-decoration:none;"> @analytify </a> and Like us <a href="https://fb.com/analytify" style="text-decoration:none;">@analytify</a>
 </div>
 
     <table class="wa_feature_table">

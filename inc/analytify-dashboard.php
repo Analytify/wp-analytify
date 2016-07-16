@@ -94,7 +94,7 @@ $dashboard_profile_id = get_option( 'pt_webprofile_dashboard' );
 								$stats = get_transient( md5( 'show-overall-dashboard' . $dashboard_profile_id . $start_date . $end_date ) );
 				                if ( false === $stats ) {
 
-									$stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions,ga:bounces,ga:newUsers,ga:entrances,ga:pageviews,ga:sessionDuration,ga:avgTimeOnPage,ga:users', $start_date, $end_date );
+									$stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions,ga:bounces,ga:bounceRate,ga:newUsers,ga:entrances,ga:pageviews,ga:sessionDuration,ga:avgSessionDuration,ga:avgTimeOnPage,ga:users', $start_date, $end_date );
 									set_transient( md5( 'show-overall-dashboard' . $dashboard_profile_id . $start_date . $end_date ) , $stats, 60 * 60 * 20 );
 				                }
 
