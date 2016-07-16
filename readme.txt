@@ -100,6 +100,9 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Changelog ==
 
+= 1.5.2 - 2016-07-16 =
+* Bug Fix   : Average Session Duration & BounceRate
+
 = 1.5.1 - 2016-06-09 =
 * Enhancement : Option to upgrade to Pro version is back
 * Enhancement : New Coupon added for $10 off
@@ -187,8 +190,8 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Upgrade Notice ==
 
-= 1.5.1 =
-* [Minor Update] New Coupon Added, and option to upgrade to Pro is back again from dashboard.
+= 1.5.2 =
+* [Minor Update] Average Session Duration & BounceRate Fix.
 
 
 == Donation ==
