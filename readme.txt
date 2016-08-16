@@ -102,6 +102,7 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 = 1.5.3 - 2016-08-16 =
 * Enhancement   : Announcement of 2.0
+* Compatibility : Compatible to WordPress 4.6
 
 = 1.5.2 - 2016-07-16 =
 * Bug Fix   : Average Session Duration & BounceRate
@@ -194,7 +195,7 @@ First, you need to Authenticate your GA account then you can select your web pro
 == Upgrade Notice ==
 
 = 1.5.3 =
-* [Minor Update] Announcing 2.0 release.
+* [Minor Update] Announcing Analytify 2.0 and compatible with WordPress 4.6
 
 
 == Donation ==

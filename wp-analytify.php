@@ -949,7 +949,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				if ( ! get_user_meta( $user_id, 'analytify_2_0_ignore' ) ) {
 
 					echo '<div class="error notice" style="position: relative;"><p>';
-					printf( __( '<b style="font-size: 20px;">TWO IS COMING!</b> <br /> A Major update is coming to Google Analytics by Analytify. <a href="https://wp-analytify.com/go/twopointo/" target="_blank" style="color: #ED494D;">Learn more about new features and updates.</a> <a href="%1$s" class="notice-dismiss" style="text-decoration: none;">Dismiss</a>' ),  esc_url( admin_url( 'admin.php?page=analytify-dashboard&analytify_2_0_ignore=0' ) ) );
+					printf( __( '<b style="font-size: 20px;">Analytify 2.0 IS COMING!</b> <br /> A Major update is coming to Analytify. It will change everything about analytics! <a href="https://wp-analytify.com/go/twopointo/" target="_blank" style="color: #ED494D;">Learn more about upcoming 2.0.</a> <a href="%1$s" class="notice-dismiss" style="text-decoration: none;">Dismiss</a>' ),  esc_url( admin_url( 'admin.php?page=analytify-dashboard&analytify_2_0_ignore=0' ) ) );
 					echo '</p></div>';
 
 				}
