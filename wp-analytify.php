@@ -3,13 +3,13 @@
  * Plugin Name: Google Analytics Dashboard By Analytify
  * Plugin URI: http://wp-analytify.com/details
  * Description: Analytify brings a brand new and modern feeling Google Analytics superbly integrated with WordPress Dashboard. It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. This provides Stats from Country, Referrers, Social media, General stats, New visitors, Returning visitors, Exit pages, Browser wise and Top keywords. This plugin provides the RealTime statistics in a new UI which is easy to understand & looks good.
- * Version: 1.5.2
+ * Version: 1.5.3
  * Author: WPBrigade
  * Author URI: http://wpbrigade.com/
  * License: GPLv3
  * Text Domain: wp-analytify
  * Min WP Version: 3.0
- * Max WP Version: 4.5.3
+ * Max WP Version: 4.6
  * Domain Path: /lang
  * @package WP_ANALYTIFY
  */
@@ -944,6 +944,16 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 					echo '</p></div>';
 
 				}
+
+				/* Check that the user hasn't already clicked to ignore the message */
+				if ( ! get_user_meta( $user_id, 'analytify_2_0_ignore' ) ) {
+
+					echo '<div class="error notice" style="position: relative;"><p>';
+					printf( __( '<b style="font-size: 20px;">TWO IS COMING!</b> <br /> A Major update is coming to Google Analytics by Analytify. <a href="https://wp-analytify.com/go/twopointo/" target="_blank" style="color: #ED494D;">Learn more about new features and updates.</a> <a href="%1$s" class="notice-dismiss" style="text-decoration: none;">Dismiss</a>' ),  esc_url( admin_url( 'admin.php?page=analytify-dashboard&analytify_2_0_ignore=0' ) ) );
+					echo '</p></div>';
+
+				}
+
 			}
 
 			/* Show notices */
@@ -972,6 +982,13 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			if ( isset( $_GET['analytify_nag_ignore'] ) && '0' === $_GET['analytify_nag_ignore'] ) { // Input var okay.
 				add_user_meta( $user_id, 'analytify_ignore_notice110', 'true', true );
 			}
+
+			/* If user clicks to ignore the 2.0 notice, add that to their user meta */
+			if ( isset( $_GET['analytify_2_0_ignore'] ) && '0' === $_GET['analytify_2_0_ignore'] ) { // Input var okay.
+				add_user_meta( $user_id, 'analytify_2_0_ignore', 'true', true );
+			}
+
+
 		}
 
 		/**

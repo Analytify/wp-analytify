@@ -3,8 +3,8 @@ Contributors: hiddenpearls, Asif2BD
 Donate link: http://paypal.me/Analytify
 Tags: google analytics, WordPress Analytics, analytify, tracking,  analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google anylytics, ecommerce tracking
 Requires at least: 3.0
-Tested up to: 4.5.3
-Stable tag: 1.5.2
+Tested up to: 4.6
+Stable tag: 1.5.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -100,6 +100,9 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Changelog ==
 
+= 1.5.3 - 2016-08-16 =
+* Enhancement   : Announcement of 2.0
+
 = 1.5.2 - 2016-07-16 =
 * Bug Fix   : Average Session Duration & BounceRate
 
@@ -190,8 +193,8 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Upgrade Notice ==
 
-= 1.5.2 =
-* [Minor Update] Average Session Duration & BounceRate Fix.
+= 1.5.3 =
+* [Minor Update] Announcing 2.0 release.
 
 
 == Donation ==

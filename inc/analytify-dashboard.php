@@ -71,7 +71,7 @@ $dashboard_profile_id = get_option( 'pt_webprofile_dashboard' );
 									<form action="" method="post">
             							<?php wp_nonce_field( 'analytify_dashboard_action', 'analytify_dashboard_nonce' );?>
 
-										<input type="text" id="st_date" name="st_date" value="<?php echo esc_attr( $start_date ); ?>">
+										<input type="text" id="st_date" name="st_date" value="<?php echo esc_attr( $start_date ); ?>"> to 
 										<input type="text" id="ed_date" name="ed_date" value="<?php echo esc_attr( $end_date ); ?>">
                                         <input type="submit" id="view_data" name="view_data" value="View Stats" class="button-primary btn-green">
                                     </form>
