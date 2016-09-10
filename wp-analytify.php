@@ -3,13 +3,13 @@
  * Plugin Name: Google Analytics Dashboard By Analytify
  * Plugin URI: http://wp-analytify.com/details
  * Description: Analytify brings a brand new and modern feeling Google Analytics superbly integrated with WordPress Dashboard. It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. This provides Stats from Country, Referrers, Social media, General stats, New visitors, Returning visitors, Exit pages, Browser wise and Top keywords. This plugin provides the RealTime statistics in a new UI which is easy to understand & looks good.
- * Version: 1.5.3
+ * Version: 1.5.4
  * Author: WPBrigade
  * Author URI: http://wpbrigade.com/
  * License: GPLv3
  * Text Domain: wp-analytify
  * Min WP Version: 3.0
- * Max WP Version: 4.6
+ * Max WP Version: 4.6.1
  * Domain Path: /lang
  * @package WP_ANALYTIFY
  */
@@ -1109,7 +1109,7 @@ function install() {
  */
 function uninstall() {
 
-	if ( 1 === get_option( 'wpa_allow_tracking' ) ) { send_status_analytify( get_option( 'admin_email' ), 'in-active' ); }
+	if ( 1 == get_option( 'wpa_allow_tracking' ) ) { send_status_analytify( get_option( 'admin_email' ), 'in-active' ); }
 
 	delete_option( 'analytify_posts_stats' );
 	delete_option( 'pa_google_token' );
@@ -1124,7 +1124,7 @@ function uninstall() {
  */
 function delete() {
 
-	if ( 1 === get_option( 'wpa_allow_tracking' ) ) { send_status_analytify( get_option( 'admin_email' ), 'delete' ); }
+	if ( 1 == get_option( 'wpa_allow_tracking' ) ) { send_status_analytify( get_option( 'admin_email' ), 'delete' ); }
 }
 
 /**

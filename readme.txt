@@ -3,8 +3,8 @@ Contributors: hiddenpearls, Asif2BD
 Donate link: http://paypal.me/Analytify
 Tags: google analytics, WordPress Analytics, analytify, tracking,  analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google anylytics, ecommerce tracking
 Requires at least: 3.0
-Tested up to: 4.6
-Stable tag: 1.5.3
+Tested up to: 4.6.1
+Stable tag: 1.5.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -95,10 +95,14 @@ First, you need to Authenticate your GA account then you can select your web pro
 2. General Statistics.
 3. Top Countries Stat.
 4. Top Referrers/Browsers
-5. WooCommerce Dashboard (Addon Required)
+5. WooCommerce Dashboard (Add-on Required)
 
 
 == Changelog ==
+
+= 1.5.4 - 2016-09-09 =
+* Bug Fix   : Tracking bug
+* Compatibility : Compatible to WordPress 4.6.1
 
 = 1.5.3 - 2016-08-16 =
 * Enhancement   : Announcement of 2.0
@@ -194,8 +198,8 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Upgrade Notice ==
 
-= 1.5.3 =
-* [Minor Update] Announcing Analytify 2.0 and compatible with WordPress 4.6
+= 1.5.4 =
+* [Important Update] BugFix and compatible with WordPress 4.6.1
 
 
 == Donation ==
