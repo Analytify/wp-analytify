@@ -1,14 +1,14 @@
 === Google Analytics Dashboard By Analytify ===
 Contributors: hiddenpearls, Asif2BD
 Donate link: http://paypal.me/Analytify
-Tags: google analytics, WordPress Analytics, analytify, tracking,  analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google anylytics, ecommerce tracking
+Tags: google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced ecommerce tracking
 Requires at least: 3.0
 Tested up to: 4.6.1
 Stable tag: 1.5.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Just 1-Click and you get Google Analytics Dashboard inside your WordPress Admin Panel. eCommerce Analytics for WooCommerce is available too.
+Simple setup & you get Google Analytics Dashboard for WordPress. Enhanced eCommerce Google Analytics Tracking for WooCommerce is available.
 
 == Description ==
 
@@ -56,13 +56,13 @@ Just 1-Click and you get Google Analytics Dashboard inside your WordPress Admin 
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
+This section describes how to install the Google Analytics Dashboard By Analytify plugin and get it working.
 
 = 1) Install =
 
 = Modern Way: =
 1. Go to the WordPress Dashboard "Add New Plugin" section.
-2. Search For "analyify".
+2. Search For "Google Analytics Dashboard By Analytify".
 3. Install, then Activate it.
 
 = Old Way: =
@@ -91,11 +91,11 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Screenshots ==
 
-1. Analytify Setting Screen.
-2. General Statistics.
-3. Top Countries Stat.
-4. Top Referrers/Browsers
-5. WooCommerce Dashboard (Add-on Required)
+1. Google Analytics Dashboard By Analytify Settings Screen.
+2. Google Analytics Dashboard General Statistics.
+3. Google Analytics Top Countries.
+4. Google Analytics Top Referrers/Browsers
+5. Enhanced eCommerce Google Analytics Tracking for WooCommerce Dashboard (Add-on Required)
 
 
 == Changelog ==
