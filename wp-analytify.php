@@ -3,7 +3,7 @@
  * Plugin Name: Google Analytics Dashboard By Analytify
  * Plugin URI: http://wp-analytify.com/details
  * Description: Analytify brings a brand new and modern feeling Google Analytics superbly integrated with WordPress Dashboard. It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. This provides Stats from Country, Referrers, Social media, General stats, New visitors, Returning visitors, Exit pages, Browser wise and Top keywords. This plugin provides the RealTime statistics in a new UI which is easy to understand & looks good.
- * Version: 1.5.4
+ * Version: 1.5.5
  * Author: WPBrigade
  * Author URI: http://wpbrigade.com/
  * License: GPLv3
@@ -946,10 +946,10 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				}
 
 				/* Check that the user hasn't already clicked to ignore the message */
-				if ( ! get_user_meta( $user_id, 'analytify_2_0_ignore' ) ) {
+				if ( ! get_user_meta( $user_id, 'analytify_2_0b_ignore' ) ) {
 
 					echo '<div class="error notice" style="position: relative;"><p>';
-					printf( __( '<b style="font-size: 20px;">Analytify 2.0 IS COMING!</b> <br /> A Major update is coming to Analytify. It will change everything about analytics! <a href="https://wp-analytify.com/go/twopointo/" target="_blank" style="color: #ED494D;">Learn more about upcoming 2.0.</a> <a href="%1$s" class="notice-dismiss" style="text-decoration: none;">Dismiss</a>' ),  esc_url( admin_url( 'admin.php?page=analytify-dashboard&analytify_2_0_ignore=0' ) ) );
+					printf( __( '<b style="font-size: 20px;">Analytify 2.0 Is Near & Upcoming Price Change!</b> <br /> Analytify 2.0 is almost ready for the world. There is also an upcoming price change within this week. <a href="https://wp-analytify.com/go/TwoRC" target="_blank" style="color: #ED494D;">Read details here.</a> <a href="%1$s" class="notice-dismiss" style="text-decoration: none;">Dismiss</a>' ),  esc_url( admin_url( 'admin.php?page=analytify-dashboard&analytify_2_0b_ignore=0' ) ) );
 					echo '</p></div>';
 
 				}
@@ -984,8 +984,8 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			}
 
 			/* If user clicks to ignore the 2.0 notice, add that to their user meta */
-			if ( isset( $_GET['analytify_2_0_ignore'] ) && '0' === $_GET['analytify_2_0_ignore'] ) { // Input var okay.
-				add_user_meta( $user_id, 'analytify_2_0_ignore', 'true', true );
+			if ( isset( $_GET['analytify_2_0b_ignore'] ) && '0' === $_GET['analytify_2_0b_ignore'] ) { // Input var okay.
+				add_user_meta( $user_id, 'analytify_2_0b_ignore', 'true', true );
 			}
 
 

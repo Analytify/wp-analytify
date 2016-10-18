@@ -4,7 +4,7 @@ Donate link: http://paypal.me/Analytify
 Tags: google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced ecommerce tracking
 Requires at least: 3.0
 Tested up to: 4.6.1
-Stable tag: 1.5.4
+Stable tag: 1.5.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -13,6 +13,9 @@ Simple setup & you get Google Analytics Dashboard for WordPress. Enhanced eComme
 == Description ==
 
 [Analytify](http://wp-analytify.com/details) - makes Google Analytics simple for everywhere in WordPress (posts,pages and custom post types etc). It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. Now you can get **Google Analytics Dashboard** inside your WordPress Dashboard within a minute.
+
+**Analytify 2.0 Is Near & Upcoming Price Change!**
+Analytify 2.0 is almost ready for the world. There is also a upcoming price change within this week. [Read details here.](https://wp-analytify.com/go/TwoRC)
 
 > **Google Analytics Premium Partner** - [Read](https://www.google.com/analytics/partners/company/5179388639313920/gadp/5629499534213120/app/5707702298738688/listing/5639274879778816) what Google is saying about us.
 
@@ -99,6 +102,9 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 
 == Changelog ==
+
+= 1.5.5 - 2016-10-18 =
+* Announcement   : Version 2.0 is near & Announcing upcoming price change.
 
 = 1.5.4 - 2016-09-09 =
 * Bug Fix   : Tracking bug
@@ -198,8 +204,8 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Upgrade Notice ==
 
-= 1.5.4 =
-* [Important Update] BugFix and compatible with WordPress 4.6.1
+= 1.5.5 =
+* [Important Update] Announcement: Version 2.0 is near & Announcing upcoming price change.
 
 
 == Donation ==
