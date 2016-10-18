@@ -14,8 +14,8 @@ Simple setup & you get Google Analytics Dashboard for WordPress. Enhanced eComme
 
 [Analytify](http://wp-analytify.com/details) - makes Google Analytics simple for everywhere in WordPress (posts,pages and custom post types etc). It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. Now you can get **Google Analytics Dashboard** inside your WordPress Dashboard within a minute.
 
-**Analytify 2.0 Is Near & Upcoming Price Change!**
-Analytify 2.0 is almost ready for the world. There is also a upcoming price change within this week. [Read details here.](https://wp-analytify.com/go/TwoRC)
+> **Analytify 2.0 Is Near & Upcoming Price Change!**<br>
+> Analytify 2.0 is almost ready for the world. There is also a upcoming price change within this week. [Read details here.](https://wp-analytify.com/go/TwoRC)
 
 > **Google Analytics Premium Partner** - [Read](https://www.google.com/analytics/partners/company/5179388639313920/gadp/5629499534213120/app/5707702298738688/listing/5639274879778816) what Google is saying about us.
 
