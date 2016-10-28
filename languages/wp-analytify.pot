@@ -1,0 +1,1830 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: WP Analytify Pro\n"
+"POT-Creation-Date: 2015-12-10 10:21+0500\n"
+"PO-Revision-Date: 2015-12-09 00:13+0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: wp-analytify-pro.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: analytify-general.php:78
+#, php-format
+msgid ""
+"%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
+"message is only visible to Administrators. %4$s %2$s "
+msgstr ""
+
+#: analytify-general.php:88
+#, php-format
+msgid ""
+"%1$s oOps, Try to %2$s Reset %3$s Authentication. %4$s %7$s %4$s %5$s Don't "
+"worry, This error message is only visible to Administrators. %6$s %4$s"
+msgstr ""
+
+#: analytify-general.php:183 analytify-general.php:250
+#: analytify-general.php:321
+#, php-format
+msgid ""
+"%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
+"message is only visible to Administrators. %4$s %2$s"
+msgstr ""
+
+#: analytify-general.php:193 analytify-general.php:260
+#: analytify-general.php:331
+#, php-format
+msgid ""
+"%1$s oOps, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s Don't "
+"worry, This error message is only visible to Administrators. %6$s %2$s"
+msgstr ""
+
+#: analytify-general.php:203 analytify-general.php:270
+#: analytify-general.php:341
+#, php-format
+msgid ""
+"%1$s oOps! %2$s %5$s %2$s %3$s Don't worry, This error message is only "
+"visible to Administrators. %4$s %2$s"
+msgstr ""
+
+#: inc/analytics-dashboard.php:32
+#, php-format
+msgid "%1$s Dashboard"
+msgstr ""
+
+#: inc/analytics-dashboard.php:60 inc/page-campaigns.php:47
+#, php-format
+msgid "Complete Statistics of the Site %1$s Starting From %2$s to %3$s"
+msgstr ""
+
+#: inc/analytics-dashboard.php:297
+msgid "You must be authenticate to see the Analytics Dashboard."
+msgstr ""
+
+#: inc/analytics-dashboard.php:302
+msgid "You don't have access to Analytify Dashboard."
+msgstr ""
+
+#: inc/analytify-widgets.php:9
+msgid "Analytify Live Stats"
+msgstr ""
+
+#: inc/analytify-widgets.php:10
+msgid "It shows Live Stats of your site."
+msgstr ""
+
+#: inc/analytify-widgets.php:28 views/admin/top-pages-stats.php:12
+msgid "Title"
+msgstr ""
+
+#: inc/analytify-widgets.php:33
+msgid "Description:"
+msgstr ""
+
+#: inc/class-analytify-logging.php:47
+msgid "Logs"
+msgstr ""
+
+#: inc/class-wpa-adminbar.php:56
+msgid "Dashboard"
+msgstr ""
+
+#: inc/class-wpa-adminbar.php:57
+msgid "Campaigns"
+msgstr ""
+
+#: inc/class-wpa-adminbar.php:58 wp-analytify-pro.php:1086
+msgid "Settings"
+msgstr ""
+
+#: inc/front-menus.php:11 views/admin/general-stats.php:10
+#: views/admin/single-general-stats.php:10 views/front/general-stats.php:9
+msgid "General Statistics"
+msgstr ""
+
+#: inc/front-menus.php:20 views/front/country-stats.php:8
+msgid "TOP COUNTRIES"
+msgstr ""
+
+#: inc/front-menus.php:29
+msgid "TOP Cities"
+msgstr ""
+
+#: inc/front-menus.php:38
+msgid "TOP Operating Systems"
+msgstr ""
+
+#: inc/front-menus.php:47
+msgid "Mobile device statistics"
+msgstr ""
+
+#: inc/front-menus.php:56
+msgid "Top Keywords"
+msgstr ""
+
+#: inc/front-menus.php:65
+msgid "SOCIAL MEDIA STATiStics"
+msgstr ""
+
+#: inc/front-menus.php:73
+msgid "TOP BROWSERS"
+msgstr ""
+
+#: inc/front-menus.php:83
+msgid "TOP REFERRERS"
+msgstr ""
+
+#: inc/options-settings.php:7
+msgid "This plugin requires the CURL PHP extension"
+msgstr ""
+
+#: inc/options-settings.php:13
+msgid "This plugin requires the JSON PHP extension"
+msgstr ""
+
+#: inc/options-settings.php:19
+msgid "This plugin requires http_build_query()"
+msgstr ""
+
+#: inc/options-settings.php:99
+#, php-format
+msgid "%1$s %2$s Front-end changes are saved. %3$s %4$s"
+msgstr ""
+
+#: inc/options-settings.php:111
+#, php-format
+msgid "%1$s %2$s Admin changes are saved. %3$s %4$s"
+msgstr ""
+
+#: inc/options-settings.php:188
+#, php-format
+msgid ""
+"%1$s %2$s %3$sNote:%4$s Please select your profile for posts.  %5$s %6$s"
+msgstr ""
+
+#: inc/options-settings.php:192
+#, php-format
+msgid ""
+"%1$s %2$s %3$sNote:%4$s Please select your profile for dashboard. %5$s %6$s"
+msgstr ""
+
+#: inc/options-settings.php:196
+#, php-format
+msgid "%1$s %2$s Your Google Analytics Profile Saved. %3$s %4$s"
+msgstr ""
+
+#: inc/options-settings.php:214
+#, php-format
+msgid "%1$s %2$s %3$s Authentication Cleared login again. %4$s %5$s %6$s"
+msgstr ""
+
+#: inc/options-settings.php:231
+#, php-format
+msgid "%1$s Settings"
+msgstr ""
+
+#: inc/options-settings.php:257
+msgid ""
+"You have allowed your site to access the Analytics data from Google. Logout "
+"below to disconnect it."
+msgstr ""
+
+#: inc/options-settings.php:268
+msgid "Log in with Google Analytics Account"
+msgstr ""
+
+#: inc/options-settings.php:295
+msgid "Select your profiles for front-end and backend sections."
+msgstr ""
+
+#: inc/options-settings.php:301
+msgid "Install Google Analytics tracking code :"
+msgstr ""
+
+#: inc/options-settings.php:305
+msgid ""
+"Insert Google Analytics JS code in header to track the visitors. You can "
+"uncheck this option if you have already insert the GA code in your website."
+msgstr ""
+
+#: inc/options-settings.php:310
+msgid "Exclude users from tracking :"
+msgstr ""
+
+#: inc/options-settings.php:313
+msgid "Select user roles to exclude"
+msgstr ""
+
+#: inc/options-settings.php:339
+msgid "Don't insert the tracking code for above user roles."
+msgstr ""
+
+#: inc/options-settings.php:343
+msgid "Tracking code type :"
+msgstr ""
+
+#: inc/options-settings.php:354
+#, php-format
+msgid ""
+"%1$s Which type of tracking code to use i-e (Analytics.js , ga.js) Google "
+"recommends to use Analytics.js now %2$s Read More %3$s %4$s"
+msgstr ""
+
+#: inc/options-settings.php:358
+msgid "Profile for posts (Backend/Front-end) :"
+msgstr ""
+
+#: inc/options-settings.php:370
+msgid "Choose profile for posts"
+msgstr ""
+
+#: inc/options-settings.php:389 welcome.php:317
+msgid ""
+"Select your website profile for wp-admin edit pages and fron-end pages. "
+"Select profile which matches your current WordPress website."
+msgstr ""
+
+#: inc/options-settings.php:399
+msgid "Profile for Dashboard :"
+msgstr ""
+
+#: inc/options-settings.php:410
+msgid "Choose profile for dashboard"
+msgstr ""
+
+#: inc/options-settings.php:425 welcome.php:320
+msgid ""
+"Select your website profile for Dashboard Stats. You can select your any "
+"Website profile. It will show Analytics for your selected website profile."
+msgstr ""
+
+#: inc/options-settings.php:434
+msgid "Hide Profiles list :"
+msgstr ""
+
+#: inc/options-settings.php:437
+msgid ""
+"Hide the selection of profiles for Dashboard and Posts (Back-end/Front-end). "
+"Best to hide for your clients not to see other profiles."
+msgstr ""
+
+#: inc/options-settings.php:445 inc/options-settings.php:639
+#: inc/options-settings.php:827 inc/options-settings.php:1002
+#: inc/options-settings.php:1067
+msgid "Save Changes"
+msgstr ""
+
+#: inc/options-settings.php:458
+msgid ""
+"Following are the settings for front-end side. Google Analytics will appear "
+"under the posts, custom post types or pages at front-end."
+msgstr ""
+
+#: inc/options-settings.php:464
+msgid "Disable front-end :"
+msgstr ""
+
+#: inc/options-settings.php:468
+msgid ""
+"Check it, if you don't want to load Analytics at all. Remember, you can use "
+"Shortcodes still."
+msgstr ""
+
+#: inc/options-settings.php:474 inc/options-settings.php:665
+msgid "Show Analytics to (roles) :"
+msgstr ""
+
+#: inc/options-settings.php:479 inc/options-settings.php:667
+#: inc/options-settings.php:858
+msgid "Select user roles"
+msgstr ""
+
+#: inc/options-settings.php:511 inc/options-settings.php:696
+msgid "Show Analytics to above selected user roles only."
+msgstr ""
+
+#: inc/options-settings.php:517 inc/options-settings.php:701
+msgid "Analytics on Post types :"
+msgstr ""
+
+#: inc/options-settings.php:521 inc/options-settings.php:703
+msgid "Select post types"
+msgstr ""
+
+#: inc/options-settings.php:539 inc/options-settings.php:723
+msgid "Show Analytics under the above post types only."
+msgstr ""
+
+#: inc/options-settings.php:545
+msgid "Front-end Analytics panels:"
+msgstr ""
+
+#: inc/options-settings.php:548 inc/options-settings.php:730
+#: inc/options-settings.php:894
+msgid "Select analytics panels"
+msgstr ""
+
+#: inc/options-settings.php:555 inc/options-settings.php:737
+#: inc/options-settings.php:910
+msgid "General Stats"
+msgstr ""
+
+#: inc/options-settings.php:563 inc/options-settings.php:745
+#: inc/options-settings.php:918
+msgid "Country Stats"
+msgstr ""
+
+#: inc/options-settings.php:571 inc/options-settings.php:754
+#: inc/options-settings.php:936
+msgid "Keywords Stats"
+msgstr ""
+
+#: inc/options-settings.php:579 inc/options-settings.php:762
+#: inc/options-settings.php:944
+msgid "Social Media Stats"
+msgstr ""
+
+#: inc/options-settings.php:587 inc/options-settings.php:770
+#: inc/options-settings.php:952
+msgid "Browser Stats"
+msgstr ""
+
+#: inc/options-settings.php:595 inc/options-settings.php:778
+#: inc/options-settings.php:960
+msgid "Referrers"
+msgstr ""
+
+#: inc/options-settings.php:604
+msgid "Mobile devices Stats"
+msgstr ""
+
+#: inc/options-settings.php:612 inc/options-settings.php:802
+#: inc/options-settings.php:984
+msgid "Operating System Stats"
+msgstr ""
+
+#: inc/options-settings.php:620 inc/options-settings.php:810
+#: inc/options-settings.php:992
+msgid "City Stats"
+msgstr ""
+
+#: inc/options-settings.php:624
+msgid "Select which Stats panels you want to display at front-end."
+msgstr ""
+
+#: inc/options-settings.php:628 inc/options-settings.php:817
+msgid "Exclude Analytics on specific pages:"
+msgstr ""
+
+#: inc/options-settings.php:633 inc/options-settings.php:820
+#, php-format
+msgid ""
+"Enter ID's of posts or pages separated by commas on which you don't want to "
+"show Analytics e.g %1$s"
+msgstr ""
+
+#: inc/options-settings.php:650
+msgid ""
+"Following are the settings for Admin side. Google Analytics will appear "
+"under the posts, custom post types or pages."
+msgstr ""
+
+#: inc/options-settings.php:657
+msgid "Disable Analytics under posts/pages (wp-admin):"
+msgstr ""
+
+#: inc/options-settings.php:660
+msgid ""
+"Check it, If you don't want to load Stats by default on all pages. Remember, "
+"There is a section under each post/page. You can still view Stats on pages "
+"you want."
+msgstr ""
+
+#: inc/options-settings.php:728
+msgid "Edit pages/posts Analytics panels:"
+msgstr ""
+
+#: inc/options-settings.php:786
+msgid " Page bounce and exit stats"
+msgstr ""
+
+#: inc/options-settings.php:794 inc/options-settings.php:976
+msgid "Mobile Devices Stats"
+msgstr ""
+
+#: inc/options-settings.php:813
+msgid "Select which Stats panels you want to display under posts/pages."
+msgstr ""
+
+#: inc/options-settings.php:848
+msgid "Delete Cache:"
+msgstr ""
+
+#: inc/options-settings.php:851
+msgid ""
+"Analytify dashboard (except Real Time Stats) is saving results for 20 hours. "
+"If you want to fetch the current stats, Enable this check and Press 'Save "
+"Changes' below."
+msgstr ""
+
+#: inc/options-settings.php:856
+msgid "Show Dashboard to (roles) :"
+msgstr ""
+
+#: inc/options-settings.php:887
+msgid "Show Analytify Dashboard to above selected user roles only."
+msgstr ""
+
+#: inc/options-settings.php:892
+msgid "Dashboard Analytics panels:"
+msgstr ""
+
+#: inc/options-settings.php:902
+msgid "RealTime Stats"
+msgstr ""
+
+#: inc/options-settings.php:927
+msgid "Top Pages Stats"
+msgstr ""
+
+#: inc/options-settings.php:968
+msgid " Page bounce and exit stats "
+msgstr ""
+
+#: inc/options-settings.php:995
+msgid "Select which Stats panels you want to see at Dashboard."
+msgstr ""
+
+#: inc/options-settings.php:1024
+msgid "Do you want to use your own API keys ?"
+msgstr ""
+
+#: inc/options-settings.php:1029
+#, php-format
+msgid ""
+"%1$s You need to create a Project in Google %2$s Console %3$s Read this "
+"simple 3 minutes %4$s tutorial %5$s to get your ClientID, Client Secret, "
+"Redirect URI and API Key and enter them in below inputs. %6$s"
+msgstr ""
+
+#: inc/options-settings.php:1034
+msgid "ClientID:"
+msgstr ""
+
+#: inc/options-settings.php:1036
+msgid "Your ClientID"
+msgstr ""
+
+#: inc/options-settings.php:1041
+msgid "Client Secret:"
+msgstr ""
+
+#: inc/options-settings.php:1043
+msgid "Your Client Secret"
+msgstr ""
+
+#: inc/options-settings.php:1048
+msgid "API Key:"
+msgstr ""
+
+#: inc/options-settings.php:1050
+msgid "Your API Key"
+msgstr ""
+
+#: inc/options-settings.php:1051
+msgid "(Optional)"
+msgstr ""
+
+#: inc/options-settings.php:1056
+msgid "Redirect URI:"
+msgstr ""
+
+#: inc/options-settings.php:1058
+msgid "Your Redirect URI"
+msgstr ""
+
+#: inc/options-settings.php:1059
+msgid "(Redirect URI is very important when you are using your own Keys)"
+msgstr ""
+
+#: inc/options-settings.php:1089
+msgid ""
+"Enter your license key(s). It is important to have a valide license for "
+"automatic plugin updates and support. After adding license key, press Save "
+"Changes and then press Activate button."
+msgstr ""
+
+#: inc/options-settings.php:1094
+msgid "Analytify PRO (License Key):"
+msgstr ""
+
+#: inc/options-settings.php:1108
+msgid "Active"
+msgstr ""
+
+#: inc/options-settings.php:1110
+msgid "Deactivate License"
+msgstr ""
+
+#: inc/options-settings.php:1114
+msgid "Activate License"
+msgstr ""
+
+#: inc/options-settings.php:1137
+msgid "HELP"
+msgstr ""
+
+#: inc/options-settings.php:1140
+#, php-format
+msgid ""
+"%1$s Click here %2$s to get the support of Analytify. You can submit bug "
+"reports and give us suggestions as well."
+msgstr ""
+
+#: inc/options-settings.php:1144
+#, php-format
+msgid "CREDITS (v - %1$s)"
+msgstr ""
+
+#: inc/options-settings.php:1149
+msgid "Product by"
+msgstr ""
+
+#: inc/page-addons.php:30
+msgid "Enhaced E-Commerce Tracking for WooCommerce"
+msgstr ""
+
+#: inc/page-addons.php:32
+msgid ""
+"Our WooCommerce Addon takes Analytics into next level. And its absolutely no-"
+"setup needed. So you get World Class data on your shop by just enabling an "
+"add-on. Sweet!"
+msgstr ""
+
+#: inc/page-addons.php:37
+#, php-format
+msgid "Analytify Stats %1$s on WordPress Dashboard"
+msgstr ""
+
+#: inc/page-addons.php:38
+msgid "Coming soon"
+msgstr ""
+
+#: inc/page-addons.php:39
+#, php-format
+msgid ""
+"This Add-on dispays your site Analytics as widgets at WordPress Dashboard. "
+"%1$s It is completely Free."
+msgstr ""
+
+#: inc/page-addons.php:57
+#, php-format
+msgid "%1$s Already Installed %2$s"
+msgstr ""
+
+#: inc/page-addons.php:61
+#, php-format
+msgid "%1$s Activate Plugin %2$s"
+msgstr ""
+
+#: inc/page-addons.php:66
+#, php-format
+msgid "%1$s Coming Soon %2$s"
+msgstr ""
+
+#: inc/page-addons.php:68
+#, php-format
+msgid "%1$s Get this add-on %2$s"
+msgstr ""
+
+#: inc/page-addons.php:85
+msgid "Extend the functionality of Analytify with these awesome Add-ons"
+msgstr ""
+
+#: inc/page-campaigns.php:27
+msgid "Analytify Campaigns Dashboard"
+msgstr ""
+
+#: inc/page-campaigns.php:80
+msgid "You must be authenticate to see the Analytics Campaigns Dashboard."
+msgstr ""
+
+#: inc/shortcode.php:3
+msgid ""
+"Select metrics and dimensions, sort them with metrics and show stats to your "
+"visitors (roles)."
+msgstr ""
+
+#: inc/shortcode.php:8
+msgid "Metrics: "
+msgstr ""
+
+#: inc/shortcode.php:9
+msgid "Select at least one Metric"
+msgstr ""
+
+#: inc/shortcode.php:10 inc/shortcode.php:40
+msgid "user"
+msgstr ""
+
+#: inc/shortcode.php:11 inc/shortcode.php:108
+msgid "Users"
+msgstr ""
+
+#: inc/shortcode.php:12 inc/shortcode.php:109 views/admin/campaign-stats.php:40
+msgid "New Users"
+msgstr ""
+
+#: inc/shortcode.php:13 inc/shortcode.php:110
+msgid "Percent New Sessions"
+msgstr ""
+
+#: inc/shortcode.php:15
+msgid "Session"
+msgstr ""
+
+#: inc/shortcode.php:16 inc/shortcode.php:107 views/admin/campaign-stats.php:29
+#: views/front/browser-stats.php:19 views/front/city-stats.php:17
+#: views/front/country-stats.php:18 views/front/keywords-stats.php:16
+#: views/front/os-stats.php:19
+msgid "Sessions"
+msgstr ""
+
+#: inc/shortcode.php:17 inc/shortcode.php:111
+msgid "Bounces"
+msgstr ""
+
+#: inc/shortcode.php:18 views/admin/campaign-stats.php:52
+msgid "Bounce Rate"
+msgstr ""
+
+#: inc/shortcode.php:19
+msgid "sessionDuration"
+msgstr ""
+
+#: inc/shortcode.php:20
+msgid "Avg SessionDuration"
+msgstr ""
+
+#: inc/shortcode.php:21 inc/shortcode.php:113
+msgid "Hits"
+msgstr ""
+
+#: inc/shortcode.php:23 inc/shortcode.php:72
+msgid "Page Tracking"
+msgstr ""
+
+#: inc/shortcode.php:24 inc/shortcode.php:114
+msgid "Page Value"
+msgstr ""
+
+#: inc/shortcode.php:25 inc/shortcode.php:115
+msgid "Entrances"
+msgstr ""
+
+#: inc/shortcode.php:26 inc/shortcode.php:116
+msgid "Pageviews"
+msgstr ""
+
+#: inc/shortcode.php:27 inc/shortcode.php:117
+msgid "Unique Pageviews"
+msgstr ""
+
+#: inc/shortcode.php:28 inc/shortcode.php:118
+msgid "Exits"
+msgstr ""
+
+#: inc/shortcode.php:29
+msgid "Exit Rate"
+msgstr ""
+
+#: inc/shortcode.php:30 inc/shortcode.php:121
+msgid "Entrance Rate"
+msgstr ""
+
+#: inc/shortcode.php:31 inc/shortcode.php:120
+msgid "Pageviews Per Session"
+msgstr ""
+
+#: inc/shortcode.php:32 inc/shortcode.php:122
+msgid "Time On Page"
+msgstr ""
+
+#: inc/shortcode.php:33
+msgid "Avg Time On Page"
+msgstr ""
+
+#: inc/shortcode.php:38
+msgid "Dimensions: "
+msgstr ""
+
+#: inc/shortcode.php:39
+msgid "Select at least one Dimension"
+msgstr ""
+
+#: inc/shortcode.php:41
+msgid "User Type"
+msgstr ""
+
+#: inc/shortcode.php:42
+msgid "Session Count"
+msgstr ""
+
+#: inc/shortcode.php:43
+msgid "Days Since Last Session"
+msgstr ""
+
+#: inc/shortcode.php:44
+msgid "Session Duration Bucket"
+msgstr ""
+
+#: inc/shortcode.php:46
+msgid "Traffic Sources"
+msgstr ""
+
+#: inc/shortcode.php:47
+msgid "Referral Path"
+msgstr ""
+
+#: inc/shortcode.php:48
+msgid "Full Referrer"
+msgstr ""
+
+#: inc/shortcode.php:49
+msgid "Source"
+msgstr ""
+
+#: inc/shortcode.php:50
+msgid "Medium"
+msgstr ""
+
+#: inc/shortcode.php:51
+msgid "Source Medium"
+msgstr ""
+
+#: inc/shortcode.php:52
+msgid "Keyword"
+msgstr ""
+
+#: inc/shortcode.php:53
+msgid "Social Network"
+msgstr ""
+
+#: inc/shortcode.php:55
+msgid "Platform or Device"
+msgstr ""
+
+#: inc/shortcode.php:56 views/front/browser-stats.php:17
+msgid "Browser"
+msgstr ""
+
+#: inc/shortcode.php:57
+msgid "Browser Version"
+msgstr ""
+
+#: inc/shortcode.php:58
+msgid "Operating System"
+msgstr ""
+
+#: inc/shortcode.php:59
+msgid "Operating System Version"
+msgstr ""
+
+#: inc/shortcode.php:60
+msgid "Mobile Device Branding"
+msgstr ""
+
+#: inc/shortcode.php:61
+msgid "Mobile Device Model"
+msgstr ""
+
+#: inc/shortcode.php:62
+msgid "Mobile Input Selector"
+msgstr ""
+
+#: inc/shortcode.php:63
+msgid "Mobile Device Info"
+msgstr ""
+
+#: inc/shortcode.php:64
+msgid "Mobile Device MarketingName"
+msgstr ""
+
+#: inc/shortcode.php:65
+msgid "Device Category"
+msgstr ""
+
+#: inc/shortcode.php:66
+msgid "Flash Version"
+msgstr ""
+
+#: inc/shortcode.php:67
+msgid "Java Enabled"
+msgstr ""
+
+#: inc/shortcode.php:68
+msgid "Language"
+msgstr ""
+
+#: inc/shortcode.php:69
+msgid "ScreenColors"
+msgstr ""
+
+#: inc/shortcode.php:70
+msgid "ScreenResolution"
+msgstr ""
+
+#: inc/shortcode.php:73
+msgid "Hostname"
+msgstr ""
+
+#: inc/shortcode.php:74
+msgid "Page Path"
+msgstr ""
+
+#: inc/shortcode.php:75 wp-analytify-pro.php:2067
+msgid "Page Title"
+msgstr ""
+
+#: inc/shortcode.php:76
+msgid "Landing Page Path"
+msgstr ""
+
+#: inc/shortcode.php:77
+msgid "secondPagePath"
+msgstr ""
+
+#: inc/shortcode.php:78
+msgid "Exit Page Path"
+msgstr ""
+
+#: inc/shortcode.php:79
+msgid "Previous Page Path"
+msgstr ""
+
+#: inc/shortcode.php:80
+msgid "Next Page Path"
+msgstr ""
+
+#: inc/shortcode.php:81
+msgid "Page Depth"
+msgstr ""
+
+#: inc/shortcode.php:86
+msgid "Visible to (roles) : "
+msgstr ""
+
+#: inc/shortcode.php:88
+msgid "Everyone"
+msgstr ""
+
+#: inc/shortcode.php:105
+msgid "Sort By: "
+msgstr ""
+
+#: inc/shortcode.php:112
+msgid "BounceRate"
+msgstr ""
+
+#: inc/shortcode.php:119
+msgid "EntranceRate"
+msgstr ""
+
+#: inc/shortcode.php:126
+msgid "Analytics for: "
+msgstr ""
+
+#: inc/shortcode.php:128
+msgid "Current page"
+msgstr ""
+
+#: inc/shortcode.php:129
+msgid "Full Site"
+msgstr ""
+
+#: inc/shortcode.php:135
+msgid "Date range: "
+msgstr ""
+
+#: inc/shortcode.php:137
+msgid "Custom"
+msgstr ""
+
+#: inc/shortcode.php:138
+msgid "Today"
+msgstr ""
+
+#: inc/shortcode.php:139
+msgid "Yesterday"
+msgstr ""
+
+#: inc/shortcode.php:140
+msgid "Last 15 days"
+msgstr ""
+
+#: inc/shortcode.php:141
+msgid "Last 7 Days"
+msgstr ""
+
+#: inc/shortcode.php:142
+msgid "Last 30 Days"
+msgstr ""
+
+#: inc/shortcode.php:147
+msgid "Start Date: "
+msgstr ""
+
+#: inc/shortcode.php:151
+msgid "End Date: "
+msgstr ""
+
+#: inc/shortcode.php:156
+msgid "Max records: "
+msgstr ""
+
+#: inc/shortcode.php:161
+msgid "Ok"
+msgstr ""
+
+#: inc/shortcode.php:162
+msgid "Cancel"
+msgstr ""
+
+#: inc/wpa-core-functions.php:62
+#, php-format
+msgid ""
+"If you like %1$s Analytify %2$s please leave us a %5$s %3$s %6$s rating. "
+"%4$s A huge thank you from %1$s WPBrigade %2$s in advance!"
+msgstr ""
+
+#: inc/wpa-core-functions.php:70
+msgid "Thank you for tracking with Analytify."
+msgstr ""
+
+#: inc/wpa-core-functions.php:158
+#, php-format
+msgid "%1$s %2$s"
+msgstr ""
+
+#: views/admin/browser-stats.php:6
+msgid "Browsers Statistics"
+msgstr ""
+
+#: views/admin/browser-stats.php:42
+msgid "listing statistics of top five browsers."
+msgstr ""
+
+#: views/admin/campaign-stats.php:7
+msgid "Campaigns Statistics"
+msgstr ""
+
+#: views/admin/campaign-stats.php:39
+msgid "% New Sessions"
+msgstr ""
+
+#: views/admin/campaign-stats.php:68
+msgid "Pages / Session"
+msgstr ""
+
+#: views/admin/campaign-stats.php:70
+msgid "Avg. Session duration"
+msgstr ""
+
+#: views/admin/campaign-stats.php:79
+msgid "No Campaigns."
+msgstr ""
+
+#: views/admin/campaign-stats.php:89
+msgid "You are running "
+msgstr ""
+
+#: views/admin/city-stats.php:6 views/front/city-stats.php:7
+msgid "Top Cities"
+msgstr ""
+
+#: views/admin/city-stats.php:31 views/front/city-stats.php:41
+msgid "Listing statistics of top five cities."
+msgstr ""
+
+#: views/admin/country-stats.php:6
+msgid "Top Countries"
+msgstr ""
+
+#: views/admin/country-stats.php:36 views/admin/keywords-stats.php:33
+#: views/admin/mobile-stats.php:16 views/admin/referrers-stats.php:40
+#: views/admin/social-stats.php:44 views/front/mobile-stats.php:17
+#: views/front/referrers-stats.php:17 views/front/social-stats.php:18
+msgid "Visits"
+msgstr ""
+
+#: views/admin/country-stats.php:52
+msgid "Listing statistics of top five countries."
+msgstr ""
+
+#: views/admin/general-stats.php:14 views/admin/single-general-stats.php:15
+#: views/front/general-stats.php:17
+msgid "SESSIONS"
+msgstr ""
+
+#: views/admin/general-stats.php:20 views/admin/single-general-stats.php:22
+msgid ""
+"Total number of Sessions within the date range. A session is the period time "
+"a user is actively engaged with your website, app, etc."
+msgstr ""
+
+#: views/admin/general-stats.php:25 views/admin/single-general-stats.php:28
+#: views/front/general-stats.php:21
+msgid "USERS"
+msgstr ""
+
+#: views/admin/general-stats.php:31 views/admin/single-general-stats.php:34
+msgid ""
+"Users that have had at least one session within the selected date range. "
+"Includes both new and returning users."
+msgstr ""
+
+#: views/admin/general-stats.php:35 views/admin/single-general-stats.php:39
+#: views/front/general-stats.php:25
+msgid "BOUNCE RATE"
+msgstr ""
+
+#: views/admin/general-stats.php:49 views/admin/single-general-stats.php:53
+msgid ""
+"Bounce Rate is the percentage of single-page visits (i.e. visits in which "
+"the person left your site from the entrance page without interacting with "
+"the page)."
+msgstr ""
+
+#: views/admin/general-stats.php:53 views/front/general-stats.php:39
+msgid "AVG TIME ON SITE"
+msgstr ""
+
+#: views/admin/general-stats.php:70 views/admin/single-general-stats.php:74
+msgid "The amount of time someone spends on your site."
+msgstr ""
+
+#: views/admin/general-stats.php:73 views/front/general-stats.php:55
+msgid "AVERAGE PAGES"
+msgstr ""
+
+#: views/admin/general-stats.php:91 views/admin/general-stats.php:135
+msgid ""
+"Pages/Session is the average number of pages viewed during a session. "
+"Repeated views of a single page are counted."
+msgstr ""
+
+#: views/admin/general-stats.php:95 views/admin/single-general-stats.php:77
+#: views/front/general-stats.php:72
+msgid "PAGE VIEWS"
+msgstr ""
+
+#: views/admin/general-stats.php:110 views/admin/single-general-stats.php:93
+msgid ""
+"Pageviews is the total number of pages viewed. Repeated views of a single "
+"page are counted."
+msgstr ""
+
+#: views/admin/general-stats.php:115
+msgid " % NEW SESSIONS"
+msgstr ""
+
+#: views/admin/general-stats.php:139 views/admin/single-general-stats.php:97
+msgid "NEW/RETURNING VISITORS"
+msgstr ""
+
+#: views/admin/general-stats.php:174
+msgid "New "
+msgstr ""
+
+#: views/admin/general-stats.php:175 views/admin/single-general-stats.php:133
+msgid "Returning"
+msgstr ""
+
+#: views/admin/general-stats.php:191 views/admin/single-general-stats.php:149
+msgid "Did you know that total time on your site is"
+msgstr ""
+
+#: views/admin/keywords-stats.php:11
+msgid "How people are finding you (keywords)"
+msgstr ""
+
+#: views/admin/keywords-stats.php:47
+msgid "See which keywords are matching what users search."
+msgstr ""
+
+#: views/admin/mobile-stats.php:7
+msgid "Mobile Devices Statistics"
+msgstr ""
+
+#: views/admin/mobile-stats.php:32 views/front/mobile-stats.php:41
+msgid "Listing statistics of Mobile usage."
+msgstr ""
+
+#: views/admin/os-stats.php:6 views/front/os-stats.php:9
+msgid "Operating System Statistics"
+msgstr ""
+
+#: views/admin/os-stats.php:31
+msgid "Listing statistics of top five operating systems."
+msgstr ""
+
+#: views/admin/pages-stats.php:8
+msgid "What's happening when users come to your site."
+msgstr ""
+
+#: views/admin/pages-stats.php:41 views/admin/single-pages-stats.php:42
+msgid "Total Exits"
+msgstr ""
+
+#: views/admin/pages-stats.php:61 views/admin/single-pages-stats.php:57
+msgid "Did you know that"
+msgstr ""
+
+#: views/admin/pages-stats.php:61
+msgid " people landed directly to your site at "
+msgstr ""
+
+#: views/admin/realtime-stats.php:13
+msgid "Real Time Statistics"
+msgstr ""
+
+#: views/admin/realtime-stats.php:21 wp-analytify-pro.php:2091
+msgid "REFERRAL"
+msgstr ""
+
+#: views/admin/realtime-stats.php:22 wp-analytify-pro.php:2092
+msgid "ORGANIC"
+msgstr ""
+
+#: views/admin/realtime-stats.php:23 wp-analytify-pro.php:2007
+#: wp-analytify-pro.php:2093
+msgid "SOCIAL"
+msgstr ""
+
+#: views/admin/realtime-stats.php:26 wp-analytify-pro.php:2010
+#: wp-analytify-pro.php:2096
+msgid "DIRECT"
+msgstr ""
+
+#: views/admin/realtime-stats.php:27 wp-analytify-pro.php:2097
+msgid "NEW"
+msgstr ""
+
+#: views/admin/realtime-stats.php:28 wp-analytify-pro.php:2098
+msgid "RETURNING"
+msgstr ""
+
+#: views/admin/realtime-stats.php:40 views/front/country-stats.php:42
+msgid "These are the realtime statistics of your site."
+msgstr ""
+
+#: views/admin/referrers-stats.php:6
+msgid "Top Referrers"
+msgstr ""
+
+#: views/admin/referrers-stats.php:56
+msgid "who are the strong Referrers to your site ?? See above."
+msgstr ""
+
+#: views/admin/single-general-stats.php:57
+msgid "AVG TIME ON THIS PAGE"
+msgstr ""
+
+#: views/admin/single-general-stats.php:132
+msgid "New"
+msgstr ""
+
+#: views/admin/single-pages-stats.php:8
+msgid "What's happening when users come to this page."
+msgstr ""
+
+#: views/admin/single-pages-stats.php:57
+msgid "people landed at this page directly."
+msgstr ""
+
+#: views/admin/social-stats.php:11
+msgid "Social Media Statistics"
+msgstr ""
+
+#: views/admin/social-stats.php:57
+msgid "See how many users are coming to your site from Social media."
+msgstr ""
+
+#: views/admin/top-pages-stats.php:7
+msgid "Top pages by views."
+msgstr ""
+
+#: views/admin/top-pages-stats.php:13
+msgid "Views"
+msgstr ""
+
+#: views/front/browser-stats.php:8
+msgid "TOP Browsers"
+msgstr ""
+
+#: views/front/browser-stats.php:18
+msgid "OS"
+msgstr ""
+
+#: views/front/browser-stats.php:44
+msgid "These are the top browsers of your this page."
+msgstr ""
+
+#: views/front/city-stats.php:15 views/front/country-stats.php:16
+#: views/front/keywords-stats.php:14 views/front/mobile-stats.php:15
+#: views/front/os-stats.php:17 views/front/referrers-stats.php:15
+#: views/front/social-stats.php:16
+msgid "#"
+msgstr ""
+
+#: views/front/city-stats.php:16
+msgid "City"
+msgstr ""
+
+#: views/front/country-stats.php:17
+msgid "Country"
+msgstr ""
+
+#: views/front/general-stats.php:89
+msgid "USER TYPE"
+msgstr ""
+
+#: views/front/general-stats.php:108
+msgid "These are the general statistics of this page."
+msgstr ""
+
+#: views/front/keywords-stats.php:6
+msgid "TOP KEYWORDS"
+msgstr ""
+
+#: views/front/keywords-stats.php:15
+msgid "Keywords"
+msgstr ""
+
+#: views/front/keywords-stats.php:40
+msgid "These are the keywords people are searching for this page."
+msgstr ""
+
+#: views/front/mobile-stats.php:7
+msgid "Mobile device Statistics"
+msgstr ""
+
+#: views/front/mobile-stats.php:16
+msgid "Device"
+msgstr ""
+
+#: views/front/os-stats.php:18
+msgid "Operating System (Version)"
+msgstr ""
+
+#: views/front/os-stats.php:43
+msgid "Listing statistics of top Operating Systems."
+msgstr ""
+
+#: views/front/referrers-stats.php:7
+msgid "TOP Referrers"
+msgstr ""
+
+#: views/front/referrers-stats.php:16
+msgid "Social referrer"
+msgstr ""
+
+#: views/front/referrers-stats.php:46
+msgid "These are the top referrers of this page."
+msgstr ""
+
+#: views/front/social-stats.php:8
+msgid "Social media Statistics"
+msgstr ""
+
+#: views/front/social-stats.php:17
+msgid "Social"
+msgstr ""
+
+#: views/front/social-stats.php:42
+msgid "These are the social media statistics of this page."
+msgstr ""
+
+#: welcome.php:49 welcome.php:50
+msgid "Welcome to Analytify"
+msgstr ""
+
+#: welcome.php:58 welcome.php:59
+msgid "Getting started with Analytify"
+msgstr ""
+
+#: welcome.php:67 welcome.php:68
+msgid "The people that build Analytify"
+msgstr ""
+
+#: welcome.php:139
+msgid "What's New"
+msgstr ""
+
+#: welcome.php:142
+msgid "Getting Started"
+msgstr ""
+
+#: welcome.php:145
+msgid "Credits"
+msgstr ""
+
+#: welcome.php:162
+#, php-format
+msgid "Welcome to WP Analytify Pro %1$s"
+msgstr ""
+
+#: welcome.php:164 welcome.php:418
+#, php-format
+msgid ""
+"%1$s Thank you for updating to the latest version! %2$s %3$s Analytify %4$s "
+"is ready to make people lives easier for those who love Google Analytics and "
+"WordPress. It makes Analytics simple for WordPress users that everyone can "
+"understand about their Website statistics and behavior. "
+msgstr ""
+
+#: welcome.php:171 welcome.php:191
+msgid "New features"
+msgstr ""
+
+#: welcome.php:177
+msgid "Simple Authentication"
+msgstr ""
+
+#: welcome.php:179
+msgid "You don't need to worry about copy and paste access code any more. "
+msgstr ""
+
+#: welcome.php:182
+msgid "Translation ready"
+msgstr ""
+
+#: welcome.php:184
+#, php-format
+msgid ""
+"WP Analytify Pro %1$s contains all the strings ready to translate in any "
+"language. %2$s Click here %3$s to start translating this plugin into your "
+"language and don't forget to share your language files with us to ease for "
+"other users."
+msgstr ""
+
+#: welcome.php:197
+msgid "Analytify Shortcodes"
+msgstr ""
+
+#: welcome.php:199
+#, php-format
+msgid ""
+"Analytify shortcodes can be used for multiple purposes. It gives you more "
+"flexibility than the front-end statistics. You can disable front-end stats "
+"and use these shortcodes in any of your pages/posts to show Analytics in "
+"tabular style. If you are familiar with CSS, It can be easily modified to "
+"match with your website look and feel. %1$s Follwing are two types of "
+"shortcodes:"
+msgstr ""
+
+#: welcome.php:202
+msgid "a) Simple:"
+msgstr ""
+
+#: welcome.php:204
+#, php-format
+msgid ""
+"Simple Analytify shortcode returns you only the numbers i.e results. It is "
+"useful when you want results of only 1 Metrics and can apply permissions "
+"using roles. You can fetch numbers of %1$s Sessions, Pageviews, Bounce rate "
+"and Users %2$s etc"
+msgstr ""
+
+#: welcome.php:207
+msgid "b) Advanced:"
+msgstr ""
+
+#: welcome.php:209
+#, php-format
+msgid ""
+"With this Advanced option, You can choose %1$s more than 1 Metrics and "
+"Dimensions, Sort the results, get maximum rows, apply permissions and fetch "
+"Analytics with specified start-date and end-date. %2$s Advanced shortcode "
+"returns results in table form which can be styled according to your website."
+msgstr ""
+
+#: welcome.php:217
+msgid "Front-end Statistics"
+msgstr ""
+
+#: welcome.php:219
+#, php-format
+msgid ""
+"We have introduced the %1$s New Front-end Analytics %2$s which will fetch "
+"the stats like backend but with an awesome UI for front-end stats. It was a "
+"long awaited feature which was under development but finally It is here. It "
+"can be customized (if you are good at CSS) according to your website look "
+"and fool. %3$s below are it's important options: "
+msgstr ""
+
+#: welcome.php:224 welcome.php:336
+msgid "Disable front-end"
+msgstr ""
+
+#: welcome.php:226 welcome.php:337
+msgid ""
+"We introduced the ability to disable the front-end stats on the full site. "
+"Check it, if you don't want to load Analytics at all. Remember, you can use "
+"Shortcodes still."
+msgstr ""
+
+#: welcome.php:229 welcome.php:339 welcome.php:373
+msgid "Display Analytics to Users"
+msgstr ""
+
+#: welcome.php:231
+#, php-format
+msgid "Show %1$s front-end %2$s Analytics to selected user roles only."
+msgstr ""
+
+#: welcome.php:236 welcome.php:344 welcome.php:378
+msgid "Analytics on Post types"
+msgstr ""
+
+#: welcome.php:237 welcome.php:345 welcome.php:379
+msgid ""
+"Show Analytics under the selected post types only. You can select your "
+"custom post types as well."
+msgstr ""
+
+#: welcome.php:239 welcome.php:347
+msgid "Front-end Analytics panels"
+msgstr ""
+
+#: welcome.php:240 welcome.php:348
+msgid ""
+"Select which Stats panels you want to display at front-end. We recommend to "
+"use upto 8 Panels for better page speed."
+msgstr ""
+
+#: welcome.php:244 welcome.php:352 welcome.php:386
+msgid "Exclude Analytics on specific pages"
+msgstr ""
+
+#: welcome.php:245 welcome.php:353 welcome.php:387
+msgid "Select posts or pages on which you don't want to show Analytics."
+msgstr ""
+
+#: welcome.php:253
+msgid "Go to Analytify Settings"
+msgstr ""
+
+#: welcome.php:254
+msgid "View the Full Changelog"
+msgstr ""
+
+#: welcome.php:273 welcome.php:416
+#, php-format
+msgid "Welcome to WP Analytify %1$s"
+msgstr ""
+
+#: welcome.php:275
+#, php-format
+msgid ""
+" %1$s Thank you for updating to the latest version! %2$s %3$s Analytify %4$s "
+"is ready to make people lives easier for those who love Google Analytics and "
+"WordPress. It makes Analytics simple for WordPress users that everyone can "
+"understand about their Website statistics and behavior. "
+msgstr ""
+
+#: welcome.php:282
+#, php-format
+msgid ""
+"Getting started with Analytify plugin settings are very easy to use and "
+"ready to go in minutes. If there is something you don't understand or "
+"confusing, do ask us on our Support %1$sforums%2$s without hesitation."
+msgstr ""
+
+#: welcome.php:286
+msgid "Connect with Analytify"
+msgstr ""
+
+#: welcome.php:291
+msgid "Authentication"
+msgstr ""
+
+#: welcome.php:292
+msgid ""
+"You must have a registered Google Analytics account and setup your website "
+"profiles to use with Analytify on your WordPress based sites. Click on Login "
+"button and It will redirect you to separate Google access page. Allow this "
+"plugin to fetch the data from Google Analytics and It will take you back to "
+"your profile tab."
+msgstr ""
+
+#: welcome.php:300
+msgid "Setting up profiles"
+msgstr ""
+
+#: welcome.php:304
+msgid "Profile Tab"
+msgstr ""
+
+#: welcome.php:305
+msgid ""
+"This tab section consists of many important settings. After Authentication, "
+"Setup your profiles here. All of the options are easy to understand."
+msgstr ""
+
+#: welcome.php:307
+msgid "a) Install Google Analytics tracking code"
+msgstr ""
+
+#: welcome.php:308
+msgid ""
+"First, you need to check if you want to install Google Analytics tracking "
+"code by Analytify or uncheck it if you have already installed it manually or "
+"via some other way. "
+msgstr ""
+
+#: welcome.php:310
+msgid "b) Exclude users from tracking"
+msgstr ""
+
+#: welcome.php:311
+msgid ""
+"Usually Administrators don't want to track themselves. So, this option can "
+"be commonly used if you want to exclude your special users from tracking "
+"data."
+msgstr ""
+
+#: welcome.php:313
+msgid "c) Tracking code type"
+msgstr ""
+
+#: welcome.php:314
+msgid ""
+"Google recommends to use Analytics.js (Universal Tracking) now. So, we "
+"recommend to use this option."
+msgstr ""
+
+#: welcome.php:316
+msgid "d) Profile for posts (Backend/Front-end)"
+msgstr ""
+
+#: welcome.php:319
+msgid "e) Profile for Dashboard"
+msgstr ""
+
+#: welcome.php:326
+msgid "Display Statistics at front-end pages"
+msgstr ""
+
+#: welcome.php:332
+msgid "Front Tab"
+msgstr ""
+
+#: welcome.php:333
+#, php-format
+msgid ""
+"In version %4$s, We have introduced the %1$s New Front-end Analytics%2$s "
+"which will fetch the stats like backend but with an awesome UI for front-end "
+"stats. It was a long awaited feature which was under development since 1.0 "
+"but finally It is here. It can be customized (if you are good at CSS) "
+"according to your website look and fool. %3$s Below are it's important "
+"options: "
+msgstr ""
+
+#: welcome.php:340
+#, php-format
+msgid "Show %1$sfront-end%2$s Analytics to selected user roles only."
+msgstr ""
+
+#: welcome.php:359
+msgid "Display Statistics under Edit pages (backend)"
+msgstr ""
+
+#: welcome.php:365
+msgid "Admin Tab"
+msgstr ""
+
+#: welcome.php:366
+msgid ""
+"Admin tab section is to manage the Analytics panels under EDIT screen of "
+"post/pages in wp-admin."
+msgstr ""
+
+#: welcome.php:370
+msgid "Disable Analytics under posts/pages."
+msgstr ""
+
+#: welcome.php:371
+msgid ""
+"Check it, If you don't want to load Stats by default on all pages. If you "
+"disable it, you can still fetch the stats under each post/page on single "
+"click."
+msgstr ""
+
+#: welcome.php:374
+#, php-format
+msgid "Show %1$s Google %2$s Analytics to selected user roles only."
+msgstr ""
+
+#: welcome.php:381
+msgid "Edit pages/posts Analytics panels"
+msgstr ""
+
+#: welcome.php:382
+msgid ""
+"Select which Stats panels you want to display at backend. We recommend to "
+"use upto 10 Panels for better page speed."
+msgstr ""
+
+#: welcome.php:394
+msgid "Licensing"
+msgstr ""
+
+#: welcome.php:397
+msgid ""
+"We have a year based pricing model as we think this is the best model to "
+"keep our normal lives easier and down the costs of support servers etc. You "
+"need a valid license key if you want to get support and updates in the "
+"future for a year. After a year, you will get discount to renew your "
+"license. "
+msgstr ""
+
+#: welcome.php:424
+#, php-format
+msgid ""
+"WP Analytify is developed by %1$s WPBrigade%2$s i.e brigade of WordPress "
+"developers."
+msgstr ""
+
+#: wp-analytify-pro.php:416
+#, php-format
+msgid ""
+"%1$s%2$s%3$s Important note from WP Analytify: %4$s We are Introducing new "
+"way to connect Analytify with your Google Analytics account. It requires you "
+"to re-authenticate the plugin. We apologize for inconvenience. %5$s %6$s Re-"
+"connect now %7$s %9$s %10$s"
+msgstr ""
+
+#: wp-analytify-pro.php:448
+msgid "This post is excluded and will NOT show Analytics."
+msgstr ""
+
+#: wp-analytify-pro.php:500
+msgid "You are not allowed to see stats"
+msgstr ""
+
+#: wp-analytify-pro.php:724
+#, php-format
+msgid "%1$s Fetching Analytics from %2$s to %3$s %4$s"
+msgstr ""
+
+#: wp-analytify-pro.php:844
+#, php-format
+msgid "%2$s This code is added by WP Analytify Pro (%1$s) %4$s %3$s"
+msgstr ""
+
+#: wp-analytify-pro.php:887
+#, php-format
+msgid "%2$s This code is added by WP Analytify Pro (%1$s) %3$s"
+msgstr ""
+
+#: wp-analytify-pro.php:921
+#, php-format
+msgid "%1$s Settings %2$s | %3$s Dashboard %4$s | %5$s Help %6$s"
+msgstr ""
+
+#: wp-analytify-pro.php:942
+#, php-format
+msgid "%1$s Getting Started %2$s"
+msgstr ""
+
+#: wp-analytify-pro.php:943
+#, php-format
+msgid "%1$s Add On s%2$s"
+msgstr ""
+
+#: wp-analytify-pro.php:1069
+msgid " Dashboard"
+msgstr ""
+
+#: wp-analytify-pro.php:1076
+msgid " Campaigns"
+msgstr ""
+
+#: wp-analytify-pro.php:1081
+msgid " Logs"
+msgstr ""
+
+#: wp-analytify-pro.php:1091
+msgid "Addons"
+msgstr ""
+
+#: wp-analytify-pro.php:1091
+msgid "Add-ons"
+msgstr ""
+
+#: wp-analytify-pro.php:1141
+msgid "You must authenticate to access your web profiles."
+msgstr ""
+
+#: wp-analytify-pro.php:1147
+#, php-format
+msgid ""
+"%1$s %2$s oOps, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s "
+"Authentication."
+msgstr ""
+
+#: wp-analytify-pro.php:1183
+#, php-format
+msgid ""
+"Analytify is not active. Please %1$sAuthenticate%2$s in order to get started "
+"using this plugin."
+msgstr ""
+
+#: wp-analytify-pro.php:1188
+#, php-format
+msgid "%1$s Google Analytics Profile is not set. Set the %2$s Profile %3$s"
+msgstr ""
+
+#: wp-analytify-pro.php:2001
+msgid "REFERRALS"
+msgstr ""
+
+#: wp-analytify-pro.php:2004
+msgid "KEYWORDS"
+msgstr ""
+
+#: wp-analytify-pro.php:2067
+msgid "Visitors"
+msgstr ""
+
+#: wp-analytify-pro.php:2150
+#, php-format
+msgid ""
+"%1$s %2$s %3$sNotice:%4$s%5$sConnect%6$s%4$s Analytify with your Google "
+"account. %7$s %8$s"
+msgstr ""
+
+#: wp-analytify-pro.php:2156
+#, php-format
+msgid ""
+"Congratulations! Analytify is now authenticated. Please select your website "
+"profile %1$s here %2$s"
+msgstr ""
+
+#: wp-analytify-pro.php:2197
+msgid "Analytify - Google Analytics for WordPress."
+msgstr ""
+
+#: wp-analytify-pro.php:2198
+msgid ""
+"Thank you for activating Analytify Plugin. Enjoy Google Analytics for "
+"everything in WordPress."
+msgstr ""
+
+#: wp-analytify-pro.php:2443
+#, php-format
+msgid ""
+"%1$s %2$s You have been using the %3$s for some time now, do you like it? If "
+"so, please consider leaving us a review on WordPress.org! It would help us "
+"out a lot and we would really appreciate it. %4$s %5$s Leave a Review %6$s "
+"%7$s No thanks %8$s%9$s%10$s"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WP Analytify Pro"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://analytify.io/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Analytify makes Google Analytics simple for everything in WordPress (posts,"
+"pages etc). It presents the statistics in a beautiful way under the "
+"WordPress Posts/Pages at front end, backend and in its own Dashboard. This "
+"provides Stats from Country, Referrers, Social media, General stats, New "
+"visitors, Returning visitors, Exit pages, Browser wise and Top keywords. "
+"This plugin provides the RealTime statistics in a new UI that is easy to "
+"understand and looks good."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Adnan"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://adnan.pk/"
+msgstr ""

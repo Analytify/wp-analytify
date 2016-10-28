@@ -1,30 +1,19 @@
 <?php
-/**
- * Analytify admin bar file.
- * @package WP_Analytify
- */
 
-if ( ! defined( 'ABSPATH' ) ) { exit; // Exit if accessed directly.
+
+if ( ! defined( 'ABSPATH' ) ) {
+	// exit if accessed directly.
+	exit;
 }
 
-/**
- * This class is used to display a shortcut menu at admin bar.
- */
-class WPA_ADMIN_BAR {
 
-	/**
-	 * Initialization
-	 * @return void
-	 */
+class WP_ANALYTIFY_ADMIN_BAR {
+
 	public function init() {
 		add_action( 'admin_bar_menu' , array( $this, 'admin_bar_menu' ) , 90 );
 	}
 
-	/**
-	 * Menu
-	 * @param  string $wp_admin_bar passed admin bar.
-	 * @return void
-	 */
+
 	public function admin_bar_menu( $wp_admin_bar ) {
 
 		global $tag, $wp_the_query;
@@ -33,9 +22,9 @@ class WPA_ADMIN_BAR {
 
 		$wp_admin_bar->add_node(array(
 			'id' => 'analytify',
-			'title' => '<span class="ab-icon"></span><span id="ab-analytify" class="ab-label">' . esc_html__( 'Analytify' , 'wp-analytify' ) . '</span>',
+			'title' => '<span class="ab-icon"></span><span id="ab-analytify" class="ab-label">Analytify</span>',
 			'href' => get_admin_url( null, 'admin.php?page=analytify-dashboard' ),
-			'meta' => array( 'target' => '_blank', 'title' => __( 'Analytify' , 'wp-analytify' ) ),
+			'meta' => array( 'target' => '_blank', 'title' => 'view complete Analytics of your site' ),
 		));
 
 		if ( ( ! empty( $current_object->post_type )
@@ -55,16 +44,15 @@ class WPA_ADMIN_BAR {
 			) );
 
 				echo '<style>
-				#wpadminbar .quicklinks .menupop.hover ul .wpa_admin_color a{
-				 color : orange
-				 }
+                #wpadminbar .quicklinks .menupop.hover ul .wpa_admin_color a{
+                 color : orange
+                 }
 				</style>';
 
 		}
 
 			$menus = array(
 				'dashboard' => esc_html__( 'Dashboard' , 'wp-analytify' ),
-				'campaigns' => esc_html__( 'Campaigns' , 'wp-analytify' ),
 				'settings'  => esc_html__( 'Settings' , 'wp-analytify' ),
 			);
 			foreach ( $menus as $id => $title ) {
@@ -73,12 +61,13 @@ class WPA_ADMIN_BAR {
 					'id'     => $id,
 					'title'  => $title,
 					'href'   => get_admin_url( null, 'admin.php?page=analytify-' . $id ),
+
 				));
 			}
 
 	}
 }
 
-$admin_bar = new WPA_ADMIN_BAR();
+$admin_bar = new WP_ANALYTIFY_ADMIN_BAR();
 $admin_bar->init();
 	?>
