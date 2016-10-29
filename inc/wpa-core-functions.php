@@ -198,8 +198,9 @@ class WP_ANALYTIFY_FUNCTIONS {
 	 */
 	public static function wpa_check_profile_selection( $type, $message = '' ) {
 
-		// if(! get_option( "pt_webprofile" )) {
-		if ( empty( get_option( 'wp-analytify-profile' )['profile_for_dashboard'] ) ) {
+		$dashboard_profile = get_option( 'wp-analytify-profile' )['profile_for_dashboard'];
+
+		if ( empty( $dashboard_profile ) ) {
 
 			if ( $message == '' ) {
 				echo sprintf( esc_html__( '%1$s %2$s' . $type . ' Dashboard can\'t be loaded until your select your website profile %3$s here %4$s %5$s %6$s', 'wp-analytify' ), '<div class="error notice is-dismissible">', '<p>', '<a style="text-decoration:none" href="' . menu_page_url( 'analytify-settings', false ) . '#wp-analytify-profile">', '</a>', '</p>', '</div>' ); } else {
@@ -323,7 +324,8 @@ function wp_analytify_activate() {
 	update_option( 'display_tracking_code'        , array( 'administrator' ) );
 	update_option( 'show_welcome_page'            ,  0 );
 
-	if ( empty( get_option( 'wp-analytify-dashboard' ) ) ) {
+	$previous_setting = get_option( 'wp-analytify-dashboard' );
+ 	if ( empty( $previous_setting  ) ) {
 
 		$default['show_analytics_panels_dashboard'] = array(
 			'show-real-time',

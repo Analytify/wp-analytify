@@ -4,7 +4,7 @@ Donate link: http://paypal.me/Analytify
 Tags: google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced ecommerce tracking
 Requires at least: 3.0
 Tested up to: 4.6.1
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -16,7 +16,7 @@ Simple setup & you get Google Analytics Dashboard for WordPress. Enhanced eComme
 
 > **Google Analytics Premium Partner** - [Read](https://www.google.com/analytics/partners/company/5179388639313920/gadp/5629499534213120/app/5707702298738688/listing/5639274879778816) what Google is saying about us.
 
-**1-Click Install is now available in free version too**
+**Analytify 2.0 is here! Google Analytics Like Never Before!**
 
 > **Premium Version:**<br>
 > This plugin has a premium version, which is more easy to install, and shows **Real-Time Stats**, **Campaign Stats**, **ShortCodes**, *Front-end Stats*  and more reports in backend and front-end. Also premium version has better e-commerce tracking (Buy [Add-ons](http://analytify.io/add-ons/) with premium), and campaigns management. Get the affordable Premium Version from [analytify.io](http://analytify.io/upgrade-from-free) . **Bundle price** is also available with Addons.
@@ -101,6 +101,8 @@ First, you need to Authenticate your GA account then you can select your web pro
 == Changelog ==
 
 
+= 2.0.1 - 2016-10-28 =
+* Bug Fix   : PHP 5.4 fatal error fixed
 
 = 2.0.0 - 2016-10-28 =
 * Enhancement : New clean UI design
@@ -228,8 +230,8 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Upgrade Notice ==
 
-= 2.0.0 =
-* [Important Update] Announcement: Version 2.0 is live.
+= 2.0.1 =
+* [Important Update] Analytify 2.0: Must Update! Google Analytics like never before. PHP 5.4 error fixed.
 
 
 == Donation ==
