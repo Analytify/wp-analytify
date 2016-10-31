@@ -43,7 +43,8 @@ class WPANALYTIFY_AJAX {
 			'load_default_keyword' => false,
 			'load_default_page' => false,
 			'load_default_social_media' => false,
-			'load_default_reffers' => false
+			'load_default_reffers' => false,
+			'dismiss_pointer'	=> true,
 			);
 
 		foreach ( $ajax_calls as $ajax_call => $no_priv ) {
@@ -807,6 +808,24 @@ class WPANALYTIFY_AJAX {
 		}
 
 		printf( "%s%s (v%s) by %s\r\n", $plugin_data['Name'], $suffix, $plugin_data['Version'], $plugin_data['AuthorName'] );
+	}
+
+	/**
+	 * Triggered when clicking the dismiss button.
+	 * @since 1.0.8
+	 */
+	public static function dismiss_pointer() {
+
+		$wpa_allow  = isset($_POST['wpa_allow']) ? $_POST['wpa_allow']: 0;
+
+		if( $wpa_allow == 1 ) {
+ 
+			update_option('wpa_allow_tracking', 1);
+			send_status_analytify( get_option( 'admin_email' ), 'active');
+		}
+
+		update_option('show_tracking_pointer_1', 1);
+		die();
 	}
 }
 

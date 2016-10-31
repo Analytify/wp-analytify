@@ -99,4 +99,17 @@ class WPANALYTIFY_Utils {
 
 	}
 
+
+	/**
+	 * show coupon message to Free users Only.
+	 */
+	static function is_active_pro() {
+
+		if ( is_plugin_active( 'wp-analytify-pro/wp-analytify-pro.php' ) )
+			return true;
+		else 
+			return false;
+
+	}
+
 }

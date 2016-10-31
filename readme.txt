@@ -4,26 +4,22 @@ Donate link: http://paypal.me/Analytify
 Tags: google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced ecommerce tracking
 Requires at least: 3.0
 Tested up to: 4.6.1
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Simple setup & you get Google Analytics Dashboard for WordPress. Enhanced eCommerce Google Analytics Tracking for WooCommerce is available.
+Analytify 2.0 is the must-have Plugin for Google Analytics! Now Enhanced eCommerce Tracking is available for WooCommerce and EDD!
 
 == Description ==
 
-[Analytify](http://analytify.io/details) - makes Google Analytics simple for everywhere in WordPress (posts,pages and custom post types etc). It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. Now you can get **Google Analytics Dashboard** inside your WordPress Dashboard within a minute.
+**[Analytify](http://analytify.io/details)** - makes **Google Analytics** simple for everywhere in WordPress (posts, pages and custom post types). It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. Now you can get **Google Analytics Dashboard** inside your WordPress Dashboard within a minute.
 
-> **Google Analytics Premium Partner** - [Read](https://www.google.com/analytics/partners/company/5179388639313920/gadp/5629499534213120/app/5707702298738688/listing/5639274879778816) what Google is saying about us.
+**Analytify 2.0 is here! Google Analytics Like Never Before! Must check those stunning [Screenshots](https://wordpress.org/plugins/wp-analytify/screenshots/)!**
 
-**Analytify 2.0 is here! Google Analytics Like Never Before!**
-
-> **Premium Version:**<br>
+**Premium Version:**<br>
 > This plugin has a premium version, which is more easy to install, and shows **Real-Time Stats**, **Campaign Stats**, **ShortCodes**, *Front-end Stats*  and more reports in backend and front-end. Also premium version has better e-commerce tracking (Buy [Add-ons](http://analytify.io/add-ons/) with premium), and campaigns management. Get the affordable Premium Version from [analytify.io](http://analytify.io/upgrade-from-free) . **Bundle price** is also available with Addons.
 
-
-**[WooCommerce Enhanced eCommerce](https://analytify.io/go/WooCommerce)** tracking and report dashboard right inside your WordPress is now available. [Take a look](https://analytify.io/go/WooCommerce).
-
+**Google Analytics Premium Partner** - [Read](https://www.google.com/analytics/partners/company/5179388639313920/gadp/5629499534213120/app/5707702298738688/listing/5639274879778816) what Google is saying about us.
 
 
 **Features:**
@@ -50,6 +46,8 @@ Simple setup & you get Google Analytics Dashboard for WordPress. Enhanced eComme
 *  **E-commerce Tracking Add-ons for WooCommerce (available) & Easy Digital Downloads (coming very soon)** (Premium)
 *  You can extend it to at any level. Usage of API’s are very easy to work with.
 
+**[WooCommerce Enhanced eCommerce](https://analytify.io/go/WooCommerce)** tracking and report dashboard right inside your WordPress is now available. [Take a look](https://analytify.io/go/WooCommerce).
+
 > <strong>Development on Github</strong><br>
 > This plugin is also [available on github](https://github.com/hiddenpearls/wp-analytify) and ready to take bugs and pull requests. For Support, you can buy the **PRO version**, this will give access to premium updates, support and features.
 
@@ -62,7 +60,7 @@ This section describes how to install the Google Analytics Dashboard By Analytif
 
 = Modern Way: =
 1. Go to the WordPress Dashboard "Add New Plugin" section.
-2. Search For "Google Analytics Dashboard By Analytify".
+2. Search For "Analytify".
 3. Install, then Activate it.
 
 = Old Way: =
@@ -91,18 +89,29 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Screenshots ==
 
-1. Google Analytics Dashboard By Analytify Settings Screen.
+1. Real-time Stats from Google Analytics
 2. Google Analytics Dashboard General Statistics.
 3. Google Analytics Top Countries.
-4. Google Analytics Top Referrers/Browsers
-5. Enhanced eCommerce Google Analytics Tracking for WooCommerce Dashboard (Add-on Required)
+4. Google Analytics Top Referrers/Browsers.
+5. Enhanced eCommerce Google Analytics Tracking for WooCommerce Dashboard (Add-on Required).
+6. Google Analytics Dashboard By Analytify Settings Screen.
+7. Automated Email Reports (Add-on Required).
+8. Shopping Behaviour funnel for WooCommerce Dashboard (Add-on Required).
+9. UTM Campaigns Dashboard (Add-on Required).
+10. Google Analytics dashboard widget for WordPress ( Free Add-ons Required).
 
 
 == Changelog ==
 
 
+= 2.0.2 - 2016-10-30 =
+* Bug Fix   : Correct stats for each post/page.
+* Bug Fix   : Minor other bug fix.
+* Enhancement : Plugin log announcement and coupon promotion fixed.
+* Enhancement : Super admin role check on multisite enabled only.
+
 = 2.0.1 - 2016-10-28 =
-* Bug Fix   : PHP 5.4 fatal error fixed
+* Bug Fix     : PHP 5.4 fatal error fixed
 
 = 2.0.0 - 2016-10-28 =
 * Enhancement : New clean UI design
@@ -230,8 +239,8 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Upgrade Notice ==
 
-= 2.0.1 =
-* [Important Update] Analytify 2.0: Must Update! Google Analytics like never before. PHP 5.4 error fixed.
+= 2.0.2 =
+* [Important Update] Analytify 2.0: Must Update! Multiple bug fix from 2.0.1.
 
 
 == Donation ==

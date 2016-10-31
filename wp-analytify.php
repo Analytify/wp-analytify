@@ -3,7 +3,7 @@
  * Plugin Name: Analytify - Google Analytics Dashboard
  * Plugin URI: http://analytify.io/details
  * Description: Analytify brings a brand new and modern feeling Google Analytics superbly integrated with WordPress Dashboard. It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. This provides Stats from Country, Referrers, Social media, General stats, New visitors, Returning visitors, Exit pages, Browser wise and Top keywords. This plugin provides the RealTime statistics in a new UI which is easy to understand & looks good.
- * Version: 2.0.1
+ * Version: 2.0.2
  * Author: WPBrigade
  * Author URI: http://wpbrigade.com/
  * License: GPLv3
@@ -55,8 +55,6 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 			register_activation_hook( __FILE__, 'wp_analytify_activate' );
 			register_deactivation_hook( __FILE__, 'wp_analytify_de_activate' );
-			register_uninstall_hook( __FILE__, 		'wp_analytify_uninstall' );
-
 		}
 
 
@@ -158,7 +156,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		 */
 		private function hooks() {
 
-			add_action( 'admin_init', array( $this, 'wp_analytify_save_version' ) );
+			add_action( 'admin_init', array( $this, '_save_core_version' ) );
 			add_action( 'admin_init', array( $this, 'wpa_check_authentication' ) );
 			add_action( 'admin_init', array( $this, 'analytify_review_notice' ) );
 			add_action('admin_init', array( $this, 'analytify_nag_ignore' ) );
@@ -190,9 +188,12 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			}
 
 			// Show welcome message when user activate plugin.
-			if ( get_option( 'pa_welcome_message' ) == 0 ) {
+			if ( 1 != get_option( 'show_tracking_pointer_1' ) ) {
 
-				add_action( 'admin_print_footer_scripts', array( $this, 'pa_welcome_message' ) );
+				add_action( 'admin_print_footer_scripts', array(
+					$this,
+					'pa_welcome_message',
+				) );
 			}
 
 			add_filter( 'admin_footer_text', 'wpa_admin_rate_footer_text', 1 );
@@ -282,14 +283,16 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 
 		/**
-		 * Save version number of the plugin and show a custom message for 1.3 version.
+		 * Save version number of the plugin and show a custom message for users
 		 *
 		 * @since 1.3
 		 */
 
-		public function wp_analytify_save_version() {
+		public function _save_core_version() {
 
 			if ( ANALYTIFY_VERSION != get_option( 'WP_ANALYTIFY_PLUGIN_VERSION' ) ) {
+
+				update_option( 'WP_ANALYTIFY_PLUGIN_VERSION_OLD', get_option( 'WP_ANALYTIFY_PLUGIN_VERSION' ), '2.0.0' );  // saving old plugin version
 
 				update_option( 'WP_ANALYTIFY_PLUGIN_VERSION', ANALYTIFY_VERSION );
 			}
@@ -566,9 +569,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			wp_enqueue_style( 'wp-analytify-default-style', plugins_url( 'assets/default/css/styles.css', __FILE__ ) );
 
 			// For WP Pointer
-			if ( get_option( 'pa_welcome_message' ) == '0' ) {
-				wp_enqueue_style( 'wp-pointer' );
-			}
+			if ( get_option( 'show_tracking_pointer_1' ) != 1 ) { wp_enqueue_style( 'wp-pointer' ); }
 
 		}
 
@@ -616,9 +617,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 			}
 
-			if ( get_option( 'pa_welcome_message' ) == '0' ) {
-				wp_enqueue_script( 'wp-pointer' );
-			}
+			if ( get_option( 'show_tracking_pointer_1' ) != 1 ) { wp_enqueue_script( 'wp-pointer' ); }
 
 			wp_localize_script( 'wp-analytify-script-js',
 				'wpanalytify_strings',
@@ -984,7 +983,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				if ( in_array( $roles[0], $access_level ) ) {
 
 					return true;
-				} elseif ( is_super_admin( $current_user->ID ) ) {
+				} elseif ( is_super_admin( $current_user->ID ) && is_multisite() ) {
 
 					return true;
 				} else {
@@ -1011,7 +1010,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				/* Check that the user hasn't already clicked to ignore the message */
 				if ( ! get_user_meta($user_id, 'analytify_ignore_notice') ) {
 				echo '<div class="updated"><p>';
-				printf(__('<b>Notice:</b> <b>Analytify 2.0</b> is here! <a href="https://analytify.io/go/a2r" target="_blank">Read more</a>. <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ));
+				printf(__('<b>Notice:</b> <b>Analytify 2.0</b> is here with stunning new interface and features! Read the <a href="https://analytify.io/go/a2r" target="_blank">announcement</a> here. Detail feature list available <a href="https://analytify.io/features/" target="_blank">here</a>. <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ));
 				echo "</p></div>";
 				 }
 			}
@@ -1053,30 +1052,56 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 		}
 
+		/**
+		 * Show pointers for announcements
+		 * 
+		 * @return void
+		 */
 		public function pa_welcome_message() {
 
-			$pointer_content = '<h3>' . esc_html_e( 'Analytify - Google Analytics for WordPress.', 'wp-analytify' ) . '</h3>';
-			$pointer_content .= '<p>' . esc_html_e( 'Thank you for activating Analytify Plugin. Enjoy Google Analytics for everything in WordPress.', 'wp-analytify' ) . '</p>';
+			$pointer_content  = '<h3>Announcement:</h3>';
+			$pointer_content .= '<p><input type="checkbox" name="wpa_allow_tracking" value="1" id="wpa_allow_tracking"> ';
+			$pointer_content .= 'Help us making Analytify even better by sharing very basic plugin usage data.';
+			
+			if ( ! WPANALYTIFY_Utils::is_active_pro() ) {
+				$pointer_content .= ' Opt-in and receive a $10 Off coupon for <a href="https://analytify.io/upgrade-from-free">Analytify PRO</a>.</p>';
+			}
 
 			?>
 
 			<script type="text/javascript">
-				//<![CDATA[
-				jQuery(document).ready( function($) {
+            //<![CDATA[
+            jQuery(document).ready( function($) {
 
-					$('#toplevel_page_pa-dashboard').pointer({
+                if(typeof(jQuery().pointer) != 'undefined') {
+
+                    $('#toplevel_page_analytify-dashboard').pointer({
+
 						content: '<?php echo $pointer_content; ?>',
-						position: 'left',
-						close: function() {
-							<?php update_option( 'pa_welcome_message',1 ) ?>
-						}
-					}).pointer('open');
-				});
-				//]]>
-			</script>
+                        position: {
+                            edge: 'left',
+                            align: 'center'
+                        },
+                        close: function() {
+                            $.post( ajaxurl, {
+                                pointer: 'tracking',
+                                wpa_allow:  $('#wpa_allow_tracking:checked').val(),
+                                action: 'analytify_dismiss_pointer'
+                            });
 
-			<?php
+                           <?php if ( ! WPANALYTIFY_Utils::is_active_pro() ) { ?>
+                            	if($('#wpa_allow_tracking:checked').val() == 1) alert('Thankyou!\nYour Coupon code is Analytify2016');
+                           <?php  } ?>
+                        }
+                    }).pointer('open');
+                };
+            });
+            //]]>
+        </script>
+
+		<?php
 		}
+
 
 		/**
 		 *	Check and Dismiss review message.
@@ -1239,7 +1264,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				delete_option( 'pt_webprofile_dashboard' );
 				delete_option( 'pt_webprofile_url' );
 				delete_option( 'pa_google_token' );
-				delete_option( 'pa_welcome_message' );
+				delete_option( 'show_tracking_pointer_1' );
 				delete_option( 'post_analytics_token' );
 				delete_option( 'hide_profiles' );
 
@@ -1253,6 +1278,75 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 	}
 
 } // End if class_exists check
+
+
+// ===================== inactive - delete hooks ==========================
+
+// delete Analytify hook
+register_uninstall_hook( __FILE__, 'wp_analytify_uninstall' );
+
+/**
+ * Delete plugin settings meta on deleting the plugin
+ *
+ * @return void
+ */
+function wp_analytify_uninstall() {
+
+	if ( 1 == get_option( 'wpa_allow_tracking' ) ) {
+		send_status_analytify( get_option( 'admin_email' ), 'delete' );
+	}
+}
+
+
+/**
+ * Delete option values on plugin deactivation.
+ *
+ * @since       1.2.2
+ * @return      void
+ */
+function wp_analytify_de_activate() {
+
+	if ( 1 == get_option( 'wpa_allow_tracking' ) ) {
+		send_status_analytify( get_option( 'admin_email' ), 'in-active' );
+	}
+
+	delete_option( 'analytify_posts_stats' );
+	delete_option( 'show_welcome_page' );
+	// delete_option( 'pa_google_token' );
+	//delete_option( 'show_tracking_pointer_1' );
+	// delete_option( 'post_analytics_token' );
+}
+
+/**
+ * Send status of subscriber who opt-in for improving the product.
+ *
+ * @param string $email  users email.
+ * @param string $status plugin status.
+ */
+function send_status_analytify( $email, $status ) {
+
+	$url = 'https://analytify.io/plugin-manager/';
+	if ( '' === $email ) {
+		$email = 'track@analytify.io';
+	}
+	$fields = array(
+		'email' 		=> $email,
+		'site' 			=> get_site_url(),
+		'status' 		=> $status,
+		'type'			=> 'FREE',
+		);
+	wp_remote_post( $url, array(
+		'method'      => 'POST',
+		'timeout'     => 5,
+		'httpversion' => '1.0',
+		'blocking'    => false,
+		'headers'     => array(),
+		'body'        => $fields,
+		)
+	);
+}
+
+// ====================== inactive - delete hooks =========================
 
 
 /**
