@@ -96,7 +96,7 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 		<div class="analytify_wraper <?php echo $classes ?>">
 				<div class="analytify_main_title_section">
 					<h1 class="analytify_pull_left analytify_main_title"><?php esc_html_e( 'Dashboard', 'wp-analytify' ); ?>
-					<span class="analytify_stats_of"><?php esc_html_e( 'Complete Statistics of the Site', 'wp-analytify' ); ?> <a href="<?php echo WP_ANALYTIFY_FUNCTIONS::search_profile_info( $dashboard_profile_ID, 'websiteUrl' ) ?>" target="_blank"><?php echo WP_ANALYTIFY_FUNCTIONS::search_profile_info( $dashboard_profile_ID, 'websiteUrl' ) ?></a></span></h1>
+					<span class="analytify_stats_of"><?php esc_html_e( 'Complete Statistics of the Site', 'wp-analytify' ); ?> <a href="<?php echo WP_ANALYTIFY_FUNCTIONS::search_profile_info( $dashboard_profile_ID, 'websiteUrl' ) ?>" target="_blank"><?php echo WP_ANALYTIFY_FUNCTIONS::search_profile_info( $dashboard_profile_ID, 'websiteUrl' ) ?></a> (<?php echo WP_ANALYTIFY_FUNCTIONS::search_profile_info( $dashboard_profile_ID, 'name' ) ?>)</span></h1>
 					<div class="analytify_select_dashboard analytify_pull_right">
 
 						<?php do_action( 'analytify_dashboad_dropdown' ); ?>

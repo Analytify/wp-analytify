@@ -91,10 +91,11 @@ class Analytify_Welcome {
 		<style type="text/css" media="screen">
 		/*<![CDATA[*/
 		.wp-analytify-badge {
-			height: 250px;
+			height: 200px;
 			width: 200px;
 			margin: -12px -5px;
 			background: url("<?php echo plugins_url( 'assets/images/welcome-analytify.png', __FILE__ ); ?>") no-repeat;
+			background-size: 100% auto;
 		}
 
 		.about-wrap .wp-analytify-badge {

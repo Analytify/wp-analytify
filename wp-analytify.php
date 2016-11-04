@@ -3,7 +3,7 @@
  * Plugin Name: Analytify - Google Analytics Dashboard
  * Plugin URI: http://analytify.io/details
  * Description: Analytify brings a brand new and modern feeling Google Analytics superbly integrated with WordPress Dashboard. It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. This provides Stats from Country, Referrers, Social media, General stats, New visitors, Returning visitors, Exit pages, Browser wise and Top keywords. This plugin provides the RealTime statistics in a new UI which is easy to understand & looks good.
- * Version: 2.0.2
+ * Version: 2.0.3
  * Author: WPBrigade
  * Author URI: http://wpbrigade.com/
  * License: GPLv3
@@ -312,8 +312,9 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			// esc_html_e( 'Statistics will be loaded after you publish this content.', 'wp-analytify' );
 			// return false;
 			// }
-			if ( isset( get_option( 'wp-analytify-admin' )['exclude_pages_back_end'] ) ) {
-				$back_exclude_posts = explode( ',', get_option( 'wp-analytify-admin' )['exclude_pages_back_end'] ); }
+			$_exclude_profile = get_option( 'wp-analytify-admin' );
+			if ( isset( $_exclude_profile['exclude_pages_back_end'] ) ) {
+				$back_exclude_posts = explode( ',', $_exclude_profile['exclude_pages_back_end'] ); }
 
 			if ( is_array( $back_exclude_posts ) ) {
 
@@ -412,7 +413,6 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 					// Fetch Universel Analytics UA code for selected website.
 					$UA_CODE = WP_ANALYTIFY_FUNCTIONS::search_profile_info( $this->settings->get_option( 'profile_for_posts', 'wp-analytify-profile' ), 'webPropertyId' );
-
 					echo sprintf( esc_html__( '%2$s This code is added by WP Analytify (%1$s) %4$s %3$s', 'wp-analytify' ), ANALYTIFY_VERSION, '<!--', '!-->', 'https://analytify.io/downloads/analytify-wordpress-plugin/' );
 
 					?>
@@ -740,6 +740,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 				if ( get_option( 'pa_google_token' ) != '' ) {
 					$profiles = $this->service->management_profiles->listManagementProfiles( '~all', '~all' );
+
 					return $profiles;
 				} else {
 					echo '<br /><p class="description">' . esc_html__( 'You must authenticate to access your web profiles.', 'wp-analytify' ) . '</p>';
@@ -749,6 +750,23 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			}
 
 		}
+
+		public function pt_get_analytics_accounts_summary() {
+
+			try {
+
+				if ( get_option( 'pa_google_token' ) != '' ) {
+					$profiles = $this->service->management_accountSummaries->listManagementAccountSummaries();
+					return $profiles;
+				} else {
+					echo '<br /><p class="description">' . esc_html__( 'You must authenticate to access your web profiles.', 'wp-analytify' ) . '</p>';
+				}
+			} catch (Exception $e) {
+				echo sprintf( esc_html__( '%1$s %2$s oOps, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s Authentication.', 'wp-analytify' ), '<br />', '<strong>', '</strong>', '<br /><br />', '<a href=\'?page=analytify-settings&tab=authentication\' title="Reset">', '</a>' );
+			}
+
+		}
+
 
 		public function pa_setting_url() {
 
@@ -1054,7 +1072,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 		/**
 		 * Show pointers for announcements
-		 * 
+		 *
 		 * @return void
 		 */
 		public function pa_welcome_message() {
@@ -1062,7 +1080,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			$pointer_content  = '<h3>Announcement:</h3>';
 			$pointer_content .= '<p><input type="checkbox" name="wpa_allow_tracking" value="1" id="wpa_allow_tracking"> ';
 			$pointer_content .= 'Help us making Analytify even better by sharing very basic plugin usage data.';
-			
+
 			if ( ! WPANALYTIFY_Utils::is_active_pro() ) {
 				$pointer_content .= ' Opt-in and receive a $10 Off coupon for <a href="https://analytify.io/upgrade-from-free">Analytify PRO</a>.</p>';
 			}
@@ -1258,17 +1276,19 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		 */
 		public function logout() {
 
+			//var_dump(get_transient( 'profiles_list_summary' ));
+
 			if ( isset( $_POST['wp_analytify_log_out'] ) ) {
 
 				delete_option( 'pt_webprofile' );
 				delete_option( 'pt_webprofile_dashboard' );
 				delete_option( 'pt_webprofile_url' );
 				delete_option( 'pa_google_token' );
-				delete_option( 'show_tracking_pointer_1' );
+				//delete_option( 'show_tracking_pointer_1' );
 				delete_option( 'post_analytics_token' );
 				delete_option( 'hide_profiles' );
 
-				delete_transient( 'profiles_list' );
+				delete_transient( 'profiles_list_summary' ); //profiles_list_summary
 
 				$update_message = sprintf( esc_html__( '%1$s %2$s %3$s Authentication Cleared login again. %4$s %5$s %6$s', 'wp-analytify' ), '<div id="setting-error-settings_updated" class="updated notice is-dismissible settings-error below-h2">', '<p>', '<strong>', '</strong>', '</p>', '</div>' );
 			}

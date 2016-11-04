@@ -14,10 +14,11 @@ function fetch_geographic_stats ( $current, $countries_stats, $cities_stats, $sh
     $code = '';
 
     if ( true === $show_map) {
-      
+
       $higest_number = $countries_stats['rows'][0][1];
-      $lowest_number = end( $countries_stats['rows'] )[1];
-      
+      $_lowest_number = end( $countries_stats['rows'] );
+      $lowest_number = $_lowest_number[1]
+
       ?>
       <script>
       jQuery(document).ready(function ($) {

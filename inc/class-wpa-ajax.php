@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Handling all the AJAX calls in WP Analytify
- * 
+ *
  * @since 1.2.4
  * @class WPANALYTIFY_AJAX
  */
@@ -18,8 +18,9 @@ class WPANALYTIFY_AJAX {
 	public static function init() {
 
 
-		if (  get_option( 'wp-analytify-dashboard' ) &&	 array_key_exists( 'show_analytics_panels_dashboard', get_option( 'wp-analytify-dashboard' ) ) ) {
-			self::$show_settings = get_option( 'wp-analytify-dashboard' )['show_analytics_panels_dashboard'];
+		$_analytify_dashboard = get_option( 'wp-analytify-dashboard' );
+		if (  $_analytify_dashboard &&	 array_key_exists( 'show_analytics_panels_dashboard', $_analytify_dashboard ) ) {
+			self::$show_settings = $_analytify_dashboard['show_analytics_panels_dashboard'];
 		}
 
 		$ajax_calls = array(
@@ -790,6 +791,49 @@ class WPANALYTIFY_AJAX {
 				self::print_plugin_details( $mu_plugin );
 			}
 		}
+
+		echo "\r\n";
+
+
+		echo "Analytify Profile Setting:\r\n";
+
+		$analytify_profile = get_option( 'wp-analytify-profile' );
+		print_r( $analytify_profile );
+
+		echo "\r\n";
+
+
+		echo "Analytify Front Setting:\r\n";
+
+		$analytify_front = get_option( 'wp-analytify-front' );
+		print_r( $analytify_front );
+
+		echo "\r\n";
+
+
+		echo "Analytify Admin Setting:\r\n";
+
+		$analytify_admin = get_option( 'wp-analytify-admin' );
+		print_r( $analytify_admin );
+
+		echo "\r\n";
+
+
+		echo "Analytify Dashboard Setting:\r\n";
+
+		$analytify_dashboard = get_option( 'wp-analytify-dashboard' );
+		print_r( $analytify_dashboard );
+
+		echo "\r\n";
+
+
+		echo "Analytify Advance Setting:\r\n";
+
+		$analytify_advance = get_option( 'wp-analytify-advanced' );
+		print_r( $analytify_advance );
+
+
+
 	}
 
 
@@ -819,7 +863,7 @@ class WPANALYTIFY_AJAX {
 		$wpa_allow  = isset($_POST['wpa_allow']) ? $_POST['wpa_allow']: 0;
 
 		if( $wpa_allow == 1 ) {
- 
+
 			update_option('wpa_allow_tracking', 1);
 			send_status_analytify( get_option( 'admin_email' ), 'active');
 		}

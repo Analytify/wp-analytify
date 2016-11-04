@@ -198,7 +198,8 @@ class WP_ANALYTIFY_FUNCTIONS {
 	 */
 	public static function wpa_check_profile_selection( $type, $message = '' ) {
 
-		$dashboard_profile = get_option( 'wp-analytify-profile' )['profile_for_dashboard'];
+		$_analytify_profile = get_option( 'wp-analytify-profile' );
+		$dashboard_profile = isset ( $_analytify_profile['profile_for_dashboard'] ) ? $_analytify_profile['profile_for_dashboard'] : '';
 
 		if ( empty( $dashboard_profile ) ) {
 
@@ -266,30 +267,60 @@ class WP_ANALYTIFY_FUNCTIONS {
 			set_transient( 'profiles_list' , $profiles, 0 );
 		}
 
-		// print_r($profiles);
 		return $profiles;
+	}
 
+	static function fetch_profiles_list_summary() {
+
+		$wp_analytify = $GLOBALS['WP_ANALYTIFY'];
+		$profiles = get_transient( 'profiles_list_summary' );
+
+		if ( ! $profiles && get_option( 'pa_google_token' ) ) {
+
+			$profiles = $wp_analytify->pt_get_analytics_accounts_summary();
+			set_transient( 'profiles_list_summary' , $profiles, 0 );
+		}
+
+		return $profiles;
 	}
 
 
+	/**
+	 * This function is used to fetch the profile name, UA Code from selected account/property.
+	 *
+	 */
 	static function search_profile_info( $id, $index ) {
 
 		if ( ! get_option( 'pa_google_token' ) ) { return; }
 
-		$profiles = self::fetch_profiles_list();
+		$accounts = self::fetch_profiles_list_summary();
 
-		foreach ( $profiles->items as $profile ) {
+		foreach ( $accounts->getItems() as $account ) {
+			foreach ( $account->getWebProperties() as  $property ) {
+				foreach ( $property->getProfiles() as $profile ) {
+				
+					// Get Property ID i.e UA Code
+					if ( $profile->getId() === $id && $index === 'webPropertyId') {
+						return $property->getId();
+					}
 
-			if ( $profile['id'] === $id ) {
-				return $profile[ $index ]; }
+					// Get Property URL i.e analytify.io
+					if ( $profile->getId() === $id && $index === 'websiteUrl') {
+						return $property->getWebsiteUrl();
+					}
+
+					// Get Profile view i.e All website data
+					if ( $profile->getId() === $id && $index === 'name') {
+						return $profile->getName();
+					}
+				}
+			}
 		}
-
 	}
 
 	static function is_connected() {
 
 	}
-
 
 	static function is_profile_selected() {
 
@@ -298,12 +329,9 @@ class WP_ANALYTIFY_FUNCTIONS {
 		if ( !empty( $load_profile_settings['profile_for_posts'] ) && !empty( $load_profile_settings['profile_for_dashboard'] ) ) {
 
 			return true;
-
 		}
 
 	}
-
-	// 1761425
 }
 
 

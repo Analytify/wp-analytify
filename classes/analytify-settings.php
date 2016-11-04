@@ -172,9 +172,8 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 						'label'        => __( 'Profile for posts (Backend/Front-end)', 'wp-analytify' ),
 						'desc'         => __( 'Select your website profile for Backend/Front-end Stats. You can select your any Website profile. It will show Analytics for your selected website profile', 'wp-analytify' ),
 						'type'         => 'select_profile',
-						'class'				 => 'class',
 						'default'      => 'Choose profile for posts',
-						'options'      => WP_ANALYTIFY_FUNCTIONS::fetch_profiles_list(),
+						'options'      => WP_ANALYTIFY_FUNCTIONS::fetch_profiles_list_summary(),
 						'size'         => ''
 						),
 
@@ -184,7 +183,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 						'desc'    => __( 'Select your website profile for Dashboard Stats. You can select your any Website profile. It will show Analytics for your selected website profile.', 'wp-analytify' ),
 						'type'    => 'select_profile',
 						'default' => 'Choose profile for dashboard',
-						'options' => WP_ANALYTIFY_FUNCTIONS::fetch_profiles_list(),
+						'options' => WP_ANALYTIFY_FUNCTIONS::fetch_profiles_list_summary(),
 						),
 					array(
 						'name'              => 'hide_profiles_list',
@@ -621,19 +620,35 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 
 			$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
 			$size  = isset( $args['size'] ) && ! is_null( $args['size'] ) ? $args['size'] : 'regular';
-			$html  = sprintf( '<select class="%1$s" name="%2$s[%3$s]" id="%2$s[%3$s]">', $size, $args['section'], $args['id'] );
+			$html  = sprintf( '<select class="%1$s analytify-chosen" name="%2$s[%3$s]" id="%2$s[%3$s]">', $size, $args['section'], $args['id'] );
 
-			if ( isset(get_option( 'wp-analytify-profile' )['hide_profiles_list']) &&  get_option( 'wp-analytify-profile' )['hide_profiles_list'] === 'on' ) {
+			$_analytify_setting = get_option( 'wp-analytify-profile' );
+			if ( isset($_analytify_setting['hide_profiles_list']) &&  $_analytify_setting['hide_profiles_list'] === 'on' ) {
 
 				$html .= '<option value="' . $value . '" selected>' . WP_ANALYTIFY_FUNCTIONS::search_profile_info( $value, 'websiteUrl' ) . ' (' .WP_ANALYTIFY_FUNCTIONS::search_profile_info( $value, 'name' ) . ')' . '</option>';
 			} else {
 
 				if ( isset( $args['options']->items ) ) {
+
 					$html .= '<option value="">' . $args['std'] . '</option>';
-					foreach ( $args['options']->items as $profile ) {
-						$html .= sprintf( '<option value="%s"%s>%s</option>', $profile['id'], selected( $value, $profile['id'], false ), $profile['websiteUrl'] . ' - ' . $profile['name'] );
+					foreach ( $args['options']->getItems() as  $account ) {
+
+						foreach ( $account->getWebProperties() as  $property ) {
+							
+							$html .= '<optgroup label=" ' . $property->getName() . ' ">';
+
+							foreach ( $property->getProfiles() as $profile ) {
+								$html .= sprintf( '<option value="%1$s" %2$s>%3$s (%4$s)</option>', $profile->getId(), selected( $value, $profile->getId(), false ), $profile->getName() , $property->getId() );
+							}
+						}
+
+						$html .= '</optgroup>';
 					}
 				}
+				// else{
+
+				// 	$html .= '<option value="">no profiles found</option>';
+				// }
 			}
 
 
@@ -1014,7 +1029,10 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 
 			if ( isset( $_POST['wp_analytify_log_out'] ) ) {
 
-				delete_option( 'wp-analytify-profile' )['hide_profiles_list'];
+				$_analytify_profile = get_option( 'wp-analytify-profile' );
+				unset( $_analytify_profile['hide_profiles_list'] );
+				update_option( 'wp-analytify-profile', $_analytify_profile );
+
 			}
 
 		}
@@ -1031,29 +1049,48 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 
 			jQuery( document ).ready( function( $ ) {
 
-				<?php
-
 				// hide this checkbox for hiding profiles.
-		    	if ( get_option( 'wp-analytify-profile' ) && isset( get_option( 'wp-analytify-profile' )['hide_profiles_list'] ) && 'on' === get_option( 'wp-analytify-profile' )['hide_profiles_list'] ) { ?>
-					$('#wp-analytify-profile\\[hide_profiles_list\\]').closest('tr').hide()
-		    	<?php } ?>
+				<?php $_analytify_profile = get_option( 'wp-analytify-profile' ) ?>
+		    	<?php if ( $_analytify_profile && isset( $_analytify_profile['hide_profiles_list'] ) && 'on' === $_analytify_profile['hide_profiles_list'] ) : ?>
+					$('#wp-analytify-profile\\[hide_profiles_list\\]').closest('tr').hide();
+		    	<?php endif; ?>
 
 
-					<?php if ( 'analytify-settings' === $_GET['page'] &&	! get_option( 'pa_google_token' ) ){ ?>
-							localStorage.setItem('activetab', '#wp-analytify-authentication');
-					<?php } ?>
+				<?php if ( 'analytify-settings' === $_GET['page'] &&	! get_option( 'pa_google_token' ) ){ ?>
+						localStorage.setItem('activetab', '#wp-analytify-authentication');
+				<?php } ?>
 
-					<?php if ( 'analytify-settings' === $_GET['page'] && get_option( 'pa_google_token' ) ){ ?>
-						if(window.location.href.indexOf("#wp-analytify-profile") > -1) {
-							localStorage.setItem('activetab', '#wp-analytify-profile');
-						}
-						if( window.location.href.indexOf("#wp-analytify-email") > -1 ) {
-							localStorage.setItem('activetab', '#wp-analytify-email');
-						}
-					<?php } ?>
+				<?php if ( 'analytify-settings' === $_GET['page'] && get_option( 'pa_google_token' ) ) : ?>
 
-				// Switches option sections
+					if(window.location.href.indexOf("#wp-analytify-profile") > -1) {
+						localStorage.setItem('activetab', '#wp-analytify-profile');
+					}
+					if( window.location.href.indexOf("#wp-analytify-email") > -1 ) {
+						localStorage.setItem('activetab', '#wp-analytify-email');
+					}
+				<?php endif; ?>
+
+				// show license tab on license link click from other page.
+				if( window.location.href.indexOf("#wp-analytify-license") > -1 ) {
+					localStorage.setItem('activetab', '#wp-analytify-license');
+				}
+
+				// show license tab on license link click on settings page.
+				$('.wp-analytify-license-notice').on('click', function(evt) {
+
+					$('.group').hide();
+					$('.nav-tab-wrapper a').removeClass('nav-tab-active');
+
+					if (typeof(localStorage) != 'undefined' ) {
+						localStorage.setItem("activetab", '#wp-analytify-license');
+					}
+					$('#wp-analytify-license-tab').addClass('nav-tab-active').blur();
+					$('#wp-analytify-license').fadeIn();
+					evt.preventDefault();
+				} );
+
 				$('.group').hide();
+
 				var activetab = '';
 				if (typeof(localStorage) != 'undefined' ) {
 					activetab = localStorage.getItem("activetab");
@@ -1083,12 +1120,10 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					$('.nav-tab-wrapper a:first').addClass('nav-tab-active');
 				}
 
-				//console.log($('.nav-tab-active'));
-				refresh_debug_log();
+				// load diagnostic debug log only when help tab is active
+				if( $('.nav-tab-active').attr('href') === '#wp-analytify-help' ) refresh_debug_log();
 
 				$('.nav-tab-wrapper a').click(function(evt) {
-
-					refresh_debug_log();
 
 					$('.nav-tab-wrapper a').removeClass('nav-tab-active');
 					$(this).addClass('nav-tab-active').blur();
@@ -1098,6 +1133,9 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					}
 					$('.group').hide();
 					$(clicked_group).fadeIn();
+
+					// load diagnostic debug log only when help tab is active
+					if( $('.nav-tab-active').attr('href') === '#wp-analytify-help' ) refresh_debug_log();
 					evt.preventDefault();
 				});
 

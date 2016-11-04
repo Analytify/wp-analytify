@@ -4,7 +4,7 @@ Donate link: http://paypal.me/Analytify
 Tags: google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced ecommerce tracking
 Requires at least: 3.0
 Tested up to: 4.6.1
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -49,7 +49,7 @@ Analytify 2.0 is the must-have Plugin for Google Analytics! Now Enhanced eCommer
 **[WooCommerce Enhanced eCommerce](https://analytify.io/go/WooCommerce)** tracking and report dashboard right inside your WordPress is now available. [Take a look](https://analytify.io/go/WooCommerce).
 
 > <strong>Development on Github</strong><br>
-> This plugin is also [available on github](https://github.com/hiddenpearls/wp-analytify) and ready to take bugs and pull requests. For Support, you can buy the **PRO version**, this will give access to premium updates, support and features.
+> This plugin is also [available on github](https://github.com/Analytify/wp-analytify) and ready to take bugs and pull requests. For Support, you can buy the **PRO version**, this will give access to premium updates, support and features.
 
 
 == Installation ==
@@ -103,6 +103,13 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Changelog ==
 
+
+= 2.0.3 - 2016-11-05 =
+* Bug Fix   : PHP 5.3 fatal errors fixed
+* Bug Fix   : Warning Notice fix appears in dashboard loading.
+* Enhancement : Welcome page screenshots updated
+* Enhancement : Change layout for profiles dropdown selection.
+* Enhancement : user settings added in debug info.
 
 = 2.0.2 - 2016-10-30 =
 * Bug Fix   : Correct stats for each post/page.
@@ -239,8 +246,8 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 == Upgrade Notice ==
 
-= 2.0.2 =
-* [Important Update] Analytify 2.0: Must Update! Multiple bug fix from 2.0.1.
+= 2.0.3 =
+* [Important Update] Analytify 2.0: Must Update! Multiple bug fixes for PHP 5.3.
 
 
 == Donation ==
