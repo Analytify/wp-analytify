@@ -168,7 +168,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_styles' ) );
-			add_action( 'wp_enqueue_scripts', array( $this, 'fornt_styles' ) );
+			add_action( 'wp_enqueue_scripts', array( $this, 'front_styles' ) );
 
 			add_action( 'admin_notices', array( $this, 'analytify_admin_notice' ) );
 
@@ -656,7 +656,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		 *
 		 * @since 2.0.4.
 		 */
-		function fornt_styles() {
+		function front_styles() {
 			wp_enqueue_style( 'admin-bar-style', plugins_url( 'assets/old/css/admin_bar_styles.css', __FILE__ ), false, ANALYTIFY_VERSION );
 
 		}
