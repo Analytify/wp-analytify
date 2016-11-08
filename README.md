@@ -1,13 +1,13 @@
 # Google Analytics Dashboard By Analytify [![WordPress](https://img.shields.io/wordpress/plugin/dt/wp-analytify.svg)](https://wordpress.org/plugins/wp-analytify/) [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/wp-analytify.svg)](https://wordpress.org/plugins/wp-analytify/) [![WordPress](https://img.shields.io/wordpress/v/wp-analytify.svg)](https://wordpress.org/plugins/wp-analytify/)
 
-**Contributors:** [hiddenpearls](https://profiles.wordpress.org/hiddenpearls), [Asif2BD](https://profiles.wordpress.org/Asif2BD)
-**Donate link:** http://paypal.me/Analytify
-**Tags:** google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced ecommerce tracking
-**Requires at least:** 3.0
-**Tested up to:** 4.6.1
-**Stable tag:** 2.0.3
-**License:** GPLv3 or later
-**License URI:** http://www.gnu.org/licenses/gpl-3.0.html
+**Contributors:** [hiddenpearls](https://profiles.wordpress.org/hiddenpearls), [Asif2BD](https://profiles.wordpress.org/Asif2BD)  
+**Donate link:** http://paypal.me/Analytify  
+**Tags:** google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced ecommerce tracking  
+**Requires at least:** 3.0  
+**Tested up to:** 4.6.1  
+**Stable tag:** 2.0.3  
+**License:** GPLv3 or later  
+**License URI:** http://www.gnu.org/licenses/gpl-3.0.html  
 
 Analytify 2.0 is the must-have Plugin for Google Analytics! Now Enhanced eCommerce Tracking is available for WooCommerce and EDD!
 
