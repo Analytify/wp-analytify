@@ -23,7 +23,7 @@ Analytify 2.0 is the must-have Plugin for Google Analytics! Now Enhanced eCommer
 **Google Analytics Premium Partner** - [Read](https://www.google.com/analytics/partners/company/5179388639313920/gadp/5629499534213120/app/5707702298738688/listing/5639274879778816) what Google is saying about us.
 
 
-## Features: ## 
+## Features: ##
 
 *  Super easy installation. 1-Click Authentication process.
 *  Statistics (**General**) under the single posts/pages as a block in **wp-admin**
@@ -53,7 +53,7 @@ Analytify 2.0 is the must-have Plugin for Google Analytics! Now Enhanced eCommer
 > This plugin is also [available on github](https://github.com/Analytify/wp-analytify) and ready to take bugs and pull requests. For Support, you can buy the **PRO version**, this will give access to premium updates, support and features.
 
 
-##  Installation ## 
+##  Installation ##
 
 This section describes how to install the Google Analytics Dashboard By Analytify plugin and get it working.
 
@@ -77,7 +77,7 @@ This section describes how to install the Google Analytics Dashboard By Analytif
 *If you want to use your own app, you need to create a Project in Google [Console](https://console.developers.google.com/project). Read this simple 3 minutes [tutorial](http://analytify.io/google-api-tutorial) to get your ClientID, Client Secret and API Key and enter them Settings Page.
 
 
-##  Frequently Asked Questions ## 
+##  Frequently Asked Questions ##
 
 = How to Authenticate and Connect my Google Analytics Account in this plugin ? =
 
@@ -88,7 +88,7 @@ Go to Analytify->settings and see the Authentication tab.
 First, you need to Authenticate your GA account then you can select your web profiles from Profiles tab in Analytify->settings page. click the "Log in with Google Analytics Account" button. Connect and give Analytify App access to your Google Analytics account.
 
 
-##  Screenshots ## 
+##  Screenshots ##
 
 1. Real-time Stats from Google Analytics
 2. Google Analytics Dashboard General Statistics.
@@ -102,7 +102,7 @@ First, you need to Authenticate your GA account then you can select your web pro
 10. Google Analytics dashboard widget for WordPress ( Free Add-ons Required).
 
 
-##  Changelog ## 
+##  Changelog ##
 
 
 ### 2.0.3 - 2016-11-05 ###
