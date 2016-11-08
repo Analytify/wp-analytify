@@ -1,6 +1,6 @@
 # Google Analytics Dashboard By Analytify [![WordPress](https://img.shields.io/wordpress/plugin/dt/wp-analytify.svg)](https://wordpress.org/plugins/wp-analytify/) [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/wp-analytify.svg)](https://wordpress.org/plugins/wp-analytify/) [![WordPress](https://img.shields.io/wordpress/v/wp-analytify.svg)](https://wordpress.org/plugins/wp-analytify/)
 
-**Contributors:** hiddenpearls, Asif2BD
+**Contributors:** [hiddenpearls](https://profiles.wordpress.org/hiddenpearls), [Asif2BD](https://profiles.wordpress.org/Asif2BD)
 **Donate link:** http://paypal.me/Analytify
 **Tags:** google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced ecommerce tracking
 **Requires at least:** 3.0
