@@ -159,7 +159,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			add_action( 'admin_init', array( $this, '_save_core_version' ) );
 			add_action( 'admin_init', array( $this, 'wpa_check_authentication' ) );
 			add_action( 'admin_init', array( $this, 'analytify_review_notice' ) );
-			add_action('admin_init', array( $this, 'analytify_nag_ignore' ) );
+			add_action( 'admin_init', array( $this, 'analytify_nag_ignore' ) );
 			add_action( 'admin_init', array( $this, 'logout' ), 1 );
 			add_action( 'admin_menu', array( $this, 'add_admin_menu' ) );
 
@@ -168,6 +168,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_styles' ) );
+			add_action( 'wp_enqueue_scripts', array( $this, 'fornt_styles' ) );
 
 			add_action( 'admin_notices', array( $this, 'analytify_admin_notice' ) );
 
@@ -648,6 +649,16 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			wp_localize_script( 'wp-analytify-script-js', 'wpanalytify_data', $data );
 			// print JS at footer
 			 //wpa_print_js();
+		}
+
+		/**
+		 * Add style for front admin bar
+		 *
+		 * @since 2.0.4.
+		 */
+		function fornt_styles() {
+			wp_enqueue_style( 'admin-bar-style', plugins_url( 'assets/old/css/admin_bar_styles.css', __FILE__ ), false, ANALYTIFY_VERSION );
+
 		}
 
 		/**
