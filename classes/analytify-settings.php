@@ -419,18 +419,26 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 			return $post_types_list;
 	    }
 
+	    /**
+	     * get current list of all roles and display in dropdown
+	     * 
+	     * @return array
+	     */
 	   	public static function get_current_roles() {
 
 	   		$roles = array();
 
-	   		foreach ( get_editable_roles() as $role => $name ) {
+	   		if ( get_editable_roles() > 0) {
 
-	   			$roles[ $role ] = $name['name'];
+	   			foreach ( get_editable_roles() as $role => $name ) {
 
+	   				$roles[ $role ] = $name['name'];
+	   			}
+	   		}else{
+	   			$roles['empty'] = 'no roles found';
 	   		}
 
 	   		return $roles;
-
 	    }
 
 
