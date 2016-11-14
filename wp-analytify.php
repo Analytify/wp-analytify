@@ -580,7 +580,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		public function admin_scripts( $page ) {
 
 			// var_dump($page);
-			wp_enqueue_script( 'wp-analytify-script-js', plugins_url( 'assets/old/js/wp-analytify.js', __FILE__ ), array('jquery-ui-tooltip','jquery-ui-datepicker', 'jquery'), time() );
+			wp_enqueue_script( 'wp-analytify-script-js', plugins_url( 'assets/old/js/wp-analytify.js', __FILE__ ), array('jquery-ui-tooltip','jquery-ui-datepicker', 'jquery'), ANALYTIFY_VERSION );
 
 			// for main page
 
@@ -597,11 +597,11 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			// for dashboard only
 			if ( $page == 'toplevel_page_analytify-dashboard' || $page == 'analytify_page_analytify-woocommerce' || $page == 'analytify_page_edd-dashboard' || $page == 'analytify_page_analytify-campaigns'  ) {
 
-				wp_enqueue_script( 'echarts-js', 			plugins_url( 'assets/default/js/dist/echarts.js', __FILE__ ), false, ANALYTIFY_VERSION );
-				wp_enqueue_script( 'echarts-pie-js', 	plugins_url( 'assets/default/js/dist/chart/pie.js', __FILE__ ), false, ANALYTIFY_VERSION );
-				wp_enqueue_script( 'echarts-map-js', 	plugins_url( 'assets/default/js/dist/chart/map.js', __FILE__ ), false, ANALYTIFY_VERSION );
-				wp_enqueue_script( 'echarts-line-js', plugins_url( 'assets/default/js/dist/chart/line.js', __FILE__ ), false, ANALYTIFY_VERSION );
-				wp_enqueue_script( 'echarts-bar-js', 	plugins_url( 'assets/default/js/dist/chart/bar.js', __FILE__ ), false, ANALYTIFY_VERSION );
+				wp_enqueue_script( 'echarts-js', 			plugins_url( 'assets/default/js/dist/echarts.js', __FILE__ ), false, ANALYTIFY_VERSION, true );
+				wp_enqueue_script( 'echarts-pie-js', 	plugins_url( 'assets/default/js/dist/chart/pie.js', __FILE__ ), false, ANALYTIFY_VERSION, true );
+				wp_enqueue_script( 'echarts-map-js', 	plugins_url( 'assets/default/js/dist/chart/map.js', __FILE__ ), false, ANALYTIFY_VERSION, true );
+				wp_enqueue_script( 'echarts-line-js', plugins_url( 'assets/default/js/dist/chart/line.js', __FILE__ ), false, ANALYTIFY_VERSION, true );
+				wp_enqueue_script( 'echarts-bar-js', 	plugins_url( 'assets/default/js/dist/chart/bar.js', __FILE__ ), false, ANALYTIFY_VERSION, true );
 
 			}
 
