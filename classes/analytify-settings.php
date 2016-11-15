@@ -421,7 +421,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 
 	    /**
 	     * get current list of all roles and display in dropdown
-	     * 
+	     *
 	     * @return array
 	     */
 	   	public static function get_current_roles() {
@@ -642,7 +642,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					foreach ( $args['options']->getItems() as  $account ) {
 
 						foreach ( $account->getWebProperties() as  $property ) {
-							
+
 							$html .= '<optgroup label=" ' . $property->getName() . ' ">';
 
 							foreach ( $property->getProfiles() as $profile ) {
@@ -1038,7 +1038,9 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 			if ( isset( $_POST['wp_analytify_log_out'] ) ) {
 
 				$_analytify_profile = get_option( 'wp-analytify-profile' );
-				unset( $_analytify_profile['hide_profiles_list'] );
+				if ( isset( $_analytify_profile['hide_profiles_list'] ) ) {
+					unset( $_analytify_profile['hide_profiles_list'] );
+				}
 				update_option( 'wp-analytify-profile', $_analytify_profile );
 
 			}
