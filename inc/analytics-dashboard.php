@@ -113,32 +113,32 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 									<input type="hidden" name="st_date" id="analytify_start_val">
 									<input type="hidden" name="ed_date" id="analytify_end_val">
 
-									<label for="analytify_start">From:</label>
+									<label for="analytify_start"><?php _e( 'From:', 'wp-analytify' )?></label>
 									<input type="text" id="analytify_start" value="<?php echo isset( $s_date ) ? $s_date :
 																			'' ?>">
-									<label for="analytify_end">To:</label>
+									<label for="analytify_end"><?php _e( 'To:', 'wp-analytify' )?></label>
 									<input type="text" id="analytify_end" value="<?php echo isset( $ed_date ) ? $ed_date :
 																			'' ?>">
 									<div class="analytify_arrow_date_picker"></div>
 								</div>
 								<input type="submit" value="View Stats" name="view_data" class="analytify_submit_date_btn">
 								<ul class="analytify_select_date_list">
-									<li>Last 30 days <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_30_day"></span> – <span class="analytify_end_date_data analytify_today_date"></span></span></li>
+									<li><?php _e( 'Last 30 days', 'wp-analytify' )?> <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_30_day"></span> – <span class="analytify_end_date_data analytify_today_date"></span></span></li>
 
-									<li>This month <span data-start="" data-end=""><span class="analytify_start_date_data analytify_this_month_start_date"></span> – <span class="analytify_end_date_data analytify_today_date"></span></li>
+									<li><?php _e( 'This month', 'wp-analytify' )?> <span data-start="" data-end=""><span class="analytify_start_date_data analytify_this_month_start_date"></span> – <span class="analytify_end_date_data analytify_today_date"></span></li>
 
-									<li>Last month <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_month_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
-
-
-									<li>Last 3 months <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_3_months_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
-
-									<li>Last 6 months <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_6_months_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
+									<li><?php _e( 'Last month', 'wp-analytify' )?> <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_month_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
 
 
-									<li>Last year <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_year_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
+									<li><?php _e( 'Last 3 months', 'wp-analytify' )?> <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_3_months_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
+
+									<li><?php _e( 'Last 6 months', 'wp-analytify' )?> <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_6_months_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
 
 
-									<li>Custom Range <span class="custom_range">Select a custom date</span></li>
+									<li><?php _e( 'Last year', 'wp-analytify' )?> <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_year_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
+
+
+									<li><?php _e( 'Custom Range', 'wp-analytify' )?> <span class="custom_range"><?php _e( 'Select a custom date', 'wp-analytify' )?></span></li>
 								</ul>
 							</form>
 						</div>
@@ -182,7 +182,7 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 							</div>
 						</div>
 						<div class="analytify_status_footer">
-							<span class="analytify_info_stats">Did you know that total time on your site is <span class="analytify_red  general_stats_message"></span>.</span>
+							<span class="analytify_info_stats"><?php _e( 'Did you know that total time on your site is', 'wp-analytify' )?>  <span class="analytify_red  general_stats_message"></span>.</span>
 						</div>
 					</div>
 				<?php endif ?>

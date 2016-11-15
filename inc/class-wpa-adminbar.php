@@ -32,7 +32,7 @@ class WP_ANALYTIFY_ADMIN_BAR {
 				'id' => 'analytify',
 				'title' => '<span class="ab-icon"></span><span id="ab-analytify" class="ab-label">Analytify</span>',
 				'href' => get_admin_url( null, 'admin.php?page=analytify-dashboard' ),
-				'meta' => array( 'target' => '_blank', 'title' => 'view complete Analytics of your site' ),
+				'meta' => array( 'target' => '_blank', 'title' => __( 'view complete Analytics of your site', 'wp-analytify' ) ),
 			));
 
 			$menus['dashboard'] = esc_html__( 'Dashboard' , 'wp-analytify' );
@@ -52,7 +52,7 @@ class WP_ANALYTIFY_ADMIN_BAR {
 				$wp_admin_bar->add_node(array(
 					'parent' => 'analytify',
 					'id'     => 'editpage',
-					'title'  => 'Edit Post',
+					'title'  => __( 'Edit Post', 'wp-analytify' ),
 					'href'   => $edit_post_link . '#normal-sortables',
 					'meta'   => array( 'class' => 'wpa_admin_color' ),
 				) );

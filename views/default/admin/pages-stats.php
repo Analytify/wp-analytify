@@ -41,7 +41,7 @@ function fetch_pages_stats( $current, $stats ) {
 								<?php echo round( $row[5], 2 ) . '<span class="analytify_persantage_sign">%</span>'; ?>
 								<span class="analytify_bar_graph"><span style="width: <?php echo round( $row[5], 2 )?>%"></span></span>
 							</div>
-							
+
 
 						</td>
 					</tr>
@@ -63,7 +63,7 @@ function fetch_pages_stats( $current, $stats ) {
 	$body = ob_get_clean();
 
 	echo json_encode( array(
-		'message' => esc_html__( 'Did you know that ' . WPANALYTIFY_Utils::pretty_numbers( $top_entrance ) . ' people landed directly to your site at ' . $url, 'wp-analytify' ),
+		'message' =>  sprintf( esc_html__( 'Did you know that %s people landed directly to your site at %s','wp-analytify' ) , WPANALYTIFY_Utils::pretty_numbers( $top_entrance ), $url  ),
 		'body'    => $body,
 	) );
 

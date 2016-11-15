@@ -251,7 +251,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				foreach ( $post_types as $post_type ) {
 					// var_dump($post_type); //wp_die();
 					add_meta_box('pa-single-admin-analytics', // $id
-						'Analytify - Stats of this Post/Page', // $title.
+						__( 'Analytify - Stats of this Post/Page', 'wp-analytify' ), // $title.
 						array(
 						$this,
 						'show_admin_single_analytics',
@@ -353,34 +353,34 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 								<input type="hidden" name="start_date" id="analytify_start_val">
 								<input type="hidden" name="end_date" id="analytify_end_val">
 
-								<label for="analytify_start">From:</label>
+								<label for="analytify_start"><?php _e( 'From:', 'wp-analytify' )?></label>
 								<input type="text" id="analytify_start" value="<?php echo isset(  $start_date ) ?  $start_date :
 																		'' ?>">
-								<label for="analytify_end">To:</label>
+								<label for="analytify_end"><?php _e( 'To:', 'wp-analytify' )?></label>
 								<input type="text" id="analytify_end" value="<?php echo isset( $end_date ) ? $end_date :
 																		'' ?>">
 								<input type="hidden" name="urlpost" id="urlpost" value="<?php echo  esc_url( $url_post['path'] ); ?>">
 
 								<div class="analytify_arrow_date_picker"></div>
 							</div>
-							<input type="submit" value="View Stats" name="view_data" class="analytify_submit_date_btn"  id="view_analytics">
+							<input type="submit" value="<?php _e( 'View Stats', 'wp-analytify' )?>" name="view_data" class="analytify_submit_date_btn"  id="view_analytics">
 							<ul class="analytify_select_date_list">
-								<li>Last 30 days <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_30_day"></span> – <span class="analytify_end_date_data analytify_today_date"></span></span></li>
+								<li><?php _e( 'Last 30 days', 'wp-analytify' )?> <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_30_day"></span> – <span class="analytify_end_date_data analytify_today_date"></span></span></li>
 
-								<li>This month <span data-start="" data-end=""><span class="analytify_start_date_data analytify_this_month_start_date"></span> – <span class="analytify_end_date_data analytify_today_date"></span></li>
+								<li><?php _e( 'This month', 'wp-analytify' )?> <span data-start="" data-end=""><span class="analytify_start_date_data analytify_this_month_start_date"></span> – <span class="analytify_end_date_data analytify_today_date"></span></li>
 
-								<li>Last month <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_month_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
-
-
-								<li>Last 3 months <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_3_months_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
-
-								<li>Last 6 months <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_6_months_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
+								<li><?php _e( 'Last month', 'wp-analytify' )?> <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_month_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
 
 
-								<li>Last year <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_year_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
+								<li><?php _e( 'Last 3 months', 'wp-analytify' )?> <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_3_months_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
+
+								<li><?php _e( 'Last 6 months', 'wp-analytify' )?> <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_6_months_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
 
 
-								<li>Custom Range <span class="custom_range">Select a custom date</span></li>
+								<li><?php _e( 'Last year', 'wp-analytify' )?> <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_year_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
+
+
+								<li><?php _e( 'Custom Range', 'wp-analytify' )?> <span class="custom_range"><?php _e( 'Select a custom date', 'wp-analytify' )?></span></li>
 							</ul>
 						</form>
 					</div>
@@ -851,7 +851,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			global $post;
 
 			// Check Profile selection.
-			if ( WP_ANALYTIFY_FUNCTIONS::wpa_check_profile_selection( 'Analytify', '<br /><b class="wpa_notice_error">Select your website profile at Analytify->settings->profile tab to load stats.</b>' ) ) { return; }
+			if ( WP_ANALYTIFY_FUNCTIONS::wpa_check_profile_selection( 'Analytify', '<br /><b class="wpa_notice_error">'. __('Select your website profile at Analytify->settings->profile tab to load stats.', 'wp-analytify' ) .'</b>' ) ) { return; }
 
 			if ( 0 === $post_id ) {
 				$u_post = '/'; // $url_post['path'];
@@ -889,7 +889,8 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				return;
 			}
 
-			echo '<p> Displaying Analytics of this page from ' . date( 'jS F, Y', strtotime( $s_date ) ) . ' to ' . date( 'jS F, Y', strtotime( $e_date ) ) . '</p>';
+
+			 echo sprintf( esc_html__( '%1$s Displaying Analytics of this page from.%2$s to %3$s %4$s', 'wp-analytify' ), '<p>', date( 'jS F, Y', strtotime( $s_date ) ), date( 'jS F, Y', strtotime( $e_date ) ), '</p>') ;
 			echo '<div class="analytify_wraper analytify_single_post_page">';
 			if ( ! empty( $show_settings ) ) {
 
@@ -1126,7 +1127,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
                             });
 
                            <?php if ( ! WPANALYTIFY_Utils::is_active_pro() ) { ?>
-                            	if($('#wpa_allow_tracking:checked').val() == 1) alert('Thankyou!\nYour Coupon code is Analytify2016');
+                            	if($('#wpa_allow_tracking:checked').val() == 1) alert( <?php _e( 'Thankyou!\nYour Coupon code is Analytify2016', 'wp-analytify' ) ?> );
                            <?php  } ?>
                         }
                     }).pointer('open');

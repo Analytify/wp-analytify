@@ -262,7 +262,7 @@ function get_compare_stats( $results, $compare_results, $date_different ) {
 	$class   = $compare > 0 ? 'analytify_green' : 'analytify_red';
 
 	echo '<div class="analytify_general_status_footer_info">
-			<span class="' . $class . '  analytify_info_value"> ' . $compare . ' %</span> ' . $date_different . '  ago
+			<span class="' . $class . '  analytify_info_value"> ' . $compare . ' %</span> ' . $date_different . __( 'ago', 'wp-analytify' ) . '
 	</div>';
 }
 ?>
