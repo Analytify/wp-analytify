@@ -325,6 +325,18 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 						'desc' 							=> __( 'Track all Ajax errors' , 'wp-analytify'  ),
 						'type'              => 'checkbox',
 					),
+					array(
+						'name'              => 'linker_tag',
+						'label'             => __( 'Add <code>_setAllowLinker</code>', 'wp-analytify' ),
+						'desc' 							=> __( 'This will add <code>_setAllowLinker</code> tag to tracking code. Read more <a href=\'https://support.google.com/analytics/answer/1034342\'>Cross Domain Tracking</a>.' , 'wp-analytify'  ),
+						'type'              => 'checkbox',
+					),
+					array(
+						'name'              => 'custom_code',
+						'label'             => __( 'Custom Code', 'wp-analytify' ),
+						'desc' 							=> __( 'This will add inline code before sending the Hit on Google Analytics.' , 'wp-analytify'  ),
+						'type'              => 'textarea',
+					)
 				);
 
 				foreach ( $advance_setting_fields as $advance_setting_field ) {

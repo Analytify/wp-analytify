@@ -426,9 +426,12 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 
 						(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-						ga('create', '<?php echo $UA_CODE;?>', 'auto');
-
 						<?php
+						if ( 'on' === $this->settings->get_option( 'linker_tag', 'wp-analytify-advanced' ) ) {
+							echo "	ga('create', '{$UA_CODE}', 'auto', {'allowLinker': true});";
+						} else {
+							echo "	ga('create', '{$UA_CODE}', 'auto');";
+						}
 
 						if ( 'on' === $this->settings->get_option( 'anonymize_ip', 'wp-analytify-advanced' ) ) {
 							echo "ga('set', 'anonymizeIp', true);";
@@ -444,6 +447,10 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 						if ( 'on' === $this->settings->get_option( 'demographic_interest_tracking', 'wp-analytify-advanced' ) ) {
 							echo "ga('require', 'displayfeatures');";
+						}
+
+						if ( ! empty(  $this->settings->get_option( 'custom_code', 'wp-analytify-advanced' ) ) ) {
+							echo $this->settings->get_option( 'custom_code', 'wp-analytify-advanced' );
 						}
 
 						if ( has_action( 'ga_ecommerce_js' ) ) {
