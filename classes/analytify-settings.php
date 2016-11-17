@@ -326,15 +326,15 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 						'type'              => 'checkbox',
 					),
 					array(
-						'name'              => 'linker_tag',
-						'label'             => __( 'Setup cross domain tracking', 'wp-analytify' ),
-						'desc' 							=> __( 'This will add <code>_setAllowLinker</code> tag to tracking code. Read more <a href=\'https://support.google.com/analytics/answer/1034342\'>Cross Domain Tracking</a>.' , 'wp-analytify'  ),
+						'name'              => 'linker_cross_domain_tracking',
+						'label'             => __( 'Setup Cross-domain Tracking', 'wp-analytify' ),
+						'desc' 				=> __( 'This will add <code>allowLinker:true</code> tag to tracking code. Read this <a href=\'https:\//analytify.io/doc/setup-cross-domain-tracking-wordpress\'>guide</a> for more information.' , 'wp-analytify' ),
 						'type'              => 'checkbox',
 					),
 					array(
 						'name'              => 'custom_js_code',
 						'label'             => __( 'Custom JS Code', 'wp-analytify' ),
-						'desc' 							=> __( 'This will add inline tracking code before sending the pageview hit to Google Analytics.' , 'wp-analytify'  ),
+						'desc' 				=> __( 'This will add inline tracking code before sending the pageview hit to Google Analytics.' , 'wp-analytify'  ),
 						'type'              => 'textarea',
 					)
 				);

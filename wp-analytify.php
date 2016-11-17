@@ -427,8 +427,9 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 						(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 						<?php
-						if ( 'on' === $this->settings->get_option( 'linker_tag', 'wp-analytify-advanced' ) ) {
+						if ( 'on' === $this->settings->get_option( 'linker_cross_domain_tracking', 'wp-analytify-advanced' ) ) {
 							echo "	ga('create', '{$UA_CODE}', 'auto', {'allowLinker': true});";
+							echo "ga('require', 'linker');";
 						} else {
 							echo "	ga('create', '{$UA_CODE}', 'auto');";
 						}
