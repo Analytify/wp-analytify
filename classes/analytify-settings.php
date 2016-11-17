@@ -322,7 +322,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					array(
 						'name'              => 'ajax_error_track',
 						'label'             => __( 'AJAX Errors', 'wp-analytify' ),
-						'desc' 							=> __( 'Track all Ajax errors' , 'wp-analytify'  ),
+						'desc' 							=> __( 'Track all AJAX errors' , 'wp-analytify'  ),
 						'type'              => 'checkbox',
 					),
 					array(
