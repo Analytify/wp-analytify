@@ -430,6 +430,10 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 						if ( 'on' === $this->settings->get_option( 'linker_cross_domain_tracking', 'wp-analytify-advanced' ) ) {
 							echo "	ga('create', '{$UA_CODE}', 'auto', {'allowLinker': true});";
 							echo "ga('require', 'linker');";
+							
+							if ( $this->settings->get_option( 'custom_js_code', 'wp-analytify-advanced' ) ) {
+								echo $this->settings->get_option( 'custom_js_code', 'wp-analytify-advanced' );
+							}
 						} else {
 							echo "	ga('create', '{$UA_CODE}', 'auto');";
 						}
@@ -448,10 +452,6 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 						if ( 'on' === $this->settings->get_option( 'demographic_interest_tracking', 'wp-analytify-advanced' ) ) {
 							echo "ga('require', 'displayfeatures');";
-						}
-
-						if ( $this->settings->get_option( 'custom_js_code', 'wp-analytify-advanced' ) ) {
-							echo $this->settings->get_option( 'custom_js_code', 'wp-analytify-advanced' );
 						}
 
 						if ( has_action( 'ga_ecommerce_js' ) ) {
