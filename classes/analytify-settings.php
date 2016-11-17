@@ -327,14 +327,14 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					),
 					array(
 						'name'              => 'linker_tag',
-						'label'             => __( 'Add <code>_setAllowLinker</code>', 'wp-analytify' ),
+						'label'             => __( 'Setup cross domain tracking', 'wp-analytify' ),
 						'desc' 							=> __( 'This will add <code>_setAllowLinker</code> tag to tracking code. Read more <a href=\'https://support.google.com/analytics/answer/1034342\'>Cross Domain Tracking</a>.' , 'wp-analytify'  ),
 						'type'              => 'checkbox',
 					),
 					array(
-						'name'              => 'custom_code',
-						'label'             => __( 'Custom Code', 'wp-analytify' ),
-						'desc' 							=> __( 'This will add inline code before sending the Hit on Google Analytics.' , 'wp-analytify'  ),
+						'name'              => 'custom_js_code',
+						'label'             => __( 'Custom JS Code', 'wp-analytify' ),
+						'desc' 							=> __( 'This will add inline tracking code before sending the pageview hit to Google Analytics.' , 'wp-analytify'  ),
 						'type'              => 'textarea',
 					)
 				);
@@ -1044,7 +1044,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 				echo $this->pro_features();
 		}
 
-
+		// unset profile hidden check on logout
 		function process_logout() {
 
 			if ( isset( $_POST['wp_analytify_log_out'] ) ) {

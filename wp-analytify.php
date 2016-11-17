@@ -449,8 +449,8 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 							echo "ga('require', 'displayfeatures');";
 						}
 
-						if ( $this->settings->get_option( 'custom_code', 'wp-analytify-advanced' ) ) {
-							echo $this->settings->get_option( 'custom_code', 'wp-analytify-advanced' );
+						if ( $this->settings->get_option( 'custom_js_code', 'wp-analytify-advanced' ) ) {
+							echo $this->settings->get_option( 'custom_js_code', 'wp-analytify-advanced' );
 						}
 
 						if ( has_action( 'ga_ecommerce_js' ) ) {
