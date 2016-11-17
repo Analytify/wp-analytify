@@ -449,7 +449,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 							echo "ga('require', 'displayfeatures');";
 						}
 
-						if ( ! empty(  $this->settings->get_option( 'custom_code', 'wp-analytify-advanced' ) ) ) {
+						if ( $this->settings->get_option( 'custom_code', 'wp-analytify-advanced' ) ) {
 							echo $this->settings->get_option( 'custom_code', 'wp-analytify-advanced' );
 						}
 
@@ -586,12 +586,9 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		 */
 		public function admin_scripts( $page ) {
 
-			// var_dump($page);
 			wp_enqueue_script( 'wp-analytify-script-js', plugins_url( 'assets/old/js/wp-analytify.js', __FILE__ ), array('jquery-ui-tooltip','jquery-ui-datepicker', 'jquery'), ANALYTIFY_VERSION );
 
 			// for main page
-
-
 			if ( $page == 'index.php' || $page == 'toplevel_page_analytify-dashboard' || $page == 'analytify_page_analytify-woocommerce' || $page == 'analytify_page_edd-dashboard' || $page == 'analytify_page_analytify-campaigns' || $page == 'post.php' ) {
 
 				wp_enqueue_script( 'pikaday-js', 	plugins_url( 'assets/default/js/pikaday.js', __FILE__ ), array( 'moment-js' ) , ANALYTIFY_VERSION );
@@ -609,7 +606,6 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				wp_enqueue_script( 'echarts-map-js', 	plugins_url( 'assets/default/js/dist/chart/map.js', __FILE__ ), false, ANALYTIFY_VERSION, true );
 				wp_enqueue_script( 'echarts-line-js', plugins_url( 'assets/default/js/dist/chart/line.js', __FILE__ ), false, ANALYTIFY_VERSION, true );
 				wp_enqueue_script( 'echarts-bar-js', 	plugins_url( 'assets/default/js/dist/chart/bar.js', __FILE__ ), false, ANALYTIFY_VERSION, true );
-
 			}
 
 
