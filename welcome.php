@@ -116,6 +116,10 @@ class Analytify_Welcome {
 			margin-top: 20px;
 		}
 
+		.about-wrap .feature-section p{
+			max-width: none !important;
+		}
+
 		.analytify-welcome-settings{
 			clear: both;
 			padding-top: 20px;
