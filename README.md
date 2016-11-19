@@ -5,7 +5,7 @@
 **Tags:** google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced ecommerce tracking  
 **Requires at least:** 3.0  
 **Tested up to:** 4.6.1  
-**Stable tag:** 2.0.3  
+**Stable tag:** 2.0.4  
 **License:** GPLv3 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-3.0.html  
 
@@ -104,6 +104,14 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 ##  Changelog ##
 
+### 2.0.4 - 2016-11-20 ###
+* BugFix: Return empty string if there are no roles
+* BugFix: Echarts Compatibility issues with jQuery Sortable
+* BugFix: By default Setting not loaded on plugin activation
+* BugFix: Transients Conflict at loading analytics.js code
+* Enhancement: Strings getting ready for WPML Compatibility
+* Enhancement: Added Cross Domain Tracking
+* Enhancement: Admin bar displays only for selected roles in dashboard tab.
 
 ### 2.0.3 - 2016-11-05 ###
 * Bug Fix   : PHP 5.3 fatal errors fixed
