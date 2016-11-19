@@ -427,7 +427,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 						if ( 'on' === $this->settings->get_option( 'linker_cross_domain_tracking', 'wp-analytify-advanced' ) ) {
 							echo "	ga('create', '{$UA_CODE}', 'auto', {'allowLinker': true});";
 							echo "ga('require', 'linker');";
-							
+
 							if ( $this->settings->get_option( 'custom_js_code', 'wp-analytify-advanced' ) ) {
 								echo $this->settings->get_option( 'custom_js_code', 'wp-analytify-advanced' );
 							}
@@ -1121,7 +1121,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
                             });
 
                            <?php if ( ! WPANALYTIFY_Utils::is_active_pro() ) { ?>
-                            	if($('#wpa_allow_tracking:checked').val() == 1) alert( <?php _e( 'Thankyou!\nYour Coupon code is Analytify2016', 'wp-analytify' ) ?> );
+                            	if($('#wpa_allow_tracking:checked').val() == 1) alert( '<?php _e( 'Thankyou!\nYour Coupon code is Analytify2016', 'wp-analytify' ) ?>' );
                            <?php  } ?>
                         }
                     }).pointer('open');
@@ -1325,37 +1325,55 @@ register_uninstall_hook( __FILE__, 'wp_analytify_uninstall' ); // delete
  * @since       1.2.2
  * @return      void
  */
-function wp_analytify_activate() {
+ function wp_analytify_activate() {
 
-	update_option( 'analytify_posts_stats', array( 'post', 'page' ) );
-	update_option( 'post_analytics_disable_back'  ,   1 );
-	if ( false === get_option( 'analytify_disable_front' ) ) { update_option( 'analytify_disable_front'  ,   1 ); }
-	update_option( 'post_analytics_settings_back' , array( 'show-overall-back' ) );
-	update_option( 'post_analytics_access_back'   , array( 'editor', 'administrator' ) );
-	update_option( 'display_tracking_code'        , array( 'administrator' ) );
-	update_option( 'show_welcome_page'            ,  0 );
+	 update_option( 'show_welcome_page' , 0 );
 
-	$previous_setting = get_option( 'wp-analytify-dashboard' );
- 	if ( empty( $previous_setting  ) ) {
+	 // Return if setting already added in DB.
+	 $_admin_settings = get_option( 'wp-analytify-admin' );
+	 if ( 'on' ===  $_admin_settings['disable_back_end']  && ! empty( $_admin_settings['show_analytics_roles_back_end'] ) ) {
+		 return;
+	 }
 
-		$default['show_analytics_panels_dashboard'] = array(
-			'show-real-time',
-			'show-compare-stats',
-			'show-overall-dashboard',
-			'show-top-pages-dashboard',
-			'show-geographic-dashboard',
-			'show-system-stats',
-			'show-keywords-dashboard',
-			'show-social-dashboard',
-			'show-referrer-dashboard',
-			'show-page-stats-dashboard',
-		);
-		$default['show_analytics_roles_dashboard'] = array(
-			'administrator'
-		);
-		update_option( 'wp-analytify-dashboard' , $default );
-	}
-}
+	 // Load all by default seetings.
+	 if ( ! get_option( 'analytify_default_setting' ) ) {
+
+		 $profile_settings = array (
+			 'exclude_users_tracking'  => array( 'administrator' ),
+		 );
+		 update_option( 'wp-analytify-profile', $profile_settings );
+
+		 $admin_settings = array(
+			 'disable_back_end'                   => 'on',
+			 'show_analytics_roles_back_end'      => array( 'administrator', 'editor' ),
+			 'show_analytics_post_types_back_end' => array( 'post', 'page' ),
+			 'show_panels_back_end'               => array( 'show-overall-dashboard', 'show-social-dashboard', 'show-geographic-dashboard', 'show-system-stats', 'show-keywords-dashboard', 'show-referrer-dashboard' )
+		 );
+		 update_option( 'wp-analytify-admin', $admin_settings );
+
+
+		 $default['show_analytics_panels_dashboard'] = array(
+			 'show-real-time',
+			 'show-compare-stats',
+			 'show-overall-dashboard',
+			 'show-top-pages-dashboard',
+			 'show-geographic-dashboard',
+			 'show-system-stats',
+			 'show-keywords-dashboard',
+			 'show-social-dashboard',
+			 'show-referrer-dashboard',
+			 'show-page-stats-dashboard',
+		 );
+		 $default['show_analytics_roles_dashboard'] = array(
+			 'administrator'
+		 );
+		 update_option( 'wp-analytify-dashboard' , $default );
+
+		 // Update meta so settings load only one time.
+		 update_option( 'analytify_default_setting', 'done' );
+
+	 }
+ }
 
 /**
  * Delete option values on plugin deactivation.
@@ -1369,20 +1387,23 @@ function wp_analytify_de_activate() {
 		send_status_analytify( get_option( 'admin_email' ), 'in-active' );
 	}
 
-	delete_option( 'analytify_posts_stats' );
 	delete_option( 'show_welcome_page' );
 }
 
 /**
- * Delete plugin settings meta on deleting the plugin
- *
- * @return void
- */
+* Delete plugin settings meta on deleting the plugin
+*
+* @return void
+*/
 function wp_analytify_uninstall() {
 
 	if ( 1 == get_option( 'wpa_allow_tracking' ) ) {
 		send_status_analytify( get_option( 'admin_email' ), 'delete' );
 	}
+
+	delete_option( 'analytify_default_setting' );
+	delete_option( 'wp-analytify-admin' );
+
 }
 
 /**
