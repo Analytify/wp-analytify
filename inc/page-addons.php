@@ -49,7 +49,7 @@ if ( ! class_exists( 'WP_Analytify_Addons' ) ) {
 					'url' 		    => 'https://analytify.io/add-ons/google-analytics-dashboard-widget-wordpress/?utm_source=wordpress&utm_medium=plugin&utm_campaign=addons_page&utm_content=google-analytics-dashboard-widget-wordpress',
 					'slug'			  => 'wp-analytify-dashboard/wp-analytify-dashboard.php',
 					'title' 		  => sprintf( esc_html__( 'Google Analytics Dashboard widget', 'wp-analytify' ), '<br />' ),
-					'status'		  => esc_html__( 'Coming soon', 'wp-analytify' ),
+					'status'		  => '',
 					'description' => sprintf( esc_html__( 'This Add-on dispays Analytics as a widget at WordPress Dashboard. %1$s It is completely Free.', 'wp-analytify' ), '<br /><br />' ),
 					),
 					
@@ -86,7 +86,7 @@ if ( ! class_exists( 'WP_Analytify_Addons' ) ) {
 			} else if ( is_plugin_inactive( $slug ) ) {
 
 				if ( $extension->status != '' ) {
-					echo sprintf( esc_html__( '%1$s Coming Soon %2$s', 'wp-analytify' ), '<a target="_blank" href="' . $extension->url . '" class="button-primary">', '</a>' ); } else {
+					echo sprintf( esc_html__( '%1$s Download %2$s', 'wp-analytify' ), '<a target="_blank" href="' . $extension->url . '" class="button-primary">', '</a>' ); } else {
 					echo sprintf( esc_html__( '%1$s Get this add-on %2$s', 'wp-analytify' ), '<a target="_blank" href="' . $extension->url . '" class="button-primary">', '</a>' ); }
 			}
 		}
