@@ -1335,24 +1335,23 @@ function wp_analytify_activate() {
 		return;
 	 }
 
-	 // Load default settings
+	 // Load default settings on new install.
 	 if ( ! get_option( 'analytify_default_settings' ) ) {
 
-		 $profile_settings = array (
+		$profile_tab_settings = array (
 			 'exclude_users_tracking'  => array( 'administrator' ),
-		 );
-		 update_option( 'wp-analytify-profile', $profile_settings );
+		);
+		update_option( 'wp-analytify-profile', $profile_tab_settings );
 
-		 $admin_settings = array(
+		$admin_tab_settings = array(
 			 'disable_back_end'                   => 'on',
 			 'show_analytics_roles_back_end'      => array( 'administrator', 'editor' ),
 			 'show_analytics_post_types_back_end' => array( 'post', 'page' ),
 			 'show_panels_back_end'               => array( 'show-overall-dashboard', 'show-social-dashboard', 'show-geographic-dashboard', 'show-system-stats', 'show-keywords-dashboard', 'show-referrer-dashboard' )
-		 );
-		 update_option( 'wp-analytify-admin', $admin_settings );
+		);
+		update_option( 'wp-analytify-admin', $admin_tab_settings );
 
-
-		 $default['show_analytics_panels_dashboard'] = array(
+		$dashboard_tab_settings['show_analytics_panels_dashboard'] = array(
 			 'show-real-time',
 			 'show-compare-stats',
 			 'show-overall-dashboard',
@@ -1363,17 +1362,16 @@ function wp_analytify_activate() {
 			 'show-social-dashboard',
 			 'show-referrer-dashboard',
 			 'show-page-stats-dashboard',
-		 );
-		 $default['show_analytics_roles_dashboard'] = array(
-			 'administrator'
-		 );
-		 update_option( 'wp-analytify-dashboard' , $default );
+		);
+		$dashboard_tab_settings['show_analytics_roles_dashboard'] = array(
+				'administrator'
+		);
+		update_option( 'wp-analytify-dashboard' , $dashboard_tab_settings );
 
-		 // Update meta so settings load only one time.
-		 update_option( 'analytify_default_settings', 'done' );
-
-	 }
- }
+		// Update meta so default settings load only one time.
+		update_option( 'analytify_default_settings', 'done' );
+	}
+}
 
 /**
  * Delete option values on plugin deactivation.
