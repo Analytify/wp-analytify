@@ -448,11 +448,11 @@ class Analytify_Welcome {
 
 		$is_show = get_option( 'show_welcome_page' );
 
-		if( $is_show == 0 ) { // First time install
+		if( ! $is_show ) { // First time install
 
 			update_option( 'show_welcome_page' ,  1 );
 			wp_redirect( admin_url( 'index.php?page=wp-analytify-getting-started' ) );
-
+			exit;
 		}
 	}
 }

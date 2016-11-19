@@ -1319,24 +1319,24 @@ register_activation_hook( __FILE__, 'wp_analytify_activate' ); //active
 register_deactivation_hook( __FILE__, 'wp_analytify_de_activate' ); //in-active
 register_uninstall_hook( __FILE__, 'wp_analytify_uninstall' ); // delete
 
+
 /**
  * Run on plugin activation.
  *
  * @since       1.2.2
  * @return      void
  */
- function wp_analytify_activate() {
 
-	 update_option( 'show_welcome_page' , 0 );
+function wp_analytify_activate() {
 
-	 // Return if setting already added in DB.
+	// Return if settings already added in DB.
 	 $_admin_settings = get_option( 'wp-analytify-admin' );
 	 if ( 'on' ===  $_admin_settings['disable_back_end']  && ! empty( $_admin_settings['show_analytics_roles_back_end'] ) ) {
-		 return;
+		return;
 	 }
 
-	 // Load all by default seetings.
-	 if ( ! get_option( 'analytify_default_setting' ) ) {
+	 // Load default settings
+	 if ( ! get_option( 'analytify_default_settings' ) ) {
 
 		 $profile_settings = array (
 			 'exclude_users_tracking'  => array( 'administrator' ),
@@ -1370,7 +1370,7 @@ register_uninstall_hook( __FILE__, 'wp_analytify_uninstall' ); // delete
 		 update_option( 'wp-analytify-dashboard' , $default );
 
 		 // Update meta so settings load only one time.
-		 update_option( 'analytify_default_setting', 'done' );
+		 update_option( 'analytify_default_settings', 'done' );
 
 	 }
  }
@@ -1387,6 +1387,7 @@ function wp_analytify_de_activate() {
 		send_status_analytify( get_option( 'admin_email' ), 'in-active' );
 	}
 
+	// delete welcome page check on de-activate.
 	delete_option( 'show_welcome_page' );
 }
 
@@ -1401,7 +1402,7 @@ function wp_analytify_uninstall() {
 		send_status_analytify( get_option( 'admin_email' ), 'delete' );
 	}
 
-	delete_option( 'analytify_default_setting' );
+	delete_option( 'analytify_default_settings' );
 	delete_option( 'wp-analytify-admin' );
 
 }
