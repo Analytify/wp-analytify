@@ -410,7 +410,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				} else {
 
 					// Fetch Universel Analytics UA code for selected website.
-					$UA_CODE = WP_ANALYTIFY_FUNCTIONS::search_profile_info( $this->settings->get_option( 'profile_for_posts', 'wp-analytify-profile' ), 'webPropertyId' );
+					$UA_CODE = WP_ANALYTIFY_FUNCTIONS::get_UA_code();
 					echo sprintf( esc_html__( '%2$s This code is added by WP Analytify (%1$s) %4$s %3$s', 'wp-analytify' ), ANALYTIFY_VERSION, '<!--', '!-->', 'https://analytify.io/downloads/analytify-wordpress-plugin/' );
 
 					?>

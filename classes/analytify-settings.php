@@ -659,6 +659,12 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 
 							foreach ( $property->getProfiles() as $profile ) {
 								$html .= sprintf( '<option value="%1$s" %2$s>%3$s (%4$s)</option>', $profile->getId(), selected( $value, $profile->getId(), false ), $profile->getName() , $property->getId() );
+
+								// Update the UA code in option on setting save for proile_for_posts.
+								if (  $value === $profile->getId() && 'profile_for_posts' === $args['id'] ) {
+									update_option( 'analytify_ua_code', $property->getId() );
+								}
+
 							}
 						}
 

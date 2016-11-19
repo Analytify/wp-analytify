@@ -298,7 +298,7 @@ class WP_ANALYTIFY_FUNCTIONS {
 		foreach ( $accounts->getItems() as $account ) {
 			foreach ( $account->getWebProperties() as  $property ) {
 				foreach ( $property->getProfiles() as $profile ) {
-				
+
 					// Get Property ID i.e UA Code
 					if ( $profile->getId() === $id && $index === 'webPropertyId') {
 						return $property->getId();
@@ -316,6 +316,24 @@ class WP_ANALYTIFY_FUNCTIONS {
 				}
 			}
 		}
+	}
+
+	/**
+	 * Return the UA Code for selected profile.
+	 *
+	 * @since 2.0.4
+	 */
+	static function get_UA_code() {
+
+		$_ua_code = get_option( 'analytify_ua_code' );
+		if ( $_ua_code ) {
+			return $_ua_code;
+		} else {
+			$_ua_code =	WP_ANALYTIFY_FUNCTIONS::search_profile_info( $GLOBALS['WP_ANALYTIFY']->settings->get_option( 'profile_for_posts', 'wp-analytify-profile' ), 'webPropertyId' );
+			update_option( 'analytify_ua_code', $_ua_code );
+			return $_ua_code;
+		}
+
 	}
 
 	static function is_connected() {
