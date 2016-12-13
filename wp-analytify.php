@@ -763,6 +763,15 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 		}
 
+		public function no_profile_error() {
+
+			$class   = 'notice notice-warning';
+			$link    = 'https://analytics.google.com/';
+			$message = sprintf( __( 'No Google Analytics Account is linked with your Email. <a href="%1$s">Register</a> your account first.', 'wp-analytify'), $link );
+			printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
+
+		}
+
 		public function pt_get_analytics_accounts_summary() {
 
 			try {
@@ -774,7 +783,12 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 					echo '<br /><p class="description">' . esc_html__( 'You must authenticate to access your web profiles.', 'wp-analytify' ) . '</p>';
 				}
 			} catch (Exception $e) {
-				echo sprintf( esc_html__( '%1$s %2$s oOps, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s Authentication.', 'wp-analytify' ), '<br />', '<strong>', '</strong>', '<br /><br />', '<a href=\'?page=analytify-settings&tab=authentication\' title="Reset">', '</a>' );
+				if ( 403 === $e->getCode() ){
+					add_action( 'admin_notices', array( $this,'no_profile_error' ), 9 );
+				} else {
+					echo sprintf( esc_html__( '%1$s %2$s oOps, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s Authentication.', 'wp-analytify' ), '<br />', '<strong>', '</strong>', '<br /><br />', '<a href=\'?page=analytify-settings&tab=authentication\' title="Reset">', '</a>' );
+				}
+
 			}
 
 		}
