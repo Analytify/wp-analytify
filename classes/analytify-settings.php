@@ -139,6 +139,8 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 	     * @return array settings fields
 	     */
 		function get_settings_fields() {
+			
+			$_profile_otions = WP_ANALYTIFY_FUNCTIONS::fetch_profiles_list_summary();
 
 			$settings_fields = array(
 				'wp-analytify-authentication' => array(
@@ -173,7 +175,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 						'desc'         => __( 'Select your website profile for Backend/Front-end Stats. You can select your any Website profile. It will show Analytics for your selected website profile', 'wp-analytify' ),
 						'type'         => 'select_profile',
 						'default'      => 'Choose profile for posts',
-						'options'      => WP_ANALYTIFY_FUNCTIONS::fetch_profiles_list_summary(),
+						'options'      => $_profile_otions,
 						'size'         => ''
 						),
 
@@ -183,7 +185,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 						'desc'    => __( 'Select your website profile for Dashboard Stats. You can select your any Website profile. It will show Analytics for your selected website profile.', 'wp-analytify' ),
 						'type'    => 'select_profile',
 						'default' => 'Choose profile for dashboard',
-						'options' => WP_ANALYTIFY_FUNCTIONS::fetch_profiles_list_summary(),
+						'options' => $_profile_otions,
 						),
 					array(
 						'name'              => 'hide_profiles_list',
@@ -953,10 +955,10 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 			$html  = '<div id="icon-themes" class="icon32"></div>';
 			$html .= '<h2 class="opt-title"><span id="icon-options-general" class="analytics-options"><img src="' . plugins_url( '../assets/images/wp-analytics-logo.png', __FILE__ ) . '" alt="">' . sprintf( esc_html__( '%1$s Settings', 'wp-analytify' ), 'WP Analytify Plugin' ) . '</span></h2>';
 
-			$html .= '<div class="wpa-tab-wrapper" ><h2 class="nav-tab-wrapper">';
+			$html .= '<div class="wpa-tab-wrapper" ><h2 class="analytify_nav_tab_wrapper">';
 
 			foreach ( $this->settings_sections as $tab ) {
-				$html .= sprintf( '<a href="#%1$s" class="nav-tab" id="%1$s-tab">%2$s</a>', $tab['id'], $tab['title'] );
+				$html .= sprintf( '<a href="#%1$s" class="analytify_nav_tab" id="%1$s-tab">%2$s</a>', $tab['id'], $tab['title'] );
 			}
 
 			$html .= '</h2>';
