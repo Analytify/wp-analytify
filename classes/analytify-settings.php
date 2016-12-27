@@ -1109,7 +1109,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 				$('.wp-analytify-license-notice').on('click', function(evt) {
 
 					$('.group').hide();
-					$('.nav-tab-wrapper a').removeClass('nav-tab-active');
+					$('.analytify_nav_tab_wrapper a').removeClass('nav-tab-active');
 
 					if (typeof(localStorage) != 'undefined' ) {
 						localStorage.setItem("activetab", '#wp-analytify-license');
@@ -1147,15 +1147,15 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 
 				}
 				else {
-					$('.nav-tab-wrapper a:first').addClass('nav-tab-active');
+					$('.analytify_nav_tab_wrapper a:first').addClass('nav-tab-active');
 				}
 
 				// load diagnostic debug log only when help tab is active
 				if( $('.nav-tab-active').attr('href') === '#wp-analytify-help' ) refresh_debug_log();
 
-				$('.nav-tab-wrapper a').click(function(evt) {
+				$('.analytify_nav_tab_wrapper a').click(function(evt) {
 
-					$('.nav-tab-wrapper a').removeClass('nav-tab-active');
+					$('.analytify_nav_tab_wrapper a').removeClass('nav-tab-active');
 					$(this).addClass('nav-tab-active').blur();
 					var clicked_group = $(this).attr('href');
 					if (typeof(localStorage) != 'undefined' ) {
