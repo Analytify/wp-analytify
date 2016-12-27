@@ -1201,11 +1201,16 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 						</tr>
 						<tr>
 							<td><strong>Dashboard</strong></td>
-							<td>Yes</td>
-							<td>Yes</td>
+							<td>Yes (limited)</td>
+							<td>Yes (Advanced)</td>
 						</tr>
 						<tr>
 							<td><strong>Live Stats</strong></td>
+							<td>No</td>
+							<td>Yes</td>
+						</tr>
+						<tr>
+							<td><strong>Comparison Stats</strong></td>
 							<td>No</td>
 							<td>Yes</td>
 						</tr>
@@ -1223,15 +1228,15 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 						<tr>
 							<td><strong>Analytics under Posts (admin)</strong></td>
 							<td>Yes (limited)</td>
-							<td>Yes</td>
+							<td>Yes (Advanced)</td>
 						</tr>
 						<tr>
-							<td><strong>Analytify under Pages (admin)</strong></td>
+							<td><strong>Analytics under Pages (admin)</strong></td>
 							<td>Yes (limited)</td>
-							<td>Yes</td>
+							<td>Yes (Advanced)</td>
 						</tr>
 						<tr>
-							<td><strong>Analytify under Custom Post Types (front/admin)</strong></td>
+							<td><strong>Analytics under Custom Post Types (front/admin)</strong></td>
 							<td>No</td>
 							<td>Yes</td>
 						</tr>

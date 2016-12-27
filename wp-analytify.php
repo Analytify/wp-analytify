@@ -502,7 +502,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 				sprintf( esc_html__( '%1$s Getting Started %2$s', 'wp-analytify' ), '<a href="' . admin_url( 'index.php?page=wp-analytify-getting-started' ) . '">', '</a>' ),
 				sprintf( esc_html__( '%1$s Add Ons %2$s', 'wp-analytify' ), '<a href="http://analytify.io/add-ons/">', '</a>' ),
-
+				'<a href="https://wordpress.org/support/view/plugin-reviews/wp-analytify/" target="_blank"><span class="dashicons dashicons-thumbs-up"></span> ' . __( 'Vote!', 'wp-analytify' ) . '</a>'
 				);
 
 			$input = array_merge( $input, $links );
