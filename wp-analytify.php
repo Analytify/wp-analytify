@@ -543,6 +543,8 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 					include_once( ANALYTIFY_ROOT_PATH . '/inc/page-logs.php' );
 				} else if ( strpos( $screen->base, 'analytify-addons' ) !== false ) {
 					include_once( ANALYTIFY_ROOT_PATH . '/inc/page-addons.php' );
+				}  else if ( strpos( $screen->base, 'analytify-go-pro' ) !== false ) {
+					include_once( ANALYTIFY_ROOT_PATH . '/inc/analytify-go-pro.php' );
 				} else {
 					if ( isset( $_GET['show'] ) ) {
 						do_action( 'show_detail_dashboard_content' );
@@ -707,7 +709,10 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				'pa_page_file_path',
 			));
 
-			// add_submenu_page( $parent_slug, $page_title, $menu_title, $capability, $menu_slug, $function = '' )
+			add_submenu_page( 'analytify-dashboard', ANALYTIFY_NICK . esc_html__( ' Go Pro', 'wp-analytify' ), '<b>' . esc_html__( 'Go Pro', 'wp-analytify' ) . '</b>', 'manage_options', 'analytify-go-pro',  array(
+				$this,
+				'pa_page_file_path',
+			) );
 		}
 
 		/**
