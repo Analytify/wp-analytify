@@ -114,10 +114,10 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 									<input type="hidden" name="ed_date" id="analytify_end_val">
 
 									<label for="analytify_start"><?php _e( 'From:', 'wp-analytify' )?></label>
-									<input type="text" id="analytify_start" value="<?php echo isset( $s_date ) ? $s_date :
+									<input type="text" required id="analytify_start" value="<?php echo isset( $s_date ) ? $s_date :
 																			'' ?>">
 									<label for="analytify_end"><?php _e( 'To:', 'wp-analytify' )?></label>
-									<input type="text" id="analytify_end" value="<?php echo isset( $ed_date ) ? $ed_date :
+									<input type="text" required id="analytify_end" value="<?php echo isset( $ed_date ) ? $ed_date :
 																			'' ?>">
 									<div class="analytify_arrow_date_picker"></div>
 								</div>
