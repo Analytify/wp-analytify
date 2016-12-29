@@ -249,7 +249,7 @@ function fetch_general_stats( $current, $current_stats, $device_category_stats, 
 	$body = ob_get_clean();
 
 	echo json_encode( array(
-		"message" => WPANALYTIFY_Utils::pretty_time( $results['ga:avgSessionDuration'] ) ,
+		"message" => WPANALYTIFY_Utils::pretty_time( $results['ga:sessionDuration'] ) ,
 		"body"    => $body
 	) ) ;
 }

@@ -169,7 +169,7 @@ class WPANALYTIFY_AJAX {
 
 			$stats = get_transient( md5( 'show-default-overall-dashboard' . $dashboard_profile_ID . $start_date . $end_date ) );
 			if( $stats === false ) {
-				$stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions,ga:users,ga:pageviews,ga:avgSessionDuration,ga:bounceRate,ga:pageviewsPerSession,ga:percentNewSessions,ga:newUsers', $start_date, $end_date );
+				$stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions,ga:users,ga:pageviews,ga:avgSessionDuration,ga:bounceRate,ga:pageviewsPerSession,ga:percentNewSessions,ga:newUsers,ga:sessionDuration', $start_date, $end_date );
 				set_transient( md5( 'show-default-overall-dashboard' . $dashboard_profile_ID . $start_date . $end_date ) , $stats, 60 * 60 * 20 );
 
 			}
