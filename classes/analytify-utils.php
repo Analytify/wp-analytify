@@ -107,9 +107,105 @@ class WPANALYTIFY_Utils {
 
 		if ( is_plugin_active( 'wp-analytify-pro/wp-analytify-pro.php' ) )
 			return true;
-		else 
+		else
 			return false;
 
 	}
+
+	/**
+	 * Show notice if some exception occur.
+	 * @param  array $exception exception details
+	 *
+	 * @since 2.0.5
+	 */
+	public static function handle_exceptions( $exception ) {
+		$_exception_errors = $exception->getErrors();
+		if ( $_exception_errors[0]['reason'] == 'dailyLimitExceeded' ) {
+				add_action( 'admin_notices', array( 'WPANALYTIFY_Utils','daily_limit_exceed_error' ), 9 );
+		} else if ( $_exception_errors[0]['reason'] == 'insufficientPermissions' ) {
+				add_action( 'admin_notices', array( 'WPANALYTIFY_Utils','insufficent_permissions_error' ), 9 );
+		} else if ( $_exception_errors[0]['reason'] == 'usageLimits.userRateLimitExceededUnreg' ) {
+				add_action( 'admin_notices', array( 'WPANALYTIFY_Utils','user_rate_limit_unreg_error' ), 9 );
+		} else if ( $_exception_errors[0]['reason'] == 'userRateLimitExceeded' ) {
+				add_action( 'admin_notices', array( 'WPANALYTIFY_Utils','user_rate_limit_error' ), 9 );
+		} else if ( $_exception_errors[0]['reason'] == 'rateLimitExceeded' ) {
+				add_action( 'admin_notices', array( 'WPANALYTIFY_Utils','rate_limit_exceeded_error' ), 9 );
+		} else if ( $_exception_errors[0]['reason'] == 'quotaExceeded' ) {
+				add_action( 'admin_notices', array( 'WPANALYTIFY_Utils','quota_exceeded_error' ), 9 );
+		}
+	}
+
+	/**
+	 * Indicates that user has exceeded the daily quota (either per project or per view (profile)).
+	 *
+	 * @since 2.0.5
+	 */
+	public static function daily_limit_exceed_error() {
+		$class   = 'notice notice-warning';
+		$link    = 'https://analytics.google.com/';
+		$message = sprintf( __( 'Limit Quoata. <a href="%1$s">Register</a> your account first.', 'wp-analytify'), $link );
+		printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
+	}
+
+	/**
+	 * Indicates that the user does not have sufficient permissions.
+	 *
+	 * @since 2.0.5
+	 */
+	public static function insufficent_permissions_error() {
+		$class   = 'notice notice-warning';
+		$link    = 'https://analytics.google.com/';
+		$message = sprintf( __( 'Limit Quoata. <a href="%1$s">Register</a> your account first.', 'wp-analytify'), $link );
+		printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
+	}
+
+	/**
+	 * Indicates that the application needs to be registered in the Google Console
+	 *
+	 * @since 2.0.5
+	 */
+	public static function user_rate_limit_unreg_error() {
+		$class   = 'notice notice-warning';
+		$link    = 'https://analytics.google.com/';
+		$message = sprintf( __( 'Limit Quoata. <a href="%1$s">Register</a> your account first.', 'wp-analytify'), $link );
+		printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
+	}
+
+	/**
+	 * 	Indicates that the user rate limit has been exceeded. The maximum rate limit is 10 qps per IP address.
+	 *
+	 * @since 2.0.5
+	 */
+	public static function user_rate_limit_error() {
+		$class   = 'notice notice-warning';
+		$link    = 'https://analytics.google.com/';
+		$message = sprintf( __( 'Limit Quoata. <a href="%1$s">Register</a> your account first.', 'wp-analytify'), $link );
+		printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
+	}
+
+	/**
+	 * 	Indicates that the global or overall project rate limits have been exceeded.
+	 *
+	 * @since 2.0.5
+	 */
+	public static function rate_limit_exceeded_error() {
+		$class   = 'notice notice-warning';
+		$link    = 'https://analytics.google.com/';
+		$message = sprintf( __( 'Limit Quoata. <a href="%1$s">Register</a> your account first.', 'wp-analytify'), $link );
+		printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
+	}
+
+	/**
+	 * 	Indicates that the 10 concurrent requests per view (profile) in the Core Reporting API has been reached.
+	 *
+	 * @since 2.0.5
+	 */
+	public static function quota_exceeded_error() {
+		$class   = 'notice notice-warning';
+		$link    = 'https://analytics.google.com/';
+		$message = sprintf( __( 'Limit Quoata. <a href="%1$s">Register</a> your account first.', 'wp-analytify'), $link );
+		printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
+	}
+
 
 }

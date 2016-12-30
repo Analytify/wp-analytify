@@ -278,7 +278,7 @@ if ( ! class_exists( 'Analytify_General' ) ) {
 					echo "</span>
 				</div>
 			</div>";
-			wp_die();
+			
 				}
 			} catch ( Analytify_Google_Auth_Exception $e ) {
 
