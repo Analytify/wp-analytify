@@ -768,7 +768,11 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 		}
 
-		
+		/**
+		 * Get the profiles details summary.
+		 *
+		 * @since 2.0.3
+		 */
 		public function pt_get_analytics_accounts_summary() {
 
 			try {
@@ -780,6 +784,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 					echo '<br /><p class="description">' . esc_html__( 'You must authenticate to access your web profiles.', 'wp-analytify' ) . '</p>';
 				}
 			} catch (Exception $e) {
+				// Show admin notice if some exception occur.
 				WPANALYTIFY_Utils::handle_exceptions( $e );
 			}
 
@@ -842,10 +847,10 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			die();
 		}
 
-		/*
-         * get the Analytics data for wp-admin posts/pages.
-         *
-		 */
+		/**
+		* get the Analytics data for wp-admin posts/pages.
+		*
+		*/
 		public function get_single_admin_analytics( $start_date = '', $end_date = '', $post_id = 0, $ajax = 0 ) {
 
 			global $post;
