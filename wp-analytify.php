@@ -768,7 +768,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 		}
 
-
+		
 		public function pt_get_analytics_accounts_summary() {
 
 			try {
