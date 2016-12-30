@@ -268,7 +268,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		 */
 		public function wpa_check_authentication() {
 
-			if ( isset( $_GET['code'] ) && isset( $_GET['ok'] ) ) {
+			if ( isset( $_GET['code'] ) && 'analytify-settings' === $_GET['page'] ) {
 
 				$key_google_token = sanitize_text_field( wp_unslash( $_GET['code'] ) );
 				update_option( 'WP_ANALYTIFY_NEW_LOGIN', 'yes' );
