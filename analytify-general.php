@@ -107,7 +107,6 @@ if ( ! class_exists( 'Analytify_General' ) ) {
 			} catch ( Analytify_Google_Service_Exception $e ) {
 
 				// Show error message only for logged in users.
-				// Show error message only for logged in users.
 				if ( current_user_can( 'manage_options' ) ) {
 
 					echo sprintf( esc_html__( '%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don\'t worry, This error message is only visible to Administrators. %4$s %2$s ', 'wp-analytify' ), '<br /><br />', '<br />', '<i>', '</i>', esc_textarea( $e->getMessage() ) );
@@ -204,7 +203,6 @@ if ( ! class_exists( 'Analytify_General' ) ) {
 			} catch ( Analytify_Google_Service_Exception $e ) {
 
 				// Show error message only for logged in users.
-				// Show error message only for logged in users.
 				if ( current_user_can( 'manage_options' ) ) {
 					echo "<div class='wp_analytify_error_msg'>";
 					echo sprintf( esc_html__( '%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don\'t worry, This error message is only visible to Administrators. %4$s %2$s', 'wp-analytify' ), '<br /><br />', '<br />', '<i>', '</i>', esc_html( $e->getMessage() ) );
@@ -266,10 +264,21 @@ if ( ! class_exists( 'Analytify_General' ) ) {
 			} catch ( Analytify_Google_Service_Exception $e ) {
 
 				// Show error message only for logged in users.
-				// Show error message only for logged in users.
 				if ( current_user_can( 'manage_options' ) ) {
 
-					echo sprintf( esc_html__( '%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don\'t worry, This error message is only visible to Administrators. %4$s %2$s', 'wp-analytify' ), '<br /><br />', '<br />', '<i>', '</i>', esc_html( $e->getMessage() ) );
+					echo "<div class=\"error-msg\">
+				<div class=\"wpb-error-box\">
+					<span class=\"blk\">
+						<span class=\"line\"></span>
+						<span class=\"dot\"></span>
+					</span>
+					<span class=\"information-txt\">";
+					print_r($e);
+					//echo sprintf( esc_html__( '%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don\'t worry, This error message is only visible to Administrators. %4$s %2$s', 'wp-analytify' ), '<br /><br />', '<br />', '<i>', '</i>', esc_html( $e->getMessage() ) );
+					echo "</span>
+				</div>
+			</div>";
+			wp_die();
 				}
 			} catch ( Analytify_Google_Auth_Exception $e ) {
 
