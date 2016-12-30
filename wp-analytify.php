@@ -769,43 +769,6 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		}
 
 
-		public function limit_usage_error() {
-			$class   = 'notice notice-warning';
-			$link    = 'https://analytics.google.com/';
-			$message = sprintf( __( 'Limit Quoata. <a href="%1$s">Register</a> your account first.', 'wp-analytify'), $link );
-			printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
-		}
-		public function insufficent_permissions_error() {
-			$class   = 'notice notice-warning';
-			$link    = 'https://analytics.google.com/';
-			$message = sprintf( __( 'Limit Quoata. <a href="%1$s">Register</a> your account first.', 'wp-analytify'), $link );
-			printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
-		}
-		public function user_rate_limit_unreg_error() {
-			$class   = 'notice notice-warning';
-			$link    = 'https://analytics.google.com/';
-			$message = sprintf( __( 'Limit Quoata. <a href="%1$s">Register</a> your account first.', 'wp-analytify'), $link );
-			printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
-		}
-		public function user_rate_limit_error() {
-			$class   = 'notice notice-warning';
-			$link    = 'https://analytics.google.com/';
-			$message = sprintf( __( 'Limit Quoata. <a href="%1$s">Register</a> your account first.', 'wp-analytify'), $link );
-			printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
-		}
-		public function rate_limit_exceeded_error() {
-			$class   = 'notice notice-warning';
-			$link    = 'https://analytics.google.com/';
-			$message = sprintf( __( 'Limit Quoata. <a href="%1$s">Register</a> your account first.', 'wp-analytify'), $link );
-			printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
-		}
-		public function quota_exceeded_error() {
-			$class   = 'notice notice-warning';
-			$link    = 'https://analytics.google.com/';
-			$message = sprintf( __( 'Limit Quoata. <a href="%1$s">Register</a> your account first.', 'wp-analytify'), $link );
-			printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
-		}
-
 		public function pt_get_analytics_accounts_summary() {
 
 			try {
@@ -817,28 +780,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 					echo '<br /><p class="description">' . esc_html__( 'You must authenticate to access your web profiles.', 'wp-analytify' ) . '</p>';
 				}
 			} catch (Exception $e) {
-				
-				$_exception_errors = $e->getErrors();
-				if ( $_exception_errors[0]['reason'] == 'dailyLimitExceeded') {
-						add_action( 'admin_notices', array( $this,'limit_usage_error' ), 9 );
-				} else if ( $_exception_errors[0]['reason'] == 'insufficientPermissions' ) {
-						add_action( 'admin_notices', array( $this,'insufficent_permissions_error' ), 9 );
-				} else if ( $_exception_errors[0]['reason'] == 'usageLimits.userRateLimitExceededUnreg' ) {
-						add_action( 'admin_notices', array( $this,'user_rate_limit_unreg_error' ), 9 );
-				} else if ( $_exception_errors[0]['reason'] == 'userRateLimitExceeded' ) {
-						add_action( 'admin_notices', array( $this,'user_rate_limit_error' ), 9 );
-				} else if ( $_exception_errors[0]['reason'] == 'rateLimitExceeded' ) {
-						add_action( 'admin_notices', array( $this,'rate_limit_exceeded_error' ), 9 );
-				} else if ( $_exception_errors[0]['reason'] == 'quotaExceeded' ) {
-						add_action( 'admin_notices', array( $this,'quota_exceeded_error' ), 9 );
-				}
-				// if ( 403 === $e->getCode() ){
-				// 	add_action( 'admin_notices', array( $this,'no_profile_error' ), 9 );
-				// }
-				// else {
-				// 	echo sprintf( esc_html__( '%1$s %2$s oOps, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s Authentication.', 'wp-analytify' ), '<br />', '<strong>', '</strong>', '<br /><br />', '<a href=\'?page=analytify-settings&tab=authentication\' title="Reset">', '</a>' );
-				// }
-
+				WPANALYTIFY_Utils::handle_exceptions( $e );
 			}
 
 		}
