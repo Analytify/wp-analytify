@@ -529,7 +529,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			if ( strpos( $screen->base, 'analytify-settings' ) !== false ) {
 
 				echo '<div class="wrap wpanalytify">';
-					$this->settings->admin_init();
+					$this->settings->rendered_settings();
 					$this->settings->show_tabs();
 					$this->settings->show_forms();
 				echo '</div>';
