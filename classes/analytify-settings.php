@@ -140,7 +140,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 	     * @return array settings fields
 	     */
 		function get_settings_fields() {
-			
+
 			$_profile_otions = WP_ANALYTIFY_FUNCTIONS::fetch_profiles_list_summary();
 
 			$settings_fields = array(
@@ -367,53 +367,58 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 	    	$this->set_fields( $this->get_settings_fields() );
 
 	        // register settings sections
-	    	foreach ( $this->settings_sections as $section ) {
-
-	    		if ( false == get_option( $section['id'] ) ) {
-	    			add_option( $section['id'] );
-	    		}
-
-	    		if ( isset( $section['desc'] ) && ! empty( $section['desc'] ) ) {
-	    			$section['desc'] = '<div class="inside">'.$section['desc'].'</div>';
-	    			$callback = create_function( '', 'echo "'.str_replace( '"', '\"', $section['desc'] ).'";' );
-	    		} else if ( isset( $section['callback'] ) ) {
-	    			$callback = $section['callback'];
-	    		} else {
-	    			$callback = null;
-	    		}
-
-	    		add_settings_section( $section['id'], '', $callback, $section['id'] );
-	    	}
-
-	        // register settings fields
-	    	foreach ( $this->settings_fields as $section => $field ) {
-	    		foreach ( $field as $option ) {
-
-	    			$type = isset( $option['type'] ) ? $option['type'] : 'text';
-
-	    			$args = array(
-	    				'id'                => $option['name'],
-	    				'label_for'         => $args['label_for'] = "{$section}[{$option['name']}]",
-	    				'desc'              => isset( $option['desc'] ) ? $option['desc'] : '',
-	    				'name'              => $option['label'],
-	    				'section'           => $section,
-	    				'size'              => isset( $option['size'] ) ? $option['size'] : null,
-	    				'options'           => isset( $option['options'] ) ? $option['options'] : '',
-	    				'std'               => isset( $option['default'] ) ? $option['default'] : '',
-	    				'sanitize_callback' => isset( $option['sanitize_callback'] ) ? $option['sanitize_callback'] : '',
-	    				'class'              => isset( $option['class'] ) ? $option['class'] : '',
-	    				'type'              => $type,
-	    				);
-
-	    			add_settings_field( $section . '[' . $option['name'] . ']', $option['label'], array( $this, 'callback_' . $type ), $section, $section, $args );
-	    		}
-	    	}
 
 	        // creates our settings in the options table
 	    	foreach ( $this->settings_sections as $section ) {
 	    		register_setting( $section['id'], $section['id'], array( $this, 'sanitize_options' ) );
 	    	}
 	    }
+
+		function rendered_settings() {
+			
+			foreach ( $this->settings_sections as $section ) {
+
+				if ( false == get_option( $section['id'] ) ) {
+					add_option( $section['id'] );
+				}
+
+				if ( isset( $section['desc'] ) && ! empty( $section['desc'] ) ) {
+					$section['desc'] = '<div class="inside">'.$section['desc'].'</div>';
+					$callback = create_function( '', 'echo "'.str_replace( '"', '\"', $section['desc'] ).'";' );
+				} else if ( isset( $section['callback'] ) ) {
+					$callback = $section['callback'];
+				} else {
+					$callback = null;
+				}
+
+				add_settings_section( $section['id'], '', $callback, $section['id'] );
+			}
+
+			  // register settings fields
+			foreach ( $this->settings_fields as $section => $field ) {
+				foreach ( $field as $option ) {
+
+					$type = isset( $option['type'] ) ? $option['type'] : 'text';
+
+					$args = array(
+						'id'                => $option['name'],
+						'label_for'         => $args['label_for'] = "{$section}[{$option['name']}]",
+						'desc'              => isset( $option['desc'] ) ? $option['desc'] : '',
+						'name'              => $option['label'],
+						'section'           => $section,
+						'size'              => isset( $option['size'] ) ? $option['size'] : null,
+						'options'           => isset( $option['options'] ) ? $option['options'] : '',
+						'std'               => isset( $option['default'] ) ? $option['default'] : '',
+						'sanitize_callback' => isset( $option['sanitize_callback'] ) ? $option['sanitize_callback'] : '',
+						'class'              => isset( $option['class'] ) ? $option['class'] : '',
+						'type'              => $type,
+						);
+
+					add_settings_field( $section . '[' . $option['name'] . ']', $option['label'], array( $this, 'callback_' . $type ), $section, $section, $args );
+				}
+			}
+
+		}
 
 
 	    public static function get_current_post_types() {
