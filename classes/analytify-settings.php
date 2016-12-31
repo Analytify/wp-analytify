@@ -23,8 +23,6 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 
 	    public function __construct() {
 
-	    	var_dump(WP_Screen::get_current_screen());
-
 	    	if ( current_user_can( 'manage_options' ) && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
 		    	add_action( 'admin_init', array( $this, 'admin_init' ) );
 	    	}
@@ -38,7 +36,6 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 
 			wp_enqueue_script( 'jquery' );
 		}
-
 
 		/**
 	     * Set settings sections
