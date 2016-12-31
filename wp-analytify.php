@@ -529,7 +529,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			if ( strpos( $screen->base, 'analytify-settings' ) !== false ) {
 
 				echo '<div class="wrap wpanalytify">';
-					$this->settings->admin_init();
+					//$this->settings->admin_init();
 					$this->settings->show_tabs();
 					$this->settings->show_forms();
 				echo '</div>';
@@ -1296,7 +1296,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		}
 
 		/**
-		 * process logout
+		 * process logout and clear stored options.
 		 */
 		public function logout() {
 
@@ -1311,8 +1311,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				//delete_option( 'show_tracking_pointer_1' );
 				delete_option( 'post_analytics_token' );
 				delete_option( 'hide_profiles' );
-
-				delete_transient( 'profiles_list_summary' ); //profiles_list_summary
+				delete_option( 'profiles_list_summary' ); //profiles_list_summary
 
 				$update_message = sprintf( esc_html__( '%1$s %2$s %3$s Authentication Cleared login again. %4$s %5$s %6$s', 'wp-analytify' ), '<div id="setting-error-settings_updated" class="updated notice is-dismissible settings-error below-h2">', '<p>', '<strong>', '</strong>', '</p>', '</div>' );
 			}
