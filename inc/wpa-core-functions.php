@@ -270,15 +270,21 @@ class WP_ANALYTIFY_FUNCTIONS {
 		return $profiles;
 	}
 
+	/**
+	 * Fetch list of all profiles in dropdown
+	 *
+	 * @since  2.0.0
+	 * @return object accounts list
+	 */
 	static function fetch_profiles_list_summary() {
 
 		$wp_analytify = $GLOBALS['WP_ANALYTIFY'];
-		$profiles = get_transient( 'profiles_list_summary' );
+		$profiles = get_option( 'profiles_list_summary' );
 
 		if ( ! $profiles && get_option( 'pa_google_token' ) ) {
 
 			$profiles = $wp_analytify->pt_get_analytics_accounts_summary();
-			set_transient( 'profiles_list_summary' , $profiles, 0 );
+			update_option( 'profiles_list_summary' , $profiles );
 		}
 
 		return $profiles;

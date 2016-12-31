@@ -527,17 +527,17 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			$screen = get_current_screen();
 
 			if ( strpos( $screen->base, 'analytify-settings' ) !== false ) {
+
 				echo '<div class="wrap wpanalytify">';
-
-				$this->settings->show_tabs();
-				$this->settings->show_forms();
-
+					$this->settings->admin_init();
+					$this->settings->show_tabs();
+					$this->settings->show_forms();
 				echo '</div>';
 				?>
 
 				<?php
 				// include_once( ANALYTIFY_ROOT_PATH . '/inc/options-settings.php' );
-				}
+			}
 
 			else if ( strpos( $screen->base, 'analytify-logs' ) !== false ) {
 					include_once( ANALYTIFY_ROOT_PATH . '/inc/page-logs.php' );

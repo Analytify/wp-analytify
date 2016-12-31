@@ -236,7 +236,7 @@ if ( ! class_exists( 'Analytify_General' ) ) {
 
 			try {
 
-				$this->service = new Analytify_Google_Service_Analytics( $this->client );
+				//$this->service = new Analytify_Google_Service_Analytics( $this->client );
 				$params        = array();
 
 				if ( $dimensions ) {
