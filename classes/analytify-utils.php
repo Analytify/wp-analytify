@@ -143,7 +143,7 @@ class WPANALYTIFY_Utils {
 	public static function daily_limit_exceed_error() {
 		$class   = 'notice notice-warning';
 		$link    = 'https://analytics.google.com/';
-		$message = sprintf( __( 'Limit Quoata. <a href="%1$s">Register</a> your account first.', 'wp-analytify'), $link );
+		$message = sprintf( __( 'Daily Limit Exceeded. We highly recommend to use your own API keys in Advanced tab. <a href="%1$s">Register</a> your account first.', 'wp-analytify'), $link );
 		printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
 	}
 

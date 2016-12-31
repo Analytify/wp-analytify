@@ -267,13 +267,6 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 								'class' => 'user_keys',
 							),
 							array(
-								'name'              => 'api_key',
-								'label'             => __( 'API Key:', 'wp-analytify' ),
-								'desc'              => __( '(Optional)', 'wp-analytify' ),
-								'type'              => 'text',
-								'class' => 'user_keys',
-							),
-							array(
 								'name'              => 'redirect_uri',
 								'label'             => __( 'Redirect URI:', 'wp-analytify' ),
 								'desc'              => sprintf(__( '( Redirect URI is very important when you are using your own Keys Use this Redirect URI  %1$s )' , 'wp-analytify' ) ,  '<b>' . admin_url('admin.php?page=analytify-settings') . '</b>' ),
