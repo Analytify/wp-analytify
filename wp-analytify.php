@@ -781,10 +781,11 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 					$profiles = $this->service->management_accountSummaries->listManagementAccountSummaries();
 					return $profiles;
 				} else {
-					echo '<br /><p class="description">' . esc_html__( 'You must authenticate to access your web profiles.', 'wp-analytify' ) . '</p>';
+					echo '<br /><div class="notice notice-warning"><p>' . esc_html__( 'Notice: You must authenticate to access your web profiles.', 'wp-analytify' ) . '</p></div>';
 				}
 			} catch (Exception $e) {
-				// Show admin notice if some exception occur.
+
+				// Show admin notice if some exception occurs.
 				WPANALYTIFY_Utils::handle_exceptions( $e );
 			}
 

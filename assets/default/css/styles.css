@@ -65,6 +65,7 @@
 .wp_analytify_error_msg{
     color:#fa5825;
     text-align: center;
+    word-wrap: break-word;
 }
 /*Footer section code*/
 .analytify_green {

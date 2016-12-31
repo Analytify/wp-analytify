@@ -273,7 +273,7 @@ if ( ! class_exists( 'Analytify_General' ) ) {
 						<span class=\"dot\"></span>
 					</span>
 					<span class=\"information-txt\">";
-					print_r($e);
+					print_r($e->getMessage());
 					//echo sprintf( esc_html__( '%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don\'t worry, This error message is only visible to Administrators. %4$s %2$s', 'wp-analytify' ), '<br /><br />', '<br />', '<i>', '</i>', esc_html( $e->getMessage() ) );
 					echo "</span>
 				</div>

@@ -113,25 +113,30 @@ class WPANALYTIFY_Utils {
 	}
 
 	/**
-	 * Show notice if some exception occur.
+	 * Show notices if some exception occurs.
+	 * 
 	 * @param  array $exception exception details
 	 *
 	 * @since 2.0.5
 	 */
 	public static function handle_exceptions( $exception ) {
+
 		$_exception_errors = $exception->getErrors();
+
 		if ( $_exception_errors[0]['reason'] == 'dailyLimitExceeded' ) {
-				add_action( 'admin_notices', array( 'WPANALYTIFY_Utils','daily_limit_exceed_error' ), 9 );
+			add_action( 'admin_notices', array( 'WPANALYTIFY_Utils','daily_limit_exceed_error' ), 9 );
 		} else if ( $_exception_errors[0]['reason'] == 'insufficientPermissions' ) {
-				add_action( 'admin_notices', array( 'WPANALYTIFY_Utils','insufficent_permissions_error' ), 9 );
+			add_action( 'admin_notices', array( 'WPANALYTIFY_Utils','insufficent_permissions_error' ), 9 );
 		} else if ( $_exception_errors[0]['reason'] == 'usageLimits.userRateLimitExceededUnreg' ) {
-				add_action( 'admin_notices', array( 'WPANALYTIFY_Utils','user_rate_limit_unreg_error' ), 9 );
+			add_action( 'admin_notices', array( 'WPANALYTIFY_Utils','user_rate_limit_unreg_error' ), 9 );
 		} else if ( $_exception_errors[0]['reason'] == 'userRateLimitExceeded' ) {
-				add_action( 'admin_notices', array( 'WPANALYTIFY_Utils','user_rate_limit_error' ), 9 );
+			add_action( 'admin_notices', array( 'WPANALYTIFY_Utils','user_rate_limit_error' ), 9 );
 		} else if ( $_exception_errors[0]['reason'] == 'rateLimitExceeded' ) {
-				add_action( 'admin_notices', array( 'WPANALYTIFY_Utils','rate_limit_exceeded_error' ), 9 );
+			add_action( 'admin_notices', array( 'WPANALYTIFY_Utils','rate_limit_exceeded_error' ), 9 );
 		} else if ( $_exception_errors[0]['reason'] == 'quotaExceeded' ) {
-				add_action( 'admin_notices', array( 'WPANALYTIFY_Utils','quota_exceeded_error' ), 9 );
+			add_action( 'admin_notices', array( 'WPANALYTIFY_Utils','quota_exceeded_error' ), 9 );
+		} else if ( $_exception_errors[0]['reason'] == 'accessNotConfigured' ) {
+			add_action( 'admin_notices', array( 'WPANALYTIFY_Utils','accessNotConfigured' ), 9 );
 		}
 	}
 
@@ -141,9 +146,10 @@ class WPANALYTIFY_Utils {
 	 * @since 2.0.5
 	 */
 	public static function daily_limit_exceed_error() {
+
 		$class   = 'notice notice-warning';
-		$link    = 'https://analytics.google.com/';
-		$message = sprintf( __( 'Daily Limit Exceeded. We highly recommend to use your own API keys in Advanced tab. <a href="%1$s">Register</a> your account first.', 'wp-analytify'), $link );
+		$link    = 'https://analytify.io/doc/fix-403-daily-limit-exceeded/';
+		$message = sprintf( __( '<b>Daily Limit Exceeded:</b> This Indicates that user has exceeded the daily quota (either per project or per view (profile)). Please <a href="%1$s" target="_blank">follow this tutorial</a> to fix this issue. let us know this issue (if it still doesn\'t work) in the Help tab of Analytify->settings page.', 'wp-analytify'), $link );
 		printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
 	}
 
@@ -153,9 +159,10 @@ class WPANALYTIFY_Utils {
 	 * @since 2.0.5
 	 */
 	public static function insufficent_permissions_error() {
+
 		$class   = 'notice notice-warning';
 		$link    = 'https://analytics.google.com/';
-		$message = sprintf( __( 'Limit Quoata. <a href="%1$s">Register</a> your account first.', 'wp-analytify'), $link );
+		$message = sprintf( __( 'Insufficient Permissions: Indicates that the user does not have sufficient permissions for the entity specified in the query. let us know this issue in Help tab of Analytify->settings page.', 'wp-analytify'), $link );
 		printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
 	}
 
@@ -165,9 +172,10 @@ class WPANALYTIFY_Utils {
 	 * @since 2.0.5
 	 */
 	public static function user_rate_limit_unreg_error() {
+
 		$class   = 'notice notice-warning';
-		$link    = 'https://analytics.google.com/';
-		$message = sprintf( __( 'Limit Quoata. <a href="%1$s">Register</a> your account first.', 'wp-analytify'), $link );
+		$link    = 'https://analytify.io/get-client-id-client-secret-developer-api-key-google-developers-console-application/';
+		$message = sprintf( __( '<b>usageLimits.userRateLimitExceededUnreg:</b> Indicates that the application needs to be registered in the Google API Console. Read <a href="%1$s">this guide</a> for to make it work. let us know this issue in (if it still doesn\'t work) Help tab of Analytify->settings page.', 'wp-analytify'), $link );
 		printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
 	}
 
@@ -177,9 +185,11 @@ class WPANALYTIFY_Utils {
 	 * @since 2.0.5
 	 */
 	public static function user_rate_limit_error() {
+
 		$class   = 'notice notice-warning';
-		$link    = 'https://analytics.google.com/';
-		$message = sprintf( __( 'Limit Quoata. <a href="%1$s">Register</a> your account first.', 'wp-analytify'), $link );
+		$link    = 'https://console.developers.google.com/';
+
+		$message = sprintf( __( '<br>User Rate Limit Exceeded:</b> Indicates that the user rate limit has been exceeded. The maximum rate limit is 10 qps per IP address. The default value set in Google API Console is 1 qps per IP address. You can increase this limit in the <a href="%1$s">Google API Console</a> to a maximum of 10 qps. let us know this issue in Help tab of Analytify->settings page.', 'wp-analytify'), $link );
 		printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
 	}
 
@@ -189,9 +199,10 @@ class WPANALYTIFY_Utils {
 	 * @since 2.0.5
 	 */
 	public static function rate_limit_exceeded_error() {
+
 		$class   = 'notice notice-warning';
 		$link    = 'https://analytics.google.com/';
-		$message = sprintf( __( 'Limit Quoata. <a href="%1$s">Register</a> your account first.', 'wp-analytify'), $link );
+		$message = sprintf( __( '<b>Rate Limit Exceeded:</b> Indicates that the global or overall project rate limits have been exceeded. let us know this issue in Help tab of Analytify->settings page.', 'wp-analytify'), $link );
 		printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
 	}
 
@@ -201,10 +212,25 @@ class WPANALYTIFY_Utils {
 	 * @since 2.0.5
 	 */
 	public static function quota_exceeded_error() {
+
 		$class   = 'notice notice-warning';
 		$link    = 'https://analytics.google.com/';
-		$message = sprintf( __( 'Limit Quoata. <a href="%1$s">Register</a> your account first.', 'wp-analytify'), $link );
+		$message = sprintf( __( '<b>Quota Exceeded:</b> This indicates that the 10 concurrent requests per view (profile) in the Core Reporting API has been reached. let us know this issue in Help tab of Analytify->settings page.', 'wp-analytify'), $link );
 		printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
+	}
+
+	/**
+	 * 	Access Not Configured.
+	 *
+	 * @since 2.0.5
+	 */
+	public static function accessNotConfigured() {
+
+		$class   = 'notice notice-warning';
+		$link    = 'https://console.developers.google.com/';
+
+		$message = sprintf( __( '<b>Access Not Configured:</b> Google Analytics API has not been used in this project before or it is disabled. Enable it by visiting your project in <a href="%1$s">Google Project Console</a> then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.', 'wp-analytify' ), $link );
+		printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message );
 	}
 
 

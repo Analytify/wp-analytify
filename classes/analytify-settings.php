@@ -141,7 +141,13 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 	     */
 		function get_settings_fields() {
 
-			$_profile_otions = WP_ANALYTIFY_FUNCTIONS::fetch_profiles_list_summary();
+			
+			if ( isset( $_GET['page'] ) && 'analytify-settings' === $_GET['page'] ) {
+				$_profile_otions = WP_ANALYTIFY_FUNCTIONS::fetch_profiles_list_summary();
+			}else{
+				$_profile_otions = array();
+			}
+
 
 			$settings_fields = array(
 				'wp-analytify-authentication' => array(
