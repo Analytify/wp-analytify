@@ -175,7 +175,7 @@ class WPANALYTIFY_AJAX {
 			}
 
 			// Device Category Stats
-			$device_category_stats = get_transient( md5( 'show-default-overall-device-dashboard' . $dashboard_profile_ID . $compare_start_date . $compare_end_date ) );
+			$device_category_stats = get_transient( md5( 'show-default-overall-device-dashboard' . $dashboard_profile_ID . $start_date . $end_date ) );
 			if ( $device_category_stats === false ) {
 				$device_category_stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions', $start_date, $end_date, 'ga:deviceCategory', '-ga:sessions' );
 				set_transient( md5( 'show-default-overall-device-dashboard' . $dashboard_profile_ID . $start_date . $end_date ) , $device_category_stats, 60 * 60 * 20 );
@@ -185,7 +185,7 @@ class WPANALYTIFY_AJAX {
 			$compare_stats =  get_transient( md5( 'show-default-overall-dashboard-compare' . $dashboard_profile_ID . $compare_start_date . $compare_end_date ) );
 			if ( false === $compare_stats ) {
 				$compare_stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions,ga:users,ga:pageviews,ga:avgSessionDuration,ga:bounceRate,ga:pageviewsPerSession,ga:percentNewSessions,ga:newUsers', $compare_start_date, $compare_end_date );
-				set_transient( md5( 'show-default-overall-dashboard-compare' . $dashboard_profile_ID . $start_date . $end_date ) , $compare_stats, 60 * 60 * 20 );
+				set_transient( md5( 'show-default-overall-dashboard-compare' . $dashboard_profile_ID . $compare_start_date . $compare_end_date ) , $compare_stats, 60 * 60 * 20 );
 			}
 
 			if ( isset( $stats->totalsForAllResults ) ) {
