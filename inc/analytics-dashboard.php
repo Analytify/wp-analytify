@@ -62,10 +62,10 @@ $compare_end_date  	= $start_date;
 $dashboard_profile_ID = $wp_analytify->settings->get_option( 'profile_for_dashboard','wp-analytify-profile' );
 
 // Delete the cache.
-//if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-analytify-dashboard' ) ) {
+if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-analytify-dashboard' ) ) {
 
 	delete_dashboard_transients( $dashboard_profile_ID, $start_date, $end_date );
-//}
+}
 
 	?>
 
