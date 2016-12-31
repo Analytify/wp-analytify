@@ -4,8 +4,8 @@
 **Donate link:** http://paypal.me/Analytify  
 **Tags:** google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced ecommerce tracking  
 **Requires at least:** 3.0  
-**Tested up to:** 4.6.1  
-**Stable tag:** 2.0.4  
+**Tested up to:** 4.7 
+**Stable tag:** 2.0.5
 **License:** GPLv3 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-3.0.html  
 
@@ -103,6 +103,14 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 
 ##  Changelog ##
+
+### 2.0.5 - 2017-01-01 ###
+* Improved API queries performance and code optimization
+* Fixed: Use your own API keys in Advanced Tab.
+* Validation for date selection at Dashboard page.
+* Admin Notice when no website is registered to login account
+* Centre align the errors i.e cleanup interface.
+
 
 ### 2.0.4 - 2016-11-20 ###
 * BugFix: Return empty string if there are no roles

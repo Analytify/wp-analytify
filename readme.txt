@@ -115,6 +115,13 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 == Changelog ==
 
 
+= 2.0.5 - 2017-01-01 =
+* Improved API queries performance and code optimization
+* Fixed: Use your own API keys in Advanced Tab.
+* Validation for date selection at Dashboard page.
+* Admin Notice when no website is registered to login account
+* Centre align the errors i.e cleanup interface.
+
 = 2.0.4 - 2016-11-20 =
 * BugFix: Return empty string if there are no roles
 * BugFix: Echarts Compatibility issues with jQuery Sortable
@@ -266,7 +273,7 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 == Upgrade Notice ==
 
-= 2.0.4 =
+= 2.0.5 =
 * [Important Update] Analytify 2.0: Must Update! Multiple bug fixes and enhancements.
 
 
