@@ -73,7 +73,7 @@
 			<ul class="analytify_compair_features">
 				<li>Dashboard</li>
 				<li>Analytics under Posts (admin)</li>
-				<li>Analytify under Pages (admin)</li>
+				<li>Analytics under Pages (admin)</li>
 				<li></li>
 			</ul>
 		</div>
@@ -87,7 +87,7 @@
 				</div>
 			</div>
 			<ul class="analytify_compair_features">
-				<li>Similar</li>
+				<li>Similar but limited</li>
 				<li>Similar but limited</li>
 				<li>Similar but limited</li>
 			</ul>
@@ -97,16 +97,22 @@
 				<img src="<?php echo plugins_url( 'assets/images/logo_pro_section.png',dirname( __FILE__ )) ?>">
 			</div>
 			<ul class="analytify_compair_features">
-				<li>Dashboard</li>
+				<li>Dashboard (Advanced)</li>
 				<li>Analytics under Posts (admin)</li>
-				<li>Analytify under Pages (admin)</li>
-				<li>Support</li>
+				<li>Analytics under Pages (admin)</li>
+				<li>Comparison Stats (Visitors & Views monthly/yearly)</li>
 				<li>Live Stats</li>
 				<li>ShortCodes</li>
 				<li>Extentions</li>
-				<li>Analytify under Custom Post Types (front/admin)</li>
+				<li>Analytics under Custom Post Types (front/admin)</li>
+				<li>Ajax & JS Error Stats</li>
+				<li>404 Page Error Stats</li>
+				<li>Priority Support</li>
+				<li>No promotion ads</li>
 				<li></li>
 			</ul>
 		</div>
+
+		<div> use GOPRO10 discount code for 10% OFF </div>
 	</div>
 </div>

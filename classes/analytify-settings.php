@@ -871,7 +871,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 			</div>
 
 			<div>
-				<h3><?php esc_html_e( 'Videos' ); ?></h3>
+				<h3><?php //esc_html_e( 'Videos' ); ?></h3>
 				
 			</div>
 
