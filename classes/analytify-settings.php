@@ -960,7 +960,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 			$html  = '<div id="icon-themes" class="icon32"></div>';
 			$html .= '<h2 class="opt-title"><span id="icon-options-general" class="analytics-options"><img src="' . plugins_url( '../assets/images/wp-analytics-logo.png', __FILE__ ) . '" alt="">' . sprintf( esc_html__( '%1$s Settings', 'wp-analytify' ), 'WP Analytify Plugin' ) . '</span></h2>';
 
-			$html .= '<div class="wpa-tab-wrapper" ><h2 class="analytify_nav_tab_wrapper">';
+			$html .= '<div class="wpa-tab-wrapper" ><h2 class="analytify_nav_tab_wrapper nav-tab-wrapper">';
 
 			foreach ( $this->settings_sections as $tab ) {
 				$html .= sprintf( '<a href="#%1$s" class="analytify_nav_tab" id="%1$s-tab">%2$s</a>', $tab['id'], $tab['title'] );
