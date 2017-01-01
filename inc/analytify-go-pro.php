@@ -85,10 +85,10 @@
 		color: #00c853;
 	}
 	.analytify_btn_buy{
-	    font: 400 18px 'Roboto', Arial, Helvetica, sans-serif;
+	    font: 400 25px 'Roboto', Arial, Helvetica, sans-serif;
 	    line-height: 1.2;
 	    color: #fff;
-	    padding: 13px 24px;
+	    padding: 15px 24px;
 	    background: #00c853;
 	    box-shadow: 0 2px 3px rgba(0,0,0, .2);
 	    border: 0px;
