@@ -11,6 +11,7 @@
 		border: 1px solid #e2e5e8;
 		background-color: #fff;
 		border-top: 6px solid #00c853;
+		margin-bottom: 30px;
 	}
 	.analytify_simillar_feature{
 		width: 20%;
@@ -33,9 +34,9 @@
 	.analytify_compair_features li{
 		border-bottom: 1px solid #e2e5e8;
 		margin-bottom: 0;
-		padding: 25px 30px;
-		font-size: 17px;
-		color: #848484;
+		padding: 15px 30px;
+		font-size: 15px;
+		color: #555;
 		background-color: #fff;
 	}
 	.analytify_compair_features li:nth-child(odd){
@@ -45,6 +46,12 @@
 		border:0;
 		background-color: transparent;
 		padding-top: 6px;
+	}
+	.analytify_go_pro_features{
+		border-top-color:#ff5252; 
+	}
+	.analytify_features.analytify_simillar_feature ul li{
+		text-align: center;
 	}
 	.analytify_simillar_label{
 		position: absolute;
@@ -62,6 +69,39 @@
 	.analytify_compair_vs{
 		font-size: 60px;
 		line-height: 200px;
+	}
+	.analytify_discount_code{
+		text-align: center;
+		clear: both;
+	    background-color: #ddeaff;
+	    border-top: 1px solid #ddeaff;
+	    border-bottom: 1px solid #ddeaff;
+	    padding:  40px 0;
+	    font: 300 22px 'Roboto', Arial, Helvetica, sans-serif;
+	    margin-bottom: 30px;
+	}
+	.analytify_discount_code span{
+		font-weight: 700;
+		color: #00c853;
+	}
+	.analytify_btn_buy{
+	    font: 400 18px 'Roboto', Arial, Helvetica, sans-serif;
+	    line-height: 1.2;
+	    color: #fff;
+	    padding: 13px 24px;
+	    background: #00c853;
+	    box-shadow: 0 2px 3px rgba(0,0,0, .2);
+	    border: 0px;
+		margin: 0 auto 20px;
+		display: block;
+		width: 200px;
+		text-align: center;
+		text-decoration: none;
+		border-radius: 4px;
+	}
+	.analytify_btn_buy:hover{
+		color: #fff;
+		box-shadow: 0 2px 3px rgba(0,0,0, 0);
 	}
 </style>
 <div class="analytify_compair_wraper">
@@ -92,7 +132,7 @@
 				<li>Similar but limited</li>
 			</ul>
 		</div>
-		<div class="analytify_features">
+		<div class="analytify_features analytify_go_pro_features">
 			<div class="analytify_compair_logo_wraper">
 				<img src="<?php echo plugins_url( 'assets/images/logo_pro_section.png',dirname( __FILE__ )) ?>">
 			</div>
@@ -112,7 +152,7 @@
 				<li></li>
 			</ul>
 		</div>
-
-		<div> use GOPRO10 discount code for 10% OFF </div>
+		<div class="analytify_discount_code"> use <span>GOPRO10</span> discount code for 10% OFF </div>
+		<a href="https://analytify.io/pricing/" class="analytify_btn_buy">Upgrade Now</a>
 	</div>
 </div>
