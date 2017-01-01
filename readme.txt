@@ -121,6 +121,7 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 * Validation for date selection at Dashboard page.
 * Admin Notice when no website is registered to login account
 * Centre align the errors i.e cleanup interface.
+* Fixed: Total time on site calculation.
 
 = 2.0.4 - 2016-11-20 =
 * BugFix: Return empty string if there are no roles

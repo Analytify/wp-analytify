@@ -110,6 +110,7 @@ First, you need to Authenticate your GA account then you can select your web pro
 * Validation for date selection at Dashboard page.
 * Admin Notice when no website is registered to login account
 * Centre align the errors i.e cleanup interface.
+* Fixed: Total time on site calculation.
 
 
 ### 2.0.4 - 2016-11-20 ###

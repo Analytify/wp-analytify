@@ -253,7 +253,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 							array(
 								'name'              => 'user_advanced_keys',
 								'label'             => __( 'Do you want to use your own API keys ?', 'wp-analytify' ),
-								'desc'              => __( 'You need to create a Project in Google <a target=\'_blank\' href=\'https://console.developers.google.com/project\'>Console</a> Read this simple 3 minutes <a target=\'_blank\' href=\'http://analytify.io/google-api-tutorial\'>tutorial</a> to get your ClientID, Client Secret, Redirect URI and API Key and enter them in below inputs.', 'wp-analytify' ),
+								'desc'              => __( 'It is highly recommended by Google to use your own API keys. <br />You need to create a Project in Google <a target=\'_blank\' href=\'https://console.developers.google.com/project\'>Console</a>. <br />Here is a short <a target=\'_blank\' href=\'https://www.youtube.com/watch?v=X36InlRJtuk\'>video guide</a> to get your own ClientID, Client Secret and Redirect URI and enter them in below inputs.', 'wp-analytify' ),
 								'type'              => 'checkbox',
 								'class'	=> 'user_advanced_keys',
 							),
