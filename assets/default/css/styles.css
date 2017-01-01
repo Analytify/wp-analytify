@@ -152,6 +152,9 @@
     padding-bottom:7px;
     padding-top: 30px;
 }
+.wpanalytify .form-table th:first-child{
+    width: 200px;
+}
 .analytify_main_title_section:after{
     content: "";
     clear: both;
