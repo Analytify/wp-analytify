@@ -870,6 +870,10 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 				<textarea class="debug-log-textarea" autocomplete="off" readonly="" id="debug-log-textarea"></textarea>
 			</div>
 
+			<div>
+				<h3><?php esc_html_e( 'Videos' ); ?></h3>
+				
+			</div>
 
 			<?php
 		}
