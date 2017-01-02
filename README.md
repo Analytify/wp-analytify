@@ -104,6 +104,11 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 ##  Changelog ##
 
+
+### 2.0.6 - 2017-01-03 ###
+* bugfix: ANALYTIFY_Google_AUTH_EXCEPTION error on quota increase.
+* code improvement.
+
 ### 2.0.5 - 2017-01-01 ###
 * Improved API queries performance and code optimization
 * Fixed: Use your own API keys in Advanced Tab.
