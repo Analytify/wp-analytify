@@ -700,12 +700,12 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 			do_action( 'analyitfy_email_setting_submenu' );
 
-			add_submenu_page( 'analytify-dashboard', ANALYTIFY_NICK . esc_html__( 'Settings', 'wp-analytify' ), '<b>' . esc_html__( 'Settings', 'wp-analytify' ) . '</b>', 'manage_options', 'analytify-settings', array(
+			add_submenu_page( 'analytify-dashboard', ANALYTIFY_NICK . esc_html__( 'Settings', 'wp-analytify' ), esc_html__( 'Settings', 'wp-analytify' ), 'manage_options', 'analytify-settings', array(
 				$this,
 				'pa_page_file_path',
 			));
 
-			add_submenu_page( 'analytify-dashboard', ANALYTIFY_NICK . esc_html__( ' list of all Add-ons', 'wp-analytify' ), '<b>' . esc_html__( 'Add-ons', 'wp-analytify' ) . '</b>', 'manage_options', 'analytify-addons', array(
+			add_submenu_page( 'analytify-dashboard', ANALYTIFY_NICK . esc_html__( ' list of all Add-ons', 'wp-analytify' ), esc_html__( 'Add-ons', 'wp-analytify' ), 'manage_options', 'analytify-addons', array(
 				$this,
 				'pa_page_file_path',
 			));
