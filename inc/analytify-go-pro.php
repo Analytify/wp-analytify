@@ -71,7 +71,6 @@
 	.analytify_compair_vs{
 		font-size: 60px;
 		line-height: 200px;
-		margin-top: 120px;
 	}
 	.analytify_discount_code{
 		text-align: center;
@@ -137,11 +136,11 @@
 					Similar
 				</div> -->
 			</div>
-<!-- 			<ul class="analytify_compair_features">
+			<ul class="analytify_compair_features">
 				<li>Similar but limited</li>
 				<li>Similar but limited</li>
 				<li>Similar but limited</li>
-			</ul> -->
+			</ul>
 		</div>
 
 
