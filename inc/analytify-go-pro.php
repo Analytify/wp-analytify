@@ -1,12 +1,8 @@
 <style type="text/css">
 	.analytify_compair_wraper{
-<<<<<<< HEAD
-		padding: 30px 0;
-		max-width: 100%;
+		max-width: 1100px;
 		margin: 0 auto;
-=======
 		padding: 30px 30px;
->>>>>>> 410d664596a7ce2b765505de5d80879180706e74
 	}
 	.analytify_compair_inner{
 		overflow: hidden;
