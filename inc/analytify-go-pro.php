@@ -108,42 +108,6 @@
 </style>
 <div class="analytify_compair_wraper">
 	<div class="analytify_compair_inner">
-		<div class="analytify_features">
-			<div class="analytify_compair_logo_wraper">
-				<img src="<?php echo plugins_url( 'assets/images/logo_free_section.png',dirname( __FILE__ )) ?>">
-			</div>
-			<ul class="analytify_compair_features">
-				<li>Dashboard</li>
-				<li>Analytics under Posts (admin)</li>
-				<li>Analytics under Pages (admin)</li>
-				<li>No</li>
-				<li>No</li>
-				<li>No</li>
-				<li>No</li>
-				<li>No</li>
-				<li>No</li>
-				<li>No</li>
-				<li>WordPress.org Forum Support</li>
-				<li>Promotion Ads</li>
-
-
-			</ul>
-		</div>
-		<div class="analytify_features analytify_simillar_feature">
-			<div class="analytify_compair_logo_wraper">
-				<div class="analytify_compair_vs">
-					VS.
-				</div>
-				<div class="analytify_simillar_label">
-					Similar
-				</div>
-			</div>
-			<ul class="analytify_compair_features">
-				<li>Similar but limited</li>
-				<li>Similar but limited</li>
-				<li>Similar but limited</li>
-			</ul>
-		</div>
 		<div class="analytify_features analytify_go_pro_features">
 			<div class="analytify_compair_logo_wraper">
 				<img src="<?php echo plugins_url( 'assets/images/logo_pro_section.png',dirname( __FILE__ )) ?>">
@@ -161,6 +125,44 @@
 				<li>404 Page Error Stats</li>
 				<li>Priority Email Support</li>
 				<li>No promotion ads</li>
+			</ul>
+		</div>
+		<div class="analytify_features analytify_simillar_feature">
+			<div class="analytify_compair_logo_wraper">
+				<div class="analytify_compair_vs">
+					VS.
+				</div>
+<!-- 				<div class="analytify_simillar_label">
+					Similar
+				</div> -->
+			</div>
+			<ul class="analytify_compair_features">
+				<li>Similar but limited</li>
+				<li>Similar but limited</li>
+				<li>Similar but limited</li>
+			</ul>
+		</div>
+
+
+				<div class="analytify_features">
+			<div class="analytify_compair_logo_wraper">
+				<img src="<?php echo plugins_url( 'assets/images/logo_free_section.png',dirname( __FILE__ )) ?>">
+			</div>
+			<ul class="analytify_compair_features">
+				<li>Dashboard</li>
+				<li>Analytics under Posts (admin)</li>
+				<li>Analytics under Pages (admin)</li>
+				<li>No</li>
+				<li>No</li>
+				<li>No</li>
+				<li>No</li>
+				<li>No</li>
+				<li>Only Tracking</li>
+				<li>Only Tracking</li>
+				<li>WordPress.org Forum Support</li>
+				<li>Promotion Ads</li>
+
+
 			</ul>
 		</div>
 		<div class="analytify_discount_code"> use <span>GOPRO10</span> discount code for 10% OFF </div>

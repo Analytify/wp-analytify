@@ -710,7 +710,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				'pa_page_file_path',
 			));
 
-			add_submenu_page( 'analytify-dashboard', ANALYTIFY_NICK . esc_html__( ' Go Pro', 'wp-analytify' ), '<b style="color:#f9845b">' . esc_html__( 'Go Pro!', 'wp-analytify' ) . '</b>', 'manage_options', 'analytify-go-pro',  array(
+			add_submenu_page( 'analytify-dashboard', ANALYTIFY_NICK . esc_html__( 'Pro vs Free', 'wp-analytify' ), '<b style="color:#f9845b">' . esc_html__( 'Pro vs Free', 'wp-analytify' ) . '</b>', 'manage_options', 'analytify-go-pro',  array(
 				$this,
 				'pa_page_file_path',
 			) );
