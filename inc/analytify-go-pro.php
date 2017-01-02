@@ -116,7 +116,6 @@
 				<li>Dashboard</li>
 				<li>Analytics under Posts (admin)</li>
 				<li>Analytics under Pages (admin)</li>
-				<li></li>
 			</ul>
 		</div>
 		<div class="analytify_features analytify_simillar_feature">
@@ -151,7 +150,6 @@
 				<li>404 Page Error Stats</li>
 				<li>Priority Support</li>
 				<li>No promotion ads</li>
-				<li></li>
 			</ul>
 		</div>
 		<div class="analytify_discount_code"> use <span>GOPRO10</span> discount code for 10% OFF </div>
