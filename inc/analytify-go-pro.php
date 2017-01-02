@@ -1,5 +1,7 @@
 <style type="text/css">
 	.analytify_compair_wraper{
+		max-width: 1100px;
+		margin: 0 auto;
 		padding: 30px 30px;
 	}
 	.analytify_compair_inner{
