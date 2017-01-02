@@ -116,6 +116,17 @@
 				<li>Dashboard</li>
 				<li>Analytics under Posts (admin)</li>
 				<li>Analytics under Pages (admin)</li>
+				<li>No</li>
+				<li>No</li>
+				<li>No</li>
+				<li>No</li>
+				<li>No</li>
+				<li>No</li>
+				<li>No</li>
+				<li>WordPress.org Forum Support</li>
+				<li>Promotion Ads</li>
+
+
 			</ul>
 		</div>
 		<div class="analytify_features analytify_simillar_feature">
@@ -148,7 +159,7 @@
 				<li>Analytics under Custom Post Types (front/admin)</li>
 				<li>Ajax & JS Error Stats</li>
 				<li>404 Page Error Stats</li>
-				<li>Priority Support</li>
+				<li>Priority Email Support</li>
 				<li>No promotion ads</li>
 			</ul>
 		</div>
