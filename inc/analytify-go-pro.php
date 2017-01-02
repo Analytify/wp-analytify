@@ -71,13 +71,14 @@
 	.analytify_compair_vs{
 		font-size: 60px;
 		line-height: 200px;
+		margin-top: 120px;
 	}
 	.analytify_discount_code{
 		text-align: center;
 		clear: both;
-	    background-color: #ddeaff;
+/*	    background-color: #ddeaff;
 	    border-top: 1px solid #ddeaff;
-	    border-bottom: 1px solid #ddeaff;
+	    border-bottom: 1px solid #ddeaff;*/
 	    padding:  40px 0;
 	    font: 300 22px 'Roboto', Arial, Helvetica, sans-serif;
 	    margin-bottom: 30px;
@@ -136,11 +137,11 @@
 					Similar
 				</div> -->
 			</div>
-			<ul class="analytify_compair_features">
+<!-- 			<ul class="analytify_compair_features">
 				<li>Similar but limited</li>
 				<li>Similar but limited</li>
 				<li>Similar but limited</li>
-			</ul>
+			</ul> -->
 		</div>
 
 
@@ -165,7 +166,9 @@
 
 			</ul>
 		</div>
-		<div class="analytify_discount_code"> use <span>GOPRO10</span> discount code for 10% OFF </div>
-		<a href="https://analytify.io/pricing/" class="analytify_btn_buy">Upgrade Now</a>
+		<div class="analytify_discount_code"> 
+			<a href="https://analytify.io/pricing/" class="analytify_btn_buy">Upgrade Now</a>
+		use <span>GOPRO10</span> discount code for 10% OFF </div>
+		
 	</div>
 </div>
