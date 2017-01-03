@@ -264,6 +264,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 								'desc'              => __( 'Your Client ID', 'wp-analytify' ),
 								'type'              => 'text',
 								'class' => 'user_keys',
+								'sanitize_callback' => 'trim',
 							),
 							array(
 								'name'              => 'client_secret',
@@ -271,6 +272,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 								'desc'              => __( 'Your Client Secret', 'wp-analytify' ),
 								'type'              => 'text',
 								'class' => 'user_keys',
+								'sanitize_callback' => 'trim',
 							),
 							array(
 								'name'              => 'redirect_uri',
@@ -278,6 +280,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 								'desc'              => sprintf(__( '( Redirect URI is very important when you are using your own Keys Use this Redirect URI  %1$s )' , 'wp-analytify' ) ,  '<b>' . admin_url('admin.php?page=analytify-settings') . '</b>' ),
 								'type'              => 'text',
 								'class' => 'user_keys',
+								'sanitize_callback' => 'trim',
 							),
 
 						),
