@@ -124,7 +124,7 @@
 				<li>Ajax & JS Error Stats</li>
 				<li>404 Page Error Stats</li>
 				<li>Priority Email Support</li>
-				<li>No promotion ads</li>
+				<li>No promotional ads</li>
 			</ul>
 		</div>
 		<div class="analytify_features analytify_simillar_feature">
@@ -160,13 +160,13 @@
 				<li>Only Tracking</li>
 				<li>Only Tracking</li>
 				<li>WordPress.org Forum Support</li>
-				<li>Promotion Ads</li>
+				<li>Promotional Ads</li>
 
 
 			</ul>
 		</div>
 		<div class="analytify_discount_code"> 
-			<a href="https://analytify.io/pricing/" class="analytify_btn_buy">Upgrade Now</a>
+			<a href="https://analytify.io/go/PRO" class="analytify_btn_buy">Upgrade Now</a>
 		use <span>GOPRO10</span> discount code for 10% OFF </div>
 		
 	</div>

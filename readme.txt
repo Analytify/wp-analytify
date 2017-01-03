@@ -4,7 +4,7 @@ Donate link: http://paypal.me/Analytify
 Tags: google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced ecommerce tracking
 Requires at least: 3.0
 Tested up to: 4.7
-Stable tag: 2.0.6
+Stable tag: 2.0.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -114,6 +114,9 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 == Changelog ==
 
+= 2.0.7 - 2017-01-03 =
+* bugfix: Setting Menu CSS issue fixed.
+* bugfix: Pushed another update that should limit Google API Quota issue.
 
 = 2.0.6 - 2017-01-03 =
 * bugfix: ANALYTIFY_Google_AUTH_EXCEPTION error on quota increase.
@@ -278,8 +281,8 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 == Upgrade Notice ==
 
-= 2.0.5 =
-* [Important Update] Analytify 2.0: Must Update! Multiple bug fixes and enhancements.
+= 2.0.6 =
+* [Must Update] This update should fix the API Quota issue, and menu CSS bug.
 
 
 == Notes ==
@@ -289,10 +292,6 @@ Analytify is the best Google Analytics plugin for WordPress. We make Google Anal
 You’re in luck.
 
 Google Analytics Was Never This Fun In WordPress before. 
-
-
-
-
 
 
 *Following is a list of Testimonials you must read them once.*
