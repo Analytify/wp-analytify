@@ -574,8 +574,8 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				wp_enqueue_style( 'chosen', plugins_url( 'assets/old/css/chosen.css', __FILE__ ) );
 			}
 
-			wp_enqueue_style( 'wp-analytify-style', plugins_url( 'assets/old/css/wp-analytify-style.css', __FILE__ ) );
-			wp_enqueue_style( 'wp-analytify-default-style', plugins_url( 'assets/default/css/styles.css', __FILE__ ) );
+			wp_enqueue_style( 'wp-analytify-style', plugins_url( 'assets/old/css/wp-analytify-style.css', __FILE__ ), false, ANALYTIFY_VERSION );
+			wp_enqueue_style( 'wp-analytify-default-style', plugins_url( 'assets/default/css/styles.css', __FILE__ ), false, ANALYTIFY_VERSION);
 
 			// For WP Pointer
 			if ( get_option( 'show_tracking_pointer_1' ) != 1 ) { wp_enqueue_style( 'wp-pointer' ); }
