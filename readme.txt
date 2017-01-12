@@ -8,13 +8,13 @@ Stable tag: 2.0.8
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Analytify 2.0 is the must-have Plugin for Google Analytics! Now Enhanced eCommerce Google Analytics Tracking is available for WooCommerce and EDD!
+Analytify is the must-have Plugin for Google Analytics! Now Enhanced eCommerce Tracking is available for WooCommerce and EDD!
 
 == Description ==
 
 **[Analytify](http://analytify.io/details)** - makes **Google Analytics** simple for everywhere in WordPress (posts, pages and custom post types). It presents the statistics from Google Analytics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. Now you can get **Google Analytics Dashboard** inside your WordPress Dashboard within a minute.
 
-**Analytify 2.0 is here! Google Analytics Like Never Before! Must check those stunning [Screenshots](https://wordpress.org/plugins/wp-analytify/screenshots/)!**
+**Analytify 2.0 is here! Discover Google Analytics Like Never Before! Must check those stunning [Screenshots](https://wordpress.org/plugins/wp-analytify/screenshots/)!**
 
 **Premium Version:**<br>
 > This plugin has a premium version, which is more easy to install, and shows **Real-Time Stats**, **Campaign Stats**, **ShortCodes**, *Front-end Stats*  and more reports in backend and front-end. Also premium version has better e-commerce tracking (Buy [Add-ons](http://analytify.io/add-ons/) with premium), and campaigns management. Get the affordable Premium Version from [analytify.io](http://analytify.io/upgrade-from-free) . **Bundle price** is also available with Addons.
@@ -285,8 +285,8 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 == Upgrade Notice ==
 
-= 2.0.6 =
-* [Must Update] This update should fix the API Quota issue, and menu CSS bug.
+= 2.0.8 =
+* [Minor Update] This is a minor update to core base.
 
 
 == Notes ==
