@@ -35,6 +35,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 		function admin_enqueue_scripts() {
 
 			wp_enqueue_script( 'jquery' );
+      wp_enqueue_media();
 		}
 
 		/**
@@ -141,7 +142,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 	     */
 		function get_settings_fields() {
 
-			
+
 			if ( isset( $_GET['page'] ) && 'analytify-settings' === $_GET['page'] ) {
 				$_profile_otions = WP_ANALYTIFY_FUNCTIONS::fetch_profiles_list_summary();
 			}else{
@@ -377,7 +378,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 	    }
 
 		function rendered_settings() {
-			
+
 			foreach ( $this->settings_sections as $section ) {
 
 				if ( false == get_option( $section['id'] ) ) {
@@ -751,23 +752,46 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 		}
 
 		/**
-		 * Displays a file upload field for a settings field
+		 * Displays a image upload field for a settings field
 		 *
 		 * @param array $args settings field args
 		 */
-		function callback_file( $args ) {
+		function callback_image( $args ) {
+
 
 			$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
-			$size  = isset( $args['size'] ) && ! is_null( $args['size'] ) ? $args['size'] : 'regular';
-			$id    = $args['section']  . '[' . $args['id'] . ']';
-			$label = isset( $args['options']['button_label'] ) ? $args['options']['button_label'] : __( 'Choose File' );
-
-			$html  = sprintf( '<input type="text" class="%1$s-text wpsa-url" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s"/>', $size, $args['section'], $args['id'], $value );
-			$html  .= '<input type="button" class="button wpsa-browse" value="' . $label . '" />';
-			$html  .= $this->get_field_description( $args );
+			$size = isset( $args['size'] ) && !is_null( $args['size'] ) ? $args['size'] : 'regular';
+			$id = $args['section']  . '[' . $args['id'] . ']';
+			$label = isset( $args['options']['button_label'] ) ?
+			$args['options']['button_label'] :
+			__( 'Choose Image' );
+			$img = wp_get_attachment_image_src( $value );
+			$img_url = $img ? $img[0] : '';
+			$html  = sprintf( '<input type="hidden" class="%1$s-text wpsa-image-id" id="%2$s" name="%2$s" value="%3$s"/>', $size, $id, $value );
+			$html .= '<p class="wpsa-image-preview"><img src="' . $img_url . '" /></p>';
+			$html .= '<input type="button" class="button wpsa-image-browse" value="' . $label . '" />';
+			$html .= '<input type="button" class="button analytify_email_clear" value="Remove Logo" />';
+			$html .= $this->get_field_description( $args );
 
 			echo $html;
 		}
+
+		/**
+		* Displays a file upload field for a settings field
+		*
+		* @param array   $args settings field args
+		*/
+		function callback_file( $args ) {
+			$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
+			$size  = isset( $args['size'] ) && !is_null( $args['size'] ) ? $args['size'] : 'regular';
+			$id    = $args['section']  . '[' . $args['id'] . ']';
+			$label = isset( $args['options']['button_label'] ) ? $args['options']['button_label'] : __( 'Choose File' );
+			$html  = sprintf( '<input type="text" class="%1$s-text wpsa-url" id="%2$s" name="%2$s" value="%3$s"/>', $size, $id, $value );
+			$html  .= '<input type="button" class="button wpsa-browse" value="' . $label . '" />';
+			$html  .= $this->get_field_description( $args );
+			echo $html;
+		}
+
 
 		/**
 		 * Displays a password field for a settings field
@@ -875,7 +899,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 
 			<div>
 				<h3><?php //esc_html_e( 'Videos' ); ?></h3>
-				
+
 			</div>
 
 			<?php
@@ -1179,6 +1203,57 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					// load diagnostic debug log only when help tab is active
 					if( $('.nav-tab-active').attr('href') === '#wp-analytify-help' ) refresh_debug_log();
 					evt.preventDefault();
+				});
+
+
+				//		Email Logo 
+				$('.analytify_email_clear').on('click', function(event) {
+					event.preventDefault();
+					$('.wpsa-image-id').val('');
+					$('.wpsa-image-preview img').attr('src', '');
+					});
+				$('.wpsa-browse').on('click', function (event) {
+					event.preventDefault();
+					var self = $(this);
+					// Create the media frame.
+					var file_frame = wp.media.frames.file_frame = wp.media({
+						title: self.data('uploader_title'),
+						button: {
+							text: self.data('uploader_button_text'),
+						},
+						multiple: false
+					})
+					.on('select', function () {
+						attachment = file_frame.state().get('selection').first().toJSON();
+						self.prev('.wpsa-url').val(attachment.url).change();
+					})
+					// Finally, open the modal
+					.open();
+				});
+				$('.wpsa-image-browse').on('click', function (event) {
+					event.preventDefault();
+					var self = $(this);
+					// Create the media frame.
+					var file_frame = wp.media.frames.file_frame = wp.media({
+						title: self.data('uploader_title'),
+						button: {
+							text: self.data('uploader_button_text'),
+						},
+						multiple: false,
+						library: { type: 'image' }
+					})
+					.on('select', function () {
+						attachment = file_frame.state().get('selection').first().toJSON();
+						var url;
+						if (attachment.sizes && attachment.sizes.thumbnail)
+						url = attachment.sizes.thumbnail.url;
+						else
+						url = attachment.url;
+						self.parent().children('.wpsa-image-id').val(attachment.id).change();
+						self.parent().children('.wpsa-image-preview').children('img').attr('src', url);
+					})
+					// Finally, open the modal
+					.open();
 				});
 
 			});
