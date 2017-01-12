@@ -3,8 +3,8 @@ Contributors: hiddenpearls, Asif2BD
 Donate link: http://paypal.me/Analytify
 Tags: google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced ecommerce tracking
 Requires at least: 3.0
-Tested up to: 4.7
-Stable tag: 2.0.7
+Tested up to: 4.7.1
+Stable tag: 2.0.8
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -113,6 +113,10 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 
 == Changelog ==
+
+= 2.0.8 - 2017-01-12 =
+* New Feature in Email addon: Add Agency logo in email notifications extension instead of Analytify's logo
+* Compatibility with Email add-on version 1.0.2
 
 = 2.0.7 - 2017-01-03 =
 * bugfix: Setting Menu CSS issue fixed.
