@@ -51,6 +51,27 @@ Google Analytics by Analytify is the must-have Plugin for Google Analytics! Now 
 > <strong>Google Analytics by Analytify Development on Github</strong><br>
 > This Google analytics plugin is also [available on github](https://github.com/Analytify/wp-analytify) and ready to take bugs and pull requests. For Support, you can buy the **PRO version**, this will give access to premium updates, support and features.
 
+###### Following are the important add-ons which empower you to setup Google Analytics like a Boss. It really helps to your clients, online stores etc
+
+* [Google Analytics eCommerce Tracking for WooCommerce](https://analytify.io/add-ons/woocommerce/)
+* [Google Analytics eCommerce Tracking for Easy Digital Downloads](https://analytify.io/add-ons/easy-digital-downloads/)
+* [Automated Email Notifications](https://analytify.io/add-ons/email-notifications/)
+* [Google Analytics Campaigns Tracking](https://analytify.io/add-ons/campaigns/)
+
+###### Following is a Complete Hierarchy Structure of Analytify Products Suite.
+
+* Analytify Core (`Free` and Required for all add-ons)
+    * Dashboard widget (`Free`)
+    * Analytify Pro (*Paid*)
+        * Campaigns Tracking (*Paid*)
+        * Email Notifications (*Paid*)
+        * ECommerce Tracking for WooCommerce (*Paid*)
+        * ECommerce Tracking for Easy Digital Downloads (*Paid*)
+
+
+> Compatibility Checks
+> Multilingual & Translateable
+> WPML Compatible
 
 == Installation ==
 
