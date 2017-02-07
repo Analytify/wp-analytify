@@ -158,7 +158,7 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 
 				<?php if ( ! class_exists( 'WP_Analytify_Pro' ) ) : ?>
 				<div class="analytify_general_status">
-					<a href="https://analytify.io" target="_blank"><img src="<?php echo plugins_url( '../assets/images/go-pro-compare.png', __FILE__ )  ?>" alt="Buy Pro" style="width:100%"></a>
+					<a href="https://analytify.io" target="_blank"><img src="<?php echo plugins_url( '../assets/images/analytify_compare.gif', __FILE__ )  ?>" alt="Buy Pro" style="width:100%"></a>
 				</div>
 				<?php endif ?>
 

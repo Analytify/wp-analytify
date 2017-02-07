@@ -1236,19 +1236,19 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 			// echo sprintf( esc_html__( '%1$s %2$s You have been using the %3$s for some time now, do you like it? If so, please consider leaving us a review on WordPress.org! It would help us out a lot and we would really appreciate it. %4$s %5$s Leave a Review %6$s %7$s No thanks %8$s%9$s%10$s', 'wp-analytify' ), '<div class="updated">', '<p>', '<a href="' . esc_url( admin_url( 'admin.php?page=analytify-dashboard' ) ) . '">WP Analytify</a>', '<br><br>', '<a onclick="location.href=\'' . esc_url( $dismiss_url ) . '\';" class="button button-primary" href="' . esc_url( 'https://wordpress.org/support/view/plugin-reviews/wp-analytify?rate=5#postform' ) . '" target="_blank">', '</a>', '<a href="' . esc_url( $dismiss_url ) . '">', '</a>', '</p>', '</div>' );
 		?>
-				<div class="analytify-review-notice">
-					<div class="analytify-review-thumbnail">
-						<img src="<?php echo plugins_url( 'assets/images/notice-logo.svg', __FILE__ ) ?>" alt="">
-					</div>
-					<div class="analytify-review-text">
-						<h3><?php _e( 'Leave A Review?', 'wp-analytify' ) ?></h3>
-						<p><?php _e( 'We hope you\'ve enjoyed using Analytify! Would you consider leaving us a review on WordPress.org?', 'wp-analytify' ) ?></p>
-						<ul class="analytify-review-ul"><li><a href="https://wordpress.org/support/view/plugin-reviews/wp-analytify?rate=5#postform" target="_blank"><span class="dashicons dashicons-external"></span><?php _e( 'Sure! I\'d love to!', 'wp-analytify' ) ?></a></li>
-                 <li><a href="<?php echo $dismiss_url ?>"><span class="dashicons dashicons-smiley"></span><?php _e( 'I\'ve already left a review', 'wp-analytify' ) ?></a></li>
-                 <li><a href="<?php echo $later_url ?>"><span class="dashicons dashicons-calendar-alt"></span><?php _e( 'Maybe Later', 'wp-analytify' ) ?></a></li>
-                 <li><a href="<?php echo $dismiss_url ?>"><span class="dashicons dashicons-dismiss"></span><?php _e( 'Never show again', 'wp-analytify' ) ?></a></li></ul>
-					</div>
+			<div class="analytify-review-notice">
+				<div class="analytify-review-thumbnail">
+					<img src="<?php echo plugins_url( 'assets/images/notice-logo.svg', __FILE__ ) ?>" alt="">
 				</div>
+				<div class="analytify-review-text">
+					<h3><?php _e( 'Leave A Review?', 'wp-analytify' ) ?></h3>
+					<p><?php _e( 'We hope you\'ve enjoyed using Analytify! Would you consider leaving us a review on WordPress.org?', 'wp-analytify' ) ?></p>
+					<ul class="analytify-review-ul"><li><a href="https://wordpress.org/support/view/plugin-reviews/wp-analytify?rate=5#postform" target="_blank"><span class="dashicons dashicons-external"></span><?php _e( 'Sure! I\'d love to!', 'wp-analytify' ) ?></a></li>
+             <li><a href="<?php echo $dismiss_url ?>"><span class="dashicons dashicons-smiley"></span><?php _e( 'I\'ve already left a review', 'wp-analytify' ) ?></a></li>
+             <li><a href="<?php echo $later_url ?>"><span class="dashicons dashicons-calendar-alt"></span><?php _e( 'Maybe Later', 'wp-analytify' ) ?></a></li>
+             <li><a href="<?php echo $dismiss_url ?>"><span class="dashicons dashicons-dismiss"></span><?php _e( 'Never show again', 'wp-analytify' ) ?></a></li></ul>
+				</div>
+			</div>
 		<?php
 		}
 
