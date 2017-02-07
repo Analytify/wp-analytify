@@ -138,7 +138,7 @@
     margin-top: 5px;
     width: auto !important;
 }
-.analytify_nav_tab_wrapper a.nav-tab-active, .analytify_nav_tab_wrapper a.nav-tab-active:focus, 
+.analytify_nav_tab_wrapper a.nav-tab-active, .analytify_nav_tab_wrapper a.nav-tab-active:focus,
 .analytify_nav_tab_wrapper a.nav-tab-active:focus:active, .analytify_nav_tab_wrapper a.nav-tab-active:hover{
     border-bottom: 0px solid #f1f1f1;
     background: #f1f1f1;
@@ -343,7 +343,7 @@
     text-align: left !important;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    min-width: 155px;   
+    min-width: 155px;
 }
 .analytify_selected_dashboard_field:after {
     border-bottom: 2px solid #fff;
@@ -393,7 +393,7 @@
     transform: scale(0.75) translateY(-21px);
     -webkit-transition: all 0.2s cubic-bezier(0.5,0,0,1.25),opacity 0.15s ease-out;
     transition: all 0.2s cubic-bezier(0.5,0,0,1.25),opacity 0.15s ease-out;
-    z-index: 9;   
+    z-index: 9;
 }
 .analytify_dashboards_list li{
     padding: 0;
@@ -572,7 +572,7 @@
     vertical-align:top;
     font-size: 14px;
     padding:20px 8px;
-    float:left;   
+    float:left;
 }
 
 #inner_analytify_dashboard .analytify_status_body{
@@ -744,7 +744,7 @@
 .analytify_ivory_coast,.analytify_cote_d_ivoire{background-position: -101px -196px}
 .analytify_cameroon{background-position: -51px -151px}
 .analytify_democratic_republic_of_the_congo{background-position: -251px -31px}
-.analytify_republic_of_the_congo{background-position: -276px -136px} 
+.analytify_republic_of_the_congo{background-position: -276px -136px}
 .analytify_colombia{background-position: -151px -1px}
 .analytify_costa_rica{background-position: -326px -31px}
 .analytify_cuba{background-position: -301px -31px}
@@ -1392,7 +1392,7 @@
     -webkit-transition: all .25s;
     -moz-transition: all .25s;
     transition: all .25s;
-    cursor: pointer;   
+    cursor: pointer;
 }
 .analytify_test_email_btn:hover {
     box-shadow: none;
@@ -1752,7 +1752,7 @@
 .analytify_wraper .pa_campaigns_statistics{
     padding-top: 30px;
     padding-bottom: 30px;
-    margin-bottom: 0px;    
+    margin-bottom: 0px;
 }
 .analytify_wraper .pa-bigtext .source {
     display: block;
@@ -1762,7 +1762,7 @@
     font-size: 17px;
     color: #848484;
     vertical-align: baseline;
-    font-weight: 300;  
+    font-weight: 300;
 }
 .analytify_wraper .pa_campaigns_statistics .count-visits:after ,.analytify_wraper .large-count:after{
     width: 12px;
@@ -1849,22 +1849,22 @@ div.wp_analytify_pager span.wp_analytify_active, div.wp_analytify_pager span:hov
 .wp_analytify_campaings h3{
     background-size: 83px 51px;
     background-position: 25px 28px;
-    padding-top: 46px;    
+    padding-top: 46px;
 }
 .wp_analytify_dash h3{
     background-size: 60px 76px;
     background-position: 35px 18px;
-    padding-top: 39px;   
+    padding-top: 39px;
 }
 .wp_analytify_edd h3{
     background-size: 111px 65px;
     background-position: 10px 21px;
-    padding-top: 39px;       
+    padding-top: 39px;
 }
 .wp_analytify_email h3{
     background-size: 64px 65px;
     background-position: 32px 22px;
-    padding-top: 48px;      
+    padding-top: 48px;
 }
 .wp-extension .button-primary{
     border:0;
@@ -1915,6 +1915,62 @@ div.wp_analytify_pager span.wp_analytify_active, div.wp_analytify_pager span:hov
 }
 .analytify_single_post_page .analytify_border_th_tp{
     border: 0;
+}
+.analytify-review-notice{
+  padding: 15px 15px 15px 0;
+  background-color: #fff;
+  border-radius: 3px;
+  margin: 20px 20px 0 0;
+  border-left: 4px solid transparent;
+}
+.analytify-review-notice:after{
+  content: '';
+  display: table;
+  clear: both;
+}
+.analytify-review-thumbnail{
+  width: 114px;
+  float: left;
+  line-height: 80px;
+  text-align: center;
+  border-right: 4px solid transparent;
+}
+.analytify-review-thumbnail img{
+  width: 60px;
+  vertical-align: middle;
+}
+.analytify-review-text{
+  overflow: hidden;
+}
+.analytify-review-text h3{
+  font-size: 24px;
+  margin: 0 0 5px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+.analytify-review-text p{
+  font-size: 13px;
+  margin: 0 0 5px;
+}
+.analytify-review-ul{
+  margin: 0;
+  padding: 0;
+}
+.analytify-review-ul li{
+  display: inline-block;
+  margin-right: 15px;
+}
+.analytify-review-ul li a{
+  display: inline-block;
+  color: #10738B;
+  text-decoration: none;
+  padding-left: 26px;
+  position: relative;
+}
+.analytify-review-ul li a span{
+  position: absolute;
+  left: 0;
+  top: -2px;
 }
 /* ========================================================================== Media Queries ========================================================================== */
 @media only screen and (max-width: 1400px) {
