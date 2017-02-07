@@ -154,8 +154,13 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 				if ( in_array( 'show-compare-stats', $selected_stats ) ) {
 					do_action( 'wp_analytify_view_compare_stats' );
 				}
-
 				?>
+
+				<?php if ( ! class_exists( 'WP_Analytify_Pro' ) ) : ?>
+				<div class="analytify_general_status">
+					<a href="https://analytify.io" target="_blank"><img src="<?php echo plugins_url( '../assets/images/go-pro-compare.png', __FILE__ )  ?>" alt="Buy Pro" style="width:100%"></a>
+				</div>
+				<?php endif ?>
 
 				<!-- General Stats -->
 				<?php if (  in_array( 'show-overall-dashboard', $selected_stats ) ) :  ?>
