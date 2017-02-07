@@ -1176,6 +1176,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		public function analytify_review_notice() {
 
 			$this->review_dismissal();
+			$this->review_prending();
 
 			$activation_time 	= get_site_option( 'wp_analytify_active_time' );
 			$review_dismissal	= get_site_option( 'wp_analytify_review_dismiss' );
@@ -1198,6 +1199,28 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		}
 
 		/**
+		 * Set time to current so review notice will popup after 14 days
+		 *
+		 * @since 2.0.9
+		 */
+		function review_prending() {
+
+			// delete_site_option( 'wp_analytify_review_dismiss' );
+			if ( ! is_admin() ||
+				! current_user_can( 'manage_options' ) ||
+				! isset( $_GET['_wpnonce'] ) ||
+				! wp_verify_nonce( sanitize_key( wp_unslash( $_GET['_wpnonce'] ) ), 'analytify-review-nonce' ) ||
+				! isset( $_GET['wp_analytify_review_later'] ) ) {
+
+				return;
+			}
+
+			// Reset Time to current time.
+			update_site_option( 'wp_analytify_active_time', time() );
+
+		}
+
+		/**
 		 * Review notice message
 		 *
 		 * @since  1.3
@@ -1208,8 +1231,25 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			$url         = $_SERVER['REQUEST_URI'] . $scheme . 'wp_analytify_review_dismiss=yes';
 			$dismiss_url = wp_nonce_url( $url, 'analytify-review-nonce' );
 
-			echo sprintf( esc_html__( '%1$s %2$s You have been using the %3$s for some time now, do you like it? If so, please consider leaving us a review on WordPress.org! It would help us out a lot and we would really appreciate it. %4$s %5$s Leave a Review %6$s %7$s No thanks %8$s%9$s%10$s', 'wp-analytify' ), '<div class="updated">', '<p>', '<a href="' . esc_url( admin_url( 'admin.php?page=analytify-dashboard' ) ) . '">WP Analytify</a>', '<br><br>', '<a onclick="location.href=\'' . esc_url( $dismiss_url ) . '\';" class="button button-primary" href="' . esc_url( 'https://wordpress.org/support/view/plugin-reviews/wp-analytify?rate=5#postform' ) . '" target="_blank">', '</a>', '<a href="' . esc_url( $dismiss_url ) . '">', '</a>', '</p>', '</div>' );
+			$_later_link = $_SERVER['REQUEST_URI'] . $scheme . 'wp_analytify_review_later=yes';
+			$later_url   = wp_nonce_url( $_later_link, 'analytify-review-nonce' );
 
+			// echo sprintf( esc_html__( '%1$s %2$s You have been using the %3$s for some time now, do you like it? If so, please consider leaving us a review on WordPress.org! It would help us out a lot and we would really appreciate it. %4$s %5$s Leave a Review %6$s %7$s No thanks %8$s%9$s%10$s', 'wp-analytify' ), '<div class="updated">', '<p>', '<a href="' . esc_url( admin_url( 'admin.php?page=analytify-dashboard' ) ) . '">WP Analytify</a>', '<br><br>', '<a onclick="location.href=\'' . esc_url( $dismiss_url ) . '\';" class="button button-primary" href="' . esc_url( 'https://wordpress.org/support/view/plugin-reviews/wp-analytify?rate=5#postform' ) . '" target="_blank">', '</a>', '<a href="' . esc_url( $dismiss_url ) . '">', '</a>', '</p>', '</div>' );
+		?>
+				<div class="analytify-review-notice">
+					<div class="analytify-review-thumbnail">
+						<img src="<?php echo plugins_url( 'assets/images/notice-logo.svg', __FILE__ ) ?>" alt="">
+					</div>
+					<div class="analytify-review-text">
+						<h3><?php _e( 'Leave A Review?', 'wp-analytify' ) ?></h3>
+						<p><?php _e( 'We hope you\'ve enjoyed using Analytify! Would you consider leaving us a review on WordPress.org?', 'wp-analytify' ) ?></p>
+						<ul class="analytify-review-ul"><li><a href="https://wordpress.org/support/view/plugin-reviews/wp-analytify?rate=5#postform" target="_blank"><span class="dashicons dashicons-external"></span><?php _e( 'Sure! I\'d love to!', 'wp-analytify' ) ?></a></li>
+                 <li><a href="<?php echo $dismiss_url ?>"><span class="dashicons dashicons-smiley"></span><?php _e( 'I\'ve already left a review', 'wp-analytify' ) ?></a></li>
+                 <li><a href="<?php echo $later_url ?>"><span class="dashicons dashicons-calendar-alt"></span><?php _e( 'Maybe Later', 'wp-analytify' ) ?></a></li>
+                 <li><a href="<?php echo $dismiss_url ?>"><span class="dashicons dashicons-dismiss"></span><?php _e( 'Never show again', 'wp-analytify' ) ?></a></li></ul>
+					</div>
+				</div>
+		<?php
 		}
 
 
