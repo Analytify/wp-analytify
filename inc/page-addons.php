@@ -48,9 +48,9 @@ if ( ! class_exists( 'WP_Analytify_Addons' ) ) {
 				'wp_analytify_dash' => (object) array(
 					'url' 		    => 'https://analytify.io/add-ons/google-analytics-dashboard-widget-wordpress/?utm_source=wordpress&utm_medium=plugin&utm_campaign=addons_page&utm_content=google-analytics-dashboard-widget-wordpress',
 					'slug'			  => 'wp-analytify-dashboard/wp-analytify-dashboard.php',
-					'title' 		  => sprintf( esc_html__( 'Google Analytics Dashboard widget', 'wp-analytify' ), '<br />' ),
+					'title' 		  => sprintf( esc_html__( 'Google Analytics Dashboard widget (FREE)', 'wp-analytify' ), '<br />' ),
 					'status'		  => '',
-					'description' => sprintf( esc_html__( 'This Add-on dispays Analytics as a widget at WordPress Dashboard. %1$s It is completely Free.', 'wp-analytify' ), '<br /><br />' ),
+					'description' => sprintf( esc_html__( 'Google Analytics Dashboard widget is a FREE Add-on by Analytify to show Google Analytics widget at WordPress dashboard.', 'wp-analytify' ), '<br /><br />' ),
 					),
 					
 						'wp_analytify_email' => (object) array(
