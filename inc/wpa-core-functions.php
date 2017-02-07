@@ -300,6 +300,10 @@ class WP_ANALYTIFY_FUNCTIONS {
 		if ( ! get_option( 'pa_google_token' ) ) { return; }
 
 		$accounts = self::fetch_profiles_list_summary();
+		
+		if ( ! $accounts ) {
+			return false;
+		}
 
 		foreach ( $accounts->getItems() as $account ) {
 			foreach ( $account->getWebProperties() as  $property ) {
