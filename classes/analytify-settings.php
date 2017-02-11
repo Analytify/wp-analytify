@@ -234,12 +234,12 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 						'type'              => 'chosen',
 						'default' 			=> array(),
 						'options' => array(
-							'show-overall-dashboard'     => 'General Stats',
-							'show-geographic-dashboard'  => 'Geographic Stats',
-							'show-system-stats'          => 'System Stats',
-							'show-keywords-dashboard'    => 'Keywords Stats',
-							'show-social-dashboard'      => 'Social Media Stats',
-							'show-referrer-dashboard'    => 'Referrers Stats',
+							'show-overall-dashboard'     => __( 'General Stats', 'wp-analytify' ),
+							'show-geographic-dashboard'  => __( 'Geographic Stats', 'wp-analytify' ),
+							'show-system-stats'          => __( 'System Stats', 'wp-analytify' ),
+							'show-keywords-dashboard'    => __( 'Keywords Stats', 'wp-analytify' ),
+							'show-social-dashboard'      => __( 'Social Media Stats', 'wp-analytify' ),
+							'show-referrer-dashboard'    => __( 'Referrers Stats', 'wp-analytify' ),
 							),
 						),
 					array(
@@ -885,15 +885,15 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 
 						<p><?php echo sprintf( esc_html__( 'You may ask the WordPress community for help by posting to the %1$s WordPress.org support forum %2$s. Response time can range from a few days to a few weeks and will likely be from a non-developer.', 'wp-analytify' ), '<a href="http://wordpress.org/support/plugin/wp-analytify/" target="_blank">', '</a>' ); ?></p>
 
-						<p class="upgrade-to-pro"><?php echo sprintf( esc_html__( 'If you want a %1$s timely response via email from a developer %2$s who works on this plugin, %3$s upgrade to WP Analytify Pro %4$s and send us an email.' ), '<strong>', '</strong>', '<a href="https://analytify.io/?utm_source=insideplugin&amp;utm_medium=web&amp;utm_content=help-tab&amp;utm_campaign=freeplugin" target="_blank">', '</a>' ); ?></p>
+						<p class="upgrade-to-pro"><?php echo sprintf( esc_html__( 'If you want a %1$s timely response via email from a developer %2$s who works on this plugin, %3$s upgrade to WP Analytify Pro %4$s and send us an email.', 'wp-analytify' ), '<strong>', '</strong>', '<a href="https://analytify.io/?utm_source=insideplugin&amp;utm_medium=web&amp;utm_content=help-tab&amp;utm_campaign=freeplugin" target="_blank">', '</a>' ); ?></p>
 
-						<p><?php echo sprintf( esc_html__( 'If you\'ve found a bug, please %1$s submit an issue at Github %2$s.' ), '<a href="https://github.com/hiddenpearls/wp-analytify/issues" target="_blank">', '</a>' ); ?></p>
+						<p><?php echo sprintf( esc_html__( 'If you\'ve found a bug, please %1$s submit an issue at Github %2$s.', 'wp-analytify' ), '<a href="https://github.com/hiddenpearls/wp-analytify/issues" target="_blank">', '</a>' ); ?></p>
 
 					<?php } ?>
 
 			</div>
 			<div class="wp-analytify-debug">
-					<h3><?php esc_html_e( 'Diagnostic Info &amp; Error Log' ); ?></h3>
+					<h3><?php esc_html_e( 'Diagnostic Info &amp; Error Log', 'wp-analytify' ); ?></h3>
 				<textarea class="debug-log-textarea" autocomplete="off" readonly="" id="debug-log-textarea"></textarea>
 			</div>
 
@@ -989,7 +989,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 
 			// var_dump(get_option( "wp-analytify-profile" ));
 			$html  = '<div id="icon-themes" class="icon32"></div>';
-			$html .= '<h2 class="opt-title"><span id="icon-options-general" class="analytics-options"><img src="' . plugins_url( '../assets/images/wp-analytics-logo.png', __FILE__ ) . '" alt="">' . sprintf( esc_html__( '%1$s Settings', 'wp-analytify' ), 'WP Analytify Plugin' ) . '</span></h2>';
+			$html .= '<h2 class="opt-title"><span id="icon-options-general" class="analytics-options"><img src="' . plugins_url( '../assets/images/wp-analytics-logo.png', __FILE__ ) . '" alt="">' . esc_html__( 'WP Analytify Plugin Settings', 'wp-analytify' ) . '</span></h2>';
 
 			$html .= '<div class="wpa-tab-wrapper" ><h2 class="analytify_nav_tab_wrapper nav-tab-wrapper">';
 
@@ -1206,7 +1206,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 				});
 
 
-				//		Email Logo 
+				//		Email Logo
 				$('.analytify_email_clear').on('click', function(event) {
 					event.preventDefault();
 					$('.wpsa-image-id').val('');

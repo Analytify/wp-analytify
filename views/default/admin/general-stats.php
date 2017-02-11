@@ -28,7 +28,7 @@ function fetch_general_stats( $current, $current_stats, $device_category_stats, 
 		if (!empty($device_data)) {
 		$device_data .= ",";
 		}
-		$device_data .= json_encode(array("name" => ucfirst( $row[0] ), "value" => $row[1])) ;
+		$device_data .= json_encode(array("name" => ucfirst( __(  $row[0], 'wp-analytify' ) ), "value" => $row[1])) ;
 	}
 
 		if ( $device_data == "" ) {
@@ -72,7 +72,7 @@ function fetch_general_stats( $current, $current_stats, $device_category_stats, 
 		              legend: {
 		                  orient: 'horizontal',
 		                  y: 'bottom',
-		                  data: ['New','Returning']
+		                  data: ['<?php _e( 'New', 'wp-analytify') ?>','<?php _e( 'Returning', 'wp-analytify') ?>']
 		              },
 		              series : [
 		                  {
@@ -83,8 +83,8 @@ function fetch_general_stats( $current, $current_stats, $device_category_stats, 
 		                      radius : [20, 60],
 		                      center: ['50%', '42%'],
 		                      data:[
-		                          {name:'New', value:'<?php echo $new_users; ?>' },
-		                          {name:'Returning', value:'<?php echo $returning_users; ?>'}
+		                          {name:'<?php _e( 'New', 'wp-analytify') ?>', value:'<?php echo $new_users; ?>' },
+		                          {name:'<?php _e( 'Returning', 'wp-analytify') ?>', value:'<?php echo $returning_users; ?>'}
 		                      ]
 		                  }
 		              ]
@@ -100,7 +100,7 @@ function fetch_general_stats( $current, $current_stats, $device_category_stats, 
 									legend: {
 											x : 'center',
 											y : 'bottom',
-											data:['Mobile','Tablet','Desktop']
+											data:['<?php _e( 'Mobile', 'wp-analytify' ) ?>','<?php _e( 'Tablet', 'wp-analytify' ) ?>','<?php _e( 'Desktop', 'wp-analytify' ) ?>']
 									},
 
 									series : [
@@ -189,7 +189,7 @@ function fetch_general_stats( $current, $current_stats, $device_category_stats, 
 	</div>
 
 	<div class="analytify_general_status_boxes">
-			<h4><?php esc_html_e( 'visitors', 'wp-analytify' ); ?></h4>
+			<h4><?php esc_html_e( 'Visitors', 'wp-analytify' ); ?></h4>
 			<div class="analytify_general_stats_value"><?php echo WPANALYTIFY_Utils::pretty_numbers( $results['ga:users'] ); ?></div>
 			<p><?php esc_html_e( 'Users that have had at least one session within the selected date range. Includes both new and returning users.', 'wp-analytify' ); ?></p>
 			<?php get_compare_stats( $results['ga:users'], $compare_results['ga:users'], $date_different );?>
@@ -262,7 +262,7 @@ function get_compare_stats( $results, $compare_results, $date_different ) {
 	$class   = $compare > 0 ? 'analytify_green' : 'analytify_red';
 
 	echo '<div class="analytify_general_status_footer_info">
-			<span class="' . $class . '  analytify_info_value"> ' . $compare . ' %</span> ' . $date_different . __( 'ago', 'wp-analytify' ) . '
+			<span class="' . $class . '  analytify_info_value"> ' . $compare . ' %</span> ' . $date_different . __( ' ago', 'wp-analytify' ) . '
 	</div>';
 }
 ?>
