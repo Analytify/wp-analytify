@@ -158,7 +158,7 @@
 				<li><?php _e( 'No', 'wp-analytify' ) ?></li>
 				<li><?php _e( 'No', 'wp-analytify' ) ?></li>
 				<li><?php _e( 'Only Tracking', 'wp-analytify' ) ?></li>
-				<li><?php _e( 'Only Tracking<', 'wp-analytify' ) ?>/li>
+				<li><?php _e( 'Only Tracking', 'wp-analytify' ) ?></li>
 				<li><?php _e( 'WordPress.org Forum Support', 'wp-analytify' ) ?></li>
 				<li><?php _e( 'Promotional Ads', 'wp-analytify' ) ?></li>
 
