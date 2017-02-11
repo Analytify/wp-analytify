@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Analytify - Google Analytics Dashboard\n"
-"POT-Creation-Date: 2017-01-24 09:43+0500\n"
+"POT-Creation-Date: 2017-02-11 15:53+0500\n"
 "PO-Revision-Date: 2017-01-24 09:42+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: wp-analytify.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -275,6 +275,30 @@ msgid ""
 "full statistics."
 msgstr ""
 
+#: classes/analytify-settings.php:237
+msgid "General Stats"
+msgstr ""
+
+#: classes/analytify-settings.php:238
+msgid "Geographic Stats"
+msgstr ""
+
+#: classes/analytify-settings.php:239 inc/analytics-dashboard.php:263
+msgid "System Stats"
+msgstr ""
+
+#: classes/analytify-settings.php:240
+msgid "Keywords Stats"
+msgstr ""
+
+#: classes/analytify-settings.php:241
+msgid "Social Media Stats"
+msgstr ""
+
+#: classes/analytify-settings.php:242
+msgid "Referrers Stats"
+msgstr ""
+
 #: classes/analytify-settings.php:247
 msgid "Exclude Analytics on specific pages:"
 msgstr ""
@@ -463,8 +487,7 @@ msgid "Diagnostic Info &amp; Error Log"
 msgstr ""
 
 #: classes/analytify-settings.php:992
-#, php-format
-msgid "%1$s Settings"
+msgid "WP Analytify Plugin Settings"
 msgstr ""
 
 #: classes/analytify-utils.php:154
@@ -527,27 +550,8 @@ msgid ""
 "retry."
 msgstr ""
 
-#: inc/analytics-dashboard-old.php:55
-#, php-format
-msgid "%1$s Dashboard"
-msgstr ""
-
-#: inc/analytics-dashboard-old.php:95
-#, php-format
-msgid ""
-"Complete Statistics of the Site (%1$s) and profile view (%4$s) Starting From "
-"%2$s to %3$s"
-msgstr ""
-
-#: inc/analytics-dashboard-old.php:425 inc/analytics-dashboard.php:430
-msgid "You must be authenticate to see the Analytics Dashboard."
-msgstr ""
-
-#: inc/analytics-dashboard-old.php:429 inc/analytics-dashboard.php:434
-msgid "You don't have access to Analytify Dashboard."
-msgstr ""
-
-#: inc/analytics-dashboard.php:98 inc/class-wpa-adminbar.php:38
+#: inc/analytics-dashboard.php:98 inc/analytify-go-pro.php:152
+#: inc/class-wpa-adminbar.php:38
 msgid "Dashboard"
 msgstr ""
 
@@ -595,69 +599,150 @@ msgstr ""
 msgid "Select a custom date"
 msgstr ""
 
-#: inc/analytics-dashboard.php:164
+#: inc/analytics-dashboard.php:169
 #: views/default/admin/single-general-stats.php:15
-#: views/old/admin/general-stats.php:11
-#: views/old/admin/single-general-stats.php:10
 msgid "General Statistics"
 msgstr ""
 
-#: inc/analytics-dashboard.php:185 views/old/admin/general-stats.php:196
-#: views/old/admin/single-general-stats.php:147
+#: inc/analytics-dashboard.php:190
 msgid "Did you know that total time on your site is"
 msgstr ""
 
-#: inc/analytics-dashboard.php:195
+#: inc/analytics-dashboard.php:200
 msgid "Top pages by views"
 msgstr ""
 
-#: inc/analytics-dashboard.php:214
+#: inc/analytics-dashboard.php:219
 msgid "List of the top pages and posts."
 msgstr ""
 
-#: inc/analytics-dashboard.php:227
+#: inc/analytics-dashboard.php:232
 msgid "Geographic"
 msgstr ""
 
-#: inc/analytics-dashboard.php:247
+#: inc/analytics-dashboard.php:252
 msgid "Listing statistics of top countries and cities."
 msgstr ""
 
-#: inc/analytics-dashboard.php:258
-msgid "System Stats"
-msgstr ""
-
-#: inc/analytics-dashboard.php:285 views/old/admin/keywords-stats.php:11
+#: inc/analytics-dashboard.php:290
 msgid "How people are finding you (keywords)"
 msgstr ""
 
-#: inc/analytics-dashboard.php:287 inc/analytics-dashboard.php:323
-#: inc/analytics-dashboard.php:361
+#: inc/analytics-dashboard.php:292 inc/analytics-dashboard.php:328
+#: inc/analytics-dashboard.php:366
 msgid "Total Visits"
 msgstr ""
 
-#: inc/analytics-dashboard.php:308
+#: inc/analytics-dashboard.php:313
 msgid "Listing your ranked keywords"
 msgstr ""
 
-#: inc/analytics-dashboard.php:321
+#: inc/analytics-dashboard.php:326
 msgid "Social Media"
 msgstr ""
 
-#: inc/analytics-dashboard.php:347
+#: inc/analytics-dashboard.php:352
 msgid "See how many users are coming to your site from Social media"
 msgstr ""
 
-#: inc/analytics-dashboard.php:359 views/old/admin/referrers-stats.php:7
+#: inc/analytics-dashboard.php:364
 msgid "Top Referrers"
 msgstr ""
 
-#: inc/analytics-dashboard.php:385
+#: inc/analytics-dashboard.php:390
 msgid "who are the strong Referrers to your site ?? See above"
 msgstr ""
 
-#: inc/analytics-dashboard.php:397 views/old/admin/pages-stats.php:8
+#: inc/analytics-dashboard.php:402
 msgid "What's happening when users come to your site."
+msgstr ""
+
+#: inc/analytics-dashboard.php:435
+msgid "You must be authenticate to see the Analytics Dashboard."
+msgstr ""
+
+#: inc/analytics-dashboard.php:439
+msgid "You don't have access to Analytify Dashboard."
+msgstr ""
+
+#: inc/analytify-go-pro.php:116
+msgid "Dashboard (Advanced)"
+msgstr ""
+
+#: inc/analytify-go-pro.php:117 inc/analytify-go-pro.php:153
+msgid "Analytics under Posts (admin)"
+msgstr ""
+
+#: inc/analytify-go-pro.php:118 inc/analytify-go-pro.php:154
+msgid "Analytics under Pages (admin)"
+msgstr ""
+
+#: inc/analytify-go-pro.php:119
+msgid "Comparison Stats (Visitors & Views monthly/yearly)"
+msgstr ""
+
+#: inc/analytify-go-pro.php:120
+msgid "Live Stats"
+msgstr ""
+
+#: inc/analytify-go-pro.php:121
+msgid "ShortCodes"
+msgstr ""
+
+#: inc/analytify-go-pro.php:122
+msgid "Extentions"
+msgstr ""
+
+#: inc/analytify-go-pro.php:123
+msgid "Analytics under Custom Post Types (front/admin)"
+msgstr ""
+
+#: inc/analytify-go-pro.php:124
+msgid "Ajax & JS Error Stats"
+msgstr ""
+
+#: inc/analytify-go-pro.php:125
+msgid "404 Page Error Stats"
+msgstr ""
+
+#: inc/analytify-go-pro.php:126
+msgid "Priority Email Support"
+msgstr ""
+
+#: inc/analytify-go-pro.php:127
+msgid "No promotional ads"
+msgstr ""
+
+#: inc/analytify-go-pro.php:140 inc/analytify-go-pro.php:141
+#: inc/analytify-go-pro.php:142
+msgid "Similar but limited"
+msgstr ""
+
+#: inc/analytify-go-pro.php:155 inc/analytify-go-pro.php:156
+#: inc/analytify-go-pro.php:157 inc/analytify-go-pro.php:158
+#: inc/analytify-go-pro.php:159
+msgid "No"
+msgstr ""
+
+#: inc/analytify-go-pro.php:160
+msgid "Only Tracking"
+msgstr ""
+
+#: inc/analytify-go-pro.php:161
+msgid "Only Tracking<"
+msgstr ""
+
+#: inc/analytify-go-pro.php:162
+msgid "WordPress.org Forum Support"
+msgstr ""
+
+#: inc/analytify-go-pro.php:163
+msgid "Promotional Ads"
+msgstr ""
+
+#: inc/analytify-go-pro.php:169
+#, php-format
+msgid "%1$sUpgrade Now%2$s use %3$s discount code for 10&#37; OFF "
 msgstr ""
 
 #: inc/analytify-widgets.php:9
@@ -719,14 +804,13 @@ msgid ""
 msgstr ""
 
 #: inc/page-addons.php:51
-msgid "Google Analytics Dashboard widget"
+msgid "Google Analytics Dashboard widget (FREE)"
 msgstr ""
 
 #: inc/page-addons.php:53
-#, php-format
 msgid ""
-"This Add-on dispays Analytics as a widget at WordPress Dashboard. %1$s It is "
-"completely Free."
+"Google Analytics Dashboard widget is a FREE Add-on by Analytify to show "
+"Google Analytics widget at WordPress dashboard."
 msgstr ""
 
 #: inc/page-addons.php:59
@@ -778,91 +862,44 @@ msgstr ""
 msgid "Thank you for tracking with Analytify."
 msgstr ""
 
-#: inc/wpa-core-functions.php:207
+#: inc/wpa-core-functions.php:235
 #, php-format
 msgid "%1$s %2$s"
 msgstr ""
 
-#: views/default/admin/browser-stats.php:6 views/old/admin/browser-stats.php:6
+#: views/default/admin/browser-stats.php:6
 msgid "Browsers Statistics"
 msgstr ""
 
 #: views/default/admin/browser-stats.php:42
-#: views/old/admin/browser-stats.php:42
 msgid "listing statistics of top five browsers."
 msgstr ""
 
-#: views/default/admin/campaign-stats.php:7
-#: views/old/admin/campaign-stats.php:7
-msgid "Campaigns Statistics"
+#: views/default/admin/general-stats.php:75
+#: views/default/admin/general-stats.php:86
+msgid "New"
 msgstr ""
 
-#: views/default/admin/campaign-stats.php:30
+#: views/default/admin/general-stats.php:75
+#: views/default/admin/general-stats.php:87
+msgid "Returning"
+msgstr ""
+
+#: views/default/admin/general-stats.php:103
+msgid "Mobile"
+msgstr ""
+
+#: views/default/admin/general-stats.php:103
+msgid "Tablet"
+msgstr ""
+
+#: views/default/admin/general-stats.php:103
+msgid "Desktop"
+msgstr ""
+
 #: views/default/admin/general-stats.php:185
 #: views/default/admin/single-general-stats.php:20
-#: views/old/admin/campaign-stats.php:30
 msgid "Sessions"
-msgstr ""
-
-#: views/default/admin/campaign-stats.php:39
-#: views/old/admin/campaign-stats.php:39
-msgid "% New Sessions"
-msgstr ""
-
-#: views/default/admin/campaign-stats.php:40
-#: views/old/admin/campaign-stats.php:40
-msgid "New Users"
-msgstr ""
-
-#: views/default/admin/campaign-stats.php:51
-#: views/old/admin/campaign-stats.php:51
-msgid "Bounce Rate"
-msgstr ""
-
-#: views/default/admin/campaign-stats.php:67
-#: views/old/admin/campaign-stats.php:67
-msgid "Pages / Session"
-msgstr ""
-
-#: views/default/admin/campaign-stats.php:69
-#: views/old/admin/campaign-stats.php:69
-msgid "Avg. Session duration"
-msgstr ""
-
-#: views/default/admin/campaign-stats.php:77
-#: views/old/admin/campaign-stats.php:77
-msgid "No Campaigns."
-msgstr ""
-
-#: views/default/admin/campaign-stats.php:87
-#: views/old/admin/campaign-stats.php:87
-msgid "You are running "
-msgstr ""
-
-#: views/default/admin/city-stats.php:6 views/old/admin/city-stats.php:6
-msgid "Top Cities"
-msgstr ""
-
-#: views/default/admin/city-stats.php:31 views/old/admin/city-stats.php:31
-msgid "Listing statistics of top five cities."
-msgstr ""
-
-#: views/default/admin/country-stats.php:6 views/old/admin/country-stats.php:6
-msgid "Top Countries"
-msgstr ""
-
-#: views/default/admin/country-stats.php:36
-#: views/default/admin/system-stats.php:21
-#: views/default/admin/system-stats.php:53
-#: views/default/admin/system-stats.php:81 views/old/admin/country-stats.php:36
-#: views/old/admin/keywords-stats.php:33 views/old/admin/referrers-stats.php:41
-#: views/old/admin/social-stats.php:46
-msgid "Visits"
-msgstr ""
-
-#: views/default/admin/country-stats.php:52
-#: views/old/admin/country-stats.php:52
-msgid "Listing statistics of top five countries."
 msgstr ""
 
 #: views/default/admin/general-stats.php:187
@@ -873,14 +910,13 @@ msgid ""
 msgstr ""
 
 #: views/default/admin/general-stats.php:192
-#: views/default/admin/single-general-stats.php:26
-msgid "visitors"
+#: views/default/admin/geographic-stats.php:121
+#: views/default/admin/geographic-stats.php:142
+msgid "Visitors"
 msgstr ""
 
 #: views/default/admin/general-stats.php:194
 #: views/default/admin/single-general-stats.php:28
-#: views/old/admin/general-stats.php:37
-#: views/old/admin/single-general-stats.php:34
 msgid ""
 "Users that have had at least one session within the selected date range. "
 "Includes both new and returning users."
@@ -893,8 +929,6 @@ msgstr ""
 
 #: views/default/admin/general-stats.php:201
 #: views/default/admin/single-general-stats.php:34
-#: views/old/admin/general-stats.php:117
-#: views/old/admin/single-general-stats.php:92
 msgid ""
 "Pageviews is the total number of pages viewed. Repeated views of a single "
 "page are counted."
@@ -928,7 +962,6 @@ msgstr ""
 #: views/default/admin/general-stats.php:222
 #: views/default/admin/general-stats.php:229
 #: views/default/admin/single-general-stats.php:52
-#: views/old/admin/general-stats.php:99 views/old/admin/general-stats.php:141
 msgid ""
 "Pages/Session is the average number of pages viewed during a session. "
 "Repeated views of a single page are counted."
@@ -948,27 +981,22 @@ msgid "Devices of visitors"
 msgstr ""
 
 #: views/default/admin/general-stats.php:265
-msgid "ago"
+msgid " ago"
 msgstr ""
 
 #: views/default/admin/geographic-stats.php:120
 msgid "Top countries"
 msgstr ""
 
-#: views/default/admin/geographic-stats.php:121
-#: views/default/admin/geographic-stats.php:142
-msgid "Visitors"
-msgstr ""
-
 #: views/default/admin/geographic-stats.php:141
 msgid "Top cities"
 msgstr ""
 
-#: views/default/admin/os-stats.php:6 views/old/admin/os-stats.php:6
+#: views/default/admin/os-stats.php:6
 msgid "Operating System Statistics"
 msgstr ""
 
-#: views/default/admin/os-stats.php:31 views/old/admin/os-stats.php:31
+#: views/default/admin/os-stats.php:31
 msgid "Listing statistics of top five operating systems."
 msgstr ""
 
@@ -993,6 +1021,10 @@ msgstr ""
 msgid "Did you know that %s people landed directly to your site at %s"
 msgstr ""
 
+#: views/default/admin/single-general-stats.php:26
+msgid "visitors"
+msgstr ""
+
 #: views/default/admin/single-general-stats.php:38
 msgid "Avg. time on Page"
 msgstr ""
@@ -1002,27 +1034,29 @@ msgid "The amount of time (session) a user spends on this page."
 msgstr ""
 
 #: views/default/admin/single-pages-stats.php:8
-#: views/old/admin/single-pages-stats.php:8
 msgid "What's happening when users come to this page."
 msgstr ""
 
 #: views/default/admin/single-pages-stats.php:42
-#: views/old/admin/pages-stats.php:41 views/old/admin/single-pages-stats.php:42
 msgid "Total Exits"
 msgstr ""
 
 #: views/default/admin/single-pages-stats.php:57
-#: views/old/admin/pages-stats.php:61 views/old/admin/single-pages-stats.php:57
 msgid "Did you know that"
 msgstr ""
 
 #: views/default/admin/single-pages-stats.php:57
-#: views/old/admin/single-pages-stats.php:57
 msgid "people landed at this page directly."
 msgstr ""
 
 #: views/default/admin/system-stats.php:20
 msgid "Browsers statistics"
+msgstr ""
+
+#: views/default/admin/system-stats.php:21
+#: views/default/admin/system-stats.php:53
+#: views/default/admin/system-stats.php:81
+msgid "Visits"
 msgstr ""
 
 #: views/default/admin/system-stats.php:52
@@ -1039,104 +1073,6 @@ msgstr ""
 
 #: views/default/admin/top-pages-stats.php:13
 msgid "Views"
-msgstr ""
-
-#: views/old/admin/general-stats.php:15
-#: views/old/admin/single-general-stats.php:15
-msgid "SESSIONS"
-msgstr ""
-
-#: views/old/admin/general-stats.php:24
-#: views/old/admin/single-general-stats.php:22
-msgid ""
-"Total number of Sessions within the date range. A session is the period time "
-"a user is actively engaged with your website, app, etc."
-msgstr ""
-
-#: views/old/admin/general-stats.php:29
-#: views/old/admin/single-general-stats.php:28
-msgid "USERS"
-msgstr ""
-
-#: views/old/admin/general-stats.php:41
-#: views/old/admin/single-general-stats.php:39
-msgid "BOUNCE RATE"
-msgstr ""
-
-#: views/old/admin/general-stats.php:57
-#: views/old/admin/single-general-stats.php:53
-msgid ""
-"Bounce Rate is the percentage of single-page visits (i.e. visits in which "
-"the person left your site from the entrance page without interacting with "
-"the page)."
-msgstr ""
-
-#: views/old/admin/general-stats.php:61
-msgid "AVG TIME ON SITE"
-msgstr ""
-
-#: views/old/admin/general-stats.php:78
-#: views/old/admin/single-general-stats.php:74
-msgid "The amount of time someone spends on your site."
-msgstr ""
-
-#: views/old/admin/general-stats.php:81
-msgid "AVERAGE PAGES"
-msgstr ""
-
-#: views/old/admin/general-stats.php:103
-#: views/old/admin/single-general-stats.php:77
-msgid "PAGE VIEWS"
-msgstr ""
-
-#: views/old/admin/general-stats.php:122
-msgid " % NEW SESSIONS"
-msgstr ""
-
-#: views/old/admin/general-stats.php:145
-#: views/old/admin/single-general-stats.php:96
-msgid "NEW/RETURNING VISITORS"
-msgstr ""
-
-#: views/old/admin/general-stats.php:179
-msgid "New "
-msgstr ""
-
-#: views/old/admin/general-stats.php:180
-#: views/old/admin/single-general-stats.php:131
-msgid "Returning"
-msgstr ""
-
-#: views/old/admin/keywords-stats.php:47
-msgid "See which keywords are matching what users search."
-msgstr ""
-
-#: views/old/admin/pages-stats.php:61
-msgid " people landed directly to your site at "
-msgstr ""
-
-#: views/old/admin/referrers-stats.php:57
-msgid "who are the strong Referrers to your site ?? See above."
-msgstr ""
-
-#: views/old/admin/single-general-stats.php:57
-msgid "AVG TIME ON THIS PAGE"
-msgstr ""
-
-#: views/old/admin/single-general-stats.php:130
-msgid "New"
-msgstr ""
-
-#: views/old/admin/social-stats.php:11
-msgid "Social Media Statistics"
-msgstr ""
-
-#: views/old/admin/social-stats.php:62
-msgid "See how many users are coming to your site from Social media."
-msgstr ""
-
-#: views/old/admin/top-pages-stats.php:7
-msgid "Top pages by views."
 msgstr ""
 
 #: welcome.php:49 welcome.php:50
@@ -1630,16 +1566,33 @@ msgstr ""
 msgid "Thankyou!\\nYour Coupon code is Analytify2016"
 msgstr ""
 
-#: wp-analytify.php:1211
-#, php-format
-msgid ""
-"%1$s %2$s You have been using the %3$s for some time now, do you like it? If "
-"so, please consider leaving us a review on WordPress.org! It would help us "
-"out a lot and we would really appreciate it. %4$s %5$s Leave a Review %6$s "
-"%7$s No thanks %8$s%9$s%10$s"
+#: wp-analytify.php:1244
+msgid "Leave A Review?"
 msgstr ""
 
-#: wp-analytify.php:1318
+#: wp-analytify.php:1245
+msgid ""
+"We hope you've enjoyed using Analytify! Would you consider leaving us a "
+"review on WordPress.org?"
+msgstr ""
+
+#: wp-analytify.php:1246
+msgid "Sure! I'd love to!"
+msgstr ""
+
+#: wp-analytify.php:1247
+msgid "I've already left a review"
+msgstr ""
+
+#: wp-analytify.php:1248
+msgid "Maybe Later"
+msgstr ""
+
+#: wp-analytify.php:1249
+msgid "Never show again"
+msgstr ""
+
+#: wp-analytify.php:1358
 #, php-format
 msgid "%1$s %2$s %3$s Authentication Cleared login again. %4$s %5$s %6$s"
 msgstr ""
