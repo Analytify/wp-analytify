@@ -186,6 +186,34 @@ function transliterateString( $txt ) {
     return str_replace( array_keys ( $transliterationTable ), array_values( $transliterationTable ), $txt );
 }
 
+
+/**
+ * Helper function for translation.
+ */
+if ( ! function_exists( 'analytify__' ) ) {
+	/**
+	 * Wrapper for __() gettext function.
+	 * @param  string $string     Translatable text string
+	 * @param  string $textdomain Text domain, default: wp-analytify
+	 * @return void
+	 */
+	function analytify__( $string, $textdomain = 'wp-analytify' ) {
+		return __( $string, $textdomain );
+	}
+}
+
+if ( ! function_exists( 'analytify_e' ) ) {
+	/**
+	 * Wrapper for _e() gettext function.
+	 * @param  string $string     Translatable text string
+	 * @param  string $textdomain Text domain, default: wp-analytify
+	 * @return void
+	 */
+	function analytify_e( $string, $textdomain = 'wp-analytify' ) {
+		echo __( $string, $textdomain );
+	}
+}
+
 class WP_ANALYTIFY_FUNCTIONS {
 
 
@@ -300,7 +328,7 @@ class WP_ANALYTIFY_FUNCTIONS {
 		if ( ! get_option( 'pa_google_token' ) ) { return; }
 
 		$accounts = self::fetch_profiles_list_summary();
-		
+
 		if ( ! $accounts ) {
 			return false;
 		}
