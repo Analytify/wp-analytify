@@ -308,7 +308,7 @@ $(document).click(function (e){
       url: ajaxurl,
       type: 'POST',
       data: {
-        action: 'remove_comparison_gif'
+        action: 'analytify_remove_comparison_gif'
       }
     });
   });
