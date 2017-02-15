@@ -1987,6 +1987,7 @@ div.wp_analytify_pager span.wp_analytify_active, div.wp_analytify_pager span:hov
   width: auto;
   padding-right: 30px;
   font-family: 'Roboto Slab',serif;
+  z-index: 1000;
 }
 .analytify_general_status-icon:before{
   display: none;
@@ -2001,6 +2002,9 @@ div.wp_analytify_pager span.wp_analytify_active, div.wp_analytify_pager span:hov
 }
 .analytify_general_status-icon:hover{
   color: #448aff;
+}
+.analytify_general_status-gif img{
+  opacity: .4;
 }
 /* ========================================================================== Media Queries ========================================================================== */
 @media only screen and (max-width: 1400px) {
