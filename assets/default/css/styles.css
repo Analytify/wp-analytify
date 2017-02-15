@@ -1972,6 +1972,36 @@ div.wp_analytify_pager span.wp_analytify_active, div.wp_analytify_pager span:hov
   left: 0;
   top: -2px;
 }
+.analytify_general_status-gif{
+  position: relative;
+}
+.analytify_general_status-icon{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #444444;
+  font-size: 16px;
+  height: 30px;
+  line-height: 30px;
+  cursor: pointer;
+  width: auto;
+  padding-right: 30px;
+  font-family: 'Roboto Slab',serif;
+}
+.analytify_general_status-icon:before{
+  display: none;
+}
+.analytify_general_status-icon:after{
+  content: "\f335";
+  font-size: 30px;
+  position: absolute;
+  top: 2px;
+  right: 0;
+  font-family: dashicons;
+}
+.analytify_general_status-icon:hover{
+  color: #448aff;
+}
 /* ========================================================================== Media Queries ========================================================================== */
 @media only screen and (max-width: 1400px) {
     .analytify_data_tables th, .analytify_data_tables td{

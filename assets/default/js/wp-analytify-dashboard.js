@@ -298,4 +298,19 @@ $(document).click(function (e){
         });
 }
 
+  /**
+   * Send ajax on cross of add.
+   * 
+   */
+  $('.analytify_general_status-icon').on('click', function() {
+    $(this).parent().remove();
+    $.ajax({
+      url: ajaxurl,
+      type: 'POST',
+      data: {
+        action: 'analytify_remove_gif_add'
+      }
+    });
+  });
+
 });

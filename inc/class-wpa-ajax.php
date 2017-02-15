@@ -46,6 +46,7 @@ class WPANALYTIFY_AJAX {
 			'load_default_social_media' => false,
 			'load_default_reffers' => false,
 			'dismiss_pointer'	=> true,
+			'remove_gif_add' => false,
 			);
 
 		foreach ( $ajax_calls as $ajax_call => $no_priv ) {
@@ -871,6 +872,17 @@ class WPANALYTIFY_AJAX {
 		update_option('show_tracking_pointer_1', 1);
 		die();
 	}
+
+	/**
+	 * Remove Gif Add
+	 *
+	 * @since 2.0.11
+	 */
+	public static function remove_gif_add() {
+		update_option( 'analytify_remove_gif', 'yes' );
+		wp_die();
+	}
+
 }
 
 function wp_analytify_ajax_load() {
