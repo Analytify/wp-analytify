@@ -1974,31 +1974,69 @@ div.wp_analytify_pager span.wp_analytify_active, div.wp_analytify_pager span:hov
 }
 .analytify_general_status-gif{
   position: relative;
+  margin-bottom: 20px;
+}
+.analytify_go_pro_overlay{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.4);
+    text-align: center;
+}
+.analytify_go_pro_overlay_inner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+}
+.analytify_h2{
+    font-size: 60px !important;
+    color: #fff !important;
+}
+.analytify_btn{
+    background: #00c853;
+    padding: 16px 42px;
+    margin-top: 13px;
+    box-shadow: 0 2px 3px rgba(0,0,0,.2);
+    font-size: 18px;
+    border: 0px;
+    display: inline-block;
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+}
+.analytify_btn:hover{
+    box-shadow: none;
+    color: #fff;
 }
 .analytify_general_status-icon{
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #ff5252;
-  font-size: 16px;
-  height: 30px;
-  line-height: 30px;
-  cursor: pointer;
-  width: auto;
-  padding-right: 30px;
-  font-family: 'Roboto Slab',serif;
-  z-index: 1000;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: #ff5252;
+    font-size: 16px;
+    height: 50px;
+    line-height: 46px;
+    cursor: pointer;
+    width: auto;
+    padding: 0px 50px 0 30px;
+    font-family: 'Roboto Slab',serif;
+    z-index: 1000;
+    background-color: rgba(0,0,0,.5);
 }
 .analytify_general_status-icon:before{
   display: none;
 }
 .analytify_general_status-icon:after{
-  content: "\f335";
-  font-size: 30px;
-  position: absolute;
-  top: 2px;
-  right: 0;
-  font-family: dashicons;
+    content: "\f335";
+    font-size: 30px;
+    position: absolute;
+    top: 2px;
+    right: 7px;
+    font-family: dashicons;
 }
 .analytify_general_status-icon:hover{
   color: #448aff;

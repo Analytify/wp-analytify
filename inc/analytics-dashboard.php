@@ -281,6 +281,12 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 				<div class="analytify_general_status analytify_general_status-gif">
 					<span class="dashicons dashicons-no-alt analytify_general_status-icon">Remove</span>
 					<a href="https://analytify.io/upgrade-from-free" target="_blank"><img src="<?php echo plugins_url( '../assets/images/analytify_compare.gif', __FILE__ )  ?>" alt="Buy Pro" style="width:100%"></a>
+					<div class="analytify_go_pro_overlay">
+						<div class="analytify_go_pro_overlay_inner">
+							<div class="analytify_h2">Premium feature</div>
+							<a href="https://analytify.io/upgrade-from-free" class="analytify_btn" target="_blank">Upgrade Now</a>
+						</div>
+					</div>
 				</div>
 				<?php endif ?>
 				<!-- Gif Add End -->
