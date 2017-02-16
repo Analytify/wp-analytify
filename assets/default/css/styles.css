@@ -1972,6 +1972,9 @@ div.wp_analytify_pager span.wp_analytify_active, div.wp_analytify_pager span:hov
   left: 0;
   top: -2px;
 }
+.analytify_block{
+    display: block;
+}
 .analytify_general_status-gif{
   position: relative;
   margin-bottom: 20px;
@@ -1995,6 +1998,8 @@ div.wp_analytify_pager span.wp_analytify_active, div.wp_analytify_pager span:hov
 .analytify_h2{
     font-size: 60px !important;
     color: #fff !important;
+    text-decoration: none;
+    display: block;
 }
 .analytify_btn{
     background: #00c853;
