@@ -279,16 +279,15 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 				<!-- Gif Add Start -->
 				<?php if ( ! class_exists( 'WP_Analytify_Pro' ) && get_option( 'analytify_remove_comparison_gif' ) != 'yes' ) : ?>
 				<div class="analytify_general_status analytify_general_status-gif">
-					<span class="dashicons dashicons-no-alt analytify_general_status-icon">Remove</span>
+					<span class="dashicons dashicons-no-alt analytify_general_status-icon">Dismiss</span>
 					<a href="https://analytify.io/upgrade-from-free" class="analytify_block" target="_blank">
-						<img src="<?php echo plugins_url( '../assets/images/analytify_compare.gif', __FILE__ )  ?>" alt="Buy Pro" style="width:100%">
+						<img src="<?php echo plugins_url( '../assets/images/analytify_compare.gif', __FILE__ )  ?>" alt="Upgrade to Pro" style="width:100%">
 						<a href="https://analytify.io/upgrade-from-free" class="analytify_go_pro_overlay" target="_blank">
 						 
 							<span class="analytify_go_pro_overlay_inner">
 								<span class="analytify_h2">Premium feature</span>
 								<span class="analytify_btn" target="_blank">Upgrade Now</span>
 							</span>
-						 
 					</a>
 				</div>
 				<?php endif ?>
