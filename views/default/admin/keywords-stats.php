@@ -17,7 +17,16 @@ function fetch_keywords_stats( $current, $stats , $return = false ) {
 			<?php 	if (  isset( $stats['rows'] ) && $stats['rows'] > 0 ) : ?>
 				<?php foreach ( $stats['rows'] as $row ): ?>
 					<tr>
-						<td><?php echo $row[0]; ?>
+						<td>
+							<?php
+							if ( '(not provided)' == $row[0] ) {
+								_e( '(not provided)', 'wp-analytify' );
+							} elseif ( '(not set)' == $row[0] ) {
+								_e( '(not set)', 'wp-analytify' );
+							} else{
+								echo $row[0];
+							}
+							 ?>
 							<span class="analytify_bar_graph">
 								<span style="width: <?php echo  ( $row[1] / $total_visits ) * 100 ?>%"></span>
 							</span>

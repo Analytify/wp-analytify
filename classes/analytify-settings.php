@@ -908,8 +908,8 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 		function callback_email_form( ) {
 			?>
 			<form class="" action="" method="post">
-				<input type="submit" name="test_email" class="analytify_test_email_btn" value="Test Email" />
-				<span class="analytify_setting_note">Note: Please save changes before sending a test email.</span>
+				<input type="submit" name="test_email" class="analytify_test_email_btn" value="<?php _e( 'Test Email', 'wp-analytify' ) ?>" />
+				<span class="analytify_setting_note"><?php _e( 'Note: Please save changes before sending a test email.', 'wp-analytify' ) ?></span>
 			</form>
 			<?php
 		}

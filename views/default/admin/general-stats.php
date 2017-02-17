@@ -24,11 +24,20 @@ function fetch_general_stats( $current, $current_stats, $device_category_stats, 
 	$compare_results = $compare_stats->totalsForAllResults;
 
 	$device_data = '';
+
 	foreach( $device_category_stats->rows as $row ){
 		if (!empty($device_data)) {
 		$device_data .= ",";
 		}
-		$device_data .= json_encode(array("name" => ucfirst( __(  $row[0], 'wp-analytify' ) ), "value" => $row[1])) ;
+
+		if ( 'mobile' ==  $row[0] ) {
+			$device_data .= json_encode(array("name" =>  __( 'Mobile', 'wp-analytify' ) , "value" => $row[1])) ;
+		} elseif ( 'tablet' == $row[0] ) {
+			$device_data .= json_encode(array("name" =>  __( 'Tablet', 'wp-analytify' ) , "value" => $row[1])) ;
+		} elseif ( 'desktop' == $row[0] ) {
+			$device_data .= json_encode(array("name" =>  __( 'Desktop', 'wp-analytify' ) , "value" => $row[1])) ;
+		}
+
 	}
 
 		if ( $device_data == "" ) {
@@ -105,7 +114,7 @@ function fetch_general_stats( $current, $current_stats, $device_category_stats, 
 
 									series : [
 											{
-													name:'User Devices',
+													name:'<?php _e( "User Devices", "wp-analytify" ) ?>',
 													type:'pie',
 													smooth: true,
 													radius : [20, 60],

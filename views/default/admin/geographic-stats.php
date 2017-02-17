@@ -52,7 +52,7 @@ function fetch_geographic_stats ( $current, $countries_stats, $cities_stats, $sh
                   } else {
                     value = 0;
                   }
-                  return 'Geographic Stats' + '<br/>' + params.name + ' : ' + value;
+                  return '<?php _e( "Geographic Stats", "wp-analytify" ) ?>' + '<br/>' + params.name + ' : ' + value;
                 }
               },
               toolbox: {
@@ -68,7 +68,7 @@ function fetch_geographic_stats ( $current, $countries_stats, $cities_stats, $sh
               dataRange: {
                 min: <?php echo $lowest_number ?>,
                 max: <?php echo $higest_number ?>,
-                text:['High','Low'],
+                text:['<?php _e( "High", "wp-analytify" ) ?>','<?php _e( "Low", "wp-analytify" ) ?>'],
                 realtime: true,
                 calculable : true,
                 color: ['#ff5252','#ffbc00','#448aff']

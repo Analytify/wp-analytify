@@ -163,11 +163,12 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 							<h3><?php esc_html_e( 'General Statistics', 'wp-analytify' ); ?></h3>
 						</div>
 						<div class="analytify_status_body stats_loading">
+
 							<script>
 							//<![CDATA[
 
 							jQuery( function($) {
-								$.get(ajaxurl, { action:'analytify_load_default_general_stats', dashboard_profile_ID:"<?php echo $dashboard_profile_ID ;?>", start_date:"<?php echo $start_date ;?>", end_date: "<?php echo $end_date ;?>" , compare_start_date : "<?php echo $compare_start_date ?>" , compare_end_date : "<?php echo $compare_end_date ?>" , date_different: "<?php echo $diff->format( '%a days' ) ?>"  },function(data){
+								$.get(ajaxurl, { action:'analytify_load_default_general_stats', dashboard_profile_ID:"<?php echo $dashboard_profile_ID ;?>", start_date:"<?php echo $start_date ;?>", end_date: "<?php echo $end_date ;?>" , compare_start_date : "<?php echo $compare_start_date ?>" , compare_end_date : "<?php echo $compare_end_date ?>" , date_different: "<?php echo $diff->format( '%a' ) . ' ' . __( 'days', 'wp-analytify' )  ?>"  },function(data){
 
 									var data_array = $.parseJSON(data);
 									$('.analytify_general_status_boxes_wraper').html(data_array.body).parent().removeClass("stats_loading");
@@ -283,7 +284,7 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 					<a href="https://analytify.io/upgrade-from-free" class="analytify_block" target="_blank">
 						<img src="<?php echo plugins_url( '../assets/images/analytify_compare.gif', __FILE__ )  ?>" alt="Upgrade to Pro" style="width:100%">
 						<a href="https://analytify.io/upgrade-from-free" class="analytify_go_pro_overlay" target="_blank">
-						 
+
 							<span class="analytify_go_pro_overlay_inner">
 								<span class="analytify_h2">Premium feature</span>
 								<span class="analytify_btn" target="_blank">Upgrade Now</span>
