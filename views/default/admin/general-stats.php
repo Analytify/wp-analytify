@@ -14,12 +14,13 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
  // 	return array_merge($data, $data1);
  // });
 
-function fetch_general_stats( $current, $current_stats, $device_category_stats, $compare_stats , $date_different ) {
+function fetch_general_stats( $current, $current_stats, $device_category_stats, $compare_stats , $date_different, $new_returning_stats ) {
+
 
 	$results = $current_stats->totalsForAllResults;
 
-	$new_users 				=  $results['ga:newUsers'];
-	$returning_users 	=  ($results['ga:users'] -  $results['ga:newUsers']);
+	$new_users 				= $new_returning_stats->rows[0][1];
+	$returning_users 	= $new_returning_stats->rows[1][1];
 
 	$compare_results = $compare_stats->totalsForAllResults;
 

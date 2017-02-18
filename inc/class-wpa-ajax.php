@@ -175,6 +175,14 @@ class WPANALYTIFY_AJAX {
 
 			}
 
+			// New vs Returning Users
+			$new_returning_stats = get_transient( md5( 'show-default-new-returning-dashboard' . $dashboard_profile_ID . $start_date . $end_date ) );
+			if( $new_returning_stats === false ) {
+				$new_returning_stats = $wp_analytify->pa_get_analytics_dashboard( 'ga:sessions', $start_date, $end_date, 'ga:userType' );
+				set_transient( md5( 'show-default-new-returning-dashboard' . $dashboard_profile_ID . $start_date . $end_date ) , $new_returning_stats, 60 * 60 * 20 );
+
+			}
+
 			// Device Category Stats
 			$device_category_stats = get_transient( md5( 'show-default-overall-device-dashboard' . $dashboard_profile_ID . $start_date . $end_date ) );
 			if ( $device_category_stats === false ) {
@@ -192,7 +200,7 @@ class WPANALYTIFY_AJAX {
 			if ( isset( $stats->totalsForAllResults ) ) {
 
 				include ANALYTIFY_ROOT_PATH . '/views/default/admin/general-stats.php';
-				fetch_general_stats( $wp_analytify , $stats , $device_category_stats, $compare_stats , $date_different );
+				fetch_general_stats( $wp_analytify , $stats , $device_category_stats, $compare_stats , $date_different, $new_returning_stats );
 			}
 
 
