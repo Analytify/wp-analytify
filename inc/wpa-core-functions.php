@@ -112,6 +112,7 @@ function delete_dashboard_transients( $dashboard_profile_ID, $start_date, $end_d
 	delete_transient( md5( 'show-default-social-dashboard'				 . $dashboard_profile_ID . $start_date . $end_date ) );
 	delete_transient( md5( 'show-default-reffers-dashboard'				 . $dashboard_profile_ID . $start_date . $end_date ) );
 	delete_transient( md5( 'show-default-reffers-dashboard'				 . $dashboard_profile_ID . $start_date . $end_date ) );
+	delete_transient( md5( 'show-default-new-returning-dashboard'  . $dashboard_profile_ID . $start_date . $end_date ) );
 
 
 }
