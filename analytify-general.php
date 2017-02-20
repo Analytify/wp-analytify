@@ -12,7 +12,7 @@ define( 'ANALYTIFY_LIB_PATH', dirname( __FILE__ ) . '/lib/' );
 define( 'ANALYTIFY_ID', 'wp-analytify-options' );
 define( 'ANALYTIFY_NICK', 'Analytify' );
 define( 'ANALYTIFY_ROOT_PATH', dirname( __FILE__ ) );
-define( 'ANALYTIFY_VERSION', '2.0.11' );
+define( 'ANALYTIFY_VERSION', '2.0.12' );
 define( 'ANALYTIFY_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'ANALYTIFY_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
