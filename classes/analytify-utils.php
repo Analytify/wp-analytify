@@ -58,13 +58,13 @@ class WPANALYTIFY_Utils {
 					$value['seconds'] = str_pad( floor( $time ), 1, 0, STR_PAD_LEFT );
 				// Get the hour:minute:second version.
 			if ( '' != $value['hours'] ) {
-				$attach_hours = '<span class="analytify_xl_f">h </span> ';
+				$attach_hours = '<span class="analytify_xl_f">' . _x( 'h', 'Hour Time', 'wp-analytify' ) . ' </span> ';
 			}
 			if ( '' != $value['minutes'] ) {
-				$attach_min = '<span class="analytify_xl_f">m </span>';
+				$attach_min = '<span class="analytify_xl_f">' . _x( 'm', 'Minute Time', 'wp-analytify' ) . ' </span>';
 			}
 			if ( '' != $value['seconds'] ) {
-				$attach_sec = '<span class="analytify_xl_f">s</span>';
+				$attach_sec = '<span class="analytify_xl_f">' . _x( 's', 'Second Time', 'wp-analytify' ) . '</span>';
 			}
 					return $value['hours'] . @$attach_hours . $value['minutes'] . @$attach_min . $value['seconds'] . $attach_sec;
 				// return $value['hours'] . ':' . $value['minutes'] . ':' . $value['seconds'];
@@ -114,7 +114,7 @@ class WPANALYTIFY_Utils {
 
 	/**
 	 * Show notices if some exception occurs.
-	 * 
+	 *
 	 * @param  array $exception exception details
 	 *
 	 * @since 2.0.5

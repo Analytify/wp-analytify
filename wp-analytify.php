@@ -992,13 +992,13 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 						$value['seconds'] = str_pad( floor( $time ), 1, 0, STR_PAD_LEFT );
 					// Get the hour:minute:second version.
 				if ( '' != $value['hours'] ) {
-					$attach_hours = '<sub>h</sub> ';
+					$attach_hours = '<sub>' . _x( 'h', 'Hour Time', 'wp-analytify' ) . '</sub> ';
 				}
 				if ( '' != $value['minutes'] ) {
-					$attach_min = '<sub>min</sub> ';
+					$attach_min = '<sub>' . _x( 'm', 'Minute Time', 'wp-analytify' ) . '</sub> ';
 				}
 				if ( '' != $value['seconds'] ) {
-					$attach_sec = '<sub>sec</sub>';
+					$attach_sec = '<sub>' . _x( 's', 'Second Time', 'wp-analytify' ) . '</sub>';
 				}
 						return $value['hours'] . @$attach_hours . $value['minutes'] . @$attach_min . $value['seconds'] . $attach_sec;
 					// return $value['hours'] . ':' . $value['minutes'] . ':' . $value['seconds'];

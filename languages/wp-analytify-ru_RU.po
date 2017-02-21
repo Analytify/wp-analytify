@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Analytify Pro\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-11 15:54+0500\n"
-"PO-Revision-Date: 2017-02-11 15:54+0500\n"
+"POT-Creation-Date: 2017-02-21 16:13+0500\n"
+"PO-Revision-Date: 2017-02-21 16:13+0500\n"
 "Last-Translator: sdfsdfsdf <sochi@seo-website.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
 "%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.8.12\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: wp-analytify-pro.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -294,10 +294,11 @@ msgid "General Stats"
 msgstr ""
 
 #: classes/analytify-settings.php:238
+#: views/default/admin/geographic-stats.php:55
 msgid "Geographic Stats"
 msgstr ""
 
-#: classes/analytify-settings.php:239 inc/analytics-dashboard.php:263
+#: classes/analytify-settings.php:239 inc/analytics-dashboard.php:258
 msgid "System Stats"
 msgstr "Статистика системы"
 
@@ -516,8 +517,31 @@ msgstr ""
 msgid "Diagnostic Info &amp; Error Log"
 msgstr ""
 
+#: classes/analytify-settings.php:911
+msgid "Test Email"
+msgstr ""
+
+#: classes/analytify-settings.php:912
+msgid "Note: Please save changes before sending a test email."
+msgstr ""
+
 #: classes/analytify-settings.php:992
 msgid "WP Analytify Plugin Settings"
+msgstr ""
+
+#: classes/analytify-utils.php:61
+msgctxt "Hour Time"
+msgid "h"
+msgstr ""
+
+#: classes/analytify-utils.php:64
+msgctxt "Minute Time"
+msgid "m"
+msgstr ""
+
+#: classes/analytify-utils.php:67
+msgctxt "Second Time"
+msgid "s"
 msgstr ""
 
 #: classes/analytify-utils.php:154
@@ -589,109 +613,117 @@ msgstr "Панель Dashboard"
 msgid "Complete Statistics of the Site"
 msgstr "Полныая Статистика Сайта"
 
-#: inc/analytics-dashboard.php:116 wp-analytify.php:354
+#: inc/analytics-dashboard.php:116 wp-analytify.php:352
 msgid "From:"
 msgstr "От:"
 
-#: inc/analytics-dashboard.php:119 wp-analytify.php:357
+#: inc/analytics-dashboard.php:119 wp-analytify.php:355
 msgid "To:"
 msgstr "До:"
 
-#: inc/analytics-dashboard.php:126 wp-analytify.php:366
+#: inc/analytics-dashboard.php:124 wp-analytify.php:362
+msgid "View Stats"
+msgstr "Просмотр статистики"
+
+#: inc/analytics-dashboard.php:126 wp-analytify.php:364
 msgid "Last 30 days"
 msgstr "Последние 30 дней"
 
-#: inc/analytics-dashboard.php:128 wp-analytify.php:368
+#: inc/analytics-dashboard.php:128 wp-analytify.php:366
 msgid "This month"
 msgstr "Этот месяц"
 
-#: inc/analytics-dashboard.php:130 wp-analytify.php:370
+#: inc/analytics-dashboard.php:130 wp-analytify.php:368
 msgid "Last month"
 msgstr "Прошлый месяц"
 
-#: inc/analytics-dashboard.php:133 wp-analytify.php:373
+#: inc/analytics-dashboard.php:133 wp-analytify.php:371
 msgid "Last 3 months"
 msgstr "За последние 3 месяца"
 
-#: inc/analytics-dashboard.php:135 wp-analytify.php:375
+#: inc/analytics-dashboard.php:135 wp-analytify.php:373
 msgid "Last 6 months"
 msgstr "За последние 6 месяцев"
 
-#: inc/analytics-dashboard.php:138 wp-analytify.php:378
+#: inc/analytics-dashboard.php:138 wp-analytify.php:376
 msgid "Last year"
 msgstr "Прошлый год"
 
-#: inc/analytics-dashboard.php:141 wp-analytify.php:381
+#: inc/analytics-dashboard.php:141 wp-analytify.php:379
 msgid "Custom Range"
 msgstr "Пользовательский диапазон"
 
-#: inc/analytics-dashboard.php:141 wp-analytify.php:381
+#: inc/analytics-dashboard.php:141 wp-analytify.php:379
 msgid "Select a custom date"
 msgstr "Выберите диапазон дат"
 
-#: inc/analytics-dashboard.php:169
+#: inc/analytics-dashboard.php:163
 #: views/default/admin/single-general-stats.php:15
 msgid "General Statistics"
 msgstr "Общая статистика"
 
-#: inc/analytics-dashboard.php:190
+#: inc/analytics-dashboard.php:171
+msgid "days"
+msgstr ""
+
+#: inc/analytics-dashboard.php:185
 msgid "Did you know that total time on your site is"
 msgstr "Знаете ли вы, что общее время посетителей на вашем сайте:"
 
-#: inc/analytics-dashboard.php:200
+#: inc/analytics-dashboard.php:195
 msgid "Top pages by views"
 msgstr "Лучшие страницы по просмотрам"
 
-#: inc/analytics-dashboard.php:219
+#: inc/analytics-dashboard.php:214
 msgid "List of the top pages and posts."
 msgstr "Список популярных страниц и сообщений."
 
-#: inc/analytics-dashboard.php:232
+#: inc/analytics-dashboard.php:227
 msgid "Geographic"
 msgstr "Географический регион"
 
-#: inc/analytics-dashboard.php:252
+#: inc/analytics-dashboard.php:247
 msgid "Listing statistics of top countries and cities."
 msgstr "Включение статистики ведущих стран и городов."
 
-#: inc/analytics-dashboard.php:290
+#: inc/analytics-dashboard.php:301
 msgid "How people are finding you (keywords)"
 msgstr "Как люди находят вас (ключевые слова)"
 
-#: inc/analytics-dashboard.php:292 inc/analytics-dashboard.php:328
-#: inc/analytics-dashboard.php:366
+#: inc/analytics-dashboard.php:303 inc/analytics-dashboard.php:339
+#: inc/analytics-dashboard.php:377
 msgid "Total Visits"
 msgstr "Общее число визитов"
 
-#: inc/analytics-dashboard.php:313
+#: inc/analytics-dashboard.php:324
 msgid "Listing your ranked keywords"
 msgstr "Листинг/рейтинг ключевых слов"
 
-#: inc/analytics-dashboard.php:326
+#: inc/analytics-dashboard.php:337
 msgid "Social Media"
 msgstr "Соц. сети"
 
-#: inc/analytics-dashboard.php:352
+#: inc/analytics-dashboard.php:363
 msgid "See how many users are coming to your site from Social media"
 msgstr "Соц. сети - смотреть, сколько переходов на сайт"
 
-#: inc/analytics-dashboard.php:364
+#: inc/analytics-dashboard.php:375
 msgid "Top Referrers"
 msgstr "Самые популярные источники переходов"
 
-#: inc/analytics-dashboard.php:390
+#: inc/analytics-dashboard.php:401
 msgid "who are the strong Referrers to your site ?? See above"
 msgstr "кто является источником ссылок на ваш сайт? Смотрите выше."
 
-#: inc/analytics-dashboard.php:402
+#: inc/analytics-dashboard.php:413
 msgid "What's happening when users come to your site."
 msgstr "Что происходит, когда пользователи приходят на ваш сайт."
 
-#: inc/analytics-dashboard.php:435
+#: inc/analytics-dashboard.php:446
 msgid "You must be authenticate to see the Analytics Dashboard."
 msgstr "Вы должны авторизироваться чтобы увидеть содержимое Аналитики"
 
-#: inc/analytics-dashboard.php:439
+#: inc/analytics-dashboard.php:450
 msgid "You don't have access to Analytify Dashboard."
 msgstr "Нет доступа к Analytify Dashboard."
 
@@ -754,12 +786,8 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: inc/analytify-go-pro.php:160
+#: inc/analytify-go-pro.php:160 inc/analytify-go-pro.php:161
 msgid "Only Tracking"
-msgstr ""
-
-#: inc/analytify-go-pro.php:161
-msgid "Only Tracking<"
 msgstr ""
 
 #: inc/analytify-go-pro.php:162
@@ -799,7 +827,7 @@ msgstr "Журналы"
 msgid "view complete Analytics of your site"
 msgstr "просмотреть полную Аналитику вашего сайта"
 
-#: inc/class-wpa-adminbar.php:41 wp-analytify.php:703
+#: inc/class-wpa-adminbar.php:41 wp-analytify.php:701
 msgid "Settings"
 msgstr "Настройки"
 
@@ -901,7 +929,7 @@ msgstr ""
 msgid "Thank you for tracking with Analytify."
 msgstr "Благодарим вас за Analytify."
 
-#: inc/wpa-core-functions.php:235
+#: inc/wpa-core-functions.php:236
 #, php-format
 msgid "%1$s %2$s"
 msgstr ""
@@ -914,34 +942,41 @@ msgstr "Статистика браузеров"
 msgid "listing statistics of top five browsers."
 msgstr "вывод статистики top пяти браузеров."
 
-#: views/default/admin/general-stats.php:75
-#: views/default/admin/general-stats.php:86
-msgid "New"
-msgstr "Новых"
-
-#: views/default/admin/general-stats.php:75
-#: views/default/admin/general-stats.php:87
-msgid "Returning"
-msgstr "ВОЗВРАЩ."
-
-#: views/default/admin/general-stats.php:103
+#: views/default/admin/general-stats.php:35
+#: views/default/admin/general-stats.php:113
 msgid "Mobile"
 msgstr ""
 
-#: views/default/admin/general-stats.php:103
+#: views/default/admin/general-stats.php:37
+#: views/default/admin/general-stats.php:113
 msgid "Tablet"
 msgstr ""
 
-#: views/default/admin/general-stats.php:103
+#: views/default/admin/general-stats.php:39
+#: views/default/admin/general-stats.php:113
 msgid "Desktop"
 msgstr ""
 
-#: views/default/admin/general-stats.php:185
+#: views/default/admin/general-stats.php:85
+#: views/default/admin/general-stats.php:96
+msgid "New"
+msgstr "Новых"
+
+#: views/default/admin/general-stats.php:85
+#: views/default/admin/general-stats.php:97
+msgid "Returning"
+msgstr "ВОЗВРАЩ."
+
+#: views/default/admin/general-stats.php:118
+msgid "User Devices"
+msgstr ""
+
+#: views/default/admin/general-stats.php:195
 #: views/default/admin/single-general-stats.php:20
 msgid "Sessions"
 msgstr "Сессии/Сеансы"
 
-#: views/default/admin/general-stats.php:187
+#: views/default/admin/general-stats.php:197
 #: views/default/admin/single-general-stats.php:22
 msgid ""
 "Total number of Sessions within the date range. A session is the period time "
@@ -950,13 +985,13 @@ msgstr ""
 "Общее количество сеансов в диапазоне дат. Сеанс - период времени "
 "(пользователь активно взаимодействует с сайтом)"
 
-#: views/default/admin/general-stats.php:192
+#: views/default/admin/general-stats.php:202
 #: views/default/admin/geographic-stats.php:121
 #: views/default/admin/geographic-stats.php:142
 msgid "Visitors"
 msgstr "Посетители"
 
-#: views/default/admin/general-stats.php:194
+#: views/default/admin/general-stats.php:204
 #: views/default/admin/single-general-stats.php:28
 msgid ""
 "Users that have had at least one session within the selected date range. "
@@ -965,12 +1000,12 @@ msgstr ""
 "Пользователи, которые имели хотя бы одну сессию в выбранный диапазон дат. "
 "Включает в себя как новые, так и возвращающихся пользователей."
 
-#: views/default/admin/general-stats.php:199
+#: views/default/admin/general-stats.php:209
 #: views/default/admin/single-general-stats.php:32
 msgid "Page views"
 msgstr "Просмотры страницы"
 
-#: views/default/admin/general-stats.php:201
+#: views/default/admin/general-stats.php:211
 #: views/default/admin/single-general-stats.php:34
 msgid ""
 "Pageviews is the total number of pages viewed. Repeated views of a single "
@@ -979,20 +1014,20 @@ msgstr ""
 "Просматриваемые это общее количество просмотренных страниц. Повторные "
 "просмотры одной страницы."
 
-#: views/default/admin/general-stats.php:206
+#: views/default/admin/general-stats.php:216
 msgid "Avg. time on site"
 msgstr "СРЕДН. ВРЕМЯ НА САЙТЕ"
 
-#: views/default/admin/general-stats.php:208
+#: views/default/admin/general-stats.php:218
 msgid "The amount of time a user spends on your site."
 msgstr "Количество времени, которое пользователь проводит на вашем сайте."
 
-#: views/default/admin/general-stats.php:213
+#: views/default/admin/general-stats.php:223
 #: views/default/admin/single-general-stats.php:44
 msgid "Bounce rate"
 msgstr "Показатель отказов"
 
-#: views/default/admin/general-stats.php:215
+#: views/default/admin/general-stats.php:225
 #: views/default/admin/single-general-stats.php:46
 msgid ""
 "Bounce Rate is the percentage of single-page visits (i.e. visits in which "
@@ -1003,12 +1038,12 @@ msgstr ""
 "посещений, в которых посетитель покидает сайт со страницы входа без "
 "взаимодействия со страницей)."
 
-#: views/default/admin/general-stats.php:220
+#: views/default/admin/general-stats.php:230
 msgid "pages/session"
 msgstr "Страницы/сессия"
 
-#: views/default/admin/general-stats.php:222
-#: views/default/admin/general-stats.php:229
+#: views/default/admin/general-stats.php:232
+#: views/default/admin/general-stats.php:239
 #: views/default/admin/single-general-stats.php:52
 msgid ""
 "Pages/Session is the average number of pages viewed during a session. "
@@ -1017,21 +1052,29 @@ msgstr ""
 "Страницы/сессия — среднее число страниц во время сессии. Учитываются "
 "повторные представления одной страницы."
 
-#: views/default/admin/general-stats.php:227
+#: views/default/admin/general-stats.php:237
 #: views/default/admin/single-general-stats.php:50
 msgid "% New sessions"
 msgstr "% Новых сеансов"
 
-#: views/default/admin/general-stats.php:234
+#: views/default/admin/general-stats.php:244
 msgid "New vs Returning visitors"
 msgstr "Новые и вернувшиеся посетители"
 
-#: views/default/admin/general-stats.php:241
+#: views/default/admin/general-stats.php:251
 msgid "Devices of visitors"
 msgstr "Устройства посетителей"
 
-#: views/default/admin/general-stats.php:265
+#: views/default/admin/general-stats.php:275
 msgid " ago"
+msgstr ""
+
+#: views/default/admin/geographic-stats.php:71
+msgid "High"
+msgstr ""
+
+#: views/default/admin/geographic-stats.php:71
+msgid "Low"
 msgstr ""
 
 #: views/default/admin/geographic-stats.php:120
@@ -1041,6 +1084,14 @@ msgstr "Популярные страны"
 #: views/default/admin/geographic-stats.php:141
 msgid "Top cities"
 msgstr "Популярные города"
+
+#: views/default/admin/keywords-stats.php:23
+msgid "(not provided)"
+msgstr ""
+
+#: views/default/admin/keywords-stats.php:25
+msgid "(not set)"
+msgstr ""
 
 #: views/default/admin/os-stats.php:6
 msgid "Operating System Statistics"
@@ -1532,69 +1583,65 @@ msgid ""
 "developers."
 msgstr ""
 
-#: wp-analytify.php:252
+#: wp-analytify.php:250
 msgid "Analytify - Stats of this Post/Page"
 msgstr "Analytify - Статистика по этой Странице"
 
-#: wp-analytify.php:322
+#: wp-analytify.php:320
 msgid "This post is excluded and will NOT show Analytics."
 msgstr "Этот пост исключен и не будет показан в модуле/панели аналитики."
 
-#: wp-analytify.php:364
-msgid "View Stats"
-msgstr "Просмотр статистики"
-
-#: wp-analytify.php:392
+#: wp-analytify.php:390
 msgid "You are not allowed to see stats"
 msgstr "Вы не можете видеть статистику"
 
-#: wp-analytify.php:415
+#: wp-analytify.php:413
 #, php-format
 msgid "%2$s This code is added by WP Analytify (%1$s) %4$s %3$s"
 msgstr "%2$s Этот код добавляется WP Analytify (%1$s)%4$s %3$s"
 
-#: wp-analytify.php:463
+#: wp-analytify.php:461
 #, php-format
 msgid "%2$s This code is added by WP Analytify (%1$s) %3$s"
 msgstr "%2$s Этот код добавляется WP Analytify (%1$s)%3$s"
 
-#: wp-analytify.php:483
+#: wp-analytify.php:481
 #, php-format
 msgid "%1$s Settings %2$s | %3$s Dashboard %4$s | %5$s Help %6$s"
 msgstr "%1$s Настройки %2$s | %3$s Dashboard %4$s | %5$s Помощь %6$s"
 
-#: wp-analytify.php:504
+#: wp-analytify.php:502
 #, php-format
 msgid "%1$s Getting Started %2$s"
 msgstr "%1$s Начало работы %2$s"
 
-#: wp-analytify.php:505
+#: wp-analytify.php:503
 #, php-format
 msgid "%1$s Add Ons %2$s"
 msgstr "%1$s добавить Add Ons %2$s"
 
-#: wp-analytify.php:506
+#: wp-analytify.php:504
 msgid "Vote!"
 msgstr "Голосовать!"
 
-#: wp-analytify.php:630
+#: wp-analytify.php:628
 msgid "Please enter your license key."
 msgstr "Пожалуйста, введите лицензионный ключ."
 
-#: wp-analytify.php:631
+#: wp-analytify.php:629
 msgid ""
 "A problem occurred when trying to register the license, please try again."
 msgstr ""
 "Возникла проблема при попытке зарегистрировать лицензию, пожалуйста, "
 "попробуйте еще раз."
 
-#: wp-analytify.php:632
+#: wp-analytify.php:630
 msgid "A problem occurred when trying to check the license, please try again."
 msgstr ""
 "Возникла проблема при попытке проверить лицензию, пожалуйста, попробуйте еще "
 "раз."
 
-#: wp-analytify.php:633
+#: wp-analytify.php:631
 msgid ""
 "Your license has been activated. You will now receive automatic updates and "
 "access to email support."
@@ -1602,27 +1649,27 @@ msgstr ""
 "Ваша лицензия была активирована. Теперь вы будете получать автоматические "
 "обновления и доступ к службе поддержки по электронной почте."
 
-#: wp-analytify.php:682
+#: wp-analytify.php:680
 msgid " Dashboard"
 msgstr "Dashboard"
 
-#: wp-analytify.php:708
+#: wp-analytify.php:706
 msgid " list of all Add-ons"
 msgstr "Список аддонов"
 
-#: wp-analytify.php:708
+#: wp-analytify.php:706
 msgid "Add-ons"
 msgstr "Дополнения"
 
-#: wp-analytify.php:713
+#: wp-analytify.php:711
 msgid "PRO vs FREE"
 msgstr "PRO против FREE"
 
-#: wp-analytify.php:764
+#: wp-analytify.php:762
 msgid "You must authenticate to access your web profiles."
 msgstr "Пожалуйста войдите, что бы просматривать данную информацию."
 
-#: wp-analytify.php:767
+#: wp-analytify.php:765
 #, php-format
 msgid ""
 "%1$s %2$s oOps, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s "
@@ -1631,34 +1678,34 @@ msgstr ""
 "%1$s %2$s Упс, что-то пошло не так!%3$s %4$s Попробуйте %5$s Сброс %6$s "
 "аутентификации."
 
-#: wp-analytify.php:785
+#: wp-analytify.php:783
 msgid "Notice: You must authenticate to access your web profiles."
 msgstr "Примечание: Вы должны проверить подлинность доступа к веб-профили."
 
-#: wp-analytify.php:826
+#: wp-analytify.php:824
 #, php-format
 msgid ""
 "Analytify is not active. Please %1$sAuthenticate%2$s in order to get started "
 "using this plugin."
 msgstr ""
 
-#: wp-analytify.php:830
+#: wp-analytify.php:828
 #, php-format
 msgid "%1$s Google Analytics Profile is not set. Set the %2$s Profile %3$s"
 msgstr ""
 
-#: wp-analytify.php:861
+#: wp-analytify.php:859
 msgid ""
 "Select your website profile at Analytify->settings->profile tab to load "
 "stats."
 msgstr ""
 
-#: wp-analytify.php:900
+#: wp-analytify.php:898
 #, php-format
 msgid "%1$s Displaying Analytics of this page from.%2$s to %3$s %4$s"
 msgstr ""
 
-#: wp-analytify.php:1057
+#: wp-analytify.php:1055
 #, php-format
 msgid ""
 "<b>Notice:</b> <b>Analytify 2.0</b> is here with stunning new interface and "
@@ -1668,51 +1715,51 @@ msgid ""
 "Notice]</a>"
 msgstr ""
 
-#: wp-analytify.php:1065
+#: wp-analytify.php:1063
 #, php-format
 msgid ""
 "%1$s %2$s %3$sNotice:%4$s %5$sConnect%6$s %4$s Analytify with your Google "
 "account. %7$s %8$s"
 msgstr ""
 
-#: wp-analytify.php:1070
+#: wp-analytify.php:1068
 #, php-format
 msgid ""
 "Congratulations! Analytify is now authenticated. Please select your website "
 "profile %1$s here %2$s to get started."
 msgstr ""
 
-#: wp-analytify.php:1137
+#: wp-analytify.php:1135
 msgid "Thankyou!\\nYour Coupon code is Analytify2016"
 msgstr ""
 
-#: wp-analytify.php:1244
+#: wp-analytify.php:1242
 msgid "Leave A Review?"
 msgstr ""
 
-#: wp-analytify.php:1245
+#: wp-analytify.php:1243
 msgid ""
 "We hope you've enjoyed using Analytify! Would you consider leaving us a "
 "review on WordPress.org?"
 msgstr ""
 
-#: wp-analytify.php:1246
+#: wp-analytify.php:1244
 msgid "Sure! I'd love to!"
 msgstr ""
 
-#: wp-analytify.php:1247
+#: wp-analytify.php:1245
 msgid "I've already left a review"
 msgstr ""
 
-#: wp-analytify.php:1248
+#: wp-analytify.php:1246
 msgid "Maybe Later"
 msgstr ""
 
-#: wp-analytify.php:1249
+#: wp-analytify.php:1247
 msgid "Never show again"
 msgstr ""
 
-#: wp-analytify.php:1358
+#: wp-analytify.php:1356
 #, php-format
 msgid "%1$s %2$s %3$s Authentication Cleared login again. %4$s %5$s %6$s"
 msgstr ""
