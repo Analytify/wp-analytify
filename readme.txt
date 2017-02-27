@@ -61,17 +61,22 @@ Google Analytics by Analytify is the must-have Plugin for Google Analytics! Now 
 ###### Following is a Complete Hierarchy Structure of Analytify Products Suite.
 
 * Analytify Core (`Free` and Required for all add-ons)
-    * Dashboard widget (`Free`)
+    * (Dashboard widget)[https://analytify.io/add-ons/google-analytics-dashboard-widget-wordpress/] (`Free`)
     * Analytify Pro (*Paid*)
         * Campaigns Tracking (*Paid*)
         * Email Notifications (*Paid*)
         * ECommerce Tracking for WooCommerce (*Paid*)
         * ECommerce Tracking for Easy Digital Downloads (*Paid*)
 
+> 100% Multilingual & Translateable <br />
+> WPML Compatible <br />
 
-> Compatibility Checks
-> Multilingual & Translateable
-> WPML Compatible
+Available in Following languages: <br />
+* German 97%
+* Russian 56%
+* Norwegian 75%
+* Spanish 50%
+
 
 == Installation ==
 
@@ -121,23 +126,23 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 == Screenshots ==
 
-1. Google Analytics by Analytify - Real Time Stats
+1. Google Analytics by Analytify - (Real Time Stats)[https://analytify.io/pricing/]
 2. Google Analytics by Analytify - General Statistics - It includes Google Analytics pageviews, Google Analytics sessions, Google Analytics visitors, Google Analytics BounceRate, Average Time of site from Google Analytics, New versus Returning visitors from Google Analytics.
 3. Google Analytics by Analytify - Top Countries
 4. Google Analytics by Analytify - Top Referrers/Browsers.
 5. Google Analytics by Analytify - Enhanced eCommerce Google Analytics Tracking for WooCommerce (Paid Add-on Required).
 6. Google Analytics Dashboard By Analytify - Settings Screen.
-7. Google Analytics by Analytify - Automated Email Reports (Paid Add-on Required).
-8. Google Analytics by Analytify - Shopping Behaviour funnel for WooCommerce Google Analytics (Paid Add-on Required).
-9. Google Analytics by Analytify - UTM Campaigns Dashboard (Add-on Required).
-10. Google Analytics by Analytify - Google Analytics dashboard widget for WordPress ( Free Add-on).
+7. Google Analytics by Analytify - Automated Email Reports (Paid Add-on Required)[https://analytify.io/add-ons/email-notifications/].
+8. Google Analytics by Analytify - Shopping Behaviour funnel for WooCommerce Google Analytics (Paid Add-on Required)[https://analytify.io/add-ons/woocommerce/].
+9. Google Analytics by Analytify - UTM Campaigns Dashboard (Add-on Required)[https://analytify.io/add-ons/campaigns/].
+10. Google Analytics by Analytify - Google Analytics dashboard widget for WordPress ( Free Add-on)[https://analytify.io/add-ons/google-analytics-dashboard-widget-wordpress/].
 
 
 == Changelog ==
 
 = 2.0.13 - 2017-02-27 =
-* Enhancement: Norwegian Bokmål Translation Completed.
-* Enhancement: Russian Translation Completed.
+* Enhancement: Norwegian Bokmål Translation added.
+* Enhancement: Russian Translation added.
 * BugFix: New vs Returning cache clear.
 
 = 2.0.12 - 2017-02-16 =
