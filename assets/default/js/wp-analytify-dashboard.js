@@ -191,7 +191,7 @@ $(document).click(function (e){
 
     var  momment                     = moment(),
          today_date                  = momment.format("MMM DD, YYYY"),
-         last_30_day                 = momment.subtract(29,'days').format("MMM DD, YYYY"),
+         last_30_day                 = momment.subtract(1,'months').format("MMM DD, YYYY"),
          last_month_end_date         = momment.endOf('month').format("MMM DD, YYYY"),
          this_month_start_date       = momment.add(1,'months').startOf('month').format("MMM DD, YYYY"),
          last_month_start_date       = momment.subtract(1,'months').startOf('month').format("MMM DD, YYYY"),
@@ -300,7 +300,7 @@ $(document).click(function (e){
 
   /**
    * Send ajax on cross of add.
-   * 
+   *
    */
   $('.analytify_general_status-icon').on('click', function() {
     $(this).parent().remove();
