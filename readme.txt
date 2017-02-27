@@ -61,7 +61,7 @@ Google Analytics by Analytify is the must-have Plugin for Google Analytics! Now 
 ###### Following is a Complete Hierarchy Structure of Analytify Products Suite.
 
 * Analytify Core (`Free` and Required for all add-ons)
-    * (Dashboard widget)[https://analytify.io/add-ons/google-analytics-dashboard-widget-wordpress/] (`Free`)
+    *[Dashboard widget](https://analytify.io/add-ons/google-analytics-dashboard-widget-wordpress/) (`Free`)
     * Analytify Pro (*Paid*)
         * Campaigns Tracking (*Paid*)
         * Email Notifications (*Paid*)
