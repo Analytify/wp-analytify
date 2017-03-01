@@ -140,6 +140,11 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 == Changelog ==
 
+= 2.0.14 =
+* BugFix: Date difference on load.
+* Enhancement: Improved UX.
+
+
 = 2.0.13 - 2017-02-27 =
 * Enhancement: Norwegian Bokmål Translation added.
 * Enhancement: Russian Translation added.

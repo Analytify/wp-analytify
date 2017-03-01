@@ -110,7 +110,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 						array(
 						 'id' => 'wp-analytify-admin',
 						 'title' => __( 'Admin', 'wp-analytify' ),
-						 'desc'	=> 'Following are the settings for Admin side. Google Analytics will appear under the posts, custom post types or pages.',
+						 'desc'	=> 'Following settings will take effect statistics under the posts, custom post types or pages.',
 						 'priority' => '20',
 						),
 						array(
