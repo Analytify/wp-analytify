@@ -180,7 +180,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					array(
 						'name'         => 'profile_for_posts',
 						'label'        => __( 'Profile for posts (Backend/Front-end)', 'wp-analytify' ),
-						'desc'         => __( 'Select your website profile for Backend/Front-end Stats. You can select your any Website profile. It will show Analytics for your selected website profile', 'wp-analytify' ),
+						'desc'         => __( 'Select your website profile for Backend/Front-end Stats. You can select any Website profile. It will show Analytics for your selected website profile', 'wp-analytify' ),
 						'type'         => 'select_profile',
 						'default'      => 'Choose profile for posts',
 						'options'      => $_profile_otions,
@@ -190,7 +190,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					array(
 						'name'    => 'profile_for_dashboard',
 						'label'   => __( 'Profile for Dashboard', 'wp-analytify' ),
-						'desc'    => __( 'Select your website profile for Dashboard Stats. You can select your any Website profile. It will show Analytics for your selected website profile.', 'wp-analytify' ),
+						'desc'    => __( 'Select your website profile for Dashboard Stats. You can select any Website profile. It will show Analytics for your selected website profile.', 'wp-analytify' ),
 						'type'    => 'select_profile',
 						'default' => 'Choose profile for dashboard',
 						'options' => $_profile_otions,
@@ -254,7 +254,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 							array(
 								'name'              => 'user_advanced_keys',
 								'label'             => __( 'Do you want to use your own API keys ?', 'wp-analytify' ),
-								'desc'              => __( 'It is highly recommended by Google to use your own API keys. <br />You need to create a Project in Google <a target=\'_blank\' href=\'https://console.developers.google.com/project\'>Console</a>. <br />Here is a short <a target=\'_blank\' href=\'https://www.youtube.com/watch?v=X36InlRJtuk\'>video guide</a> to get your own ClientID, Client Secret and Redirect URI and enter them in below inputs.', 'wp-analytify' ),
+								'desc'              => __( 'It is highly recommended by Google to use your own API keys. <br />You need to create a Project in Google <a target=\'_blank\' href=\'https://console.developers.google.com/project\'>Console</a>. <br />Here is a short <a target=\'_blank\' href=\'https://www.youtube.com/watch?v=X36InlRJtuk\'>video guide</a> to get your own ClientID, Client Secret and Redirect URL and enter them in below inputs.', 'wp-analytify' ),
 								'type'              => 'checkbox',
 								'class'	=> 'user_advanced_keys',
 							),
@@ -277,8 +277,8 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 							),
 							array(
 								'name'              => 'redirect_uri',
-								'label'             => __( 'Redirect URI:', 'wp-analytify' ),
-								'desc'              => sprintf(__( '( Redirect URI is very important when you are using your own Keys Use this Redirect URI  %1$s )' , 'wp-analytify' ) ,  '<b>' . admin_url('admin.php?page=analytify-settings') . '</b>' ),
+								'label'             => __( 'Redirect URL:', 'wp-analytify' ),
+								'desc'              => sprintf(__( '( Redirect URL is very important when you are using your own Keys Use this Redirect URL  %1$s )' , 'wp-analytify' ) ,  '<b>' . admin_url('admin.php?page=analytify-settings') . '</b>' ),
 								'type'              => 'text',
 								'class' => 'user_keys',
 								'sanitize_callback' => 'trim',
@@ -310,7 +310,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					array(
 						'name'              => 'demographic_interest_tracking',
 						'label'             => __( 'Demographic & Interest Tracking', 'wp-analytify' ),
-						'desc'              => __( 'This allows you to view extra dimensions about users (Age, Gender, Affinity Categories, In-Market Segments and Other Categories.', 'wp-analytify' ),
+						'desc'              => __( 'This allows you to view extra dimensions about users (Age, Gender, Affinity Categories, In-Market Segments and Other Categories).', 'wp-analytify' ),
 						'type'              => 'checkbox',
 					),
 					array(

@@ -41,7 +41,7 @@ function wpa_include_single_general( $current, $stats ) {
 					</div>
 
 					<div class="analytify_general_status_boxes">
-							<h4><?php esc_html_e( 'Bounce rate', 'wp-analytify' ); ?></h4>
+							<h4><?php esc_html_e( 'Bounce Rate', 'wp-analytify' ); ?></h4>
 							<div class="analytify_general_stats_value"><?php echo WPANALYTIFY_Utils::pretty_numbers( $results['ga:bounceRate'] ); ?><span class="analytify_xl_f">%</span></div>
 							<p><?php esc_html_e( "Bounce Rate is the percentage of single-page visits (i.e. visits in which the person left your site from the entrance page without interacting with the page ).", 'wp-analytify' ); ?></p>
 					</div>

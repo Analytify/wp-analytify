@@ -177,7 +177,7 @@ class Analytify_Welcome {
 
 				<div class="feature-section">
 
-					<img width="414" src="<?php echo plugins_url( 'assets/images/authenticate2.png', __FILE__ ); ?>" class="wp-analytify-welcome-screenshots"/> 
+					<img width="414" src="<?php echo plugins_url( 'assets/images/authenticate2.png', __FILE__ ); ?>" class="wp-analytify-welcome-screenshots"/>
 
 					<h4><?php esc_html_e( 'Simple Authentication', 'wp-analytify' );?></h4>
 					<p>
@@ -197,16 +197,16 @@ class Analytify_Welcome {
 
 				<div class="feature-section">
 
-					  <img src="<?php echo plugins_url( 'assets/images/analytify-shortcodes-dropdown.png', __FILE__ ); ?>" class="wp-analytify-welcome-screenshots"/> 
+					  <img src="<?php echo plugins_url( 'assets/images/analytify-shortcodes-dropdown.png', __FILE__ ); ?>" class="wp-analytify-welcome-screenshots"/>
 
 					<h4><?php esc_html_e( 'Analytify Shortcodes', 'wp-analytify' );?></h4>
 					<p>
-					<?php echo sprintf( esc_html__( 'Analytify shortcodes can be used for multiple purposes. It gives you more flexibility than the front-end statistics. You can disable front-end stats and use these shortcodes in any of your pages/posts to show Analytics in tabular style. If you are familiar with CSS, It can be easily modified to match with your website look and feel. %1$s Follwing are two types of shortcodes:', 'wp-analytify' ), '<br /><br />' );?>
+					<?php echo sprintf( esc_html__( 'Analytify shortcodes can be used for multiple purposes. It gives you more flexibility than the front-end statistics. You can disable front-end stats and use these shortcodes in any of your pages/posts to show Analytics in tabular style. If you are familiar with CSS, It can be easily modified to match with your website look and feel. %1$s Following are two types of shortcodes:', 'wp-analytify' ), '<br /><br />' );?>
 					</p>
 
 					<h4><?php esc_html_e( 'a) Simple:', 'wp-analytify' );?></h4>
 					<p>
-					<?php echo sprintf( esc_html__( 'Simple Analytify shortcode returns you only the numbers i.e results. It is useful when you want results of only 1 Metrics and can apply permissions using roles. You can fetch numbers of %1$s Sessions, Pageviews, Bounce rate and Users %2$s etc', 'wp-analytify' ), '<em>', '</em> ');?>
+					<?php echo sprintf( esc_html__( 'Simple Analytify shortcode returns you only the numbers i.e results. It is useful when you want results of only 1 Metrics and can apply permissions using roles. You can fetch numbers of %1$s Sessions, Pageviews, Bounce Rate and Users %2$s etc', 'wp-analytify' ), '<em>', '</em> ');?>
 					</p>
 
 					<h4><?php esc_html_e( 'b) Advanced:', 'wp-analytify' );?></h4>
@@ -218,10 +218,10 @@ class Analytify_Welcome {
 			</div>
 
 			<div class="newfeatures">
-				<img width="414" height="" src="<?php echo plugins_url( 'assets/images/front-end.png', __FILE__ ); ?>" class="wp-analytify-welcome-screenshots"/> 
+				<img width="414" height="" src="<?php echo plugins_url( 'assets/images/front-end.png', __FILE__ ); ?>" class="wp-analytify-welcome-screenshots"/>
 				<h3><?php esc_html_e( 'Front-end Statistics', 'wp-analytify' );?></h3>
 				<p>
-				<?php echo sprintf( esc_html__( 'We have introduced the %1$s New Front-end Analytics %2$s which will fetch the stats like backend but with an awesome UI for front-end stats. It was a long awaited feature which was under development but finally It is here. It can be customized (if you are good at CSS) according to your website look and fool. %3$s below are it\'s important options: ', 'wp-analytify' ), '<em>', '</em>', '<br /><br />' );?>
+				<?php echo sprintf( esc_html__( 'We have introduced the %1$s New Front-end Analytics %2$s which will fetch the stats like backend but with an awesome UI for front-end stats. It was a long awaited feature which was under development but finally It is here. It can be customized (if you are good at CSS) according to your website look and feel. %3$s below are it\'s important options: ', 'wp-analytify' ), '<em>', '</em>', '<br /><br />' );?>
 				</p>
 
 				<div  style="clear:both" class="feature-section col three-col">
@@ -291,7 +291,7 @@ class Analytify_Welcome {
 				<h3><?php echo sprintf( esc_html__( '%1$s Connect with Analytify %2$s', 'wp-analytify' ), '<a href="' . admin_url( 'admin.php?page=analytify-settings'). '" tagget="_blank">', '</a>' );?></h3>
 
 				<div class="feature-section">
-				 <img width="414" src="<?php echo plugins_url( 'assets/images/authenticate2.png', __FILE__ );?>" alt="" class="wp-analytify-welcome-screenshots">  
+				 <img width="414" src="<?php echo plugins_url( 'assets/images/authenticate2.png', __FILE__ );?>" alt="" class="wp-analytify-welcome-screenshots">
 
 					<h4><?php esc_html_e( 'Authentication', 'wp-analytify' );?></h4>
 					<p><?php esc_html_e( 'You must have a registered Google Analytics account and setup your website profiles to use with Analytify on your WordPress based sites. Click on Login button and It will redirect you to separate Google access page. Allow this plugin to fetch the data from Google Analytics and It will take you back to your profile tab.', 'wp-analytify' );?></p>
@@ -305,7 +305,7 @@ class Analytify_Welcome {
 				<h3><?php esc_html_e( 'Setting up profiles', 'wp-analytify' );?></h3>
 
 				<div class="feature-section">
-						<img src="<?php echo plugins_url( 'assets/images/profile-data.png', __FILE__ );?>" alt="" class="wp-analytify-welcome-screenshots"> 
+						<img src="<?php echo plugins_url( 'assets/images/profile-data.png', __FILE__ );?>" alt="" class="wp-analytify-welcome-screenshots">
 					<h4><?php esc_html_e( 'Profile Tab', 'wp-analytify' );?></h4>
 					<p><?php esc_html_e( 'This tab section consists of many important settings. After Authentication, Setup your profiles here. All of the options are easy to understand.', 'wp-analytify' );?></p>
 
@@ -319,7 +319,7 @@ class Analytify_Welcome {
 					<p><?php esc_html_e( 'Google recommends to use Analytics.js (Universal Tracking) now. So, we recommend to use this option.', 'wp-analytify');?></p>
 
 					<h5><?php esc_html_e( 'd) Profile for posts (Backend/Front-end)', 'wp-analytify' );?></h5>
-					<p><?php esc_html_e( 'Select your website profile for wp-admin edit pages and fron-end pages. Select profile which matches your current WordPress website.', 'wp-analytify');?></p>
+					<p><?php esc_html_e( 'Select your website profile for wp-admin edit pages and Front-end pages. Select profile which matches your current WordPress website.', 'wp-analytify');?></p>
 
 					<h5><?php esc_html_e( 'e) Profile for Dashboard', 'wp-analytify' );?></h5>
 					<p><?php esc_html_e( 'Select your website profile for Dashboard Stats. You can select your any Website profile. It will show Analytics for your selected website profile.', 'wp-analytify');?></p>
@@ -332,10 +332,10 @@ class Analytify_Welcome {
 
 				<div class="feature-section col three-col">
 
-					<img src="<?php echo plugins_url( 'assets/images/front-end.png', __FILE__ );?>" alt="" class="wp-analytify-welcome-screenshots">  
+					<img src="<?php echo plugins_url( 'assets/images/front-end.png', __FILE__ );?>" alt="" class="wp-analytify-welcome-screenshots">
 
 					<h4><?php esc_html_e( 'Front Tab', 'wp-analytify' );?></h4>
-					<p><?php echo sprintf( esc_html__( 'In version %4$s, We have introduced the %1$s New Front-end Analytics%2$s which will fetch the stats like backend but with an awesome UI for front-end stats. It was a long awaited feature which was under development since 1.0 but finally It is here. It can be customized (if you are good at CSS) according to your website look and fool. %3$s Below are it\'s important options: ', 'wp-analytify' ), '<em>', '</em>', '<br /><br />', ANALYTIFY_VERSION);?></p>
+					<p><?php echo sprintf( esc_html__( 'In version %4$s, We have introduced the %1$s New Front-end Analytics%2$s which will fetch the stats like backend but with an awesome UI for front-end stats. It was a long awaited feature which was under development since 1.0 but finally It is here. It can be customized (if you are good at CSS) according to your website look and feel. %3$s Below are it\'s important options: ', 'wp-analytify' ), '<em>', '</em>', '<br /><br />', ANALYTIFY_VERSION);?></p>
 
 					<div style="clear:both;">
 						<h4><?php esc_html_e( 'Disable front-end', 'wp-analytify' );?></h4>
@@ -365,7 +365,7 @@ class Analytify_Welcome {
 
 				<div class="feature-section col three-col">
 
-					<img src="<?php echo plugins_url( 'assets/images/admin-end.png', __FILE__ );?>" alt="" class="wp-analytify-welcome-screenshots"> 
+					<img src="<?php echo plugins_url( 'assets/images/admin-end.png', __FILE__ );?>" alt="" class="wp-analytify-welcome-screenshots">
 
 					<h4><?php esc_html_e( 'Admin Tab', 'wp-analytify' );?></h4>
 					<p><?php esc_html_e( 'Admin tab section is to manage the Analytics panels under EDIT screen of post/pages in wp-admin.', 'wp-analytify' );?></p>

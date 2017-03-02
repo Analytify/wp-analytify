@@ -762,7 +762,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 					echo '<br /><p class="description">' . esc_html__( 'You must authenticate to access your web profiles.', 'wp-analytify' ) . '</p>';
 				}
 			} catch (Exception $e) {
-				echo sprintf( esc_html__( '%1$s %2$s oOps, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s Authentication.', 'wp-analytify' ), '<br />', '<strong>', '</strong>', '<br /><br />', '<a href=\'?page=analytify-settings&tab=authentication\' title="Reset">', '</a>' );
+				echo sprintf( esc_html__( '%1$s %2$s Oops, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s Authentication.', 'wp-analytify' ), '<br />', '<strong>', '</strong>', '<br /><br />', '<a href=\'?page=analytify-settings&tab=authentication\' title="Reset">', '</a>' );
 			}
 
 		}

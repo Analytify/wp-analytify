@@ -443,7 +443,7 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 		</div>
 		<?php
 		} else {
-			esc_html_e( 'You must be authenticate to see the Analytics Dashboard.', 'wp-analytify' );
+			esc_html_e( 'You must be authenticated to see the Analytics Dashboard.', 'wp-analytify' );
 		}
 	} else {
 

@@ -34,7 +34,7 @@ if ( ! class_exists( 'WP_Analytify_Addons' ) ) {
 				'wp_analytify_edd' => (object) array(
 						'url' 		    => 'https://analytify.io/add-ons/easy-digital-downloads/?utm_source=wordpress&utm_medium=plugin&utm_campaign=addons_page&utm_content=easy-digital-downloads',
 						'slug'			  => 'wp-analytify-edd/wp-analytify-edd.php',
-						'title' 		  => esc_html__( 'Enhaced E-Commerce Tracking for Easy Digital Downloads', 'wp-analytify' ),
+						'title' 		  => esc_html__( 'Enhanced E-Commerce Tracking for Easy Digital Downloads', 'wp-analytify' ),
 						'status'		  => '',
 						'description' => esc_html__( 'This Add-on will track the e-commerce behaviour of users, digital Sales, Transactions and Revenues in Google Analytics and Displays Stats in a unique and intiutive way which is very understandable even for non-technical WordPress users.', 'wp-analytify' ),
 						),
@@ -52,7 +52,7 @@ if ( ! class_exists( 'WP_Analytify_Addons' ) ) {
 					'status'		  => '',
 					'description' => sprintf( esc_html__( 'Google Analytics Dashboard widget is a FREE Add-on by Analytify to show Google Analytics widget at WordPress dashboard.', 'wp-analytify' ), '<br /><br />' ),
 					),
-					
+
 						'wp_analytify_email' => (object) array(
 							'url' 		    => 'https://analytify.io/add-ons/email-notifications/?utm_source=wordpress&utm_medium=plugin&utm_campaign=addons_page&utm_content=email-notifications',
 							'slug'			  => 'wp-analytify-email/wp-analytify-email.php',
