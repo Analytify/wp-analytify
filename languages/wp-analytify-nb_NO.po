@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Analytify - Google Analytics Dashboard\n"
-"POT-Creation-Date: 2017-02-21 15:44+0500\n"
-"PO-Revision-Date: 2017-02-21 15:45+0500\n"
+"POT-Creation-Date: 2017-03-02 11:40+0500\n"
+"PO-Revision-Date: 2017-03-02 11:45+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nb\n"
@@ -23,7 +23,7 @@ msgstr ""
 #: analytify-general.php:112
 #, php-format
 msgid ""
-"%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
+"%1$s Oops, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
 "message is only visible to Administrators. %4$s %2$s "
 msgstr ""
 "%1$s Beklager, noe gikk galt. %2$s %5$s %2$s %3$s Ikke fortvil, denne "
@@ -32,7 +32,7 @@ msgstr ""
 #: analytify-general.php:119
 #, php-format
 msgid ""
-"%1$s oOps, Try to %2$s Reset %3$s Authentication. %4$s %7$s %4$s %5$s Don't "
+"%1$s Oops, Try to %2$s Reset %3$s Authentication. %4$s %7$s %4$s %5$s Don't "
 "worry, This error message is only visible to Administrators. %6$s %4$s"
 msgstr ""
 "%1$s Beklager, prøv å %2$s resette %3$s autentisering. %4$s %7$s %4$s %5$s "
@@ -42,7 +42,7 @@ msgstr ""
 #: analytify-general.php:208 analytify-general.php:353
 #, php-format
 msgid ""
-"%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
+"%1$s Oops, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
 "message is only visible to Administrators. %4$s %2$s"
 msgstr ""
 "%1$s Beklager, noe gikk galt %2$s %5$s %2$s %3$s Ikke fortvil, denne "
@@ -52,18 +52,17 @@ msgstr ""
 #: analytify-general.php:360
 #, php-format
 msgid ""
-"%1$s oOps, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s Don't "
+"%1$s Oops, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s Don't "
 "worry, This error message is only visible to Administrators. %6$s %2$s"
 msgstr ""
-"%1$s Beklager, prøv å %3$s resette %4$s autentisering. %2$s %7$s %2$s %5$s "
-"Ikke fortvil, denne feilmeldingen er kun synlig til administratorer. %6$s "
-"%2$s"
+"%1$s oOps, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s Don't "
+"worry, This error message is only visible to Administrators. %6$s %2$s"
 
 #: analytify-general.php:224 analytify-general.php:295
 #: analytify-general.php:367
 #, php-format
 msgid ""
-"%1$s oOps! %2$s %5$s %2$s %3$s Don't worry, This error message is only "
+"%1$s Oops! %2$s %5$s %2$s %3$s Don't worry, This error message is only "
 "visible to Administrators. %4$s %2$s"
 msgstr ""
 "%1$s oOps! %2$s %5$s %2$s %3$s Ikke fortvil, denne feilmeldingen er kun "
@@ -215,18 +214,18 @@ msgstr "Profil for innlegg"
 
 #: classes/analytify-settings.php:183
 msgid ""
-"Select your website profile for Backend/Front-end Stats. You can select your "
-"any Website profile. It will show Analytics for your selected website profile"
+"Select your website profile for Backend/Front-end Stats. You can select any "
+"Website profile. It will show Analytics for your selected website profile"
 msgstr "Velg profilen som det skal vises statistikk fra."
 
 #: classes/analytify-settings.php:192
 msgid "Profile for Dashboard"
 msgstr "Profil for kontrollpanelet"
 
-#: classes/analytify-settings.php:193 welcome.php:325
+#: classes/analytify-settings.php:193
 msgid ""
-"Select your website profile for Dashboard Stats. You can select your any "
-"Website profile. It will show Analytics for your selected website profile."
+"Select your website profile for Dashboard Stats. You can select any Website "
+"profile. It will show Analytics for your selected website profile."
 msgstr "Velg profilen for statistikk."
 
 #: classes/analytify-settings.php:200
@@ -349,14 +348,14 @@ msgid ""
 "to create a Project in Google <a target='_blank' href='https://console."
 "developers.google.com/project'>Console</a>. <br />Here is a short <a "
 "target='_blank' href='https://www.youtube.com/watch?v=X36InlRJtuk'>video "
-"guide</a> to get your own ClientID, Client Secret and Redirect URI and enter "
+"guide</a> to get your own ClientID, Client Secret and Redirect URL and enter "
 "them in below inputs."
 msgstr ""
 "Google anbefaler at du bruker egne API nøkler. <br />Du må lage et prosjekt "
 "i Google <a target='_blank' href='https://console.developers.google.com/"
 "project'>Console</a>. <br />Her er en kort <a target='_blank' href='https://"
 "www.youtube.com/watch?v=X36InlRJtuk'>film</a> som viser hvordan du henter "
-"din ClientID, Client Secret og Redirect URI."
+"din ClientID, Client Secret og Redirect URL."
 
 #: classes/analytify-settings.php:264
 msgid "ClientID:"
@@ -375,17 +374,17 @@ msgid "Your Client Secret"
 msgstr "Din client secret:"
 
 #: classes/analytify-settings.php:280
-msgid "Redirect URI:"
-msgstr "Redirect URI:"
+msgid "Redirect URL:"
+msgstr "Redirect URL:"
 
 #: classes/analytify-settings.php:281
 #, php-format
 msgid ""
-"( Redirect URI is very important when you are using your own Keys Use this "
-"Redirect URI  %1$s )"
+"( Redirect URL is very important when you are using your own Keys Use this "
+"Redirect URL  %1$s )"
 msgstr ""
-"( Redirect URI er veldig viktig når du bruker dine egne nøkler. Bruk denne "
-"Redirect URI  %1$s )"
+"( Redirect URL er veldig viktig når du bruker dine egne nøkler. Bruk denne "
+"Redirect URL  %1$s )"
 
 #: classes/analytify-settings.php:294
 msgid "Anonymize IP addresses"
@@ -431,7 +430,7 @@ msgstr "Demografi- og interessesporing"
 #: classes/analytify-settings.php:313
 msgid ""
 "This allows you to view extra dimensions about users (Age, Gender, Affinity "
-"Categories, In-Market Segments and Other Categories."
+"Categories, In-Market Segments and Other Categories)."
 msgstr ""
 "Dette gjør det mulig å vise ekstra dimensjoner om brukere (alder, kjønn, "
 "Interessekategorier, markedssegmenter og andre kategorier)."
@@ -546,30 +545,30 @@ msgstr "Diagnostisk info & amp; feillogg"
 
 #: classes/analytify-settings.php:911
 msgid "Test Email"
-msgstr ""
+msgstr "Test e-post"
 
 #: classes/analytify-settings.php:912
 msgid "Note: Please save changes before sending a test email."
-msgstr ""
+msgstr "Merk: Husk å lagre alle endringer før du sender test e-post."
 
 #: classes/analytify-settings.php:992
 msgid "WP Analytify Plugin Settings"
 msgstr "WP Analytify instillinger"
 
-#: classes/analytify-utils.php:61
+#: classes/analytify-utils.php:61 wp-analytify.php:995
 msgctxt "Hour Time"
 msgid "h"
-msgstr ""
+msgstr "t"
 
-#: classes/analytify-utils.php:64
+#: classes/analytify-utils.php:64 wp-analytify.php:998
 msgctxt "Minute Time"
 msgid "m"
-msgstr ""
+msgstr "m"
 
-#: classes/analytify-utils.php:67
+#: classes/analytify-utils.php:67 wp-analytify.php:1001
 msgctxt "Second Time"
 msgid "s"
-msgstr ""
+msgstr "s"
 
 #: classes/analytify-utils.php:154
 #, php-format
@@ -711,7 +710,7 @@ msgstr "Generell statistikk"
 
 #: inc/analytics-dashboard.php:171
 msgid "days"
-msgstr ""
+msgstr "dager"
 
 #: inc/analytics-dashboard.php:185
 msgid "Did you know that total time on your site is"
@@ -767,7 +766,7 @@ msgid "What's happening when users come to your site."
 msgstr "Hva som skjer når brukerne kommer til nettsiden."
 
 #: inc/analytics-dashboard.php:446
-msgid "You must be authenticate to see the Analytics Dashboard."
+msgid "You must be authenticated to see the Analytics Dashboard."
 msgstr "Du må være autentisert for og kunne se Analytics kontrollpanelet."
 
 #: inc/analytics-dashboard.php:450
@@ -895,7 +894,7 @@ msgid ""
 msgstr ""
 
 #: inc/page-addons.php:37
-msgid "Enhaced E-Commerce Tracking for Easy Digital Downloads"
+msgid "Enhanced E-Commerce Tracking for Easy Digital Downloads"
 msgstr ""
 
 #: inc/page-addons.php:44
@@ -950,11 +949,11 @@ msgstr "%1$s Skaff denne utvidelsen %2$s"
 
 #: inc/page-addons.php:104
 msgid "Extend the functionality of Analytify with these awesome Add-ons"
-msgstr ""
+msgstr "Utvid funksjonaliteten til Analytify med disse fantastiske utvidelsene"
 
 #: inc/page-campaigns.php:15
 msgid "Campaigns Dashboard"
-msgstr ""
+msgstr "Kampanjedashbord"
 
 #: inc/wpa-core-functions.php:61
 #, php-format
@@ -962,6 +961,8 @@ msgid ""
 "If you like %1$s Analytify %2$s please leave us a %5$s %3$s %6$s rating. "
 "%4$s A huge thank you from %1$s WPBrigade %2$s in advance!"
 msgstr ""
+"Hvis du liker %1$s Analytify %2$s vennligst gi oss en  %5$s %3$s %6$s "
+"vurdering. %4$s Tusen takk fra%1$s WPBrigade %2$s !"
 
 #: inc/wpa-core-functions.php:69
 msgid "Thank you for tracking with Analytify."
@@ -1007,7 +1008,7 @@ msgstr "Returnerende"
 
 #: views/default/admin/general-stats.php:118
 msgid "User Devices"
-msgstr ""
+msgstr "Enheter til brukere"
 
 #: views/default/admin/general-stats.php:195
 #: views/default/admin/single-general-stats.php:20
@@ -1062,7 +1063,7 @@ msgstr "Den gjennomsnittlige lengden av en økt."
 
 #: views/default/admin/general-stats.php:223
 #: views/default/admin/single-general-stats.php:44
-msgid "Bounce rate"
+msgid "Bounce Rate"
 msgstr "Fluktfrekvens"
 
 #: views/default/admin/general-stats.php:225
@@ -1108,11 +1109,11 @@ msgstr " siden"
 
 #: views/default/admin/geographic-stats.php:71
 msgid "High"
-msgstr ""
+msgstr "Høy"
 
 #: views/default/admin/geographic-stats.php:71
 msgid "Low"
-msgstr ""
+msgstr "Lav"
 
 #: views/default/admin/geographic-stats.php:120
 msgid "Top countries"
@@ -1124,11 +1125,11 @@ msgstr "Byer"
 
 #: views/default/admin/keywords-stats.php:23
 msgid "(not provided)"
-msgstr ""
+msgstr "(Ikke inkludert)"
 
 #: views/default/admin/keywords-stats.php:25
 msgid "(not set)"
-msgstr ""
+msgstr "(ikke satt)"
 
 #: views/default/admin/os-stats.php:6
 msgid "Operating System Statistics"
@@ -1287,7 +1288,7 @@ msgid ""
 "flexibility than the front-end statistics. You can disable front-end stats "
 "and use these shortcodes in any of your pages/posts to show Analytics in "
 "tabular style. If you are familiar with CSS, It can be easily modified to "
-"match with your website look and feel. %1$s Follwing are two types of "
+"match with your website look and feel. %1$s Following are two types of "
 "shortcodes:"
 msgstr ""
 
@@ -1300,7 +1301,7 @@ msgstr ""
 msgid ""
 "Simple Analytify shortcode returns you only the numbers i.e results. It is "
 "useful when you want results of only 1 Metrics and can apply permissions "
-"using roles. You can fetch numbers of %1$s Sessions, Pageviews, Bounce rate "
+"using roles. You can fetch numbers of %1$s Sessions, Pageviews, Bounce Rate "
 "and Users %2$s etc"
 msgstr ""
 
@@ -1328,7 +1329,7 @@ msgid ""
 "the stats like backend but with an awesome UI for front-end stats. It was a "
 "long awaited feature which was under development but finally It is here. It "
 "can be customized (if you are good at CSS) according to your website look "
-"and fool. %3$s below are it's important options: "
+"and feel. %3$s below are it's important options: "
 msgstr ""
 
 #: welcome.php:229 welcome.php:341
@@ -1467,13 +1468,19 @@ msgstr ""
 
 #: welcome.php:322
 msgid ""
-"Select your website profile for wp-admin edit pages and fron-end pages. "
+"Select your website profile for wp-admin edit pages and Front-end pages. "
 "Select profile which matches your current WordPress website."
 msgstr ""
 
 #: welcome.php:324
 msgid "e) Profile for Dashboard"
 msgstr ""
+
+#: welcome.php:325
+msgid ""
+"Select your website profile for Dashboard Stats. You can select your any "
+"Website profile. It will show Analytics for your selected website profile."
+msgstr "Velg profilen for statistikk."
 
 #: welcome.php:331
 msgid "Display Statistics at front-end pages"
@@ -1490,7 +1497,7 @@ msgid ""
 "which will fetch the stats like backend but with an awesome UI for front-end "
 "stats. It was a long awaited feature which was under development since 1.0 "
 "but finally It is here. It can be customized (if you are good at CSS) "
-"according to your website look and fool. %3$s Below are it's important "
+"according to your website look and feel. %3$s Below are it's important "
 "options: "
 msgstr ""
 
@@ -1643,7 +1650,7 @@ msgstr "Du må autentifisere for at du skal kunne se dine profiler"
 #: wp-analytify.php:765
 #, php-format
 msgid ""
-"%1$s %2$s oOps, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s "
+"%1$s %2$s Oops, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s "
 "Authentication."
 msgstr ""
 "%1$s %2$s Beklager, noe gikk galt!%3$s %4$s Prøv å %5$s resette %6$s din "
@@ -1708,7 +1715,7 @@ msgid ""
 "Congratulations! Analytify is now authenticated. Please select your website "
 "profile %1$s here %2$s to get started."
 msgstr ""
-"Gratulerer! Analytify er no autentisert. Legg inn din Analytics profil %1$s "
+"Gratulerer! Analytify er nå autentisert. Legg inn din Analytics profil %1$s "
 "her %2$s for å komme i gang."
 
 #: wp-analytify.php:1135
@@ -1780,6 +1787,95 @@ msgstr "WPBrigade"
 #. Author URI of the plugin/theme
 msgid "http://wpbrigade.com/"
 msgstr "http://wpbrigade.com/"
+
+#~ msgid ""
+#~ "%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This "
+#~ "error message is only visible to Administrators. %4$s %2$s "
+#~ msgstr ""
+#~ "%1$s Beklager, noe gikk galt. %2$s %5$s %2$s %3$s Ikke fortvil, denne "
+#~ "feilmeldingen er kun synlig til administratorer. %4$s %2$s "
+
+#~ msgid ""
+#~ "%1$s oOps, Try to %2$s Reset %3$s Authentication. %4$s %7$s %4$s %5$s "
+#~ "Don't worry, This error message is only visible to Administrators. %6$s "
+#~ "%4$s"
+#~ msgstr ""
+#~ "%1$s Beklager, prøv å %2$s resette %3$s autentisering. %4$s %7$s %4$s "
+#~ "%5$s Ikke fortvil, denne feilmeldingen er kun synlig til administratorer. "
+#~ "%6$s %4$s"
+
+#~ msgid ""
+#~ "%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This "
+#~ "error message is only visible to Administrators. %4$s %2$s"
+#~ msgstr ""
+#~ "%1$s Beklager, noe gikk galt %2$s %5$s %2$s %3$s Ikke fortvil, denne "
+#~ "feilmeldingen er kun synlig til administratorer. %4$s %2$s"
+
+#~ msgid ""
+#~ "%1$s oOps, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s "
+#~ "Don't worry, This error message is only visible to Administrators. %6$s "
+#~ "%2$s"
+#~ msgstr ""
+#~ "%1$s Beklager, prøv å %3$s resette %4$s autentisering. %2$s %7$s %2$s "
+#~ "%5$s Ikke fortvil, denne feilmeldingen er kun synlig til administratorer. "
+#~ "%6$s %2$s"
+
+#~ msgid ""
+#~ "%1$s oOps! %2$s %5$s %2$s %3$s Don't worry, This error message is only "
+#~ "visible to Administrators. %4$s %2$s"
+#~ msgstr ""
+#~ "%1$s oOps! %2$s %5$s %2$s %3$s Ikke fortvil, denne feilmeldingen er kun "
+#~ "synlig til administratorer. %4$s %2$s"
+
+#~ msgid ""
+#~ "Select your website profile for Backend/Front-end Stats. You can select "
+#~ "your any Website profile. It will show Analytics for your selected "
+#~ "website profile"
+#~ msgstr "Velg profilen som det skal vises statistikk fra."
+
+#~ msgid ""
+#~ "It is highly recommended by Google to use your own API keys. <br />You "
+#~ "need to create a Project in Google <a target='_blank' href='https://"
+#~ "console.developers.google.com/project'>Console</a>. <br />Here is a short "
+#~ "<a target='_blank' href='https://www.youtube.com/watch?"
+#~ "v=X36InlRJtuk'>video guide</a> to get your own ClientID, Client Secret "
+#~ "and Redirect URI and enter them in below inputs."
+#~ msgstr ""
+#~ "Google anbefaler at du bruker egne API nøkler. <br />Du må lage et "
+#~ "prosjekt i Google <a target='_blank' href='https://console.developers."
+#~ "google.com/project'>Console</a>. <br />Her er en kort <a target='_blank' "
+#~ "href='https://www.youtube.com/watch?v=X36InlRJtuk'>film</a> som viser "
+#~ "hvordan du henter din ClientID, Client Secret og Redirect URI."
+
+#~ msgid "Redirect URI:"
+#~ msgstr "Redirect URI:"
+
+#~ msgid ""
+#~ "( Redirect URI is very important when you are using your own Keys Use "
+#~ "this Redirect URI  %1$s )"
+#~ msgstr ""
+#~ "( Redirect URI er veldig viktig når du bruker dine egne nøkler. Bruk "
+#~ "denne Redirect URI  %1$s )"
+
+#~ msgid ""
+#~ "This allows you to view extra dimensions about users (Age, Gender, "
+#~ "Affinity Categories, In-Market Segments and Other Categories."
+#~ msgstr ""
+#~ "Dette gjør det mulig å vise ekstra dimensjoner om brukere (alder, kjønn, "
+#~ "Interessekategorier, markedssegmenter og andre kategorier)."
+
+#~ msgid "You must be authenticate to see the Analytics Dashboard."
+#~ msgstr "Du må være autentisert for og kunne se Analytics kontrollpanelet."
+
+#~ msgid "Bounce rate"
+#~ msgstr "Fluktfrekvens"
+
+#~ msgid ""
+#~ "%1$s %2$s oOps, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s "
+#~ "Authentication."
+#~ msgstr ""
+#~ "%1$s %2$s Beklager, noe gikk galt!%3$s %4$s Prøv å %5$s resette %6$s din "
+#~ "autentifisering."
 
 #~ msgid "Only Tracking<"
 #~ msgstr "Kun sporing<"
