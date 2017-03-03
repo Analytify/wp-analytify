@@ -29,16 +29,17 @@ class WP_ANALYTIFY_ADMIN_BAR {
 		if ( $GLOBALS['WP_ANALYTIFY']->pa_check_roles( $is_access_level ) ) {
 
 			$wp_admin_bar->add_node(array(
-				'id' => 'analytify',
+				'id'    => 'analytify',
 				'title' => '<span class="ab-icon"></span><span id="ab-analytify" class="ab-label">Analytify</span>',
-				'href' => get_admin_url( null, 'admin.php?page=analytify-dashboard' ),
-				'meta' => array( 'target' => '_blank', 'title' => __( 'view complete Analytics of your site', 'wp-analytify' ) ),
+				'href'  => get_admin_url( null, 'admin.php?page=analytify-dashboard' ),
+				'meta'  => array( 'target' => '_blank', 'title' => __( 'view complete Analytics of your site', 'wp-analytify' ) ),
 			));
 
-			$menus['dashboard'] = esc_html__( 'Dashboard' , 'wp-analytify' );
+
+			$menus['analytify-dashboard'] = esc_html__( 'Dashboard' , 'wp-analytify' );
 
 			if ( current_user_can( 'manage_options' ) ) {
-				$menus['settings'] = esc_html__( 'Settings' , 'wp-analytify' );
+				$menus['analytify-settings'] = esc_html__( 'Settings' , 'wp-analytify' );
 			}
 
 			if ( ( ! empty( $current_object->post_type )
@@ -66,11 +67,11 @@ class WP_ANALYTIFY_ADMIN_BAR {
 			}
 
 			foreach ( $menus as $id => $title ) {
-				$wp_admin_bar->add_node(array(
+				$wp_admin_bar->add_node( array(
 					'parent' => 'analytify',
 					'id'     => $id,
 					'title'  => $title,
-					'href'   => get_admin_url( null, 'admin.php?page=analytify-' . $id ),
+					'href'   => get_admin_url( null, 'admin.php?page=' . $id ),
 
 				));
 			}
