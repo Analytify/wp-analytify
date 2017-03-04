@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Analytify Pro\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-27 13:00+0500\n"
-"PO-Revision-Date: 2017-02-27 13:01+0500\n"
+"POT-Creation-Date: 2017-03-04 11:56+0500\n"
+"PO-Revision-Date: 2017-03-04 12:02+0500\n"
 "Last-Translator: MV <info@seo-website.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -25,7 +25,7 @@ msgstr ""
 #: analytify-general.php:112
 #, php-format
 msgid ""
-"%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
+"%1$s Oops, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
 "message is only visible to Administrators. %4$s %2$s "
 msgstr ""
 "%1$s Упс, что-то пошло не так. %2$s %5$s %2$s %3$s Не волнуйтесь, это "
@@ -34,7 +34,7 @@ msgstr ""
 #: analytify-general.php:119
 #, php-format
 msgid ""
-"%1$s oOps, Try to %2$s Reset %3$s Authentication. %4$s %7$s %4$s %5$s Don't "
+"%1$s Oops, Try to %2$s Reset %3$s Authentication. %4$s %7$s %4$s %5$s Don't "
 "worry, This error message is only visible to Administrators. %6$s %4$s"
 msgstr ""
 "%1$s Упс Попробуйте%2$s Сброс%3$s аутентификации. %4$s %7$s %4$s %5$s Не "
@@ -43,7 +43,7 @@ msgstr ""
 #: analytify-general.php:208 analytify-general.php:353
 #, php-format
 msgid ""
-"%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
+"%1$s Oops, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
 "message is only visible to Administrators. %4$s %2$s"
 msgstr ""
 "%1$s Упс, что-то пошло не так. %2$s %5$s %2$s %3$s Не волнуйтесь, это "
@@ -53,7 +53,7 @@ msgstr ""
 #: analytify-general.php:360
 #, php-format
 msgid ""
-"%1$s oOps, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s Don't "
+"%1$s Oops, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s Don't "
 "worry, This error message is only visible to Administrators. %6$s %2$s"
 msgstr ""
 "%1$s Упс Попробуйте%3$s Сброс%4$s аутентификации. %2$s %7$s %2$s %5$s Не "
@@ -63,7 +63,7 @@ msgstr ""
 #: analytify-general.php:367
 #, php-format
 msgid ""
-"%1$s oOps! %2$s %5$s %2$s %3$s Don't worry, This error message is only "
+"%1$s Oops! %2$s %5$s %2$s %3$s Don't worry, This error message is only "
 "visible to Administrators. %4$s %2$s"
 msgstr ""
 "%1$s Oops! %2$s %5$s %2$s %3$s Не волнуйтесь, это сообщение об ошибке видна "
@@ -214,8 +214,8 @@ msgstr "Профиль для сообщений (Backend / Front-end)"
 
 #: classes/analytify-settings.php:183
 msgid ""
-"Select your website profile for Backend/Front-end Stats. You can select your "
-"any Website profile. It will show Analytics for your selected website profile"
+"Select your website profile for Backend/Front-end Stats. You can select any "
+"Website profile. It will show Analytics for your selected website profile"
 msgstr ""
 "Выберите свой профиль для веб-сайта. Вы можете выбрать любой профиль веб-"
 "сайта. Он покажет Analytics для выбранного профиля сайта"
@@ -224,10 +224,10 @@ msgstr ""
 msgid "Profile for Dashboard"
 msgstr "Профиль для Панели Dashboard"
 
-#: classes/analytify-settings.php:193 welcome.php:325
+#: classes/analytify-settings.php:193
 msgid ""
-"Select your website profile for Dashboard Stats. You can select your any "
-"Website profile. It will show Analytics for your selected website profile."
+"Select your website profile for Dashboard Stats. You can select any Website "
+"profile. It will show Analytics for your selected website profile."
 msgstr ""
 "Выберите свой профиль веб-сайта для Dashboard - панели статистики. Вы можете "
 "выбрать любой профиль веб-сайта. Он покажет Analytics для вашего профиля "
@@ -349,7 +349,7 @@ msgid ""
 "to create a Project in Google <a target='_blank' href='https://console."
 "developers.google.com/project'>Console</a>. <br />Here is a short <a "
 "target='_blank' href='https://www.youtube.com/watch?v=X36InlRJtuk'>video "
-"guide</a> to get your own ClientID, Client Secret and Redirect URI and enter "
+"guide</a> to get your own ClientID, Client Secret and Redirect URL and enter "
 "them in below inputs."
 msgstr ""
 
@@ -370,14 +370,14 @@ msgid "Your Client Secret"
 msgstr "Ваш Секретный клиент"
 
 #: classes/analytify-settings.php:280
-msgid "Redirect URI:"
+msgid "Redirect URL:"
 msgstr "Перенаправление  URI"
 
 #: classes/analytify-settings.php:281
 #, php-format
 msgid ""
-"( Redirect URI is very important when you are using your own Keys Use this "
-"Redirect URI  %1$s )"
+"( Redirect URL is very important when you are using your own Keys Use this "
+"Redirect URL  %1$s )"
 msgstr ""
 "(Перенаправление URI очень важно, когда вы используете ваши собственные "
 "ключи Используйте этот URI Перенаправление %1$s)"
@@ -422,10 +422,8 @@ msgstr "Отслеживания: Демографические и По Инт�
 #: classes/analytify-settings.php:313
 msgid ""
 "This allows you to view extra dimensions about users (Age, Gender, Affinity "
-"Categories, In-Market Segments and Other Categories."
+"Categories, In-Market Segments and Other Categories)."
 msgstr ""
-"Это позволяет просматривать дополнительные измерения о пользователях "
-"(возраст, пол, Категории, Рыночные Сегменты и других категории)."
 
 #: classes/analytify-settings.php:318
 msgid "Page Not Found (404)"
@@ -617,7 +615,7 @@ msgid ""
 msgstr ""
 
 #: inc/analytics-dashboard.php:98 inc/analytify-go-pro.php:152
-#: inc/class-wpa-adminbar.php:38
+#: inc/class-wpa-adminbar.php:39
 msgid "Dashboard"
 msgstr "Панель Аналитика"
 
@@ -732,7 +730,7 @@ msgid "What's happening when users come to your site."
 msgstr "Что происходит, когда пользователи приходят на ваш сайт."
 
 #: inc/analytics-dashboard.php:446
-msgid "You must be authenticate to see the Analytics Dashboard."
+msgid "You must be authenticated to see the Analytics Dashboard."
 msgstr "Вы должны авторизироваться чтобы увидеть содержимое Аналитики"
 
 #: inc/analytics-dashboard.php:450
@@ -839,11 +837,11 @@ msgstr "Журналы"
 msgid "view complete Analytics of your site"
 msgstr "просмотреть полную Аналитику вашего сайта"
 
-#: inc/class-wpa-adminbar.php:41 wp-analytify.php:701
+#: inc/class-wpa-adminbar.php:42 wp-analytify.php:701
 msgid "Settings"
 msgstr "Настройки"
 
-#: inc/class-wpa-adminbar.php:55
+#: inc/class-wpa-adminbar.php:56
 msgid "Edit Post"
 msgstr "Редактировать пост"
 
@@ -864,9 +862,8 @@ msgstr ""
 "понятно даже для пользователей нетехнических WordPress."
 
 #: inc/page-addons.php:37
-#, fuzzy
-msgid "Enhaced E-Commerce Tracking for Easy Digital Downloads"
-msgstr "Enhaced E-Commerce Tracking for Easy Digital Downloads"
+msgid "Enhanced E-Commerce Tracking for Easy Digital Downloads"
+msgstr ""
 
 #: inc/page-addons.php:44
 msgid "Campaings Tracking "
@@ -1041,8 +1038,8 @@ msgstr "Количество времени, которое пользовате
 
 #: views/default/admin/general-stats.php:223
 #: views/default/admin/single-general-stats.php:44
-msgid "Bounce rate"
-msgstr "Показатель отказов"
+msgid "Bounce Rate"
+msgstr ""
 
 #: views/default/admin/general-stats.php:225
 #: views/default/admin/single-general-stats.php:46
@@ -1276,7 +1273,7 @@ msgid ""
 "flexibility than the front-end statistics. You can disable front-end stats "
 "and use these shortcodes in any of your pages/posts to show Analytics in "
 "tabular style. If you are familiar with CSS, It can be easily modified to "
-"match with your website look and feel. %1$s Follwing are two types of "
+"match with your website look and feel. %1$s Following are two types of "
 "shortcodes:"
 msgstr ""
 "Analytify шорткоды могут быть использованы для различных целей. Это дает "
@@ -1295,7 +1292,7 @@ msgstr "a) просто:"
 msgid ""
 "Simple Analytify shortcode returns you only the numbers i.e results. It is "
 "useful when you want results of only 1 Metrics and can apply permissions "
-"using roles. You can fetch numbers of %1$s Sessions, Pageviews, Bounce rate "
+"using roles. You can fetch numbers of %1$s Sessions, Pageviews, Bounce Rate "
 "and Users %2$s etc"
 msgstr ""
 "Simple Analytify shortcode returns you only the numbers i.e results. It is "
@@ -1321,13 +1318,13 @@ msgid "Front-end Statistics"
 msgstr "Внешний интерфейс"
 
 #: welcome.php:224
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "We have introduced the %1$s New Front-end Analytics %2$s which will fetch "
 "the stats like backend but with an awesome UI for front-end stats. It was a "
 "long awaited feature which was under development but finally It is here. It "
 "can be customized (if you are good at CSS) according to your website look "
-"and fool. %3$s below are it's important options: "
+"and feel. %3$s below are it's important options: "
 msgstr ""
 "We have introduced the %1$s New Front-end Analytics %2$s which will fetch "
 "the stats like backend but with an awesome UI for front-end stats. It was a "
@@ -1498,7 +1495,7 @@ msgstr "d) профиль для сообщений (Backend / Front-end)"
 
 #: welcome.php:322
 msgid ""
-"Select your website profile for wp-admin edit pages and fron-end pages. "
+"Select your website profile for wp-admin edit pages and Front-end pages. "
 "Select profile which matches your current WordPress website."
 msgstr ""
 "Выберите свой профиль веб-сайта для WP-администратора (редактирования "
@@ -1508,6 +1505,15 @@ msgstr ""
 #: welcome.php:324
 msgid "e) Profile for Dashboard"
 msgstr "е) Профиль для Dashboard"
+
+#: welcome.php:325
+msgid ""
+"Select your website profile for Dashboard Stats. You can select your any "
+"Website profile. It will show Analytics for your selected website profile."
+msgstr ""
+"Выберите свой профиль веб-сайта для Dashboard - панели статистики. Вы можете "
+"выбрать любой профиль веб-сайта. Он покажет Analytics для вашего профиля "
+"выбранного веб-сайта."
 
 #: welcome.php:331
 msgid "Display Statistics at front-end pages"
@@ -1524,7 +1530,7 @@ msgid ""
 "which will fetch the stats like backend but with an awesome UI for front-end "
 "stats. It was a long awaited feature which was under development since 1.0 "
 "but finally It is here. It can be customized (if you are good at CSS) "
-"according to your website look and fool. %3$s Below are it's important "
+"according to your website look and feel. %3$s Below are it's important "
 "options: "
 msgstr ""
 "In version %4$s, We have introduced the %1$s New Front-end Analytics%2$s "
@@ -1698,7 +1704,7 @@ msgstr "Пожалуйста войдите, что бы просматрива�
 #: wp-analytify.php:765
 #, php-format
 msgid ""
-"%1$s %2$s oOps, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s "
+"%1$s %2$s Oops, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s "
 "Authentication."
 msgstr ""
 "%1$s %2$s Упс, что-то пошло не так!%3$s %4$s Попробуйте %5$s Сброс %6$s "
@@ -1825,3 +1831,148 @@ msgstr "WPBrigade"
 #. Author URI of the plugin/theme
 msgid "http://wpbrigade.com/"
 msgstr "http://wpbrigade.com/"
+
+#~ msgid ""
+#~ "%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This "
+#~ "error message is only visible to Administrators. %4$s %2$s "
+#~ msgstr ""
+#~ "%1$s Упс, что-то пошло не так. %2$s %5$s %2$s %3$s Не волнуйтесь, это "
+#~ "сообщение об ошибке видна только администраторам. %4$s %2$s"
+
+#~ msgid ""
+#~ "%1$s oOps, Try to %2$s Reset %3$s Authentication. %4$s %7$s %4$s %5$s "
+#~ "Don't worry, This error message is only visible to Administrators. %6$s "
+#~ "%4$s"
+#~ msgstr ""
+#~ "%1$s Упс Попробуйте%2$s Сброс%3$s аутентификации. %4$s %7$s %4$s %5$s Не "
+#~ "волнуйтесь, это сообщение об ошибке видна только администраторам. %6$s "
+#~ "%4$s"
+
+#~ msgid ""
+#~ "%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This "
+#~ "error message is only visible to Administrators. %4$s %2$s"
+#~ msgstr ""
+#~ "%1$s Упс, что-то пошло не так. %2$s %5$s %2$s %3$s Не волнуйтесь, это "
+#~ "сообщение об ошибке видна только администраторам. %4$s %2$s"
+
+#~ msgid ""
+#~ "%1$s oOps, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s "
+#~ "Don't worry, This error message is only visible to Administrators. %6$s "
+#~ "%2$s"
+#~ msgstr ""
+#~ "%1$s Упс Попробуйте%3$s Сброс%4$s аутентификации. %2$s %7$s %2$s %5$s Не "
+#~ "волнуйтесь, это сообщение об ошибке видна только администраторам. %6$s "
+#~ "%2$s"
+
+#~ msgid ""
+#~ "%1$s oOps! %2$s %5$s %2$s %3$s Don't worry, This error message is only "
+#~ "visible to Administrators. %4$s %2$s"
+#~ msgstr ""
+#~ "%1$s Oops! %2$s %5$s %2$s %3$s Не волнуйтесь, это сообщение об ошибке "
+#~ "видна только администраторам. %4$s %2$s"
+
+#~ msgid ""
+#~ "Select your website profile for Backend/Front-end Stats. You can select "
+#~ "your any Website profile. It will show Analytics for your selected "
+#~ "website profile"
+#~ msgstr ""
+#~ "Выберите свой профиль для веб-сайта. Вы можете выбрать любой профиль веб-"
+#~ "сайта. Он покажет Analytics для выбранного профиля сайта"
+
+#~ msgid "Redirect URI:"
+#~ msgstr "Перенаправление  URI"
+
+#~ msgid ""
+#~ "( Redirect URI is very important when you are using your own Keys Use "
+#~ "this Redirect URI  %1$s )"
+#~ msgstr ""
+#~ "(Перенаправление URI очень важно, когда вы используете ваши собственные "
+#~ "ключи Используйте этот URI Перенаправление %1$s)"
+
+#~ msgid ""
+#~ "This allows you to view extra dimensions about users (Age, Gender, "
+#~ "Affinity Categories, In-Market Segments and Other Categories."
+#~ msgstr ""
+#~ "Это позволяет просматривать дополнительные измерения о пользователях "
+#~ "(возраст, пол, Категории, Рыночные Сегменты и других категории)."
+
+#~ msgid "You must be authenticate to see the Analytics Dashboard."
+#~ msgstr "Вы должны авторизироваться чтобы увидеть содержимое Аналитики"
+
+#, fuzzy
+#~ msgid "Enhaced E-Commerce Tracking for Easy Digital Downloads"
+#~ msgstr "Enhaced E-Commerce Tracking for Easy Digital Downloads"
+
+#~ msgid "Bounce rate"
+#~ msgstr "Показатель отказов"
+
+#~ msgid ""
+#~ "Analytify shortcodes can be used for multiple purposes. It gives you more "
+#~ "flexibility than the front-end statistics. You can disable front-end "
+#~ "stats and use these shortcodes in any of your pages/posts to show "
+#~ "Analytics in tabular style. If you are familiar with CSS, It can be "
+#~ "easily modified to match with your website look and feel. %1$s Follwing "
+#~ "are two types of shortcodes:"
+#~ msgstr ""
+#~ "Analytify шорткоды могут быть использованы для различных целей. Это дает "
+#~ "большую гибкость, чем передний конец статистики. Вы можете отключить "
+#~ "интерфейсные статистику и использовать эти шорткоды в любом из ваших "
+#~ "страниц / постов, чтобы показать Analytics в табличном стиле. Если вы "
+#~ "знакомы с CSS, он может быть легко изменен, чтобы соответствовать с "
+#~ "вашего сайта выглядеть и чувствовать себя. %1$s Follwing два типа "
+#~ "короткие номера:"
+
+#~ msgid ""
+#~ "Simple Analytify shortcode returns you only the numbers i.e results. It "
+#~ "is useful when you want results of only 1 Metrics and can apply "
+#~ "permissions using roles. You can fetch numbers of %1$s Sessions, "
+#~ "Pageviews, Bounce rate and Users %2$s etc"
+#~ msgstr ""
+#~ "Simple Analytify shortcode returns you only the numbers i.e results. It "
+#~ "is useful when you want results of only 1 Metrics and can apply "
+#~ "permissions using roles. You can fetch numbers of %1$s Sessions, "
+#~ "Pageviews, Bounce rate and Users %2$s etc"
+
+#, fuzzy
+#~ msgid ""
+#~ "We have introduced the %1$s New Front-end Analytics %2$s which will fetch "
+#~ "the stats like backend but with an awesome UI for front-end stats. It was "
+#~ "a long awaited feature which was under development but finally It is "
+#~ "here. It can be customized (if you are good at CSS) according to your "
+#~ "website look and fool. %3$s below are it's important options: "
+#~ msgstr ""
+#~ "We have introduced the %1$s New Front-end Analytics %2$s which will fetch "
+#~ "the stats like backend but with an awesome UI for front-end stats. It was "
+#~ "a long awaited feature which was under development but finally It is "
+#~ "here. It can be customized (if you are good at CSS) according to your "
+#~ "website look and fool. %3$s below are it's important options: "
+
+#~ msgid ""
+#~ "Select your website profile for wp-admin edit pages and fron-end pages. "
+#~ "Select profile which matches your current WordPress website."
+#~ msgstr ""
+#~ "Выберите свой профиль веб-сайта для WP-администратора (редактирования "
+#~ "страниц и конечных страниц). Выберите профиль, который соответствует (ваш "
+#~ "текущий сайт WordPress)."
+
+#~ msgid ""
+#~ "In version %4$s, We have introduced the %1$s New Front-end Analytics%2$s "
+#~ "which will fetch the stats like backend but with an awesome UI for front-"
+#~ "end stats. It was a long awaited feature which was under development "
+#~ "since 1.0 but finally It is here. It can be customized (if you are good "
+#~ "at CSS) according to your website look and fool. %3$s Below are it's "
+#~ "important options: "
+#~ msgstr ""
+#~ "In version %4$s, We have introduced the %1$s New Front-end Analytics%2$s "
+#~ "which will fetch the stats like backend but with an awesome UI for front-"
+#~ "end stats. It was a long awaited feature which was under development "
+#~ "since 1.0 but finally It is here. It can be customized (if you are good "
+#~ "at CSS) according to your website look and fool. %3$s Below are it's "
+#~ "important options: "
+
+#~ msgid ""
+#~ "%1$s %2$s oOps, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s "
+#~ "Authentication."
+#~ msgstr ""
+#~ "%1$s %2$s Упс, что-то пошло не так!%3$s %4$s Попробуйте %5$s Сброс %6$s "
+#~ "аутентификации."

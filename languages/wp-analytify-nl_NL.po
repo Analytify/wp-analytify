@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Analytify - Google Analytics Dashboard\n"
-"POT-Creation-Date: 2017-03-02 10:46+0500\n"
-"PO-Revision-Date: 2017-03-02 10:47+0500\n"
+"POT-Creation-Date: 2017-03-04 11:48+0500\n"
+"PO-Revision-Date: 2017-03-04 11:48+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl_NL\n"
@@ -23,7 +23,7 @@ msgstr ""
 #: analytify-general.php:112
 #, php-format
 msgid ""
-"%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
+"%1$s Oops, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
 "message is only visible to Administrators. %4$s %2$s "
 msgstr ""
 "%1$s Oeps. Iets ging verkeerd. %2$s %5$s %2$s %3$s Wees niet bang, dit "
@@ -32,7 +32,7 @@ msgstr ""
 #: analytify-general.php:119
 #, php-format
 msgid ""
-"%1$s oOps, Try to %2$s Reset %3$s Authentication. %4$s %7$s %4$s %5$s Don't "
+"%1$s Oops, Try to %2$s Reset %3$s Authentication. %4$s %7$s %4$s %5$s Don't "
 "worry, This error message is only visible to Administrators. %6$s %4$s"
 msgstr ""
 "%1$s Oeps. Probeer om de authenticatie te %2$s Resetten %3$s. %4$s %7$s %4$s "
@@ -41,7 +41,7 @@ msgstr ""
 #: analytify-general.php:208 analytify-general.php:353
 #, php-format
 msgid ""
-"%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
+"%1$s Oops, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
 "message is only visible to Administrators. %4$s %2$s"
 msgstr ""
 "%1$s Oeps. Iets ging verkeerd. %2$s %5$s %2$s %3$s Wees niet bang, dit "
@@ -51,7 +51,7 @@ msgstr ""
 #: analytify-general.php:360
 #, php-format
 msgid ""
-"%1$s oOps, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s Don't "
+"%1$s Oops, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s Don't "
 "worry, This error message is only visible to Administrators. %6$s %2$s"
 msgstr ""
 "%1$s Oeps. Probeer om de Authenticatie te  %3$s Resetten %4$s. %2$s %7$s "
@@ -62,7 +62,7 @@ msgstr ""
 #: analytify-general.php:367
 #, php-format
 msgid ""
-"%1$s oOps! %2$s %5$s %2$s %3$s Don't worry, This error message is only "
+"%1$s Oops! %2$s %5$s %2$s %3$s Don't worry, This error message is only "
 "visible to Administrators. %4$s %2$s"
 msgstr ""
 "%1$s Oeps! %2$s %5$s %2$s %3$s Wees niet bang, dit bericht is enkel te zien "
@@ -214,11 +214,10 @@ msgstr "Voeg de tracking-code niet toe voor bovenstaande gebruikersrollen"
 msgid "Profile for posts (Backend/Front-end)"
 msgstr "Profiel voor Berichten (Backend/Frontend)"
 
-# is it your or any
 #: classes/analytify-settings.php:183
 msgid ""
-"Select your website profile for Backend/Front-end Stats. You can select your "
-"any Website profile. It will show Analytics for your selected website profile"
+"Select your website profile for Backend/Front-end Stats. You can select any "
+"Website profile. It will show Analytics for your selected website profile"
 msgstr ""
 "Kies uw website-profiel voor Backend/Frontend Statistieken. U kunt elk "
 "Websiteprofiel kiezen."
@@ -227,11 +226,10 @@ msgstr ""
 msgid "Profile for Dashboard"
 msgstr "Profiel voor Dashboard"
 
-# your or any
-#: classes/analytify-settings.php:193 welcome.php:325
+#: classes/analytify-settings.php:193
 msgid ""
-"Select your website profile for Dashboard Stats. You can select your any "
-"Website profile. It will show Analytics for your selected website profile."
+"Select your website profile for Dashboard Stats. You can select any Website "
+"profile. It will show Analytics for your selected website profile."
 msgstr ""
 "Kies uw websiteprofiel voor Dashboard-statistieken. U kunt elk "
 "Websiteprofiel kiezen. Het zal de Analytics voor uw gekozen profiel tonen."
@@ -350,14 +348,13 @@ msgstr ""
 msgid "Do you want to use your own API keys ?"
 msgstr "Wilt u uw eigen API-sleutels gebruiken?"
 
-# URI -> URL
 #: classes/analytify-settings.php:257
 msgid ""
 "It is highly recommended by Google to use your own API keys. <br />You need "
 "to create a Project in Google <a target='_blank' href='https://console."
 "developers.google.com/project'>Console</a>. <br />Here is a short <a "
 "target='_blank' href='https://www.youtube.com/watch?v=X36InlRJtuk'>video "
-"guide</a> to get your own ClientID, Client Secret and Redirect URI and enter "
+"guide</a> to get your own ClientID, Client Secret and Redirect URL and enter "
 "them in below inputs."
 msgstr ""
 "Het wordt sterk aanbevolen door Google om uw eigen API-sleutels te "
@@ -384,16 +381,15 @@ msgstr "Client Geheim:"
 msgid "Your Client Secret"
 msgstr "Uw Client Geheim:"
 
-# URI -> URL
 #: classes/analytify-settings.php:280
-msgid "Redirect URI:"
+msgid "Redirect URL:"
 msgstr "Omleidings-URL:"
 
 #: classes/analytify-settings.php:281
 #, php-format
 msgid ""
-"( Redirect URI is very important when you are using your own Keys Use this "
-"Redirect URI  %1$s )"
+"( Redirect URL is very important when you are using your own Keys Use this "
+"Redirect URL  %1$s )"
 msgstr ""
 "(omleidings-url) is erg belangrijk wanneer u gebruikmaakt van uw eigen "
 "Sleutels,  gebruik dan deze omleidings-URL %1$s)"
@@ -442,11 +438,10 @@ msgstr ""
 msgid "Demographic & Interest Tracking"
 msgstr "Tracking Demografie & Interesses"
 
-# missing closing bracket
 #: classes/analytify-settings.php:313
 msgid ""
 "This allows you to view extra dimensions about users (Age, Gender, Affinity "
-"Categories, In-Market Segments and Other Categories."
+"Categories, In-Market Segments and Other Categories)."
 msgstr ""
 "Dit stelt u in staat om extra dimensies over gebruikers te bekijken "
 "(Leeftijd, Geslacht, Affiniteit Categorieën , In-Market Segmenten en Overige "
@@ -682,7 +677,7 @@ msgstr ""
 "om de actie te laten doorvoeren en probeer dan opnieuw."
 
 #: inc/analytics-dashboard.php:98 inc/analytify-go-pro.php:152
-#: inc/class-wpa-adminbar.php:38
+#: inc/class-wpa-adminbar.php:39
 msgid "Dashboard"
 msgstr "Dashboard"
 
@@ -796,9 +791,8 @@ msgstr "Wie zijn de belangrijke doorverwijzers naar uw website?? Zie boven"
 msgid "What's happening when users come to your site."
 msgstr "Wat gebeurt er wanneer bezoekers op uw website komen"
 
-# authenticate -> authenticated
 #: inc/analytics-dashboard.php:446
-msgid "You must be authenticate to see the Analytics Dashboard."
+msgid "You must be authenticated to see the Analytics Dashboard."
 msgstr "U dient geverifieerd te zijn om de Analytics Dashboard te zien."
 
 #: inc/analytics-dashboard.php:450
@@ -906,11 +900,11 @@ msgstr "Logs"
 msgid "view complete Analytics of your site"
 msgstr "Toon de complete Analytics voor uw website"
 
-#: inc/class-wpa-adminbar.php:41 wp-analytify.php:701
+#: inc/class-wpa-adminbar.php:42 wp-analytify.php:701
 msgid "Settings"
 msgstr "Instellingen"
 
-#: inc/class-wpa-adminbar.php:55
+#: inc/class-wpa-adminbar.php:56
 msgid "Edit Post"
 msgstr "Bewerk Bericht"
 
@@ -930,9 +924,8 @@ msgstr ""
 "Statistieken op een unieke intuïtieve wijze die zelfs begrijpelijk is voor "
 "de minst technisch onderlegde WordPress-gebruikers. "
 
-# Enhaced -> Enhanced
 #: inc/page-addons.php:37
-msgid "Enhaced E-Commerce Tracking for Easy Digital Downloads"
+msgid "Enhanced E-Commerce Tracking for Easy Digital Downloads"
 msgstr "Betere E-Commerce Tracking voor Easy Digital Downloads"
 
 #: inc/page-addons.php:44
@@ -1104,11 +1097,10 @@ msgstr "Gem. tijd op site"
 msgid "The amount of time a user spends on your site."
 msgstr "De tijdsduur van een bezoeker op uw site"
 
-# Wrote Rate with a capital R myself.
 #: views/default/admin/general-stats.php:223
 #: views/default/admin/single-general-stats.php:44
-msgid "Bounce rate"
-msgstr "Bounce Rate"
+msgid "Bounce Rate"
+msgstr ""
 
 #: views/default/admin/general-stats.php:225
 #: views/default/admin/single-general-stats.php:46
@@ -1335,7 +1327,6 @@ msgstr ""
 msgid "Analytify Shortcodes"
 msgstr "Analytify Shortcodes"
 
-# 'Follwing' -> Following
 #: welcome.php:204
 #, php-format
 msgid ""
@@ -1343,7 +1334,7 @@ msgid ""
 "flexibility than the front-end statistics. You can disable front-end stats "
 "and use these shortcodes in any of your pages/posts to show Analytics in "
 "tabular style. If you are familiar with CSS, It can be easily modified to "
-"match with your website look and feel. %1$s Follwing are two types of "
+"match with your website look and feel. %1$s Following are two types of "
 "shortcodes:"
 msgstr ""
 "Analytify shortcodes kunnen gebruikt worden voor meerdere doelen. Het geeft "
@@ -1362,7 +1353,7 @@ msgstr "a) Eenvoudig:"
 msgid ""
 "Simple Analytify shortcode returns you only the numbers i.e results. It is "
 "useful when you want results of only 1 Metrics and can apply permissions "
-"using roles. You can fetch numbers of %1$s Sessions, Pageviews, Bounce rate "
+"using roles. You can fetch numbers of %1$s Sessions, Pageviews, Bounce Rate "
 "and Users %2$s etc"
 msgstr ""
 "Eenvoudige Analytify shortcode geeft enkel de nummers d.w.z. resultaten. Het "
@@ -1392,8 +1383,6 @@ msgstr ""
 msgid "Front-end Statistics"
 msgstr "Front-end Statistieken"
 
-# Stats like backend sounds a little weird, as if the backend is a stat
-# look and fool -> Look and feel
 #: welcome.php:224
 #, php-format
 msgid ""
@@ -1401,7 +1390,7 @@ msgid ""
 "the stats like backend but with an awesome UI for front-end stats. It was a "
 "long awaited feature which was under development but finally It is here. It "
 "can be customized (if you are good at CSS) according to your website look "
-"and fool. %3$s below are it's important options: "
+"and feel. %3$s below are it's important options: "
 msgstr ""
 "We hebben de %1$s Nieuwe Front-end Analytics %2$s die statistieken ophaalt  "
 "zoals  backend maar met een geweldige UI voor front-end statistieken. Het "
@@ -1577,10 +1566,9 @@ msgstr ""
 msgid "d) Profile for posts (Backend/Front-end)"
 msgstr "d) Profiel voor Berichten (Back-end/Front-end)"
 
-# Fron-end  -> Front-end
 #: welcome.php:322
 msgid ""
-"Select your website profile for wp-admin edit pages and fron-end pages. "
+"Select your website profile for wp-admin edit pages and Front-end pages. "
 "Select profile which matches your current WordPress website."
 msgstr ""
 "Selecteer uw website-profiel voor wp-admin bewerken van pagina's en front-"
@@ -1590,6 +1578,15 @@ msgstr ""
 msgid "e) Profile for Dashboard"
 msgstr "e) Profiel voor Dashboard"
 
+# your or any
+#: welcome.php:325
+msgid ""
+"Select your website profile for Dashboard Stats. You can select your any "
+"Website profile. It will show Analytics for your selected website profile."
+msgstr ""
+"Kies uw websiteprofiel voor Dashboard-statistieken. U kunt elk "
+"Websiteprofiel kiezen. Het zal de Analytics voor uw gekozen profiel tonen."
+
 #: welcome.php:331
 msgid "Display Statistics at front-end pages"
 msgstr "Toon Statistieken op de front-end pagina's"
@@ -1598,7 +1595,6 @@ msgstr "Toon Statistieken op de front-end pagina's"
 msgid "Front Tab"
 msgstr "Front Tab"
 
-# lastige zin en wederom look and fool
 #: welcome.php:338
 #, php-format
 msgid ""
@@ -1606,7 +1602,7 @@ msgid ""
 "which will fetch the stats like backend but with an awesome UI for front-end "
 "stats. It was a long awaited feature which was under development since 1.0 "
 "but finally It is here. It can be customized (if you are good at CSS) "
-"according to your website look and fool. %3$s Below are it's important "
+"according to your website look and feel. %3$s Below are it's important "
 "options: "
 msgstr ""
 "In versie %4$s, hebben we de %1$s geïntroduceerd Nieuw Front-end Analytics"
@@ -1784,11 +1780,10 @@ msgstr "PRO vs GRATIS"
 msgid "You must authenticate to access your web profiles."
 msgstr "Verifieer om toegang te krijgen tot uw webprofiel."
 
-# oOps -> Oops
 #: wp-analytify.php:765
 #, php-format
 msgid ""
-"%1$s %2$s oOps, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s "
+"%1$s %2$s Oops, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s "
 "Authentication."
 msgstr ""
 "%1$s %2$s Oeps, iets ging verkeerd!%3$s %4$s Probeer het %5$s resetten van "
@@ -1934,6 +1929,179 @@ msgstr "WPBrigade"
 #. Author URI of the plugin/theme
 msgid "http://wpbrigade.com/"
 msgstr "http://wpbrigade.com/"
+
+#~ msgid ""
+#~ "%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This "
+#~ "error message is only visible to Administrators. %4$s %2$s "
+#~ msgstr ""
+#~ "%1$s Oeps. Iets ging verkeerd. %2$s %5$s %2$s %3$s Wees niet bang, dit "
+#~ "bericht is enkel te zien door Beheerders. %4$s %2$s "
+
+#~ msgid ""
+#~ "%1$s oOps, Try to %2$s Reset %3$s Authentication. %4$s %7$s %4$s %5$s "
+#~ "Don't worry, This error message is only visible to Administrators. %6$s "
+#~ "%4$s"
+#~ msgstr ""
+#~ "%1$s Oeps. Probeer om de authenticatie te %2$s Resetten %3$s. %4$s %7$s "
+#~ "%4$s %5$s Wees niet bang, dit bericht is enkel te zien door Beheerders. "
+#~ "%6$s %4$s"
+
+#~ msgid ""
+#~ "%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This "
+#~ "error message is only visible to Administrators. %4$s %2$s"
+#~ msgstr ""
+#~ "%1$s Oeps. Iets ging verkeerd. %2$s %5$s %2$s %3$s Wees niet bang, dit "
+#~ "bericht is enkel te zien door Beheerders. %4$s %2$s"
+
+#~ msgid ""
+#~ "%1$s oOps, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s "
+#~ "Don't worry, This error message is only visible to Administrators. %6$s "
+#~ "%2$s"
+#~ msgstr ""
+#~ "%1$s Oeps. Probeer om de Authenticatie te  %3$s Resetten %4$s. %2$s %7$s "
+#~ "%2$s %5$s Wees niet bang, dit bericht is enkel te zien door Beheerders.  "
+#~ "%6$s %2$s"
+
+#~ msgid ""
+#~ "%1$s oOps! %2$s %5$s %2$s %3$s Don't worry, This error message is only "
+#~ "visible to Administrators. %4$s %2$s"
+#~ msgstr ""
+#~ "%1$s Oeps! %2$s %5$s %2$s %3$s Wees niet bang, dit bericht is enkel te "
+#~ "zien door Beheerders.  %4$s %2$s"
+
+# is it your or any
+#~ msgid ""
+#~ "Select your website profile for Backend/Front-end Stats. You can select "
+#~ "your any Website profile. It will show Analytics for your selected "
+#~ "website profile"
+#~ msgstr ""
+#~ "Kies uw website-profiel voor Backend/Frontend Statistieken. U kunt elk "
+#~ "Websiteprofiel kiezen."
+
+# URI -> URL
+#~ msgid ""
+#~ "It is highly recommended by Google to use your own API keys. <br />You "
+#~ "need to create a Project in Google <a target='_blank' href='https://"
+#~ "console.developers.google.com/project'>Console</a>. <br />Here is a short "
+#~ "<a target='_blank' href='https://www.youtube.com/watch?"
+#~ "v=X36InlRJtuk'>video guide</a> to get your own ClientID, Client Secret "
+#~ "and Redirect URI and enter them in below inputs."
+#~ msgstr ""
+#~ "Het wordt sterk aanbevolen door Google om uw eigen API-sleutels te "
+#~ "gebruiken.  <br />U dient een Project aan te maken in Google <a "
+#~ "target='_blank' href='https://console.developers.google.com/"
+#~ "project'>Console</a>. <br />Hier vindt u een korte <a target='_blank' "
+#~ "href='https://www.youtube.com/watch?v=X36InlRJtuk'>Videohandleiding/a> om "
+#~ "uw eigen Client-ID, Client Geheim en Omleidings-URL te ontvangen en geef "
+#~ "die in op in onderstaande invoervelden."
+
+# URI -> URL
+#~ msgid "Redirect URI:"
+#~ msgstr "Omleidings-URL:"
+
+#~ msgid ""
+#~ "( Redirect URI is very important when you are using your own Keys Use "
+#~ "this Redirect URI  %1$s )"
+#~ msgstr ""
+#~ "(omleidings-url) is erg belangrijk wanneer u gebruikmaakt van uw eigen "
+#~ "Sleutels,  gebruik dan deze omleidings-URL %1$s)"
+
+# missing closing bracket
+#~ msgid ""
+#~ "This allows you to view extra dimensions about users (Age, Gender, "
+#~ "Affinity Categories, In-Market Segments and Other Categories."
+#~ msgstr ""
+#~ "Dit stelt u in staat om extra dimensies over gebruikers te bekijken "
+#~ "(Leeftijd, Geslacht, Affiniteit Categorieën , In-Market Segmenten en "
+#~ "Overige Categorieën). "
+
+# authenticate -> authenticated
+#~ msgid "You must be authenticate to see the Analytics Dashboard."
+#~ msgstr "U dient geverifieerd te zijn om de Analytics Dashboard te zien."
+
+# Enhaced -> Enhanced
+#~ msgid "Enhaced E-Commerce Tracking for Easy Digital Downloads"
+#~ msgstr "Betere E-Commerce Tracking voor Easy Digital Downloads"
+
+# Wrote Rate with a capital R myself.
+#~ msgid "Bounce rate"
+#~ msgstr "Bounce Rate"
+
+# 'Follwing' -> Following
+#~ msgid ""
+#~ "Analytify shortcodes can be used for multiple purposes. It gives you more "
+#~ "flexibility than the front-end statistics. You can disable front-end "
+#~ "stats and use these shortcodes in any of your pages/posts to show "
+#~ "Analytics in tabular style. If you are familiar with CSS, It can be "
+#~ "easily modified to match with your website look and feel. %1$s Follwing "
+#~ "are two types of shortcodes:"
+#~ msgstr ""
+#~ "Analytify shortcodes kunnen gebruikt worden voor meerdere doelen. Het "
+#~ "geeft u meer flexibiliteit dan de front-end statistieken. U kunt front-"
+#~ "end statistieken  uitschakelen en deze shortcodes gebruiken op uw "
+#~ "pagina's/berichten om Analytics in tabel-stijl te tonen. Indien u bekend "
+#~ "bent met CSS, kunt u het eenvoudig aanpassen aan het uiterlijk aan uw "
+#~ "website. %1$s Hier volgen twee soorten shortcodes:"
+
+#~ msgid ""
+#~ "Simple Analytify shortcode returns you only the numbers i.e results. It "
+#~ "is useful when you want results of only 1 Metrics and can apply "
+#~ "permissions using roles. You can fetch numbers of %1$s Sessions, "
+#~ "Pageviews, Bounce rate and Users %2$s etc"
+#~ msgstr ""
+#~ "Eenvoudige Analytify shortcode geeft enkel de nummers d.w.z. resultaten. "
+#~ "Het komt van pas wanneer u de resultaten van 1 metriek wilt en het kan "
+#~ "permissies toepassen door gebruik van rollen. U kunt nummers ophalen van "
+#~ "%1$s Sessies, Paginaweergaven, Bounce rate en Gebruikers %2$s etc"
+
+# Stats like backend sounds a little weird, as if the backend is a stat
+# look and fool -> Look and feel
+#~ msgid ""
+#~ "We have introduced the %1$s New Front-end Analytics %2$s which will fetch "
+#~ "the stats like backend but with an awesome UI for front-end stats. It was "
+#~ "a long awaited feature which was under development but finally It is "
+#~ "here. It can be customized (if you are good at CSS) according to your "
+#~ "website look and fool. %3$s below are it's important options: "
+#~ msgstr ""
+#~ "We hebben de %1$s Nieuwe Front-end Analytics %2$s die statistieken "
+#~ "ophaalt  zoals  backend maar met een geweldige UI voor front-end "
+#~ "statistieken. Het was een langverwachte optie die in ontwikkeling was "
+#~ "maar nu eindelijk beschikbaar is. Het kan worden aangepast (wanneer u "
+#~ "goed bent in CSS) om het aan te laten sluiten op de look & feel van uw "
+#~ "website. %3$s hieronder staan de belangrijke opties:"
+
+# Fron-end  -> Front-end
+#~ msgid ""
+#~ "Select your website profile for wp-admin edit pages and fron-end pages. "
+#~ "Select profile which matches your current WordPress website."
+#~ msgstr ""
+#~ "Selecteer uw website-profiel voor wp-admin bewerken van pagina's en front-"
+#~ "end pagina's. Kies het profiel dat past bij uw huidige WordPress website."
+
+# lastige zin en wederom look and fool
+#~ msgid ""
+#~ "In version %4$s, We have introduced the %1$s New Front-end Analytics%2$s "
+#~ "which will fetch the stats like backend but with an awesome UI for front-"
+#~ "end stats. It was a long awaited feature which was under development "
+#~ "since 1.0 but finally It is here. It can be customized (if you are good "
+#~ "at CSS) according to your website look and fool. %3$s Below are it's "
+#~ "important options: "
+#~ msgstr ""
+#~ "In versie %4$s, hebben we de %1$s geïntroduceerd Nieuw Front-end Analytics"
+#~ "%2$s dat de statistieken ophaalt zoals in de back-end maar met een "
+#~ "geweldige UI voor front-end statistieken. . Het was een langverwachte "
+#~ "optie die in ontwikkeling was sinds 1.0 maar er nu eindelijk is. Het kan "
+#~ "worden aangepast (wanneer u goed bent in CSS) om aan te laten sluiten op "
+#~ "de look & feel van uw website. %3$s hieronder staan de belangrijke "
+#~ "opties:   "
+
+# oOps -> Oops
+#~ msgid ""
+#~ "%1$s %2$s oOps, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s "
+#~ "Authentication."
+#~ msgstr ""
+#~ "%1$s %2$s Oeps, iets ging verkeerd!%3$s %4$s Probeer het %5$s resetten "
+#~ "van de %6$s authenticatie."
 
 #~ msgid "Only Tracking<"
 #~ msgstr "Alleen Tracking<"

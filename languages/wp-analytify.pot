@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Analytify - Google Analytics Dashboard\n"
-"POT-Creation-Date: 2017-02-21 16:13+0500\n"
+"POT-Creation-Date: 2017-03-04 11:49+0500\n"
 "PO-Revision-Date: 2017-01-24 09:42+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -23,21 +23,21 @@ msgstr ""
 #: analytify-general.php:112
 #, php-format
 msgid ""
-"%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
+"%1$s Oops, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
 "message is only visible to Administrators. %4$s %2$s "
 msgstr ""
 
 #: analytify-general.php:119
 #, php-format
 msgid ""
-"%1$s oOps, Try to %2$s Reset %3$s Authentication. %4$s %7$s %4$s %5$s Don't "
+"%1$s Oops, Try to %2$s Reset %3$s Authentication. %4$s %7$s %4$s %5$s Don't "
 "worry, This error message is only visible to Administrators. %6$s %4$s"
 msgstr ""
 
 #: analytify-general.php:208 analytify-general.php:353
 #, php-format
 msgid ""
-"%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
+"%1$s Oops, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
 "message is only visible to Administrators. %4$s %2$s"
 msgstr ""
 
@@ -45,7 +45,7 @@ msgstr ""
 #: analytify-general.php:360
 #, php-format
 msgid ""
-"%1$s oOps, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s Don't "
+"%1$s Oops, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s Don't "
 "worry, This error message is only visible to Administrators. %6$s %2$s"
 msgstr ""
 
@@ -53,7 +53,7 @@ msgstr ""
 #: analytify-general.php:367
 #, php-format
 msgid ""
-"%1$s oOps! %2$s %5$s %2$s %3$s Don't worry, This error message is only "
+"%1$s Oops! %2$s %5$s %2$s %3$s Don't worry, This error message is only "
 "visible to Administrators. %4$s %2$s"
 msgstr ""
 
@@ -200,18 +200,18 @@ msgstr ""
 
 #: classes/analytify-settings.php:183
 msgid ""
-"Select your website profile for Backend/Front-end Stats. You can select your "
-"any Website profile. It will show Analytics for your selected website profile"
+"Select your website profile for Backend/Front-end Stats. You can select any "
+"Website profile. It will show Analytics for your selected website profile"
 msgstr ""
 
 #: classes/analytify-settings.php:192
 msgid "Profile for Dashboard"
 msgstr ""
 
-#: classes/analytify-settings.php:193 welcome.php:325
+#: classes/analytify-settings.php:193
 msgid ""
-"Select your website profile for Dashboard Stats. You can select your any "
-"Website profile. It will show Analytics for your selected website profile."
+"Select your website profile for Dashboard Stats. You can select any Website "
+"profile. It will show Analytics for your selected website profile."
 msgstr ""
 
 #: classes/analytify-settings.php:200
@@ -320,7 +320,7 @@ msgid ""
 "to create a Project in Google <a target='_blank' href='https://console."
 "developers.google.com/project'>Console</a>. <br />Here is a short <a "
 "target='_blank' href='https://www.youtube.com/watch?v=X36InlRJtuk'>video "
-"guide</a> to get your own ClientID, Client Secret and Redirect URI and enter "
+"guide</a> to get your own ClientID, Client Secret and Redirect URL and enter "
 "them in below inputs."
 msgstr ""
 
@@ -341,14 +341,14 @@ msgid "Your Client Secret"
 msgstr ""
 
 #: classes/analytify-settings.php:280
-msgid "Redirect URI:"
+msgid "Redirect URL:"
 msgstr ""
 
 #: classes/analytify-settings.php:281
 #, php-format
 msgid ""
-"( Redirect URI is very important when you are using your own Keys Use this "
-"Redirect URI  %1$s )"
+"( Redirect URL is very important when you are using your own Keys Use this "
+"Redirect URL  %1$s )"
 msgstr ""
 
 #: classes/analytify-settings.php:294
@@ -389,7 +389,7 @@ msgstr ""
 #: classes/analytify-settings.php:313
 msgid ""
 "This allows you to view extra dimensions about users (Age, Gender, Affinity "
-"Categories, In-Market Segments and Other Categories."
+"Categories, In-Market Segments and Other Categories)."
 msgstr ""
 
 #: classes/analytify-settings.php:318
@@ -575,7 +575,7 @@ msgid ""
 msgstr ""
 
 #: inc/analytics-dashboard.php:98 inc/analytify-go-pro.php:152
-#: inc/class-wpa-adminbar.php:38
+#: inc/class-wpa-adminbar.php:39
 msgid "Dashboard"
 msgstr ""
 
@@ -690,7 +690,7 @@ msgid "What's happening when users come to your site."
 msgstr ""
 
 #: inc/analytics-dashboard.php:446
-msgid "You must be authenticate to see the Analytics Dashboard."
+msgid "You must be authenticated to see the Analytics Dashboard."
 msgstr ""
 
 #: inc/analytics-dashboard.php:450
@@ -797,11 +797,11 @@ msgstr ""
 msgid "view complete Analytics of your site"
 msgstr ""
 
-#: inc/class-wpa-adminbar.php:41 wp-analytify.php:701
+#: inc/class-wpa-adminbar.php:42 wp-analytify.php:701
 msgid "Settings"
 msgstr ""
 
-#: inc/class-wpa-adminbar.php:55
+#: inc/class-wpa-adminbar.php:56
 msgid "Edit Post"
 msgstr ""
 
@@ -818,7 +818,7 @@ msgid ""
 msgstr ""
 
 #: inc/page-addons.php:37
-msgid "Enhaced E-Commerce Tracking for Easy Digital Downloads"
+msgid "Enhanced E-Commerce Tracking for Easy Digital Downloads"
 msgstr ""
 
 #: inc/page-addons.php:44
@@ -979,7 +979,7 @@ msgstr ""
 
 #: views/default/admin/general-stats.php:223
 #: views/default/admin/single-general-stats.php:44
-msgid "Bounce rate"
+msgid "Bounce Rate"
 msgstr ""
 
 #: views/default/admin/general-stats.php:225
@@ -1199,7 +1199,7 @@ msgid ""
 "flexibility than the front-end statistics. You can disable front-end stats "
 "and use these shortcodes in any of your pages/posts to show Analytics in "
 "tabular style. If you are familiar with CSS, It can be easily modified to "
-"match with your website look and feel. %1$s Follwing are two types of "
+"match with your website look and feel. %1$s Following are two types of "
 "shortcodes:"
 msgstr ""
 
@@ -1212,7 +1212,7 @@ msgstr ""
 msgid ""
 "Simple Analytify shortcode returns you only the numbers i.e results. It is "
 "useful when you want results of only 1 Metrics and can apply permissions "
-"using roles. You can fetch numbers of %1$s Sessions, Pageviews, Bounce rate "
+"using roles. You can fetch numbers of %1$s Sessions, Pageviews, Bounce Rate "
 "and Users %2$s etc"
 msgstr ""
 
@@ -1240,7 +1240,7 @@ msgid ""
 "the stats like backend but with an awesome UI for front-end stats. It was a "
 "long awaited feature which was under development but finally It is here. It "
 "can be customized (if you are good at CSS) according to your website look "
-"and fool. %3$s below are it's important options: "
+"and feel. %3$s below are it's important options: "
 msgstr ""
 
 #: welcome.php:229 welcome.php:341
@@ -1379,12 +1379,18 @@ msgstr ""
 
 #: welcome.php:322
 msgid ""
-"Select your website profile for wp-admin edit pages and fron-end pages. "
+"Select your website profile for wp-admin edit pages and Front-end pages. "
 "Select profile which matches your current WordPress website."
 msgstr ""
 
 #: welcome.php:324
 msgid "e) Profile for Dashboard"
+msgstr ""
+
+#: welcome.php:325
+msgid ""
+"Select your website profile for Dashboard Stats. You can select your any "
+"Website profile. It will show Analytics for your selected website profile."
 msgstr ""
 
 #: welcome.php:331
@@ -1402,7 +1408,7 @@ msgid ""
 "which will fetch the stats like backend but with an awesome UI for front-end "
 "stats. It was a long awaited feature which was under development since 1.0 "
 "but finally It is here. It can be customized (if you are good at CSS) "
-"according to your website look and fool. %3$s Below are it's important "
+"according to your website look and feel. %3$s Below are it's important "
 "options: "
 msgstr ""
 
@@ -1554,7 +1560,7 @@ msgstr ""
 #: wp-analytify.php:765
 #, php-format
 msgid ""
-"%1$s %2$s oOps, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s "
+"%1$s %2$s Oops, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s "
 "Authentication."
 msgstr ""
 

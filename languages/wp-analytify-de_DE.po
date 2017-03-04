@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Analytify Pro\n"
-"POT-Creation-Date: 2017-02-17 12:10+0500\n"
-"PO-Revision-Date: 2017-02-17 12:11+0500\n"
+"POT-Creation-Date: 2017-03-04 11:50+0500\n"
+"PO-Revision-Date: 2017-03-04 11:54+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.8.12\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: wp-analytify-pro.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -23,7 +23,7 @@ msgstr ""
 #: analytify-general.php:112
 #, php-format
 msgid ""
-"%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
+"%1$s Oops, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
 "message is only visible to Administrators. %4$s %2$s "
 msgstr ""
 "%1$s Ups, etwas ist schief gelaufen. %2$s %5$s %2$s %3$s Keine Panik, diese "
@@ -32,7 +32,7 @@ msgstr ""
 #: analytify-general.php:119
 #, php-format
 msgid ""
-"%1$s oOps, Try to %2$s Reset %3$s Authentication. %4$s %7$s %4$s %5$s Don't "
+"%1$s Oops, Try to %2$s Reset %3$s Authentication. %4$s %7$s %4$s %5$s Don't "
 "worry, This error message is only visible to Administrators. %6$s %4$s"
 msgstr ""
 "%1$s Ups! Versuchen Sie einen %2$s Reset %3$s der Authentifizierung. %4$s "
@@ -42,7 +42,7 @@ msgstr ""
 #: analytify-general.php:208 analytify-general.php:353
 #, php-format
 msgid ""
-"%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
+"%1$s Oops, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
 "message is only visible to Administrators. %4$s %2$s"
 msgstr ""
 "%1$s Ups, etwas ist schief gelaufen. %2$s %5$s %2$s %3$s Keine Sorge, diese "
@@ -52,7 +52,7 @@ msgstr ""
 #: analytify-general.php:360
 #, php-format
 msgid ""
-"%1$s oOps, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s Don't "
+"%1$s Oops, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s Don't "
 "worry, This error message is only visible to Administrators. %6$s %2$s"
 msgstr ""
 "%1$s Ups, versuchen Sie einen %3$s Reset %4$s der Authentifizierung. %2$s "
@@ -63,7 +63,7 @@ msgstr ""
 #: analytify-general.php:367
 #, php-format
 msgid ""
-"%1$s oOps! %2$s %5$s %2$s %3$s Don't worry, This error message is only "
+"%1$s Oops! %2$s %5$s %2$s %3$s Don't worry, This error message is only "
 "visible to Administrators. %4$s %2$s"
 msgstr ""
 "%1$s Ups! %2$s %5$s %2$s %3$s Keine Sorge, diese Fehlermeldung ist nur für "
@@ -217,8 +217,8 @@ msgstr "Profil für Beiträge (Backend/Frontend)"
 
 #: classes/analytify-settings.php:183
 msgid ""
-"Select your website profile for Backend/Front-end Stats. You can select your "
-"any Website profile. It will show Analytics for your selected website profile"
+"Select your website profile for Backend/Front-end Stats. You can select any "
+"Website profile. It will show Analytics for your selected website profile"
 msgstr ""
 "Wählen Sie Ihr Webseiten-Profil für Backend/Frontend Statistiken. Sie können "
 "aus allen Profilen wählen. Es wird das ausgewählte Profil angezeigt."
@@ -227,10 +227,10 @@ msgstr ""
 msgid "Profile for Dashboard"
 msgstr "Profil für Dashboard"
 
-#: classes/analytify-settings.php:193 welcome.php:325
+#: classes/analytify-settings.php:193
 msgid ""
-"Select your website profile for Dashboard Stats. You can select your any "
-"Website profile. It will show Analytics for your selected website profile."
+"Select your website profile for Dashboard Stats. You can select any Website "
+"profile. It will show Analytics for your selected website profile."
 msgstr ""
 "Wählen Sie Ihr Webseiten-Profil für Dashboard Statistiken. Sie können aus "
 "allen Profilen wählen. Es wird das ausgewählte Profil angezeigt."
@@ -357,7 +357,7 @@ msgid ""
 "to create a Project in Google <a target='_blank' href='https://console."
 "developers.google.com/project'>Console</a>. <br />Here is a short <a "
 "target='_blank' href='https://www.youtube.com/watch?v=X36InlRJtuk'>video "
-"guide</a> to get your own ClientID, Client Secret and Redirect URI and enter "
+"guide</a> to get your own ClientID, Client Secret and Redirect URL and enter "
 "them in below inputs."
 msgstr ""
 "Es wird von Google empfohlen, einen eigenen API Schlüssel zu verwenden. <br /"
@@ -385,14 +385,14 @@ msgid "Your Client Secret"
 msgstr "Ihr Client Secret"
 
 #: classes/analytify-settings.php:280
-msgid "Redirect URI:"
+msgid "Redirect URL:"
 msgstr "Weiterleitungs-URL:"
 
 #: classes/analytify-settings.php:281
 #, php-format
 msgid ""
-"( Redirect URI is very important when you are using your own Keys Use this "
-"Redirect URI  %1$s )"
+"( Redirect URL is very important when you are using your own Keys Use this "
+"Redirect URL  %1$s )"
 msgstr ""
 "( Redirect URL ist sehr wichtig, wenn Sie Ihre eigenen Keys benutzen, nutzen "
 "Sie diese Redirect URL  %1$s )"
@@ -444,7 +444,7 @@ msgstr "Demographie & Interessen Tracking"
 #: classes/analytify-settings.php:313
 msgid ""
 "This allows you to view extra dimensions about users (Age, Gender, Affinity "
-"Categories, In-Market Segments and Other Categories."
+"Categories, In-Market Segments and Other Categories)."
 msgstr ""
 "Dies ermöglicht die Ansicht von erweiterten Dimensionen über Besucher "
 "(Alter, Geschlecht, Interessen und weitere Informationen)."
@@ -572,6 +572,21 @@ msgstr ""
 msgid "WP Analytify Plugin Settings"
 msgstr "WP Analytify Plugin Einstellungen"
 
+#: classes/analytify-utils.php:61 wp-analytify.php:995
+msgctxt "Hour Time"
+msgid "h"
+msgstr ""
+
+#: classes/analytify-utils.php:64 wp-analytify.php:998
+msgctxt "Minute Time"
+msgid "m"
+msgstr ""
+
+#: classes/analytify-utils.php:67 wp-analytify.php:1001
+msgctxt "Second Time"
+msgid "s"
+msgstr ""
+
 #: classes/analytify-utils.php:154
 #, php-format
 msgid ""
@@ -667,7 +682,7 @@ msgstr ""
 "erneut."
 
 #: inc/analytics-dashboard.php:98 inc/analytify-go-pro.php:152
-#: inc/class-wpa-adminbar.php:38
+#: inc/class-wpa-adminbar.php:39
 msgid "Dashboard"
 msgstr "Dashboard"
 
@@ -682,6 +697,10 @@ msgstr "Von:"
 #: inc/analytics-dashboard.php:119 wp-analytify.php:355
 msgid "To:"
 msgstr "Bis:"
+
+#: inc/analytics-dashboard.php:124 wp-analytify.php:362
+msgid "View Stats"
+msgstr "Zeige Statistiken"
 
 #: inc/analytics-dashboard.php:126 wp-analytify.php:364
 msgid "Last 30 days"
@@ -779,7 +798,7 @@ msgid "What's happening when users come to your site."
 msgstr "Was passiert, wenn Benutzer die Webseite aufrufen."
 
 #: inc/analytics-dashboard.php:446
-msgid "You must be authenticate to see the Analytics Dashboard."
+msgid "You must be authenticated to see the Analytics Dashboard."
 msgstr ""
 "Sie müssen authentifiziert sein, um das Analytics Dashboard sehen zu können."
 
@@ -889,11 +908,11 @@ msgstr "Logs"
 msgid "view complete Analytics of your site"
 msgstr "zeige komplette Analytics dieser Seite"
 
-#: inc/class-wpa-adminbar.php:41 wp-analytify.php:701
+#: inc/class-wpa-adminbar.php:42 wp-analytify.php:701
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: inc/class-wpa-adminbar.php:55
+#: inc/class-wpa-adminbar.php:56
 msgid "Edit Post"
 msgstr "Beitrag bearbeiten"
 
@@ -914,7 +933,7 @@ msgstr ""
 "sogar für nicht-technische WordPress Benutzer."
 
 #: inc/page-addons.php:37
-msgid "Enhaced E-Commerce Tracking for Easy Digital Downloads"
+msgid "Enhanced E-Commerce Tracking for Easy Digital Downloads"
 msgstr "Erweitertes E-Commerce Tracking für einfache digitale Downloads"
 
 #: inc/page-addons.php:44
@@ -997,7 +1016,7 @@ msgstr ""
 msgid "Thank you for tracking with Analytify."
 msgstr "Danke für das Tracken mit Analytify."
 
-#: inc/wpa-core-functions.php:235
+#: inc/wpa-core-functions.php:236
 #, php-format
 msgid "%1$s %2$s"
 msgstr "%1$s %2$s"
@@ -1010,41 +1029,41 @@ msgstr "Browser Statistiken"
 msgid "listing statistics of top five browsers."
 msgstr "Statistiken der Top 5 Browser."
 
-#: views/default/admin/general-stats.php:34
-#: views/default/admin/general-stats.php:112
+#: views/default/admin/general-stats.php:35
+#: views/default/admin/general-stats.php:113
 msgid "Mobile"
 msgstr "Smartphone"
 
-#: views/default/admin/general-stats.php:36
-#: views/default/admin/general-stats.php:112
+#: views/default/admin/general-stats.php:37
+#: views/default/admin/general-stats.php:113
 msgid "Tablet"
 msgstr "Tablet"
 
-#: views/default/admin/general-stats.php:38
-#: views/default/admin/general-stats.php:112
+#: views/default/admin/general-stats.php:39
+#: views/default/admin/general-stats.php:113
 msgid "Desktop"
 msgstr "Desktop"
 
-#: views/default/admin/general-stats.php:84
-#: views/default/admin/general-stats.php:95
+#: views/default/admin/general-stats.php:85
+#: views/default/admin/general-stats.php:96
 msgid "New"
 msgstr "Neu"
 
-#: views/default/admin/general-stats.php:84
-#: views/default/admin/general-stats.php:96
+#: views/default/admin/general-stats.php:85
+#: views/default/admin/general-stats.php:97
 msgid "Returning"
 msgstr "Wiederkehrend"
 
-#: views/default/admin/general-stats.php:117
+#: views/default/admin/general-stats.php:118
 msgid "User Devices"
 msgstr ""
 
-#: views/default/admin/general-stats.php:194
+#: views/default/admin/general-stats.php:195
 #: views/default/admin/single-general-stats.php:20
 msgid "Sessions"
 msgstr "Sitzungen"
 
-#: views/default/admin/general-stats.php:196
+#: views/default/admin/general-stats.php:197
 #: views/default/admin/single-general-stats.php:22
 msgid ""
 "Total number of Sessions within the date range. A session is the period time "
@@ -1053,13 +1072,13 @@ msgstr ""
 "Gesamtzahl an Sitzungen innerhalb des Zeitraums. Eine Sitzung ist die Zeit, "
 "die ein Besucher aktiv auf Ihrer Seite verbringt."
 
-#: views/default/admin/general-stats.php:201
+#: views/default/admin/general-stats.php:202
 #: views/default/admin/geographic-stats.php:121
 #: views/default/admin/geographic-stats.php:142
 msgid "Visitors"
 msgstr "Besucher"
 
-#: views/default/admin/general-stats.php:203
+#: views/default/admin/general-stats.php:204
 #: views/default/admin/single-general-stats.php:28
 msgid ""
 "Users that have had at least one session within the selected date range. "
@@ -1068,12 +1087,12 @@ msgstr ""
 "Neue und wiederkehrende Benutzer, die zumindest eine Sitzung innerhalb des "
 "ausgewählten Zeitraums hatten."
 
-#: views/default/admin/general-stats.php:208
+#: views/default/admin/general-stats.php:209
 #: views/default/admin/single-general-stats.php:32
 msgid "Page views"
 msgstr "Seitenanzeigen"
 
-#: views/default/admin/general-stats.php:210
+#: views/default/admin/general-stats.php:211
 #: views/default/admin/single-general-stats.php:34
 msgid ""
 "Pageviews is the total number of pages viewed. Repeated views of a single "
@@ -1082,20 +1101,20 @@ msgstr ""
 "Seitenaufrufe sind die Gesamtzahl der aufgerufenen Seiten. Wiederholte "
 "Aufrufe einer Seite werden mitgezählt."
 
-#: views/default/admin/general-stats.php:215
+#: views/default/admin/general-stats.php:216
 msgid "Avg. time on site"
 msgstr "Durchschn. Zeit auf Seite"
 
-#: views/default/admin/general-stats.php:217
+#: views/default/admin/general-stats.php:218
 msgid "The amount of time a user spends on your site."
 msgstr "Die Zeit, die ein Besucher auf Ihrer Seite verbringt."
 
-#: views/default/admin/general-stats.php:222
+#: views/default/admin/general-stats.php:223
 #: views/default/admin/single-general-stats.php:44
-msgid "Bounce rate"
+msgid "Bounce Rate"
 msgstr "Absprungrate"
 
-#: views/default/admin/general-stats.php:224
+#: views/default/admin/general-stats.php:225
 #: views/default/admin/single-general-stats.php:46
 msgid ""
 "Bounce Rate is the percentage of single-page visits (i.e. visits in which "
@@ -1106,12 +1125,12 @@ msgstr ""
 "Besucher verlässt Ihre Seite nach dem Aufruf der ersten Seite ohne "
 "Interaktion)."
 
-#: views/default/admin/general-stats.php:229
+#: views/default/admin/general-stats.php:230
 msgid "pages/session"
 msgstr "Seiten pro Sitzung"
 
-#: views/default/admin/general-stats.php:231
-#: views/default/admin/general-stats.php:238
+#: views/default/admin/general-stats.php:232
+#: views/default/admin/general-stats.php:239
 #: views/default/admin/single-general-stats.php:52
 msgid ""
 "Pages/Session is the average number of pages viewed during a session. "
@@ -1121,20 +1140,20 @@ msgstr ""
 "seines Aufenthalts auf der Websiete aufruft. Wiederholte Seitenaufrufe "
 "(Aktualisierungen) werden gezählt."
 
-#: views/default/admin/general-stats.php:236
+#: views/default/admin/general-stats.php:237
 #: views/default/admin/single-general-stats.php:50
 msgid "% New sessions"
 msgstr "% neue Sitzungen"
 
-#: views/default/admin/general-stats.php:243
+#: views/default/admin/general-stats.php:244
 msgid "New vs Returning visitors"
 msgstr "Neue vs. wiederkehrende Besucher"
 
-#: views/default/admin/general-stats.php:250
+#: views/default/admin/general-stats.php:251
 msgid "Devices of visitors"
 msgstr "Geräte der Besucher"
 
-#: views/default/admin/general-stats.php:274
+#: views/default/admin/general-stats.php:275
 msgid " ago"
 msgstr " zuvor"
 
@@ -1329,7 +1348,7 @@ msgid ""
 "flexibility than the front-end statistics. You can disable front-end stats "
 "and use these shortcodes in any of your pages/posts to show Analytics in "
 "tabular style. If you are familiar with CSS, It can be easily modified to "
-"match with your website look and feel. %1$s Follwing are two types of "
+"match with your website look and feel. %1$s Following are two types of "
 "shortcodes:"
 msgstr ""
 "Analytify Shortcodes können für mehrere Zwecke verwendet werden. Es gibt "
@@ -1347,7 +1366,7 @@ msgstr "a) Einfach:"
 msgid ""
 "Simple Analytify shortcode returns you only the numbers i.e results. It is "
 "useful when you want results of only 1 Metrics and can apply permissions "
-"using roles. You can fetch numbers of %1$s Sessions, Pageviews, Bounce rate "
+"using roles. You can fetch numbers of %1$s Sessions, Pageviews, Bounce Rate "
 "and Users %2$s etc"
 msgstr ""
 "Einfache Analytify Shortcodes zeigen Ihnen nur die Resultate in Form von "
@@ -1385,7 +1404,7 @@ msgid ""
 "the stats like backend but with an awesome UI for front-end stats. It was a "
 "long awaited feature which was under development but finally It is here. It "
 "can be customized (if you are good at CSS) according to your website look "
-"and fool. %3$s below are it's important options: "
+"and feel. %3$s below are it's important options: "
 msgstr ""
 "Wir haben die %1$s neuen Frontend Analytics eingeführt %2$s, welche die "
 "Statistiken wie im Backend, aber mit einer tollen Frontend-Oberfläche "
@@ -1563,7 +1582,7 @@ msgstr "d) Profile für Beiträge (Backend/Frontend)"
 
 #: welcome.php:322
 msgid ""
-"Select your website profile for wp-admin edit pages and fron-end pages. "
+"Select your website profile for wp-admin edit pages and Front-end pages. "
 "Select profile which matches your current WordPress website."
 msgstr ""
 "Wählen Sie Ihr Webseiten-Profil für den Bearbeitungsmodus von Seiten "
@@ -1573,6 +1592,14 @@ msgstr ""
 #: welcome.php:324
 msgid "e) Profile for Dashboard"
 msgstr "e) Profil für Dashboard"
+
+#: welcome.php:325
+msgid ""
+"Select your website profile for Dashboard Stats. You can select your any "
+"Website profile. It will show Analytics for your selected website profile."
+msgstr ""
+"Wählen Sie Ihr Webseiten-Profil für Dashboard Statistiken. Sie können aus "
+"allen Profilen wählen. Es wird das ausgewählte Profil angezeigt."
 
 #: welcome.php:331
 msgid "Display Statistics at front-end pages"
@@ -1589,7 +1616,7 @@ msgid ""
 "which will fetch the stats like backend but with an awesome UI for front-end "
 "stats. It was a long awaited feature which was under development since 1.0 "
 "but finally It is here. It can be customized (if you are good at CSS) "
-"according to your website look and fool. %3$s Below are it's important "
+"according to your website look and feel. %3$s Below are it's important "
 "options: "
 msgstr ""
 "In Version %4$s haben wir die %1$s neuen Frontend Analytics eingeführt %2$s, "
@@ -1688,10 +1715,6 @@ msgid "This post is excluded and will NOT show Analytics."
 msgstr ""
 "Dieser Beitrag ist ausgeschlossen und wird NICHT in den Analytics angezeigt."
 
-#: wp-analytify.php:362
-msgid "View Stats"
-msgstr "Zeige Statistiken"
-
 #: wp-analytify.php:390
 msgid "You are not allowed to see stats"
 msgstr "Sie sind nicht berechtigt die Statistiken zu sehen."
@@ -1776,7 +1799,7 @@ msgstr ""
 #: wp-analytify.php:765
 #, php-format
 msgid ""
-"%1$s %2$s oOps, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s "
+"%1$s %2$s Oops, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s "
 "Authentication."
 msgstr ""
 "%1$s %2$s oUps, etwas ist schief gelaufen!%3$s %4$s Versuchen Sie ein %5$s "
@@ -1923,6 +1946,168 @@ msgstr "WPBrigade"
 #. Author URI of the plugin/theme
 msgid "http://wpbrigade.com/"
 msgstr "http://wpbrigade.com/"
+
+#~ msgid ""
+#~ "%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This "
+#~ "error message is only visible to Administrators. %4$s %2$s "
+#~ msgstr ""
+#~ "%1$s Ups, etwas ist schief gelaufen. %2$s %5$s %2$s %3$s Keine Panik, "
+#~ "diese Fehlermeldung ist nur für Administratoren sichtbar. %4$s %2$s "
+
+#~ msgid ""
+#~ "%1$s oOps, Try to %2$s Reset %3$s Authentication. %4$s %7$s %4$s %5$s "
+#~ "Don't worry, This error message is only visible to Administrators. %6$s "
+#~ "%4$s"
+#~ msgstr ""
+#~ "%1$s Ups! Versuchen Sie einen %2$s Reset %3$s der Authentifizierung. %4$s "
+#~ "%7$s %4$s %5$s Keine Sorge, diese Fehlermeldung ist nur für "
+#~ "Administratoren sichtbar. %6$s %4$s"
+
+#~ msgid ""
+#~ "%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This "
+#~ "error message is only visible to Administrators. %4$s %2$s"
+#~ msgstr ""
+#~ "%1$s Ups, etwas ist schief gelaufen. %2$s %5$s %2$s %3$s Keine Sorge, "
+#~ "diese Fehlermeldung ist nur für Administratoren sichtbar. %4$s %2$s"
+
+#~ msgid ""
+#~ "%1$s oOps, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s "
+#~ "Don't worry, This error message is only visible to Administrators. %6$s "
+#~ "%2$s"
+#~ msgstr ""
+#~ "%1$s Ups, versuchen Sie einen %3$s Reset %4$s der Authentifizierung. %2$s "
+#~ "%7$s %2$s %5$s Keine Sorge, diese Fehlermeldung ist nur für "
+#~ "Administratoren sichtbar. %6$s %2$s"
+
+#~ msgid ""
+#~ "%1$s oOps! %2$s %5$s %2$s %3$s Don't worry, This error message is only "
+#~ "visible to Administrators. %4$s %2$s"
+#~ msgstr ""
+#~ "%1$s Ups! %2$s %5$s %2$s %3$s Keine Sorge, diese Fehlermeldung ist nur "
+#~ "für Administratoren sichtbar. %4$s %2$s"
+
+#~ msgid ""
+#~ "Select your website profile for Backend/Front-end Stats. You can select "
+#~ "your any Website profile. It will show Analytics for your selected "
+#~ "website profile"
+#~ msgstr ""
+#~ "Wählen Sie Ihr Webseiten-Profil für Backend/Frontend Statistiken. Sie "
+#~ "können aus allen Profilen wählen. Es wird das ausgewählte Profil "
+#~ "angezeigt."
+
+#~ msgid ""
+#~ "It is highly recommended by Google to use your own API keys. <br />You "
+#~ "need to create a Project in Google <a target='_blank' href='https://"
+#~ "console.developers.google.com/project'>Console</a>. <br />Here is a short "
+#~ "<a target='_blank' href='https://www.youtube.com/watch?"
+#~ "v=X36InlRJtuk'>video guide</a> to get your own ClientID, Client Secret "
+#~ "and Redirect URI and enter them in below inputs."
+#~ msgstr ""
+#~ "Es wird von Google empfohlen, einen eigenen API Schlüssel zu verwenden. "
+#~ "<br />Dazu müssen Sie in der <a target='_blank' href='https://console."
+#~ "developers.google.com/project'>Google Console</a> ein Projekt anlegen. "
+#~ "<br />Folgend eine kurze <a target='_blank' href='https://www.youtube.com/"
+#~ "watch?v=X36InlRJtuk'>Video Anleitung</a> , um Ihre eigene ClientID, "
+#~ "Client Secret and Redirect URL zu erhalten und diese in den folgenden "
+#~ "Eingabefeldern einzutragen."
+
+#~ msgid "Redirect URI:"
+#~ msgstr "Weiterleitungs-URL:"
+
+#~ msgid ""
+#~ "( Redirect URI is very important when you are using your own Keys Use "
+#~ "this Redirect URI  %1$s )"
+#~ msgstr ""
+#~ "( Redirect URL ist sehr wichtig, wenn Sie Ihre eigenen Keys benutzen, "
+#~ "nutzen Sie diese Redirect URL  %1$s )"
+
+#~ msgid ""
+#~ "This allows you to view extra dimensions about users (Age, Gender, "
+#~ "Affinity Categories, In-Market Segments and Other Categories."
+#~ msgstr ""
+#~ "Dies ermöglicht die Ansicht von erweiterten Dimensionen über Besucher "
+#~ "(Alter, Geschlecht, Interessen und weitere Informationen)."
+
+#~ msgid "You must be authenticate to see the Analytics Dashboard."
+#~ msgstr ""
+#~ "Sie müssen authentifiziert sein, um das Analytics Dashboard sehen zu "
+#~ "können."
+
+#~ msgid "Enhaced E-Commerce Tracking for Easy Digital Downloads"
+#~ msgstr "Erweitertes E-Commerce Tracking für einfache digitale Downloads"
+
+#~ msgid "Bounce rate"
+#~ msgstr "Absprungrate"
+
+#~ msgid ""
+#~ "Analytify shortcodes can be used for multiple purposes. It gives you more "
+#~ "flexibility than the front-end statistics. You can disable front-end "
+#~ "stats and use these shortcodes in any of your pages/posts to show "
+#~ "Analytics in tabular style. If you are familiar with CSS, It can be "
+#~ "easily modified to match with your website look and feel. %1$s Follwing "
+#~ "are two types of shortcodes:"
+#~ msgstr ""
+#~ "Analytify Shortcodes können für mehrere Zwecke verwendet werden. Es gibt "
+#~ "Ihnen mehr Flexibilität als die Frontend-Statistiken. Sie können Frontend "
+#~ "Statistiken deaktivieren und stattdessen diese Shortcodes auf allen "
+#~ "Seiten/Beiträgen verwenden, um Analytics Statistiken in Tabellenstil "
+#~ "anzuzeigen. Die Ansicht ist per CSS anpassbar. %1$s Folgend zwei Typen "
+#~ "von Shortcodes:"
+
+#~ msgid ""
+#~ "Simple Analytify shortcode returns you only the numbers i.e results. It "
+#~ "is useful when you want results of only 1 Metrics and can apply "
+#~ "permissions using roles. You can fetch numbers of %1$s Sessions, "
+#~ "Pageviews, Bounce rate and Users %2$s etc"
+#~ msgstr ""
+#~ "Einfache Analytify Shortcodes zeigen Ihnen nur die Resultate in Form von "
+#~ "Nummern an. Sie sind nützlich, wenn Sie Ergebnisse nur von 1 Metrik "
+#~ "anzeigen wollen und können Berechtigungsrollen zugewiesen werden. Sie "
+#~ "können Zahlen zu %1$s Sitzungen, Seitenansichten, Absprungrate und "
+#~ "Benutzer %2$s etc. anzeigen."
+
+#~ msgid ""
+#~ "We have introduced the %1$s New Front-end Analytics %2$s which will fetch "
+#~ "the stats like backend but with an awesome UI for front-end stats. It was "
+#~ "a long awaited feature which was under development but finally It is "
+#~ "here. It can be customized (if you are good at CSS) according to your "
+#~ "website look and fool. %3$s below are it's important options: "
+#~ msgstr ""
+#~ "Wir haben die %1$s neuen Frontend Analytics eingeführt %2$s, welche die "
+#~ "Statistiken wie im Backend, aber mit einer tollen Frontend-Oberfläche "
+#~ "darstellt. Es war eine lang erwartete Funktion, welche nun endlich "
+#~ "verfügbar ist. Sie kann durch CSS angepasst werden, um zu Ihrem Webseiten-"
+#~ "Design zu passen. %3$s unten finden Sie die relevanten Optionen:"
+
+#~ msgid ""
+#~ "Select your website profile for wp-admin edit pages and fron-end pages. "
+#~ "Select profile which matches your current WordPress website."
+#~ msgstr ""
+#~ "Wählen Sie Ihr Webseiten-Profil für den Bearbeitungsmodus von Seiten "
+#~ "(Backend) und Frontend Seiten. Wählen Sie, welches Profil zu Ihrer "
+#~ "Wordpress-Webseite gehört."
+
+#~ msgid ""
+#~ "In version %4$s, We have introduced the %1$s New Front-end Analytics%2$s "
+#~ "which will fetch the stats like backend but with an awesome UI for front-"
+#~ "end stats. It was a long awaited feature which was under development "
+#~ "since 1.0 but finally It is here. It can be customized (if you are good "
+#~ "at CSS) according to your website look and fool. %3$s Below are it's "
+#~ "important options: "
+#~ msgstr ""
+#~ "In Version %4$s haben wir die %1$s neuen Frontend Analytics eingeführt "
+#~ "%2$s, welche die Statistiken wie im Backend, aber mit einer tollen "
+#~ "Frontend-Oberfläche darstellt. Es war eine lang erwartete Funktion, "
+#~ "welche nun endlich verfügbar ist. Sie kann durch CSS angepasst werden, um "
+#~ "zu Ihrem Webseiten-Design zu passen. %3$s unten finden Sie die relevanten "
+#~ "Optionen:"
+
+#~ msgid ""
+#~ "%1$s %2$s oOps, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s "
+#~ "Authentication."
+#~ msgstr ""
+#~ "%1$s %2$s oUps, etwas ist schief gelaufen!%3$s %4$s Versuchen Sie ein "
+#~ "%5$s Reset %6$s Ihrer Authentifizierung."
 
 #~ msgid "Only Tracking<"
 #~ msgstr "Nur Tracking<"
@@ -2224,9 +2409,6 @@ msgstr "http://wpbrigade.com/"
 
 #~ msgid "Bounces"
 #~ msgstr "Absprünge"
-
-#~ msgid "Bounce Rate"
-#~ msgstr "Absprungrate"
 
 #~ msgid "sessionDuration"
 #~ msgstr "Sitzungsdauer"

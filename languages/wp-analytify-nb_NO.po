@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Analytify - Google Analytics Dashboard\n"
-"POT-Creation-Date: 2017-03-02 11:40+0500\n"
-"PO-Revision-Date: 2017-03-02 11:45+0500\n"
+"POT-Creation-Date: 2017-03-04 11:49+0500\n"
+"PO-Revision-Date: 2017-03-04 11:49+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nb\n"
@@ -651,7 +651,7 @@ msgstr ""
 "i  <a href=\"%1$s\">Google Project konsollen</a> og prøv på nytt."
 
 #: inc/analytics-dashboard.php:98 inc/analytify-go-pro.php:152
-#: inc/class-wpa-adminbar.php:38
+#: inc/class-wpa-adminbar.php:39
 msgid "Dashboard"
 msgstr "Kontrollpanel"
 
@@ -873,11 +873,11 @@ msgstr "Logger"
 msgid "view complete Analytics of your site"
 msgstr "vis komplett Analytics for nettsiden"
 
-#: inc/class-wpa-adminbar.php:41 wp-analytify.php:701
+#: inc/class-wpa-adminbar.php:42 wp-analytify.php:701
 msgid "Settings"
 msgstr "Innstillinger"
 
-#: inc/class-wpa-adminbar.php:55
+#: inc/class-wpa-adminbar.php:56
 msgid "Edit Post"
 msgstr "Rediger innlegg"
 
