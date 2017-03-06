@@ -201,6 +201,13 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 						'desc'              => __( 'Hide the selection of profiles for Dashboard and Posts (Back-end/Front-end). Best to hide for your clients not to see other profiles.', 'wp-analytify' ),
 						'type'              => 'checkbox',
 						),
+					array(
+						'name'              => 'track_user_data',
+						'label'             => __( 'Allow Usage Tracking?', 'wp-analytify' ),
+						'desc'              => __( 'Allow Analytify to <a href=\'https://wpbrigade.com/wordpress/plugins/non-sensitive-diagnostic-tracking/\' target=\'_blank\'>non-sensitive diagnostic tracking</a> and help us make the plugin even better.', 'wp-analytify' ),
+						'type'              => 'checkbox',
+						'tooltip'           => false,
+						),
 					),
 				'wp-analytify-admin' => array(
 					array(
@@ -415,6 +422,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 						'sanitize_callback' => isset( $option['sanitize_callback'] ) ? $option['sanitize_callback'] : '',
 						'class'              => isset( $option['class'] ) ? $option['class'] : '',
 						'type'              => $type,
+						'tooltip'            => isset( $option['tooltip'] ) ?	$option['tooltip'] : true,
 						);
 
 					add_settings_field( $section . '[' . $option['name'] . ']', $option['label'], array( $this, 'callback_' . $type ), $section, $section, $args );
@@ -545,7 +553,12 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 			$html  .= sprintf( '<label for="%1$s[%2$s]">', $args['section'], $args['id'] );
 			$html  .= sprintf( '<input type="hidden" name="%1$s[%2$s]" value="off" />', $args['section'], $args['id'] );
 			$html  .= sprintf( '<input type="checkbox" class="checkbox" id="%2$s[%3$s]" name="%2$s[%3$s]" value="on" %4$s />', $args['class'], $args['section'], $args['id'], checked( $value, 'on', false ) );
-			$html  .= sprintf( '<span class="dashicons dashicons-editor-help setting-more-info" title="%1$s"></span></label>', $args['desc'] );
+
+			if ( $args['tooltip'] ) {
+				$html  .= sprintf( '<span class="dashicons dashicons-editor-help setting-more-info" title="%1$s"></span></label>', $args['desc'] );
+			} else {
+				$html .= $this->get_field_description( $args );
+			}
 			$html  .= '</fieldset>';
 				// $html =$args['desc'];
 			echo $html;

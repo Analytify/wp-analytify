@@ -184,14 +184,14 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				add_action( 'load-post.php', array( $this, 'load_metaboxes' ) );
 			}
 
-			// Show welcome message when user activate plugin.
-			if ( 1 != get_option( 'show_tracking_pointer_1' ) ) {
-
-				add_action( 'admin_print_footer_scripts', array(
-					$this,
-					'pa_welcome_message',
-				) );
-			}
+			// // Show welcome message when user activate plugin.
+			// if ( 1 != get_option( 'show_tracking_pointer_1' ) ) {
+			//
+			// 	add_action( 'admin_print_footer_scripts', array(
+			// 		$this,
+			// 		'pa_welcome_message',
+			// 	) );
+			// }
 
 			add_filter( 'admin_footer_text', 'wpa_admin_rate_footer_text', 1 );
 			add_action( 'admin_footer', 'wpa_print_js', 25 );
@@ -1431,7 +1431,7 @@ function wp_analytify_activate() {
  */
 function wp_analytify_de_activate() {
 
-	if ( 1 == get_option( 'wpa_allow_tracking' ) ) {
+	if ( 1 == get_option( 'wpa_allow_tracking' ) || 'on' == $GLOBALS['WP_ANALYTIFY']->settings->get_option( 'track_user_data','wp-analytify-profile' ) ) {
 		send_status_analytify( get_option( 'admin_email' ), 'in-active' );
 	}
 
@@ -1446,7 +1446,7 @@ function wp_analytify_de_activate() {
 */
 function wp_analytify_uninstall() {
 
-	if ( 1 == get_option( 'wpa_allow_tracking' ) ) {
+	if ( 1 == get_option( 'wpa_allow_tracking' )  || 'on' == $GLOBALS['WP_ANALYTIFY']->settings->get_option( 'track_user_data','wp-analytify-profile' ) ) {
 		send_status_analytify( get_option( 'admin_email' ), 'delete' );
 	}
 
