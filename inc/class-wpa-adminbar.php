@@ -32,7 +32,7 @@ class WP_ANALYTIFY_ADMIN_BAR {
 				'id'    => 'analytify',
 				'title' => '<span class="ab-icon"></span><span id="ab-analytify" class="ab-label">Analytify</span>',
 				'href'  => get_admin_url( null, 'admin.php?page=analytify-dashboard' ),
-				'meta'  => array( 'target' => '_blank', 'title' => __( 'view complete Analytics of your site', 'wp-analytify' ) ),
+				'meta'  => array( 'title' => __( 'View complete Analytics of your site', 'wp-analytify' ) ),
 			));
 
 
