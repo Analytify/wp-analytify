@@ -38,6 +38,8 @@ class WP_ANALYTIFY_ADMIN_BAR {
 
 			$menus['analytify-dashboard'] = esc_html__( 'Dashboard' , 'wp-analytify' );
 
+			$menus = apply_filters( 'analytify_admin_bar_menu', $menus );
+
 			if ( current_user_can( 'manage_options' ) ) {
 				$menus['analytify-settings'] = esc_html__( 'Settings' , 'wp-analytify' );
 			}
