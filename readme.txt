@@ -4,7 +4,7 @@ Donate link: http://paypal.me/Analytify
 Tags: google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced ecommerce tracking
 Requires at least: 3.0
 Tested up to: 4.7.3
-Stable tag: 2.0.13
+Stable tag: 2.0.14
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -140,10 +140,12 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 == Changelog ==
 
-= 2.0.14 =
+= 2.0.14 - 2017-03-23 =
 * BugFix: Date difference on load.
-* Enhancement: Improved UX.
-
+* Enhancement: Improved UX and fixed few text edits and typos.
+* Enhancement: Dutch language added.
+* Enhancement: Norwegian language updated.
+ 
 
 = 2.0.13 - 2017-02-27 =
 * Enhancement: Norwegian Bokmål Translation added.
@@ -338,8 +340,8 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 == Upgrade Notice ==
 
-= 2.0.13 =
-* [Important Update] Upgrade immediately. Bugfix, 100% Translatable and Norwegian Langauge added.
+= 2.0.14 =
+* [Important Update] Upgrade immediately. Bugfixes, Improvement and New Dutch Langauge added.
 
 
 == Notes ==
