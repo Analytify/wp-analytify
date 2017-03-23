@@ -613,6 +613,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		 */
 		public function admin_styles( $page ) {
 
+			wp_enqueue_style( 'dashicons' );
 			wp_enqueue_style( 'admin-bar-style', plugins_url( 'assets/old/css/admin_bar_styles.css', __FILE__ ), false, ANALYTIFY_VERSION );
 
 			// for Settings only
