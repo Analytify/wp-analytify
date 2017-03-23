@@ -47,6 +47,7 @@ class WPANALYTIFY_AJAX {
 			'load_default_reffers' => false,
 			'dismiss_pointer'	=> true,
 			'remove_comparison_gif' => false,
+			'deactivate' => true,
 			);
 
 		foreach ( $ajax_calls as $ajax_call => $no_priv ) {
@@ -891,7 +892,41 @@ class WPANALYTIFY_AJAX {
 		wp_die();
 	}
 
-}
+	public static function  deactivate() {
+
+		$email         = get_option( 'admin_email' );
+		$_reason       = sanitize_text_field( wp_unslash( $_POST['reason'] ) );
+		$reason_detail = sanitize_text_field( wp_unslash( $_POST['reason_detail'] ) );
+		$reason        = '';
+
+		if ( $_reason == '1' ) {
+			$reason = 'I only needed the plugin for a short period';
+		} elseif ( $_reason == '2' ) {
+			$reason = 'I found a better plugin';
+		} elseif ( $_reason == '3' ) {
+			$reason = 'The plugin broke my site';
+		} elseif ( $_reason == '4' ) {
+			$reason = 'The plugin suddenly stopped working';
+		} elseif ( $_reason == '5' ) {
+			$reason = 'I no longer need the plugin';
+		} elseif ( $_reason == '6' ) {
+			$reason = 'It\'s a temporary deactivation. I\'m just debugging an issue.';
+		} elseif ( $_reason == '7' ) {
+			$reason = 'Other';
+		}
+
+		$fields = array(
+			'action'            => 'Deactivate',
+			'reason'            => $reason,
+			'reason_detail'     => $reason_detail,
+		);
+
+		analytify_send_data( $fields );
+
+		wp_die();
+	}
+
+} // End of WPANALYTIFY_AJAX .
 
 function wp_analytify_ajax_load() {
 

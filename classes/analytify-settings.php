@@ -201,13 +201,13 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 						'desc'              => __( 'Hide the selection of profiles for Dashboard and Posts (Back-end/Front-end). Best to hide for your clients not to see other profiles.', 'wp-analytify' ),
 						'type'              => 'checkbox',
 						),
-					array(
-						'name'              => 'track_user_data',
-						'label'             => __( 'Allow Usage Tracking?', 'wp-analytify' ),
-						'desc'              => __( 'Allow Analytify to <a href=\'https://wpbrigade.com/wordpress/plugins/non-sensitive-diagnostic-tracking/\' target=\'_blank\'>non-sensitive diagnostic tracking</a> and help us make the plugin even better.', 'wp-analytify' ),
-						'type'              => 'checkbox',
-						'tooltip'           => false,
-						),
+					// array(
+					// 	'name'              => 'track_user_data',
+					// 	'label'             => __( 'Allow Usage Tracking?', 'wp-analytify' ),
+					// 	'desc'              => __( 'Allow Analytify to <a href=\'https://wpbrigade.com/wordpress/plugins/non-sensitive-diagnostic-tracking/\' target=\'_blank\'>non-sensitive diagnostic tracking</a> and help us make the plugin even better.', 'wp-analytify' ),
+					// 	'type'              => 'checkbox',
+					// 	'tooltip'           => false,
+					// 	),
 					),
 				'wp-analytify-admin' => array(
 					array(
