@@ -140,8 +140,9 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 == Changelog ==
 
-= 2.0.14 - 2017-03-23 =
+= 2.0.14 - 2017-03-24 =
 * BugFix: Date difference on load.
+* Bugfix: enqueue dashicons css.
 * Enhancement: Improved UX and fixed few text edits and typos.
 * Enhancement: Dutch language added.
 * Enhancement: Norwegian language updated.

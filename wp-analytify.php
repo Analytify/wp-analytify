@@ -177,7 +177,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 			/**
 			 * load Analytics under the EDIT POST Screen
-       * add action runs only for admin section and load metabox.
+       		 * add action runs only for admin section and load metabox.
 			 */
 
 			if ( is_admin() ) {
@@ -207,7 +207,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			add_action( 'wp_footer' , array( $this, 'track_miscellaneous_errors' ) );
 
 			add_action( 'admin_init', array( $this, 'redirect_optin' ) );
-      add_action( 'admin_footer',           array( $this, 'add_deactive_modal' ) );
+      		add_action( 'admin_footer',           array( $this, 'add_deactive_modal' ) );
 
 		}
 
@@ -227,7 +227,8 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		 * @since 2.0.14
 		 */
 		function redirect_optin() {
-			// delete_option( 'analytify_opt' );
+			
+			delete_option( 'analytify_opt' );
 
 			if ( isset( $_POST['analytify-submit-optout'] ) ) {
 				update_option( 'analytify_opt', 'disabled' );
