@@ -227,8 +227,8 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		 * @since 2.0.14
 		 */
 		function redirect_optin() {
-			
-			delete_option( 'analytify_opt' );
+
+			// delete_option( 'analytify_opt' );
 
 			if ( isset( $_POST['analytify-submit-optout'] ) ) {
 				update_option( 'analytify_opt', 'disabled' );
@@ -729,6 +729,8 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 			add_submenu_page( null, __( 'Activate', 'wp-analytify' ), __( 'Activate', 'wp-analytify' ), 'manage_options', 'analytify-optin', array( $this, 'render_optin' )  );
 
+			add_submenu_page( null, __( 'Activate', 'wp-analytify' ), __( 'Activate', 'wp-analytify' ), 'manage_options', 'analytify-optin-test', array( $this, 'render_optin_test' )  );
+
 			add_menu_page( ANALYTIFY_NICK, 'Analytify', 'read', 'analytify-dashboard', array(
 				$this,
 				'pa_page_file_path',
@@ -778,6 +780,11 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		 */
 		function render_optin() {
 			include ANALYTIFY_PLUGIN_DIR . 'inc/analytify-optin-form.php';
+		}
+
+		function render_optin_test() {
+			include ANALYTIFY_PLUGIN_DIR . 'inc/analytify-test-form.php';
+
 		}
 
 		/**
