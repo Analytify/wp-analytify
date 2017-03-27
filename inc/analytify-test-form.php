@@ -7,7 +7,8 @@ padding: 0!important
 }
 #analytify-logo-wrapper {
 padding: 10px 0;
-width: 100%;
+width: 80%;
+margin: 0 auto;
 border-bottom: solid 1px #d5d5d5
 }
 #analytify-logo-wrapper-inner {
@@ -47,13 +48,14 @@ padding: 0;
 margin: 0
 }
 #analytify-splash-footer {
-width: 100%;
+width: 80%;
 padding: 15px 0;
-border-top: 1px solid #d5d5d5;
-border-bottom: 1px solid #d5d5d5;
+border: 1px solid #d5d5d5;
 font-size: 10px;
 text-align: center;
-margin-top: 238px
+margin-top: 238px;
+margin-left: auto;
+margin-right: auto;
 }
 #analytify-ga-optout-btn {
 background: none!important;
@@ -63,8 +65,15 @@ font: inherit;
 color: #7f7f7f;
 border-bottom: 1px solid #7f7f7f;
 cursor: pointer;
-margin-bottom: 40px;
+margin-bottom: 20px;
 font-size: 14px
+}
+.about-wrap .nav-tab + .nav-tab{
+  border-left: 0;
+}
+.about-wrap .nav-tab:focus{
+
+  box-shadow: none;
 }
 #analytify-ga-submit-btn {
 height: 40px;
@@ -89,13 +98,31 @@ padding: 15px
   height: auto;
   float: none;
   display: inline-block;
-  margin-right: .25em;
-  margin-left: .25em;
+  margin-right: 0;
+  margin-left: 0;
+  font-size: 18px;
+  width: 33.333%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 8px 15px;
+}
+.step-wrapper .analytify-splash-box{
+  padding: 0;
+  border: 0;
+}
+.nav-tab-wrapper{
+  margin:0;
+  font-size: 0;
+}
+.nav-tab-wrapper, .wrap h2.nav-tab-wrapper{
+  margin:0;
+  font-size: 0;
 }
 .analytify-tab-content{
   display: none;
   border:1px solid #d5d5d5;
   padding:1px 20px 20px;
+  border-top: 0;
 }
 .analytify-tab-content.active{
   display: block;
@@ -203,6 +230,12 @@ h5{
 a.analytify-ga-button.button.button-primary{
  height: auto !important;
 }
+.changelog:last-child{
+  margin-bottom: 0;
+}
+.changelog:last-child .feature-section{
+  padding-bottom: 0;
+}
 </style>
 <?php
 
@@ -233,6 +266,20 @@ echo '<form method="post" action="' . admin_url( 'admin.php?page=analytify-setti
       echo '<p id="analytify-splash-main-text">' .  sprintf ( __( 'In order to enjoy all our features and functionality,%4$s Google Analytics by Analytify needs to connect %1$s your user, %2$s at %3$s, to %4$s<strong>api.wpbrigade.com</strong>.', 'wp-analytify' ), '<br>', '<strong>' . $name . '</strong>', '<strong>' . $website . '</strong>', '<br>' ) . '</p>';
       echo "<button type='submit' id='analytify-ga-submit-btn' class='analytify-ga-button button button-primary' name='analytify-submit-optin' >" . __( 'Connect Google Analytics by Analytify', 'analytify-ga') . "</button><br>";
       echo "<button type='submit' id='analytify-ga-optout-btn' name='analytify-submit-optout' >" . __( 'Skip This Step', 'analytify-ga') . "</button>";
+      echo '<div id="analytify-splash-permissions" class="analytify-splash-box">';
+        echo '<a id="analytify-splash-permissions-toggle" href="#" >' . __( 'What permission is being granted?', 'wp-analytify' ) . '</a>';
+        echo '<div id="analytify-splash-permissions-dropdown" style="display: none;">';
+          echo '<h3>' .  __( 'Your Website Info', 'wp-analytify' ) . '</h3>';
+          echo '<p>' .  __( 'Your URL, WordPress version, plugins & themes. This data lets us make sure this plugin always stays compatible with the most popular plugins and themes.', 'wp-analytify' ) . '</p>';
+
+          echo '<h3>' .  __( 'Your Info', 'wp-analytify' ) . '</h3>';
+          echo '<p>' .  __( 'Your name and email.', 'wp-analytify' ) . '</p>';
+
+          echo '<h3>' .  __( 'Plugin Usage', 'wp-analytify' ) . '</h3>';
+          echo '<p>' .  __( "How you use this plugin's features and settings. This is limited to usage data. It does not include any of your sensitive Google Analytics data, such as traffic. This data helps us learn which features are most popular, so we can improve the plugin further.", 'wp-analytify' ) . '</p>';
+        echo '</div>';
+      echo '</div>';
+
     echo '</div>';
     echo "<div class='second-step step'>";
     echo "<h2>Login With Google Analytics</h2>";
@@ -244,19 +291,6 @@ echo '<form method="post" action="' . admin_url( 'admin.php?page=analytify-setti
     echo '</div>';
     echo '</div>';
 
-    echo '<div id="analytify-splash-permissions" class="analytify-splash-box">';
-      echo '<a id="analytify-splash-permissions-toggle" href="#" >' . __( 'What permission is being granted?', 'wp-analytify' ) . '</a>';
-      echo '<div id="analytify-splash-permissions-dropdown" style="display: none;">';
-        echo '<h3>' .  __( 'Your Website Info', 'wp-analytify' ) . '</h3>';
-        echo '<p>' .  __( 'Your URL, WordPress version, plugins & themes. This data lets us make sure this plugin always stays compatible with the most popular plugins and themes.', 'wp-analytify' ) . '</p>';
-
-        echo '<h3>' .  __( 'Your Info', 'wp-analytify' ) . '</h3>';
-        echo '<p>' .  __( 'Your name and email.', 'wp-analytify' ) . '</p>';
-
-        echo '<h3>' .  __( 'Plugin Usage', 'wp-analytify' ) . '</h3>';
-        echo '<p>' .  __( "How you use this plugin's features and settings. This is limited to usage data. It does not include any of your sensitive Google Analytics data, such as traffic. This data helps us learn which features are most popular, so we can improve the plugin further.", 'wp-analytify' ) . '</p>';
-      echo '</div>';
-    echo '</div>';
 
 
   echo '</div>';
@@ -279,11 +313,11 @@ jQuery(document).ready(function(s) {
 <div class="wrap about-wrap">
 
   <h2 class="nav-tab-wrapper">
-    <a class="nav-tab" href="#whatsnew">
-      <?php esc_html_e( "What's New", 'wp-analytify' ); ?>
-    </a>
     <a class="nav-tab nav-tab-active" href="#get-started">
       <?php esc_html_e( 'Getting Started', 'wp-analytify' ); ?>
+    </a>
+    <a class="nav-tab" href="#whatsnew">
+      <?php esc_html_e( "What's New", 'wp-analytify' ); ?>
     </a>
     <a class="nav-tab" href="#credits">
       <?php esc_html_e( 'Credits', 'wp-analytify' ); ?>
