@@ -605,7 +605,7 @@ jQuery(document).ready(function(s) {
               url: ajaxurl,
               type: 'POST',
               data: {
-                action: 'analytify_option_yes'
+                action: 'analytify_optin_yes'
               }
             });
 

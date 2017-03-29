@@ -927,7 +927,7 @@ class WPANALYTIFY_AJAX {
 		wp_die();
 	}
 
-	function option_yes() {
+	function optin_yes() {
 
 		// Track in user database
 		update_site_option( '_analytify_optin', 'yes' );
