@@ -214,7 +214,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			global $pagenow;
 
 			if ( 'plugins.php' !== $pagenow ) { return; }
-
+			include ANALYTIFY_PLUGIN_DIR . 'inc/analytify-optout-form.php';
 			include ANALYTIFY_PLUGIN_DIR . 'inc/analytify-deactivate-form.php';
 
 		}
@@ -490,20 +490,20 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 			if ( $file == $this_plugin ) {
 
-				$settings_link = sprintf( esc_html__( '%1$s Settings %2$s | %3$s Dashboard %4$s | %5$s Help %6$s', 'wp-analytify' ), '<a href="' . admin_url( 'admin.php?page=analytify-settings' ) . '">', '</a>', '<a href="' . admin_url( 'admin.php?page=analytify-dashboard' ) . '">', '</a>', '<a href="' . admin_url( 'index.php?page=wp-analytify-getting-started' ) . '">', '</a>' );
+				// $settings_link = sprintf( esc_html__( '%1$s Settings %2$s | %3$s Dashboard %4$s | %5$s Help %6$s', 'wp-analytify' ), '<a href="' . admin_url( 'admin.php?page=analytify-settings' ) . '">', '</a>', '<a href="' . admin_url( 'admin.php?page=analytify-dashboard' ) . '">', '</a>', '<a href="' . admin_url( 'index.php?page=wp-analytify-getting-started' ) . '">', '</a>' );
 
-				// $settings_link = sprintf( esc_html__( '%1$s Settings %2$s | ', 'wp-analytify'), '<a href="' . admin_url( 'admin.php?page=analytify-settings' ) . '">', '</a>' );
-				//
-				// if( 'yes' == get_option( '_analytify_optin' ) ){
-				// 	$settings_link .= sprintf( esc_html__( '%1$s Opt Out %2$s | ', 'wp-analytify'), '<a class="opt-out" href="' . admin_url( 'admin.php?page=analytify-settings' ) . '">', '</a>' );
-				// } else {
-				// 	$settings_link .= sprintf( esc_html__( '%1$s Opt In %2$s | ', 'wp-analytify'), '<a href="' . admin_url( 'admin.php?page=analytify-optin' ) . '">', '</a>' );
-				// }
-				//
-				//
-				// $settings_link .= sprintf( esc_html__( '%1$s Dashboard %2$s | ', 'wp-analytify'), '<a href="' . admin_url( 'admin.php?page=analytify-dashboard' ) . '">', '</a>' );
-				//
-				// $settings_link .= sprintf( esc_html__( '%1$s Help %2$s  ', 'wp-analytify'), '<a href="' . admin_url( 'index.php?page=wp-analytify-getting-started' ) . '">', '</a>'  );
+				$settings_link = sprintf( esc_html__( '%1$s Settings %2$s | ', 'wp-analytify'), '<a href="' . admin_url( 'admin.php?page=analytify-settings' ) . '">', '</a>' );
+
+				if( 'yes' == get_option( '_analytify_optin' ) ){
+					$settings_link .= sprintf( esc_html__( '%1$s Opt Out %2$s | ', 'wp-analytify'), '<a class="opt-out" href="' . admin_url( 'admin.php?page=analytify-settings' ) . '">', '</a>' );
+				} else {
+					$settings_link .= sprintf( esc_html__( '%1$s Opt In %2$s | ', 'wp-analytify'), '<a href="' . admin_url( 'admin.php?page=analytify-optin' ) . '">', '</a>' );
+				}
+
+
+				$settings_link .= sprintf( esc_html__( '%1$s Dashboard %2$s | ', 'wp-analytify'), '<a href="' . admin_url( 'admin.php?page=analytify-dashboard' ) . '">', '</a>' );
+
+				$settings_link .= sprintf( esc_html__( '%1$s Help %2$s  ', 'wp-analytify'), '<a href="' . admin_url( 'index.php?page=wp-analytify-getting-started' ) . '">', '</a>'  );
 				array_unshift( $links, $settings_link );
 			}
 
@@ -699,7 +699,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			if( $wp_analytify->pa_check_roles( get_option( 'post_analytics_access_back' ) ) ) {*/
 
 
-			add_submenu_page( null, __( 'Activate', 'wp-analytify' ), __( 'Activate', 'wp-analytify' ), 'manage_options', 'analytify-optin-test', array( $this, 'render_optin_test' )  );
+			add_submenu_page( null, __( 'Activate', 'wp-analytify' ), __( 'Activate', 'wp-analytify' ), 'manage_options', 'analytify-optin', array( $this, 'render_optin' )  );
 
 			add_menu_page( ANALYTIFY_NICK, 'Analytify', 'read', 'analytify-dashboard', array(
 				$this,
@@ -745,8 +745,8 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 
 
-		function render_optin_test() {
-			include ANALYTIFY_PLUGIN_DIR . 'inc/analytify-test-form.php';
+		function render_optin() {
+			include ANALYTIFY_PLUGIN_DIR . 'inc/analytify-optin-form.php';
 		}
 
 		/**

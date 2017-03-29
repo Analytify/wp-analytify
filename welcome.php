@@ -445,13 +445,14 @@ class Analytify_Welcome {
 	 * @return void
 	 */
 	public function welcome() {
-
+		
 		$is_show = get_option( 'show_welcome_page' );
 
 		if( ! $is_show ) { // First time install
 
 			update_option( 'show_welcome_page' ,  1 );
-			wp_redirect( admin_url( 'index.php?page=wp-analytify-getting-started' ) );
+			// wp_redirect( admin_url( 'index.php?page=wp-analytify-getting-started' ) );
+			wp_redirect( admin_url( 'index.php?page=analytify-optin' ) );
 			exit;
 		}
 	}
