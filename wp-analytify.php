@@ -209,8 +209,21 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			add_action( 'wp_footer' , array( $this, 'track_miscellaneous_errors' ) );
 
       add_action( 'admin_footer',           array( $this, 'add_deactive_modal' ) );
-
+			add_action( 'admin_init', array( $this, 'redirect_optin' ) );
 		}
+
+		/**
+	 * Send Data To WPBrigade
+	 *
+	 * @since 2.0.14
+	 */
+	function redirect_optin() {
+
+		if ( ! get_option( '_analytify_optin' ) && isset( $_GET['page'] ) &&	( $_GET['page'] === 'analytify-settings' || $_GET['page'] === 'analytify-dashboard' || $_GET['page'] === 'analytify-woocommerce' || $_GET['page'] === 'analytify-addons' ) ) {
+			wp_redirect( admin_url('admin.php?page=analytify-optin') );
+			exit;
+		}
+	}
 
 		function add_deactive_modal() {
 			global $pagenow;
