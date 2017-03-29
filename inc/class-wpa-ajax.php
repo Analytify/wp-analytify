@@ -48,6 +48,7 @@ class WPANALYTIFY_AJAX {
 			'dismiss_pointer'	=> true,
 			'remove_comparison_gif' => false,
 			'deactivate' => true,
+			'option_yes' => false,
 			);
 
 		foreach ( $ajax_calls as $ajax_call => $no_priv ) {
@@ -923,6 +924,16 @@ class WPANALYTIFY_AJAX {
 
 		analytify_send_data( $fields );
 
+		wp_die();
+	}
+
+	function option_yes() {
+
+		$fields = array(
+			'action'            => 'Activate',
+			'track_mailchimp' =>		'yes'
+			);
+		analytify_send_data( $fields );
 		wp_die();
 	}
 

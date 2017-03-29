@@ -207,7 +207,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			add_action( 'wp_footer' , array( $this, 'track_miscellaneous_errors' ) );
 
 			add_action( 'admin_init', array( $this, 'redirect_optin' ) );
-      		add_action( 'admin_footer',           array( $this, 'add_deactive_modal' ) );
+      add_action( 'admin_footer',           array( $this, 'add_deactive_modal' ) );
 
 		}
 
@@ -1587,10 +1587,16 @@ function analytify_send_data( $args ) {
 		'method'      => 'POST',
 		'timeout'     => 5,
 		'httpversion' => '1.0',
-		'blocking'    => false,
+		'blocking'    => true,
 		'headers'     => array(),
 		'body'        => $args,
 	) );
+
+
+	if ( 200 == wp_remote_retrieve_response_code( $response ) ){
+		update_option( '_analytify_optin', 'yes' );
+	}
+
 }
 
 // ====================== active - inactive - delete hooks =========================
