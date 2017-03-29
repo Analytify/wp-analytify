@@ -272,14 +272,17 @@ echo '<form method="post" action="' . admin_url( 'admin.php?page=analytify-setti
       echo '<div id="analytify-splash-permissions" class="analytify-splash-box">';
         echo '<a id="analytify-splash-permissions-toggle" href="#" >' . __( 'What permissions are being granted?', 'wp-analytify' ) . '</a>';
         echo '<div id="analytify-splash-permissions-dropdown" style="display: none;">';
-          echo '<h3>' .  __( 'Your Website Info', 'wp-analytify' ) . '</h3>';
-          echo '<p>' .  __( 'Your URL, WordPress version, plugins & themes. This data lets us make sure this plugin always stays compatible with the most popular plugins and themes.', 'wp-analytify' ) . '</p>';
+          echo '<h3>' .  __( 'Your Website Overview', 'wp-analytify' ) . '</h3>';
+          echo '<p>' .  __( 'Your Site URL, WordPress & PHP version, plugins & themes. This data lets us make sure this plugin always stays compatible with the most popular plugins and themes.', 'wp-analytify' ) . '</p>';
 
-          echo '<h3>' .  __( 'Your Info', 'wp-analytify' ) . '</h3>';
-          echo '<p>' .  __( 'Your name and email.', 'wp-analytify' ) . '</p>';
+          echo '<h3>' .  __( 'Your Profile Overview', 'wp-analytify' ) . '</h3>';
+          echo '<p>' .  __( 'Your name and email address.', 'wp-analytify' ) . '</p>';
 
-          echo '<h3>' .  __( 'Plugin Usage', 'wp-analytify' ) . '</h3>';
-          echo '<p>' .  __( "How you use this plugin's features and settings. This is limited to usage data. It does not include any of your sensitive Google Analytics data, such as traffic. This data helps us learn which features are most popular, so we can improve the plugin further.", 'wp-analytify' ) . '</p>';
+          echo '<h3>' .  __( 'Admin Notices', 'wp-analytify' ) . '</h3>';
+          echo '<p>' .  __( "Updates, Announcement, Marketing. No Spam, I promise.", 'wp-analytify' ) . '</p>';
+
+          echo '<h3>' .  __( 'Plugin Actions', 'wp-analytify' ) . '</h3>';
+          echo '<p>' .  __( "Active, Deactive, Uninstallation and How you use this plugin's features and settings. This is limited to usage data. It does not include any of your sensitive Google Analytics data, such as traffic. This data helps us learn which features are most popular, so we can improve the plugin further.", 'wp-analytify' ) . '</p>';
         echo '</div>';
       echo '</div>';
 
