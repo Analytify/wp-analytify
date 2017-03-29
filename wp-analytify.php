@@ -784,7 +784,6 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 		function render_optin_test() {
 			include ANALYTIFY_PLUGIN_DIR . 'inc/analytify-test-form.php';
-
 		}
 
 		/**

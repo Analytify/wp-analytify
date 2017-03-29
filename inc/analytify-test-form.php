@@ -81,6 +81,9 @@ margin: 30px;
 margin-bottom: 15px;
 font-size: 16px
 }
+#analytify-ga-submit-btn:after{
+  content: '\279C';
+}
 .analytify-splash-box {
 width: 100%;
 max-width: 600px;
@@ -241,7 +244,7 @@ a.analytify-ga-button.button.button-primary{
 
 
 $user = wp_get_current_user();
-$name = empty( $user->user_firstname ) ? '' : $user->user_firstname;
+$name = empty( $user->user_firstname ) ? $user->display_name : $user->user_firstname;
 $email = $user->user_email;
 $site_link = '<a href="' . get_site_url() . '">'. get_site_url() . '</a>';
 $website = get_site_url();
@@ -263,11 +266,11 @@ echo '<form method="post" action="' . admin_url( 'admin.php?page=analytify-setti
     echo '<div id="analytify-splash-main" class="analytify-splash-box">';
     echo '<div class="step-wrapper">';
     echo "<div class='first-step step'>";
-      echo '<p id="analytify-splash-main-text">' .  sprintf ( __( 'In order to enjoy all our features and functionality,%4$s Google Analytics by Analytify needs to connect %1$s your user, %2$s at %3$s, to %4$s<strong>api.wpbrigade.com</strong>.', 'wp-analytify' ), '<br>', '<strong>' . $name . '</strong>', '<strong>' . $website . '</strong>', '<br>' ) . '</p>';
-      echo "<button type='submit' id='analytify-ga-submit-btn' class='analytify-ga-button button button-primary' name='analytify-submit-optin' >" . __( 'Connect Google Analytics by Analytify', 'analytify-ga') . "</button><br>";
+      echo '<p id="analytify-splash-main-text">' .  sprintf ( __( 'Hey %2$s,  %4$s If you opt-in some data about your installation of Analytify will be sent to analytify.io (This doesn\'t include stats)%4$s and You will receive new feature updates, security notifications etc <i>No Spam, I promise.</i> %4$s%4$s Help us <strong>Improve Google Analytics by Analytify</strong> %4$s %4$s ', 'wp-analytify' ), '<br>', '<strong>' . $name . '</strong>', '<strong>' . $website . '</strong>', '<br>' ) . '</p>';
+      echo "<button type='submit' id='analytify-ga-submit-btn' class='analytify-ga-button button button-primary' name='analytify-submit-optin' >" . __( 'Allow and Continue  ', 'analytify-ga') . "</button><br>";
       echo "<button type='submit' id='analytify-ga-optout-btn' name='analytify-submit-optout' >" . __( 'Skip This Step', 'analytify-ga') . "</button>";
       echo '<div id="analytify-splash-permissions" class="analytify-splash-box">';
-        echo '<a id="analytify-splash-permissions-toggle" href="#" >' . __( 'What permission is being granted?', 'wp-analytify' ) . '</a>';
+        echo '<a id="analytify-splash-permissions-toggle" href="#" >' . __( 'What permissions are being granted?', 'wp-analytify' ) . '</a>';
         echo '<div id="analytify-splash-permissions-dropdown" style="display: none;">';
           echo '<h3>' .  __( 'Your Website Info', 'wp-analytify' ) . '</h3>';
           echo '<p>' .  __( 'Your URL, WordPress version, plugins & themes. This data lets us make sure this plugin always stays compatible with the most popular plugins and themes.', 'wp-analytify' ) . '</p>';
@@ -285,7 +288,7 @@ echo '<form method="post" action="' . admin_url( 'admin.php?page=analytify-setti
     echo "<h2>Login With Google Analytics</h2>";
     echo "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>";
 
-    echo "<a target='_self' href='https://accounts.google.com/o/oauth2/auth?".WP_ANALYTIFY_FUNCTIONS::generate_login_url()."' type='submit' class='analytify-ga-button button button-primary' style='height: 40px; margin: 30px; margin-bottom: 15px; font-size: 16px;' >Connect With Google</a>";
+    echo "<a target='_self' href='https://accounts.google.com/o/oauth2/auth?".WP_ANALYTIFY_FUNCTIONS::generate_login_url()."' type='submit' class='analytify-ga-button button button-primary' style='height: 40px; margin: 30px; margin-bottom: 15px; font-size: 16px;' >Connect With Google Analytics</a>";
 
     echo '</div>';
     echo '</div>';
