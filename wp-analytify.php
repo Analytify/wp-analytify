@@ -14,7 +14,7 @@
  * @package WP_ANALYTIFY
  */
 
-delete_site_option( '_analytify_optin' );
+// delete_site_option( '_analytify_optin' );
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) { exit; }

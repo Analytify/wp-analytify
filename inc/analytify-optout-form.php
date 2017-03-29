@@ -101,7 +101,8 @@
     </div>
     <div class="wp-analytify-modal-footer">
       <form class="" action="<?php echo admin_url( 'plugins.php' ) ?>" method="post">
-        <button type='submit' name='analytify-submit-optout' class="button button-secondary button-opt-out" tabindex="1">Opt Out</button>
+        <span class="wp-analytify-optout-spinner"><img src="<?php echo admin_url( '/images/spinner.gif' ); ?>" alt=""></span>
+        <button type='submit' name='analytify-submit-optout' id='analytify_optout_button'  class="button button-secondary button-opt-out" tabindex="1">Opt Out</button>
         <button class="button button-primary button-close" tabindex="2">On second thought - I want to continue helping</button>
       </form>
     </div>
@@ -126,6 +127,19 @@
     $(document).on('click', '.button-close', function(event) {
       event.preventDefault();
       $('.wp-analytify-modal-opt-out').removeClass('active');
+    });
+
+    $(document).on('click','#analytify_optout_button', function(event) {
+      event.preventDefault();
+      $.ajax({
+        url: ajaxurl,
+        type: 'POST',
+        data: {action: 'analytify_optout_yes'}
+      })
+      .done(function() {
+        console.log("success");
+      });
+
     });
 
   });

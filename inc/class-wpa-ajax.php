@@ -49,6 +49,7 @@ class WPANALYTIFY_AJAX {
 			'remove_comparison_gif' => false,
 			'deactivate' => true,
 			'optin_yes' => false,
+			'optout_yes' => false
 			);
 
 		foreach ( $ajax_calls as $ajax_call => $no_priv ) {
@@ -938,6 +939,12 @@ class WPANALYTIFY_AJAX {
 			);
 		analytify_send_data( $fields );
 		wp_die();
+	}
+
+	function optout_yes() {
+		delete_site_option( '_analytify_optin' );
+		wp_die();
+
 	}
 
 } // End of WPANALYTIFY_AJAX .
