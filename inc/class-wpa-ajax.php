@@ -48,7 +48,7 @@ class WPANALYTIFY_AJAX {
 			'dismiss_pointer'	=> true,
 			'remove_comparison_gif' => false,
 			'deactivate' => true,
-			'option_yes' => false,
+			'optin_yes' => false,
 			);
 
 		foreach ( $ajax_calls as $ajax_call => $no_priv ) {
