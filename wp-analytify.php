@@ -129,7 +129,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		 */
 		private function includes() {
 
-			include_once ANALYTIFY_PLUGIN_DIR . '/welcome.php';
+			//include_once ANALYTIFY_PLUGIN_DIR . '/welcome.php';
 			// require_once ANALYTIFY_PLUGIN_DIR . '/wp-analytify/inc/class-analytify-logging.php';
 			include_once ANALYTIFY_PLUGIN_DIR . '/inc/wpa-core-functions.php';
 
@@ -1556,9 +1556,9 @@ function analytify_send_data( $args ) {
 	) );
 
 
-	if ( 200 == wp_remote_retrieve_response_code( $response ) ){
-		update_option( '_analytify_optin', 'yes' );
-	}
+	// if ( 200 == wp_remote_retrieve_response_code( $response ) ){
+	// 	update_option( '_analytify_optin', 'yes' );
+	// }
 
 }
 

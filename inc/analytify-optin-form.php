@@ -231,6 +231,13 @@ a.analytify-ga-button.button.button-primary{
 .changelog:last-child .feature-section{
   padding-bottom: 0;
 }
+
+#analytify-logo-text{
+  margin-right: 40px;
+  position: relative;
+  bottom: -5px;
+  width: 55px;
+}
 </style>
 <?php
 
@@ -241,19 +248,17 @@ $email = $user->user_email;
 $site_link = '<a href="' . get_site_url() . '">'. get_site_url() . '</a>';
 $website = get_site_url();
 
-
-
 echo '<form method="post" action="' . admin_url( 'admin.php?page=analytify-settings' ) . '">';
-echo '<div id="analytify-logo-wrapper">';
-echo '<div id="analytify-logo-wrapper-inner">';
-echo '<img id="analytify-logo-text" src="' . plugins_url( 'assets/images/notice-logo.svg', dirname( __FILE__ ) )  . '">';
-echo '</div>';
-echo '</div>';
+// echo '<div id="analytify-logo-wrapper">';
+// echo '<div id="analytify-logo-wrapper-inner">';
+// echo '<img id="analytify-logo-text" src="' . plugins_url( 'assets/images/notice-logo.svg', dirname( __FILE__ ) )  . '">';
+// echo '</div>';
+// echo '</div>';
 
 echo "<input type='hidden' name='email' value='$email'>";
 
 echo '<div id="analytify-splash">';
-echo '<h1>' . __( 'Welcome to Google Analytics by Analytify', 'wp-analytify' ) . '</h1>';
+echo '<h1> <img id="analytify-logo-text" src="' . plugins_url( 'assets/images/notice-logo.svg', dirname( __FILE__ ) )  . '"> ' . __( 'Welcome to Google Analytics by Analytify', 'wp-analytify' ) . '</h1>';
 
     echo '<div id="analytify-splash-main" class="analytify-splash-box">';
     echo '<div class="step-wrapper">';
@@ -327,17 +332,16 @@ jQuery(document).ready(function(s) {
   </h2>
   <div class="analytify-tab-content active" id="get-started">
     <p class="about-description">
-      <?php echo sprintf( esc_html__( 'Getting started with Analytify plugin settings are very easy to use and ready to go in minutes. If there is something you don\'t understand or confusing, do ask us on %1$sWordPress.org support forum%2$s without hesitation.', 'wp-analytify' ), ' <a href="http://wordpress.org/support/plugin/wp-analytify/" tagget="_blank">', '</a>');?>
+      <?php echo sprintf( esc_html__( 'Getting started with Analytify, plugin settings are very easy to use and ready to go in minutes. If there is something you don\'t understand or confusing, do ask us on %1$sWordPress.org support forum%2$s without hesitation.', 'wp-analytify' ), ' <a href="http://wordpress.org/support/plugin/wp-analytify/" tagget="_blank">', '</a>');?>
     </p>
 
     <div class="changelog">
-      <h3><?php echo sprintf( esc_html__( '%1$s Connect with Analytify %2$s', 'wp-analytify' ), '<a href="' . admin_url( 'admin.php?page=analytify-settings'). '" tagget="_blank">', '</a>' );?></h3>
-
+    <br />
       <div class="feature-section">
         <img width="414" src="<?php echo plugins_url( 'assets/images/authenticate2.png',dirname( __FILE__ ) );?>" alt="" class="wp-analytify-welcome-screenshots">
         <div class="analytify-text-settings">
 
-          <h4><?php esc_html_e( 'Authentication', 'wp-analytify' );?></h4>
+          <h4><?php esc_html_e( 'Step 1: Authentication', 'wp-analytify' );?></h4>
           <p><?php esc_html_e( 'You must have a registered Google Analytics account and setup your website profiles to use with Analytify on your WordPress based sites. Click on Login button and It will redirect you to separate Google access page. Allow this plugin to fetch the data from Google Analytics and It will take you back to your profile tab.', 'wp-analytify' );?></p>
         </div>
 
@@ -347,7 +351,7 @@ jQuery(document).ready(function(s) {
 
 
     <div class="changelog">
-      <h3><?php esc_html_e( 'Setting up profiles', 'wp-analytify' );?></h3>
+      <h3><?php esc_html_e( 'Step 2: Setting up profiles', 'wp-analytify' );?></h3>
 
       <div class="feature-section">
         <img src="<?php echo plugins_url( 'assets/images/profile-data.png', dirname( __FILE__ ) );?>" alt="" class="wp-analytify-welcome-screenshots wp-analytify-left-screenshot">
@@ -375,7 +379,7 @@ jQuery(document).ready(function(s) {
     </div>
 
     <div class="changelog">
-      <h3><?php esc_html_e( 'Display Statistics at front-end pages', 'wp-analytify' );?></h3>
+      <h3><?php esc_html_e( 'Step 3: Display Statistics at front-end pages', 'wp-analytify' );?></h3>
 
       <div class="feature-section col three-col">
 
@@ -409,7 +413,7 @@ jQuery(document).ready(function(s) {
       </div>
 
       <div class="changelog analytify-backend-settings">
-        <h3><?php esc_html_e( 'Display Statistics under Edit pages (backend)', 'wp-analytify' );?></h3>
+        <h3><?php esc_html_e( 'Step 4: Display Statistics under Edit pages (backend)', 'wp-analytify' );?></h3>
 
         <div class="feature-section col three-col">
 
@@ -477,7 +481,7 @@ jQuery(document).ready(function(s) {
         </div>
 
         <div class="newfeatures">
-          <h3><?php esc_html_e( 'New features', 'wp-analytify' );?></h3>
+        
 
           <div class="feature-section">
 

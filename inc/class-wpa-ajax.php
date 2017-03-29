@@ -929,6 +929,9 @@ class WPANALYTIFY_AJAX {
 
 	function option_yes() {
 
+		// Track in user database
+		update_site_option( '_analytify_optin', 'yes' );
+
 		$fields = array(
 			'action'            => 'Activate',
 			'track_mailchimp' =>		'yes'
