@@ -333,7 +333,7 @@ if ( ! get_option( 'pa_google_token' ) ) {
 } else {
   echo "<a target='_self' href='". admin_url('admin.php?page=analytify-settings') . "' type='submit' class='analytify-ga-button button button-primary' style='height: 40px !important; margin: 30px; line-height:40px; padding:0 20px; margin-bottom: 15px; font-size: 16px;' >Go to Analytify Settings</a>";
 
-  echo "<br> <a target='_self' href='". admin_url('admin.php?page=analytify-settings') . "' type='submit' class='analytify-ga-button button button-primary' style='height: 40px !important; margin: 30px; line-height:40px; padding:0 20px; margin-bottom: 15px; font-size: 16px;' >Explore Analytify Dashboard</a>";
+  echo "<br> <a target='_self' href='". admin_url('admin.php?page=analytify-dashboard') . "' type='submit' class='analytify-ga-button button button-primary' style='height: 40px !important; margin: 30px; line-height:40px; padding:0 20px; margin-bottom: 15px; font-size: 16px;' >Explore Analytify Dashboard</a>";
 
 }
 echo '</div>';
