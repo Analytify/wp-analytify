@@ -255,34 +255,31 @@ echo "<input type='hidden' name='email' value='$email'>";
 echo '<div id="analytify-splash">';
 echo '<h1>' . __( 'Welcome to Google Analytics by Analytify', 'wp-analytify' ) . '</h1>';
 
-echo '<div id="analytify-splash-main" class="analytify-splash-box">';
-echo '<div class="step-wrapper">';
-// delete_option( '_analytify_optin' );
-if ( ! get_option( '_analytify_optin' ) ) {
+    echo '<div id="analytify-splash-main" class="analytify-splash-box">';
+    echo '<div class="step-wrapper">';
+    if ( ! get_option( '_analytify_optin' ) ) {
+    echo "<div class='first-step step'>";
+      echo '<p id="analytify-splash-main-text">' .  sprintf ( __( 'Hey %2$s,  %4$s If you opt-in some data about your installation of Analytify will be sent to analytify.io (This doesn\'t include stats)%4$s and You will receive new feature updates, security notifications etc <i>No Spam, I promise.</i> %4$s%4$s Help us <strong>Improve Google Analytics by Analytify</strong> %4$s %4$s ', 'wp-analytify' ), '<br>', '<strong>' . $name . '</strong>', '<strong>' . $website . '</strong>', '<br>' ) . '</p>';
+      echo "<button type='submit' id='analytify-ga-submit-btn' class='analytify-ga-button button button-primary' name='analytify-submit-optin' >" . __( 'Allow and Continue  ', 'analytify-ga') . "</button><br>";
+      echo "<button type='submit' id='analytify-ga-optout-btn' name='analytify-submit-optout' >" . __( 'Skip This Step', 'analytify-ga') . "</button>";
+      echo '<div id="analytify-splash-permissions" class="analytify-splash-box">';
+        echo '<a id="analytify-splash-permissions-toggle" href="#" >' . __( 'What permissions are being granted?', 'wp-analytify' ) . '</a>';
+        echo '<div id="analytify-splash-permissions-dropdown" style="display: none;">';
+          echo '<h3>' .  __( 'Your Website Overview', 'wp-analytify' ) . '</h3>';
+          echo '<p>' .  __( 'Your Site URL, WordPress & PHP version, plugins & themes. This data lets us make sure this plugin always stays compatible with the most popular plugins and themes.', 'wp-analytify' ) . '</p>';
 
-  echo "<div class='first-step step'>";
-  echo '<p id="analytify-splash-main-text">' .  sprintf ( __( 'Hey %2$s,  %4$s If you opt-in some data about your installation of Analytify will be sent to analytify.io (This doesn\'t include stats)%4$s and You will receive new feature updates, security notifications etc <i>No Spam, I promise.</i> %4$s%4$s Help us <strong>Improve Google Analytics by Analytify</strong> %4$s %4$s ', 'wp-analytify' ), '<br>', '<strong>' . $name . '</strong>', '<strong>' . $website . '</strong>', '<br>' ) . '</p>';
-  echo "<button type='submit' id='analytify-ga-submit-btn' class='analytify-ga-button button button-primary' name='analytify-submit-optin' >" . __( 'Allow and Continue  ', 'analytify-ga') . "</button><br>";
-  echo "<button type='submit' id='analytify-ga-optout-btn' name='analytify-submit-optout' >" . __( 'Skip This Step', 'analytify-ga') . "</button>";
-  echo '<div id="analytify-splash-permissions" class="analytify-splash-box">';
-  echo '<a id="analytify-splash-permissions-toggle" href="#" >' . __( 'What permissions are being granted?', 'wp-analytify' ) . '</a>';
-  echo '<div id="analytify-splash-permissions-dropdown" style="display: none;">';
-  echo '<h3>' .  __( 'Your Website Info', 'wp-analytify' ) . '</h3>';
-  echo '<p>' .  __( 'Your URL, WordPress version, plugins & themes. This data lets us make sure this plugin always stays compatible with the most popular plugins and themes.', 'wp-analytify' ) . '</p>';
+          echo '<h3>' .  __( 'Your Profile Overview', 'wp-analytify' ) . '</h3>';
+          echo '<p>' .  __( 'Your name and email address.', 'wp-analytify' ) . '</p>';
 
-  echo '<h3>' .  __( 'Your Info', 'wp-analytify' ) . '</h3>';
-  echo '<p>' .  __( 'Your name and email.', 'wp-analytify' ) . '</p>';
+          echo '<h3>' .  __( 'Admin Notices', 'wp-analytify' ) . '</h3>';
+          echo '<p>' .  __( "Updates, Announcement, Marketing. No Spam, I promise.", 'wp-analytify' ) . '</p>';
 
-  echo '<h3>' .  __( 'Plugin Usage', 'wp-analytify' ) . '</h3>';
-  echo '<p>' .  __( "How you use this plugin's features and settings. This is limited to usage data. It does not include any of your sensitive Google Analytics data, such as traffic. This data helps us learn which features are most popular, so we can improve the plugin further.", 'wp-analytify' ) . '</p>';
-  echo '</div>';
-  echo '</div>';
-
-  echo '</div>';
-
-}
-
-
+          echo '<h3>' .  __( 'Plugin Actions', 'wp-analytify' ) . '</h3>';
+          echo '<p>' .  __( "Active, Deactive, Uninstallation and How you use this plugin's features and settings. This is limited to usage data. It does not include any of your sensitive Google Analytics data, such as traffic. This data helps us learn which features are most popular, so we can improve the plugin further.", 'wp-analytify' ) . '</p>';
+        echo '</div>';
+      echo '</div>';
+    echo '</div>';
+    }
 
 echo "<div class='second-step step'>";
 echo "<h2>Login With Google Analytics</h2>";
