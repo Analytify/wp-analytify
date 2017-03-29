@@ -928,23 +928,25 @@ class WPANALYTIFY_AJAX {
 		wp_die();
 	}
 
+
+	// Add opt-in bacon
 	function optin_yes() {
 
 		// Track in user database
 		update_site_option( '_analytify_optin', 'yes' );
 
 		$fields = array(
-			'action'            => 'Activate',
-			'track_mailchimp' =>		'yes'
+			'action'	=>	'Activate',
+			'track_mailchimp' =>	'yes'
 			);
 		analytify_send_data( $fields );
 		wp_die();
 	}
 
+	// Delete opt-in bacon
 	function optout_yes() {
-		delete_site_option( '_analytify_optin' );
+		update_site_option( '_analytify_optin', 'no' );
 		wp_die();
-
 	}
 
 } // End of WPANALYTIFY_AJAX .

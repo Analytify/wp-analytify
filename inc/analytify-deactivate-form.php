@@ -148,7 +148,7 @@
             <span><?php _e( 'Other', 'wp-analytify' ); ?></span>
           </label>
           <div class="wp-analytify-internal-message"></div>
-          <div class="wp-analytify-reason-input"><span class="message error-message "><?php _e( 'Kindly tell us the reason so we can improve.', 'wp-analytify' ); ?></span><input type="text" name="other_reason" placeholder="What's the plugin's name?"></div>
+          <div class="wp-analytify-reason-input"><span class="message error-message "><?php _e( 'Kindly tell us the reason so we can improve.', 'wp-analytify' ); ?></span><input type="text" name="other_reason" placeholder="Would you like to share what's other reason ?"></div>
         </li>
       </ul>
     </div>

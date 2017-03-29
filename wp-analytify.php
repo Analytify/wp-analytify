@@ -8,14 +8,14 @@
  * Author URI: http://wpbrigade.com/
  * License: GPLv3
  * Text Domain: wp-analytify
- * Tested up to: 4.7.3
+ * Tested up to: 4.7.4
  * Domain Path: /languages
  *
  * @package WP_ANALYTIFY
  */
 
-// delete_site_option( '_analytify_optin' );
-
+//delete_site_option( '_analytify_optin' );
+//echo get_site_option( '_analytify_optin' );
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
@@ -207,28 +207,29 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			// add_action( 'after_plugin_row_wp-analytify/wp-analytify.php', array( $this, 'wpa_plugin_row'), 11, 2 );
 
 			add_action( 'wp_footer' , array( $this, 'track_miscellaneous_errors' ) );
-
-      add_action( 'admin_footer',           array( $this, 'add_deactive_modal' ) );
+      		add_action( 'admin_footer',	array( $this, 'add_deactive_modal' ) );
 			add_action( 'admin_init', array( $this, 'redirect_optin' ) );
 		}
 
 		/**
-	 * Send Data To WPBrigade
-	 *
-	 * @since 2.0.14
-	 */
-	function redirect_optin() {
+		 * Redirect to Welcome page.
+		 *
+		 * @since 2.0.14
+		 */
+		function redirect_optin() {
 
-		if ( ! get_option( '_analytify_optin' ) && isset( $_GET['page'] ) &&	( $_GET['page'] === 'analytify-settings' || $_GET['page'] === 'analytify-dashboard' || $_GET['page'] === 'analytify-woocommerce' || $_GET['page'] === 'analytify-addons' ) ) {
-			wp_redirect( admin_url('admin.php?page=analytify-optin') );
-			exit;
+			if ( ! get_site_option( '_analytify_optin' ) && isset( $_GET['page'] ) && ( $_GET['page'] === 'analytify-settings' || $_GET['page'] === 'analytify-dashboard' || $_GET['page'] === 'analytify-woocommerce' || $_GET['page'] === 'analytify-addons' ) ) {
+				wp_redirect( admin_url('admin.php?page=analytify-optin') );
+				exit;
+			}
 		}
-	}
 
 		function add_deactive_modal() {
 			global $pagenow;
 
-			if ( 'plugins.php' !== $pagenow ) { return; }
+			if ( 'plugins.php' !== $pagenow ) { 
+				return; 
+			}
 			include ANALYTIFY_PLUGIN_DIR . 'inc/analytify-optout-form.php';
 			include ANALYTIFY_PLUGIN_DIR . 'inc/analytify-deactivate-form.php';
 
@@ -1429,14 +1430,19 @@ register_uninstall_hook( __FILE__, 'wp_analytify_uninstall' ); // delete
 
 function wp_analytify_activate() {
 
-	// Return if settings already added in DB.
-	 $_admin_settings = get_option( 'wp-analytify-admin' );
-	 if ( 'on' ===  $_admin_settings['disable_back_end']  && ! empty( $_admin_settings['show_analytics_roles_back_end'] ) ) {
-		return;
-	 }
+	// If user has opt-in send activate notification.
+	if ( get_site_option( '_analytify_optin' ) == 'yes' ) {
+		analytify_send_data( array( 'action' => 'Activate' ) );
+	}
 
-	 // Load default settings on new install.
-	 if ( ! get_option( 'analytify_default_settings' ) ) {
+	// Return if settings already added in DB.
+	$_admin_settings = get_option( 'wp-analytify-admin' );
+	if ( 'on' ===  $_admin_settings['disable_back_end']  && ! empty( $_admin_settings['show_analytics_roles_back_end'] ) ) {
+		return;
+	}
+
+	// Load default settings on new install.
+	if ( ! get_option( 'analytify_default_settings' ) ) {
 
 		$profile_tab_settings = array (
 			 'exclude_users_tracking'  => array( 'administrator' ),

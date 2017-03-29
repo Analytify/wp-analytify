@@ -81,6 +81,10 @@
     letter-spacing: 0.6px;
     -webkit-font-smoothing: antialiased;
 }
+
+.wp-analytify-optout-spinner{
+    display: none;
+}
 </style>
 
 
@@ -96,7 +100,7 @@
           <p></p>
         </div>
         <p>Usage tracking is done in the name of making <strong>Analytify</strong> better. Making a better user experience, prioritizing new features, and more good things. We'd really appreciate if you'll reconsider letting us continue with the tracking.</p>
-        <p>By clicking "Opt Out", we will no longer be sending any data from <strong>Analytify</strong> to <a href="https://wpbrigade.com" target="_blank">WPBrigade</a>.</p>
+        <p>By clicking "Opt Out", we will no longer be sending any data to <a href="https://analytify.io" target="_blank">Analytify</a>.</p>
       </div>
     </div>
     <div class="wp-analytify-modal-footer">
@@ -134,10 +138,17 @@
       $.ajax({
         url: ajaxurl,
         type: 'POST',
-        data: {action: 'analytify_optout_yes'}
+        data: {
+            action: 'analytify_optout_yes'
+        },
+        beforeSend: function(){
+          $(".wp-analytify-optout-spinner").show();
+          $(".wp-analytify-popup-allow-deactivate").attr("disabled", "disabled");
+        }
       })
       .done(function() {
-        console.log("success");
+        $(".wp-analytify-optout-spinner").hide();
+        $('.wp-analytify-modal-opt-out').removeClass('active');
       });
 
     });
