@@ -1554,12 +1554,14 @@ function send_status_analytify( $email, $status ) {
  */
 function analytify_send_data( $args ) {
 
+	$cuurent_user = wp_get_current_user();
 	$fields = array(
 		'email' 		        => get_option( 'admin_email' ),
 		'website' 			    => get_site_url(),
 		'action'            => '',
 		'reason'            => '',
 		'reason_detail'     => '',
+		'display_name'			=> $cuurent_user->display_name,
 		'blog_language'     => get_bloginfo( 'language' ),
 		'wordpress_version' => get_bloginfo( 'version' ),
 		'plugin_version'    => ANALYTIFY_VERSION,
@@ -1576,7 +1578,7 @@ function analytify_send_data( $args ) {
 		'body'        => $args,
 	) );
 
-
+	
 	// if ( 200 == wp_remote_retrieve_response_code( $response ) ){
 	// 	update_option( '_analytify_optin', 'yes' );
 	// }
