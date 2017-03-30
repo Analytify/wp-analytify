@@ -952,6 +952,7 @@ class WPANALYTIFY_AJAX {
 
 	// Optin skip.
 	function optin_skip() {
+
 		update_site_option( '_analytify_optin', 'no' );
 
 		$fields = array(
