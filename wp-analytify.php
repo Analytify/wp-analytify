@@ -14,7 +14,7 @@
  * @package WP_ANALYTIFY
  */
 
-//delete_site_option( '_analytify_optin' );
+// delete_site_option( '_analytify_optin' );
 //echo get_site_option( '_analytify_optin' );
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) { exit; }
@@ -227,8 +227,8 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		function add_deactive_modal() {
 			global $pagenow;
 
-			if ( 'plugins.php' !== $pagenow ) { 
-				return; 
+			if ( 'plugins.php' !== $pagenow ) {
+				return;
 			}
 			include ANALYTIFY_PLUGIN_DIR . 'inc/analytify-optout-form.php';
 			include ANALYTIFY_PLUGIN_DIR . 'inc/analytify-deactivate-form.php';

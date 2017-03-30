@@ -523,7 +523,7 @@ jQuery(document).ready(function(s) {
         </div>
 
         <div class="newfeatures">
-        
+
 
           <div class="feature-section">
 
@@ -601,7 +601,7 @@ jQuery(document).ready(function(s) {
             $(tabtarget).addClass('active').siblings('.analytify-tab-content').removeClass('active');
           });
 
-          $('#analytify-ga-optout-btn, #analytify-ga-submit-btn').on('click', function(e){
+          $('#analytify-ga-submit-btn').on('click', function(e){
             e.preventDefault();
             $('.step-wrapper').addClass('slide');
             $.ajax({
@@ -609,6 +609,18 @@ jQuery(document).ready(function(s) {
               type: 'POST',
               data: {
                 action: 'analytify_optin_yes'
+              }
+            });
+          });
+
+          $('#analytify-ga-optout-btn').on('click', function(event) {
+            event.preventDefault();
+            $('.step-wrapper').addClass('slide');
+            $.ajax({
+              url: ajaxurl,
+              type: 'POST',
+              data: {
+                action: 'analytify_optin_skip'
               }
             });
 
