@@ -139,7 +139,7 @@
         url: ajaxurl,
         type: 'POST',
         data: {
-            action: 'analytify_optout_yes'
+          action: 'analytify_optout_yes'
         },
         beforeSend: function(){
           $(".wp-analytify-optout-spinner").show();
@@ -149,6 +149,7 @@
       .done(function() {
         $(".wp-analytify-optout-spinner").hide();
         $('.wp-analytify-modal-opt-out').removeClass('active');
+        location.reload();
       });
 
     });
