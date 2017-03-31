@@ -3,16 +3,16 @@ Contributors: hiddenpearls, Asif2BD
 Donate link: http://paypal.me/Analytify
 Tags: google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced ecommerce tracking
 Requires at least: 3.0
-Tested up to: 4.7.3
+Tested up to: 4.7.4
 Stable tag: 2.0.14
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Google Analytics by Analytify is the must-have Plugin for Google Analytics! Now Enhanced eCommerce Tracking is available for WooCommerce and EDD!
+Google Analytics for WordPress by Analytify is the must-have Plugin for Google Analytics! Now Enhanced eCommerce Tracking is available for WooCommerce and EDD!
 
 == Description ==
 
-**[Google Analytics](http://analytify.io/details)** - by Analytify makes **Google Analytics** simple for everywhere in WordPress (posts, pages and custom post types). It presents the statistics from Google Analytics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. Now you can get **Google Analytics Dashboard** inside your WordPress Dashboard within a minute.
+**[Google Analytics for WordPress](http://analytify.io/details)** - by Analytify makes **Google Analytics** simple for everywhere in WordPress (posts, pages and custom post types). It presents the statistics from Google Analytics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. Now you can get **Google Analytics Dashboard** inside your WordPress Dashboard within a minute.
 
 **Analytify 2.0 is here! Discover Google Analytics Like Never Before! Must check those stunning [Screenshots](https://wordpress.org/plugins/wp-analytify/screenshots/)!**
 
@@ -76,7 +76,7 @@ Available in Following languages: <br />
 * Russian 56%
 * Norwegian 75%
 * Spanish 50%
-
+* Dutch 96%
 
 == Installation ==
 
@@ -140,7 +140,7 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 == Changelog ==
 
-= 2.0.14 - 2017-03-24 =
+= 2.0.14 - 2017-03-31 =
 * BugFix: Date difference on load.
 * Bugfix: enqueue dashicons css.
 * Enhancement: Improved UX and fixed few text edits and typos.
