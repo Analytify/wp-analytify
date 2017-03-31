@@ -14,8 +14,10 @@
  * @package WP_ANALYTIFY
  */
 
-// delete_site_option( '_analytify_optin' );
+//delete_site_option( '_analytify_optin' );
+//echo get_option( 'admin_email' );
 //echo get_site_option( '_analytify_optin' );
+
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
@@ -1569,7 +1571,7 @@ function analytify_send_data( $args ) {
 	);
 
 	$args = array_merge( $fields, $args );
-	$response = wp_remote_post( 'https://wpbrigade.com/', array(
+	$response = wp_remote_post( 'https://analytify.io/', array(
 		'method'      => 'POST',
 		'timeout'     => 5,
 		'httpversion' => '1.0',
