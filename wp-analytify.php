@@ -1356,7 +1356,9 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				if ( is_404() ) {
 					$current_url = home_url( add_query_arg( null, null ) );
 					echo '<script>
-								 ga("send", "event", "404 Error", "Page Not Found" , "' . $current_url . '" );
+								if (typeof ga !== "undefined") {
+									ga("send", "event", "404 Error", "Page Not Found" , "' . $current_url . '" );
+								}
 							 </script>';
 				}
 			}
@@ -1369,16 +1371,21 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
                                      var errSrc = e.filename + ': ' + e.lineno;
                                      ga('send', 'event', 'JavaScript Error', errMsg, errSrc, { 'nonInteraction': 1 });
                                  }
-                                    window.addEventListener('error', trackJavaScriptError, false);
+																 if (typeof ga !== 'undefined') {
+																   window.addEventListener('error', trackJavaScriptError, false);
+																	}
 						 </script>";
 			}
 
 			//AJAX
 			if ( 'on' == $this->settings->get_option( 'ajax_error_track', 'wp-analytify-advanced' )  ) {
 				echo "<script>
+												if (typeof ga !== 'undefined') {
+
                              jQuery(document).ajaxError(function (e, request, settings) {
                                  ga ('send' , 'event' , 'Ajax Error' ,   request.statusText  ,settings.url  , { 'nonInteraction': 1 });
                             });
+													}
 						 </script>" ;
 			}
 
@@ -1580,7 +1587,7 @@ function analytify_send_data( $args ) {
 		'body'        => $args,
 	) );
 
-	
+
 	// if ( 200 == wp_remote_retrieve_response_code( $response ) ){
 	// 	update_option( '_analytify_optin', 'yes' );
 	// }
