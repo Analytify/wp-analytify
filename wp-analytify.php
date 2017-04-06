@@ -1074,8 +1074,8 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 				global $current_user;
 				$roles = $current_user->roles;
-
-				if ( in_array( $roles[0], $access_level ) ) {
+ 
+				if ( array_intersect( $roles, $access_level ) ) {
 
 					return true;
 				} elseif ( is_super_admin( $current_user->ID ) && is_multisite() ) {
