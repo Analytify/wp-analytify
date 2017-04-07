@@ -14,10 +14,6 @@
  * @package WP_ANALYTIFY
  */
 
-//delete_site_option( '_analytify_optin' );
-//echo get_option( 'admin_email' );
-//echo get_site_option( '_analytify_optin' );
-
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
@@ -456,10 +452,6 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 						if ( 'on' === $this->settings->get_option( 'linker_cross_domain_tracking', 'wp-analytify-advanced' ) ) {
 							echo "	ga('create', '{$UA_CODE}', 'auto', {'allowLinker': true});";
 							echo "ga('require', 'linker');";
-
-							if ( $this->settings->get_option( 'custom_js_code', 'wp-analytify-advanced' ) ) {
-								echo $this->settings->get_option( 'custom_js_code', 'wp-analytify-advanced' );
-							}
 						} else {
 							echo "	ga('create', '{$UA_CODE}', 'auto');";
 						}
@@ -480,9 +472,16 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 							echo "ga('require', 'displayfeatures');";
 						}
 
+						if ( $this->settings->get_option( 'custom_js_code', 'wp-analytify-advanced' ) ) {
+							echo $this->settings->get_option( 'custom_js_code', 'wp-analytify-advanced' );
+						}
+
 						if ( has_action( 'ga_ecommerce_js' ) ) {
-							do_action( 'ga_ecommerce_js' ); } else {
-							echo "ga('send', 'pageview');"; }
+							do_action( 'ga_ecommerce_js' );
+						} else {
+							echo "ga('send', 'pageview');";
+						}
+
 						?>
 					</script>
 
@@ -1351,7 +1350,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		 */
 		function track_miscellaneous_errors() {
 
-			// 404
+			// 404 tracking hits in Google analytics
 			if ( 'on' == $this->settings->get_option( '404_page_track', 'wp-analytify-advanced' ) ) {
 				if ( is_404() ) {
 					$current_url = home_url( add_query_arg( null, null ) );
@@ -1363,30 +1362,30 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				}
 			}
 
-			// JS
+			// JS tracking hits in Google analytics
 			if ( 'on' == $this->settings->get_option( 'javascript_error_track', 'wp-analytify-advanced' )  ) {
 				echo "<script>
-                                 function trackJavaScriptError(e) {
-                                     var errMsg = e.message;
-                                     var errSrc = e.filename + ': ' + e.lineno;
-                                     ga('send', 'event', 'JavaScript Error', errMsg, errSrc, { 'nonInteraction': 1 });
-                                 }
-																 if (typeof ga !== 'undefined') {
-																   window.addEventListener('error', trackJavaScriptError, false);
-																	}
-						 </script>";
+                     function trackJavaScriptError(e) {
+                         var errMsg = e.message;
+                         var errSrc = e.filename + ': ' + e.lineno;
+                         ga('send', 'event', 'JavaScript Error', errMsg, errSrc, { 'nonInteraction': 1 });
+                     }
+					if (typeof ga !== 'undefined') {
+					   window.addEventListener('error', trackJavaScriptError, false);
+					}
+				</script>";
 			}
 
-			//AJAX
+			//AJAX tracking hits in Google analytics
 			if ( 'on' == $this->settings->get_option( 'ajax_error_track', 'wp-analytify-advanced' )  ) {
 				echo "<script>
-												if (typeof ga !== 'undefined') {
+						if (typeof ga !== 'undefined') {
 
                              jQuery(document).ajaxError(function (e, request, settings) {
                                  ga ('send' , 'event' , 'Ajax Error' ,   request.statusText  ,settings.url  , { 'nonInteraction': 1 });
                             });
-													}
-						 </script>" ;
+						}
+					</script>" ;
 			}
 
 		}
