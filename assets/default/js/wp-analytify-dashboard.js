@@ -189,15 +189,17 @@ $(document).click(function (e){
 
 
 
-    var  momment                     = moment(),
-         today_date                  = momment.format("MMM DD, YYYY"),
-         last_30_day                 = momment.subtract(1,'months').format("MMM DD, YYYY"),
-         last_month_end_date         = momment.endOf('month').format("MMM DD, YYYY"),
-         this_month_start_date       = momment.add(1,'months').startOf('month').format("MMM DD, YYYY"),
-         last_month_start_date       = momment.subtract(1,'months').startOf('month').format("MMM DD, YYYY"),
-         last_3_months_start_date    = momment.subtract(2,'months').startOf('month').format("MMM DD, YYYY"),
-         last_6_months_start_date    = momment.subtract(3,'months').startOf('month').format("MMM DD, YYYY"),
-         last_year_start_date        = momment.subtract(6,'months').startOf('month').format("MMM DD, YYYY");
+    var momment                     = moment(),
+        today_date                  = momment.format("MMM DD, YYYY"),
+        last_7_days                 = momment.subtract(7,'day').format("MMM DD, YYYY"),
+        last_14_days                = momment.subtract(14,'day').format("MMM DD, YYYY"),
+        last_30_day                 = momment.subtract(1,'months').format("MMM DD, YYYY"),
+        last_month_end_date         = momment.endOf('month').format("MMM DD, YYYY"),
+        this_month_start_date       = momment.add(1,'months').startOf('month').format("MMM DD, YYYY"),
+        last_month_start_date       = momment.subtract(1,'months').startOf('month').format("MMM DD, YYYY"),
+        last_3_months_start_date    = momment.subtract(2,'months').startOf('month').format("MMM DD, YYYY"),
+        last_6_months_start_date    = momment.subtract(3,'months').startOf('month').format("MMM DD, YYYY"),
+        last_year_start_date        = momment.subtract(6,'months').startOf('month').format("MMM DD, YYYY");
 
     $('.analytify_today_date').text(today_date);
 
@@ -216,6 +218,9 @@ $(document).click(function (e){
           e_date = moment(e_date).format("MMM DD, YYYY");
           $('#analytify_end').val(e_date);
     }
+
+    $('.analytify_last_7_days').text(last_7_days);
+    $('.analytify_last_14_days').text(last_14_days);
 
     $('.analytify_last_30_day').text(last_30_day);
     $('.analytify_last_month_end_date').text(last_month_end_date);
