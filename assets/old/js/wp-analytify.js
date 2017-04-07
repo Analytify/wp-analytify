@@ -79,7 +79,7 @@
     e.preventDefault();
 	 	var start_date = $("#analytify_start").val();
     start_date = moment(start_date).format("YYYY-MM-DD");
-    
+
 	 	var end_date = $("#analytify_end").val();
     end_date =  moment(end_date).format("YYYY-MM-DD");
 
@@ -92,6 +92,7 @@
 	 		data: 'action=get_ajax_single_admin_analytics&start_date=' + start_date + "&end_date=" + end_date+"&post_id="+urlpost,
 
 	 		beforeSend: function () {
+        $(".show-hide").html('');
 	 			$(".show-hide").addClass("stats_loading");
 	 		},
 	 		success: function (data, textStatus, XMLHttpRequest) {
