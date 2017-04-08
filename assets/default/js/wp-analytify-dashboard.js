@@ -290,6 +290,7 @@ $(document).click(function (e){
 
               $('#analytify_start').val(start_date);
               $('#analytify_end').val(end_date);
+              $('#analytify_date_diff').val($this.attr('data-date-diff'));
 
               startPicker.setDate(start_date);
               endPicker.setDate(end_date);

@@ -31,6 +31,37 @@ foreach ( $selected_stats as $value ) {
 	$classes .= $value . ' ';
 }
 
+if ( isset( $_POST['analytify_date_diff'] ) && ! empty( $_POST['analytify_date_diff'] ) ) {
+	update_option( 'analytify_date_differ', $_POST['analytify_date_diff'] );
+}
+
+$_differ = get_option( 'analytify_date_differ' );
+
+if ( $_differ ) {
+	if ( $_differ == 'last_7_days' ) {
+		$start_date = date( 'Y-m-d', strtotime( '-7 days' ) );
+	}elseif ( $_differ == 'last_14_days' ) {
+		$start_date = date( 'Y-m-d', strtotime( '-14 days' ) );
+	}elseif ( $_differ == 'last_30_days' ) {
+		$start_date = date( 'Y-m-d', strtotime( '-1 month' ) );
+	}elseif (  $_differ == 'this_month' ) {
+		$start_date =  date('Y-m-01') ;
+	}elseif ( $_differ == 'last_month' ) {
+		$start_date =  date('Y-m-01', strtotime('-1 month') );
+		$end_date =  date('Y-m-t', strtotime('-1 month') );
+	}elseif ( $_differ == 'last_3_months' ) {
+		$start_date =  date('Y-m-01', strtotime('-3 month') );
+		$end_date =  date('Y-m-t', strtotime('-1 month') );
+	}elseif ( $_differ == 'last_6_months' ) {
+		$start_date =  date('Y-m-01', strtotime('-6 month') );
+		$end_date =  date('Y-m-t', strtotime('-1 month') );
+	}elseif ( $_differ == 'last_year' ) {
+		$start_date =  date('Y-m-01', strtotime('-1 year') );
+		$end_date =  date('Y-m-t', strtotime('-1 month') );
+	}
+
+}
+
 if ( isset( $_POST['view_data'] ) ) {
 
 	$s_date   = sanitize_text_field( wp_unslash( $_POST['st_date'] ) );
@@ -112,35 +143,36 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 								<div class="analytify_select_date_fields">
 									<input type="hidden" name="st_date" id="analytify_start_val">
 									<input type="hidden" name="ed_date" id="analytify_end_val">
+									<input type="hidden" name="analytify_date_diff" id="analytify_date_diff">
 
 									<label for="analytify_start"><?php _e( 'From:', 'wp-analytify' )?></label>
-									<input type="text" required id="analytify_start" value="<?php echo isset( $s_date ) ? $s_date :
+									<input type="text" required id="analytify_start" value="<?php echo isset( $start_date ) ? $start_date :
 																			'' ?>">
 									<label for="analytify_end"><?php _e( 'To:', 'wp-analytify' )?></label>
-									<input type="text" required id="analytify_end" value="<?php echo isset( $ed_date ) ? $ed_date :
+									<input type="text" required id="analytify_end" value="<?php echo isset( $end_date ) ? $end_date :
 																			'' ?>">
 									<div class="analytify_arrow_date_picker"></div>
 								</div>
 								<input type="submit" value="<?php _e( 'View Stats', 'wp-analytify' ) ?>" name="view_data" class="analytify_submit_date_btn">
 								<ul class="analytify_select_date_list">
-									
-									<li><?php _e( 'Last 7 days', 'wp-analytify' )?> <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_7_days"></span> – <span class="analytify_end_date_data analytify_today_date"></span></span></li>
-									
-									<li><?php _e( 'Last 14 days', 'wp-analytify' )?> <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_14_days"></span> – <span class="analytify_end_date_data analytify_today_date"></span></span></li>
 
-									<li><?php _e( 'Last 30 days', 'wp-analytify' )?> <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_30_day"></span> – <span class="analytify_end_date_data analytify_today_date"></span></span></li>
+									<li><?php _e( 'Last 7 days', 'wp-analytify' )?> <span data-date-diff="last_7_days" data-start="" data-end=""><span class="analytify_start_date_data analytify_last_7_days"></span> – <span class="analytify_end_date_data analytify_today_date"></span></span></li>
 
-									<li><?php _e( 'This month', 'wp-analytify' )?> <span data-start="" data-end=""><span class="analytify_start_date_data analytify_this_month_start_date"></span> – <span class="analytify_end_date_data analytify_today_date"></span></li>
+									<li><?php _e( 'Last 14 days', 'wp-analytify' )?> <span data-date-diff="last_14_days" data-start="" data-end=""><span class="analytify_start_date_data analytify_last_14_days"></span> – <span class="analytify_end_date_data analytify_today_date"></span></span></li>
 
-									<li><?php _e( 'Last month', 'wp-analytify' )?> <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_month_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
+									<li><?php _e( 'Last 30 days', 'wp-analytify' )?> <span data-date-diff="last_30_days" data-start="" data-end=""><span class="analytify_start_date_data analytify_last_30_day"></span> – <span class="analytify_end_date_data analytify_today_date"></span></span></li>
 
+									<li><?php _e( 'This month', 'wp-analytify' )?> <span data-date-diff="this_month" data-start="" data-end=""><span class="analytify_start_date_data analytify_this_month_start_date"></span> – <span class="analytify_end_date_data analytify_today_date"></span></li>
 
-									<li><?php _e( 'Last 3 months', 'wp-analytify' )?> <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_3_months_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
-
-									<li><?php _e( 'Last 6 months', 'wp-analytify' )?> <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_6_months_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
+									<li><?php _e( 'Last month', 'wp-analytify' )?> <span data-date-diff="last_month" data-start="" data-end=""><span class="analytify_start_date_data analytify_last_month_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
 
 
-									<li><?php _e( 'Last year', 'wp-analytify' )?> <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_year_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
+									<li><?php _e( 'Last 3 months', 'wp-analytify' )?> <span data-date-diff="last_3_months" data-start="" data-end=""><span class="analytify_start_date_data analytify_last_3_months_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
+
+									<li><?php _e( 'Last 6 months', 'wp-analytify' )?> <span data-date-diff="last_6_months" data-start="" data-end=""><span class="analytify_start_date_data analytify_last_6_months_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
+
+
+									<li><?php _e( 'Last year', 'wp-analytify' )?> <span data-date-diff="last_year" data-start="" data-end=""><span class="analytify_start_date_data analytify_last_year_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
 
 
 									<li><?php _e( 'Custom Range', 'wp-analytify' )?> <span class="custom_range"><?php _e( 'Select a custom date', 'wp-analytify' )?></span></li>
