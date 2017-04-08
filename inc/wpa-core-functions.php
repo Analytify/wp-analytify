@@ -58,7 +58,7 @@ function wpa_admin_rate_footer_text( $footer_text ) {
 	if ( isset( $current_screen->id ) && in_array( $current_screen->id, $wpa_pages ) ) {
 		// Change the footer text
 		if ( ! get_option( 'analytify_admin_footer_text_rated' ) ) {
-				$rate_text = sprintf( esc_html__( 'If you like %1$s Analytify %2$s please leave us a %5$s %3$s %6$s rating. %4$s A huge thank you from %1$s WPBrigade %2$s in advance!', 'wp-analytify' ), '<strong>', '</strong>', '&#9733;&#9733;&#9733;&#9733;&#9733;', '<br />', '<a href="https://wordpress.org/support/view/plugin-reviews/wp-analytify?filter=5#postform" target="_blank" class="wpa-rating-footer" data-rated="Thanks dude ;)">', '</a>' );
+				$rate_text = sprintf( esc_html__( 'If you like %1$s Analytify %2$s please leave us a %5$s %3$s %6$s rating. %4$s A huge thank you from %1$s WPBrigade %2$s in advance!', 'wp-analytify' ), '<strong>', '</strong>', '&#9733;&#9733;&#9733;&#9733;&#9733;', '<br />', '<a href="https://analytify.io/go/rate-analytify" target="_blank" class="wpa-rating-footer" data-rated="Thanks dude ;)">', '</a>' );
 					wpa_enqueue_js( "
                         jQuery('a.wpa-rating-footer').click(function() {
                             jQuery.post( '" . admin_url( 'admin-ajax.php' ) . "', { action: 'analytify_rated' } );

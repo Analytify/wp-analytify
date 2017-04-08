@@ -1,7 +1,7 @@
-=== Google Analytics for WordPress by Analytify ===
+=== Google Analytics Dashboard Plugin for WordPress by Analytify ===
 Contributors: hiddenpearls, Asif2BD
 Donate link: http://paypal.me/Analytify
-Tags: google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced ecommerce tracking
+Tags: google analytics, google analytics dashboard, WooCommerce analytics, WordPress Analytics, analytify, tracking, analytics, install analytics, e-commerce, track, track visitor, statistics, best google analytics, enhanced ecommerce tracking
 Requires at least: 3.0
 Tested up to: 4.7.4
 Stable tag: 2.1.0
@@ -12,24 +12,13 @@ Google Analytics for WordPress by Analytify is the must-have Plugin for Google A
 
 == Description ==
 
-**[Google Analytics for WordPress](http://analytify.io/details)** - by Analytify makes **Google Analytics** simple for everywhere in WordPress (posts, pages and custom post types). It presents the statistics from Google Analytics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. Now you can get **Google Analytics Dashboard** inside your WordPress Dashboard within a minute.
-
-**Analytify 2.0 is here! Discover Google Analytics Like Never Before! Must check those stunning [Screenshots](https://wordpress.org/plugins/wp-analytify/screenshots/)!**
-
-**Premium Version:**<br>
-> This plugin has a premium version, which is more easy to install, and shows **Real-Time Stats**, **Campaign Stats**, **ShortCodes**, *Front-end Stats*  and more reports in backend and front-end. Also premium version has better e-commerce tracking (Buy [Add-ons](http://analytify.io/add-ons/) with premium), and campaigns management. Get the affordable Premium Version from [analytify.io](http://analytify.io/upgrade-from-free) . **Bundle price** is also available with Addons.
-
-**Google Analytics Premium Partner** - [Read](https://www.google.com/analytics/partners/company/5179388639313920/gadp/5629499534213120/app/5707702298738688/listing/5639274879778816) what Google is saying about us.
-
+**[Google Analytics Dashboard for WordPress](http://analytify.io/details)** - by Analytify makes **Google Analytics** simple for everywhere in WordPress (posts, pages and custom post types). It presents the statistics from Google Analytics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. Now you can get **Google Analytics Dashboard** inside your WordPress Dashboard within a minute.
 
 **Top Features of this Google Analytics plugin:**
 
-*  Super easy installation. 1-Click Authentication process and It adds Google analytics tracking code to your website
+*  Super easy installation. 1-Click Authentication process and It adds Google analytics tracking code to your website. **No need to copy any code manually.**
+*  **Enhanced ecommerce Google analytics Tracking Add-ons for WooCommerce & Easy Digital Downloads are available** (Premium)
 *  Google Analytics Stats (**General**) under the single posts/pages as a block in **wp-admin**
-*  Google Analytics Stats (**Full**) under the single posts,pages & Custom Post Types as a block in **wp-admin** (Premium)
-*  Google Analytics Stats (**Full**) under the single posts,pages & Custom Post Types as a block at **front-end** (Premium)
-*  **General Statistics** (Sessions, Users, Bounce rate, Average time on site, Average pages, PAGEVIEWS, NEW/RETURNING Visitors)
-*  How people are finding you (**TOP KEYWORDS**)
 *  **List of top Countries**
 *  **List of top Cities**
 *  **SOCIAL MEDIA Statistics**
@@ -43,8 +32,21 @@ Google Analytics for WordPress by Analytify is the must-have Plugin for Google A
 *  Use ShortCodes in Widgets (Premium)
 *  Helps in SEO optimization and allows you to see traffic data for individual blog posts and pages.
 *  It can be easy customizable with CSS, you can give it any shape you want.
-*  **Enhanced ecommerce Google analytics Tracking Add-ons for WooCommerce & Easy Digital Downloads are available** (Premium)
 *  You can extend it to at any level. Usage of API’s are very easy to work with.
+*  Google Analytics Stats (**Full**) under the single posts,pages & Custom Post Types as a block in **wp-admin** (Premium)
+*  Google Analytics Stats (**Full**) under the single posts,pages & Custom Post Types as a block at **front-end** (Premium)
+*  **General Statistics** (Sessions, Users, Bounce rate, Average time on site, Average pages, PAGEVIEWS, NEW/RETURNING Visitors)
+*  How people are finding you (**TOP KEYWORDS**)
+
+
+**Analytify 2.1 is here! Discover Google Analytics Like Never Before! Must check those stunning [Screenshots](https://wordpress.org/plugins/wp-analytify/screenshots/)!**
+
+**Premium Version:**<br>
+> This plugin has a premium version, which is more easy to install, and shows **Real-Time Stats**, **Campaign Stats**, **ShortCodes**, *Front-end Stats*  and more reports in backend and front-end. Also premium version has better e-commerce tracking (Buy [Add-ons](http://analytify.io/add-ons/) with premium), and campaigns management. Get the affordable Premium Version from [analytify.io](http://analytify.io/upgrade-from-free) . **Bundle price** is also available with Addons.
+
+**Google Analytics Premium Partner** - [Read](https://www.google.com/analytics/partners/company/5179388639313920/gadp/5629499534213120/app/5707702298738688/listing/5639274879778816) what Google is saying about us.
+
+
 
 **[WooCommerce Enhanced eCommerce](https://analytify.io/go/WooCommerce)** tracking and report dashboard right inside your WordPress is now available. [Take a look](https://analytify.io/go/WooCommerce).
 
@@ -57,6 +59,7 @@ Google Analytics for WordPress by Analytify is the must-have Plugin for Google A
 * [Google Analytics eCommerce Tracking for Easy Digital Downloads](https://analytify.io/add-ons/easy-digital-downloads/)
 * [Automated Email Notifications](https://analytify.io/add-ons/email-notifications/)
 * [Google Analytics Campaigns Tracking](https://analytify.io/add-ons/campaigns/)
+* **[Free]**[Google Analytics Dashboard Widget](https://wordpress.org/plugins/analytify-analytics-dashboard-widget/)
 
 ###### Following is a Complete Hierarchy Structure of Analytify Products Suite.
 
