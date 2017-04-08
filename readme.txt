@@ -1,4 +1,4 @@
-=== Google Analytics Dashboard Plugin for WordPress by Analytify ===
+=== Google Analytics Dashboard Plugin for WordPress ===
 Contributors: hiddenpearls, Asif2BD
 Donate link: http://paypal.me/Analytify
 Tags: google analytics, google analytics dashboard, WooCommerce analytics, WordPress Analytics, analytify, tracking, analytics, install analytics, e-commerce, track, track visitor, statistics, best google analytics, enhanced ecommerce tracking
