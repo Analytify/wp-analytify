@@ -36,7 +36,7 @@ function wpa_include_single_general( $current, $stats ) {
 
 					<div class="analytify_general_status_boxes">
 							<h4><?php esc_html_e( 'Avg. time on Page', 'wp-analytify' ); ?></h4>
-							<div class="analytify_general_stats_value"><?php echo WPANALYTIFY_Utils::pretty_time( $results['ga:avgSessionDuration'] ); ?></div>
+							<div class="analytify_general_stats_value"><?php echo WPANALYTIFY_Utils::pretty_time( $results['ga:avgTimeOnPage'] ); ?></div>
 							<p><?php esc_html_e( 'The amount of time (session) a user spends on this page.', 'wp-analytify' ); ?></p>
 					</div>
 
@@ -52,6 +52,9 @@ function wpa_include_single_general( $current, $stats ) {
 							<p><?php esc_html_e( 'Pages/Session is the average number of pages viewed during a session. Repeated views of a single page are counted.', 'wp-analytify' ); ?></p>
 					</div>
 				</div>
+			</div>
+			<div class="analytify_status_footer">
+				<span class="analytify_info_stats"><?php _e( 'Did you know that Average Session time on your page is', 'wp-analytify' )?> <?php echo WPANALYTIFY_Utils::pretty_time( $results['ga:avgSessionDuration'] ); ?><span class="analytify_red  general_stats_message"></span>.</span>
 			</div>
 		</div>
 	<?php
