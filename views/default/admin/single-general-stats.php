@@ -54,7 +54,7 @@ function wpa_include_single_general( $current, $stats ) {
 				</div>
 			</div>
 			<div class="analytify_status_footer">
-				<span class="analytify_info_stats"><?php _e( 'Did you know that Average Session time on your page is', 'wp-analytify' )?> <?php echo WPANALYTIFY_Utils::pretty_time( $results['ga:avgSessionDuration'] ); ?><span class="analytify_red  general_stats_message"></span>.</span>
+				<span class="analytify_info_stats"><?php _e( 'Did you know that Average Session Duration of this page is', 'wp-analytify' )?> <?php echo WPANALYTIFY_Utils::pretty_time( $results['ga:avgSessionDuration'] ); ?><span class="analytify_red  general_stats_message"></span>.</span>
 			</div>
 		</div>
 	<?php

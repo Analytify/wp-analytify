@@ -89,6 +89,9 @@
 .analytify_xl_f {
     font-size:22px;
 }
+.analytify_single_post_page .analytify_xl_f {
+    font-size:14px !important;
+}
 .analytify_xxl_f {
     font-size:32px;
 }
