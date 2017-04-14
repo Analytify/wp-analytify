@@ -5,11 +5,11 @@
 **Tags:** google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced ecommerce tracking  
 **Requires at least:** 3.0  
 **Tested up to:** 4.7 
-**Stable tag:** 2.0.11
+**Stable tag:** 2.1.1
 **License:** GPLv3 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-3.0.html  
 
-Analytify 2.0 is the must-have Plugin for Google Analytics! Now Enhanced eCommerce Tracking is available for WooCommerce and EDD!
+Analytify 2.1 is the must-have Plugin for Google Analytics! Now Enhanced eCommerce Tracking is available for WooCommerce and EDD!
 
 ## Description ##
 
@@ -104,6 +104,33 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 ##  Changelog ##
 
+### 2.1.1 - 2017-04-14 ###
+* BugFix: Average Time on Page stats under pages/posts etc. Thanks to user **@danielson79** for this [ticket](https://wordpress.org/support/topic/post-average-session-time-instead-time-on-page/).
+* Enhancement: Average Session Duration Stats Introduced under pages/posts etc. Thanks again to **@danielson79**.
+* Enhancement: Dashboard dropdown menu now remembers your last selection. Thanks to user **@areluc** for this [ticket](https://wordpress.org/support/topic/default-stats-period/) (*Actually added in V 2.1.0, we missed to note it in changelog).
+* WooCommerce 3.0: Though its an addon feature, but Analytify core is now compatible to work with WooCommerce 3.0 for Enhanced WooCommerce Analytics.
+
+### 2.1.0 - 2017-04-07 ###
+* BugFix: Fixed miscellaneous tracking bug when users are logged-in.
+* Bugfix: Custom multiple roles access.
+* Enhancement: Added last 7 and last 14 days option in dashboard dropdown menu.
+* Enhancement: CustomJS code works for Google optimize setup and other Custom Google analytics tracking code insertion.
+
+### 2.0.14 - 2017-03-31 ###
+* BugFix: Date difference on load.
+* Bugfix: enqueue dashicons css.
+* Enhancement: Improved UX and fixed few text edits and typos.
+* Enhancement: Dutch language added.
+* Enhancement: Norwegian language updated.
+ 
+
+### 2.0.13 - 2017-02-27 ###
+* Enhancement: Norwegian Bokmål Translation added.
+* Enhancement: Russian Translation added.
+* BugFix: New vs Returning cache clear.
+
+### 2.0.12 - 2017-02-16 ###
+* BugFix: New vs Returning users had wrong calculation.
 
 ### 2.0.11 - 2017-02-16 ###
 * Enhancement: German Translation Completed.
