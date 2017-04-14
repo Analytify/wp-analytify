@@ -4,7 +4,7 @@ Donate link: http://paypal.me/Analytify
 Tags: google analytics, google analytics dashboard, WooCommerce analytics, WordPress Analytics, analytify, tracking, analytics, install analytics, e-commerce, track, track visitor, statistics, best google analytics, enhanced ecommerce tracking
 Requires at least: 3.0
 Tested up to: 4.7.4
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -142,6 +142,10 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 
 == Changelog ==
+
+= 2.1.1 - 2017-04-14 =
+* BugFix: Average Time on Page stats under pages/posts etc.
+* Enhancement: Average Session Duration stats Introduced as a tip under pages/posts etc.
 
 = 2.1.0 - 2017-04-07 =
 * BugFix: Fixed miscellaneous tracking bug when users are logged-in.
@@ -350,7 +354,7 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 == Upgrade Notice ==
 
-= 2.1.0 =
+= 2.1.1 =
 * [Important Update] Upgrade immediately. Bugfixes and Improvements.
 
 
