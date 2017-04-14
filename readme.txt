@@ -1,7 +1,7 @@
 === Google Analytics Dashboard Plugin for WordPress ===
 Contributors: hiddenpearls, Asif2BD
 Donate link: http://paypal.me/Analytify
-Tags: google analytics, google analytics dashboard, WooCommerce analytics, WordPress Analytics, analytify, tracking, analytics, install analytics, e-commerce, track, track visitor, statistics, best google analytics, enhanced ecommerce tracking
+Tags: google analytics, google analytics dashboard, WooCommerce analytics, WordPress Analytics, analytify, tracking, analytics, install analytics, e-commerce, track, track visitor, statistics, campaign tracking, analytics campaign, best google analytics, enhanced ecommerce tracking, email analytics report, google analytics pdf, 
 Requires at least: 3.0
 Tested up to: 4.7.4
 Stable tag: 2.1.1
@@ -37,6 +37,7 @@ Google Analytics for WordPress by Analytify is the must-have Plugin for Google A
 *  Google Analytics Stats (**Full**) under the single posts,pages & Custom Post Types as a block at **front-end** (Premium)
 *  **General Statistics** (Sessions, Users, Bounce rate, Average time on site, Average pages, PAGEVIEWS, NEW/RETURNING Visitors)
 *  How people are finding you (**TOP KEYWORDS**)
+*  **[New]** Dashboard dropdown menu now remembers your last selection of time period.
 
 
 **Analytify 2.1 is here! Discover Google Analytics Like Never Before! Must check those stunning [Screenshots](https://wordpress.org/plugins/wp-analytify/screenshots/)!**
@@ -144,8 +145,10 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 == Changelog ==
 
 = 2.1.1 - 2017-04-14 =
-* BugFix: Average Time on Page stats under pages/posts etc.
-* Enhancement: Average Session Duration stats Introduced as a tip under pages/posts etc.
+* BugFix: Average Time on Page stats under pages/posts etc. Thanks to user **@danielson79** for this [ticket](https://wordpress.org/support/topic/post-average-session-time-instead-time-on-page/).
+* Enhancement: Average Session Duration Stats Introduced under pages/posts etc. Thanks again to **@danielson79**.
+* Enhancement: Dashboard dropdown menu now remembers your last selection. Thanks to user **@areluc** for this [ticket](https://wordpress.org/support/topic/default-stats-period/) (*Actually added in V 2.1.0, we missed to note it in changelog).
+* WooCommerce 3.0: Though its an addon feature, but Analytify core is now compatible to work with WooCommerce 3.0 for Enhanced WooCommerce Analytics.
 
 = 2.1.0 - 2017-04-07 =
 * BugFix: Fixed miscellaneous tracking bug when users are logged-in.
@@ -355,7 +358,7 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 == Upgrade Notice ==
 
 = 2.1.1 =
-* [Important Update] Upgrade immediately. Bugfixes and Improvements.
+* [Important Update] Upgrade immediately. Bugfixes, Improvements & Enhancements!
 
 
 == Notes ==
