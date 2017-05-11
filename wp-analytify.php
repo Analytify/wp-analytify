@@ -611,7 +611,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			}
 
 			// for Single Page/Post Stats.
-			if ( $page == 'analytify_page_analytify-settings' || $page == 'post.php' ) {
+			if ( $page == 'analytify_page_analytify-settings' || $page == 'post.php' || $page == 'post-new.php' ) {
 				wp_enqueue_style( 'chosen', plugins_url( 'assets/old/css/chosen.css', __FILE__ ) );
 			}
 
@@ -658,7 +658,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			}
 
 			// for Single Page/Post Stats.
-			if ( $page == 'analytify_page_analytify-settings' || $page == 'post.php' ) {
+			if ( $page == 'analytify_page_analytify-settings' || $page == 'post.php' || $page == 'post-new.php' ) {
 				wp_enqueue_script( 'chosen-js', plugins_url( 'assets/old/js/chosen.jquery.js', __FILE__ ), false, ANALYTIFY_VERSION );
 
 			}
