@@ -223,7 +223,7 @@ function fetch_general_stats( $current, $current_stats, $device_category_stats, 
 			<h4><?php esc_html_e( 'Bounce Rate', 'wp-analytify' ); ?></h4>
 			<div class="analytify_general_stats_value"><?php echo WPANALYTIFY_Utils::pretty_numbers( $results['ga:bounceRate'] ); ?><span class="analytify_xl_f">%</span></div>
 			<p><?php esc_html_e( "Bounce Rate is the percentage of single-page visits (i.e. visits in which the person left your site from the entrance page without interacting with the page ).", 'wp-analytify' ); ?></p>
-			<?php get_compare_stats( $results['ga:bounceRate'], $compare_results['ga:bounceRate'], $date_different );?>
+			<?php get_compare_stats( $results['ga:bounceRate'], $compare_results['ga:bounceRate'], $date_different, 'bounce_rate' );?>
 	</div>
 
 	<div class="analytify_general_status_boxes">
@@ -264,12 +264,17 @@ function fetch_general_stats( $current, $current_stats, $device_category_stats, 
 	) ) ;
 }
 
-function get_compare_stats( $results, $compare_results, $date_different ) {
+function get_compare_stats( $results, $compare_results, $date_different, $name='' ) {
 
 	if ( $date_different == 0 ) { return; }
 
-	$compare = number_format( ( ( $results - $compare_results ) / $compare_results ) * 100, 2);
-	$class   = $compare > 0 ? 'analytify_green' : 'analytify_red';
+	$compare = number_format( ( ( $results - $compare_results ) / $compare_results ) * 100, 2 );
+
+	if ( 'bounce_rate' === $name ) {
+		$class   = $compare < 0 ? 'analytify_green' : 'analytify_red';
+	} else {
+		$class   = $compare > 0 ? 'analytify_green' : 'analytify_red';
+	}
 
 	echo '<div class="analytify_general_status_footer_info">
 			<span class="' . $class . '  analytify_info_value"> ' . $compare . ' %</span> ' . $date_different . __( ' ago', 'wp-analytify' ) . '
