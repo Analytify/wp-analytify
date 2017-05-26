@@ -702,7 +702,10 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		 * @since 2.0.4.
 		 */
 		function front_styles() {
-			wp_enqueue_style( 'admin-bar-style', plugins_url( 'assets/old/css/admin_bar_styles.css', __FILE__ ), false, ANALYTIFY_VERSION );
+
+ 			if ( is_admin_bar_showing() ) {
+				wp_enqueue_style( 'admin-bar-style', plugins_url( 'assets/old/css/admin_bar_styles.css', __FILE__ ), false, ANALYTIFY_VERSION );
+ 			}
 
 		}
 
