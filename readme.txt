@@ -4,7 +4,7 @@ Donate link: http://paypal.me/Analytify
 Tags: google analytics, google analytics dashboard, WooCommerce analytics, WordPress Analytics, analytify, tracking, analytics, install analytics, e-commerce, track, track visitor, statistics, campaign tracking, analytics campaign, best google analytics, enhanced ecommerce tracking, email analytics report, google analytics pdf, 
 Requires at least: 3.0
 Tested up to: 4.7.4
-Stable tag: 2.1.1
+Stable tag: 2.1.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -143,6 +143,13 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 
 == Changelog ==
+
+= 2.1.2 - 2017-05-31 =
+* BugFix: Advanced shortcode CSS conflict on new Post/Page.
+* BugFix: Prevent loading css if admin bar hidden.
+* Enhancement: Fix bounce rate arrow notification image.
+* Enhancement: Add link to pages on Entrance/Exit section in analytify dashboard.
+
 
 = 2.1.1 - 2017-04-14 =
 * BugFix: Average Time on Page stats under pages/posts etc. Thanks to user **@danielson79** for this [ticket](https://wordpress.org/support/topic/post-average-session-time-instead-time-on-page/).
@@ -357,7 +364,7 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 == Upgrade Notice ==
 
-= 2.1.1 =
+= 2.1.2 =
 * [Important Update] Upgrade immediately. Bugfixes, Improvements & Enhancements!
 
 
