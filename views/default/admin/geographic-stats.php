@@ -78,8 +78,11 @@ function fetch_geographic_stats ( $current, $countries_stats, $cities_stats, $sh
                   name: 'Geographic Stats',
                   type: 'map',
                   mapType: 'world',
-                  roam: 'move',
-                  scrollwheel: false,
+                  roam: true,
+                  scaleLimit :{
+                    min: 1,
+                    max: 10
+                  },
                   mapLocation: {
                     y : 60
                   },
