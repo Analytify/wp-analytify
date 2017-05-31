@@ -28,7 +28,7 @@ function fetch_pages_stats( $current, $stats ) {
 
 				foreach ( $stats['rows'] as $row ) :  $i++; ?>
 					<tr>
-						<td class="analytify_page_url_detials"><span class="analytify_page_name analytify_bullet_<?php echo $i; ?>"><?php echo $row[0]; ?></span><?php echo $row[1]; ?></td>
+						<td class="analytify_page_url_detials"><span class="analytify_page_name analytify_bullet_<?php echo $i; ?>"><?php echo $row[0]; ?></span><a target="_blank" href="<?php echo get_site_url() . $row[1] ?>"><?php echo $row[1]; ?></a> </td>
 						<td class="analytify_txt_center analytify_w_300 analytify_l_f"><?php echo WPANALYTIFY_Utils::pretty_numbers( $row[2] ); ?></td>
 						<td class="analytify_txt_center analytify_w_300 analytify_l_f"><?php echo WPANALYTIFY_Utils::pretty_numbers( $row[3] ); ?></td>
 						<td class="analytify_txt_center analytify_w_300 analytify_l_f">
