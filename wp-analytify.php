@@ -630,8 +630,10 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 			wp_enqueue_script( 'wp-analytify-script-js', plugins_url( 'assets/old/js/wp-analytify.js', __FILE__ ), array('jquery-ui-tooltip','jquery-ui-datepicker', 'jquery'), ANALYTIFY_VERSION );
 
+			global $post_type;
+
 			// for main page
-			if ( $page == 'index.php' || $page == 'toplevel_page_analytify-dashboard' || $page == 'analytify_page_analytify-woocommerce' || $page == 'analytify_page_edd-dashboard' || $page == 'analytify_page_analytify-campaigns' || $page == 'post.php' ) {
+			if ( $page == 'index.php' || $page == 'toplevel_page_analytify-dashboard' || $page == 'analytify_page_analytify-woocommerce' || $page == 'analytify_page_edd-dashboard' || $page == 'analytify_page_analytify-campaigns' || in_array( $post_type, $this->settings->get_option( 'show_analytics_post_types_back_end','wp-analytify-admin', array() ) ) ) {
 
 				wp_enqueue_script( 'pikaday-js', 	plugins_url( 'assets/default/js/pikaday.js', __FILE__ ), array( 'moment-js' ) , ANALYTIFY_VERSION );
 				wp_enqueue_script( 'moment-js', 	plugins_url( 'assets/default/js/moment.min.js', __FILE__ ), false, ANALYTIFY_VERSION );
@@ -1341,7 +1343,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		 */
 		function post_submitbox_stats_action( $post ) {
 
-			if ( 'publish' === $post->post_status  ) {
+			if ( 'publish' === $post->post_status &&  in_array( $post->post_type, $this->settings->get_option( 'show_analytics_post_types_back_end','wp-analytify-admin', array() ) ) ) {
 				echo '<a id="view_stats_analytify" href="' . esc_url( admin_url( 'post.php?post=' . esc_html( $post->ID ) . '&action=edit#pa-single-admin-analytics' ) ) . '" title="View Stats of “' . get_the_title( $post ) . '”" class="button button-primary button-large" style="float:left">View Stats</a>'; }
 		}
 
