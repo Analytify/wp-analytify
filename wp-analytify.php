@@ -8,7 +8,7 @@
  * Author URI: https://analytify.io
  * License: GPLv3
  * Text Domain: wp-analytify
- * Tested up to: 4.8.0
+ * Tested up to: 4.8
  * Domain Path: /languages
  *
  * @package WP_ANALYTIFY
