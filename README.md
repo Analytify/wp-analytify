@@ -104,6 +104,17 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 ##  Changelog ##
 
+### 2.1.3 - 2017-06-08 ###
+* Enhancement: Zoom feature is added in the WorldMap.
+* BugFix: Compatibility fix [#20](https://github.com/Analytify/wp-analytify/issues/20)
+
+
+### 2.1.2 - 2017-05-31 ###
+* BugFix: Advanced shortcode CSS conflict on new Post/Page.
+* BugFix: Prevent loading css if admin bar hidden.
+* Enhancement: Fix bounce rate arrow notification image.
+* Enhancement: Add link to pages on Entrance/Exit section in analytify dashboard.
+
 ### 2.1.1 - 2017-04-14 ###
 * BugFix: Average Time on Page stats under pages/posts etc. Thanks to user **@danielson79** for this [ticket](https://wordpress.org/support/topic/post-average-session-time-instead-time-on-page/).
 * Enhancement: Average Session Duration Stats Introduced under pages/posts etc. Thanks again to **@danielson79**.
