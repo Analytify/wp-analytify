@@ -65,6 +65,14 @@ function fetch_geographic_stats ( $current, $countries_stats, $cities_stats, $sh
                   saveAsImage : { show: true }
                 }
               },
+              roamController: {
+                show: true,
+                mapTypeControl: {
+                  'world': true
+                },
+                x: 'right',
+                y: 'bottom'
+              },
               dataRange: {
                 min: <?php echo $lowest_number ?>,
                 max: <?php echo $higest_number ?>,
@@ -78,7 +86,7 @@ function fetch_geographic_stats ( $current, $countries_stats, $cities_stats, $sh
                   name: 'Geographic Stats',
                   type: 'map',
                   mapType: 'world',
-                  roam: true,
+                  roam: false,
                   scaleLimit :{
                     min: 1,
                     max: 10
