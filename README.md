@@ -4,8 +4,8 @@
 **Donate link:** http://paypal.me/Analytify  
 **Tags:** google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced ecommerce tracking  
 **Requires at least:** 3.0  
-**Tested up to:** 4.7 
-**Stable tag:** 2.1.1
+**Tested up to:** 4.8
+**Stable tag:** 2.1.4
 **License:** GPLv3 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-3.0.html  
 
@@ -103,6 +103,9 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 
 ##  Changelog ##
+
+### 2.1.4 - 2017-07-06 ###
+* Enhancement: Polishing zoom feature of WorldMap - Introduced Zoom controls and fixed scrolling issue.
 
 ### 2.1.3 - 2017-06-08 ###
 * Enhancement: Zoom feature is added in the WorldMap.

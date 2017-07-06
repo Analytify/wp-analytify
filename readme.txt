@@ -4,7 +4,7 @@ Donate link: http://paypal.me/Analytify
 Tags: google analytics, google analytics dashboard, WooCommerce analytics, WordPress Analytics, analytify, tracking, analytics, install analytics, e-commerce, track, track visitor, statistics, campaign tracking, analytics campaign, best google analytics, enhanced ecommerce tracking, email analytics report, google analytics pdf, 
 Requires at least: 3.0
 Tested up to: 4.8
-Stable tag: 2.1.3
+Stable tag: 2.1.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -145,6 +145,9 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 
 == Changelog ==
+
+= 2.1.4 - 2017-07-06 =
+* Enhancement: Polishing zoom feature of WorldMap - Introduced Zoom controls and fixed scrolling issue.
 
 = 2.1.3 - 2017-06-08 =
 * Enhancement: Zoom feature is added in the WorldMap.
@@ -371,8 +374,8 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 == Upgrade Notice ==
 
-= 2.1.3 =
-* [Important Update] Upgrade immediately. Zoom feature for WorldMap and Compatible with 4.8
+= 2.1.4 =
+* [Important Update] Upgrade immediately. Polishing zoom feature of WorldMap Stats.
 
 
 == Notes ==
