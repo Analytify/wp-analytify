@@ -12,6 +12,8 @@ Google Analytics for WordPress by Analytify is the must-have Plugin for Google A
 
 == Description ==
 
+= Best Google Analytics Dashboard Plugin for WordPress With Support for Enhanced WooCommerce = 
+
 **[Google Analytics Dashboard for WordPress](http://analytify.io/details)** - by Analytify makes **Google Analytics** simple for everywhere in WordPress (posts, pages and custom post types). It presents the statistics from Google Analytics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. Now you can get **Google Analytics Dashboard** inside your WordPress Dashboard within a minute.
 
 **Top Features of this Google Analytics plugin:**
