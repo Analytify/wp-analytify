@@ -26,7 +26,7 @@ function fetch_system_stats ( $current, $browser_stats, $os_stats, $mobile_stats
           <?php   if ( isset( $browser_stats['rows'] ) && $browser_stats['rows'] > 0 ) : ?>
             <?php foreach ( $browser_stats['rows'] as $browser ) : ?>
               <tr>
-                <td>
+                <td nowrap>
                   <span class="<?php echo pretty_class( $browser[0] ) ?> analytify_social_icons"></span>
                   <span class="<?php echo pretty_class( $browser[1] ) ?> analytify_social_icons"></span>
                   <?php echo "{$browser[0]} {$browser[1]}" ?>
@@ -58,7 +58,7 @@ function fetch_system_stats ( $current, $browser_stats, $os_stats, $mobile_stats
           <?php   if ( isset( $os_stats['rows'] ) && $os_stats['rows'] > 0 ) : ?>
             <?php foreach ( $os_stats['rows'] as $os_stat ): ?>
               <tr>
-                <td class="analytify_boder_left"><span class="<?php echo pretty_class( $os_stat[0] )  ?> analytify_social_icons"></span> <?php echo "{$os_stat[0]} {$os_stat[1]}" ?> </td>
+                <td class="analytify_boder_left" nowrap><span class="<?php echo pretty_class( $os_stat[0] )  ?> analytify_social_icons"></span> <?php echo "{$os_stat[0]} {$os_stat[1]}" ?> </td>
                 <td class="analytify_txt_center analytify_value_row"><?php echo $os_stat[2] ?></td>
               </tr>
             <?php endforeach; ?>
@@ -82,11 +82,11 @@ function fetch_system_stats ( $current, $browser_stats, $os_stats, $mobile_stats
           </tr>
         </thead>
         <tbody>
-          
+
           <?php   if ( isset( $mobile_stats['rows'] ) && $mobile_stats['rows'] > 0 ) : ?>
             <?php foreach ( $mobile_stats['rows'] as $mobile ): ?>
               <tr>
-                <td class="analytify_boder_left"><span class="<?php echo pretty_class( $mobile[0] )  ?> analytify_social_icons"></span> <?php echo "{$mobile[0]} {$mobile[1]}"; ?></td>
+                <td class="analytify_boder_left" nowrap><span class="<?php echo pretty_class( $mobile[0] )  ?> analytify_social_icons"></span> <?php echo "{$mobile[0]} {$mobile[1]}"; ?></td>
                 <td class="analytify_txt_center analytify_value_row"><?php echo $mobile[2]; ?></td>
               </tr>
             <?php endforeach; ?>

@@ -334,7 +334,7 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 				<!-- Keyword Statistics -->
 				<?php if ( in_array( 'show-keywords-dashboard', $selected_stats ) ) :  ?>
 					<div class="analytify_general_status analytify_status_box_wraper">
-						<div class="analytify_status_header">
+						<div class="analytify_status_header analytify_header_adj">
 							<h3><?php esc_html_e( 'How people are finding you (keywords)', 'wp-analytify' ); ?></h3>
 							<div class="analytify_status_header_value keywords_total">
 								<span class="analytify_medium_f"><?php esc_html_e( 'Total Visits', 'wp-analytify' ); ?></span>
@@ -370,7 +370,7 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 							<!-- SocialMedia Statistics -->
 							<?php if ( in_array( 'show-social-dashboard', $selected_stats ) ) :  ?>
 								<div class="analytify_general_status analytify_status_box_wraper">
-									<div class="analytify_status_header">
+									<div class="analytify_status_header analytify_header_adj">
 										<h3><?php esc_html_e( 'Social Media', 'wp-analytify' ); ?></h3>
 										<div class="analytify_status_header_value social_total">
 											<span class="analytify_medium_f"><?php esc_html_e( 'Total Visits', 'wp-analytify' ); ?></span>
@@ -408,7 +408,7 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 							<!-- Top Reffers -->
 							<?php if ( in_array( 'show-referrer-dashboard', $selected_stats ) ) :  ?>
 								<div class="analytify_general_status analytify_status_box_wraper">
-									<div class="analytify_status_header">
+									<div class="analytify_status_header analytify_header_adj">
 										<h3><?php esc_html_e( 'Top Referrers', 'wp-analytify' ); ?></h3>
 										<div class="analytify_status_header_value  reffers_total">
 											<span class="analytify_medium_f"><?php esc_html_e( 'Total Visits', 'wp-analytify' ); ?></span>

@@ -8,7 +8,7 @@ function fetch_pages_stats( $current, $stats ) {
 	ob_start();
 	?>
 
-	<table class="analytify_data_tables">
+	<table class="analytify_data_tables analytify_page_stats_table">
 		<thead>
 			<tr>
 				<th class="analytify_txt_left analytify_link_title"><?php esc_html_e( 'Url link', 'wp-analytify' ); ?></th>
