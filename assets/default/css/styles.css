@@ -2135,8 +2135,8 @@ div.wp_analytify_pager span.wp_analytify_active, div.wp_analytify_pager span:hov
   display: table;
   clear: both;
 }
-.analytify_pull_left{
-  width: 100%;
+.analytify_pull_left.analytify_main_title{
+  margin-bottom: 20px;
 }
 /*.analytify_one_tree_table .analytify_data_tables th{
     border-right: 1px solid #e2e5e8;
@@ -2182,113 +2182,148 @@ div.wp_analytify_pager span.wp_analytify_active, div.wp_analytify_pager span:hov
         page-break-after: avoid;
     }
 }
+
 @media screen and (max-width: 1150px) {
-  .analytify_one_tree_table{
-    width: 50%;
-  }
-  .analytify_one_tree_table:last-child{
-    width: 100%;
-    border-top: 1px solid #e2e5e8;
-  }
+    .analytify_one_tree_table{
+        width: 50%;
+    }
+    .analytify_one_tree_table:last-child{
+        width: 100%;
+        border-top: 1px solid #e2e5e8;
+    }
 }
 @media screen and (max-width: 768px) {
-  .analytify_wraper .analytify_general_status_boxes{
-    width: calc(50% - 24px);
-  }
-  .analytify_general_status_boxes_wraper{
-    padding-right: 20px;
-  }
-  .analytify_one_tree_table+ .analytify_one_tree_table{
-    width: 100%;
-    border-top: 1px solid #e2e5e8;
-  }
-  .analytify_one_tree_table{
-    width: 100%;
-  }
+    .analytify_wraper .analytify_general_status_boxes{
+        width: calc(50% - 24px);
+    }
+    .analytify_general_status_boxes_wraper{
+        padding-right: 20px;
+    }
+    .analytify_one_tree_table+ .analytify_one_tree_table{
+        width: 100%;
+        border-top: 1px solid #e2e5e8;
+    }
+    .analytify_one_tree_table{
+        width: 100%;
+    }
+    .analytify_visitors_online .analytify_number{
+        padding-top: 50px;
+    }
+    .analytify_real_time_stats_boxes{
+        width: 33.333%;
+    }
+    .analytify_visitors_online{
+        width: 100%;
+        height: 260px;
+    }
+    .analytify_select_dashboard{
+      top: 0;
+    }
+    .real_time_stats_hd{
+      margin: 0 0 20px !important;
+    }
 }
 @media screen and (max-width: 639px) {
-  .analytify_wraper .analytify_general_status_boxes{
-    width: calc(100% - 24px);
-  }
-  .analytify_half{
-    width: 100%;
-    padding: 0;
-  }
-  .analytify_social_icons + .analytify_social_icons{
-    display: none;
-  }
-  label[for="analytify_start"]{
-    display: none;
-  }
-  .analytify_select_date_fields input{
-    width: 105px;
-  }
-  #analytify_start{
-    margin-right: 0;
-  }
-  .wp_analytify_pagination{
-    width: 100%;
-    top: 0;
-  }
-  .analytify_status_header:after{
-    content: '';
-    display: table;
-    clear: both;
-  }
-  .analytify_status_header_value{
-    float: right;
-  }
-  .analytify_stats_of{
-    word-wrap: break-word;
-    display: block;
-  }
-  .analytify_select_date_fields{
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-  .analytify_general_status-icon{
-    padding: 0px 38px 0 16px;
-    line-height: 34px !important;
-    height: 40px;
-  }
-  .analytify_go_pro_overlay_inner{
-    width: 100%;
-  }
-  .analytify_h2{
-    font-size: 20px !important;
-  }
-  .analytify_btn{
-    padding: 7px 14px;
-    margin-top: 10px;
-    font-size: 15px;
-  }
+    .analytify_wraper .analytify_general_status_boxes{
+        width: calc(100% - 24px);
+    }
+    .analytify_half{
+        width: 100%;
+        padding: 0;
+    }
+    .analytify_social_icons + .analytify_social_icons{
+        display: none;
+    }
+    label[for="analytify_start"]{
+        display: none;
+    }
+    .analytify_select_date_fields input{
+        width: 105px;
+    }
+    #analytify_start{
+        margin-right: 0;
+    }
+    .wp_analytify_pagination{
+        width: 100%;
+        top: 0;
+    }
+    .analytify_status_header:after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+    .analytify_status_header_value{
+        float: right;
+    }
+    .analytify_stats_of{
+        word-wrap: break-word;
+        display: block;
+    }
+    .analytify_select_date_fields{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .analytify_general_status-icon{
+        padding: 0px 38px 0 16px;
+        line-height: 34px !important;
+        height: 40px;
+    }
+    .analytify_go_pro_overlay_inner{
+        width: 100%;
+    }
+    .analytify_h2{
+        font-size: 20px !important;
+    }
+    .analytify_btn{
+        padding: 7px 14px;
+        margin-top: 10px;
+        font-size: 15px;
+    }
+    .analytify_real_time_stats_boxes:not(.analytify_visitors_online){
+        width: 50%;
+    }
+    .analytify_real_time_stats_boxes:after{
+        visibility: hidden;
+    }
+    .analytify_pull_left.analytify_main_title{
+      width: 100%;
+    }
 }
 @media screen and (max-width: 400px) {
-  .analytify_page_stats_table{
-    table-layout: fixed;
-  }
-  .analytify_page_stats_table .analytify_link_title{
-    width: 80px;
-  }
-  .analytify_page_url_detials{
-    padding-left: 28px;
-  }
-  .analytify_page_stats_table .analytify_compair_value_row{
-    width: 68px;
-  }
-  .analytify_page_stats_table .analytify_page_url_detials a{
-    display: block;
-    word-break: break-all;
-  }
-  .analytify_page_stats_table .analytify_compair_row{
-    width: 82px;
-  }
-  .analytify_wraper .analytify_header_adj  h3,.analytify_header_adj  .analytify_h3{
-    float: left;
-    width: calc(100% - 120px);
-    font-size: 14px;
-  }
-  .analytify_status_header_value{
-    font-size: 24px;
-  }
+    .analytify_page_stats_table{
+        table-layout: fixed;
+    }
+    .analytify_page_stats_table .analytify_link_title{
+        width: 80px;
+    }
+    .analytify_page_url_detials{
+        padding-left: 28px;
+    }
+    .analytify_page_stats_table .analytify_compair_value_row{
+        width: 68px;
+    }
+    .analytify_page_stats_table .analytify_page_url_detials a{
+        display: block;
+        word-break: break-all;
+    }
+    .analytify_page_stats_table .analytify_compair_row{
+        width: 82px;
+    }
+    .analytify_wraper h3, .analytify_h3{
+        float: left;
+        width: calc(100% - 120px);
+        font-size: 14px;
+    }
+    .analytify_status_header_value{
+        font-size: 24px;
+    }
+    .analytify_real_time_stats_boxes:not(.analytify_visitors_online){
+        width: 100%;
+    }
+    .analytify_real_time_stats_boxes:after{
+        visibility: hidden;
+    }
+    .analytify_submit_date_btn{
+      margin-top: 10px;
+    }
 }
