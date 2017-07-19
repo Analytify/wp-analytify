@@ -122,6 +122,8 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 	if ( $wp_analytify->pa_check_roles( $is_access_level ) ) {
 
 		if ( $acces_token ) {
+			// dequeue event calendar js 
+			wp_dequeue_script( 'tribe-common' );
 		?>
 
 		<div class="analytify_wraper <?php echo $classes ?>">
