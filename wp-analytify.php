@@ -526,6 +526,12 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 				$settings_link .= sprintf( esc_html__( '%1$s Help %2$s  ', 'wp-analytify'), '<a href="' . admin_url( 'index.php?page=wp-analytify-getting-started' ) . '">', '</a>'  );
 				array_unshift( $links, $settings_link );
+
+				if ( ! class_exists( 'WP_Analytify_Pro' ) ) {
+					$pro_link = sprintf( esc_html__( '%1$s Upgrade To Pro %2$s', 'wp-analytify' ),  '<a  href="https://analytify.io/pricing/?utm_source=analytify-lite&utm_medium=plugin-action-link&utm_campaign=pro-upgrade" target="_blank" style="color:#3db634;">', '</a>' );
+					array_push( $links, $pro_link );
+				}
+
 			}
 
 			return $links;

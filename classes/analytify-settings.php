@@ -1010,6 +1010,11 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 				$html .= sprintf( '<a href="#%1$s" class="analytify_nav_tab" id="%1$s-tab">%2$s</a>', $tab['id'], $tab['title'] );
 			}
 
+			if ( ! class_exists( 'WP_Analytify_Pro' ) ) {
+				$html .= sprintf( '<a href="%1$s" class="wp-analytify-premium" target="_blank"><span class="dashicons dashicons-star-filled"></span>%2$s</a>', "https://analytify.io/pricing/?utm_source=analytify-lite&amp;utm_medium=tab&amp;utm_campaign=pro-upgrade", 'Upgrade to Pro for More Features' );
+				}
+
+
 			$html .= '</h2>';
 
 			echo $html;
@@ -1202,7 +1207,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 				// load diagnostic debug log only when help tab is active
 				if( $('.nav-tab-active').attr('href') === '#wp-analytify-help' ) refresh_debug_log();
 
-				$('.analytify_nav_tab_wrapper a').click(function(evt) {
+				$('.analytify_nav_tab_wrapper a[href*="#"]').click(function(evt) {
 
 					$('.analytify_nav_tab_wrapper a').removeClass('nav-tab-active');
 					$(this).addClass('nav-tab-active').blur();

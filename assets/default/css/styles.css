@@ -2052,6 +2052,29 @@ div.wp_analytify_pager span.wp_analytify_active, div.wp_analytify_pager span:hov
 .analytify_general_status-gif img{
   opacity: .4;
 }
+.wp-analytify-premium,.wp-analytify-premium:focus{
+  border: 1px solid #ccc;
+  border-bottom: none;
+  margin-left: .5em;
+  padding: 5px 10px;
+  font-size: 14px;
+  line-height: 24px;
+  background: #444;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: bottom;
+  box-shadow: none;
+  outline: none;
+}
+.wp-analytify-premium  .dashicons-star-filled:before {
+  color: #FFD700;
+  font-size: 14px;
+}
+.wp-analytify-premium:hover {
+  background: #e4e4e4;
+  color: #444;
+}
 /* ========================================================================== Media Queries ========================================================================== */
 @media only screen and (max-width: 1400px) {
     .analytify_data_tables th, .analytify_data_tables td{

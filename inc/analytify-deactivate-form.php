@@ -154,7 +154,7 @@
     </div>
     <div class="wp-analytify-popup-footer">
       <label class="wp-analytify-anonymous"><input type="checkbox" /><?php _e( 'Anonymous feedback', 'wp-analytify' ); ?></label>
-        <input type="button" class="button button-secondary button-skip loginpress-popup-skip-feedback" value="Skip &amp; Deactivate" >
+        <input type="button" class="button button-secondary button-skip wp-analytify-popup-skip-feedback" value="Skip &amp; Deactivate" >
       <div class="action-btns">
         <span class="wp-analytify-spinner"><img src="<?php echo admin_url( '/images/spinner.gif' ); ?>" alt=""></span>
         <input type="submit" class="button button-secondary button-deactivate wp-analytify-popup-allow-deactivate" value="Submit &amp; Deactivate" disabled="disabled">
@@ -236,7 +236,7 @@
 
         });
 
-        $('.loginpress-popup-skip-feedback').on('click', function(e){
+        $('.wp-analytify-popup-skip-feedback').on('click', function(e){
           window.location.href =  $("tr[data-slug='"+ pluginSlug +"'] .deactivate a").attr('href');
         })
 
