@@ -1117,9 +1117,9 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				global $current_user ;
 				$user_id = $current_user->ID;
 				/* Check that the user hasn't already clicked to ignore the message */
-				if ( ! get_user_meta($user_id, 'analytify_ignore_notice') ) {
+				if ( ! get_user_meta($user_id, 'analytify_2_1_5_ignore') ) {
 				echo '<div class="updated"><p>';
-				printf(__('<b>Notice:</b> <b>Exclusive End of Summer Offer:</b>  Get 20% Off on Analytify - Use Coupon Code <b>SUMMER2017<b>. <a href="https://analytify.io/in/end-summer-sale" target="_blank">Download Pro Now </a>. <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_nag_ignore=0' ));
+				printf(__('<b>Notice:</b> <b>Exclusive Summer Offer:</b>  Get 20% Off on Analytify - Use Coupon Code <b>SUMMER2017<b>. <a href="https://analytify.io/in/end-summer-sale" target="_blank">Download Pro Now </a>. <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_2_1_5_ignore=0' ));
 				echo "</p></div>";
 				 }
 			}
@@ -1150,7 +1150,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			$user_id = $current_user->ID;
 			/* If user clicks to ignore the notice, add that to their user meta */
 			if ( isset( $_GET['analytify_nag_ignore'] ) && '0' === $_GET['analytify_nag_ignore'] ) { // Input var okay.
-				add_user_meta( $user_id, 'analytify_ignore_notice', 'true', true );
+				add_user_meta( $user_id, 'analytify_2_1_5_ignore', 'true', true );
 			}
 
 			/* If user clicks to ignore the 2.1.5 notice, add that to their user meta */
