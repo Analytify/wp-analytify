@@ -1119,7 +1119,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				/* Check that the user hasn't already clicked to ignore the message */
 				if ( ! get_user_meta($user_id, 'analytify_2_1_5_ignore') ) {
 				echo '<div class="updated"><p>';
-				printf(__('<b>Exclusive Summer Offer:</b> Get 20% Off on Analytify - Use Coupon Code <b>SUMMER2017<b>. <a href="https://analytify.io/in/2017-summer-sale" target="_blank">Download Pro Now </a>. <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_2_1_5_ignore=0' ));
+				printf(__('<b>Exclusive Summer Offer:</b> Get 20% Off on Analytify - Use Coupon Code <b>SUMMER2017</b>. <a href="https://analytify.io/in/2017-summer-sale" target="_blank">Download Pro Now </a>. <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_2_1_5_ignore=0' ));
 				echo "</p></div>";
 				 }
 			}
