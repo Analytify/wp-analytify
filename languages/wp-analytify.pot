@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Analytify - Google Analytics Dashboard\n"
-"POT-Creation-Date: 2017-03-04 11:49+0500\n"
+"POT-Creation-Date: 2017-08-04 11:55+0500\n"
 "PO-Revision-Date: 2017-01-24 09:42+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.0.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: wp-analytify.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -224,246 +224,247 @@ msgid ""
 "Best to hide for your clients not to see other profiles."
 msgstr ""
 
-#: classes/analytify-settings.php:208
+#: classes/analytify-settings.php:215
 msgid "Disable Analytics under posts/pages (wp-admin)"
 msgstr ""
 
-#: classes/analytify-settings.php:209
+#: classes/analytify-settings.php:216
 msgid ""
 "Check it, If you don't want to load Stats by default on all pages. Remember, "
 "There is a section under each post/page. You can still view Stats on pages "
 "you want."
 msgstr ""
 
-#: classes/analytify-settings.php:214
+#: classes/analytify-settings.php:221
 msgid "Show Analytics to (roles)"
 msgstr ""
 
-#: classes/analytify-settings.php:215
+#: classes/analytify-settings.php:222
 msgid "Show Analytics to above selected user roles only."
 msgstr ""
 
-#: classes/analytify-settings.php:223 welcome.php:241 welcome.php:349
-#: welcome.php:383
+#: classes/analytify-settings.php:230 inc/analytify-optin-form.php:442
+#: inc/analytify-optin-form.php:477 inc/analytify-optin-form.php:573
+#: welcome.php:241 welcome.php:349 welcome.php:383
 msgid "Analytics on Post types"
 msgstr ""
 
-#: classes/analytify-settings.php:224
+#: classes/analytify-settings.php:231
 msgid "Show Analytics under the above post types only"
 msgstr ""
 
-#: classes/analytify-settings.php:224
+#: classes/analytify-settings.php:231
+#, php-format
 msgid ""
-"Show Analytics under the above post types only. Buy <a href=\"http://"
-"analytify.io/pricing/\" target=\"_blank\">Premium</a> version for Custom "
-"Post Types."
+"Show Analytics under the above post types only. Buy %1$sPremium%1$s version "
+"for Custom Post Types."
 msgstr ""
 
-#: classes/analytify-settings.php:232
+#: classes/analytify-settings.php:239
 msgid "Edit pages/posts Analytics panels:"
 msgstr ""
 
-#: classes/analytify-settings.php:233
+#: classes/analytify-settings.php:240
 msgid "Select which Stats panels you want to display under posts/pages."
 msgstr ""
 
-#: classes/analytify-settings.php:233
+#: classes/analytify-settings.php:240
+#, php-format
 msgid ""
 "Select which Stats panels you want to display under posts/pages. Only "
-"\"General Stats\" will visible in Free Version. Buy <a href=\"http://"
-"analytify.io/pricing/\" target=\"_blank\">Premium</a> version to see the "
-"full statistics."
+"\"General Stats\" will visible in Free Version. Buy %1$sPremium%2$s version "
+"to see the full statistics."
 msgstr ""
 
-#: classes/analytify-settings.php:237
+#: classes/analytify-settings.php:244
 msgid "General Stats"
 msgstr ""
 
-#: classes/analytify-settings.php:238
+#: classes/analytify-settings.php:245
 #: views/default/admin/geographic-stats.php:55
 msgid "Geographic Stats"
 msgstr ""
 
-#: classes/analytify-settings.php:239 inc/analytics-dashboard.php:258
+#: classes/analytify-settings.php:246 inc/analytics-dashboard.php:297
 msgid "System Stats"
 msgstr ""
 
-#: classes/analytify-settings.php:240
+#: classes/analytify-settings.php:247
 msgid "Keywords Stats"
 msgstr ""
 
-#: classes/analytify-settings.php:241
+#: classes/analytify-settings.php:248
 msgid "Social Media Stats"
 msgstr ""
 
-#: classes/analytify-settings.php:242
+#: classes/analytify-settings.php:249
 msgid "Referrers Stats"
 msgstr ""
 
-#: classes/analytify-settings.php:247
+#: classes/analytify-settings.php:254
 msgid "Exclude Analytics on specific pages:"
 msgstr ""
 
-#: classes/analytify-settings.php:248
+#: classes/analytify-settings.php:255
 msgid ""
 "Enter ID's of posts or pages separated by commas on which you don't want to "
 "show Analytics e.g 11,45,66"
 msgstr ""
 
-#: classes/analytify-settings.php:256
+#: classes/analytify-settings.php:263
 msgid "Do you want to use your own API keys ?"
 msgstr ""
 
-#: classes/analytify-settings.php:257
+#: classes/analytify-settings.php:264
+#, php-format
 msgid ""
-"It is highly recommended by Google to use your own API keys. <br />You need "
-"to create a Project in Google <a target='_blank' href='https://console."
-"developers.google.com/project'>Console</a>. <br />Here is a short <a "
-"target='_blank' href='https://www.youtube.com/watch?v=X36InlRJtuk'>video "
-"guide</a> to get your own ClientID, Client Secret and Redirect URL and enter "
-"them in below inputs."
+"It is highly recommended by Google to use your own API keys. %1$sYou need to "
+"create a Project in Google %2$s. %3$sHere is a short %4$svideo guide%5$s to "
+"get your own ClientID, Client Secret and Redirect URL and enter them in "
+"below inputs."
 msgstr ""
 
-#: classes/analytify-settings.php:264
+#: classes/analytify-settings.php:271
 msgid "ClientID:"
 msgstr ""
 
-#: classes/analytify-settings.php:265
+#: classes/analytify-settings.php:272
 msgid "Your Client ID"
 msgstr ""
 
-#: classes/analytify-settings.php:272
+#: classes/analytify-settings.php:279
 msgid "Client Secret:"
 msgstr ""
 
-#: classes/analytify-settings.php:273
+#: classes/analytify-settings.php:280
 msgid "Your Client Secret"
 msgstr ""
 
-#: classes/analytify-settings.php:280
+#: classes/analytify-settings.php:287
 msgid "Redirect URL:"
 msgstr ""
 
-#: classes/analytify-settings.php:281
+#: classes/analytify-settings.php:288
 #, php-format
 msgid ""
 "( Redirect URL is very important when you are using your own Keys Use this "
 "Redirect URL  %1$s )"
 msgstr ""
 
-#: classes/analytify-settings.php:294
+#: classes/analytify-settings.php:301
 msgid "Anonymize IP addresses"
 msgstr ""
 
-#: classes/analytify-settings.php:295
+#: classes/analytify-settings.php:302
+#, php-format
 msgid ""
 "Detailed information about IP Anonymization in Google Analytics can be found "
-"<a href='https://support.google.com/analytics/answer/2763052'>Details</a>"
+"%1$sDetails%2$s"
 msgstr ""
 
-#: classes/analytify-settings.php:300
+#: classes/analytify-settings.php:307
 msgid "Force Analytics Traffic Over SSL"
 msgstr ""
 
-#: classes/analytify-settings.php:301
+#: classes/analytify-settings.php:308
 msgid ""
 "If your site is HTTPS based, Analytics traffic will always go over SSL. If "
 "you have an insecure site, but wish Analytics traffic to still be secure, "
 "use this option."
 msgstr ""
 
-#: classes/analytify-settings.php:306
+#: classes/analytify-settings.php:313
 msgid "Track User ID"
 msgstr ""
 
-#: classes/analytify-settings.php:307
+#: classes/analytify-settings.php:314
 msgid ""
-"Detailed information about Track User ID in Google Analytics can be found <a "
-"href='https://support.google.com/analytics/answer/3123662'>Details</a>"
+"Detailed information about Track User ID in Google Analytics can be found "
+"%1$sDetails%2$2"
 msgstr ""
 
-#: classes/analytify-settings.php:312
+#: classes/analytify-settings.php:319
 msgid "Demographic & Interest Tracking"
 msgstr ""
 
-#: classes/analytify-settings.php:313
+#: classes/analytify-settings.php:320
 msgid ""
 "This allows you to view extra dimensions about users (Age, Gender, Affinity "
 "Categories, In-Market Segments and Other Categories)."
 msgstr ""
 
-#: classes/analytify-settings.php:318
+#: classes/analytify-settings.php:325
 msgid "Page Not Found (404)"
 msgstr ""
 
-#: classes/analytify-settings.php:319
+#: classes/analytify-settings.php:326
 msgid "Track all 404 page links"
 msgstr ""
 
-#: classes/analytify-settings.php:324
+#: classes/analytify-settings.php:331
 msgid "JavaScript Errors"
 msgstr ""
 
-#: classes/analytify-settings.php:325
+#: classes/analytify-settings.php:332
 msgid "Track all Javascript errors"
 msgstr ""
 
-#: classes/analytify-settings.php:330
+#: classes/analytify-settings.php:337
 msgid "AJAX Errors"
 msgstr ""
 
-#: classes/analytify-settings.php:331
+#: classes/analytify-settings.php:338
 msgid "Track all AJAX errors"
 msgstr ""
 
-#: classes/analytify-settings.php:336
+#: classes/analytify-settings.php:343
 msgid "Setup Cross-domain Tracking"
 msgstr ""
 
-#: classes/analytify-settings.php:337
+#: classes/analytify-settings.php:344
+#, php-format
 msgid ""
-"This will add <code>allowLinker:true</code> tag to tracking code. Read this "
-"<a href='https:\\//analytify.io/doc/setup-cross-domain-tracking-"
-"wordpress'>guide</a> for more information."
+"This will add %1$s tag to tracking code. Read this %2$sguide%3$s for more "
+"information."
 msgstr ""
 
-#: classes/analytify-settings.php:342
+#: classes/analytify-settings.php:349
 msgid "Custom JS Code"
 msgstr ""
 
-#: classes/analytify-settings.php:343
+#: classes/analytify-settings.php:350
 msgid ""
 "This will add inline tracking code before sending the pageview hit to Google "
 "Analytics."
 msgstr ""
 
-#: classes/analytify-settings.php:767
+#: classes/analytify-settings.php:780
 msgid "Choose Image"
 msgstr ""
 
-#: classes/analytify-settings.php:788
+#: classes/analytify-settings.php:801
 msgid "Choose File"
 msgstr ""
 
-#: classes/analytify-settings.php:844
+#: classes/analytify-settings.php:857
 msgid ""
 "You have allowed your site to access the Analytics data from Google. Logout "
 "below to disconnect it."
 msgstr ""
 
-#: classes/analytify-settings.php:855
+#: classes/analytify-settings.php:868
 msgid "Log in with Google Analytics Account"
 msgstr ""
 
-#: classes/analytify-settings.php:882
+#: classes/analytify-settings.php:895
 msgid "Support"
 msgstr ""
 
-#: classes/analytify-settings.php:884
+#: classes/analytify-settings.php:897
 msgid "As this is a free plugin, we do not provide support."
 msgstr ""
 
-#: classes/analytify-settings.php:886
+#: classes/analytify-settings.php:899
 #, php-format
 msgid ""
 "You may ask the WordPress community for help by posting to the %1$s "
@@ -471,45 +472,45 @@ msgid ""
 "a few weeks and will likely be from a non-developer."
 msgstr ""
 
-#: classes/analytify-settings.php:888
+#: classes/analytify-settings.php:901
 #, php-format
 msgid ""
 "If you want a %1$s timely response via email from a developer %2$s who works "
 "on this plugin, %3$s upgrade to WP Analytify Pro %4$s and send us an email."
 msgstr ""
 
-#: classes/analytify-settings.php:890
+#: classes/analytify-settings.php:903
 #, php-format
 msgid "If you've found a bug, please %1$s submit an issue at Github %2$s."
 msgstr ""
 
-#: classes/analytify-settings.php:896
+#: classes/analytify-settings.php:909
 msgid "Diagnostic Info &amp; Error Log"
 msgstr ""
 
-#: classes/analytify-settings.php:911
+#: classes/analytify-settings.php:924
 msgid "Test Email"
 msgstr ""
 
-#: classes/analytify-settings.php:912
+#: classes/analytify-settings.php:925
 msgid "Note: Please save changes before sending a test email."
 msgstr ""
 
-#: classes/analytify-settings.php:992
+#: classes/analytify-settings.php:1005
 msgid "WP Analytify Plugin Settings"
 msgstr ""
 
-#: classes/analytify-utils.php:61 wp-analytify.php:995
+#: classes/analytify-utils.php:61 wp-analytify.php:1062
 msgctxt "Hour Time"
 msgid "h"
 msgstr ""
 
-#: classes/analytify-utils.php:64 wp-analytify.php:998
+#: classes/analytify-utils.php:64 wp-analytify.php:1065
 msgctxt "Minute Time"
 msgid "m"
 msgstr ""
 
-#: classes/analytify-utils.php:67 wp-analytify.php:1001
+#: classes/analytify-utils.php:67 wp-analytify.php:1068
 msgctxt "Second Time"
 msgid "s"
 msgstr ""
@@ -517,11 +518,10 @@ msgstr ""
 #: classes/analytify-utils.php:154
 #, php-format
 msgid ""
-"<b>Daily Limit Exceeded:</b> This Indicates that user has exceeded the daily "
-"quota (either per project or per view (profile)). Please <a href=\"%1$s\" "
-"target=\"_blank\">follow this tutorial</a> to fix this issue. let us know "
-"this issue (if it still doesn't work) in the Help tab of Analytify->settings "
-"page."
+"%1$sDaily Limit Exceeded:%2$s This Indicates that user has exceeded the "
+"daily quota (either per project or per view (profile)). Please %3$sfollow "
+"this tutorial%4$s to fix this issue. let us know this issue (if it still "
+"doesn't work) in the Help tab of Analytify->settings page."
 msgstr ""
 
 #: classes/analytify-utils.php:167
@@ -534,32 +534,34 @@ msgstr ""
 #: classes/analytify-utils.php:180
 #, php-format
 msgid ""
-"<b>usageLimits.userRateLimitExceededUnreg:</b> Indicates that the "
-"application needs to be registered in the Google API Console. Read <a href="
-"\"%1$s\">this guide</a> for to make it work. let us know this issue in (if "
-"it still doesn't work) Help tab of Analytify->settings page."
+"%1$susageLimits.userRateLimitExceededUnreg:%2$s Indicates that the "
+"application needs to be registered in the Google API Console. Read %3$sthis "
+"guide%4$s for to make it work. let us know this issue in (if it still "
+"doesn't work) Help tab of Analytify->settings page."
 msgstr ""
 
 #: classes/analytify-utils.php:194
 #, php-format
 msgid ""
-"<br>User Rate Limit Exceeded:</b> Indicates that the user rate limit has "
+"%1$sUser Rate Limit Exceeded:%2$s Indicates that the user rate limit has "
 "been exceeded. The maximum rate limit is 10 qps per IP address. The default "
 "value set in Google API Console is 1 qps per IP address. You can increase "
-"this limit in the <a href=\"%1$s\">Google API Console</a> to a maximum of 10 "
-"qps. let us know this issue in Help tab of Analytify->settings page."
+"this limit in the %3$sGoogle API Console%4$s to a maximum of 10 qps. let us "
+"know this issue in Help tab of Analytify->settings page."
 msgstr ""
 
 #: classes/analytify-utils.php:207
+#, php-format
 msgid ""
-"<b>Rate Limit Exceeded:</b> Indicates that the global or overall project "
+"%1$sRate Limit Exceeded:%2$s Indicates that the global or overall project "
 "rate limits have been exceeded. let us know this issue in Help tab of "
 "Analytify->settings page."
 msgstr ""
 
 #: classes/analytify-utils.php:220
+#, php-format
 msgid ""
-"<b>Quota Exceeded:</b> This indicates that the 10 concurrent requests per "
+"%1$sQuota Exceeded:%2$s This indicates that the 10 concurrent requests per "
 "view (profile) in the Core Reporting API has been reached. let us know this "
 "issue in Help tab of Analytify->settings page."
 msgstr ""
@@ -567,134 +569,193 @@ msgstr ""
 #: classes/analytify-utils.php:234
 #, php-format
 msgid ""
-"<b>Access Not Configured:</b> Google Analytics API has not been used in this "
-"project before or it is disabled. Enable it by visiting your project in <a "
-"href=\"%1$s\">Google Project Console</a> then retry. If you enabled this API "
-"recently, wait a few minutes for the action to propagate to our systems and "
-"retry."
+"%1$sAccess Not Configured:%2$s Google Analytics API has not been used in "
+"this project before or it is disabled. Enable it by visiting your project in "
+"%3$sGoogle Project Console%4$s then retry. If you enabled this API recently, "
+"wait a few minutes for the action to propagate to our systems and retry."
 msgstr ""
 
-#: inc/analytics-dashboard.php:98 inc/analytify-go-pro.php:152
+#: inc/analytics-dashboard.php:131 inc/analytify-go-pro.php:152
 #: inc/class-wpa-adminbar.php:39
 msgid "Dashboard"
 msgstr ""
 
-#: inc/analytics-dashboard.php:99
+#: inc/analytics-dashboard.php:132
 msgid "Complete Statistics of the Site"
 msgstr ""
 
-#: inc/analytics-dashboard.php:116 wp-analytify.php:352
+#: inc/analytics-dashboard.php:150 wp-analytify.php:378
 msgid "From:"
 msgstr ""
 
-#: inc/analytics-dashboard.php:119 wp-analytify.php:355
+#: inc/analytics-dashboard.php:153 wp-analytify.php:381
 msgid "To:"
 msgstr ""
 
-#: inc/analytics-dashboard.php:124 wp-analytify.php:362
+#: inc/analytics-dashboard.php:158 wp-analytify.php:388
 msgid "View Stats"
 msgstr ""
 
-#: inc/analytics-dashboard.php:126 wp-analytify.php:364
-msgid "Last 30 days"
-msgstr ""
-
-#: inc/analytics-dashboard.php:128 wp-analytify.php:366
-msgid "This month"
-msgstr ""
-
-#: inc/analytics-dashboard.php:130 wp-analytify.php:368
-msgid "Last month"
-msgstr ""
-
-#: inc/analytics-dashboard.php:133 wp-analytify.php:371
-msgid "Last 3 months"
-msgstr ""
-
-#: inc/analytics-dashboard.php:135 wp-analytify.php:373
-msgid "Last 6 months"
-msgstr ""
-
-#: inc/analytics-dashboard.php:138 wp-analytify.php:376
-msgid "Last year"
-msgstr ""
-
-#: inc/analytics-dashboard.php:141 wp-analytify.php:379
-msgid "Custom Range"
-msgstr ""
-
-#: inc/analytics-dashboard.php:141 wp-analytify.php:379
-msgid "Select a custom date"
+#: inc/analytics-dashboard.php:161
+msgid "Last 7 days"
 msgstr ""
 
 #: inc/analytics-dashboard.php:163
+msgid "Last 14 days"
+msgstr ""
+
+#: inc/analytics-dashboard.php:165 wp-analytify.php:390
+msgid "Last 30 days"
+msgstr ""
+
+#: inc/analytics-dashboard.php:167 wp-analytify.php:392
+msgid "This month"
+msgstr ""
+
+#: inc/analytics-dashboard.php:169 wp-analytify.php:394
+msgid "Last month"
+msgstr ""
+
+#: inc/analytics-dashboard.php:172 wp-analytify.php:397
+msgid "Last 3 months"
+msgstr ""
+
+#: inc/analytics-dashboard.php:174 wp-analytify.php:399
+msgid "Last 6 months"
+msgstr ""
+
+#: inc/analytics-dashboard.php:177 wp-analytify.php:402
+msgid "Last year"
+msgstr ""
+
+#: inc/analytics-dashboard.php:180 wp-analytify.php:405
+msgid "Custom Range"
+msgstr ""
+
+#: inc/analytics-dashboard.php:180 wp-analytify.php:405
+msgid "Select a custom date"
+msgstr ""
+
+#: inc/analytics-dashboard.php:202
 #: views/default/admin/single-general-stats.php:15
 msgid "General Statistics"
 msgstr ""
 
-#: inc/analytics-dashboard.php:171
+#: inc/analytics-dashboard.php:210
 msgid "days"
 msgstr ""
 
-#: inc/analytics-dashboard.php:185
+#: inc/analytics-dashboard.php:224
 msgid "Did you know that total time on your site is"
 msgstr ""
 
-#: inc/analytics-dashboard.php:195
+#: inc/analytics-dashboard.php:234
 msgid "Top pages by views"
 msgstr ""
 
-#: inc/analytics-dashboard.php:214
+#: inc/analytics-dashboard.php:253
 msgid "List of the top pages and posts."
 msgstr ""
 
-#: inc/analytics-dashboard.php:227
+#: inc/analytics-dashboard.php:266
 msgid "Geographic"
 msgstr ""
 
-#: inc/analytics-dashboard.php:247
+#: inc/analytics-dashboard.php:286
 msgid "Listing statistics of top countries and cities."
 msgstr ""
 
-#: inc/analytics-dashboard.php:301
+#: inc/analytics-dashboard.php:340
 msgid "How people are finding you (keywords)"
 msgstr ""
 
-#: inc/analytics-dashboard.php:303 inc/analytics-dashboard.php:339
-#: inc/analytics-dashboard.php:377
+#: inc/analytics-dashboard.php:342 inc/analytics-dashboard.php:378
+#: inc/analytics-dashboard.php:416
 msgid "Total Visits"
 msgstr ""
 
-#: inc/analytics-dashboard.php:324
+#: inc/analytics-dashboard.php:363
 msgid "Listing your ranked keywords"
 msgstr ""
 
-#: inc/analytics-dashboard.php:337
+#: inc/analytics-dashboard.php:376
 msgid "Social Media"
 msgstr ""
 
-#: inc/analytics-dashboard.php:363
+#: inc/analytics-dashboard.php:402
 msgid "See how many users are coming to your site from Social media"
 msgstr ""
 
-#: inc/analytics-dashboard.php:375
+#: inc/analytics-dashboard.php:414
 msgid "Top Referrers"
 msgstr ""
 
-#: inc/analytics-dashboard.php:401
+#: inc/analytics-dashboard.php:440
 msgid "who are the strong Referrers to your site ?? See above"
 msgstr ""
 
-#: inc/analytics-dashboard.php:413
+#: inc/analytics-dashboard.php:452
 msgid "What's happening when users come to your site."
 msgstr ""
 
-#: inc/analytics-dashboard.php:446
+#: inc/analytics-dashboard.php:485
 msgid "You must be authenticated to see the Analytics Dashboard."
 msgstr ""
 
-#: inc/analytics-dashboard.php:450
+#: inc/analytics-dashboard.php:489
 msgid "You don't have access to Analytify Dashboard."
+msgstr ""
+
+#: inc/analytify-deactivate-form.php:83
+msgid "Quick feedback"
+msgstr ""
+
+#: inc/analytify-deactivate-form.php:86
+msgid "If you have a moment, please let us know why you are deactivating:"
+msgstr ""
+
+#: inc/analytify-deactivate-form.php:93
+msgid "I only needed the plugin for a short period"
+msgstr ""
+
+#: inc/analytify-deactivate-form.php:102
+msgid "I found a better plugin"
+msgstr ""
+
+#: inc/analytify-deactivate-form.php:105
+msgid "Kindly tell us the name of plugin"
+msgstr ""
+
+#: inc/analytify-deactivate-form.php:112
+msgid "The plugin broke my site"
+msgstr ""
+
+#: inc/analytify-deactivate-form.php:121
+msgid "The plugin suddenly stopped working"
+msgstr ""
+
+#: inc/analytify-deactivate-form.php:130
+msgid "I no longer need the plugin"
+msgstr ""
+
+#: inc/analytify-deactivate-form.php:139
+msgid "It's a temporary deactivation. I'm just debugging an issue."
+msgstr ""
+
+#: inc/analytify-deactivate-form.php:148
+msgid "Other"
+msgstr ""
+
+#: inc/analytify-deactivate-form.php:151
+msgid "Kindly tell us the reason so we can improve."
+msgstr ""
+
+#: inc/analytify-deactivate-form.php:156
+msgid "Anonymous feedback"
+msgstr ""
+
+#: inc/analytify-deactivate-form.php:161
+msgid "Cancel"
 msgstr ""
 
 #: inc/analytify-go-pro.php:116
@@ -773,6 +834,401 @@ msgstr ""
 msgid "%1$sUpgrade Now%2$s use %3$s discount code for 10&#37; OFF "
 msgstr ""
 
+#: inc/analytify-optin-form.php:300
+msgid "Welcome to Google Analytics by Analytify"
+msgstr ""
+
+#: inc/analytify-optin-form.php:306
+#, php-format
+msgid ""
+"Hey %2$s,  %4$s If you opt-in some data about your installation of Analytify "
+"will be sent to analytify.io (This doesn't include stats)%4$s and You will "
+"receive new feature updates, security notifications etc %7$sNo Spam, I "
+"promise.%8$s %4$s%4$s Help us %5$sImprove Google Analytics by Analytify%6$s "
+"%4$s %4$s "
+msgstr ""
+
+#: inc/analytify-optin-form.php:307
+msgid "Allow and Continue  "
+msgstr ""
+
+#: inc/analytify-optin-form.php:308
+msgid "Skip This Step"
+msgstr ""
+
+#: inc/analytify-optin-form.php:310
+msgid "What permissions are being granted?"
+msgstr ""
+
+#: inc/analytify-optin-form.php:312
+msgid "Your Website Overview"
+msgstr ""
+
+#: inc/analytify-optin-form.php:313
+msgid ""
+"Your Site URL, WordPress & PHP version, plugins & themes. This data lets us "
+"make sure this plugin always stays compatible with the most popular plugins "
+"and themes."
+msgstr ""
+
+#: inc/analytify-optin-form.php:315
+msgid "Your Profile Overview"
+msgstr ""
+
+#: inc/analytify-optin-form.php:316
+msgid "Your name and email address."
+msgstr ""
+
+#: inc/analytify-optin-form.php:318
+msgid "Admin Notices"
+msgstr ""
+
+#: inc/analytify-optin-form.php:319
+msgid "Updates, Announcement, Marketing. No Spam, I promise."
+msgstr ""
+
+#: inc/analytify-optin-form.php:321
+msgid "Plugin Actions"
+msgstr ""
+
+#: inc/analytify-optin-form.php:322
+msgid ""
+"Active, Deactive, Uninstallation and How you use this plugin's features and "
+"settings. This is limited to usage data. It does not include any of your "
+"sensitive Google Analytics data, such as traffic. This data helps us learn "
+"which features are most popular, so we can improve the plugin further."
+msgstr ""
+
+#: inc/analytify-optin-form.php:366 welcome.php:147
+msgid "Getting Started"
+msgstr ""
+
+#: inc/analytify-optin-form.php:369 welcome.php:144
+msgid "What's New"
+msgstr ""
+
+#: inc/analytify-optin-form.php:372 welcome.php:150
+msgid "Credits"
+msgstr ""
+
+#: inc/analytify-optin-form.php:377
+#, php-format
+msgid ""
+"Getting started with Analytify, plugin settings are very easy to use and "
+"ready to go in minutes. If there is something you don't understand or "
+"confusing, do ask us on %1$sWordPress.org support forum%2$s without "
+"hesitation."
+msgstr ""
+
+#: inc/analytify-optin-form.php:386
+msgid "Step 1: Authentication"
+msgstr ""
+
+#: inc/analytify-optin-form.php:387 welcome.php:297
+msgid ""
+"You must have a registered Google Analytics account and setup your website "
+"profiles to use with Analytify on your WordPress based sites. Click on Login "
+"button and It will redirect you to separate Google access page. Allow this "
+"plugin to fetch the data from Google Analytics and It will take you back to "
+"your profile tab."
+msgstr ""
+
+#: inc/analytify-optin-form.php:396
+msgid "Step 2: Setting up profiles"
+msgstr ""
+
+#: inc/analytify-optin-form.php:401 welcome.php:309
+msgid "Profile Tab"
+msgstr ""
+
+#: inc/analytify-optin-form.php:402 welcome.php:310
+msgid ""
+"This tab section consists of many important settings. After Authentication, "
+"Setup your profiles here. All of the options are easy to understand."
+msgstr ""
+
+#: inc/analytify-optin-form.php:404 welcome.php:312
+msgid "a) Install Google Analytics tracking code"
+msgstr ""
+
+#: inc/analytify-optin-form.php:405 welcome.php:313
+msgid ""
+"First, you need to check if you want to install Google Analytics tracking "
+"code by Analytify or uncheck it if you have already installed it manually or "
+"via some other way. "
+msgstr ""
+
+#: inc/analytify-optin-form.php:407 welcome.php:315
+msgid "b) Exclude users from tracking"
+msgstr ""
+
+#: inc/analytify-optin-form.php:408 welcome.php:316
+msgid ""
+"Usually Administrators don't want to track themselves. So, this option can "
+"be commonly used if you want to exclude your special users from tracking "
+"data."
+msgstr ""
+
+#: inc/analytify-optin-form.php:410 welcome.php:318
+msgid "c) Tracking code type"
+msgstr ""
+
+#: inc/analytify-optin-form.php:411 welcome.php:319
+msgid ""
+"Google recommends to use Analytics.js (Universal Tracking) now. So, we "
+"recommend to use this option."
+msgstr ""
+
+#: inc/analytify-optin-form.php:413 welcome.php:321
+msgid "d) Profile for posts (Backend/Front-end)"
+msgstr ""
+
+#: inc/analytify-optin-form.php:414 welcome.php:322
+msgid ""
+"Select your website profile for wp-admin edit pages and Front-end pages. "
+"Select profile which matches your current WordPress website."
+msgstr ""
+
+#: inc/analytify-optin-form.php:416 welcome.php:324
+msgid "e) Profile for Dashboard"
+msgstr ""
+
+#: inc/analytify-optin-form.php:417 welcome.php:325
+msgid ""
+"Select your website profile for Dashboard Stats. You can select your any "
+"Website profile. It will show Analytics for your selected website profile."
+msgstr ""
+
+#: inc/analytify-optin-form.php:424
+msgid "Step 3: Display Statistics at front-end pages"
+msgstr ""
+
+#: inc/analytify-optin-form.php:430 welcome.php:337
+msgid "Front Tab"
+msgstr ""
+
+#: inc/analytify-optin-form.php:431 welcome.php:338
+#, php-format
+msgid ""
+"In version %4$s, We have introduced the %1$s New Front-end Analytics%2$s "
+"which will fetch the stats like backend but with an awesome UI for front-end "
+"stats. It was a long awaited feature which was under development since 1.0 "
+"but finally It is here. It can be customized (if you are good at CSS) "
+"according to your website look and feel. %3$s Below are it's important "
+"options: "
+msgstr ""
+
+#: inc/analytify-optin-form.php:434 inc/analytify-optin-form.php:561
+#: welcome.php:229 welcome.php:341
+msgid "Disable front-end"
+msgstr ""
+
+#: inc/analytify-optin-form.php:435 inc/analytify-optin-form.php:563
+#: welcome.php:231 welcome.php:342
+msgid ""
+"We introduced the ability to disable the front-end stats on the full site. "
+"Check it, if you don't want to load Analytics at all. Remember, you can use "
+"Shortcodes still."
+msgstr ""
+
+#: inc/analytify-optin-form.php:437 inc/analytify-optin-form.php:472
+#: inc/analytify-optin-form.php:566 welcome.php:234 welcome.php:344
+#: welcome.php:378
+msgid "Display Analytics to Users"
+msgstr ""
+
+#: inc/analytify-optin-form.php:438 welcome.php:345
+#, php-format
+msgid "Show %1$sfront-end%2$s Analytics to selected user roles only."
+msgstr ""
+
+#: inc/analytify-optin-form.php:443 inc/analytify-optin-form.php:478
+#: inc/analytify-optin-form.php:574 welcome.php:242 welcome.php:350
+#: welcome.php:384
+msgid ""
+"Show Analytics under the selected post types only. You can select your "
+"custom post types as well."
+msgstr ""
+
+#: inc/analytify-optin-form.php:445 inc/analytify-optin-form.php:576
+#: welcome.php:244 welcome.php:352
+msgid "Front-end Analytics panels"
+msgstr ""
+
+#: inc/analytify-optin-form.php:446 inc/analytify-optin-form.php:577
+#: welcome.php:245 welcome.php:353
+msgid ""
+"Select which Stats panels you want to display at front-end. We recommend to "
+"use upto 8 Panels for better page speed."
+msgstr ""
+
+#: inc/analytify-optin-form.php:450 inc/analytify-optin-form.php:485
+#: inc/analytify-optin-form.php:581 welcome.php:249 welcome.php:357
+#: welcome.php:391
+msgid "Exclude Analytics on specific pages"
+msgstr ""
+
+#: inc/analytify-optin-form.php:451 inc/analytify-optin-form.php:486
+#: inc/analytify-optin-form.php:582 welcome.php:250 welcome.php:358
+#: welcome.php:392
+msgid "Select posts or pages on which you don't want to show Analytics."
+msgstr ""
+
+#: inc/analytify-optin-form.php:458
+msgid "Step 4: Display Statistics under Edit pages (backend)"
+msgstr ""
+
+#: inc/analytify-optin-form.php:464 welcome.php:370
+msgid "Admin Tab"
+msgstr ""
+
+#: inc/analytify-optin-form.php:465 welcome.php:371
+msgid ""
+"Admin tab section is to manage the Analytics panels under EDIT screen of "
+"post/pages in wp-admin."
+msgstr ""
+
+#: inc/analytify-optin-form.php:469 welcome.php:375
+msgid "Disable Analytics under posts/pages."
+msgstr ""
+
+#: inc/analytify-optin-form.php:470 welcome.php:376
+msgid ""
+"Check it, If you don't want to load Stats by default on all pages. If you "
+"disable it, you can still fetch the stats under each post/page on single "
+"click."
+msgstr ""
+
+#: inc/analytify-optin-form.php:473 welcome.php:379
+#, php-format
+msgid "Show %1$s Google %2$s Analytics to selected user roles only."
+msgstr ""
+
+#: inc/analytify-optin-form.php:480 welcome.php:386
+msgid "Edit pages/posts Analytics panels"
+msgstr ""
+
+#: inc/analytify-optin-form.php:481 welcome.php:387
+msgid ""
+"Select which Stats panels you want to display at backend. We recommend to "
+"use upto 10 Panels for better page speed."
+msgstr ""
+
+#: inc/analytify-optin-form.php:494 welcome.php:399
+msgid "Licensing"
+msgstr ""
+
+#: inc/analytify-optin-form.php:497 welcome.php:402
+msgid ""
+"We have a year based pricing model as we think this is the best model to "
+"keep our normal lives easier and down the costs of support servers etc. You "
+"need a valid license key if you want to get support and updates in the "
+"future for a year. After a year, you will get discount to renew your "
+"license. "
+msgstr ""
+
+#: inc/analytify-optin-form.php:505 welcome.php:176 welcome.php:196
+msgid "New features"
+msgstr ""
+
+#: inc/analytify-optin-form.php:511 welcome.php:182
+msgid "Simple Authentication"
+msgstr ""
+
+#: inc/analytify-optin-form.php:513 welcome.php:184
+msgid "You don't need to worry about copy and paste access code any more. "
+msgstr ""
+
+#: inc/analytify-optin-form.php:516 welcome.php:187
+msgid "Translation ready"
+msgstr ""
+
+#: inc/analytify-optin-form.php:518 welcome.php:189
+#, php-format
+msgid ""
+"Analytify %1$s contains all the strings ready to translate in any language. "
+"%2$s Click here %3$s to start translating this plugin into your language and "
+"don't forget to share your language files with us to ease for other users."
+msgstr ""
+
+#: inc/analytify-optin-form.php:532 welcome.php:202
+msgid "Analytify Shortcodes"
+msgstr ""
+
+#: inc/analytify-optin-form.php:534 welcome.php:204
+#, php-format
+msgid ""
+"Analytify shortcodes can be used for multiple purposes. It gives you more "
+"flexibility than the front-end statistics. You can disable front-end stats "
+"and use these shortcodes in any of your pages/posts to show Analytics in "
+"tabular style. If you are familiar with CSS, It can be easily modified to "
+"match with your website look and feel. %1$s Following are two types of "
+"shortcodes:"
+msgstr ""
+
+#: inc/analytify-optin-form.php:537 welcome.php:207
+msgid "a) Simple:"
+msgstr ""
+
+#: inc/analytify-optin-form.php:539 welcome.php:209
+#, php-format
+msgid ""
+"Simple Analytify shortcode returns you only the numbers i.e results. It is "
+"useful when you want results of only 1 Metrics and can apply permissions "
+"using roles. You can fetch numbers of %1$s Sessions, Pageviews, Bounce Rate "
+"and Users %2$s etc"
+msgstr ""
+
+#: inc/analytify-optin-form.php:542 welcome.php:212
+msgid "b) Advanced:"
+msgstr ""
+
+#: inc/analytify-optin-form.php:544 welcome.php:214
+#, php-format
+msgid ""
+"With this Advanced option, You can choose %1$s more than 1 Metrics and "
+"Dimensions, Sort the results, get maximum rows, apply permissions and fetch "
+"Analytics with specified start-date and end-date. %2$s Advanced shortcode "
+"returns results in table form which can be styled according to your website."
+msgstr ""
+
+#: inc/analytify-optin-form.php:554 welcome.php:222
+msgid "Front-end Statistics"
+msgstr ""
+
+#: inc/analytify-optin-form.php:556 welcome.php:224
+#, php-format
+msgid ""
+"We have introduced the %1$s New Front-end Analytics %2$s which will fetch "
+"the stats like backend but with an awesome UI for front-end stats. It was a "
+"long awaited feature which was under development but finally It is here. It "
+"can be customized (if you are good at CSS) according to your website look "
+"and feel. %3$s below are it's important options: "
+msgstr ""
+
+#: inc/analytify-optin-form.php:568 welcome.php:236
+#, php-format
+msgid "Show %1$s front-end %2$s Analytics to selected user roles only."
+msgstr ""
+
+#: inc/analytify-optin-form.php:633
+msgctxt "as in terms and conditions"
+msgid "Terms"
+msgstr ""
+
+#: inc/analytify-optin-form.php:633
+msgctxt "as in privacy policy"
+msgid "Privacy"
+msgstr ""
+
+#: inc/analytify-optin-form.php:634 welcome.php:258 welcome.php:407
+msgid "Go to Analytify Settings"
+msgstr ""
+
+#: inc/analytify-optin-form.php:635 welcome.php:259 welcome.php:408
+msgid "View the Full Changelog"
+msgstr ""
+
 #: inc/analytify-widgets.php:9
 msgid "Analytify Live Stats"
 msgstr ""
@@ -794,14 +1250,14 @@ msgid "Logs"
 msgstr ""
 
 #: inc/class-wpa-adminbar.php:35
-msgid "view complete Analytics of your site"
+msgid "View complete Analytics of your site"
 msgstr ""
 
-#: inc/class-wpa-adminbar.php:42 wp-analytify.php:701
+#: inc/class-wpa-adminbar.php:44 wp-analytify.php:762
 msgid "Settings"
 msgstr ""
 
-#: inc/class-wpa-adminbar.php:56
+#: inc/class-wpa-adminbar.php:58
 msgid "Edit Post"
 msgstr ""
 
@@ -945,8 +1401,8 @@ msgid ""
 msgstr ""
 
 #: views/default/admin/general-stats.php:202
-#: views/default/admin/geographic-stats.php:121
-#: views/default/admin/geographic-stats.php:142
+#: views/default/admin/geographic-stats.php:132
+#: views/default/admin/geographic-stats.php:153
 msgid "Visitors"
 msgstr ""
 
@@ -1015,23 +1471,23 @@ msgstr ""
 msgid "Devices of visitors"
 msgstr ""
 
-#: views/default/admin/general-stats.php:275
+#: views/default/admin/general-stats.php:280
 msgid " ago"
 msgstr ""
 
-#: views/default/admin/geographic-stats.php:71
+#: views/default/admin/geographic-stats.php:79
 msgid "High"
 msgstr ""
 
-#: views/default/admin/geographic-stats.php:71
+#: views/default/admin/geographic-stats.php:79
 msgid "Low"
 msgstr ""
 
-#: views/default/admin/geographic-stats.php:120
+#: views/default/admin/geographic-stats.php:131
 msgid "Top countries"
 msgstr ""
 
-#: views/default/admin/geographic-stats.php:141
+#: views/default/admin/geographic-stats.php:152
 msgid "Top cities"
 msgstr ""
 
@@ -1082,6 +1538,10 @@ msgstr ""
 
 #: views/default/admin/single-general-stats.php:40
 msgid "The amount of time (session) a user spends on this page."
+msgstr ""
+
+#: views/default/admin/single-general-stats.php:57
+msgid "Did you know that Average Session Duration of this page is"
 msgstr ""
 
 #: views/default/admin/single-pages-stats.php:8
@@ -1138,18 +1598,6 @@ msgstr ""
 msgid "The people that build Analytify"
 msgstr ""
 
-#: welcome.php:144
-msgid "What's New"
-msgstr ""
-
-#: welcome.php:147
-msgid "Getting Started"
-msgstr ""
-
-#: welcome.php:150
-msgid "Credits"
-msgstr ""
-
 #: welcome.php:167 welcome.php:278 welcome.php:426
 #, php-format
 msgid "Welcome to Analytify %1$s"
@@ -1162,137 +1610,6 @@ msgid ""
 "is ready to make people lives easier for those who love Google Analytics and "
 "WordPress. It makes Analytics simple for WordPress users that everyone can "
 "understand about their Website statistics and behavior. "
-msgstr ""
-
-#: welcome.php:176 welcome.php:196
-msgid "New features"
-msgstr ""
-
-#: welcome.php:182
-msgid "Simple Authentication"
-msgstr ""
-
-#: welcome.php:184
-msgid "You don't need to worry about copy and paste access code any more. "
-msgstr ""
-
-#: welcome.php:187
-msgid "Translation ready"
-msgstr ""
-
-#: welcome.php:189
-#, php-format
-msgid ""
-"Analytify %1$s contains all the strings ready to translate in any language. "
-"%2$s Click here %3$s to start translating this plugin into your language and "
-"don't forget to share your language files with us to ease for other users."
-msgstr ""
-
-#: welcome.php:202
-msgid "Analytify Shortcodes"
-msgstr ""
-
-#: welcome.php:204
-#, php-format
-msgid ""
-"Analytify shortcodes can be used for multiple purposes. It gives you more "
-"flexibility than the front-end statistics. You can disable front-end stats "
-"and use these shortcodes in any of your pages/posts to show Analytics in "
-"tabular style. If you are familiar with CSS, It can be easily modified to "
-"match with your website look and feel. %1$s Following are two types of "
-"shortcodes:"
-msgstr ""
-
-#: welcome.php:207
-msgid "a) Simple:"
-msgstr ""
-
-#: welcome.php:209
-#, php-format
-msgid ""
-"Simple Analytify shortcode returns you only the numbers i.e results. It is "
-"useful when you want results of only 1 Metrics and can apply permissions "
-"using roles. You can fetch numbers of %1$s Sessions, Pageviews, Bounce Rate "
-"and Users %2$s etc"
-msgstr ""
-
-#: welcome.php:212
-msgid "b) Advanced:"
-msgstr ""
-
-#: welcome.php:214
-#, php-format
-msgid ""
-"With this Advanced option, You can choose %1$s more than 1 Metrics and "
-"Dimensions, Sort the results, get maximum rows, apply permissions and fetch "
-"Analytics with specified start-date and end-date. %2$s Advanced shortcode "
-"returns results in table form which can be styled according to your website."
-msgstr ""
-
-#: welcome.php:222
-msgid "Front-end Statistics"
-msgstr ""
-
-#: welcome.php:224
-#, php-format
-msgid ""
-"We have introduced the %1$s New Front-end Analytics %2$s which will fetch "
-"the stats like backend but with an awesome UI for front-end stats. It was a "
-"long awaited feature which was under development but finally It is here. It "
-"can be customized (if you are good at CSS) according to your website look "
-"and feel. %3$s below are it's important options: "
-msgstr ""
-
-#: welcome.php:229 welcome.php:341
-msgid "Disable front-end"
-msgstr ""
-
-#: welcome.php:231 welcome.php:342
-msgid ""
-"We introduced the ability to disable the front-end stats on the full site. "
-"Check it, if you don't want to load Analytics at all. Remember, you can use "
-"Shortcodes still."
-msgstr ""
-
-#: welcome.php:234 welcome.php:344 welcome.php:378
-msgid "Display Analytics to Users"
-msgstr ""
-
-#: welcome.php:236
-#, php-format
-msgid "Show %1$s front-end %2$s Analytics to selected user roles only."
-msgstr ""
-
-#: welcome.php:242 welcome.php:350 welcome.php:384
-msgid ""
-"Show Analytics under the selected post types only. You can select your "
-"custom post types as well."
-msgstr ""
-
-#: welcome.php:244 welcome.php:352
-msgid "Front-end Analytics panels"
-msgstr ""
-
-#: welcome.php:245 welcome.php:353
-msgid ""
-"Select which Stats panels you want to display at front-end. We recommend to "
-"use upto 8 Panels for better page speed."
-msgstr ""
-
-#: welcome.php:249 welcome.php:357 welcome.php:391
-msgid "Exclude Analytics on specific pages"
-msgstr ""
-
-#: welcome.php:250 welcome.php:358 welcome.php:392
-msgid "Select posts or pages on which you don't want to show Analytics."
-msgstr ""
-
-#: welcome.php:258 welcome.php:407
-msgid "Go to Analytify Settings"
-msgstr ""
-
-#: welcome.php:259 welcome.php:408
-msgid "View the Full Changelog"
 msgstr ""
 
 #: welcome.php:280
@@ -1318,156 +1635,16 @@ msgstr ""
 msgid "%1$s Connect with Analytify %2$s"
 msgstr ""
 
-#: welcome.php:297
-msgid ""
-"You must have a registered Google Analytics account and setup your website "
-"profiles to use with Analytify on your WordPress based sites. Click on Login "
-"button and It will redirect you to separate Google access page. Allow this "
-"plugin to fetch the data from Google Analytics and It will take you back to "
-"your profile tab."
-msgstr ""
-
 #: welcome.php:305
 msgid "Setting up profiles"
-msgstr ""
-
-#: welcome.php:309
-msgid "Profile Tab"
-msgstr ""
-
-#: welcome.php:310
-msgid ""
-"This tab section consists of many important settings. After Authentication, "
-"Setup your profiles here. All of the options are easy to understand."
-msgstr ""
-
-#: welcome.php:312
-msgid "a) Install Google Analytics tracking code"
-msgstr ""
-
-#: welcome.php:313
-msgid ""
-"First, you need to check if you want to install Google Analytics tracking "
-"code by Analytify or uncheck it if you have already installed it manually or "
-"via some other way. "
-msgstr ""
-
-#: welcome.php:315
-msgid "b) Exclude users from tracking"
-msgstr ""
-
-#: welcome.php:316
-msgid ""
-"Usually Administrators don't want to track themselves. So, this option can "
-"be commonly used if you want to exclude your special users from tracking "
-"data."
-msgstr ""
-
-#: welcome.php:318
-msgid "c) Tracking code type"
-msgstr ""
-
-#: welcome.php:319
-msgid ""
-"Google recommends to use Analytics.js (Universal Tracking) now. So, we "
-"recommend to use this option."
-msgstr ""
-
-#: welcome.php:321
-msgid "d) Profile for posts (Backend/Front-end)"
-msgstr ""
-
-#: welcome.php:322
-msgid ""
-"Select your website profile for wp-admin edit pages and Front-end pages. "
-"Select profile which matches your current WordPress website."
-msgstr ""
-
-#: welcome.php:324
-msgid "e) Profile for Dashboard"
-msgstr ""
-
-#: welcome.php:325
-msgid ""
-"Select your website profile for Dashboard Stats. You can select your any "
-"Website profile. It will show Analytics for your selected website profile."
 msgstr ""
 
 #: welcome.php:331
 msgid "Display Statistics at front-end pages"
 msgstr ""
 
-#: welcome.php:337
-msgid "Front Tab"
-msgstr ""
-
-#: welcome.php:338
-#, php-format
-msgid ""
-"In version %4$s, We have introduced the %1$s New Front-end Analytics%2$s "
-"which will fetch the stats like backend but with an awesome UI for front-end "
-"stats. It was a long awaited feature which was under development since 1.0 "
-"but finally It is here. It can be customized (if you are good at CSS) "
-"according to your website look and feel. %3$s Below are it's important "
-"options: "
-msgstr ""
-
-#: welcome.php:345
-#, php-format
-msgid "Show %1$sfront-end%2$s Analytics to selected user roles only."
-msgstr ""
-
 #: welcome.php:364
 msgid "Display Statistics under Edit pages (backend)"
-msgstr ""
-
-#: welcome.php:370
-msgid "Admin Tab"
-msgstr ""
-
-#: welcome.php:371
-msgid ""
-"Admin tab section is to manage the Analytics panels under EDIT screen of "
-"post/pages in wp-admin."
-msgstr ""
-
-#: welcome.php:375
-msgid "Disable Analytics under posts/pages."
-msgstr ""
-
-#: welcome.php:376
-msgid ""
-"Check it, If you don't want to load Stats by default on all pages. If you "
-"disable it, you can still fetch the stats under each post/page on single "
-"click."
-msgstr ""
-
-#: welcome.php:379
-#, php-format
-msgid "Show %1$s Google %2$s Analytics to selected user roles only."
-msgstr ""
-
-#: welcome.php:386
-msgid "Edit pages/posts Analytics panels"
-msgstr ""
-
-#: welcome.php:387
-msgid ""
-"Select which Stats panels you want to display at backend. We recommend to "
-"use upto 10 Panels for better page speed."
-msgstr ""
-
-#: welcome.php:399
-msgid "Licensing"
-msgstr ""
-
-#: welcome.php:402
-msgid ""
-"We have a year based pricing model as we think this is the best model to "
-"keep our normal lives easier and down the costs of support servers etc. You "
-"need a valid license key if you want to get support and updates in the "
-"future for a year. After a year, you will get discount to renew your "
-"license. "
 msgstr ""
 
 #: welcome.php:434
@@ -1477,175 +1654,200 @@ msgid ""
 "developers."
 msgstr ""
 
-#: wp-analytify.php:250
+#: wp-analytify.php:276
 msgid "Analytify - Stats of this Post/Page"
 msgstr ""
 
-#: wp-analytify.php:320
+#: wp-analytify.php:346
 msgid "This post is excluded and will NOT show Analytics."
 msgstr ""
 
-#: wp-analytify.php:390
+#: wp-analytify.php:416
 msgid "You are not allowed to see stats"
 msgstr ""
 
-#: wp-analytify.php:413
+#: wp-analytify.php:443
 #, php-format
 msgid "%2$s This code is added by WP Analytify (%1$s) %4$s %3$s"
 msgstr ""
 
-#: wp-analytify.php:461
+#: wp-analytify.php:494
 #, php-format
 msgid "%2$s This code is added by WP Analytify (%1$s) %3$s"
 msgstr ""
 
-#: wp-analytify.php:481
+#: wp-analytify.php:516
 #, php-format
-msgid "%1$s Settings %2$s | %3$s Dashboard %4$s | %5$s Help %6$s"
+msgid "%1$s Settings %2$s | "
 msgstr ""
 
-#: wp-analytify.php:502
+#: wp-analytify.php:519
+#, php-format
+msgid "%1$s Opt Out %2$s | "
+msgstr ""
+
+#: wp-analytify.php:521
+#, php-format
+msgid "%1$s Opt In %2$s | "
+msgstr ""
+
+#: wp-analytify.php:525
+#, php-format
+msgid "%1$s Dashboard %2$s | "
+msgstr ""
+
+#: wp-analytify.php:527
+#, php-format
+msgid "%1$s Help %2$s  "
+msgstr ""
+
+#: wp-analytify.php:531
+#, php-format
+msgid "%1$s Upgrade To Pro %2$s"
+msgstr ""
+
+#: wp-analytify.php:554
 #, php-format
 msgid "%1$s Getting Started %2$s"
 msgstr ""
 
-#: wp-analytify.php:503
+#: wp-analytify.php:555
 #, php-format
 msgid "%1$s Add Ons %2$s"
 msgstr ""
 
-#: wp-analytify.php:504
+#: wp-analytify.php:556
 msgid "Vote!"
 msgstr ""
 
-#: wp-analytify.php:628
+#: wp-analytify.php:683
 msgid "Please enter your license key."
 msgstr ""
 
-#: wp-analytify.php:629
+#: wp-analytify.php:684
 msgid ""
 "A problem occurred when trying to register the license, please try again."
 msgstr ""
 
-#: wp-analytify.php:630
+#: wp-analytify.php:685
 msgid "A problem occurred when trying to check the license, please try again."
 msgstr ""
 
-#: wp-analytify.php:631
+#: wp-analytify.php:686
 msgid ""
 "Your license has been activated. You will now receive automatic updates and "
 "access to email support."
 msgstr ""
 
-#: wp-analytify.php:680
+#: wp-analytify.php:734
+msgid "Activate"
+msgstr ""
+
+#: wp-analytify.php:741
 msgid " Dashboard"
 msgstr ""
 
-#: wp-analytify.php:706
+#: wp-analytify.php:767
 msgid " list of all Add-ons"
 msgstr ""
 
-#: wp-analytify.php:706
+#: wp-analytify.php:767
 msgid "Add-ons"
 msgstr ""
 
-#: wp-analytify.php:711
+#: wp-analytify.php:772
 msgid "PRO vs FREE"
 msgstr ""
 
-#: wp-analytify.php:762
+#: wp-analytify.php:829
 msgid "You must authenticate to access your web profiles."
 msgstr ""
 
-#: wp-analytify.php:765
+#: wp-analytify.php:832
 #, php-format
 msgid ""
 "%1$s %2$s Oops, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s "
 "Authentication."
 msgstr ""
 
-#: wp-analytify.php:783
+#: wp-analytify.php:850
 msgid "Notice: You must authenticate to access your web profiles."
 msgstr ""
 
-#: wp-analytify.php:824
+#: wp-analytify.php:891
 #, php-format
 msgid ""
 "Analytify is not active. Please %1$sAuthenticate%2$s in order to get started "
 "using this plugin."
 msgstr ""
 
-#: wp-analytify.php:828
+#: wp-analytify.php:895
 #, php-format
 msgid "%1$s Google Analytics Profile is not set. Set the %2$s Profile %3$s"
 msgstr ""
 
-#: wp-analytify.php:859
+#: wp-analytify.php:926
 msgid ""
 "Select your website profile at Analytify->settings->profile tab to load "
 "stats."
 msgstr ""
 
-#: wp-analytify.php:898
+#: wp-analytify.php:965
 #, php-format
 msgid "%1$s Displaying Analytics of this page from.%2$s to %3$s %4$s"
 msgstr ""
 
-#: wp-analytify.php:1055
-#, php-format
+#: wp-analytify.php:1122
 msgid ""
-"<b>Notice:</b> <b>Analytify 2.0</b> is here with stunning new interface and "
-"features! Read the <a href=\"https://analytify.io/go/a2r\" target=\"_blank"
-"\">announcement</a> here. Detail feature list available <a href=\"https://"
-"analytify.io/features/\" target=\"_blank\">here</a>. <a href=\"%1$s\">[Hide "
-"Notice]</a>"
+"%1$sExclusive Summer Offer:%2$s Get 20% Off on Analytify - Use Coupon Code "
+"%3$s Download Pro Now %4$sHide Notice%5$s"
 msgstr ""
 
-#: wp-analytify.php:1063
+#: wp-analytify.php:1130
 #, php-format
 msgid ""
 "%1$s %2$s %3$sNotice:%4$s %5$sConnect%6$s %4$s Analytify with your Google "
 "account. %7$s %8$s"
 msgstr ""
 
-#: wp-analytify.php:1068
+#: wp-analytify.php:1135
 #, php-format
 msgid ""
 "Congratulations! Analytify is now authenticated. Please select your website "
 "profile %1$s here %2$s to get started."
 msgstr ""
 
-#: wp-analytify.php:1135
+#: wp-analytify.php:1202
 msgid "Thankyou!\\nYour Coupon code is Analytify2016"
 msgstr ""
 
-#: wp-analytify.php:1242
+#: wp-analytify.php:1309
 msgid "Leave A Review?"
 msgstr ""
 
-#: wp-analytify.php:1243
+#: wp-analytify.php:1310
 msgid ""
 "We hope you've enjoyed using Analytify! Would you consider leaving us a "
 "review on WordPress.org?"
 msgstr ""
 
-#: wp-analytify.php:1244
+#: wp-analytify.php:1311
 msgid "Sure! I'd love to!"
 msgstr ""
 
-#: wp-analytify.php:1245
+#: wp-analytify.php:1312
 msgid "I've already left a review"
 msgstr ""
 
-#: wp-analytify.php:1246
+#: wp-analytify.php:1313
 msgid "Maybe Later"
 msgstr ""
 
-#: wp-analytify.php:1247
+#: wp-analytify.php:1314
 msgid "Never show again"
 msgstr ""
 
-#: wp-analytify.php:1356
+#: wp-analytify.php:1430
 #, php-format
 msgid "%1$s %2$s %3$s Authentication Cleared login again. %4$s %5$s %6$s"
 msgstr ""
@@ -1655,7 +1857,7 @@ msgid "Analytify - Google Analytics Dashboard"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "http://analytify.io/details"
+msgid "https://analytify.io/details"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -1670,9 +1872,9 @@ msgid ""
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "WPBrigade"
+msgid "Analytify"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://wpbrigade.com/"
+msgid "https://analytify.io"
 msgstr ""
