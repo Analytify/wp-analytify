@@ -228,7 +228,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					array(
 						'name'              => 'show_analytics_post_types_back_end',
 						'label'             => __( 'Analytics on Post types', 'wp-analytify' ),
-						'desc'              =>  class_exists( 'WP_Analytify_Pro' )  ?  __( 'Show Analytics under the above post types only', 'wp-analytify' )  :  __( 'Show Analytics under the above post types only. Buy <a href="http://analytify.io/pricing/" target="_blank">Premium</a> version for Custom Post Types.', 'wp-analytify' ),
+						'desc'              =>  class_exists( 'WP_Analytify_Pro' )  ?  __( 'Show Analytics under the above post types only', 'wp-analytify' )  :  sprintf( __( 'Show Analytics under the above post types only. Buy %1$sPremium%1$s version for Custom Post Types.', 'wp-analytify' ), '<a href="http://analytify.io/pricing/" target="_blank">', '</a>' ),
 						'type'              => 'chosen',
 						'default' 			=> array(),
 						'options' => $this->get_current_post_types(),
@@ -237,7 +237,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					array(
 						'name'              => 'show_panels_back_end',
 						'label'             => __( 'Edit pages/posts Analytics panels:', 'wp-analytify' ),
-						'desc'              =>  class_exists( 'WP_Analytify_Pro' )  ? __( 'Select which Stats panels you want to display under posts/pages.' , 'wp-analytify' ) : __( 'Select which Stats panels you want to display under posts/pages. Only "General Stats" will visible in Free Version. Buy <a href="http://analytify.io/pricing/" target="_blank">Premium</a> version to see the full statistics.', 'wp-analytify' ),
+						'desc'              =>  class_exists( 'WP_Analytify_Pro' )  ? __( 'Select which Stats panels you want to display under posts/pages.' , 'wp-analytify' ) : sprintf( __( 'Select which Stats panels you want to display under posts/pages. Only "General Stats" will visible in Free Version. Buy %1$sPremium%2$s version to see the full statistics.', 'wp-analytify' ), '<a href="http://analytify.io/pricing/" target="_blank">', '</a>' ),
 						'type'              => 'chosen',
 						'default' 			=> array(),
 						'options' => array(
@@ -261,7 +261,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 							array(
 								'name'              => 'user_advanced_keys',
 								'label'             => __( 'Do you want to use your own API keys ?', 'wp-analytify' ),
-								'desc'              => __( 'It is highly recommended by Google to use your own API keys. <br />You need to create a Project in Google <a target=\'_blank\' href=\'https://console.developers.google.com/project\'>Console</a>. <br />Here is a short <a target=\'_blank\' href=\'https://www.youtube.com/watch?v=X36InlRJtuk\'>video guide</a> to get your own ClientID, Client Secret and Redirect URL and enter them in below inputs.', 'wp-analytify' ),
+								'desc'              => sprintf( __( 'It is highly recommended by Google to use your own API keys. %1$sYou need to create a Project in Google %2$s. %3$sHere is a short %4$svideo guide%5$s to get your own ClientID, Client Secret and Redirect URL and enter them in below inputs.', 'wp-analytify' ), '<br />', '<a target=\'_blank\' href=\'https://console.developers.google.com/project\'>Console</a>', '<br />', '<a target=\'_blank\' href=\'https://www.youtube.com/watch?v=X36InlRJtuk\'>', '</a>' ),
 								'type'              => 'checkbox',
 								'class'	=> 'user_advanced_keys',
 							),
@@ -299,7 +299,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					array(
 						'name'              => 'anonymize_ip',
 						'label'             => __( 'Anonymize IP addresses', 'wp-analytify' ),
-						'desc'              => __( 'Detailed information about IP Anonymization in Google Analytics can be found <a href=\'https://support.google.com/analytics/answer/2763052\'>Details</a>', 'wp-analytify' ),
+						'desc'              => sprintf( __( 'Detailed information about IP Anonymization in Google Analytics can be found %1$sDetails%2$s', 'wp-analytify' ), '<a href=\'https://support.google.com/analytics/answer/2763052\'>', '</a>' ),
 						'type'              => 'checkbox',
 					),
 					array(
@@ -311,7 +311,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					array(
 						'name'              => 'track_user_id',
 						'label'             => __( 'Track User ID', 'wp-analytify' ),
-						'desc'              => __( 'Detailed information about Track User ID in Google Analytics can be found <a href=\'https://support.google.com/analytics/answer/3123662\'>Details</a>', 'wp-analytify' ),
+						'desc'              => sprintf( __( 'Detailed information about Track User ID in Google Analytics can be found %1$sDetails%2$2', 'wp-analytify' ), '<a href=\'https://support.google.com/analytics/answer/3123662\'>', '</a>' ),
 						'type'              => 'checkbox',
 					),
 					array(
@@ -341,13 +341,13 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					array(
 						'name'              => 'linker_cross_domain_tracking',
 						'label'             => __( 'Setup Cross-domain Tracking', 'wp-analytify' ),
-						'desc' 				=> __( 'This will add <code>allowLinker:true</code> tag to tracking code. Read this <a href=\'https:\//analytify.io/doc/setup-cross-domain-tracking-wordpress\'>guide</a> for more information.' , 'wp-analytify' ),
+						'desc' 							=> sprintf( __( 'This will add %1$s tag to tracking code. Read this %2$sguide%3$s for more information.' , 'wp-analytify' ), '<code>allowLinker:true</code>', '<a href=\'https:\//analytify.io/doc/setup-cross-domain-tracking-wordpress\'>', '</a>' ),
 						'type'              => 'checkbox',
 					),
 					array(
 						'name'              => 'custom_js_code',
 						'label'             => __( 'Custom JS Code', 'wp-analytify' ),
-						'desc' 				=> __( 'This will add inline tracking code before sending the pageview hit to Google Analytics.' , 'wp-analytify'  ),
+						'desc' 							=> __( 'This will add inline tracking code before sending the pageview hit to Google Analytics.' , 'wp-analytify'  ),
 						'type'              => 'textarea',
 					)
 				);
