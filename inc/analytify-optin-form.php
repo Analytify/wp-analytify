@@ -303,7 +303,7 @@ echo '<h1> <img id="analytify-logo-text" src="' . plugins_url( 'assets/images/no
     echo '<div class="step-wrapper">';
     if ( get_site_option( '_analytify_optin' ) == 'no' || ! get_site_option( '_analytify_optin' ) ) {
     echo "<div class='first-step step'>";
-      echo '<p id="analytify-splash-main-text">' .  sprintf ( __( 'Hey %2$s,  %4$s If you opt-in some data about your installation of Analytify will be sent to analytify.io (This doesn\'t include stats)%4$s and You will receive new feature updates, security notifications etc <i>No Spam, I promise.</i> %4$s%4$s Help us <strong>Improve Google Analytics by Analytify</strong> %4$s %4$s ', 'wp-analytify' ), '<br>', '<strong>' . $name . '</strong>', '<strong>' . $website . '</strong>', '<br>' ) . '</p>';
+      echo '<p id="analytify-splash-main-text">' .  sprintf ( __( 'Hey %2$s,  %4$s If you opt-in some data about your installation of Analytify will be sent to analytify.io (This doesn\'t include stats)%4$s and You will receive new feature updates, security notifications etc %7$sNo Spam, I promise.%8$s %4$s%4$s Help us %5$sImprove Google Analytics by Analytify%6$s %4$s %4$s ', 'wp-analytify' ), '<br>', '<strong>' . $name . '</strong>', '<strong>' . $website . '</strong>', '<br>', '<strong>', '</strong>', '<i>', '</i>' ) . '</p>';
       echo "<button type='submit' id='analytify-ga-submit-btn' class='analytify-ga-button button button-primary' name='analytify-submit-optin' >" . __( 'Allow and Continue  ', 'analytify-ga') . "</button><br>";
       echo "<button type='submit' id='analytify-ga-optout-btn' name='analytify-submit-optout' >" . __( 'Skip This Step', 'analytify-ga') . "</button>";
       echo '<div id="analytify-splash-permissions" class="analytify-splash-box">';

@@ -151,7 +151,7 @@ class WPANALYTIFY_Utils {
 
 		$class   = 'notice notice-warning';
 		$link    = 'https://analytify.io/doc/fix-403-daily-limit-exceeded/';
-		$message = sprintf( __( '<b>Daily Limit Exceeded:</b> This Indicates that user has exceeded the daily quota (either per project or per view (profile)). Please <a href="%1$s" target="_blank">follow this tutorial</a> to fix this issue. let us know this issue (if it still doesn\'t work) in the Help tab of Analytify->settings page.', 'wp-analytify'), $link );
+		$message = sprintf( __( '%1$sDaily Limit Exceeded:%2$s This Indicates that user has exceeded the daily quota (either per project or per view (profile)). Please %3$sfollow this tutorial%4$s to fix this issue. let us know this issue (if it still doesn\'t work) in the Help tab of Analytify->settings page.', 'wp-analytify'), '<b>', '</b>', '<a href="'. $link .'" target="_blank">', '</a>' );
 		printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
 	}
 
@@ -177,7 +177,7 @@ class WPANALYTIFY_Utils {
 
 		$class   = 'notice notice-warning';
 		$link    = 'https://analytify.io/get-client-id-client-secret-developer-api-key-google-developers-console-application/';
-		$message = sprintf( __( '<b>usageLimits.userRateLimitExceededUnreg:</b> Indicates that the application needs to be registered in the Google API Console. Read <a href="%1$s">this guide</a> for to make it work. let us know this issue in (if it still doesn\'t work) Help tab of Analytify->settings page.', 'wp-analytify'), $link );
+		$message = sprintf( __( '%1$susageLimits.userRateLimitExceededUnreg:%2$s Indicates that the application needs to be registered in the Google API Console. Read %3$sthis guide%4$s for to make it work. let us know this issue in (if it still doesn\'t work) Help tab of Analytify->settings page.', 'wp-analytify'), '<b>', '</b>', '<a href="'. $link .'">', '</a>'  );
 		printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
 	}
 
@@ -191,7 +191,7 @@ class WPANALYTIFY_Utils {
 		$class   = 'notice notice-warning';
 		$link    = 'https://console.developers.google.com/';
 
-		$message = sprintf( __( '<br>User Rate Limit Exceeded:</b> Indicates that the user rate limit has been exceeded. The maximum rate limit is 10 qps per IP address. The default value set in Google API Console is 1 qps per IP address. You can increase this limit in the <a href="%1$s">Google API Console</a> to a maximum of 10 qps. let us know this issue in Help tab of Analytify->settings page.', 'wp-analytify'), $link );
+		$message = sprintf( __( '%1$sUser Rate Limit Exceeded:%2$s Indicates that the user rate limit has been exceeded. The maximum rate limit is 10 qps per IP address. The default value set in Google API Console is 1 qps per IP address. You can increase this limit in the %3$sGoogle API Console%4$s to a maximum of 10 qps. let us know this issue in Help tab of Analytify->settings page.', 'wp-analytify'), '<b>', '</b>', '<a href="'. $link .'">', '</a>'  );
 		printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
 	}
 
@@ -204,7 +204,7 @@ class WPANALYTIFY_Utils {
 
 		$class   = 'notice notice-warning';
 		$link    = 'https://analytics.google.com/';
-		$message = sprintf( __( '<b>Rate Limit Exceeded:</b> Indicates that the global or overall project rate limits have been exceeded. let us know this issue in Help tab of Analytify->settings page.', 'wp-analytify'), $link );
+		$message = sprintf( __( '%1$sRate Limit Exceeded:%2$s Indicates that the global or overall project rate limits have been exceeded. let us know this issue in Help tab of Analytify->settings page.', 'wp-analytify'), '<b>', '</b>' );
 		printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
 	}
 
@@ -217,7 +217,7 @@ class WPANALYTIFY_Utils {
 
 		$class   = 'notice notice-warning';
 		$link    = 'https://analytics.google.com/';
-		$message = sprintf( __( '<b>Quota Exceeded:</b> This indicates that the 10 concurrent requests per view (profile) in the Core Reporting API has been reached. let us know this issue in Help tab of Analytify->settings page.', 'wp-analytify'), $link );
+		$message = sprintf( __( '%1$sQuota Exceeded:%2$s This indicates that the 10 concurrent requests per view (profile) in the Core Reporting API has been reached. let us know this issue in Help tab of Analytify->settings page.', 'wp-analytify'), '<b>', '</b>' );
 		printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message, $link );
 	}
 
@@ -231,7 +231,7 @@ class WPANALYTIFY_Utils {
 		$class   = 'notice notice-warning';
 		$link    = 'https://console.developers.google.com/';
 
-		$message = sprintf( __( '<b>Access Not Configured:</b> Google Analytics API has not been used in this project before or it is disabled. Enable it by visiting your project in <a href="%1$s">Google Project Console</a> then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.', 'wp-analytify' ), $link );
+		$message = sprintf( __( '%1$sAccess Not Configured:%2$s Google Analytics API has not been used in this project before or it is disabled. Enable it by visiting your project in %3$sGoogle Project Console%4$s then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.', 'wp-analytify' ), '<b>', '</b>', '<a href="'. $link .'">', '</a>' );
 		printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message );
 	}
 
