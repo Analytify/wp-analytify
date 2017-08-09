@@ -3,7 +3,7 @@
 **Contributors:** [hiddenpearls](https://profiles.wordpress.org/hiddenpearls), [Asif2BD](https://profiles.wordpress.org/Asif2BD)  
 **Donate link:** http://paypal.me/Analytify  
 **Tags:** google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced ecommerce tracking  
-**Requires at least:** 3.0  
+**Requires at least:** 3.6
 **Tested up to** 4.8
 **Stable tag** 2.1.6
 **License:** GPLv3 or later  
@@ -149,7 +149,7 @@ First, you need to Authenticate your GA account then you can select your web pro
 * Enhancement: Improved UX and fixed few text edits and typos.
 * Enhancement: Dutch language added.
 * Enhancement: Norwegian language updated.
- 
+
 
 ### 2.0.13 - 2017-02-27 ###
 * Enhancement: Norwegian Bokmål Translation added.

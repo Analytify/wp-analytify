@@ -1,8 +1,8 @@
 === Google Analytics Dashboard Plugin for WordPress ===
 Contributors: hiddenpearls, Asif2BD
 Donate link: http://paypal.me/Analytify
-Tags: google analytics, google analytics dashboard, WooCommerce analytics, WordPress Analytics, analytify, tracking, analytics, install analytics, e-commerce, track, track visitor, statistics, campaign tracking, analytics campaign, best google analytics, enhanced ecommerce tracking, email analytics report, google analytics pdf, 
-Requires at least: 3.0
+Tags: google analytics, google analytics dashboard, WooCommerce analytics, WordPress Analytics, analytify, tracking, analytics, install analytics, e-commerce, track, track visitor, statistics, campaign tracking, analytics campaign, best google analytics, enhanced ecommerce tracking, email analytics report, google analytics pdf,
+Requires at least: 3.6
 Tested up to: 4.8
 Stable tag: 2.1.6
 License: GPLv3 or later
@@ -12,7 +12,7 @@ Google Analytics for WordPress by Analytify is the must-have Plugin for Google A
 
 == Description ==
 
-= Best Google Analytics Dashboard Plugin for WordPress With Support for Enhanced WooCommerce = 
+= Best Google Analytics Dashboard Plugin for WordPress With Support for Enhanced WooCommerce =
 
 **[Google Analytics Dashboard for WordPress](http://analytify.io/details)** - by Analytify makes **Google Analytics** simple for everywhere in WordPress (posts, pages and custom post types). It presents the statistics from Google Analytics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. Now you can get **Google Analytics Dashboard** inside your WordPress Dashboard within a minute.
 
@@ -191,7 +191,7 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 * Enhancement: Improved UX and fixed few text edits and typos.
 * Enhancement: Dutch language added.
 * Enhancement: Norwegian language updated.
- 
+
 
 = 2.0.13 - 2017-02-27 =
 * Enhancement: Norwegian Bokmål Translation added.
