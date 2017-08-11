@@ -1117,10 +1117,11 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				global $current_user ;
 				$user_id = $current_user->ID;
 				/* Check that the user hasn't already clicked to ignore the message */
-				if ( ! get_user_meta($user_id, 'analytify_2_1_5_ignore') ) {
+				if ( ! get_user_meta($user_id, 'analytify_2_1_6_ignore') ) {
 				echo '<div class="updated"><p>';
-				printf(__('%1$sExclusive Summer Offer:%2$s Get 20% Off on Analytify - Use Coupon Code %3$s Download Pro Now %4$sHide Notice%5$s'), '<b>', '</b>', '<b>SUMMER2017</b>. <a href="https://analytify.io/in/2017-summer-sale" target="_blank">', '</a>. <a href="'. admin_url( 'admin.php?page=analytify-dashboard&analytify_2_1_5_ignore=0' ) .'">[',  ']</a>' );
-				echo "</p></div>";
+				printf(__('Thanks for updating <strong>Analytify</strong>! <a href="https://analytify.io/go/analytify-review" target="_blank" rel="noopener">Read</a> how thousands of user loving Analytify and sharing their story! <a href="https://analytify.io/go/analytify-review" target="_blank" rel="noopener"><strong>Click here</strong></a>. 
+					<a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_2_1_6_ignore=0' ));
+       			 echo "</p></div>";
 				 }
 			}
 
@@ -1150,12 +1151,12 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			$user_id = $current_user->ID;
 			/* If user clicks to ignore the notice, add that to their user meta */
 			if ( isset( $_GET['analytify_nag_ignore'] ) && '0' === $_GET['analytify_nag_ignore'] ) { // Input var okay.
-				add_user_meta( $user_id, 'analytify_2_1_5_ignore', 'true', true );
+				add_user_meta( $user_id, 'analytify_2_1_6_ignore', 'true', true );
 			}
 
 			/* If user clicks to ignore the 2.1.5 notice, add that to their user meta */
-			if ( isset( $_GET['analytify_2_1_5_ignore'] ) && '0' === $_GET['analytify_2_1_5_ignore'] ) { // Input var okay.
-				add_user_meta( $user_id, 'analytify_2_1_5_ignore', 'true', true );
+			if ( isset( $_GET['analytify_2_1_6_ignore'] ) && '0' === $_GET['analytify_2_1_6_ignore'] ) { // Input var okay.
+				add_user_meta( $user_id, 'analytify_2_1_6_ignore', 'true', true );
 			}
 
 
