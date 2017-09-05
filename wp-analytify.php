@@ -480,11 +480,10 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 							echo $this->settings->get_option( 'custom_js_code', 'wp-analytify-advanced' );
 						}
 
-						if ( has_action( 'ga_ecommerce_js' ) ) {
-							do_action( 'ga_ecommerce_js' );
-						} else {
-							echo "ga('send', 'pageview');";
-						}
+						// Add enhanced eccomerce extension
+						do_action( 'ga_ecommerce_js' );
+
+						echo "ga('send', 'pageview');";
 
 						?>
 					</script>
@@ -1119,7 +1118,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				/* Check that the user hasn't already clicked to ignore the message */
 				if ( ! get_user_meta($user_id, 'analytify_2_1_6_ignore') ) {
 				echo '<div class="updated"><p>';
-				printf(__('Thanks for updating <strong>Analytify</strong>! <a href="https://analytify.io/go/analytify-review" target="_blank" rel="noopener">Read</a> how thousands of user loving Analytify and sharing their story! <a href="https://analytify.io/go/analytify-review" target="_blank" rel="noopener"><strong>Click here</strong></a>. 
+				printf(__('Thanks for updating <strong>Analytify</strong>! <a href="https://analytify.io/go/analytify-review" target="_blank" rel="noopener">Read</a> how thousands of user loving Analytify and sharing their story! <a href="https://analytify.io/go/analytify-review" target="_blank" rel="noopener"><strong>Click here</strong></a>.
 					<a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=analytify-dashboard&analytify_2_1_6_ignore=0' ));
        			 echo "</p></div>";
 				 }
