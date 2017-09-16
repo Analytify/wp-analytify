@@ -386,6 +386,8 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 								<div class="analytify_arrow_date_picker"></div>
 							</div>
 							<input type="submit" value="<?php _e( 'View Stats', 'wp-analytify' )?>" name="view_data" class="analytify_submit_date_btn"  id="view_analytics">
+
+							<?php do_action( 'after_single_view_stats_buttons' ) ?>
 							<ul class="analytify_select_date_list">
 								<li><?php _e( 'Last 30 days', 'wp-analytify' )?> <span data-start="" data-end=""><span class="analytify_start_date_data analytify_last_30_day"></span> – <span class="analytify_end_date_data analytify_today_date"></span></span></li>
 
@@ -971,7 +973,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 					if ( in_array( 'show-overall-dashboard', $show_settings ) ) {
 
-						$stats = $this->pa_get_analytics( 'ga:sessions,ga:users,ga:pageviews,ga:avgSessionDuration,ga:bounceRate,ga:percentNewSessions,ga:newUsers,ga:avgTimeOnPage',$s_date, $e_date, false, false, $filter );
+						$stats = $this->pa_get_analytics( 'ga:sessions,ga:users,ga:pageviews,ga:avgSessionDuration,ga:bounceRate,ga:percentNewSessions,ga:newUsers,ga:avgTimeOnPage',$s_date, $e_date, fafzzzzzzzzz );
 
 						if ( isset( $stats->totalsForAllResults ) ) {
 
