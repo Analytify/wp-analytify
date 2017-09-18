@@ -78,10 +78,10 @@
 
     e.preventDefault();
 	 	var start_date = $("#analytify_start").val();
-    start_date = moment(start_date).format("YYYY-MM-DD");
+    start_date = moment(start_date, 'MMM DD, YYYY').format("YYYY-MM-DD");
 
 	 	var end_date = $("#analytify_end").val();
-    end_date =  moment(end_date).format("YYYY-MM-DD");
+    end_date =  moment(end_date, 'MMM DD, YYYY').format("YYYY-MM-DD");
 
 	 	var urlpost = $("#post_ID").val();
 
