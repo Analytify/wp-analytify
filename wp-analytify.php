@@ -973,7 +973,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 					if ( in_array( 'show-overall-dashboard', $show_settings ) ) {
 
-						$stats = $this->pa_get_analytics( 'ga:sessions,ga:users,ga:pageviews,ga:avgSessionDuration,ga:bounceRate,ga:percentNewSessions,ga:newUsers,ga:avgTimeOnPage',$s_date, $e_date, fafzzzzzzzzz );
+						$stats = $this->pa_get_analytics( 'ga:sessions,ga:users,ga:pageviews,ga:avgSessionDuration,ga:bounceRate,ga:percentNewSessions,ga:newUsers,ga:avgTimeOnPage',$s_date, $e_date, false, false, $filter );
 
 						if ( isset( $stats->totalsForAllResults ) ) {
 
