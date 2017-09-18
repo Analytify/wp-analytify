@@ -119,11 +119,9 @@ class WPANALYTIFY_Utils {
 	 *
 	 * @since 2.0.5
 	 */
-	public static function handle_exceptions( $exception ) {
+	public static function handle_exceptions( $_exception_errors ) {
 
 		//var_dump($exception);
-
-		$_exception_errors = $exception->getErrors();
 
 		if ( $_exception_errors[0]['reason'] == 'dailyLimitExceeded' ) {
 			add_action( 'admin_notices', array( 'WPANALYTIFY_Utils','daily_limit_exceed_error' ), 9 );

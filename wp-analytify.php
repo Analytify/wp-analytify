@@ -844,16 +844,19 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 			try {
 
-				if ( get_option( 'pa_google_token' ) != '' ) {
+				if ( get_option( 'analytify_profile_exception' ) ) {
+					
+					WPANALYTIFY_Utils::handle_exceptions( get_option( 'analytify_profile_exception' ) );
+				} else if ( get_option( 'pa_google_token' ) != '' ) {
 					$profiles = $this->service->management_accountSummaries->listManagementAccountSummaries();
 					return $profiles;
 				} else {
 					echo '<br /><div class="notice notice-warning"><p>' . esc_html__( 'Notice: You must authenticate to access your web profiles.', 'wp-analytify' ) . '</p></div>';
 				}
 			} catch (Exception $e) {
-
 				// Show admin notice if some exception occurs.
-				WPANALYTIFY_Utils::handle_exceptions( $e );
+				WPANALYTIFY_Utils::handle_exceptions( $e->getErrors() );
+				update_option( 'analytify_profile_exception', $e->getErrors() );
 			}
 
 		}

@@ -1118,6 +1118,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 				unset( $_analytify_profile['profile_for_dashboard'] );
 
 				update_option( 'wp-analytify-profile', $_analytify_profile );
+				delete_option( 'analytify_profile_exception' );
 
 			}
 
