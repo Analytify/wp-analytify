@@ -1106,15 +1106,17 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 				echo $this->pro_features();
 		}
 
-		// unset profile hidden check on logout
+		// unset profiles & hidden check on logout
 		function process_logout() {
 
 			if ( isset( $_POST['wp_analytify_log_out'] ) ) {
 
 				$_analytify_profile = get_option( 'wp-analytify-profile' );
-				if ( isset( $_analytify_profile['hide_profiles_list'] ) ) {
-					unset( $_analytify_profile['hide_profiles_list'] );
-				}
+
+				unset( $_analytify_profile['hide_profiles_list'] );
+				unset( $_analytify_profile['profile_for_posts'] );
+				unset( $_analytify_profile['profile_for_dashboard'] );
+
 				update_option( 'wp-analytify-profile', $_analytify_profile );
 
 			}
