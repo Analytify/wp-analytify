@@ -148,7 +148,7 @@ First, you need to Authenticate your GA account then you can select your web pro
 ### 2.0.14 - 2017-03-31 ###
 * Bug Fix : Date difference on load.
 * Bug Fix : Enqueue dashicons css.
-* Enhancement : Improved UX and a fixed few text edits and typos.
+* Enhancement : Improved UX and fixed few text edits and typos.
 * Enhancement : Dutch language added.
 * Enhancement : Norwegian language updated.
 
