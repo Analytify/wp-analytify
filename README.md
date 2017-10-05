@@ -2,7 +2,7 @@
 
 **Contributors:** [hiddenpearls](https://profiles.wordpress.org/hiddenpearls), [Asif2BD](https://profiles.wordpress.org/Asif2BD)  
 **Donate link:** http://paypal.me/Analytify  
-**Tags:** google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced ecommerce tracking  
+**Tags:** google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced e-commerce tracking  
 **Requires at least:** 3.6
 **Tested up to** 4.8
 **Stable tag** 2.1.7
@@ -18,7 +18,7 @@ Analytify 2.1 is the must-have Plugin for Google Analytics! Now Enhanced eCommer
 **Analytify 2.0 is here! Google Analytics Like Never Before! Must check those stunning [Screenshots](https://wordpress.org/plugins/wp-analytify/screenshots/)!**
 
 **Premium Version:**<br>
-> This plugin has a premium version, which is more easy to install, and shows **Real-Time Stats**, **Campaign Stats**, **ShortCodes**, *Front-end Stats*  and more reports in backend and front-end. Also premium version has better e-commerce tracking (Buy [Add-ons](http://analytify.io/add-ons/) with premium), and campaigns management. Get the affordable Premium Version from [analytify.io](http://analytify.io/upgrade-from-free) . **Bundle price** is also available with Addons.
+> This plugin has a premium version, which is more easy to install, and shows **Real-Time Stats**, **Campaign Stats**, **ShortCodes**, *Front-end Stats*  and more reports in backend and front-end. Also premium version has better e-commerce tracking (Buy [Add-ons](http://analytify.io/add-ons/) with premium), and campaigns management. Get the affordable Premium Version from [analytify.io](http://analytify.io/upgrade-from-free) . **Bundle price** is also available with Add-ons.
 
 **Google Analytics Premium Partner** - [Read](https://www.google.com/analytics/partners/company/5179388639313920/gadp/5629499534213120/app/5707702298738688/listing/5639274879778816) what Google is saying about us.
 
@@ -27,9 +27,9 @@ Analytify 2.1 is the must-have Plugin for Google Analytics! Now Enhanced eCommer
 
 *  Super easy installation. 1-Click Authentication process.
 *  Statistics (**General**) under the single posts/pages as a block in **wp-admin**
-*  Statistics (**Full**) under the single posts,pages & Custom Post Types as a block in **wp-admin** (Premium)
-*  Statistics (**Full**) under the single posts,pages & Custom Post Types as a block at **front-end** (Premium)
-*  **General Statistics** (Sessions, Users, Bounce rate, Average time on site, Average pages, PAGEVIEWS, NEW/RETURNING Visitors)
+*  Statistics (**Full**) under the single posts, pages & Custom Post Types as a block in **wp-admin** (Premium)
+*  Statistics (**Full**) under the single posts, pages & Custom Post Types as a block at **front-end** (Premium)
+*  **General Statistics** (Sessions, Users, Bounce rate, Average time on site, Average pages, Page views, new or returning Visitors)
 *  How people are finding you (**TOP KEYWORDS**)
 *  **List of top Countries**
 *  **List of top Cities**
@@ -97,7 +97,7 @@ First, you need to Authenticate your GA account then you can select your web pro
 5. Enhanced eCommerce Google Analytics Tracking for WooCommerce Dashboard (Add-on Required).
 6. Google Analytics Dashboard By Analytify Settings Screen.
 7. Automated Email Reports (Add-on Required).
-8. Shopping Behaviour funnel for WooCommerce Dashboard (Add-on Required).
+8. Shopping Behaviours funnel for WooCommerce Dashboard (Add-on Required).
 9. UTM Campaigns Dashboard (Add-on Required).
 10. Google Analytics dashboard widget for WordPress ( Free Add-ons Required).
 
@@ -105,94 +105,94 @@ First, you need to Authenticate your GA account then you can select your web pro
 ##  Changelog ##
 
 ### 2.1.7 - 2017-09-07 ###
-* BugFix: Compatibility with WooCommerce Google Analytics Tracking addon for Enhanced eCommerce Google Analytics Tracking.
+* Bug Fix : Compatibility with WooCommerce Google Analytics Tracking add-on for Enhanced eCommerce Google Analytics Tracking.
 
 ### 2.1.6 - 2017-08-08 ###
-* Enhancement: Compatibility with Polyglots - Easy to Translatable now for wp.org language editors.
-* Enhancement: All Strings are up-to-date for Translation.
+* Enhancement : Compatibility with Polyglots - Easy to Translatable now for wp.org language editors.
+* Enhancement : All Strings are up-to-date for Translation.
 
 
 ### 2.1.5 - 2017-07-27 ###
-* Enhancement: update momentjs library to 2.18.1 version
-* Enhancement: Responsive Dashboard
-* BugFix: Fixed conflict with TheEventsCalendar
-* BugFix: Code Cleanup and optimzied
+* Bug Fix : Fixed conflict with TheEventsCalendar
+* Bug Fix : Code Cleanup and optimise
+* Enhancement : update momentjs library to 2.18.1 version
+* Enhancement : Responsive Dashboard
 
 
 ### 2.1.4 - 2017-07-06 ###
-* Enhancement: Polishing zoom feature of WorldMap - Introduced Zoom controls and fixed scrolling issue.
+* Enhancement : Polishing zoom feature of WorldMap - Introduced Zoom controls and fixed scrolling issue.
 
 ### 2.1.3 - 2017-06-08 ###
-* Enhancement: Zoom feature is added in the WorldMap.
-* BugFix: Compatibility fix [#20](https://github.com/Analytify/wp-analytify/issues/20)
+* Bug Fix : Compatibility fix [#20](https://github.com/Analytify/wp-analytify/issues/20)
+* Enhancement : Zoom feature is added in the WorldMap.
 
 
 ### 2.1.2 - 2017-05-31 ###
-* BugFix: Advanced shortcode CSS conflict on new Post/Page.
-* BugFix: Prevent loading css if admin bar hidden.
-* Enhancement: Fix bounce rate arrow notification image.
-* Enhancement: Add link to pages on Entrance/Exit section in analytify dashboard.
+* Bug Fix : Advanced short-code CSS conflict on new Post/Page.
+* Bug Fix : Prevent loading css if admin bar hidden.
+* Enhancement : Fix bounce rate arrow notification image.
+* Enhancement : Add link to pages on Entrance/Exit section in analytify dashboard.
 
 ### 2.1.1 - 2017-04-14 ###
-* BugFix: Average Time on Page stats under pages/posts etc. Thanks to user **@danielson79** for this [ticket](https://wordpress.org/support/topic/post-average-session-time-instead-time-on-page/).
-* Enhancement: Average Session Duration Stats Introduced under pages/posts etc. Thanks again to **@danielson79**.
-* Enhancement: Dashboard dropdown menu now remembers your last selection. Thanks to user **@areluc** for this [ticket](https://wordpress.org/support/topic/default-stats-period/) (*Actually added in V 2.1.0, we missed to note it in changelog).
-* WooCommerce 3.0: Though its an addon feature, but Analytify core is now compatible to work with WooCommerce 3.0 for Enhanced WooCommerce Analytics.
+* Bug Fix : Average Time on Page stats under pages/posts etc. Thanks to user **@danielson79** for this [ticket](https://wordpress.org/support/topic/post-average-session-time-instead-time-on-page/).
+* Enhancement : Average Session Duration Stats Introduced under pages/posts etc. Thanks again to **@danielson79**.
+* Enhancement : Dashboard dropdown menu now remembers your last selection. Thanks to user **@areluc** for this [ticket](https://wordpress.org/support/topic/default-stats-period/) (*Actually added in V 2.1.0, we missed to note it in changelog).
+* Enhancement : WooCommerce 3.0: Though its an add-on feature, but Analytify core is now compatible to work with WooCommerce 3.0 for Enhanced WooCommerce Analytics.
 
 ### 2.1.0 - 2017-04-07 ###
-* BugFix: Fixed miscellaneous tracking bug when users are logged-in.
-* Bugfix: Custom multiple roles access.
-* Enhancement: Added last 7 and last 14 days option in dashboard dropdown menu.
-* Enhancement: CustomJS code works for Google optimize setup and other Custom Google analytics tracking code insertion.
+* Bug Fix : Fixed miscellaneous tracking bug when users are logged-in.
+* Bug Fix : Custom multiple roles access.
+* Enhancement : Added last 7 and last 14 days option in dashboard dropdown menu.
+* Enhancement : CustomJS code works for Google optimize setup and other Custom Google analytics tracking code insertion.
 
 ### 2.0.14 - 2017-03-31 ###
-* BugFix: Date difference on load.
-* Bugfix: enqueue dashicons css.
-* Enhancement: Improved UX and fixed few text edits and typos.
-* Enhancement: Dutch language added.
-* Enhancement: Norwegian language updated.
+* Bug Fix : Date difference on load.
+* Bug Fix : Enqueue dashicons css.
+* Enhancement : Improved UX and a fixed few text edits and typos.
+* Enhancement : Dutch language added.
+* Enhancement : Norwegian language updated.
 
 
 ### 2.0.13 - 2017-02-27 ###
-* Enhancement: Norwegian Bokmål Translation added.
-* Enhancement: Russian Translation added.
-* BugFix: New vs Returning cache clear.
+* Bug Fix : New vs Returning cache clear.
+* Enhancement : Norwegian Bokmål Translation added.
+* Enhancement : Russian Translation added.
 
 ### 2.0.12 - 2017-02-16 ###
-* BugFix: New vs Returning users had wrong calculation.
+* Bug Fix : New vs Returning users had wrong calculation.
 
 ### 2.0.11 - 2017-02-16 ###
-* Enhancement: German Translation Completed.
-* BugFix: Replaced Promotion GIF and added a Dismiss button to remove gif forever.
+* Bug Fix : Replaced Promotion GIF and added a Dismiss button to remove gif forever.
+* Enhancement : German Translation Completed.
 
 ### 2.0.6 - 2017-01-03 ###
-* bugfix: ANALYTIFY_Google_AUTH_EXCEPTION error on quota increase.
-* code improvement.
+* Bug Fix : ANALYTIFY_Google_AUTH_EXCEPTION error on quota increase.
+* Enhancement : Code improvement.
 
 ### 2.0.5 - 2017-01-01 ###
-* Improved API queries performance and code optimization
-* Fixed: Use your own API keys in Advanced Tab.
-* Validation for date selection at Dashboard page.
-* Admin Notice when no website is registered to login account
-* Centre align the errors i.e cleanup interface.
-* Fixed: Total time on site calculation.
+* Bug Fix : Use your own API keys in Advanced Tab.
+* Bug Fix : Total time on site calculation.
+* Enhancement : Improved API queries performance and code optimization
+* Enhancement : Validation for date selection at Dashboard page.
+* Enhancement : Admin Notice when no website is registered to login account
+* Enhancement : Centre align the errors i.e cleanup interface.
 
 
 ### 2.0.4 - 2016-11-20 ###
-* BugFix: Return empty string if there are no roles
-* BugFix: Echarts Compatibility issues with jQuery Sortable
-* BugFix: By default Setting not loaded on plugin activation
-* BugFix: Transients Conflict at loading analytics.js code
-* Enhancement: Strings getting ready for WPML Compatibility
-* Enhancement: Added Cross Domain Tracking
-* Enhancement: Admin bar displays only for selected roles in dashboard tab.
+* Bug Fix : Return empty string if there are no roles
+* Bug Fix : Echarts Compatibility issues with jQuery Sortable
+* Bug Fix : By default Setting not loaded on plugin activation
+* Bug Fix : Transients Conflict at loading analytics.js code
+* Enhancement : Strings getting ready for WPML Compatibility
+* Enhancement : Added Cross Domain Tracking
+* Enhancement : Admin bar displays only for selected roles in dashboard tab.
 
 ### 2.0.3 - 2016-11-05 ###
 * Bug Fix   : PHP 5.3 fatal errors fixed
 * Bug Fix   : Warning Notice fix appears in dashboard loading.
 * Enhancement : Welcome page screenshots updated
 * Enhancement : Change layout for profiles dropdown selection.
-* Enhancement : user settings added in debug info.
+* Enhancement : User settings added in debug info.
 
 ### 2.0.2 - 2016-10-30 ###
 * Bug Fix   : Correct stats for each post/page.
@@ -201,7 +201,7 @@ First, you need to Authenticate your GA account then you can select your web pro
 * Enhancement : Super admin role check on multisite enabled only.
 
 ### 2.0.1 - 2016-10-28 ###
-* Bug Fix     : PHP 5.4 fatal error fixed
+* Bug Fix : PHP 5.4 fatal error fixed
 
 ### 2.0.0 - 2016-10-28 ###
 * Enhancement : New clean UI design
@@ -210,7 +210,7 @@ First, you need to Authenticate your GA account then you can select your web pro
 * Enhancement : removed traditional analytics js - GA recommends analytics.js
 * Enhancement : Quick Tabbed navigation. No page reload.
 * Enhancement : Profile Tab - Hide Profiles list
-* Enhancement : loading stats with ajax
+* Enhancement : Loading stats with ajax
 * Enhancement : Our Core plugin is Free and required for all add-ons and pro upgrade.
 * New Feature : Page exit and Entrance stats
 * New Feature : Social Media Statistics
@@ -222,105 +222,105 @@ First, you need to Authenticate your GA account then you can select your web pro
 * New Feature : Diagnostic Info and Error log
 * New Feature : Shows Comparison up or down Stats
 * New Feature : Every post row has a direct link of Stats which takes to next page screen and takes to stats section.
-* New Addon : Enhanced ecommerce Google Analytics for Easy Digital Downloads addon
-* New Addon : Google Analytics Campaigns manager addon
-* New Addon : Email Notifications addon
-* New Addon : Google Analytics dashboard widget
+* New Add-on : Enhanced ecommerce Google Analytics for Easy Digital Downloads add-on
+* New Add-on : Google Analytics Campaigns manager add-on
+* New Add-on : Email Notifications add-on
+* New Add-on : Google Analytics dashboard widget
 * Compatibility : Compatible to WordPress 4.6.1
 
 ### 1.5.5 - 2016-10-18 ###
-* Announcement   : Version 2.0 is near & Announcing upcoming price change.
+* Announcement : Version 2.0 is near & Announcing upcoming price change.
 
 ### 1.5.4 - 2016-09-09 ###
-* Bug Fix   : Tracking bug
+* Bug Fix : Tracking bug
 * Compatibility : Compatible to WordPress 4.6.1
 
 ### 1.5.3 - 2016-08-16 ###
-* Enhancement   : Announcement of 2.0
+* Enhancement : Announcement of 2.0
 * Compatibility : Compatible to WordPress 4.6
 
 ### 1.5.2 - 2016-07-16 ###
-* Bug Fix   : Average Session Duration & BounceRate
+* Bug Fix : Average Session Duration & BounceRate
 
 ### 1.5.1 - 2016-06-09 ###
 * Enhancement : Option to upgrade to Pro version is back
 * Enhancement : New Coupon added for $10 off
 
 ### 1.5.0 - 2016-05-10 ###
-* Bug Fix   : 404 error on profile settings
+* Bug Fix : 404 error on profile settings
 * Enhancement : Getting ready for 2.0 update
 * Enhancement : Compatible with 4.5.2
 
 ### 1.3.2 - 2016-02-01 ###
-* Bug Fix   : Web Property fix - Important update
+* Bug Fix : Web Property fix - Important update
 
 ### 1.3.1 - 2016-01-23 ###
-* Bug Fix   : Fix the Announcement Bug
+* Bug Fix : Fix the Announcement Bug
 
 ### 1.3.0 - 2016-01-21 ###
-* Code Re-factor   : Major update
+* Code Re-factor : Major update
 
 ### 1.2.5 - 2015-12-24 ###
-* Bug Fixed   : Security update
+* Bug Fixed : Security update
 
 ### 1.2.4 - 2015-12-24 ###
+* Bug Fixed : Code cleanup and indentation
 * New Feature : Cache Analytify dashboard stats based on Profile selection
-* Bug Fixed   : Code cleanup and indentation
 
 ### 1.2.3 - 2015-12-06 ###
-* Bug Fix     : Don't load statistics for draft/trash/new posts. Load only for Published posts/pages.
-* Bug Fix     : Update Notice messages for settings page.
+* Bug Fix : Don't load statistics for draft/trash/new posts. Load only for Published posts/pages.
+* Bug Fix : Update Notice messages for settings page.
 * New Feature : Compatible for WordPress 4.4
 
 ### 1.2.2 - 2015-11-25 ###
-* Bug Fix     : encoded URL on redirecting after connecting with Google Analytics.
-* Bug Fix     : Top Pages option in Dashboard show incorrect values.
-* Bug Fix     : Analytify Menu in Admin Bar redirect to wrong page.
+* Bug Fix : encoded URL on redirecting after connecting with Google Analytics.
+* Bug Fix : Top Pages option in Dashboard show incorrect values.
+* Bug Fix : Analytify Menu in Admin Bar redirect to wrong page.
 * New Feature : Added Cache For Operating System stats, Mobile Devices stats and Top Referrers stats.
 
 ### 1.2.1 - 2015-11-13 ###
-* Added brand new addons page.
-* Better dashboard loading check.
-* New Analytify Menu in Admin Bar.
-* Calendar start date is now post date for per post analytics.
+* Enhancement : Added brand new add-ons page.
+* Enhancement : Better dashboard loading check.
+* Enhancement : New Analytify Menu in Admin Bar.
+* Enhancement : Calendar start date is now post date for per post analytics.
 
 ### 1.2.0 - 2015-11-10 ###
-* 1-Click setup is now available.
-* Get install access to discount coupon if you share usage data with us.
-* Multiple bug fix.
-* Spelling correction. Thanks to the contribution from community, check github.
+* Enhancement : 1-Click setup is now available.
+* Enhancement : Get install access to discount coupon if you share usage data with us.
+* Bug Fix : Multiple bug fix.
+* Bug Fix : Spelling correction. Thanks to the contribution from community, check Github.
 
 ### 1.1.1 - 2015-08-30 ###
-* New Feature: Added Cache for Keywords and Browser stats.
-* Compatibility with WordPres 4.3
+* New Feature : Added Cache for Keywords and Browser stats.
+* Enhancement : Compatibility with Wordpress 4.3
 
 ### 1.1.0 - 2015-07-10 ###
-* New Feature: Added Cache for Country and City stats.
-* Announcing WooCommerce Addon.
+* New Feature : Added Cache for Country and City stats.
+* New Feature : Announcing WooCommerce Add-on.
 
 ### 1.0.7 - 2015-05-08 ###
-* New Feature: Added Cache for Top pages stats.
+* New Feature : Added Cache for Top pages stats.
 
 ### 1.0.6 - 2015-04-19 ###
-* New Feature: Added Cache for general stats.
+* New Feature : Added Cache for general stats.
 
 ### 1.0.5 - 2015-04-06 ###
-* Bug fix: Headers modify error on some hosts for some users.
-* New feature: Campaign Analytics menu option added. Teaser for Free users that Campaign tracking will look like the attached screenshot.
+* Bug Fix : Headers modify error on some hosts for some users.
+* New Feature : Campaign Analytics menu option added. Teaser for Free users that Campaign tracking will look like the attached screenshot.
 
 ### 1.0.4 - 2015-03-26 ###
-* Bug fix: Avg Time on Page under the post/pages stats was showing AvgSessionDuration. So, It should be AvgTimeOnPage.
-* Bug fix: Avg Time on Site in Dashboard stats was showing AvgSessionDuration. So, It should be AvgTimeOnPage.
+* Bug Fix : Avg. Time on Page under the post/pages stats was showing AvgSessionDuration. So, It should be AvgTimeOnPage.
+* Bug Fix : Avg. Time on Site in Dashboard stats was showing AvgSessionDuration. So, It should be AvgTimeOnPage.
 
 ### 1.0.3 - 2015-02-21 ###
-* Fixed bug showing this error message "Don't load boxes if no post type is selected".
+* Bug Fix : Fixed bug showing this error message "Don't load boxes if no post type is selected".
 
 ### 1.0.2 - 2015-01-16 ###
-* Fixed issues with post exclude function
-* Made transition from free to premium version more stable.
+* Bug Fix : Fixed issues with post exclude function
+* Bug Fix : Made transition from free to premium version more stable.
 
 ### 1.0.1 - 2015-01-05 ###
-* Minor maintaince build.
+* Minor maintenance build.
 
 ### 1.0.0 - 2015-01-01 ###
 * Initial Release.
