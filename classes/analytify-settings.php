@@ -103,14 +103,13 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 						array(
 						 'id' => 'wp-analytify-profile',
 						 'title' => __( 'Profile', 'wp-analytify' ),
-						 'desc' => 'Select your profiles for front-end and backend sections.',
+						 'desc' => 'Select your profiles for Frontend and Backend sections.',
 						 'priority' => '10',
 						),
-
 						array(
 						 'id' => 'wp-analytify-admin',
 						 'title' => __( 'Admin', 'wp-analytify' ),
-						 'desc'	=> 'Following settings will take effect statistics under the posts, custom post types or pages.',
+						 'desc'	=> 'These settings will affect statistics under the posts, custom post types or pages.',
 						 'priority' => '20',
 						),
 						array(
@@ -165,13 +164,13 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					array(
 						'name'              => 'install_ga_code',
 						'label'             => __( 'Install Google Analytics tracking code', 'wp-analytify' ),
-						'desc'              => __( 'Insert Google Analytics JS code in header to track the visitors. You can uncheck this option if you have already insert the GA code in your website.', 'wp-analytify' ),
+						'desc'              => __( 'Insert Google Analytics JS code in header to track the visitors. Leave this unchecked if the GA code is already on your website (from a different plugin, for example).', 'wp-analytify' ),
 						'type'              => 'checkbox',
 						),
 					array(
 						'name'              => 'exclude_users_tracking',
 						'label'             => __( 'Exclude users from tracking', 'wp-analytify' ),
-						'desc'              => __( 'Don\'t insert the tracking code for above user roles.', 'wp-analytify' ),
+						'desc'              => __( 'Don\'t insert the tracking code for these user roles.', 'wp-analytify' ),
 						'type'              => 'chosen',
 						'default' 			=> array(),
 						'options' 			=> $this->get_current_roles(),
@@ -180,7 +179,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					array(
 						'name'         => 'profile_for_posts',
 						'label'        => __( 'Profile for posts (Backend/Front-end)', 'wp-analytify' ),
-						'desc'         => __( 'Select your website profile for Backend/Front-end Stats. You can select any Website profile. It will show Analytics for your selected website profile', 'wp-analytify' ),
+						'desc'         => __( 'Select your website profile for Backend/Frontend Stats. You can select any website profile. It will show Analytics for your selected website profile', 'wp-analytify' ),
 						'type'         => 'select_profile',
 						'default'      => 'Choose profile for posts',
 						'options'      => $_profile_otions,
@@ -190,7 +189,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					array(
 						'name'    => 'profile_for_dashboard',
 						'label'   => __( 'Profile for Dashboard', 'wp-analytify' ),
-						'desc'    => __( 'Select your website profile for Dashboard Stats. You can select any Website profile. It will show Analytics for your selected website profile.', 'wp-analytify' ),
+						'desc'    => __( 'Select your website profile for Dashboard Stats. You can select any website profile. It will show Analytics for your selected website profile.', 'wp-analytify' ),
 						'type'    => 'select_profile',
 						'default' => 'Choose profile for dashboard',
 						'options' => $_profile_otions,
@@ -198,7 +197,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					array(
 						'name'              => 'hide_profiles_list',
 						'label'             => __( 'Hide Profiles list', 'wp-analytify' ),
-						'desc'              => __( 'Hide the selection of profiles for Dashboard and Posts (Back-end/Front-end). Best to hide for your clients not to see other profiles.', 'wp-analytify' ),
+						'desc'              => __( 'Hide the selection of profiles for Dashboard and Posts (Backend/Frontend). Best to hide for your clients not to see other profiles.', 'wp-analytify' ),
 						'type'              => 'checkbox',
 						),
 					// array(
@@ -213,7 +212,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					array(
 						'name'              => 'disable_back_end',
 						'label'             => __( 'Disable Analytics under posts/pages (wp-admin)', 'wp-analytify' ),
-						'desc'              => __( 'Check it, If you don\'t want to load Stats by default on all pages. Remember, There is a section under each post/page. You can still view Stats on pages you want.', 'wp-analytify' ),
+						'desc'              => __( 'Hide Analytics panel by default on all pages. Remember, there is a section under each post/page. You can still view Stats on pages you want.', 'wp-analytify' ),
 						'type'              => 'checkbox',
 						),
 					array(
@@ -228,7 +227,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					array(
 						'name'              => 'show_analytics_post_types_back_end',
 						'label'             => __( 'Analytics on Post types', 'wp-analytify' ),
-						'desc'              =>  class_exists( 'WP_Analytify_Pro' )  ?  __( 'Show Analytics under the above post types only', 'wp-analytify' )  :  sprintf( __( 'Show Analytics under the above post types only. Buy %1$sPremium%1$s version for Custom Post Types.', 'wp-analytify' ), '<a href="http://analytify.io/pricing/" target="_blank">', '</a>' ),
+						'desc'              =>  class_exists( 'WP_Analytify_Pro' )  ?  __( 'Show Analytics under these post types only', 'wp-analytify' )  :  sprintf( __( 'Show Analytics under the above post types only. Buy %1$sPremium%1$s version for Custom Post Types.', 'wp-analytify' ), '<a href="http://analytify.io/pricing/" target="_blank">', '</a>' ),
 						'type'              => 'chosen',
 						'default' 			=> array(),
 						'options' => $this->get_current_post_types(),
@@ -252,7 +251,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					array(
 						'name'              => 'exclude_pages_back_end',
 						'label'             => __( 'Exclude Analytics on specific pages:', 'wp-analytify' ),
-						'desc'              => __( 'Enter ID\'s of posts or pages separated by commas on which you don\'t want to show Analytics e.g 11,45,66', 'wp-analytify' ),
+						'desc'              => __( 'A list of post/page IDs to exclude from analytics. Comma-separated, i.e. 11,45,66', 'wp-analytify' ),
 						'type'              => 'text',
 						'default'           => '0',
 						),
@@ -260,8 +259,8 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					'wp-analytify-advanced' => array(
 							array(
 								'name'              => 'user_advanced_keys',
-								'label'             => __( 'Do you want to use your own API keys ?', 'wp-analytify' ),
-								'desc'              => sprintf( __( 'It is highly recommended by Google to use your own API keys. %1$sYou need to create a Project in Google %2$s. %3$sHere is a short %4$svideo guide%5$s to get your own ClientID, Client Secret and Redirect URL and enter them in below inputs.', 'wp-analytify' ), '<br />', '<a target=\'_blank\' href=\'https://console.developers.google.com/project\'>Console</a>', '<br />', '<a target=\'_blank\' href=\'https://www.youtube.com/watch?v=X36InlRJtuk\'>', '</a>' ),
+								'label'             => __( 'Use your own API keys ?', 'wp-analytify' ),
+								'desc'              => sprintf( __( 'Google strongly recommends that you use your own API keys. %1$sYou need to create a Project in Google %2$s. %3$sHere is a short %4$svideo guide%5$s to get your own ClientID, Client Secret and Redirect URL. Enter them below.', 'wp-analytify' ), '<br />', '<a target=\'_blank\' href=\'https://console.developers.google.com/project\'>Console</a>', '<br />', '<a target=\'_blank\' href=\'https://www.youtube.com/watch?v=X36InlRJtuk\'>', '</a>' ),
 								'type'              => 'checkbox',
 								'class'	=> 'user_advanced_keys',
 							),
@@ -285,7 +284,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 							array(
 								'name'              => 'redirect_uri',
 								'label'             => __( 'Redirect URL:', 'wp-analytify' ),
-								'desc'              => sprintf(__( '( Redirect URL is very important when you are using your own Keys Use this Redirect URL  %1$s )' , 'wp-analytify' ) ,  '<b>' . admin_url('admin.php?page=analytify-settings') . '</b>' ),
+								'desc'              => sprintf(__( '( Redirect URL is very important when you are using your own Keys. %1$s )' , 'wp-analytify' ) ,  '<b>' . admin_url('admin.php?page=analytify-settings') . '</b>' ),
 								'type'              => 'text',
 								'class' => 'user_keys',
 								'sanitize_callback' => 'trim',
@@ -299,7 +298,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					array(
 						'name'              => 'anonymize_ip',
 						'label'             => __( 'Anonymize IP addresses', 'wp-analytify' ),
-						'desc'              => sprintf( __( 'Detailed information about IP Anonymization in Google Analytics can be found %1$sDetails%2$s', 'wp-analytify' ), '<a href=\'https://support.google.com/analytics/answer/2763052\'>', '</a>' ),
+						'desc'              => sprintf( __( 'Detailed information about IP Anonymization in Google Analytics can be found here: %1$sDetails%2$s', 'wp-analytify' ), '<a href=\'https://support.google.com/analytics/answer/2763052\'>', '</a>' ),
 						'type'              => 'checkbox',
 					),
 					array(
@@ -311,7 +310,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 					array(
 						'name'              => 'track_user_id',
 						'label'             => __( 'Track User ID', 'wp-analytify' ),
-						'desc'              => sprintf( __( 'Detailed information about Track User ID in Google Analytics can be found %1$sDetails%2$2', 'wp-analytify' ), '<a href=\'https://support.google.com/analytics/answer/3123662\'>', '</a>' ),
+						'desc'              => sprintf( __( 'Detailed information about this feature of Google Analytics can be found here: %1$sDetails%2$2', 'wp-analytify' ), '<a href=\'https://support.google.com/analytics/answer/3123662\'>', '</a>' ),
 						'type'              => 'checkbox',
 					),
 					array(
@@ -854,7 +853,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 
 				<form action="" method="post">
 				<tr>
-						<p class="inside"><?php esc_html_e( 'You have allowed your site to access the Analytics data from Google. Logout below to disconnect it.', 'wp-analytify' ); ?><p>
+						<p class="inside"><?php esc_html_e( 'You have connected your site to Google Analytics. To disconnect, use the Logout button below.', 'wp-analytify' ); ?><p>
 				</tr>
 				<tr>
 					<td colspan="2"><input type="submit" class="button-primary" value="Logout" name="wp_analytify_log_out" /></td>
