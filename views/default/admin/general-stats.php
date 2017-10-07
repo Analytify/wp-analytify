@@ -194,7 +194,7 @@ function fetch_general_stats( $current, $current_stats, $device_category_stats, 
 	<div class="analytify_general_status_boxes">
 			<h4><?php esc_html_e( 'Sessions', 'wp-analytify' ); ?></h4>
 			<div class="analytify_general_stats_value"><?php echo WPANALYTIFY_Utils::pretty_numbers( $results['ga:sessions'] ); ?></div>
-			<p><?php esc_html_e( 'Total number of Sessions within the date range. A session is the period time a user is actively engaged with your website. app. etc.', 'wp-analytify' ); ?></p>
+			<p><?php esc_html_e( 'Total number of Sessions within the date range. A session is the period of time in which a user is actively engaged with your website, app, etc.', 'wp-analytify' ); ?></p>
 			<?php get_compare_stats( $results['ga:sessions'],  $compare_results['ga:sessions'], $date_different ) ?>
 	</div>
 
@@ -222,7 +222,7 @@ function fetch_general_stats( $current, $current_stats, $device_category_stats, 
 	<div class="analytify_general_status_boxes">
 			<h4><?php esc_html_e( 'Bounce Rate', 'wp-analytify' ); ?></h4>
 			<div class="analytify_general_stats_value"><?php echo WPANALYTIFY_Utils::pretty_numbers( $results['ga:bounceRate'] ); ?><span class="analytify_xl_f">%</span></div>
-			<p><?php esc_html_e( "Bounce Rate is the percentage of single-page visits (i.e. visits in which the person left your site from the entrance page without interacting with the page ).", 'wp-analytify' ); ?></p>
+			<p><?php esc_html_e( "Bounce Rate is the percentage of single-page sessions in which there was no interaction with the page. A bounced session has a duration of 0 seconds.", 'wp-analytify' ); ?></p>
 			<?php get_compare_stats( $results['ga:bounceRate'], $compare_results['ga:bounceRate'], $date_different, 'bounce_rate' );?>
 	</div>
 
@@ -236,7 +236,7 @@ function fetch_general_stats( $current, $current_stats, $device_category_stats, 
 	<div class="analytify_general_status_boxes pad_b_0">
 			<h4><?php esc_html_e( '% New sessions', 'wp-analytify' ); ?></h4>
 			<div class="analytify_general_stats_value"><?php echo WPANALYTIFY_Utils::pretty_numbers( $results['ga:percentNewSessions'] ); ?>%</div>
-			<p><?php esc_html_e( 'Pages/Session is the average number of pages viewed during a session. Repeated views of a single page are counted.', 'wp-analytify' ); ?></p>
+			<p><?php esc_html_e( 'An estimate of the percentage of first time visits.', 'wp-analytify' ); ?></p>
 			<?php get_compare_stats( $results['ga:percentNewSessions'], $compare_results['ga:percentNewSessions'], $date_different );?>
 	</div>
 
