@@ -648,6 +648,12 @@ class WPANALYTIFY_AJAX {
 		echo esc_html( home_url() );
 		echo "\r\n";
 
+		if ( function_exists( 'woocommerce_get_page_id' ) ) {
+			echo 'Shop url: ';
+			echo esc_html( get_permalink( woocommerce_get_page_id( 'shop' ) ) );
+			echo "\r\n";
+		}
+
 		echo 'WordPress: ';
 		echo bloginfo( 'version' );
 		if ( is_multisite() ) {
