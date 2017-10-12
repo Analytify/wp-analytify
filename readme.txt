@@ -147,8 +147,8 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 == Changelog ==
 
 = 2.1.8 - 2017-10-12 =
-* BugFix: 	fix momentjs deprecation warning
-* Enhancement: improved exception handling
+* BugFix: 	Fix momentjs deprecation warning
+* Enhancement: Improved exception handling
 * Enhancement: Norwegian language updated.
 
 = 2.1.7 - 2017-09-07 =
@@ -394,7 +394,7 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 == Upgrade Notice ==
 
 = 2.1.8 =
-* [Important Update] Upgrade immediately. Norwegian language updated and optimized performance. 
+* [Important Update] Upgrade immediately. Performance optimization & Norwegian language updated.
 
 
 == Notes ==
