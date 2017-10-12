@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Analytify - Google Analytics Dashboard\n"
 "POT-Creation-Date: 2017-03-04 11:49+0500\n"
-"PO-Revision-Date: 2017-03-04 11:49+0500\n"
+"PO-Revision-Date: 2017-10-03 09:56+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nb\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.0.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: wp-analytify.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -85,7 +85,7 @@ msgstr "Ingen aktivitet for denne perioden"
 #: classes/analytify-sanitize.php:39
 #, php-format
 msgid "%1$s was not expecting data to be an array."
-msgstr "%1$s forventet ikke en array"
+msgstr "%1$s forventet ikke en array."
 
 #: classes/analytify-sanitize.php:60
 #, php-format
@@ -198,7 +198,7 @@ msgid ""
 msgstr ""
 "Sett inn din Google Analytics javascript kode i header for å spore brukere. "
 "Du kan fjerne dette alternativet hvis du allerede har lagt inn koden på "
-"nettsiden. "
+"nettsiden."
 
 #: classes/analytify-settings.php:173
 msgid "Exclude users from tracking"
@@ -216,7 +216,7 @@ msgstr "Profil for innlegg"
 msgid ""
 "Select your website profile for Backend/Front-end Stats. You can select any "
 "Website profile. It will show Analytics for your selected website profile"
-msgstr "Velg profilen som det skal vises statistikk fra."
+msgstr "Velg profilen som det skal vises statistikk fra"
 
 #: classes/analytify-settings.php:192
 msgid "Profile for Dashboard"
@@ -238,7 +238,7 @@ msgid ""
 "Best to hide for your clients not to see other profiles."
 msgstr ""
 "Skjul profiler for dashbordet og innlegg. Det anbefales at profiler skjules "
-"slik at brukere ikke får tilgang til andre profiler. "
+"slik at brukere ikke får tilgang til andre profiler."
 
 #: classes/analytify-settings.php:208
 msgid "Disable Analytics under posts/pages (wp-admin)"
@@ -252,15 +252,15 @@ msgid ""
 msgstr ""
 "Huk av denne hvis du ikke vil automatisk laste statistikk på alle sider. Du "
 "kan fremdeles se statistikk under hver enkelt side eller innlegg som du "
-"ønsker. "
+"ønsker."
 
 #: classes/analytify-settings.php:214
 msgid "Show Analytics to (roles)"
-msgstr "Vis Analytics til følgende roller: "
+msgstr "Vis Analytics til følgende roller:"
 
 #: classes/analytify-settings.php:215
 msgid "Show Analytics to above selected user roles only."
-msgstr "Vis Analytics til kun de valgte brukerrollene. "
+msgstr "Vis Analytics til kun de valgte brukerrollene."
 
 #: classes/analytify-settings.php:223 welcome.php:241 welcome.php:349
 #: welcome.php:383
@@ -288,7 +288,7 @@ msgstr "Rediger Analytics paneler på sider/innlegg:"
 #: classes/analytify-settings.php:233
 msgid "Select which Stats panels you want to display under posts/pages."
 msgstr ""
-"Velg hvilket statistikk panel du ønsker skal vises under sider/innlegg. "
+"Velg hvilket statistikk panel du ønsker skal vises under sider/innlegg."
 
 #: classes/analytify-settings.php:233
 msgid ""
@@ -371,7 +371,7 @@ msgstr "Client Secret:"
 
 #: classes/analytify-settings.php:273
 msgid "Your Client Secret"
-msgstr "Din client secret:"
+msgstr "Din client secret"
 
 #: classes/analytify-settings.php:280
 msgid "Redirect URL:"
@@ -408,8 +408,9 @@ msgid ""
 "you have an insecure site, but wish Analytics traffic to still be secure, "
 "use this option."
 msgstr ""
-"Hvis din side bruker HTTPS så vil Analytics data bestandig gå over SSL. Hvis "
-"du har en usikker side, men ønsker at analyticsdata skal sikres, "
+"Hvis din side bruker HTTPS så vil Analytics data bestandig gå over SSL. Bruk "
+"denne hvis du har en side uten HTTPS, men likevel ønsker at Analytify "
+"trafikken skal sikres."
 
 #: classes/analytify-settings.php:306
 msgid "Track User ID"
@@ -1334,7 +1335,7 @@ msgstr ""
 
 #: welcome.php:229 welcome.php:341
 msgid "Disable front-end"
-msgstr "Slå av Analytics på nettsiden"
+msgstr ""
 
 #: welcome.php:231 welcome.php:342
 msgid ""
@@ -1356,7 +1357,7 @@ msgstr ""
 msgid ""
 "Show Analytics under the selected post types only. You can select your "
 "custom post types as well."
-msgstr "Vis Analytics kun til de valgte innleggstypene. "
+msgstr ""
 
 #: welcome.php:244 welcome.php:352
 msgid "Front-end Analytics panels"
@@ -1374,7 +1375,7 @@ msgstr ""
 
 #: welcome.php:250 welcome.php:358 welcome.php:392
 msgid "Select posts or pages on which you don't want to show Analytics."
-msgstr "Velg sider eller innlegg der du ikke vil vise Analytics."
+msgstr ""
 
 #: welcome.php:258 welcome.php:407
 msgid "Go to Analytify Settings"
@@ -1480,7 +1481,7 @@ msgstr ""
 msgid ""
 "Select your website profile for Dashboard Stats. You can select your any "
 "Website profile. It will show Analytics for your selected website profile."
-msgstr "Velg profilen for statistikk."
+msgstr ""
 
 #: welcome.php:331
 msgid "Display Statistics at front-end pages"
@@ -1581,12 +1582,12 @@ msgstr "Du har ikke tilgang til statistikken"
 #: wp-analytify.php:413
 #, php-format
 msgid "%2$s This code is added by WP Analytify (%1$s) %4$s %3$s"
-msgstr ""
+msgstr "%2$s Denne koden er lagt til av WP Analytify (%1$s) %4$s %3$s"
 
 #: wp-analytify.php:461
 #, php-format
 msgid "%2$s This code is added by WP Analytify (%1$s) %3$s"
-msgstr ""
+msgstr "%2$s Denne koden er lagt til av WP Analytify (%1$s) %3$s"
 
 #: wp-analytify.php:481
 #, php-format
@@ -1679,7 +1680,7 @@ msgid ""
 "Select your website profile at Analytify->settings->profile tab to load "
 "stats."
 msgstr ""
-"Velg din profil på  Analytify->innstillinger->profil for å vise statistikk. "
+"Velg din profil på  Analytify->innstillinger->profil for å vise statistikk."
 
 #: wp-analytify.php:898
 #, php-format
