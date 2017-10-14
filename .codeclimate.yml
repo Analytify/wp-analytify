@@ -14,5 +14,7 @@ engines:
       - php
       - javascript
 ratings:
+paths:		
+  - "**"
 exclude_paths:
 - "lib/Google/"
