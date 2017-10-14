@@ -1,0 +1,23 @@
+engines:
+  phpcodesniffer:
+    enabled: true
+    config:
+      standard: "WordPress"
+  eslint:
+    enabled: true
+  css-lint:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - php
+      - javascript
+ratings:
+  paths:
+  - "**.css"
+  - "**.js"
+  - "**.php"
+  - "**.md"
+exclude_paths:
+- "lib/Google/"
