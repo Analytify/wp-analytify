@@ -1,0 +1,2051 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Analytify Pro\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-04 11:56+0500\n"
+"PO-Revision-Date: 2017-10-16 19:51+0200\n"
+"Last-Translator: MV <info@seo-website.ru>\n"
+"Language-Team: Magyar\n"
+"Language: hu_HU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && n"
+"%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: wp-analytify-pro.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: analytify-general.php:112
+#, php-format
+msgid ""
+"%1$s Oops, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
+"message is only visible to Administrators. %4$s %2$s "
+msgstr ""
+"%1$s Hoppá, egy hiba lépett fel. %2$s %5$s %2$s %3$s Ne aggódjon, ezt a "
+"hibaüzenetet csak administrátorok látják.. %4$s %2$s"
+
+#: analytify-general.php:119
+#, php-format
+msgid ""
+"%1$s Oops, Try to %2$s Reset %3$s Authentication. %4$s %7$s %4$s %5$s Don't "
+"worry, This error message is only visible to Administrators. %6$s %4$s"
+msgstr ""
+"%1$s Hoppá, próbálja %2$s Сброс%3$s . %4$s %7$s %4$s %5$s Ne aggódjon, ezt a "
+"hibaüzenetet csak adminisztrátorok látják. %6$s %4$s"
+
+#: analytify-general.php:208 analytify-general.php:353
+#, php-format
+msgid ""
+"%1$s Oops, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
+"message is only visible to Administrators. %4$s %2$s"
+msgstr ""
+"%1$s Hoppá,  hiba történt! %2$s %5$s %2$s %3$s Ne aggódjon, ezt a "
+"hibaüzenetet csak adminisztrátorok látják. %4$s %2$s"
+
+#: analytify-general.php:216 analytify-general.php:288
+#: analytify-general.php:360
+#, php-format
+msgid ""
+"%1$s Oops, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s Don't "
+"worry, This error message is only visible to Administrators. %6$s %2$s"
+msgstr ""
+"%1$s Hoppá! Próbálja meg %3$s Kezdje újra a hitelesítést %4$s .%2$s %7$s "
+"%2$s %5$s Ne aggódjon, ezt a hibaüzenetet csak adminisztrátorok látják. %6$s "
+"%2$s"
+
+#: analytify-general.php:224 analytify-general.php:295
+#: analytify-general.php:367
+#, php-format
+msgid ""
+"%1$s Oops! %2$s %5$s %2$s %3$s Don't worry, This error message is only "
+"visible to Administrators. %4$s %2$s"
+msgstr ""
+"%1$s Hoppá! %2$s %5$s %2$s %3$s Ne aggódjon, ezt a hibaüzenetet csak "
+"adminisztrátorok látják. %4$s %2$s"
+
+#: analytify-general.php:389
+#, php-format
+msgid "Invalid nonce for: %s"
+msgstr "Érvénytelen elnevezés: %s"
+
+#: analytify-general.php:397
+#, php-format
+msgid "Access denied for: %s"
+msgstr "Hozzáférés megtagadva: %s"
+
+#: analytify-general.php:473
+msgid "No activity this period"
+msgstr "Tevékenység nélküli időszak"
+
+#: classes/analytify-sanitize.php:39
+#, php-format
+msgid "%1$s was not expecting data to be an array."
+msgstr "%1$s adat nem lehet tömb"
+
+#: classes/analytify-sanitize.php:60
+#, php-format
+msgid "%1$s was expecting an array but got something else: \"%2$s\""
+msgstr "%1$s tömböt vár, de mást kapott: \"%2$s\""
+
+#: classes/analytify-sanitize.php:66
+#, php-format
+msgid "%1$s was expecting a string but got something else: \"%2$s\""
+msgstr "%1$s karakterláncot vár, de mást kapott: \"%2$s\""
+
+#: classes/analytify-sanitize.php:73
+#, php-format
+msgid "%1$s was expecting a valid key but got something else: \"%2$s\""
+msgstr "%1$s egy érvényes kulcsot vár, de mást kapott: \"%2$s\""
+
+#: classes/analytify-sanitize.php:81
+#, php-format
+msgid "%1$s was expecting text but got something else: \"%2$s\""
+msgstr "%1$s szöveget várt, de mást kapott: \"%2$s\""
+
+#: classes/analytify-sanitize.php:88
+#, php-format
+msgid "%1$s was expecting serialized data but got something else: \"%2$s\""
+msgstr "%1$s seriaizált adatt várt, de mást kapott: \"%2$s\""
+
+#: classes/analytify-sanitize.php:109
+#, php-format
+msgid "%1$s was expecting a valid numeric but got something else: \"%2$s\""
+msgstr "%1$s számot várt, de mást kapott: \"%2$s\""
+
+#: classes/analytify-sanitize.php:116
+#, php-format
+msgid "%1$s was expecting an integer but got something else: \"%2$s\""
+msgstr "%1$s egész számot várt, de mást kapott: \"%2$s\""
+
+#: classes/analytify-sanitize.php:123
+#, php-format
+msgid ""
+"%1$s was expecting a positive number (int) but got something else: \"%2$s\""
+msgstr "%1$s pozitív egyész számot várt, de mást kapott: \"%2$s\""
+
+#: classes/analytify-sanitize.php:130
+#, php-format
+msgid ""
+"%1$s was expecting a negative number (int) but got something else: \"%2$s\""
+msgstr "%1$s negatív egyész számot várt, de mást kapott: \"%2$s\""
+
+#: classes/analytify-sanitize.php:137
+#, php-format
+msgid "%1$s was expecting 0 (int) but got something else: \"%2$s\""
+msgstr "%1$s nullát várt de mást kapott: \"%2$s\""
+
+#: classes/analytify-sanitize.php:144
+#, php-format
+msgid "%1$s was expecting an empty value but got something else: \"%2$s\""
+msgstr "%1$s üres értéket várt, de mást kapott: \"%2$s\""
+
+#: classes/analytify-sanitize.php:151
+#, php-format
+msgid "%1$s was expecting a URL but got something else: \"%2$s\""
+msgstr "%1$s URL-t várt, de mást kapott: \"%2$s\""
+
+#: classes/analytify-sanitize.php:159
+#, php-format
+msgid "%1$s was expecting a bool but got something else: \"%2$s\""
+msgstr "%1$s boolean értéket várt, de mást kapott: \"%2$s\""
+
+#: classes/analytify-sanitize.php:165
+#, php-format
+msgid "Unknown sanitization rule \"%1$s\" supplied by %2$s"
+msgstr "%2$s Ismeretlen ellenőrzést hajtott végre: \"%1$s\" "
+
+#: classes/analytify-settings.php:100 welcome.php:296
+msgid "Authentication"
+msgstr "Bejelentkezés"
+
+#: classes/analytify-settings.php:105
+msgid "Profile"
+msgstr "Profil"
+
+#: classes/analytify-settings.php:112
+msgid "Admin"
+msgstr "Adminisztráció"
+
+#: classes/analytify-settings.php:118
+msgid "Advanced"
+msgstr "Haladó"
+
+#: classes/analytify-settings.php:123
+msgid "Help"
+msgstr "Segítség"
+
+#: classes/analytify-settings.php:157
+msgid "Text Input"
+msgstr "Szöveges mező"
+
+#: classes/analytify-settings.php:158
+msgid "Text input description"
+msgstr "Szöveges mező leírása"
+
+#: classes/analytify-settings.php:167
+msgid "Install Google Analytics tracking code"
+msgstr "Google Analytics traking kód telepítése"
+
+#: classes/analytify-settings.php:168
+msgid ""
+"Insert Google Analytics JS code in header to track the visitors. You can "
+"uncheck this option if you have already insert the GA code in your website."
+msgstr ""
+"Google Analytics JS kód beillesztése a fejlécbe, hogy nyomon kövessük a "
+"látogatókat. Ha a GA kódot már beillesztette az  oldalra, ezt az opciót "
+"állítsa inaktívra."
+
+#: classes/analytify-settings.php:173
+msgid "Exclude users from tracking"
+msgstr "Ezeket a felhasználókat ne kövesse"
+
+#: classes/analytify-settings.php:174
+msgid "Don't insert the tracking code for above user roles."
+msgstr "A fenti felhasználói csoportoknak ne illesszen be követőkódot."
+
+#: classes/analytify-settings.php:182
+msgid "Profile for posts (Backend/Front-end)"
+msgstr "Postok profilja (Backend / Front-end)"
+
+#: classes/analytify-settings.php:183
+msgid ""
+"Select your website profile for Backend/Front-end Stats. You can select any "
+"Website profile. It will show Analytics for your selected website profile"
+msgstr ""
+"Válassza ki weboldala profilját a Backend/Front-end statisztikákhoz. "
+"Bármelyik weboldal profilt választhatja. Analyticnek az általa választott "
+"profilt mutatja."
+
+#: classes/analytify-settings.php:192
+msgid "Profile for Dashboard"
+msgstr "Dashboard Profilja"
+
+#: classes/analytify-settings.php:193
+msgid ""
+"Select your website profile for Dashboard Stats. You can select any Website "
+"profile. It will show Analytics for your selected website profile."
+msgstr ""
+"Válasszon profilt a Dasboard statisztikához. Bármelyik weboldal profilt "
+"választhatja. Analyticsnek a kiválasztott profilt mutatja."
+
+#: classes/analytify-settings.php:200
+msgid "Hide Profiles list"
+msgstr "Profil listák elrejtése:"
+
+#: classes/analytify-settings.php:201
+msgid ""
+"Hide the selection of profiles for Dashboard and Posts (Back-end/Front-end). "
+"Best to hide for your clients not to see other profiles."
+msgstr ""
+"Dasboard és Post profilok elrejtése. Ajánlott, hogy a látogatók ne "
+"láthassanak más profilt."
+
+#: classes/analytify-settings.php:208
+msgid "Disable Analytics under posts/pages (wp-admin)"
+msgstr "Analytics deactiválálsa a posts/pages részeknél (wp-admin)"
+
+#: classes/analytify-settings.php:209
+msgid ""
+"Check it, If you don't want to load Stats by default on all pages. Remember, "
+"There is a section under each post/page. You can still view Stats on pages "
+"you want."
+msgstr ""
+"Jelölje be ha alapértelmezetten nem szeretne statisztikákat megjeleníteni "
+"mindenoldalon. Figyelem, minden post/page alatt van egy ilyen rész. A "
+"kiválasztott oldalakon még így is látható a statisztika."
+
+#: classes/analytify-settings.php:214
+msgid "Show Analytics to (roles)"
+msgstr "Az alábbi szerepköröknek mutassa az analitikát:"
+
+#: classes/analytify-settings.php:215
+msgid "Show Analytics to above selected user roles only."
+msgstr "Csak a fent kiválasztott szerepköröknek mutassa az alayticset."
+
+#: classes/analytify-settings.php:223 welcome.php:241 welcome.php:349
+#: welcome.php:383
+msgid "Analytics on Post types"
+msgstr "Analytics a postoknál"
+
+#: classes/analytify-settings.php:224
+msgid "Show Analytics under the above post types only"
+msgstr "Csak a fenti post typeoknál mutasson Analyticset"
+
+#: classes/analytify-settings.php:224
+msgid ""
+"Show Analytics under the above post types only. Buy <a href=\"http://"
+"analytify.io/pricing/\" target=\"_blank\">Premium</a> version for Custom "
+"Post Types."
+msgstr ""
+"Csak a fenti post typoknál mutasson Analytikát.  Vásárolja meg a <a href="
+"\"http://analytify.io/pricing/\" target=\"_blank\">Premium</a> verziót a "
+"Custom Post Type-ok számára."
+
+#: classes/analytify-settings.php:232
+msgid "Edit pages/posts Analytics panels:"
+msgstr "Oldalk, bejegyzések Analitikájának szerkesztése:"
+
+#: classes/analytify-settings.php:233
+msgid "Select which Stats panels you want to display under posts/pages."
+msgstr ""
+"Válassza ki melyik Statisztikát szeretné megjeleníteni a bejegyzéseknél / "
+"oldalaknál."
+
+#: classes/analytify-settings.php:233
+msgid ""
+"Select which Stats panels you want to display under posts/pages. Only "
+"\"General Stats\" will visible in Free Version. Buy <a href=\"http://"
+"analytify.io/pricing/\" target=\"_blank\">Premium</a> version to see the "
+"full statistics."
+msgstr ""
+"Válassza ki melyik Statisztikát szeretné megjeleníteni a bejegyzéseknél / "
+"oldalaknál. Csak az Általános Statisztikák lesznek láthatóak az ingyenes "
+"verzióban. Vásárolja meg a <a href=\"http://analytify.io/pricing/\" target="
+"\"_blank\">Premium</a> verziót, hogy láthassa az összes statisztikát."
+
+#: classes/analytify-settings.php:237
+msgid "General Stats"
+msgstr "Általános statisztikák"
+
+#: classes/analytify-settings.php:238
+#: views/default/admin/geographic-stats.php:55
+msgid "Geographic Stats"
+msgstr "Földrajzi statisztikák"
+
+#: classes/analytify-settings.php:239 inc/analytics-dashboard.php:258
+msgid "System Stats"
+msgstr "Rendszer statisztikák"
+
+#: classes/analytify-settings.php:240
+msgid "Keywords Stats"
+msgstr "Kulcsszó statisztikák"
+
+#: classes/analytify-settings.php:241
+msgid "Social Media Stats"
+msgstr "Social média statisztikák"
+
+#: classes/analytify-settings.php:242
+msgid "Referrers Stats"
+msgstr "Honnan jött statisztikák"
+
+#: classes/analytify-settings.php:247
+msgid "Exclude Analytics on specific pages:"
+msgstr "Az adott oldalakon Analytics kizzáráse:"
+
+#: classes/analytify-settings.php:248
+msgid ""
+"Enter ID's of posts or pages separated by commas on which you don't want to "
+"show Analytics e.g 11,45,66"
+msgstr ""
+"Soroja fel vesszővel elválasztva mely oldalakon nem szeretné megmutatni az "
+"Alalyticset pl.: 11,45,66"
+
+#: classes/analytify-settings.php:256
+msgid "Do you want to use your own API keys ?"
+msgstr "Saját API kulcsát szeretné használni?"
+
+#: classes/analytify-settings.php:257
+msgid ""
+"It is highly recommended by Google to use your own API keys. <br />You need "
+"to create a Project in Google <a target='_blank' href='https://console."
+"developers.google.com/project'>Console</a>. <br />Here is a short <a "
+"target='_blank' href='https://www.youtube.com/watch?v=X36InlRJtuk'>video "
+"guide</a> to get your own ClientID, Client Secret and Redirect URL and enter "
+"them in below inputs."
+msgstr ""
+"Google által ajánlott, hogy a saját API kulcsát használja. <br/> Google  <a "
+"target='_blank' href='https://console.developers.google.com/"
+"project'>Consoleban</a> egy projectet kell létrehoznia. <br/>Itt egy rövid "
+"<a target='_blank' href='https://www.youtube.com/watch?v=X36InlRJtuk'>video</"
+"a> arról, hol láthatja a Client Id-t, a Client Secret kódot és a Redirect "
+"URL-t, és ezeket másolja az alábbi beviteli mezőkbe."
+
+#: classes/analytify-settings.php:264
+msgid "ClientID:"
+msgstr "ClientID:"
+
+#: classes/analytify-settings.php:265
+msgid "Your Client ID"
+msgstr "Az Ön Clinet ID-je"
+
+#: classes/analytify-settings.php:272
+msgid "Client Secret:"
+msgstr "Client Secret:"
+
+#: classes/analytify-settings.php:273
+msgid "Your Client Secret"
+msgstr "Az Ön Client Secret kulcsa"
+
+#: classes/analytify-settings.php:280
+msgid "Redirect URL:"
+msgstr "Redirect URL:"
+
+#: classes/analytify-settings.php:281
+#, php-format
+msgid ""
+"( Redirect URL is very important when you are using your own Keys Use this "
+"Redirect URL  %1$s )"
+msgstr ""
+"(A Redirect URL nagyon fontos, ha saját kulcsot használ használja az alábbi "
+"redirect URL-t  %1$s)"
+
+#: classes/analytify-settings.php:294
+msgid "Anonymize IP addresses"
+msgstr "IP cím anonimmá tétele"
+
+#: classes/analytify-settings.php:295
+msgid ""
+"Detailed information about IP Anonymization in Google Analytics can be found "
+"<a href='https://support.google.com/analytics/answer/2763052'>Details</a>"
+msgstr ""
+"Az IP anonimmá tételéről <a href='https://support.google.com/analytics/"
+"answer/2763052'>Részletes leírás itt</a> található."
+
+#: classes/analytify-settings.php:300
+msgid "Force Analytics Traffic Over SSL"
+msgstr "Analytics forgalom SSL -el"
+
+#: classes/analytify-settings.php:301
+msgid ""
+"If your site is HTTPS based, Analytics traffic will always go over SSL. If "
+"you have an insecure site, but wish Analytics traffic to still be secure, "
+"use this option."
+msgstr ""
+"Ha az oldala HTTPS-t használ, az Analytics forgalom SSL-el megy. Ha nem sll-"
+"es az oldala, de szeretné ha az Analytics forgalom mégis biztonságos legyen, "
+"használja ezt az opciót."
+
+#: classes/analytify-settings.php:306
+msgid "Track User ID"
+msgstr "Követőkód"
+
+#: classes/analytify-settings.php:307
+msgid ""
+"Detailed information about Track User ID in Google Analytics can be found <a "
+"href='https://support.google.com/analytics/answer/3123662'>Details</a>"
+msgstr ""
+"A követőkódról <a href='https://support.google.com/analytics/"
+"answer/3123662'>Részletes leírás itt</a> található."
+
+#: classes/analytify-settings.php:312
+msgid "Demographic & Interest Tracking"
+msgstr "Demográfiai követés"
+
+#: classes/analytify-settings.php:313
+msgid ""
+"This allows you to view extra dimensions about users (Age, Gender, Affinity "
+"Categories, In-Market Segments and Other Categories)."
+msgstr ""
+"Ezzel a felhasználóról további infomrációt láthatunk. (kor, nem, kategóriák, "
+"piaci szegmensek és más kategóriák)."
+
+#: classes/analytify-settings.php:318
+msgid "Page Not Found (404)"
+msgstr "Oldal nem található (404)"
+
+#: classes/analytify-settings.php:319
+msgid "Track all 404 page links"
+msgstr "Minden 404-es oldal követése"
+
+#: classes/analytify-settings.php:324
+msgid "JavaScript Errors"
+msgstr "JavaScript Hibák"
+
+#: classes/analytify-settings.php:325
+msgid "Track all Javascript errors"
+msgstr "Javascript hibák követése"
+
+#: classes/analytify-settings.php:330
+msgid "AJAX Errors"
+msgstr "AJAX hibák"
+
+#: classes/analytify-settings.php:331
+msgid "Track all AJAX errors"
+msgstr "AJAX hibák követése"
+
+#: classes/analytify-settings.php:336
+msgid "Setup Cross-domain Tracking"
+msgstr "Cross-domain követés beállítása"
+
+#: classes/analytify-settings.php:337
+msgid ""
+"This will add <code>allowLinker:true</code> tag to tracking code. Read this "
+"<a href='https:\\//analytify.io/doc/setup-cross-domain-tracking-"
+"wordpress'>guide</a> for more information."
+msgstr ""
+"Ez a <code>allowLinker:true</code> tag hozzáadást teszi lehetővé a "
+"követőkódban.  Bővebb információér olvassa el a <a href='https:\\//analytify."
+"io/doc/setup-cross-domain-tracking-wordpress'>tájékoztatót</a>."
+
+#: classes/analytify-settings.php:342
+msgid "Custom JS Code"
+msgstr "Saját JS kód"
+
+#: classes/analytify-settings.php:343
+msgid ""
+"This will add inline tracking code before sending the pageview hit to Google "
+"Analytics."
+msgstr ""
+"Ez beágyazott követőkódok ad hozzá, mielőtt  az oldal megtekintését "
+"elküldené a Google Analytics felé."
+
+#: classes/analytify-settings.php:767
+msgid "Choose Image"
+msgstr "Válasszon képet"
+
+#: classes/analytify-settings.php:788
+msgid "Choose File"
+msgstr "Válasszon fájlt"
+
+#: classes/analytify-settings.php:844
+msgid ""
+"You have allowed your site to access the Analytics data from Google. Logout "
+"below to disconnect it."
+msgstr ""
+"Engedélyezte, hogy oldala Analytics adatot jelenítsen meg a Google-től. "
+"Jelentkezzen ki lent, hogy bontsa a kapcsolatot."
+
+#: classes/analytify-settings.php:855
+msgid "Log in with Google Analytics Account"
+msgstr "Bejelentkezés Google Analytics fiókkal"
+
+#: classes/analytify-settings.php:882
+msgid "Support"
+msgstr "Support"
+
+#: classes/analytify-settings.php:884
+msgid "As this is a free plugin, we do not provide support."
+msgstr "Mivel ez egy ingyenes plugin nem adunk technikai segítséget."
+
+#: classes/analytify-settings.php:886
+#, php-format
+msgid ""
+"You may ask the WordPress community for help by posting to the %1$s "
+"WordPress.org support forum %2$s. Response time can range from a few days to "
+"a few weeks and will likely be from a non-developer."
+msgstr ""
+"A WordPress közösségtől kérhet segítséget, az alábbi  %1$s WordPress.org "
+"support forumon %2$s. A válaszok pár naptól pár hétig tarthatnak és "
+"valószínüleg nem fejlesztő fog választ adni."
+
+#: classes/analytify-settings.php:888
+#, php-format
+msgid ""
+"If you want a %1$s timely response via email from a developer %2$s who works "
+"on this plugin, %3$s upgrade to WP Analytify Pro %4$s and send us an email."
+msgstr ""
+"Ha gyors választ szeretne %1$s egy olyan fejlesztőtől %2$s aki ezen a "
+"bővítményen dolgozik, %3$s vásárolja meg a  WP Analytify Pro-t %4$s és "
+"küldjön nekünk emailt."
+
+#: classes/analytify-settings.php:890
+#, php-format
+msgid "If you've found a bug, please %1$s submit an issue at Github %2$s."
+msgstr "Ha hibát talált, kérem %1$s küldjön egy issue-t Github-on %2$s."
+
+#: classes/analytify-settings.php:896
+msgid "Diagnostic Info &amp; Error Log"
+msgstr "Diagnosztikai adatok és Hiba Log"
+
+#: classes/analytify-settings.php:911
+msgid "Test Email"
+msgstr "Teszt Email"
+
+#: classes/analytify-settings.php:912
+msgid "Note: Please save changes before sending a test email."
+msgstr "Megjegyzés: Kérem mentse el a módosításokat mielőtt tesz emailt küld."
+
+#: classes/analytify-settings.php:992
+msgid "WP Analytify Plugin Settings"
+msgstr "WP Analytify Bővítmény beállításai"
+
+#: classes/analytify-utils.php:61 wp-analytify.php:995
+msgctxt "Hour Time"
+msgid "h"
+msgstr "ó"
+
+#: classes/analytify-utils.php:64 wp-analytify.php:998
+msgctxt "Minute Time"
+msgid "m"
+msgstr "p"
+
+#: classes/analytify-utils.php:67 wp-analytify.php:1001
+msgctxt "Second Time"
+msgid "s"
+msgstr "m"
+
+#: classes/analytify-utils.php:154
+#, php-format
+msgid ""
+"<b>Daily Limit Exceeded:</b> This Indicates that user has exceeded the daily "
+"quota (either per project or per view (profile)). Please <a href=\"%1$s\" "
+"target=\"_blank\">follow this tutorial</a> to fix this issue. let us know "
+"this issue (if it still doesn't work) in the Help tab of Analytify->settings "
+"page."
+msgstr ""
+"<b>A napi korlátot túllépte::</b>Ez azt jelzi hogy az felhasználó túllépte a "
+"napi kvótát (vagy az időszaki kvótát, vagy a megtekintések számára "
+"vonatkozót). Kérjük tekintse meg <a href=\"%1$s\" target=\"_blank\">ezt a "
+"leírást</a> arról, hogy oldhatja meg a problémát.Kérjük az Analytify "
+"Segítség fülén a beállítások oldalon jelezze felénk ezt a problémát (ha még "
+"minidg nem működik)"
+
+#: classes/analytify-utils.php:167
+msgid ""
+"Insufficient Permissions: Indicates that the user does not have sufficient "
+"permissions for the entity specified in the query. let us know this issue in "
+"Help tab of Analytify->settings page."
+msgstr ""
+"Nem megfelelő jogosultságok: Ez azt jelzi, hogy a felhasználónak nincsenek "
+"megfelelő jogosultságai a lekérdezés megtekintéséhez. Kérjük az Analytify "
+"Segítség fülén a beállítások oldalon jelezze felénk ezt a problémát (ha még "
+"minidg nem működik)."
+
+#: classes/analytify-utils.php:180
+#, php-format
+msgid ""
+"<b>usageLimits.userRateLimitExceededUnreg:</b> Indicates that the "
+"application needs to be registered in the Google API Console. Read <a href="
+"\"%1$s\">this guide</a> for to make it work. let us know this issue in (if "
+"it still doesn't work) Help tab of Analytify->settings page."
+msgstr ""
+"<b>usageLimits.userRateLimitExceededUnreg:</b> Azt jelzi, hogy az "
+"applikációt regisztrálni kell a Google API konsoljában. Kérjük olvassa el <a "
+"href=\"%1$s\">ezt a leírást</a> arról hogy oldhatja meg ezt a problámát. "
+"Kérjük az Analytify Segítség fülén a beállítások oldalon jelezze felénk ezt "
+"a problémát (ha még minidg nem működik)."
+
+#: classes/analytify-utils.php:194
+#, php-format
+msgid ""
+"<br>User Rate Limit Exceeded:</b> Indicates that the user rate limit has "
+"been exceeded. The maximum rate limit is 10 qps per IP address. The default "
+"value set in Google API Console is 1 qps per IP address. You can increase "
+"this limit in the <a href=\"%1$s\">Google API Console</a> to a maximum of 10 "
+"qps. let us know this issue in Help tab of Analytify->settings page."
+msgstr ""
+"<br>Túllépték a felhasználói korlátot:</b>Ez azt jelenti, hogy a "
+"felhasználókikorlátot túllépték. A maximum korlát, 10 lekérdezés per "
+"másodperc Ip címenként. Az alapértelmezett érték a Google API konzolján 1 "
+"lekérdezés per másodperc IP címenként.Ezt a korlátot a  <a href=\"%1$s"
+"\">Google API Konzolján</a> tudja maximum 10 lekérés per másodpercre "
+"állítani IP cmenként. Kérjük az Analytify Segítség fülén a beállítások "
+"oldalon jelezze felénk ezt a problémát (ha még minidg nem működik)."
+
+#: classes/analytify-utils.php:207
+msgid ""
+"<b>Rate Limit Exceeded:</b> Indicates that the global or overall project "
+"rate limits have been exceeded. let us know this issue in Help tab of "
+"Analytify->settings page."
+msgstr ""
+"<b>Túllépték a korlátot:</b> Azt jelzi, hogy a globális, vagy a projectre "
+"kiszabott korlátot túlépték. Kérjük az Analytify Segítség fülén a "
+"beállítások oldalon jelezze felénk ezt a problémát (ha még minidg nem "
+"működik)."
+
+#: classes/analytify-utils.php:220
+msgid ""
+"<b>Quota Exceeded:</b> This indicates that the 10 concurrent requests per "
+"view (profile) in the Core Reporting API has been reached. let us know this "
+"issue in Help tab of Analytify->settings page."
+msgstr ""
+"<b>Kvóta túllépése:</b>Azt jelzi, hogy a 1 konkurens profil megtekintést "
+"elérték a Core Reporting API-ban. Kérjük az Analytify Segítség fülén a "
+"beállítások oldalon jelezze felénk ezt a problémát (ha még minidg nem "
+"működik)."
+
+#: classes/analytify-utils.php:234
+#, php-format
+msgid ""
+"<b>Access Not Configured:</b> Google Analytics API has not been used in this "
+"project before or it is disabled. Enable it by visiting your project in <a "
+"href=\"%1$s\">Google Project Console</a> then retry. If you enabled this API "
+"recently, wait a few minutes for the action to propagate to our systems and "
+"retry."
+msgstr ""
+"<b>Hozzáférés beállításai hiányosak:</b>Googel Analytics API még nem volt "
+"használva ebben a projectben, vagy inaktiválták. Engedéyezze a<a href=\"%1$s"
+"\">Google Project Konzolon</a>, majd próbálja újra. Ha az API-t nem rég "
+"engedélyezte, várjon pár percet, hogy rendszerével megtörténjen az "
+"összeköttetés, majd próbálja újra."
+
+#: inc/analytics-dashboard.php:98 inc/analytify-go-pro.php:152
+#: inc/class-wpa-adminbar.php:39
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: inc/analytics-dashboard.php:99
+msgid "Complete Statistics of the Site"
+msgstr "Oldal teljes statisztikája"
+
+#: inc/analytics-dashboard.php:116 wp-analytify.php:352
+msgid "From:"
+msgstr "Tól:"
+
+#: inc/analytics-dashboard.php:119 wp-analytify.php:355
+msgid "To:"
+msgstr "Ig:"
+
+#: inc/analytics-dashboard.php:124 wp-analytify.php:362
+msgid "View Stats"
+msgstr "Statisztikák megtekintése"
+
+#: inc/analytics-dashboard.php:126 wp-analytify.php:364
+msgid "Last 30 days"
+msgstr "Utolsó 30 nap"
+
+#: inc/analytics-dashboard.php:128 wp-analytify.php:366
+msgid "This month"
+msgstr "Aktuális hónap"
+
+#: inc/analytics-dashboard.php:130 wp-analytify.php:368
+msgid "Last month"
+msgstr "Múlt hónap"
+
+#: inc/analytics-dashboard.php:133 wp-analytify.php:371
+msgid "Last 3 months"
+msgstr "Utolsó 3 hónap"
+
+#: inc/analytics-dashboard.php:135 wp-analytify.php:373
+msgid "Last 6 months"
+msgstr "Utolsó 6 hónap"
+
+#: inc/analytics-dashboard.php:138 wp-analytify.php:376
+msgid "Last year"
+msgstr "Tavalyi év"
+
+#: inc/analytics-dashboard.php:141 wp-analytify.php:379
+msgid "Custom Range"
+msgstr "Saját időtartam"
+
+#: inc/analytics-dashboard.php:141 wp-analytify.php:379
+msgid "Select a custom date"
+msgstr "Válasszon dátumot"
+
+#: inc/analytics-dashboard.php:163
+#: views/default/admin/single-general-stats.php:15
+msgid "General Statistics"
+msgstr "Általános statisztikák"
+
+#: inc/analytics-dashboard.php:171
+msgid "days"
+msgstr "nap"
+
+#: inc/analytics-dashboard.php:185
+msgid "Did you know that total time on your site is"
+msgstr "Tutdta, hogy az oldalán töltött teljes idő:"
+
+#: inc/analytics-dashboard.php:195
+msgid "Top pages by views"
+msgstr "Legnézettebb oldalak"
+
+#: inc/analytics-dashboard.php:214
+msgid "List of the top pages and posts."
+msgstr "Legnézettebb bejegyzések és oldalak listája"
+
+#: inc/analytics-dashboard.php:227
+msgid "Geographic"
+msgstr "Földrajzi"
+
+#: inc/analytics-dashboard.php:247
+msgid "Listing statistics of top countries and cities."
+msgstr "Top országok és városok litája"
+
+#: inc/analytics-dashboard.php:301
+msgid "How people are finding you (keywords)"
+msgstr "Hogy találnak Önre (kulcsszavak)"
+
+#: inc/analytics-dashboard.php:303 inc/analytics-dashboard.php:339
+#: inc/analytics-dashboard.php:377
+msgid "Total Visits"
+msgstr "Összes látogatás"
+
+#: inc/analytics-dashboard.php:324
+msgid "Listing your ranked keywords"
+msgstr "Kulcszsvak listája"
+
+#: inc/analytics-dashboard.php:337
+msgid "Social Media"
+msgstr "Social Média"
+
+#: inc/analytics-dashboard.php:363
+msgid "See how many users are coming to your site from Social media"
+msgstr "Hány látogató érkezik social médiáról"
+
+#: inc/analytics-dashboard.php:375
+msgid "Top Referrers"
+msgstr "Top refferers"
+
+#: inc/analytics-dashboard.php:401
+msgid "who are the strong Referrers to your site ?? See above"
+msgstr "hpnnan jönnek legtöbben a látogatók? Nézze meg felül."
+
+#: inc/analytics-dashboard.php:413
+msgid "What's happening when users come to your site."
+msgstr "Mi történik ha a látogató az oldalára érkezik."
+
+#: inc/analytics-dashboard.php:446
+msgid "You must be authenticated to see the Analytics Dashboard."
+msgstr "Hitelesítenie kell magát, hogy láthassa az Analytics Dashboard-ot."
+
+#: inc/analytics-dashboard.php:450
+msgid "You don't have access to Analytify Dashboard."
+msgstr "Nincs hozzáférése az Analytify Dashboardhoz."
+
+#: inc/analytify-go-pro.php:116
+msgid "Dashboard (Advanced)"
+msgstr "Dashboard (Haladó)"
+
+#: inc/analytify-go-pro.php:117 inc/analytify-go-pro.php:153
+msgid "Analytics under Posts (admin)"
+msgstr "Bejegyzések alatti analitikák (admin)"
+
+#: inc/analytify-go-pro.php:118 inc/analytify-go-pro.php:154
+msgid "Analytics under Pages (admin)"
+msgstr "Oldalak alatti analitikák (admin)"
+
+#: inc/analytify-go-pro.php:119
+msgid "Comparison Stats (Visitors & Views monthly/yearly)"
+msgstr "Összevető statisztikák (látogatók és megtekintések havi / éves)"
+
+#: inc/analytify-go-pro.php:120
+msgid "Live Stats"
+msgstr "Élő statisztikák"
+
+#: inc/analytify-go-pro.php:121
+msgid "ShortCodes"
+msgstr "ShortKódok"
+
+#: inc/analytify-go-pro.php:122
+msgid "Extentions"
+msgstr "Bővítmények"
+
+#: inc/analytify-go-pro.php:123
+msgid "Analytics under Custom Post Types (front/admin)"
+msgstr "Custom Post Type-ok alatti analitikák (front/admin)"
+
+#: inc/analytify-go-pro.php:124
+msgid "Ajax & JS Error Stats"
+msgstr "Ajax, JS hiba statisztikák"
+
+#: inc/analytify-go-pro.php:125
+msgid "404 Page Error Stats"
+msgstr "404 statisztikák "
+
+#: inc/analytify-go-pro.php:126
+msgid "Priority Email Support"
+msgstr "Elsődleges email support"
+
+#: inc/analytify-go-pro.php:127
+msgid "No promotional ads"
+msgstr "Ne legyenek hirdetések"
+
+#: inc/analytify-go-pro.php:140 inc/analytify-go-pro.php:141
+#: inc/analytify-go-pro.php:142
+msgid "Similar but limited"
+msgstr "Hasonló de korlátozott"
+
+#: inc/analytify-go-pro.php:155 inc/analytify-go-pro.php:156
+#: inc/analytify-go-pro.php:157 inc/analytify-go-pro.php:158
+#: inc/analytify-go-pro.php:159
+msgid "No"
+msgstr "Nem"
+
+#: inc/analytify-go-pro.php:160 inc/analytify-go-pro.php:161
+msgid "Only Tracking"
+msgstr "Csak követés"
+
+#: inc/analytify-go-pro.php:162
+msgid "WordPress.org Forum Support"
+msgstr "WordPress.org Forum Support"
+
+#: inc/analytify-go-pro.php:163
+msgid "Promotional Ads"
+msgstr "Promocionális hirdetések"
+
+#: inc/analytify-go-pro.php:169
+#, php-format
+msgid "%1$sUpgrade Now%2$s use %3$s discount code for 10&#37; OFF "
+msgstr ""
+"%1$sFrissítsen Pro verzióra%2$s használja az alábbi kódot %3$s hogy 10&#37; "
+"kevesebbér vásárolhassa meg. "
+
+#: inc/analytify-widgets.php:9
+msgid "Analytify Live Stats"
+msgstr "Analytify Live Stats"
+
+#: inc/analytify-widgets.php:10
+msgid "It shows Live Stats of your site."
+msgstr "Valós idejű statusztikákat mutat az oldalról."
+
+#: inc/analytify-widgets.php:28 views/default/admin/top-pages-stats.php:12
+msgid "Title"
+msgstr "Cím"
+
+#: inc/analytify-widgets.php:33
+msgid "Description:"
+msgstr "Leírás:"
+
+#: inc/class-analytify-logging.php:47
+msgid "Logs"
+msgstr "Logok"
+
+#: inc/class-wpa-adminbar.php:35
+msgid "view complete Analytics of your site"
+msgstr "Oldal teljes analitikájának megtekintése"
+
+#: inc/class-wpa-adminbar.php:42 wp-analytify.php:701
+msgid "Settings"
+msgstr "Beállítások"
+
+#: inc/class-wpa-adminbar.php:56
+msgid "Edit Post"
+msgstr "Bejegyzés szerkesztése"
+
+#: inc/page-addons.php:30
+msgid "Enhanced E-Commerce Tracking for WooCommerce"
+msgstr "E-commerce követés WooCommercehez"
+
+#: inc/page-addons.php:32 inc/page-addons.php:39
+msgid ""
+"This Add-on will track the e-commerce behaviour of users, digital Sales, "
+"Transactions and Revenues in Google Analytics and Displays Stats in a unique "
+"and intiutive way which is very understandable even for non-technical "
+"WordPress users."
+msgstr ""
+"Ez a bővítmény a felhasználók vásárlási szokásait követi Értékesítések, "
+"Tranzakciók és nyereség a Google Analitocsben, és a sztatisztikákat Olyan "
+"emberek is könnyen értelmezhetik akiknek nincsenek WordPress-es technikai "
+"ismereteik."
+
+#: inc/page-addons.php:37
+msgid "Enhanced E-Commerce Tracking for Easy Digital Downloads"
+msgstr "E-commerce követés  Easy Digital Downloads-hoz"
+
+#: inc/page-addons.php:44
+msgid "Campaings Tracking "
+msgstr "Kampányok követése"
+
+#: inc/page-addons.php:46
+msgid ""
+"Everyone runs campaigns through social media or create backlinks. This add-"
+"on helps you to show your campaigns stats in a beautiful dashboard."
+msgstr ""
+"Mindenki indít kampányokat social médián kereszük, vagy linkekkel. Ez a "
+"bővítmény a kampányok szatisztikáját mutatja meg."
+
+#: inc/page-addons.php:51
+msgid "Google Analytics Dashboard widget (FREE)"
+msgstr "Google Analytics Dashboard widget (ingyenes)"
+
+#: inc/page-addons.php:53
+msgid ""
+"Google Analytics Dashboard widget is a FREE Add-on by Analytify to show "
+"Google Analytics widget at WordPress dashboard."
+msgstr ""
+"Google Analytics Dashboard widget az Analytify  ingyenes bővítménye, ami a "
+"Google Analytics widgetet mutatja a WordPress Dashboardon."
+
+#: inc/page-addons.php:59
+msgid "Email Notifications"
+msgstr "E-mail értesítések"
+
+#: inc/page-addons.php:61
+msgid ""
+"Our Analytify For Email Notifications add-on sends your website analytics "
+"reports in email weekly and monthly."
+msgstr ""
+"Az Analytify Email éretsítések bővítménye hetente vagy havonta küld emailben "
+"elküldi az oldal analytics reportjait."
+
+#: inc/page-addons.php:79
+#, php-format
+msgid "%1$s Already Installed %2$s"
+msgstr "%1$s már telepítve lett %2$s"
+
+#: inc/page-addons.php:84
+#, php-format
+msgid "%1$s Activate Plugin %2$s"
+msgstr "%1$s Plugin aktiválása %2$s"
+
+#: inc/page-addons.php:89
+#, php-format
+msgid "%1$s Download %2$s"
+msgstr "%1$s Letöltés %2$s"
+
+#: inc/page-addons.php:90
+#, php-format
+msgid "%1$s Get this add-on %2$s"
+msgstr "%1$s Bővítmény telepítése %2$s"
+
+#: inc/page-addons.php:104
+msgid "Extend the functionality of Analytify with these awesome Add-ons"
+msgstr ""
+"Egészítse ki az Analytify funkcióit ezekkel a fantasztikus bővítményekkel"
+
+#: inc/page-campaigns.php:15
+msgid "Campaigns Dashboard"
+msgstr "Kampányok Dashboard"
+
+#: inc/wpa-core-functions.php:61
+#, php-format
+msgid ""
+"If you like %1$s Analytify %2$s please leave us a %5$s %3$s %6$s rating. "
+"%4$s A huge thank you from %1$s WPBrigade %2$s in advance!"
+msgstr ""
+"Ha elégedett  %1$s az Analytify bővítménnyel %2$s kérjük véleményezzen "
+"minket %5$s %3$s %6$s . %4$s Előre is köszönjük %1$s WPBrigade %2$s!"
+
+#: inc/wpa-core-functions.php:69
+msgid "Thank you for tracking with Analytify."
+msgstr "Köszönjük hogy az Analytify-t használja."
+
+#: inc/wpa-core-functions.php:236
+#, php-format
+msgid "%1$s %2$s"
+msgstr "%1$s %2$s"
+
+#: views/default/admin/browser-stats.php:6
+msgid "Browsers Statistics"
+msgstr "Böngésző statisztikák"
+
+#: views/default/admin/browser-stats.php:42
+msgid "listing statistics of top five browsers."
+msgstr "top öt böngésző statisztikájának listázása"
+
+#: views/default/admin/general-stats.php:35
+#: views/default/admin/general-stats.php:113
+msgid "Mobile"
+msgstr "Mobil"
+
+#: views/default/admin/general-stats.php:37
+#: views/default/admin/general-stats.php:113
+msgid "Tablet"
+msgstr "Tablet"
+
+#: views/default/admin/general-stats.php:39
+#: views/default/admin/general-stats.php:113
+msgid "Desktop"
+msgstr "Desktop"
+
+#: views/default/admin/general-stats.php:85
+#: views/default/admin/general-stats.php:96
+msgid "New"
+msgstr "Új"
+
+#: views/default/admin/general-stats.php:85
+#: views/default/admin/general-stats.php:97
+msgid "Returning"
+msgstr "Visszatérő"
+
+#: views/default/admin/general-stats.php:118
+msgid "User Devices"
+msgstr "Felhasználói eszközök"
+
+#: views/default/admin/general-stats.php:195
+#: views/default/admin/single-general-stats.php:20
+msgid "Sessions"
+msgstr "Sessionök"
+
+#: views/default/admin/general-stats.php:197
+#: views/default/admin/single-general-stats.php:22
+msgid ""
+"Total number of Sessions within the date range. A session is the period time "
+"a user is actively engaged with your website. app. etc."
+msgstr ""
+"Adott időszak összes Sessionje. A session az az időszak amit alátogató "
+"aktívan tölt az oldalán, vagy használja sz alkalmazását stb."
+
+#: views/default/admin/general-stats.php:202
+#: views/default/admin/geographic-stats.php:121
+#: views/default/admin/geographic-stats.php:142
+msgid "Visitors"
+msgstr "Látogatók"
+
+#: views/default/admin/general-stats.php:204
+#: views/default/admin/single-general-stats.php:28
+msgid ""
+"Users that have had at least one session within the selected date range. "
+"Includes both new and returning users."
+msgstr ""
+"Felhasználók akiknek a választott időszakban legalább egy sessionjük volt. "
+"Az új és visszatérő látogatókat i s tartalmazza."
+
+#: views/default/admin/general-stats.php:209
+#: views/default/admin/single-general-stats.php:32
+msgid "Page views"
+msgstr "Oldal megtekintések"
+
+#: views/default/admin/general-stats.php:211
+#: views/default/admin/single-general-stats.php:34
+msgid ""
+"Pageviews is the total number of pages viewed. Repeated views of a single "
+"page are counted."
+msgstr ""
+"Oldalmegtekintés az összes megtekintett oldal számát jelenti. Ugyanannak az "
+"oldalnak az ismételt megtekintése is számít."
+
+#: views/default/admin/general-stats.php:216
+msgid "Avg. time on site"
+msgstr "Oldalon töltött átlagos idő"
+
+#: views/default/admin/general-stats.php:218
+msgid "The amount of time a user spends on your site."
+msgstr "Az az idő amit a látogató az oldalon tölt."
+
+#: views/default/admin/general-stats.php:223
+#: views/default/admin/single-general-stats.php:44
+msgid "Bounce Rate"
+msgstr "Visszafordulási arány"
+
+#: views/default/admin/general-stats.php:225
+#: views/default/admin/single-general-stats.php:46
+msgid ""
+"Bounce Rate is the percentage of single-page visits (i.e. visits in which "
+"the person left your site from the entrance page without interacting with "
+"the page )."
+msgstr ""
+"A visszafordulási arány az egy oldal látogatottságának százaléka (pl.: egy "
+"látogatás mely során a felhasználó elhagyta az oldalt minden interakció "
+"nélkül)."
+
+#: views/default/admin/general-stats.php:230
+msgid "pages/session"
+msgstr "oldal / szession"
+
+#: views/default/admin/general-stats.php:232
+#: views/default/admin/general-stats.php:239
+#: views/default/admin/single-general-stats.php:52
+msgid ""
+"Pages/Session is the average number of pages viewed during a session. "
+"Repeated views of a single page are counted."
+msgstr ""
+"Oldal / Zzession — mutatja, hogy egy szession alkalmával átlagosan hány "
+"oldalt néztek meg. Ugyanannak az oldalnak a többszöri megtekintése is számít."
+
+#: views/default/admin/general-stats.php:237
+#: views/default/admin/single-general-stats.php:50
+msgid "% New sessions"
+msgstr "% Új szessionök"
+
+#: views/default/admin/general-stats.php:244
+msgid "New vs Returning visitors"
+msgstr "Új vs visszatérő látogatók"
+
+#: views/default/admin/general-stats.php:251
+msgid "Devices of visitors"
+msgstr "Látogatók eszközei"
+
+#: views/default/admin/general-stats.php:275
+msgid " ago"
+msgstr "óta"
+
+#: views/default/admin/geographic-stats.php:71
+msgid "High"
+msgstr "Magas"
+
+#: views/default/admin/geographic-stats.php:71
+msgid "Low"
+msgstr "Alacsony"
+
+#: views/default/admin/geographic-stats.php:120
+msgid "Top countries"
+msgstr "Top országok"
+
+#: views/default/admin/geographic-stats.php:141
+msgid "Top cities"
+msgstr "Top városok"
+
+#: views/default/admin/keywords-stats.php:23
+msgid "(not provided)"
+msgstr "(nincs)"
+
+#: views/default/admin/keywords-stats.php:25
+msgid "(not set)"
+msgstr "(nincs elküldve)"
+
+#: views/default/admin/os-stats.php:6
+msgid "Operating System Statistics"
+msgstr "Operációs rendszer statisztikák"
+
+#: views/default/admin/os-stats.php:31
+msgid "Listing statistics of top five operating systems."
+msgstr "Top öt operációs rendszer listája."
+
+#: views/default/admin/pages-stats.php:14
+msgid "Url link"
+msgstr "URL / hivatkozás"
+
+#: views/default/admin/pages-stats.php:15
+msgid "Entrance"
+msgstr "Belépés"
+
+#: views/default/admin/pages-stats.php:16
+msgid "Exits"
+msgstr "Kilépés"
+
+#: views/default/admin/pages-stats.php:17
+msgid "Entrance% Exits%"
+msgstr "Belépés% Kilépés%"
+
+#: views/default/admin/pages-stats.php:66
+#, php-format
+msgid "Did you know that %s people landed directly to your site at %s"
+msgstr "Tudta hogy %s érkezett az oldalra ekkor: %s"
+
+#: views/default/admin/single-general-stats.php:26
+msgid "visitors"
+msgstr "Látogatók"
+
+#: views/default/admin/single-general-stats.php:38
+msgid "Avg. time on Page"
+msgstr "Oldalon töltött átlagos idő"
+
+#: views/default/admin/single-general-stats.php:40
+msgid "The amount of time (session) a user spends on this page."
+msgstr "Átlagosan ennyi időt töltött a látogató az oldalon."
+
+#: views/default/admin/single-pages-stats.php:8
+msgid "What's happening when users come to this page."
+msgstr "Mi történik ha egy látogató az oldalra érkezik."
+
+#: views/default/admin/single-pages-stats.php:42
+msgid "Total Exits"
+msgstr "Összes kilépés"
+
+#: views/default/admin/single-pages-stats.php:57
+msgid "Did you know that"
+msgstr "Tudta hogy..."
+
+#: views/default/admin/single-pages-stats.php:57
+msgid "people landed at this page directly."
+msgstr "ember ékezett erre az oldalra."
+
+#: views/default/admin/system-stats.php:20
+msgid "Browsers statistics"
+msgstr "Böngésző statisztikák"
+
+#: views/default/admin/system-stats.php:21
+#: views/default/admin/system-stats.php:53
+#: views/default/admin/system-stats.php:81
+msgid "Visits"
+msgstr "Látogatások"
+
+#: views/default/admin/system-stats.php:52
+msgid "Operating system statistics"
+msgstr "Operációs rendszer statisztikák"
+
+#: views/default/admin/system-stats.php:80
+msgid "Mobile device statistics"
+msgstr "Mobil eszköz statisztikák"
+
+#: views/default/admin/system-stats.php:106
+msgid "Listing statistics of top Mobile, Browsers and Operating System Stats."
+msgstr "Top mobil, böngésző és operációs rendszer statisztikák listája."
+
+#: views/default/admin/top-pages-stats.php:13
+msgid "Views"
+msgstr "Megtekintések"
+
+#: welcome.php:49 welcome.php:50
+msgid "Welcome to Analytify"
+msgstr "Üdvözöljük az Analytifynál"
+
+#: welcome.php:58 welcome.php:59
+msgid "Getting started with Analytify"
+msgstr "Analytify kezdetek"
+
+#: welcome.php:67 welcome.php:68
+msgid "The people that build Analytify"
+msgstr "Analytify készítői"
+
+#: welcome.php:144
+msgid "What's New"
+msgstr "Újdonságok"
+
+#: welcome.php:147
+msgid "Getting Started"
+msgstr "Kezdjük el"
+
+#: welcome.php:150
+msgid "Credits"
+msgstr "Kreditek"
+
+#: welcome.php:167 welcome.php:278 welcome.php:426
+#, php-format
+msgid "Welcome to Analytify %1$s"
+msgstr "Üdvözöljük az Analytifynál %1$s"
+
+#: welcome.php:169 welcome.php:428
+#, php-format
+msgid ""
+"%1$s Thank you for updating to the latest version! %2$s %3$s Analytify %4$s "
+"is ready to make people lives easier for those who love Google Analytics and "
+"WordPress. It makes Analytics simple for WordPress users that everyone can "
+"understand about their Website statistics and behavior. "
+msgstr ""
+"%1$s Köszönjük, hogy a frissített az új verzióra! %2$s %3$s Analytify%4$s "
+"olyan emberek életét könnyíti meg akik a Google Analytics és Wordpress-t is "
+"szívesn használják. A wordpress felhasználk számára könnyíti meg az "
+"Analytics használatát."
+
+#: welcome.php:176 welcome.php:196
+msgid "New features"
+msgstr "Új funkciók"
+
+#: welcome.php:182
+msgid "Simple Authentication"
+msgstr "Egyszerű hitelesítés"
+
+#: welcome.php:184
+msgid "You don't need to worry about copy and paste access code any more. "
+msgstr "Nem kell többé hozzáférési kódot másolgatnia."
+
+#: welcome.php:187
+msgid "Translation ready"
+msgstr "A fordítás elkészült"
+
+#: welcome.php:189
+#, php-format
+msgid ""
+"Analytify %1$s contains all the strings ready to translate in any language. "
+"%2$s Click here %3$s to start translating this plugin into your language and "
+"don't forget to share your language files with us to ease for other users."
+msgstr ""
+"Analytify %1$s kész arra, hogy bármely nyelvre le lehessen fordítani. %2$s "
+"Kattintson ide %3$s, hogy elkezdhesse a bővítmény fordítását az Ön nyelvére, "
+"és ne felejtse el megosztani velünk és másokkal a nyelvi fájlokat."
+
+#: welcome.php:202
+msgid "Analytify Shortcodes"
+msgstr "Analytify Shortkódok"
+
+#: welcome.php:204
+#, php-format
+msgid ""
+"Analytify shortcodes can be used for multiple purposes. It gives you more "
+"flexibility than the front-end statistics. You can disable front-end stats "
+"and use these shortcodes in any of your pages/posts to show Analytics in "
+"tabular style. If you are familiar with CSS, It can be easily modified to "
+"match with your website look and feel. %1$s Following are two types of "
+"shortcodes:"
+msgstr ""
+"Analytify shortkódokat több dolgora lehet használni. Rugalmasabbak mint a "
+"kezdőlapi statisztikák. Kikapcsolhatja a kezdőlapi statisztikákat és bármely "
+"oldalon vagy bejegyzésen használhatja a shortkódokat. Ha ismeri a  CSS-t, "
+"könnyedén módosíthatja, hogy illeszkedjen weboldalak inézetéhez. %1$s Alább "
+"látható a két fajta shortkód:"
+
+#: welcome.php:207
+msgid "a) Simple:"
+msgstr "a) Egyszeű:"
+
+#: welcome.php:209
+#, php-format
+msgid ""
+"Simple Analytify shortcode returns you only the numbers i.e results. It is "
+"useful when you want results of only 1 Metrics and can apply permissions "
+"using roles. You can fetch numbers of %1$s Sessions, Pageviews, Bounce Rate "
+"and Users %2$s etc"
+msgstr ""
+"Az Egyszerű shortkód csak a számokat mutatjameg pl.:  eredményeket. Akkor "
+"lehet hasznos, ha csak egy mérést szerene megmutatni, és a jogosultságokat "
+"szerepkörönként tudja beállítani. Az alábbi adatokat mutathatja meg %1$s "
+"Szessionök, Oldalmegtekintések, Visszapattanási arány és  felhasználók %2$s "
+"stb"
+
+#: welcome.php:212
+msgid "b) Advanced:"
+msgstr "б) Haladó:"
+
+#: welcome.php:214
+#, php-format
+msgid ""
+"With this Advanced option, You can choose %1$s more than 1 Metrics and "
+"Dimensions, Sort the results, get maximum rows, apply permissions and fetch "
+"Analytics with specified start-date and end-date. %2$s Advanced shortcode "
+"returns results in table form which can be styled according to your website."
+msgstr ""
+"A haladó opcióval tválaszthat %1$s hány mérést szeretne megmutatni. "
+"Sorrendezheti az eredményeket, amximum adatokat választhat ki, jogosultsági "
+"szinteket állíthat be adott időszak analitikáját is elérheti.  %2$s Haladó "
+"shortkód táblázat formájában mutatja meg az eredményeket, és weboldalához "
+"illően formázható."
+
+#: welcome.php:222
+msgid "Front-end Statistics"
+msgstr "Front-end Statisztikák"
+
+#: welcome.php:224
+#, php-format
+msgid ""
+"We have introduced the %1$s New Front-end Analytics %2$s which will fetch "
+"the stats like backend but with an awesome UI for front-end stats. It was a "
+"long awaited feature which was under development but finally It is here. It "
+"can be customized (if you are good at CSS) according to your website look "
+"and feel. %3$s below are it's important options: "
+msgstr ""
+"Bemutatjuk az %1$s Új Front-end Analyticset %2$s ami a backendhez hasonlóan "
+"mutatja meg az adatokat, de csodás felhasználói felülettel. Sokat vártak "
+"erre a funkcióra, de végre elkészült. CSS-el testre szabható hogy "
+"illeszkedje a weboldalhoz. %3$s lent láthatók a fontosabb opciók: "
+
+#: welcome.php:229 welcome.php:341
+msgid "Disable front-end"
+msgstr "Front-end kikapcsolása"
+
+#: welcome.php:231 welcome.php:342
+msgid ""
+"We introduced the ability to disable the front-end stats on the full site. "
+"Check it, if you don't want to load Analytics at all. Remember, you can use "
+"Shortcodes still."
+msgstr ""
+"Kikapcsolhatja front-end funkciót az egész oldalon. Jelölje be, ha "
+"egyáltalán nem szeretné megjeleníteni az  Analytics-et. Helyette "
+"használhatja a shortkódokat."
+
+#: welcome.php:234 welcome.php:344 welcome.php:378
+msgid "Display Analytics to Users"
+msgstr "Analytics megmutatása a felhasználóknak"
+
+#: welcome.php:236
+#, php-format
+msgid "Show %1$s front-end %2$s Analytics to selected user roles only."
+msgstr ""
+"Csak  %1$s front-end %2$s a kiválsztott felhasználük mutassa meg az "
+"Analytics-et. "
+
+#: welcome.php:242 welcome.php:350 welcome.php:384
+msgid ""
+"Show Analytics under the selected post types only. You can select your "
+"custom post types as well."
+msgstr "Csak a kiválasztott post typeokhoz mutasson Analyticset. "
+
+#: welcome.php:244 welcome.php:352
+msgid "Front-end Analytics panels"
+msgstr "Front-end Analytics panelek:"
+
+#: welcome.php:245 welcome.php:353
+msgid ""
+"Select which Stats panels you want to display at front-end. We recommend to "
+"use upto 8 Panels for better page speed."
+msgstr ""
+"Válassza ki, hogy front enden melyik paneleket szeretné megmutatni. Az oldal "
+"betöltési sebessége miatt maximunóm 8 panel használatát javasoljuk."
+
+#: welcome.php:249 welcome.php:357 welcome.php:391
+msgid "Exclude Analytics on specific pages"
+msgstr "Adott oldalakon ne mutasson Analyticset"
+
+#: welcome.php:250 welcome.php:358 welcome.php:392
+msgid "Select posts or pages on which you don't want to show Analytics."
+msgstr ""
+"Válassza ki azokat az oldalakat vagy bejegyzéseket ahol nem szeretné "
+"megmutatni az Analyticset."
+
+#: welcome.php:258 welcome.php:407
+msgid "Go to Analytify Settings"
+msgstr "Analytify beállítsaihoz"
+
+#: welcome.php:259 welcome.php:408
+msgid "View the Full Changelog"
+msgstr "Teljes módosítási lita megtekintése"
+
+#: welcome.php:280
+#, php-format
+msgid ""
+" %1$s Thank you for updating to the latest version! %2$s %3$s Analytify %4$s "
+"is ready to make people lives easier for those who love Google Analytics and "
+"WordPress. It makes Analytics simple for WordPress users that everyone can "
+"understand about their Website statistics and behavior. "
+msgstr ""
+"%1$s Köszönjük, hogy a frissített az új verzióra! %2$s %3$s Analytify%4$s "
+"olyan emberek életét könnyíti meg akik a Google Analytics és Wordpress-t is "
+"szívesn használják. A wordpress felhasználk számára könnyíti meg az "
+"Analytics használatát."
+
+#: welcome.php:287
+#, php-format
+msgid ""
+"Getting started with Analytify plugin settings are very easy to use and "
+"ready to go in minutes. If there is something you don't understand or "
+"confusing, do ask us on %1$sWordPress.org support forum%2$s without "
+"hesitation."
+msgstr ""
+"Az Analytify beállítása perceket vesz csak igénybe. Ha valami nem világos, "
+"kérdezzen %1$sWordPress.org support forumon%2$s."
+
+#: welcome.php:291
+#, php-format
+msgid "%1$s Connect with Analytify %2$s"
+msgstr "%1$s Összekötés az Analytify bővítménnyel %2$s"
+
+#: welcome.php:297
+msgid ""
+"You must have a registered Google Analytics account and setup your website "
+"profiles to use with Analytify on your WordPress based sites. Click on Login "
+"button and It will redirect you to separate Google access page. Allow this "
+"plugin to fetch the data from Google Analytics and It will take you back to "
+"your profile tab."
+msgstr ""
+"Ahhoz, hogy az Analytify-t a WordPress oldalán használni tudja, "
+"regisztrálnia kell a Google Analytics oldalán és be kell állítania weboldala "
+"profilját. Kattintson a bejelentkezés gombra és átirányítjuk egy külön "
+"Google oldalra. Engedélyezze, hogy ez a bővítmény elérhesse a Google "
+"Analítics adatokat, és akkor visszajut a profil tabre."
+
+#: welcome.php:305
+msgid "Setting up profiles"
+msgstr "Profil beállítása"
+
+#: welcome.php:309
+msgid "Profile Tab"
+msgstr "Profil Tab"
+
+#: welcome.php:310
+msgid ""
+"This tab section consists of many important settings. After Authentication, "
+"Setup your profiles here. All of the options are easy to understand."
+msgstr ""
+"Itt sok fontos beállítás van.  Hitelesítés után állítsa be profilját itt."
+
+#: welcome.php:312
+msgid "a) Install Google Analytics tracking code"
+msgstr "а)  Google Analytics követőkód beillesztése"
+
+#: welcome.php:313
+msgid ""
+"First, you need to check if you want to install Google Analytics tracking "
+"code by Analytify or uncheck it if you have already installed it manually or "
+"via some other way. "
+msgstr ""
+"Ellenőrizze van már követőkód az oldalon, vagy az Analytify-al szeretné azt "
+"beilleszteni."
+
+#: welcome.php:315
+msgid "b) Exclude users from tracking"
+msgstr "б)Alábbi felhasználókat ne kövesse"
+
+#: welcome.php:316
+msgid ""
+"Usually Administrators don't want to track themselves. So, this option can "
+"be commonly used if you want to exclude your special users from tracking "
+"data."
+msgstr ""
+"Általában nem szeretnénk követni az adminisztrátorokat, így ez t az opciót "
+"gyakran használják."
+
+#: welcome.php:318
+msgid "c) Tracking code type"
+msgstr "с) Követőkód típusa"
+
+#: welcome.php:319
+msgid ""
+"Google recommends to use Analytics.js (Universal Tracking) now. So, we "
+"recommend to use this option."
+msgstr ""
+"Google az analytics.js használatát javasolja (Universal Tracking), így mi is "
+"ezt az opciót javasoljuk."
+
+#: welcome.php:321
+msgid "d) Profile for posts (Backend/Front-end)"
+msgstr "d) Bejegyzések profilja  (Backend / Front-end)"
+
+#: welcome.php:322
+msgid ""
+"Select your website profile for wp-admin edit pages and Front-end pages. "
+"Select profile which matches your current WordPress website."
+msgstr ""
+"Válassza ki weboldala profilját a wp-admin, szerkesztési és felhasználói "
+"oldalakhoz. Válassza azt a prfilt ami illik a jelenlegi WordPress oldalához."
+
+#: welcome.php:324
+msgid "e) Profile for Dashboard"
+msgstr "е) Dashboard profil"
+
+#: welcome.php:325
+msgid ""
+"Select your website profile for Dashboard Stats. You can select your any "
+"Website profile. It will show Analytics for your selected website profile."
+msgstr "Válassza ki weboldala prfilját a  Dashboard statisztikákhoz."
+
+#: welcome.php:331
+msgid "Display Statistics at front-end pages"
+msgstr "Statisztikák feltüntetése front-end oldalakon"
+
+#: welcome.php:337
+msgid "Front Tab"
+msgstr "Front Tab"
+
+#: welcome.php:338
+#, php-format
+msgid ""
+"In version %4$s, We have introduced the %1$s New Front-end Analytics%2$s "
+"which will fetch the stats like backend but with an awesome UI for front-end "
+"stats. It was a long awaited feature which was under development since 1.0 "
+"but finally It is here. It can be customized (if you are good at CSS) "
+"according to your website look and feel. %3$s Below are it's important "
+"options: "
+msgstr ""
+"A %4$s verziónál, bevezettünk %1$s Új Front-end Analytics-et%2$s amely a "
+"front oldalon a backend statisztikákat csodás felhasználói felülettel "
+"mutatja meg. Már 1.0 óta várunk erre a funkcióra és végre itt van! CSS-e "
+"testre szabható, hogy illeszkedjen weboldlához. %3$s Lejebb vannak a "
+"fontosabb funkciók: "
+
+#: welcome.php:345
+#, php-format
+msgid "Show %1$sfront-end%2$s Analytics to selected user roles only."
+msgstr ""
+" %1$s Google %2$s Analytics megjelenítése csak adott szerepkörök számára."
+
+#: welcome.php:364
+msgid "Display Statistics under Edit pages (backend)"
+msgstr "Statisztikák megjelnítése a szerkesztési oldalakon (backend)"
+
+#: welcome.php:370
+msgid "Admin Tab"
+msgstr "Admin Tab"
+
+#: welcome.php:371
+msgid ""
+"Admin tab section is to manage the Analytics panels under EDIT screen of "
+"post/pages in wp-admin."
+msgstr "Az Admin taben szerkesztheti az Analitics paneleket wp-adminon."
+
+#: welcome.php:375
+msgid "Disable Analytics under posts/pages."
+msgstr "Analytics kikapcsolása oldalaknál / bejegyzéseknél"
+
+#: welcome.php:376
+msgid ""
+"Check it, If you don't want to load Stats by default on all pages. If you "
+"disable it, you can still fetch the stats under each post/page on single "
+"click."
+msgstr ""
+"Jelölje be ha nem akarja alapértelmezetten minden oldalon megmutatni az "
+"Analyticset. A statisztikákat postonként / bejegyzésenként is elérheti."
+
+#: welcome.php:379
+#, php-format
+msgid "Show %1$s Google %2$s Analytics to selected user roles only."
+msgstr ""
+" %1$s Google %2$s Analytics megjelenítése csak adott szerepkörök számára."
+
+#: welcome.php:386
+msgid "Edit pages/posts Analytics panels"
+msgstr "Oldalak / bejegyzések Analytics panel szerkesztése"
+
+#: welcome.php:387
+msgid ""
+"Select which Stats panels you want to display at backend. We recommend to "
+"use upto 10 Panels for better page speed."
+msgstr ""
+"Válassza ki, hogy a backenden melyik statisztikai paneleket szeretné "
+"használni. Az olda betöltési sebessége miatt maximum 10 panel használatát "
+"javasoljuk."
+
+#: welcome.php:399
+msgid "Licensing"
+msgstr "Licensz"
+
+#: welcome.php:402
+msgid ""
+"We have a year based pricing model as we think this is the best model to "
+"keep our normal lives easier and down the costs of support servers etc. You "
+"need a valid license key if you want to get support and updates in the "
+"future for a year. After a year, you will get discount to renew your "
+"license. "
+msgstr ""
+"Éves alapú árazásunk van, mert úgy gondoljuk az a legjobb model, hogy a "
+"indennapjait megkönnyítsük és csökkenthessük a költségeket. Ahhoz hogy "
+"technikai segítséget és frissítéseket kapjon, egy licensz kulcsra van "
+"szüksége. Egy év után a licensz megújításakor kedvezményt adunk."
+
+#: welcome.php:434
+#, php-format
+msgid ""
+"Analytify is developed by %1$s WPBrigade%2$s i.e brigade of WordPress "
+"developers."
+msgstr "Az Analytify-t a %1$s WPBrigade%2$s fejlesztette."
+
+#: wp-analytify.php:250
+msgid "Analytify - Stats of this Post/Page"
+msgstr "Analytify - Oldal / Bejegyzés statisztikái"
+
+#: wp-analytify.php:320
+msgid "This post is excluded and will NOT show Analytics."
+msgstr ""
+"Ebben a bejegyzésben nem mutatunk Analyticset mert felvették a kivételek közé"
+
+#: wp-analytify.php:390
+msgid "You are not allowed to see stats"
+msgstr "Nincs engedélye a statisztikák megtekintéséhez"
+
+#: wp-analytify.php:413
+#, php-format
+msgid "%2$s This code is added by WP Analytify (%1$s) %4$s %3$s"
+msgstr "%2$s Ezt a kódót a  WP Analytify tette közzé (%1$s) %4$s %3$s"
+
+#: wp-analytify.php:461
+#, php-format
+msgid "%2$s This code is added by WP Analytify (%1$s) %3$s"
+msgstr "%2$s Ezt a kódót a  WP Analytify tette közzé (%1$s)%3$s"
+
+#: wp-analytify.php:481
+#, php-format
+msgid "%1$s Settings %2$s | %3$s Dashboard %4$s | %5$s Help %6$s"
+msgstr "%1$s Beállítások %2$s | %3$s Dashboard %4$s | %5$s Segítség %6$s"
+
+#: wp-analytify.php:502
+#, php-format
+msgid "%1$s Getting Started %2$s"
+msgstr "%1$s Kezdetek %2$s"
+
+#: wp-analytify.php:503
+#, php-format
+msgid "%1$s Add Ons %2$s"
+msgstr "%1$s Bővítmények %2$s"
+
+#: wp-analytify.php:504
+msgid "Vote!"
+msgstr "Szavazzon!"
+
+#: wp-analytify.php:628
+msgid "Please enter your license key."
+msgstr "Kérem adja meg a licensz kulcsot."
+
+#: wp-analytify.php:629
+msgid ""
+"A problem occurred when trying to register the license, please try again."
+msgstr "Hiba történt mikor a licensz regisztrációjakor, kérem próbálja újra."
+
+#: wp-analytify.php:630
+msgid "A problem occurred when trying to check the license, please try again."
+msgstr "Hiba történt mikor a licenszt ellenőriztük, kérem próbálja újra."
+
+#: wp-analytify.php:631
+msgid ""
+"Your license has been activated. You will now receive automatic updates and "
+"access to email support."
+msgstr ""
+"A licensze aktiválva lett. Automatikus frissítéseket fog kapni, és hozzáfér "
+"az email reportokhoz."
+
+#: wp-analytify.php:680
+msgid " Dashboard"
+msgstr " Dashboard"
+
+#: wp-analytify.php:706
+msgid " list of all Add-ons"
+msgstr "Bővítmények litsája"
+
+#: wp-analytify.php:706
+msgid "Add-ons"
+msgstr "Bővítmények"
+
+#: wp-analytify.php:711
+msgid "PRO vs FREE"
+msgstr "PRO vs INGYENES"
+
+#: wp-analytify.php:762
+msgid "You must authenticate to access your web profiles."
+msgstr "Hitelesítenie kell,hogy elérhesse webes profilját."
+
+#: wp-analytify.php:765
+#, php-format
+msgid ""
+"%1$s %2$s Oops, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s "
+"Authentication."
+msgstr ""
+"%1$s %2$s Hoppá, hiba történt!%3$s %4$s Próbálja %5$s újra hitelesíteni %6$s "
+"fiókját."
+
+#: wp-analytify.php:783
+msgid "Notice: You must authenticate to access your web profiles."
+msgstr "Megjegyzés: Hitelesítenie kell,hogy elérhesse webes profilját."
+
+#: wp-analytify.php:824
+#, php-format
+msgid ""
+"Analytify is not active. Please %1$sAuthenticate%2$s in order to get started "
+"using this plugin."
+msgstr ""
+"Az Analytify nem aktív. Kérjük %1$sHitelesítsee%2$s hogy használhassa a "
+"plugint."
+
+#: wp-analytify.php:828
+#, php-format
+msgid "%1$s Google Analytics Profile is not set. Set the %2$s Profile %3$s"
+msgstr ""
+"%1$s Google Analytics Profile nincs beállítvat. Állítsa be %2$s Profilt %3$s"
+
+#: wp-analytify.php:859
+msgid ""
+"Select your website profile at Analytify->settings->profile tab to load "
+"stats."
+msgstr ""
+"Válassza ki weboldala profilját az Analytify -> Beállítások -> profil taben, "
+"hogy betöltse a statisztikákat."
+
+#: wp-analytify.php:898
+#, php-format
+msgid "%1$s Displaying Analytics of this page from.%2$s to %3$s %4$s"
+msgstr "%1$s Ennek az oldalnak  Analytics megjenítése .%2$s -tól %3$s -ig%4$s"
+
+#: wp-analytify.php:1055
+#, php-format
+msgid ""
+"<b>Notice:</b> <b>Analytify 2.0</b> is here with stunning new interface and "
+"features! Read the <a href=\"https://analytify.io/go/a2r\" target=\"_blank"
+"\">announcement</a> here. Detail feature list available <a href=\"https://"
+"analytify.io/features/\" target=\"_blank\">here</a>. <a href=\"%1$s\">[Hide "
+"Notice]</a>"
+msgstr ""
+"<b>Megjegyzés:</b> <b>Elkészült az Analytify 2.0 új funkciókkal!</b>! "
+"Olvassa el<a href=\"https://analytify.io/go/a2r\" target=\"_blank\">a "
+"tájékoztatót</a>. Részletes funkció lista  <a href=\"https://analytify.io/"
+"features/\" target=\"_blank\">itt</a>érhatő el. <a href=\"%1$s\">[Megjegyzés "
+"elrejtése]</a>"
+
+#: wp-analytify.php:1063
+#, php-format
+msgid ""
+"%1$s %2$s %3$sNotice:%4$s %5$sConnect%6$s %4$s Analytify with your Google "
+"account. %7$s %8$s"
+msgstr ""
+"%1$s %2$s %3$s Megjegyzés: %4$s %5$s Analytify összekötése %6$s %4$s  a "
+"Google fiókjával. %7$s %8$s"
+
+#: wp-analytify.php:1068
+#, php-format
+msgid ""
+"Congratulations! Analytify is now authenticated. Please select your website "
+"profile %1$s here %2$s to get started."
+msgstr ""
+"Gratulálunk! Hitelesítette az Analytify-t. Kérjük válassza ki weboldala "
+"profilját  %1$s itt %2$s hogy elkezdhesse használni."
+
+#: wp-analytify.php:1135
+msgid "Thankyou!\\nYour Coupon code is Analytify2016"
+msgstr "Köszönjük!\\Kupon kódja - Analytify2016"
+
+#: wp-analytify.php:1242
+msgid "Leave A Review?"
+msgstr "Ír véleményt?"
+
+#: wp-analytify.php:1243
+msgid ""
+"We hope you've enjoyed using Analytify! Would you consider leaving us a "
+"review on WordPress.org?"
+msgstr ""
+"Reméljük örömét lelte az Analytify használatában! Szeretne véleményt írni "
+"rólunk a WordPress.org oldalán?"
+
+#: wp-analytify.php:1244
+msgid "Sure! I'd love to!"
+msgstr "Természetesen! Szeretnék!"
+
+#: wp-analytify.php:1245
+msgid "I've already left a review"
+msgstr "Már írtam véleményt"
+
+#: wp-analytify.php:1246
+msgid "Maybe Later"
+msgstr "Talán később"
+
+#: wp-analytify.php:1247
+msgid "Never show again"
+msgstr "Ne mutassa többet"
+
+#: wp-analytify.php:1356
+#, php-format
+msgid "%1$s %2$s %3$s Authentication Cleared login again. %4$s %5$s %6$s"
+msgstr ""
+"%1$s %2$s %3$s Hiteesítés újra törölte a bejelentkezést . %4$s %5$s %6$s"
+
+#. Plugin Name of the plugin/theme
+msgid "Analytify - Google Analytics Dashboard"
+msgstr "Analytify - Google Analytics Dashboard"
+
+#. Plugin URI of the plugin/theme
+msgid "http://analytify.io/details"
+msgstr "http://analytify.io/details"
+
+#. Description of the plugin/theme
+msgid ""
+"Analytify brings a brand new and modern feeling Google Analytics superbly "
+"integrated with WordPress Dashboard. It presents the statistics in a "
+"beautiful way under the WordPress Posts/Pages at front end, backend and in "
+"its own Dashboard. This provides Stats from Country, Referrers, Social "
+"media, General stats, New visitors, Returning visitors, Exit pages, Browser "
+"wise and Top keywords. This plugin provides the RealTime statistics in a new "
+"UI which is easy to understand & looks good."
+msgstr ""
+"Az Analytify a Google Analytics új, modern kinézetét mutatja, WordPress "
+"Dashboard-al teljesen integrálva. Gyönyörűen jeleníti meg a statisztikákat a "
+"WordPress bejegyzéseinek, oldalainak alján, mind a felhasználói felületen, "
+"mind backenden. Ország, Referrer, Social média , Általános, Új látogató, "
+"vVsszatérő látogató, Oldal elhasgyások, Böngésző és Top kulcszsvak "
+"statisztikákat mutat. Ez a plugin valós idejű adatokat mutat új felhasználói "
+"felülettel, ami könnyen értelmezhető és fantsaztikusan néz ki."
+
+#. Author of the plugin/theme
+msgid "WPBrigade"
+msgstr "WPBrigade"
+
+#. Author URI of the plugin/theme
+msgid "http://wpbrigade.com/"
+msgstr "http://wpbrigade.com/"
+
+#~ msgid ""
+#~ "%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This "
+#~ "error message is only visible to Administrators. %4$s %2$s "
+#~ msgstr ""
+#~ "%1$s Упс, что-то пошло не так. %2$s %5$s %2$s %3$s Не волнуйтесь, это "
+#~ "сообщение об ошибке видна только администраторам. %4$s %2$s"
+
+#~ msgid ""
+#~ "%1$s oOps, Try to %2$s Reset %3$s Authentication. %4$s %7$s %4$s %5$s "
+#~ "Don't worry, This error message is only visible to Administrators. %6$s "
+#~ "%4$s"
+#~ msgstr ""
+#~ "%1$s Упс Попробуйте%2$s Сброс%3$s аутентификации. %4$s %7$s %4$s %5$s Не "
+#~ "волнуйтесь, это сообщение об ошибке видна только администраторам. %6$s "
+#~ "%4$s"
+
+#~ msgid ""
+#~ "%1$s oOps, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This "
+#~ "error message is only visible to Administrators. %4$s %2$s"
+#~ msgstr ""
+#~ "%1$s Упс, что-то пошло не так. %2$s %5$s %2$s %3$s Не волнуйтесь, это "
+#~ "сообщение об ошибке видна только администраторам. %4$s %2$s"
+
+#~ msgid ""
+#~ "%1$s oOps, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s "
+#~ "Don't worry, This error message is only visible to Administrators. %6$s "
+#~ "%2$s"
+#~ msgstr ""
+#~ "%1$s Упс Попробуйте%3$s Сброс%4$s аутентификации. %2$s %7$s %2$s %5$s Не "
+#~ "волнуйтесь, это сообщение об ошибке видна только администраторам. %6$s "
+#~ "%2$s"
+
+#~ msgid ""
+#~ "%1$s oOps! %2$s %5$s %2$s %3$s Don't worry, This error message is only "
+#~ "visible to Administrators. %4$s %2$s"
+#~ msgstr ""
+#~ "%1$s Oops! %2$s %5$s %2$s %3$s Не волнуйтесь, это сообщение об ошибке "
+#~ "видна только администраторам. %4$s %2$s"
+
+#~ msgid ""
+#~ "Select your website profile for Backend/Front-end Stats. You can select "
+#~ "your any Website profile. It will show Analytics for your selected "
+#~ "website profile"
+#~ msgstr ""
+#~ "Выберите свой профиль для веб-сайта. Вы можете выбрать любой профиль веб-"
+#~ "сайта. Он покажет Analytics для выбранного профиля сайта"
+
+#~ msgid "Redirect URI:"
+#~ msgstr "Перенаправление  URI"
+
+#~ msgid ""
+#~ "( Redirect URI is very important when you are using your own Keys Use "
+#~ "this Redirect URI  %1$s )"
+#~ msgstr ""
+#~ "(Перенаправление URI очень важно, когда вы используете ваши собственные "
+#~ "ключи Используйте этот URI Перенаправление %1$s)"
+
+#~ msgid ""
+#~ "This allows you to view extra dimensions about users (Age, Gender, "
+#~ "Affinity Categories, In-Market Segments and Other Categories."
+#~ msgstr ""
+#~ "Это позволяет просматривать дополнительные измерения о пользователях "
+#~ "(возраст, пол, Категории, Рыночные Сегменты и других категории)."
+
+#~ msgid "You must be authenticate to see the Analytics Dashboard."
+#~ msgstr "Вы должны авторизироваться чтобы увидеть содержимое Аналитики"
+
+#, fuzzy
+#~ msgid "Enhaced E-Commerce Tracking for Easy Digital Downloads"
+#~ msgstr "Enhaced E-Commerce Tracking for Easy Digital Downloads"
+
+#~ msgid "Bounce rate"
+#~ msgstr "Показатель отказов"
+
+#~ msgid ""
+#~ "Analytify shortcodes can be used for multiple purposes. It gives you more "
+#~ "flexibility than the front-end statistics. You can disable front-end "
+#~ "stats and use these shortcodes in any of your pages/posts to show "
+#~ "Analytics in tabular style. If you are familiar with CSS, It can be "
+#~ "easily modified to match with your website look and feel. %1$s Follwing "
+#~ "are two types of shortcodes:"
+#~ msgstr ""
+#~ "Analytify шорткоды могут быть использованы для различных целей. Это дает "
+#~ "большую гибкость, чем передний конец статистики. Вы можете отключить "
+#~ "интерфейсные статистику и использовать эти шорткоды в любом из ваших "
+#~ "страниц / постов, чтобы показать Analytics в табличном стиле. Если вы "
+#~ "знакомы с CSS, он может быть легко изменен, чтобы соответствовать с "
+#~ "вашего сайта выглядеть и чувствовать себя. %1$s Follwing два типа "
+#~ "короткие номера:"
+
+#~ msgid ""
+#~ "Simple Analytify shortcode returns you only the numbers i.e results. It "
+#~ "is useful when you want results of only 1 Metrics and can apply "
+#~ "permissions using roles. You can fetch numbers of %1$s Sessions, "
+#~ "Pageviews, Bounce rate and Users %2$s etc"
+#~ msgstr ""
+#~ "Simple Analytify shortcode returns you only the numbers i.e results. It "
+#~ "is useful when you want results of only 1 Metrics and can apply "
+#~ "permissions using roles. You can fetch numbers of %1$s Sessions, "
+#~ "Pageviews, Bounce rate and Users %2$s etc"
+
+#, fuzzy
+#~ msgid ""
+#~ "We have introduced the %1$s New Front-end Analytics %2$s which will fetch "
+#~ "the stats like backend but with an awesome UI for front-end stats. It was "
+#~ "a long awaited feature which was under development but finally It is "
+#~ "here. It can be customized (if you are good at CSS) according to your "
+#~ "website look and fool. %3$s below are it's important options: "
+#~ msgstr ""
+#~ "We have introduced the %1$s New Front-end Analytics %2$s which will fetch "
+#~ "the stats like backend but with an awesome UI for front-end stats. It was "
+#~ "a long awaited feature which was under development but finally It is "
+#~ "here. It can be customized (if you are good at CSS) according to your "
+#~ "website look and fool. %3$s below are it's important options: "
+
+#~ msgid ""
+#~ "Select your website profile for wp-admin edit pages and fron-end pages. "
+#~ "Select profile which matches your current WordPress website."
+#~ msgstr ""
+#~ "Выберите свой профиль веб-сайта для WP-администратора (редактирования "
+#~ "страниц и конечных страниц). Выберите профиль, который соответствует (ваш "
+#~ "текущий сайт WordPress)."
+
+#~ msgid ""
+#~ "In version %4$s, We have introduced the %1$s New Front-end Analytics%2$s "
+#~ "which will fetch the stats like backend but with an awesome UI for front-"
+#~ "end stats. It was a long awaited feature which was under development "
+#~ "since 1.0 but finally It is here. It can be customized (if you are good "
+#~ "at CSS) according to your website look and fool. %3$s Below are it's "
+#~ "important options: "
+#~ msgstr ""
+#~ "In version %4$s, We have introduced the %1$s New Front-end Analytics%2$s "
+#~ "which will fetch the stats like backend but with an awesome UI for front-"
+#~ "end stats. It was a long awaited feature which was under development "
+#~ "since 1.0 but finally It is here. It can be customized (if you are good "
+#~ "at CSS) according to your website look and fool. %3$s Below are it's "
+#~ "important options: "
+
+#~ msgid ""
+#~ "%1$s %2$s oOps, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s "
+#~ "Authentication."
+#~ msgstr ""
+#~ "%1$s %2$s Упс, что-то пошло не так!%3$s %4$s Попробуйте %5$s Сброс %6$s "
+#~ "аутентификации."
