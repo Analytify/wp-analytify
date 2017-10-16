@@ -21,5 +21,5 @@ ratings:
   - "**.md"
 exclude_paths:
 - "lib/Google/"
-- "**-min.js"
-- "**-min.css"
+- "**.min.js"
+- "**.min.css"
