@@ -1,7 +1,7 @@
 === Google Analytics Dashboard Plugin for WordPress ===
 Contributors: hiddenpearls, Asif2BD
 Donate link: http://paypal.me/Analytify
-Tags: google analytics, google analytics dashboard, WooCommerce analytics, WordPress Analytics, analytify, tracking, analytics, install analytics, e-commerce, track, track visitor, statistics, campaign tracking, analytics campaign, best google analytics, enhanced ecommerce tracking, email analytics report, google analytics pdf,
+Tags: google analytics, google analytics dashboard, WooCommerce analytics, WordPress Analytics, analytify, tracking, analytics, install analytics, e-commerce, track, track visitor, statistics, campaign tracking, analytics campaigns, best google analytics, enhanced ecommerce tracking, email analytics report, google analytics pdf,
 Requires at least: 3.6
 Tested up to: 4.8
 Stable tag: 2.1.8
@@ -56,7 +56,7 @@ Google Analytics for WordPress by Analytify is the must-have Plugin for Google A
 > <strong>Google Analytics by Analytify Development on Github</strong><br>
 > This Google analytics plugin is also [available on github](https://github.com/Analytify/wp-analytify) and ready to take bugs and pull requests. For Support, you can buy the **PRO version**, this will give access to premium updates, support and features.
 
-###### Following are the important add-ons which empower you to setup Google Analytics like a Boss. It really helps to your clients, online stores etc
+###### Following are the important add-ons which empower you to setup Google Analytics like a boss. It really helps your clients, online stores, etc.
 
 * [Google Analytics eCommerce Tracking for WooCommerce](https://analytify.io/add-ons/woocommerce/)
 * [Google Analytics eCommerce Tracking for Easy Digital Downloads](https://analytify.io/add-ons/easy-digital-downloads/)
@@ -69,10 +69,10 @@ Google Analytics for WordPress by Analytify is the must-have Plugin for Google A
 * Analytify Core (`Free` and Required for all add-ons)
     *[Dashboard widget](https://analytify.io/add-ons/google-analytics-dashboard-widget-wordpress/) (`Free`)
     * Analytify Pro (*Paid*)
-        * Campaigns Tracking (*Paid*)
+        * Campaign Tracking (*Paid*)
         * Email Notifications (*Paid*)
-        * ECommerce Tracking for WooCommerce (*Paid*)
-        * ECommerce Tracking for Easy Digital Downloads (*Paid*)
+        * E-commerce Tracking for WooCommerce (*Paid*)
+        * E-commerce Tracking for Easy Digital Downloads (*Paid*)
 
 > 100% Multilingual & Translateable <br />
 > WPML Compatible <br />
@@ -86,7 +86,7 @@ Available in Following languages: <br />
 
 == Installation ==
 
-This section describes how to install the Google Analytics Dashboard By Analytify plugin and get it working.
+This section describes how to install the Google Analytics Dashboard by Analytify plugin and get it working.
 
 = 1) Install =
 
@@ -100,12 +100,12 @@ This section describes how to install the Google Analytics Dashboard By Analytif
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 = 2) Configure =
-1. Reach out to the Analytify-> Settings Page
+1. Reach out to the Analytify -> Settings Page
 2. Go to "Step 1", click the "Log in with Google Analytics Account" button
 3. Connect and give Analytify App access to your Google Analytics account.
-4. After Authentication, Select your Profiles for front/admin Statistics from Settings-> Profile tab.
+4. After authentication, select your preferred profiles for front/admin Statistics via Settings -> Profile tab.
 
-*If you want to use your own app, you need to create a Project in Google [Console](https://console.developers.google.com/project). Read this simple 3 minutes [tutorial](http://analytify.io/google-api-tutorial) to get your ClientID, Client Secret and API Key and enter them at Settings Page.
+*If you want to use your own app, you'd need to create a Project in Google [Console](https://console.developers.google.com/project). Read this simple 3 minutes [tutorial](http://analytify.io/google-api-tutorial) to get your ClientID, Client Secret and API Key and enter them at Settings Page.
 
 
 == Frequently Asked Questions ==
