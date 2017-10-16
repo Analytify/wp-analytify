@@ -646,7 +646,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			// for main page
 			if ( $page == 'index.php' || $page == 'toplevel_page_analytify-dashboard' || $page == 'analytify_page_analytify-woocommerce' || $page == 'analytify_page_edd-dashboard' || $page == 'analytify_page_analytify-campaigns' || in_array( $post_type, $this->settings->get_option( 'show_analytics_post_types_back_end','wp-analytify-admin', array() ) ) ) {
 
-				wp_enqueue_script( 'pikaday-js', 	plugins_url( 'assets/default/js/pikaday.js', __FILE__ ), array( 'moment-js' ) , ANALYTIFY_VERSION );
+				wp_enqueue_script( 'pikaday-js', 	plugins_url( 'assets/default/js/pikaday.min.js', __FILE__ ), array( 'moment-js' ) , ANALYTIFY_VERSION );
 				wp_enqueue_script( 'moment-js', 	plugins_url( 'assets/default/js/moment.min.js', __FILE__ ), false, ANALYTIFY_VERSION );
 
 				wp_enqueue_script( 'analytify-dashboard-js', plugins_url( 'assets/default/js/wp-analytify-dashboard.js', __FILE__ ), false, ANALYTIFY_VERSION );
@@ -672,7 +672,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 			// for Single Page/Post Stats.
 			if ( $page == 'analytify_page_analytify-settings' || $page == 'post.php' || $page == 'post-new.php' ) {
-				wp_enqueue_script( 'chosen-js', plugins_url( 'assets/old/js/chosen.jquery.js', __FILE__ ), false, ANALYTIFY_VERSION );
+				wp_enqueue_script( 'chosen-js', plugins_url( 'assets/old/js/chosen.jquery.min.js', __FILE__ ), false, ANALYTIFY_VERSION );
 
 			}
 
@@ -845,7 +845,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			try {
 
 				if ( get_option( 'analytify_profile_exception' ) ) {
-					
+
 					WPANALYTIFY_Utils::handle_exceptions( get_option( 'analytify_profile_exception' ) );
 				} else if ( get_option( 'pa_google_token' ) != '' ) {
 					$profiles = $this->service->management_accountSummaries->listManagementAccountSummaries();
