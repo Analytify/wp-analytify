@@ -5,7 +5,7 @@ engines:
       standard: "WordPress"
   eslint:
     enabled: true
-  css-lint:
+  csslint:
     enabled: true
   duplication:
     enabled: true
