@@ -23,7 +23,7 @@ function wpa_include_single_general( $current, $stats ) {
 					</div>
 
 					<div class="analytify_general_status_boxes">
-							<h4><?php esc_html_e( 'visitors', 'wp-analytify' ); ?></h4>
+							<h4><?php esc_html_e( 'Visitors', 'wp-analytify' ); ?></h4>
 							<div class="analytify_general_stats_value"><?php echo WPANALYTIFY_Utils::pretty_numbers( $results['ga:users'] ); ?></div>
 							<p><?php esc_html_e( 'Users that have had at least one session within the selected date range. Includes both new and returning users.', 'wp-analytify' ); ?></p>
 					</div>
