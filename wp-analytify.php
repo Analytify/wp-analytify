@@ -646,7 +646,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			// for main page
 			if ( $page == 'index.php' || $page == 'toplevel_page_analytify-dashboard' || $page == 'analytify_page_analytify-woocommerce' || $page == 'analytify_page_edd-dashboard' || $page == 'analytify_page_analytify-campaigns' || in_array( $post_type, $this->settings->get_option( 'show_analytics_post_types_back_end','wp-analytify-admin', array() ) ) ) {
 
-				wp_enqueue_script( 'pikaday-js', 	plugins_url( 'assets/default/js/pikaday.js', __FILE__ ), array( 'moment-js' ) , ANALYTIFY_VERSION );
+				wp_enqueue_script( 'pikaday-js', 	plugins_url( 'assets/default/js/pikaday.min.js', __FILE__ ), array( 'moment-js' ) , ANALYTIFY_VERSION );
 				wp_enqueue_script( 'moment-js', 	plugins_url( 'assets/default/js/moment.min.js', __FILE__ ), false, ANALYTIFY_VERSION );
 
 				wp_enqueue_script( 'analytify-dashboard-js', plugins_url( 'assets/default/js/wp-analytify-dashboard.js', __FILE__ ), false, ANALYTIFY_VERSION );
@@ -672,7 +672,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 			// for Single Page/Post Stats.
 			if ( $page == 'analytify_page_analytify-settings' || $page == 'post.php' || $page == 'post-new.php' ) {
-				wp_enqueue_script( 'chosen-js', plugins_url( 'assets/old/js/chosen.jquery.js', __FILE__ ), false, ANALYTIFY_VERSION );
+				wp_enqueue_script( 'chosen-js', plugins_url( 'assets/old/js/chosen.jquery.min.js', __FILE__ ), false, ANALYTIFY_VERSION );
 
 			}
 
@@ -845,7 +845,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			try {
 
 				if ( get_option( 'analytify_profile_exception' ) ) {
-					
+
 					WPANALYTIFY_Utils::handle_exceptions( get_option( 'analytify_profile_exception' ) );
 				} else if ( get_option( 'pa_google_token' ) != '' ) {
 					$profiles = $this->service->management_accountSummaries->listManagementAccountSummaries();
@@ -1024,61 +1024,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 			return number_format( $num );
 		}
-
-		/**
-		 * Pretty time to display.
-		 *
-		 * @param int $time time.
-		 */
-		function pa_pretty_time( $time ) {
-
-				// Check if numeric.
-			if ( is_numeric( $time ) ) {
-
-				$value = array(
-					'years'   => '00',
-					'days'    => '00',
-					'hours'   => '',
-					'minutes' => '',
-					'seconds' => '',
-					);
-
-				if ( $time >= 31556926 ) {
-					$value['years'] = floor( $time / 31556926 );
-					$time           = ($time % 31556926);
-				} //$time >= 31556926
-
-				if ( $time >= 86400 ) {
-					$value['days'] = floor( $time / 86400 );
-					$time          = ($time % 86400);
-				} //$time >= 86400
-				if ( $time >= 3600 ) {
-					$value['hours'] = str_pad( floor( $time / 3600 ), 1, 0, STR_PAD_LEFT );
-					$time           = ($time % 3600);
-				} //$time >= 3600
-				if ( $time >= 60 ) {
-					$value['minutes'] = str_pad( floor( $time / 60 ), 1, 0, STR_PAD_LEFT );
-					$time             = ($time % 60);
-				} //$time >= 60
-						$value['seconds'] = str_pad( floor( $time ), 1, 0, STR_PAD_LEFT );
-					// Get the hour:minute:second version.
-				if ( '' != $value['hours'] ) {
-					$attach_hours = '<sub>' . _x( 'h', 'Hour Time', 'wp-analytify' ) . '</sub> ';
-				}
-				if ( '' != $value['minutes'] ) {
-					$attach_min = '<sub>' . _x( 'm', 'Minute Time', 'wp-analytify' ) . '</sub> ';
-				}
-				if ( '' != $value['seconds'] ) {
-					$attach_sec = '<sub>' . _x( 's', 'Second Time', 'wp-analytify' ) . '</sub>';
-				}
-						return $value['hours'] . @$attach_hours . $value['minutes'] . @$attach_min . $value['seconds'] . $attach_sec;
-					// return $value['hours'] . ':' . $value['minutes'] . ':' . $value['seconds'];
-			} //is_numeric($time)
-			else {
-				return false;
-			}
-		}
-
+ 
 		/**
 		 * Check current user role.
 		 *

@@ -514,7 +514,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 
 			$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
 			$size  = isset( $args['size'] ) && ! is_null( $args['size'] ) ? $args['size'] : 'button';
-			$type  = isset( $args['type'] ) ? $args['type'] : 'text';
+			$type  = isset( $args['type'] ) ? $args['type'] : 'button';
 
 			$html  = sprintf( '<input type="%1$s" class="%2$s button-primary" id="%3$s[%4$s]" name="%3$s[%4$s]" value="%5$s"/>', $type, $size, $args['section'], $args['id'], $value );
 			$html  .= $this->get_field_description( $args );
