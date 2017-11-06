@@ -623,7 +623,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 			// for Single Page/Post Stats.
 			if ( $page == 'analytify_page_analytify-settings' || $page == 'post.php' || $page == 'post-new.php' ) {
-				wp_enqueue_style( 'chosen', plugins_url( 'assets/old/css/chosen.css', __FILE__ ) );
+				wp_enqueue_style( 'chosen', plugins_url( 'assets/old/css/chosen.min.css', __FILE__ ) );
 			}
 
 			wp_enqueue_style( 'wp-analytify-style', plugins_url( 'assets/old/css/wp-analytify-style.css', __FILE__ ), false, ANALYTIFY_VERSION );
@@ -672,7 +672,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 			// for Single Page/Post Stats.
 			if ( $page == 'analytify_page_analytify-settings' || $page == 'post.php' || $page == 'post-new.php' ) {
-				wp_enqueue_script( 'chosen-js', plugins_url( 'assets/old/js/chosen.jquery.js', __FILE__ ), false, ANALYTIFY_VERSION );
+				wp_enqueue_script( 'chosen-js', plugins_url( 'assets/old/js/chosen.jquery.min.js', __FILE__ ), false, ANALYTIFY_VERSION );
 
 			}
 
@@ -845,7 +845,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			try {
 
 				if ( get_option( 'analytify_profile_exception' ) ) {
-					
+
 					WPANALYTIFY_Utils::handle_exceptions( get_option( 'analytify_profile_exception' ) );
 				} else if ( get_option( 'pa_google_token' ) != '' ) {
 					$profiles = $this->service->management_accountSummaries->listManagementAccountSummaries();
