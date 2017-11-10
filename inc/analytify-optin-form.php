@@ -277,6 +277,13 @@ a.analytify-ga-button.button.button-primary{
     .wp-analytify-left-screenshot {
       float: left !important;
   }
+  html[dir="rtl"] .step-wrapper .step{
+    float: right;
+  }
+  html[dir="rtl"] .step-wrapper.slide{
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+  }
 </style>
 <?php
 
