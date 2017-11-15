@@ -12,6 +12,8 @@ Google Analytics for WordPress by Analytify is the must-have Plugin for Google A
 
 == Description ==
 
+[Homepage](https://analytify.io/details) | [Documentation](https://analytify.io/documentation/) | [Support](https://analytify.io/support/) | [Demo](https://www.youtube.com/watch?v=D02R6eP3olM) | [Premium Version](https://analytify.io/pricing/?utm_source=analytify-lite&amp;utm_medium=readme-org-link&amp;utm_content=premium-version&amp;utm_campaign=pro-upgrade)
+
 = Google Analytics Dashboard =
 
 **[Google Analytics Dashboard for WordPress](http://analytify.io/details)** - by Analytify makes **Google Analytics** simple for everywhere in WordPress (posts, pages and custom post types). It presents the statistics from Google Analytics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. Now you can get **Google Analytics Dashboard** inside your WordPress Dashboard within a minute.
@@ -132,19 +134,30 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 == Screenshots ==
 
-1. Google Analytics by Analytify - [Real Time Stats](https://analytify.io/pricing/)
+1. Google Analytics by Analytify - [Real Time Stats](https://analytify.io/pricing/?utm_source=analytify-lite&amp;utm_medium=readme-org-screenshots&amp;utm_content=realtime&amp;utm_campaign=pro-upgrade)
 2. Google Analytics by Analytify - General Statistics - It includes Google Analytics pageviews, Google Analytics sessions, Google Analytics visitors, Google Analytics BounceRate, Average Time of site from Google Analytics, New versus Returning visitors from Google Analytics.
 3. Google Analytics by Analytify - Top Countries
 4. Google Analytics by Analytify - Top Referrers/Browsers.
-5. Google Analytics by Analytify - Enhanced eCommerce Google Analytics Tracking for WooCommerce [Paid Add-on Required](https://analytify.io/add-ons/woocommerce/).
+5. Google Analytics by Analytify - Enhanced eCommerce Google Analytics Tracking for WooCommerce [Paid Add-on Required](https://analytify.io/add-ons/woocommerce/?utm_source=analytify-lite&amp;utm_medium=readme-org-screenshots&amp;utm_content=woocommerce&amp;utm_campaign=pro-upgrade).
 6. Google Analytics Dashboard By Analytify - Settings Screen.
-7. Google Analytics by Analytify - Automated Email Reports [Paid Add-on Required](https://analytify.io/add-ons/email-notifications/).
-8. Google Analytics by Analytify - Shopping Behaviour funnel for WooCommerce Google Analytics [Paid Add-on Required](https://analytify.io/add-ons/woocommerce/).
-9. Google Analytics by Analytify - UTM Campaigns Dashboard [Add-on Required](https://analytify.io/add-ons/campaigns/).
-10. Google Analytics by Analytify - Google Analytics dashboard widget for WordPress [ Free Add-on](https://analytify.io/add-ons/google-analytics-dashboard-widget-wordpress/).
+7. Google Analytics by Analytify - Automated Email Reports [Paid Add-on Required](https://analytify.io/add-ons/email-notifications/?utm_source=analytify-lite&amp;utm_medium=readme-org-screenshots&amp;utm_content=email-notifications&amp;utm_campaign=pro-upgrade).
+8. Google Analytics by Analytify - Shopping Behaviour funnel for WooCommerce Google Analytics [Paid Add-on Required](https://analytify.io/add-ons/woocommerce/?utm_source=analytify-lite&amp;utm_medium=readme-org-screenshots&amp;utm_content=woocommerce-funnel&amp;utm_campaign=pro-upgrade).
+9. Google Analytics by Analytify - UTM Campaigns Dashboard [Add-on Required](https://analytify.io/add-ons/campaigns/?utm_source=analytify-lite&amp;utm_medium=readme-org-screenshots&amp;utm_content=campaigns&amp;utm_campaign=pro-upgrade).
+10. Google Analytics by Analytify - Google Analytics dashboard widget for WordPress [ Free Add-on](https://analytify.io/add-ons/google-analytics-dashboard-widget-wordpress/?utm_source=analytify-lite&amp;utm_medium=readme-org-screenshots&amp;utm_content=dashboard-widget&amp;utm_campaign=pro-upgrade).
 
 
 == Changelog ==
+
+= 2.1.9 - 2017-11-15 =
+* Enhancement: Update jQuery Chosen
+* Bug Fix:     chosen RTL issue
+* New Feature: Hungarian Translation
+* New Feature: Email stats per page, works with email add-on.
+* Enhancement: Add an Option in feedback popup: "I upgraded to Analytify Pro" and then warn them that they need both Free + Pro
+* Enhancement: Nepal flag added
+* Enhancement: Notice messages for "Empty Profile Selection"
+
+
 
 = 2.1.8 - 2017-10-12 =
 * BugFix: 	Fix momentjs deprecation warning
@@ -393,8 +406,8 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 == Upgrade Notice ==
 
-= 2.1.8 =
-* [Important Update] Upgrade immediately. Performance optimization & Norwegian language updated.
+= 2.1.9 =
+* [Important Update] Upgrade immediately. Performance optimization & Hungarian language added.
 
 
 == Notes ==

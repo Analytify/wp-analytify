@@ -13,6 +13,8 @@ Analytify 2.1 is the must-have Plugin for Google Analytics! Now Enhanced eCommer
 
 ## Description ##
 
+[Homepage](https://analytify.io/details) | [Documentation](https://analytify.io/documentation/) | [Support](https://analytify.io/support/) | [Demo](https://www.youtube.com/watch?v=D02R6eP3olM) | [Premium Version](https://analytify.io/pricing/?utm_source=analytify-lite&amp;utm_medium=readme-github-link&amp;utm_content=premium-version&amp;utm_campaign=pro-upgrade)
+
 **[Analytify](http://analytify.io/details)** - makes **Google Analytics** simple for everywhere in WordPress (posts, pages and custom post types). It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. Now you can get **Google Analytics Dashboard** inside your WordPress Dashboard within a minute.
 
 **Analytify 2.0 is here! Google Analytics Like Never Before! Must check those stunning [Screenshots](https://wordpress.org/plugins/wp-analytify/screenshots/)!**
@@ -90,19 +92,28 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 ##  Screenshots ##
 
-1. Real-time Stats from Google Analytics
-2. Google Analytics Dashboard General Statistics.
-3. Google Analytics Top Countries.
-4. Google Analytics Top Referrers/Browsers.
-5. Enhanced eCommerce Google Analytics Tracking for WooCommerce Dashboard (Add-on Required).
-6. Google Analytics Dashboard By Analytify Settings Screen.
-7. Automated Email Reports (Add-on Required).
-8. Shopping Behaviours funnel for WooCommerce Dashboard (Add-on Required).
-9. UTM Campaigns Dashboard (Add-on Required).
-10. Google Analytics dashboard widget for WordPress ( Free Add-ons Required).
+1. Google Analytics by Analytify - [Real Time Stats](https://analytify.io/pricing/?utm_source=analytify-lite&amp;utm_medium=readme-org-screenshots&amp;utm_content=realtime&amp;utm_campaign=pro-upgrade)
+2. Google Analytics by Analytify - General Statistics - It includes Google Analytics pageviews, Google Analytics sessions, Google Analytics visitors, Google Analytics BounceRate, Average Time of site from Google Analytics, New versus Returning visitors from Google Analytics.
+3. Google Analytics by Analytify - Top Countries
+4. Google Analytics by Analytify - Top Referrers/Browsers.
+5. Google Analytics by Analytify - Enhanced eCommerce Google Analytics Tracking for WooCommerce [Paid Add-on Required](https://analytify.io/add-ons/woocommerce/?utm_source=analytify-lite&amp;utm_medium=readme-org-screenshots&amp;utm_content=woocommerce&amp;utm_campaign=pro-upgrade).
+6. Google Analytics Dashboard By Analytify - Settings Screen.
+7. Google Analytics by Analytify - Automated Email Reports [Paid Add-on Required](https://analytify.io/add-ons/email-notifications/?utm_source=analytify-lite&amp;utm_medium=readme-org-screenshots&amp;utm_content=email-notifications&amp;utm_campaign=pro-upgrade).
+8. Google Analytics by Analytify - Shopping Behaviour funnel for WooCommerce Google Analytics [Paid Add-on Required](https://analytify.io/add-ons/woocommerce/?utm_source=analytify-lite&amp;utm_medium=readme-org-screenshots&amp;utm_content=woocommerce-funnel&amp;utm_campaign=pro-upgrade).
+9. Google Analytics by Analytify - UTM Campaigns Dashboard [Add-on Required](https://analytify.io/add-ons/campaigns/?utm_source=analytify-lite&amp;utm_medium=readme-org-screenshots&amp;utm_content=campaigns&amp;utm_campaign=pro-upgrade).
+10. Google Analytics by Analytify - Google Analytics dashboard widget for WordPress [ Free Add-on](https://analytify.io/add-ons/google-analytics-dashboard-widget-wordpress/?utm_source=analytify-lite&amp;utm_medium=readme-org-screenshots&amp;utm_content=dashboard-widget&amp;utm_campaign=pro-upgrade).
 
 
 ##  Changelog ##
+
+### 2.1.9 - 2017-11-15 ###
+* Enhancement: Update jQuery Chosen
+* Bug Fix:     chosen RTL issue
+* New Feature: Hungarian Translation
+* New Feature: Email stats per page, works with email add-on.
+* Enhancement: Add an Option in feedback popup: "I upgraded to Analytify Pro" and then warn them that they need both Free + Pro
+* Enhancement: Nepal flag added
+* Enhancement: Notice messages for "Empty Profile Selection"
 
 ### 2.1.8 - 2017-10-12 ###
 * BugFix: 	fix momentjs deprecation warning

@@ -704,9 +704,9 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 
 			$html .= sprintf( '</select>' );
 
-			// If no website registered show warning message.
+			// If no website is registered on Google Analytics for this user, Show this warning message.
 			if ( ! $args['options'] ) {
-				$html .= '<p class="description" style="color:#ed1515">No Website is registered with your Email. Please Register your site first on <a href="https://analytics.google.com/">Google Analytics</a>. Click <a href="https://analytify.io">Here</a> to get more details.</p>';
+				$html .= '<p class="description" style="color:#ed1515">No Website is registered with your Email at <a href="https://analytics.google.com/">Google Analytics</a>. Please setup your site first, Check out this guide <a href="https://analytify.io/setup-account-google-analytics/">here</a> to setup it properly.</p>';
 			} else {
 				// Show description.
 				$html .= $this->get_field_description( $args );
@@ -905,7 +905,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 
 						<p><?php echo sprintf( esc_html__( 'You may ask the WordPress community for help by posting to the %1$s WordPress.org support forum %2$s. Response time can range from a few days to a few weeks and will likely be from a non-developer.', 'wp-analytify' ), '<a href="http://wordpress.org/support/plugin/wp-analytify/" target="_blank">', '</a>' ); ?></p>
 
-						<p class="upgrade-to-pro"><?php echo sprintf( esc_html__( 'If you want a %1$s timely response via email from a developer %2$s who works on this plugin, %3$s upgrade to WP Analytify Pro %4$s and send us an email.', 'wp-analytify' ), '<strong>', '</strong>', '<a href="https://analytify.io/?utm_source=insideplugin&amp;utm_medium=web&amp;utm_content=help-tab&amp;utm_campaign=freeplugin" target="_blank">', '</a>' ); ?></p>
+						<p class="upgrade-to-pro"><?php echo sprintf( esc_html__( 'If you want a %1$s timely response via email from a developer %2$s who works on this plugin, %3$s upgrade to WP Analytify Pro %4$s and send us an email.', 'wp-analytify' ), '<strong>', '</strong>', '<a href="https://analytify.io/?utm_source=analytify-lite&amp;utm_medium=help-tab&amp;utm_content=support-upgrade&amp;utm_campaign=pro-upgrade" target="_blank">', '</a>' ); ?></p>
 
 						<p><?php echo sprintf( esc_html__( 'If you\'ve found a bug, please %1$s submit an issue at Github %2$s.', 'wp-analytify' ), '<a href="https://github.com/hiddenpearls/wp-analytify/issues" target="_blank">', '</a>' ); ?></p>
 

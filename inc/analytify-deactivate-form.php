@@ -87,7 +87,7 @@
   <div class="wp-analytify-serveypanel">
     <form action="#" method="post" id="wp-analytify-deactivate-form">
     <div class="wp-analytify-popup-header">
-      <h2><?php _e( 'Quick feedback', 'wp-analytify' ); ?></h2>
+      <h2><?php _e( 'Quick feedback about Analytify (Google Analytics for WordPress)', 'wp-analytify' ); ?></h2>
     </div>
     <div class="wp-analytify-popup-body">
       <h3><?php _e( 'If you have a moment, please let us know why you are deactivating:', 'wp-analytify' ); ?></h3>
@@ -99,7 +99,7 @@
             </span>
             <span><?php _e( 'I upgraded to Analytify Pro', 'wp-analytify' ); ?></span>
           </label>
-          <div class="wp-analytify-pro-message"><?php _e( 'No need to deactivate the Analytify.', 'wp-analytify' ) ?></div>
+          <div class="wp-analytify-pro-message"><?php _e( 'No need to deactivate this Analytify Core version. Pro version works as an add-on with Core version.', 'wp-analytify' ) ?></div>
         </li>
         <li class="wp-analytify-reason" data-input-type="" data-input-placeholder="">
           <label>

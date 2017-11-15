@@ -25,28 +25,28 @@ if ( ! class_exists( 'WP_Analytify_Addons' ) ) {
 
 			$addons = array(
 				'wp_analytify_woo' 	=> (object) array(
-					'url' 		    => 'https://analytify.io/add-ons/woocommerce/?utm_source=wordpress&utm_medium=plugin&utm_campaign=addons_page&utm_content=woocommerce',
+					'url' 		    => 'https://analytify.io/add-ons/woocommerce/?utm_source=analytify-lite&utm_medium=addons-page&utm_campaign=pro-upgrade&utm_content=woocommerce',
 					'slug'			 => 'wp-analytify-woocommerce/wp-analytify-woocommerce.php',
 					'title' 		  => esc_html__( 'Enhanced E-Commerce Tracking for WooCommerce', 'wp-analytify' ),
 					'status'		  => '',
 					'description' => esc_html__( 'This Add-on will track the e-commerce behaviour of users, digital Sales, Transactions and Revenues in Google Analytics and Displays Stats in a unique and intiutive way which is very understandable even for non-technical WordPress users.', 'wp-analytify' ),
 					),
 				'wp_analytify_edd' => (object) array(
-						'url' 		    => 'https://analytify.io/add-ons/easy-digital-downloads/?utm_source=wordpress&utm_medium=plugin&utm_campaign=addons_page&utm_content=easy-digital-downloads',
+						'url' 		    => 'https://analytify.io/add-ons/easy-digital-downloads/?utm_source=analytify-lite&utm_medium=addons-page&utm_campaign=pro-upgrade&utm_content=easy-digital-downloads',
 						'slug'			  => 'wp-analytify-edd/wp-analytify-edd.php',
 						'title' 		  => esc_html__( 'Enhanced E-Commerce Tracking for Easy Digital Downloads', 'wp-analytify' ),
 						'status'		  => '',
 						'description' => esc_html__( 'This Add-on will track the e-commerce behaviour of users, digital Sales, Transactions and Revenues in Google Analytics and Displays Stats in a unique and intiutive way which is very understandable even for non-technical WordPress users.', 'wp-analytify' ),
 						),
 					'wp_analytify_campaings' => (object) array(
-						'url' 		    => 'https://analytify.io/add-ons/campaigns/?utm_source=wordpress&utm_medium=plugin&utm_campaign=addons_page&utm_content=campaigns',
+						'url' 		    => 'https://analytify.io/add-ons/campaigns/?utm_source=analytify-lite&utm_medium=addons-page&utm_campaign=pro-upgrade&utm_content=campaigns',
 						'slug'			  => 'wp-analytify-campaigns/wp-analytify-campaigns.php',
 						'title' 		  => esc_html__( 'Campaings Tracking ', 'wp-analytify' ),
 						'status'		  => '',
 						'description' => esc_html__( 'Everyone runs campaigns through social media or create backlinks. This add-on helps you to show your campaigns stats in a beautiful dashboard.', 'wp-analytify' ),
 						),
 				'wp_analytify_dash' => (object) array(
-					'url' 		    => 'https://analytify.io/add-ons/google-analytics-dashboard-widget-wordpress/?utm_source=wordpress&utm_medium=plugin&utm_campaign=addons_page&utm_content=google-analytics-dashboard-widget-wordpress',
+					'url' 		    => 'https://analytify.io/add-ons/google-analytics-dashboard-widget-wordpress/?utm_source=analytify-lite&utm_medium=addons-page&utm_campaign=pro-upgrade&utm_content=google-analytics-dashboard-widget-wordpress',
 					'slug'			  => 'wp-analytify-dashboard/wp-analytify-dashboard.php',
 					'title' 		  => sprintf( esc_html__( 'Google Analytics Dashboard widget (FREE)', 'wp-analytify' ), '<br />' ),
 					'status'		  => '',
@@ -54,7 +54,7 @@ if ( ! class_exists( 'WP_Analytify_Addons' ) ) {
 					),
 
 						'wp_analytify_email' => (object) array(
-							'url' 		    => 'https://analytify.io/add-ons/email-notifications/?utm_source=wordpress&utm_medium=plugin&utm_campaign=addons_page&utm_content=email-notifications',
+							'url' 		    => 'https://analytify.io/add-ons/email-notifications/?utm_source=analytify-lite&utm_medium=addons-page&utm_campaign=pro-upgrade&utm_content=email-notifications',
 							'slug'			  => 'wp-analytify-email/wp-analytify-email.php',
 							'title' 		  =>  esc_html__( 'Email Notifications', 'wp-analytify' ),
 							'status'		  => '',
