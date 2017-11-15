@@ -10,6 +10,13 @@
       margin: 3px 0 3px 22px;
       display: none;
     }
+    .wp-analytify-pro-message{
+      margin: 3px 0 3px 22px;
+      display: none;
+      color: #ed1515;
+      font-size: 14px;
+      font-weight: 600;
+    }
     .wp-analytify-reason-input input[type="text"]{
       width: 100%;
       display: block;
@@ -85,6 +92,15 @@
     <div class="wp-analytify-popup-body">
       <h3><?php _e( 'If you have a moment, please let us know why you are deactivating:', 'wp-analytify' ); ?></h3>
       <ul id="wp-analytify-reason-list">
+        <li class="wp-analytify-reason wp-analytify-reason-pro" data-input-type="" data-input-placeholder="">
+          <label>
+            <span>
+              <input type="radio" name="wp-analytify-selected-reason" value="pro">
+            </span>
+            <span><?php _e( 'I upgraded to Analytify Pro', 'wp-analytify' ); ?></span>
+          </label>
+          <div class="wp-analytify-pro-message"><?php _e( 'No need to deactivate the Analytify.', 'wp-analytify' ) ?></div>
+        </li>
         <li class="wp-analytify-reason" data-input-type="" data-input-placeholder="">
           <label>
             <span>
@@ -195,9 +211,18 @@
             //$('.wp-analytify-anonymous').show();
             $(this).next().next('.wp-analytify-reason-input').show().end().end().parent().siblings().find('.wp-analytify-reason-input').hide();
           }
+          $('.wp-analytify-pro-message').hide();
+        });
+        $('.wp-analytify-reason-pro label').on('click', function(){
+          if($(this).find('input[type="radio"]').is(':checked')){
+            $(this).next('.wp-analytify-pro-message').show().end().end().parent().siblings().find('.wp-analytify-reason-input').hide();
+            $('.wp-analytify-popup-allow-deactivate').attr('disabled', 'disabled');
+            $('.wp-analytify-popup-skip-feedback').attr('disabled', 'disabled');
+          }
         });
         $('input[type="radio"][name="wp-analytify-selected-reason"]').on('click', function(event) {
           $(".wp-analytify-popup-allow-deactivate").removeAttr('disabled');
+          $(".wp-analytify-popup-skip-feedback").removeAttr('disabled');
         });
         $(document).on('submit', '#wp-analytify-deactivate-form', function(event) {
           event.preventDefault();
