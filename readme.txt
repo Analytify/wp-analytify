@@ -156,6 +156,7 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 * Enhancement: Add an Option in feedback popup: "I upgraded to Analytify Pro" and then warn them that they need both Free + Pro
 * Enhancement: Nepal flag added
 * Enhancement: Notice messages for "Empty Profile Selection"
+* Compatibility: Compatible with WordPress 4.9.
 
 
 
@@ -407,7 +408,7 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 == Upgrade Notice ==
 
 = 2.1.9 =
-* [Important Update] Upgrade immediately. Performance optimization & Hungarian language added.
+* [Important Update] Upgrade immediately. Performance optimization, WordPress 4.9 compatibility & Hungarian language added.
 
 
 == Notes ==
