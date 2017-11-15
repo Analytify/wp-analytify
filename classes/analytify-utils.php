@@ -233,5 +233,21 @@ class WPANALYTIFY_Utils {
 		printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message );
 	}
 
+	/**
+	* Clear cache when query string is set.
+	* @return bool
+	*
+	* @since 2.1.9
+	*/
+	public static function force_clear_cache() {
+
+		if ( isset( $_GET[ 'force-clear-cache' ] ) && '1' == $_GET[ 'force-clear-cache' ] ) {
+			return true;
+		}
+
+		return false;
+	}
+
+
 
 }

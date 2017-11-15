@@ -703,7 +703,14 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 
 
 			$html .= sprintf( '</select>' );
-			$html .= $this->get_field_description( $args );
+
+			// If no website registered show warning message.
+			if ( ! $args['options'] ) {
+				$html .= '<p class="description" style="color:#ed1515">No Website is registered with your Email. Please Register your site first on <a href="https://analytics.google.com/">Google Analytics</a>. Click <a href="https://analytify.io">Here</a> to get more details.</p>';
+			} else {
+				// Show description.
+				$html .= $this->get_field_description( $args );
+			}
 
 			echo $html;
 		}
