@@ -4,8 +4,8 @@
 **Donate link:** http://paypal.me/Analytify  
 **Tags:** google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced e-commerce tracking  
 **Requires at least:** 3.6
-**Tested up to** 4.8
-**Stable tag** 2.1.8
+**Tested up to** 4.9
+**Stable tag** 2.1.9
 **License:** GPLv3 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-3.0.html  
 
