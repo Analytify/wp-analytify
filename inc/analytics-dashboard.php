@@ -251,6 +251,7 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 						<div class="analytify_status_footer">
 							<span class="analytify_info_stats"><?php esc_html_e( 'List of the top pages and posts.', 'wp-analytify' ); ?></span>
 							<div class="wp_analytify_pagination"></div>
+							<?php do_action( 'top_page_text' ) ?>
 						</div>
 					</div>
 				<?php endif ?>
@@ -283,6 +284,7 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 
 						<div class="analytify_status_footer">
 							<span class="analytify_info_stats"><?php esc_html_e( 'Listing statistics of top countries and cities.', 'wp-analytify' ); ?></span>
+							<?php do_action( 'top_geographic_text' ) ?>
 						</div>
 					</div>
 				<?php endif ?>
@@ -360,6 +362,7 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 						</div>
 						<div class="analytify_status_footer">
 							<span class="analytify_info_stats"><?php esc_html_e( 'Listing your ranked keywords', 'wp-analytify' ); ?></span>
+							<?php do_action( 'top_keyword_text' ) ?>
 						</div>
 					</div>
 				<?php endif ?>
@@ -399,6 +402,7 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 									</div>
 									<div class="analytify_status_footer">
 										<span class="analytify_info_stats"><?php esc_html_e( 'See how many users are coming to your site from Social media', 'wp-analytify' ); ?></span>
+										<?php do_action( 'top_social_media_text' ) ?>
 									</div>
 								</div>
 								<!-- End Social Stats -->
@@ -437,6 +441,7 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 									</div>
 									<div class="analytify_status_footer">
 										<span class="analytify_info_stats"><?php esc_html_e( 'who are the strong Referrers to your site ?? See above', 'wp-analytify' ); ?></span>
+										<?php do_action( 'top_reffers_text' ) ?>
 									</div>
 								</div>
 							<?php endif; ?>
@@ -469,6 +474,7 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 						</div>
 						<div class="analytify_status_footer">
 							<span class="analytify_info_stats top_pages_message"></span>
+							<?php do_action( 'top_page_stats_text' ) ?>
 						</div>
 					</div>
 				<?php endif ?>
