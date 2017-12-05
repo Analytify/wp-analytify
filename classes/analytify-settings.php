@@ -218,8 +218,8 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 						),
 					array(
 						'name'              => 'show_analytics_roles_back_end',
-						'label'             => __( 'Show Analytics to (roles)', 'wp-analytify' ),
-						'desc'              => __( 'Show Analytics to above selected user roles only.', 'wp-analytify' ),
+						'label'             => __( 'Show Analytics to roles <br />( posts & pages )', 'wp-analytify' ),
+						'desc'              => __( 'Show Analytics (under posts & pages) to above selected user roles only.', 'wp-analytify' ),
 						'type'              => 'chosen',
 						'default' 			=> array(),
 						'options' => $this->get_current_roles(),
