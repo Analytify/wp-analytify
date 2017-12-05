@@ -231,6 +231,7 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 					<div class="analytify_general_status analytify_status_box_wraper">
 						<div class="analytify_status_header">
 							<h3><?php esc_html_e( 'Top pages by views', 'wp-analytify' ); ?></h3>
+							<div class="analytify_top_page_detials analytify_tp_btn"><?php do_action( 'top_page_text' ) ?></div>
 						</div>
 						<div class="analytify_status_body stats_loading">
 							<script>
@@ -251,7 +252,7 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 						<div class="analytify_status_footer">
 							<span class="analytify_info_stats"><?php esc_html_e( 'List of the top pages and posts.', 'wp-analytify' ); ?></span>
 							<div class="wp_analytify_pagination"></div>
-							<?php do_action( 'top_page_text' ) ?>
+							
 						</div>
 					</div>
 				<?php endif ?>
@@ -342,6 +343,9 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 							<div class="analytify_status_header_value keywords_total">
 								<span class="analytify_medium_f"><?php esc_html_e( 'Total Visits', 'wp-analytify' ); ?></span>
 							</div>
+							<div class="analytify_top_keywords_detials analytify_tp_btn">
+								<?php do_action( 'top_keyword_text' ) ?>
+							</div>
 						</div>
 						<div class="analytify_status_body stats_loading">
 							<script>
@@ -362,7 +366,7 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 						</div>
 						<div class="analytify_status_footer">
 							<span class="analytify_info_stats"><?php esc_html_e( 'Listing your ranked keywords', 'wp-analytify' ); ?></span>
-							<?php do_action( 'top_keyword_text' ) ?>
+							
 						</div>
 					</div>
 				<?php endif ?>
@@ -376,6 +380,9 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 								<div class="analytify_general_status analytify_status_box_wraper">
 									<div class="analytify_status_header analytify_header_adj">
 										<h3><?php esc_html_e( 'Social Media', 'wp-analytify' ); ?></h3>
+										<div class="analytify_top_keywords_detials analytify_tp_btn">
+											<?php do_action( 'top_social_media_text' ) ?>
+										</div>
 										<div class="analytify_status_header_value social_total">
 											<span class="analytify_medium_f"><?php esc_html_e( 'Total Visits', 'wp-analytify' ); ?></span>
 										</div>
@@ -402,7 +409,7 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 									</div>
 									<div class="analytify_status_footer">
 										<span class="analytify_info_stats"><?php esc_html_e( 'See how many users are coming to your site from Social media', 'wp-analytify' ); ?></span>
-										<?php do_action( 'top_social_media_text' ) ?>
+										
 									</div>
 								</div>
 								<!-- End Social Stats -->
@@ -415,6 +422,9 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 								<div class="analytify_general_status analytify_status_box_wraper">
 									<div class="analytify_status_header analytify_header_adj">
 										<h3><?php esc_html_e( 'Top Referrers', 'wp-analytify' ); ?></h3>
+										<div class="analytify_top_keywords_detials analytify_tp_btn">
+											<?php do_action( 'top_reffers_text' ) ?>
+										</div>
 										<div class="analytify_status_header_value  reffers_total">
 											<span class="analytify_medium_f"><?php esc_html_e( 'Total Visits', 'wp-analytify' ); ?></span>
 										</div>
@@ -441,7 +451,7 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 									</div>
 									<div class="analytify_status_footer">
 										<span class="analytify_info_stats"><?php esc_html_e( 'who are the strong Referrers to your site ?? See above', 'wp-analytify' ); ?></span>
-										<?php do_action( 'top_reffers_text' ) ?>
+										
 									</div>
 								</div>
 							<?php endif; ?>
@@ -454,6 +464,9 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 					<div class="analytify_general_status analytify_status_box_wraper">
 						<div class="analytify_status_header">
 							<h3><?php esc_html_e( 'What\'s happening when users come to your site.', 'wp-analytify' ); ?></h3>
+							<div class="analytify_top_page_detials analytify_tp_btn">
+								<?php do_action( 'top_page_stats_text' ) ?>
+							</div>
 						</div>
 						<div class="analytify_status_body stats_loading">
 							<script>
@@ -474,7 +487,7 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 						</div>
 						<div class="analytify_status_footer">
 							<span class="analytify_info_stats top_pages_message"></span>
-							<?php do_action( 'top_page_stats_text' ) ?>
+							
 						</div>
 					</div>
 				<?php endif ?>

@@ -17,7 +17,12 @@ function fetch_system_stats ( $current, $browser_stats, $os_stats, $mobile_stats
       <table class="analytify_data_tables">
         <thead>
           <tr>
-            <th class="analytify_txt_left"><?php esc_html_e( 'Browsers statistics', 'wp-analytify' ); ?></th>
+            <th class="analytify_txt_left analytify_top_geographic_detials_wraper">
+              <?php esc_html_e( 'Browsers statistics', 'wp-analytify' ); ?>
+                <span class="analytify_top_geographic_detials analytify_tp_btn">
+                  <a href="#" class="analytify-export-data" data-stats-type="top-countries">Export Top cities</a>
+                </span>
+            </th>
             <th class="analytify_value_row"><?php esc_html_e( 'Visits', 'wp-analytify' ); ?></th>
           </tr>
         </thead>
@@ -49,7 +54,12 @@ function fetch_system_stats ( $current, $browser_stats, $os_stats, $mobile_stats
       <table class="analytify_data_tables">
         <thead>
           <tr>
-            <th class="analytify_txt_left"><?php esc_html_e( 'Operating system statistics', 'wp-analytify' ); ?></th>
+            <th class="analytify_txt_left analytify_top_geographic_detials_wraper analytify_brd_lft">
+              <?php esc_html_e( 'Operating system statistics', 'wp-analytify' ); ?>
+                <span class="analytify_top_geographic_detials analytify_tp_btn">
+                  <a href="#" class="analytify-export-data" data-stats-type="top-countries">Export Top cities</a>
+                </span>
+              </th>
             <th class="analytify_value_row"><?php esc_html_e( 'Visits', 'wp-analytify' ); ?></th>
           </tr>
         </thead>
@@ -77,7 +87,12 @@ function fetch_system_stats ( $current, $browser_stats, $os_stats, $mobile_stats
       <table class="analytify_data_tables ">
         <thead>
           <tr>
-            <th class="analytify_txt_left"><?php esc_html_e( 'Mobile device statistics', 'wp-analytify' ); ?></th>
+            <th class="analytify_txt_left analytify_top_geographic_detials_wraper analytify_brd_lft">
+              <?php esc_html_e( 'Mobile device statistics', 'wp-analytify' ); ?>
+                <span class="analytify_top_geographic_detials analytify_tp_btn">
+                  <a href="#" class="analytify-export-data" data-stats-type="top-countries">Export Top cities</a>
+                </span>
+              </th>
             <th class="analytify_value_row"><?php esc_html_e( 'Visits', 'wp-analytify' ); ?></th>
           </tr>
         </thead>
