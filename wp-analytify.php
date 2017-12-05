@@ -644,7 +644,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 			global $post_type;
 
 			// for main page
-			if ( $page == 'index.php' || $page == 'toplevel_page_analytify-dashboard' || $page == 'analytify_page_analytify-woocommerce' || $page == 'analytify_page_edd-dashboard' || $page == 'analytify_page_analytify-campaigns' || in_array( $post_type, $this->settings->get_option( 'show_analytics_post_types_back_end','wp-analytify-admin', array() ) ) ) {
+			if ( $page == 'index.php' || $page == 'toplevel_page_analytify-dashboard' || $page == 'analytify_page_analytify-woocommerce' || $page == 'analytify_page_edd-dashboard' || $page == 'analytify_page_analytify-campaigns' || $page == 'analytify_page_analytify-goals' || in_array( $post_type, $this->settings->get_option( 'show_analytics_post_types_back_end','wp-analytify-admin', array() ) ) ) {
 
 				wp_enqueue_script( 'pikaday-js', 	plugins_url( 'assets/default/js/pikaday.js', __FILE__ ), array( 'moment-js' ) , ANALYTIFY_VERSION );
 				wp_enqueue_script( 'moment-js', 	plugins_url( 'assets/default/js/moment.min.js', __FILE__ ), false, ANALYTIFY_VERSION );
