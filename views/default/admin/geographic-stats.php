@@ -131,7 +131,9 @@ function fetch_geographic_stats ( $current, $countries_stats, $cities_stats, $sh
             <th class="analytify_txt_left analytify_top_geographic_detials_wraper">
               <?php esc_html_e( 'Top countries', 'wp-analytify' ); ?>
               <span class="analytify_top_geographic_detials analytify_tp_btn">
-                  <a href="#" class="analytify-export-data" data-stats-type="top-countries">Export Top Countries</a>
+                  <a href="#" class="analytify-export-data analytify_tooltip" data-stats-type="top-countries">
+                    <span class="analytify_tooltiptext">Export Top Countries</span>
+                  </a>
               </span>
             </th>
             <th class="analytify_value_row"><?php esc_html_e( 'Visitors', 'wp-analytify' ); ?></th>
@@ -157,7 +159,9 @@ function fetch_geographic_stats ( $current, $countries_stats, $cities_stats, $sh
             <th class="analytify_txt_left analytify_top_geographic_detials_wraper analytify_brd_lft">
               <?php esc_html_e( 'Top cities', 'wp-analytify' ); ?>
               <span class="analytify_top_geographic_detials analytify_tp_btn">
-                  <a href="#" class="analytify-export-data" data-stats-type="top-countries">Export Top cities</a>
+                  <a href="#" class="analytify-export-data analytify_tooltip" data-stats-type="top-countries">
+                    <span class="analytify_tooltiptext">Export Top cities</span>
+                  </a>
               </span>
             </th>
             <th class="analytify_value_row"><?php esc_html_e( 'Visitors', 'wp-analytify' ); ?></th>

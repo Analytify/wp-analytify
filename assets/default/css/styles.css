@@ -1089,8 +1089,11 @@
 .analytify_half {
     width:50%;
 }
-.analytify_column {
-    overflow:hidden;
+.analytify_column:after{
+    content: "";
+    width: 100%;
+    display: block;
+    clear: both;
 }
 .analytify_left_flow {
     float:left;
@@ -1779,12 +1782,12 @@
 }
 .analytify_top_page_detials{
     position: absolute;
-    top: 11px;
+    top: 14px;
     right: 11px;
 }
 .analytify_top_keywords_detials{
     position: absolute;
-    top: 11px;
+    top: 14px;
     right: 230px;
 }
 .analytify_top_geographic_detials{
@@ -1795,22 +1798,66 @@
     border-left: 1px solid #e2e5e8;
 }
 .analytify_data_tables th.analytify_top_geographic_detials_wraper{
-    line-height: 39px;
+    line-height: 34px;
 }
 .analytify_tp_btn a{
-    display: inline-block;
-    padding: 8px 15px;
-    border: 1px solid #e2e5e8;
+    display: block;
+    height: 34px;
+    width: 44px;
+    padding: 0;
     background-color: #fff;
     text-decoration: none;
     transition: all .3s;
     font-weight: 400;
+    background: url(../img/csv_button.svg) no-repeat 0 0;
+ 
 }
 .analytify_tp_btn a:hover{
-    background: #448aff;
-    color: #fff;
-    border: 1px solid #448aff;
+ 
     }
+.analytify_tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.analytify_tooltip .analytify_tooltiptext {
+    visibility: hidden;
+    width: 220px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 7px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 128%;
+    left: 50%;
+    margin-left: -154px;
+    opacity: 0;
+    transition: opacity 1s;
+    font-size: 14px;
+}
+.analytify_top_page_detials .analytify_tooltip .analytify_tooltiptext {
+    margin-left: -183px;
+}
+.analytify_top_page_detials .analytify_tooltip .analytify_tooltiptext::after{
+    left: 84%;
+}
+.analytify_tooltip .analytify_tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 70%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.analytify_tooltip:hover .analytify_tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
 /* ======== Addons ======= */
 .wp-extension h3 {
     box-sizing: border-box;
