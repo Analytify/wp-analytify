@@ -1836,6 +1836,13 @@
     opacity: 0;
     transition: opacity 1s;
     font-size: 14px;
+} 
+.analytify_tp_btn .analytify-export-loader{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 10px 14px;
+    background: rgba(255,255,255,.5);
 }
 .analytify_top_page_detials .analytify_tooltip .analytify_tooltiptext {
     margin-left: -183px;
