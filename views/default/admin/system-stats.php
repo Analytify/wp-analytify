@@ -19,11 +19,7 @@ function fetch_system_stats ( $current, $browser_stats, $os_stats, $mobile_stats
           <tr>
             <th class="analytify_txt_left analytify_top_geographic_detials_wraper">
               <?php esc_html_e( 'Browsers statistics', 'wp-analytify' ); ?>
-                <span class="analytify_top_geographic_detials analytify_tp_btn">
-                  <a href="#" class="analytify-export-data analytify_tooltip" data-stats-type="top-countries">
-                    <span class="analytify_tooltiptext">Export Top cities</span>
-                  </a>
-                </span>
+              <?php do_action( 'analytify_after_top_browser_text' ) ?>
             </th>
             <th class="analytify_value_row"><?php esc_html_e( 'Visits', 'wp-analytify' ); ?></th>
           </tr>
@@ -54,15 +50,11 @@ function fetch_system_stats ( $current, $browser_stats, $os_stats, $mobile_stats
     </div>
     <div class="analytify_one_tree_table">
       <table class="analytify_data_tables">
-        <thead> 
+        <thead>
           <tr>
             <th class="analytify_txt_left analytify_top_geographic_detials_wraper analytify_brd_lft">
               <?php esc_html_e( 'Operating system statistics', 'wp-analytify' ); ?>
-                <span class="analytify_top_geographic_detials analytify_tp_btn">
-                  <a href="#" class="analytify-export-data analytify_tooltip" data-stats-type="top-countries">
-                    <span class="analytify_tooltiptext">Export Top cities</span>
-                  </a>
-                </span>
+              <?php do_action( 'analytify_after_top_operating_system_text' ) ?>
               </th>
             <th class="analytify_value_row"><?php esc_html_e( 'Visits', 'wp-analytify' ); ?></th>
           </tr>
@@ -93,11 +85,7 @@ function fetch_system_stats ( $current, $browser_stats, $os_stats, $mobile_stats
           <tr>
             <th class="analytify_txt_left analytify_top_geographic_detials_wraper analytify_brd_lft">
               <?php esc_html_e( 'Mobile device statistics', 'wp-analytify' ); ?>
-                <span class="analytify_top_geographic_detials analytify_tp_btn">
-                  <a href="#" class="analytify-export-data analytify_tooltip" data-stats-type="top-countries">
-                    <span class="analytify_tooltiptext">Export Top cities</span>
-                  </a>
-                </span>
+              <?php do_action( 'analytify_after_top_mobile_device_text' ) ?>
               </th>
             <th class="analytify_value_row"><?php esc_html_e( 'Visits', 'wp-analytify' ); ?></th>
           </tr>
