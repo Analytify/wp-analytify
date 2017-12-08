@@ -130,7 +130,7 @@ function fetch_geographic_stats ( $current, $countries_stats, $cities_stats, $sh
           <tr>
             <th class="analytify_txt_left analytify_top_geographic_detials_wraper">
               <?php esc_html_e( 'Top countries', 'wp-analytify' ); ?>
-              <?php do_action( 'analytify_after_top_geographic_text' ) ?>
+              <?php do_action( 'analytify_after_top_country_text' ) ?>
             </th>
             <th class="analytify_value_row"><?php esc_html_e( 'Visitors', 'wp-analytify' ); ?></th>
           </tr>
