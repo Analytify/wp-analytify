@@ -1793,6 +1793,7 @@
 .analytify_top_geographic_detials{
     float: right;
     line-height: 21px;
+    position: relative;
 }
 .analytify_data_tables th.analytify_brd_lft{
     border-left: 1px solid #e2e5e8;
