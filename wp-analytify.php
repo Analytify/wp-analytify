@@ -1593,6 +1593,7 @@ function analytify_send_data( $args ) {
 		'blog_language'     => get_bloginfo( 'language' ),
 		'wordpress_version' => get_bloginfo( 'version' ),
 		'plugin_version'    => ANALYTIFY_VERSION,
+		'php_version'				=> PHP_VERSION,
 		'plugin_name' 			=> 'Analytify',
 	);
 
