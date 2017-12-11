@@ -4,7 +4,7 @@ Donate link: http://paypal.me/Analytify
 Tags: google analytics, google analytics dashboard, WooCommerce analytics, WordPress Analytics, analytify, tracking, analytics, install analytics, e-commerce, track, track visitor, statistics, campaign tracking, analytics campaigns, best google analytics, enhanced ecommerce tracking, email analytics report, google analytics export,
 Requires at least: 3.6
 Tested up to: 4.9
-Stable tag: 2.1.9
+Stable tag: 2.1.10
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -147,6 +147,13 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 
 == Changelog ==
+
+= 2.1.10 - 2017-12-11 =
+* Enhancement: Compatibility with the Pro features.
+* Enhancement: Compatibility with the Pro addon (Google Analytics Forms Tracking) Contact form 7.
+* Enhancement: Support for Google Analytics Forms Tracking.
+* Enhancement: Support for Export Google Analytics Stats in .CSV format
+
 
 = 2.1.9 - 2017-11-15 =
 * Enhancement: Update jQuery Chosen
@@ -407,7 +414,7 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 == Upgrade Notice ==
 
-= 2.1.9 =
+= 2.1.10 =
 * [Important Update] Upgrade immediately. Performance optimization, WordPress 4.9 compatibility & Hungarian language added.
 
 
