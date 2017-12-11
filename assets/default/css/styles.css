@@ -1813,6 +1813,12 @@
     background: url(../img/csv_button.svg) no-repeat 0 0;
  
 }
+.analytify_tp_btn #refresh-realtime-stats{
+    background: url(../img/refresh.svg) no-repeat 0 0;
+    height: 30px;
+    width: 30px;
+    top: 2px;
+}
 .analytify_tp_btn a:hover{
  
     }
