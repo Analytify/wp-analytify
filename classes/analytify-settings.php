@@ -394,7 +394,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 
 				if ( isset( $section['desc'] ) && ! empty( $section['desc'] ) ) {
 					$section['desc'] = '<div class="inside">'.$section['desc'].'</div>';
-					$callback = create_function( '', 'echo "'.str_replace( '"', '\"', $section['desc'] ).'";' );
+					$callback = call_user_func( array( $this, 'get_description' ), $section['desc']  );
 				} else if ( isset( $section['callback'] ) ) {
 					$callback = $section['callback'];
 				} else {
@@ -1027,6 +1027,39 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 			echo $html;
 		}
 
+		/**
+		 * Get Section Description
+		 * @param  string $desc [description]
+		 *
+		 * @since 2.1.11
+		 */
+		function get_description( $desc ) {
+
+			return $desc;
+		}
+
+
+		/**
+		* Prints out all settings sections added to a particular settings page
+		*
+		* @since 2.1.11
+		*/
+		function do_settings_sections( $page ) {
+			global $wp_settings_sections, $wp_settings_fields;
+
+			if ( !isset($wp_settings_sections) || !isset($wp_settings_sections[$page]) )
+			return;
+
+			foreach ( (array) $wp_settings_sections[$page] as $section ) {
+				echo "<h3>{$section['title']}</h3>\n";
+				echo  $section['callback'] ;
+				if ( !isset($wp_settings_fields) || !isset($wp_settings_fields[$page]) || !isset($wp_settings_fields[$page][$section['id']]) )
+				continue;
+				echo '<table class="form-table">';
+				do_settings_fields($page, $section['id']);
+				echo '</table>';
+			}
+		}
 
 		/**
 		 * Show the section settings forms
@@ -1066,7 +1099,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 						<?php
 							// do_action( 'wsa_form_top_' . $form['id'], $form );
 						settings_fields( $form['id'] );
-						do_settings_sections( $form['id'] );
+						$this->do_settings_sections( $form['id'] );
 							// do_action( 'wsa_form_bottom_' . $form['id'], $form );
 						?>
 						<div style="padding-left: 10px">
@@ -1084,7 +1117,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 							<?php
 								// do_action( 'wsa_form_top_' . $form['id'], $form );
 							settings_fields( $form['id'] );
-							do_settings_sections( $form['id'] );
+							$this->do_settings_sections( $form['id'] );
 								// do_action( 'wsa_form_bottom_' . $form['id'], $form );
 
 							?>
