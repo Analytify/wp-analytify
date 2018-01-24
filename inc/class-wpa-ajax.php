@@ -248,7 +248,7 @@ class WPANALYTIFY_AJAX {
 		$top_page_stats =  get_transient( md5( 'show-default-top-pages-dashboard' . $dashboard_profile_ID . $start_date . $end_date ) );
 
 		if ( $top_page_stats === false ) {
-			$top_page_stats = $wp_analytify->pa_get_analytics_dashboard('ga:pageviews', $start_date, $end_date, 'ga:PageTitle', '-ga:pageviews', false, 40 );
+			$top_page_stats = $wp_analytify->pa_get_analytics_dashboard('ga:pageviews', $start_date, $end_date, 'ga:PageTitle,ga:pagePath', '-ga:pageviews', false, 40 );
 			set_transient( md5( 'show-default-top-pages-dashboard' . $dashboard_profile_ID . $start_date . $end_date ) , $top_page_stats, 60 * 60 * 20 );
 		}
 

@@ -19,13 +19,14 @@ function fetch_top_pages_stats( $current, $stats ) { ?>
 			if ( isset( $stats['rows'] ) && $stats['rows'] > 0 ) :
 
 				$i = 1;
+				$site_url = get_site_url();
 
 				foreach ( $stats['rows'] as $top_page ) {
 					?>
 					<tr>
 						<td class="analytify_txt_center"><?php echo $i; ?></td>
-						<td><?php echo $top_page[0]; ?></td>
-						<td class="analytify_txt_center analytify_value_row"><?php echo WPANALYTIFY_Utils::pretty_numbers( $top_page[1] ); ?></td>
+						<td><a href="<?php echo $site_url . $top_page[1] ?>"><?php echo $top_page[0]; ?></a></td>
+						<td class="analytify_txt_center analytify_value_row"><?php echo WPANALYTIFY_Utils::pretty_numbers( $top_page[2] ); ?></td>
 					</tr>
 					<?php
 
