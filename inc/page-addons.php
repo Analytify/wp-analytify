@@ -45,21 +45,28 @@ if ( ! class_exists( 'WP_Analytify_Addons' ) ) {
 						'status'		  => '',
 						'description' => esc_html__( 'Everyone runs campaigns through social media or create backlinks. This add-on helps you to show your campaigns stats in a beautiful dashboard.', 'wp-analytify' ),
 						),
-				'wp_analytify_dash' => (object) array(
+				'analytify-analytics-dashboard-widget' => (object) array(
 					'url' 		    => 'https://analytify.io/add-ons/google-analytics-dashboard-widget-wordpress/?utm_source=analytify-lite&utm_medium=addons-page&utm_campaign=pro-upgrade&utm_content=google-analytics-dashboard-widget-wordpress',
-					'slug'			  => 'wp-analytify-dashboard/wp-analytify-dashboard.php',
+					'slug'			  => 'analytify-analytics-dashboard-widget/wp-analytify-dashboard.php',
 					'title' 		  => sprintf( esc_html__( 'Google Analytics Dashboard widget (FREE)', 'wp-analytify' ), '<br />' ),
 					'status'		  => '',
 					'description' => sprintf( esc_html__( 'Google Analytics Dashboard widget is a FREE Add-on by Analytify to show Google Analytics widget at WordPress dashboard.', 'wp-analytify' ), '<br /><br />' ),
 					),
 
-						'wp_analytify_email' => (object) array(
-							'url' 		    => 'https://analytify.io/add-ons/email-notifications/?utm_source=analytify-lite&utm_medium=addons-page&utm_campaign=pro-upgrade&utm_content=email-notifications',
-							'slug'			  => 'wp-analytify-email/wp-analytify-email.php',
-							'title' 		  =>  esc_html__( 'Email Notifications', 'wp-analytify' ),
-							'status'		  => '',
-							'description' => esc_html__( 'Our Analytify For Email Notifications add-on sends your website analytics reports in email weekly and monthly.', 'wp-analytify' ),
-							),
+					'wp_analytify_email' => (object) array(
+						'url' 		    => 'https://analytify.io/add-ons/email-notifications/?utm_source=analytify-lite&utm_medium=addons-page&utm_campaign=pro-upgrade&utm_content=email-notifications',
+						'slug'			  => 'wp-analytify-email/wp-analytify-email.php',
+						'title' 		  =>  esc_html__( 'Email Notifications', 'wp-analytify' ),
+						'status'		  => '',
+						'description' => esc_html__( 'Our Analytify For Email Notifications add-on sends your website analytics reports in email weekly and monthly.', 'wp-analytify' ),
+					),
+				'analytify-contact-form-7-gooogle-analytics-tracking' => (object) array(
+					'url' 		    => 'https://wordpress.org/plugins/analytify-contact-form-7-gooogle-analytics-tracking/',
+					'slug'			  => 'analytify-contact-form-7-gooogle-analytics-tracking/analytify-contact-form-7-gooogle-analytics-tracking.php',
+					'title' 		  => sprintf( esc_html__( 'Contact form 7 Google Analytics Tracking (FREE)', 'wp-analytify' ), '<br />' ),
+					'status'		  => '',
+					'description' => sprintf( esc_html__( 'It is a FREE plug and play Add-on by Analytify for Contact form 7 to Track Form Submissions with Google Analytics. No settings needed as all, Add-on settings should have already setup from Analytify settings page.', 'wp-analytify' ), '<br /><br />' ),
+					),
 				);
 
 			return $addons;
