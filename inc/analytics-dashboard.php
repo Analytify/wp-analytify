@@ -190,7 +190,7 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 				}
 
 				if ( in_array( 'show-compare-stats', $selected_stats ) ) {
-					do_action( 'wp_analytify_view_compare_stats' );
+					do_action( 'wp_analytify_view_compare_stats', $start_date, $end_date, $compare_start_date, $compare_end_date );
 				}
 				?>
 
@@ -284,7 +284,7 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 						</div>
 
 						<div class="analytify_status_footer">
-							<span class="analytify_info_stats"><?php esc_html_e( 'Listing statistics of top countries and cities.', 'wp-analytify' ); ?></span>	
+							<span class="analytify_info_stats"><?php esc_html_e( 'Listing statistics of top countries and cities.', 'wp-analytify' ); ?></span>
 						</div>
 					</div>
 				<?php endif ?>
