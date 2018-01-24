@@ -1940,7 +1940,7 @@ div.wp_analytify_pager span.wp_analytify_active, div.wp_analytify_pager span:hov
     min-height: 260px;
     position: relative;
 }
-.wp_analytify_woo .button-primary, .wp_analytify_dash .button-primary{
+.wp_analytify_woo .button-primary, .analytify-analytics-dashboard-widget .button-primary{
     float: none;
     margin-bottom: 0;
 }
@@ -1954,7 +1954,7 @@ div.wp_analytify_pager span.wp_analytify_active, div.wp_analytify_pager span:hov
     background-position: 25px 28px;
     padding-top: 46px;
 }
-.wp_analytify_dash h3{
+.analytify-analytics-dashboard-widget h3{
     background-size: 60px 76px;
     background-position: 35px 18px;
     padding-top: 39px;
@@ -1967,6 +1967,11 @@ div.wp_analytify_pager span.wp_analytify_active, div.wp_analytify_pager span:hov
 .wp_analytify_email h3{
     background-size: 64px 65px;
     background-position: 32px 22px;
+    padding-top: 48px;
+}
+.analytify-contact-form-7-gooogle-analytics-tracking h3{
+    background-size: 57px 67px;
+    background-position: 35px 26px;
     padding-top: 48px;
 }
 .wp-extension .button-primary{

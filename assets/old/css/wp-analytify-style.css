@@ -951,7 +951,7 @@ position:relative;
 .wp_analytify_woo,.wp_analytify_dash{
 
 }
-.wp_analytify_woo .button-primary,.wp_analytify_dash .button-primary{
+.wp_analytify_woo .button-primary,.analytify-analytics-dashboard-widget .button-primary{
 	margin-bottom: -14px;
   float: left;
 }
@@ -975,7 +975,7 @@ position:relative;
 .wp_analytify_woo h3 {
 	background-image: url(../../images/woo_commerce_icon.png) !important;
 }
-.wp_analytify_dash h3 {
+.analytify-analytics-dashboard-widget h3 {
 	background-image: url(../../images/dashboard_icon.png) !important;
 }
 .wp_analytify_campaings h3 {
@@ -987,7 +987,9 @@ position:relative;
 .wp_analytify_email h3 {
 	background-image: url(../../images/email_icon.png) !important;
 }
-
+.analytify-contact-form-7-gooogle-analytics-tracking h3 {
+	background-image: url(../../images/form_tracking.png) !important;
+}
 .show-hide{
 	text-align: center;
 }
