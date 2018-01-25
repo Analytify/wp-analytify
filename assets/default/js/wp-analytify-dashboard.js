@@ -177,9 +177,9 @@ $(document).click(function (e){
     $( ".analytify_form_date" ).submit(function( event ) {
       if ( !$('#analytify_start').val() == '' || !$('#analytify_end').val() == '' ) {
       var s_date = $('#analytify_start').val(),
-          s_date = moment(s_date).format("YYYY-MM-DD"),
+          s_date = moment(s_date, 'MMM DD, YYYY').format("YYYY-MM-DD"),
           e_date = $('#analytify_end').val(),
-          e_date = moment(e_date).format("YYYY-MM-DD");
+          e_date = moment(e_date, 'MMM DD, YYYY').format("YYYY-MM-DD");
           $('#analytify_start_val').val(s_date);
           $('#analytify_end_val').val(e_date);
       }else{
