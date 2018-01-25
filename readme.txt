@@ -151,6 +151,7 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 = 2.1.11 - 2018-01-24 =
 * Enhancement: Compatibility with PHP 7.2
 * Enhancement: Add link to page/post titles
+* Bug Fix: 	Fix momentjs deprecation warning
 
 
 = 2.1.10 - 2017-12-11 =
