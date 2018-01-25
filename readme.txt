@@ -148,7 +148,7 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 == Changelog ==
 
-= 2.1.11 - 2018-01-24 =
+= 2.1.11 - 2018-01-25 =
 * Enhancement: Compatibility with PHP 7.2
 * Enhancement: Add link to page/post titles
 * Bug Fix: 	Fix momentjs deprecation warning
@@ -420,8 +420,8 @@ Not at all. Analytify uses Google Analytics Universal tracking JS code to track 
 
 == Upgrade Notice ==
 
-= 2.1.10 =
-* [Important Update] Upgrade immediately. Performance optimization, WordPress 4.9 compatibility & Hungarian language added.
+= 2.1.11 =
+* [Important Update] Upgrade immediately.
 
 
 == Notes ==

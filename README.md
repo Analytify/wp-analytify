@@ -5,7 +5,7 @@
 **Tags:** google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced e-commerce tracking  
 **Requires at least:** 3.6
 **Tested up to** 4.9
-**Stable tag** 2.1.10
+**Stable tag** 2.1.11
 **License:** GPLv3 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-3.0.html  
 
@@ -105,6 +105,12 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 
 ##  Changelog ##
+
+### 2.1.11 - 2018-01-25 ###
+* Enhancement: Compatibility with PHP 7.2
+* Enhancement: Add link to page/post titles
+* Bug Fix: 	Fix momentjs deprecation warning
+
 
 ### 2.1.10 - 2017-12-11 ###
 * Enhancement: Compatibility with the Pro features.
