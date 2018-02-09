@@ -272,6 +272,7 @@
           $(".wp-analytify-reason-input").hide();
           $('body').removeClass('wp-analytify-hidden');
           $('.message.error-message').hide();
+          $('.wp-analytify-pro-message').hide();
         }
         });
 
