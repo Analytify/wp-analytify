@@ -939,6 +939,12 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				$filter = 'ga:pagePath==/'; // .$u_post['path'];
 			} else {
 				$filter = 'ga:pagePath==' . $u_post['path'] . '';
+
+				// Url have query string incase of WPML.
+				if ( isset( $u_post['query'] )  ) {
+					$filter .= '?' . $u_post['query'];
+				}
+				
 			}
 
 			if ( '' == $start_date ) {

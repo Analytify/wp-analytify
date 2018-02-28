@@ -843,6 +843,15 @@ class WPANALYTIFY_AJAX {
 		echo "Analytify Advance Setting:\r\n";
 
 		$analytify_advance = get_option( 'wp-analytify-advanced' );
+		// if keys not set, show default.
+		if ( ! isset( $analytify_advance['user_advanced_keys'] ) || $analytify_advance['user_advanced_keys'] == 'off' ) {
+
+			// set as array if its string.
+			if ( ! is_array( $analytify_advance ) ) { $analytify_advance = array(); }
+
+			$analytify_advance['client_id'] = ANALYTIFY_CLIENTID;
+			$analytify_advance['client_secret'] = ANALYTIFY_CLIENTSECRET;
+		}
 		print_r( $analytify_advance );
 
 
