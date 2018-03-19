@@ -7,16 +7,14 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 */
 function fetch_geographic_stats ( $current, $countries_stats, $cities_stats, $show_map = true ) {
 
-
-
-  if( isset( $countries_stats['rows'] ) && $countries_stats['rows'] > 0  ):
+  if ( isset( $countries_stats['rows'] ) && $countries_stats['rows'] > 0  ):
 
     $code = '';
 
     if ( true === $show_map) {
 
       $higest_number = $countries_stats['rows'][0][1];
-      $_lowest_number = end( $countries_stats['rows'] );
+      $_lowest_number = WPANALYTIFY_Utils::end( $countries_stats['rows'] );
       $lowest_number = $_lowest_number[1]
 
       ?>
