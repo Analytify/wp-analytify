@@ -639,7 +639,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 		 */
 		public function admin_scripts( $page ) {
 
-			wp_enqueue_script( 'wp-analytify-script-js', plugins_url( 'assets/old/js/wp-analytify.js', __FILE__ ), array('jquery-ui-tooltip','jquery-ui-datepicker', 'jquery'), ANALYTIFY_VERSION );
+			wp_enqueue_script( 'wp-analytify-script-js', plugins_url( 'assets/old/js/wp-analytify.js', __FILE__ ), array( 'jquery-ui-datepicker', 'jquery' ), ANALYTIFY_VERSION );
 
 			global $post_type;
 
@@ -944,7 +944,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 				if ( isset( $u_post['query'] )  ) {
 					$filter .= '?' . $u_post['query'];
 				}
-				
+
 			}
 
 			if ( '' == $start_date ) {
