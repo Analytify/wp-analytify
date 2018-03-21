@@ -901,9 +901,7 @@ if ( ! class_exists( 'WP_Analytify_Settings' ) ) {
 
 						<h3><?php esc_html_e( 'Support', 'wp-analytify' ); ?></h3>
 
-						<p><?php esc_html_e( 'As this is a free plugin, we do not provide support.', 'wp-analytify' ); ?></p>
-
-						<p><?php echo sprintf( esc_html__( 'You may ask the WordPress community for help by posting to the %1$s WordPress.org support forum %2$s. Response time can range from a few days to a few weeks and will likely be from a non-developer.', 'wp-analytify' ), '<a href="http://wordpress.org/support/plugin/wp-analytify/" target="_blank">', '</a>' ); ?></p>
+						<p><?php echo sprintf( esc_html__( 'As this is a free plugin, Post all of your questions to the %1$s WordPress.org support forum %2$s. Response time can range from a few days to a few weeks as this is a free support.', 'wp-analytify' ), '<a href="http://wordpress.org/support/plugin/wp-analytify/" target="_blank">', '</a>' ); ?></p>
 
 						<p class="upgrade-to-pro"><?php echo sprintf( esc_html__( 'If you want a %1$s timely response via email from a developer %2$s who works on this plugin, %3$s upgrade to WP Analytify Pro %4$s and send us an email.', 'wp-analytify' ), '<strong>', '</strong>', '<a href="https://analytify.io/?utm_source=analytify-lite&amp;utm_medium=help-tab&amp;utm_content=support-upgrade&amp;utm_campaign=pro-upgrade" target="_blank">', '</a>' ); ?></p>
 
