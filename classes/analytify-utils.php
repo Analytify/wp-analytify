@@ -248,6 +248,13 @@ class WPANALYTIFY_Utils {
 		return false;
 	}
 
-
+	/**
+	 * Get the last element of array.
+	 *
+	 * @since 2.1.12
+	 */
+	static function end( $array ) {
+		return end( $array );
+	}
 
 }
