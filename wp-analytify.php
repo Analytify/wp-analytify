@@ -1098,7 +1098,7 @@ if ( ! class_exists( 'WP_Analytify' ) ) {
 
 				global $current_user;
 				$roles = $current_user->roles;
-
+				//var_dump($roles);
 				if ( array_intersect( $roles, $access_level ) ) {
 
 					return true;

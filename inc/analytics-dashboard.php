@@ -114,10 +114,11 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
     * Check with roles assigned at dashboard settings.
 	*/
 	$is_access_level = $wp_analytify->settings->get_option( 'show_analytics_roles_dashboard','wp-analytify-dashboard' );
-
+	//var_dump($is_access_level);
 	// Show dashboard to admin incase of empty access roles.
 	if ( empty( $is_access_level ) ) { $is_access_level = array( 'Administrator' ); }
-
+	//var_dump($is_access_level);
+	//var_dump($wp_analytify->pa_check_roles( $is_access_level ));
 	if ( $wp_analytify->pa_check_roles( $is_access_level ) ) {
 
 		if ( $acces_token ) {

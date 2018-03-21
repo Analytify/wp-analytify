@@ -60,6 +60,7 @@ Google Analytics for WordPress by Analytify is the must-have Plugin for Google A
 
 ###### Following are the important add-ons which empower you to setup Google Analytics like a boss. It really helps your clients, online stores, etc.
 
+* [Google Analytics Goals Dashboard](https://analytify.io/add-ons/google-analytics-goals-wordpress/)**[NEW Launched]**
 * [Google Analytics eCommerce Tracking for WooCommerce](https://analytify.io/add-ons/woocommerce/)
 * [Google Analytics eCommerce Tracking for Easy Digital Downloads](https://analytify.io/add-ons/easy-digital-downloads/)
 * [Automated Email Notifications](https://analytify.io/add-ons/email-notifications/)
@@ -73,8 +74,9 @@ Google Analytics for WordPress by Analytify is the must-have Plugin for Google A
     * Analytify Pro (*Paid*)
         * Campaign Tracking (*Paid*)
         * Email Notifications (*Paid*)
-        * E-commerce Tracking for WooCommerce (*Paid*)
-        * E-commerce Tracking for Easy Digital Downloads (*Paid*)
+        * Google Analytics Goals Tracking and Dashboard (*Paid*)
+        * Enahnced E-commerce Google Analytics Tracking for WooCommerce  (*Paid*)
+        * Enahnced E-commerce Google Analytics Tracking for Easy Digital Downloads (*Paid*)
 
 > 100% Multilingual & Translateable <br />
 > WPML Compatible <br />
