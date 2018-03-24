@@ -1546,6 +1546,21 @@ function wp_analytify_uninstall() {
 
 	delete_option( 'analytify_default_settings' );
 	delete_option( 'wp-analytify-admin' );
+	delete_option( 'wp-analytify-authentication' );
+	delete_option( 'wp-analytify-advanced' );
+	delete_option( 'wp-analytify-help' );
+	delete_option( 'analytify_ua_code' );
+	delete_option( 'analytify_date_differ' );
+	delete_option( 'profiles_list_summary' );
+	delete_option( 'pa_google_token' );
+	delete_option( 'post_analytics_token' );
+	delete_option( 'WP_ANALYTIFY_NEW_LOGIN' );
+	delete_option( '_analytify_optin' );
+	delete_option( 'wp_analytify_active_time' );
+	delete_option( 'WP_ANALYTIFY_PLUGIN_VERSION' );
+	delete_option( 'analytify_free_upgrade_routine' );
+	delete_option( 'wp-analytify-dashboard' );
+	delete_option( 'wp-analytify-profile' );
 
 }
 
