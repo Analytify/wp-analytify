@@ -1811,7 +1811,7 @@
     transition: all .3s;
     font-weight: 400;
     background: url(../img/csv_button.svg) no-repeat 0 0;
- 
+
 }
 .analytify_tp_btn #refresh-realtime-stats{
     background: url(../img/refresh.svg) no-repeat 0 0;
@@ -1820,7 +1820,7 @@
     top: 2px;
 }
 .analytify_tp_btn a:hover{
- 
+
     }
 .analytify_tooltip {
     position: relative;
@@ -1843,7 +1843,7 @@
     opacity: 0;
     transition: opacity 1s;
     font-size: 14px;
-} 
+}
 .analytify_tp_btn .analytify-export-loader{
     position: absolute;
     top: 0px;
@@ -2179,6 +2179,9 @@ div.wp_analytify_pager span.wp_analytify_active, div.wp_analytify_pager span:hov
 .wp-analytify-premium:hover {
   background: #e4e4e4;
   color: #444;
+}
+#pa-single-admin-analytics .analytify-export-data{
+  display: none;
 }
 /* ========================================================================== Media Queries ========================================================================== */
 @media only screen and (max-width: 1400px) {
