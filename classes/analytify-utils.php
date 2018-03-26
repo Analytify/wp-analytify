@@ -257,4 +257,39 @@ class WPANALYTIFY_Utils {
 		return end( $array );
 	}
 
+	/**
+	 * Get the Date Selection List.
+	 *
+	 * @since 2.1.14
+	 */
+	public static function get_date_list() {
+		ob_start();
+		?>
+			<ul class="analytify_select_date_list">
+
+				<li><?php _e( 'Today', 'wp-analytify' )?> <span data-date-diff="current_day" data-start="" data-end=""><span class="analytify_start_date_data analytify_current_day"></span> – <span class="analytify_end_date_data analytify_today_date"></span></span></li>
+
+				<li><?php _e( 'Last 7 days', 'wp-analytify' )?> <span data-date-diff="last_7_days" data-start="" data-end=""><span class="analytify_start_date_data analytify_last_7_days"></span> – <span class="analytify_end_date_data analytify_today_date"></span></span></li>
+
+				<li><?php _e( 'Last 14 days', 'wp-analytify' )?> <span data-date-diff="last_14_days" data-start="" data-end=""><span class="analytify_start_date_data analytify_last_14_days"></span> – <span class="analytify_end_date_data analytify_today_date"></span></span></li>
+
+				<li><?php _e( 'Last 30 days', 'wp-analytify' )?> <span data-date-diff="last_30_days" data-start="" data-end=""><span class="analytify_start_date_data analytify_last_30_day"></span> – <span class="analytify_end_date_data analytify_today_date"></span></span></li>
+
+				<li><?php _e( 'This month', 'wp-analytify' )?> <span data-date-diff="this_month" data-start="" data-end=""><span class="analytify_start_date_data analytify_this_month_start_date"></span> – <span class="analytify_end_date_data analytify_today_date"></span></li>
+
+				<li><?php _e( 'Last month', 'wp-analytify' )?> <span data-date-diff="last_month" data-start="" data-end=""><span class="analytify_start_date_data analytify_last_month_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
+
+				<li><?php _e( 'Last 3 months', 'wp-analytify' )?> <span data-date-diff="last_3_months" data-start="" data-end=""><span class="analytify_start_date_data analytify_last_3_months_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
+
+				<li><?php _e( 'Last 6 months', 'wp-analytify' )?> <span data-date-diff="last_6_months" data-start="" data-end=""><span class="analytify_start_date_data analytify_last_6_months_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
+
+				<li><?php _e( 'Last year', 'wp-analytify' )?> <span data-date-diff="last_year" data-start="" data-end=""><span class="analytify_start_date_data analytify_last_year_start_date"></span> – <span class="analytify_end_date_data analytify_last_month_end_date"></span></span></li>
+
+				<li><?php _e( 'Custom Range', 'wp-analytify' )?> <span class="custom_range"><?php _e( 'Select a custom date', 'wp-analytify' )?></span></li>
+			</ul>
+		<?php
+		$content = ob_get_clean();
+		echo $content;
+	}
+
 }
