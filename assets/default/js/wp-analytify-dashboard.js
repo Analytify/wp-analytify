@@ -219,6 +219,7 @@ $(document).click(function (e){
           $('#analytify_end').val(e_date);
     }
 
+    $('.analytify_current_day').text(today_date);
     $('.analytify_last_7_days').text(last_7_days);
     $('.analytify_last_14_days').text(last_14_days);
 

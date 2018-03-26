@@ -158,6 +158,8 @@ if ( 'on' === $wp_analytify->settings->get_option( 'delete_dashboard_cache','wp-
 								<input type="submit" value="<?php _e( 'View Stats', 'wp-analytify' ) ?>" name="view_data" class="analytify_submit_date_btn">
 								<ul class="analytify_select_date_list">
 
+									<li><?php _e( 'Today', 'wp-analytify' )?> <span data-date-diff="current_day" data-start="" data-end=""><span class="analytify_start_date_data analytify_current_day"></span> – <span class="analytify_end_date_data analytify_today_date"></span></span></li>
+
 									<li><?php _e( 'Last 7 days', 'wp-analytify' )?> <span data-date-diff="last_7_days" data-start="" data-end=""><span class="analytify_start_date_data analytify_last_7_days"></span> – <span class="analytify_end_date_data analytify_today_date"></span></span></li>
 
 									<li><?php _e( 'Last 14 days', 'wp-analytify' )?> <span data-date-diff="last_14_days" data-start="" data-end=""><span class="analytify_start_date_data analytify_last_14_days"></span> – <span class="analytify_end_date_data analytify_today_date"></span></span></li>
