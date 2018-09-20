@@ -1005,6 +1005,9 @@
 .analytify_ipad {
     background-position:-70px -42px;
 }
+.analytify_instagram, .analytify_instagram_stories {
+    background-position:-146px -207px;
+}
 .analytify_samsung {
     background-position:-1px -77px;
     height:19px;
