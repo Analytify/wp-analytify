@@ -43,7 +43,7 @@ if ( ! class_exists( 'WP_Analytify_Addons' ) ) {
 						'slug'			  => 'wp-analytify-campaigns/wp-analytify-campaigns.php',
 						'title' 		  => esc_html__( 'Campaings Tracking ', 'wp-analytify' ),
 						'status'		  => '',
-						'description' => esc_html__( 'Everyone runs campaigns through social media or create backlinks. This add-on helps you to show your campaigns stats in a beautiful dashboard.', 'wp-analytify' ),
+						'description' => esc_html__( 'Everyone runs campaigns through social media or create backlinks. This Add-on helps you to show your campaigns stats in a beautiful dashboard.', 'wp-analytify' ),
 						),
 				'analytify-analytics-dashboard-widget' => (object) array(
 					'url' 		    => 'https://analytify.io/add-ons/google-analytics-dashboard-widget-wordpress/?utm_source=analytify-lite&utm_medium=addons-page&utm_campaign=pro-upgrade&utm_content=google-analytics-dashboard-widget-wordpress',
@@ -94,7 +94,7 @@ if ( ! class_exists( 'WP_Analytify_Addons' ) ) {
 
 				if ( $extension->status != '' ) {
 					echo sprintf( esc_html__( '%1$s Download %2$s', 'wp-analytify' ), '<a target="_blank" href="' . $extension->url . '" class="button-primary">', '</a>' ); } else {
-					echo sprintf( esc_html__( '%1$s Get this add-on %2$s', 'wp-analytify' ), '<a target="_blank" href="' . $extension->url . '" class="button-primary">', '</a>' ); }
+					echo sprintf( esc_html__( '%1$s Get this Add-on %2$s', 'wp-analytify' ), '<a target="_blank" href="' . $extension->url . '" class="button-primary">', '</a>' ); }
 			}
 		}
 	}
