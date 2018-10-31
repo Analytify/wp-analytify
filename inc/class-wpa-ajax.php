@@ -781,7 +781,7 @@ class WPANALYTIFY_AJAX {
 
 		if ( is_multisite() ) {
 			$network_active_plugins = wp_get_active_network_plugins();
-			$active_plugins         = array_map( array( $this, 'remove_wp_plugin_dir' ), $network_active_plugins );
+			$active_plugins         = array_map( array( 'self', 'remove_wp_plugin_dir' ), $network_active_plugins );
 		}
 
 		foreach ( $active_plugins as $plugin ) {
