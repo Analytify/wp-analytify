@@ -1,58 +1,170 @@
 # Google Analytics Dashboard By Analytify [![WordPress](https://img.shields.io/wordpress/plugin/dt/wp-analytify.svg)](https://wordpress.org/plugins/wp-analytify/) [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/wp-analytify.svg)](https://wordpress.org/plugins/wp-analytify/) [![WordPress](https://img.shields.io/wordpress/v/wp-analytify.svg)](https://wordpress.org/plugins/wp-analytify/)
 
 **Contributors:** [hiddenpearls](https://profiles.wordpress.org/hiddenpearls), [Asif2BD](https://profiles.wordpress.org/Asif2BD)  
-**Donate link:** http://paypal.me/Analytify  
+**Donate link:** https://paypal.me/Analytify  
 **Tags:** google analytics, WordPress Analytics, analytify, tracking, analytics, google analytics dashboard, install analytics, e-commerce, track, track visitor, statistics, WooCommerce analytics, best google analytics, enhanced e-commerce tracking  
-**Requires at least:** 3.6
-**Tested up to** 4.9
-**Stable tag** 2.1.13
+**Requires at least:** 3.6 
+**Tested up to** 5.8
+**Stable tag** 4.1.1
 **License:** GPLv3 or later  
-**License URI:** http://www.gnu.org/licenses/gpl-3.0.html  
+**License URI:** https://www.gnu.org/licenses/gpl-3.0.html  
 
-Analytify 2.1 is the must-have Plugin for Google Analytics! Now Enhanced eCommerce Tracking is available for WooCommerce and EDD!
+Google Analytics for WordPress by Analytify is the must-have Plugin for Google Analytics! Now Enhanced eCommerce Tracking is available for WooCommerce
 
 ## Description ##
 
-[Homepage](https://analytify.io/details) | [Documentation](https://analytify.io/documentation/) | [Support](https://analytify.io/support/) | [Demo](https://www.youtube.com/watch?v=D02R6eP3olM) | [Premium Version](https://analytify.io/pricing/?utm_source=analytify-lite&amp;utm_medium=readme-github-link&amp;utm_content=premium-version&amp;utm_campaign=pro-upgrade)
+[Homepage](https://analytify.io/details) | [Documentation](https://analytify.io/documentation/) | [Support](https://analytify.io/support/) | [Demo](https://www.youtube.com/watch?v=D02R6eP3olM) | [Premium Version](https://analytify.io/pricing/?utm_source=analytify-lite&amp;utm_medium=readme-org-link&amp;utm_content=premium-version&amp;utm_campaign=pro-upgrade)
 
-**[Analytify](http://analytify.io/details)** - makes **Google Analytics** simple for everywhere in WordPress (posts, pages and custom post types). It presents the statistics in a beautiful way under the WordPress Posts/Pages at front end, backend and in its own Dashboard. Now you can get **Google Analytics Dashboard** inside your WordPress Dashboard within a minute.
+## Google Analytics Dashboard ##
 
-**Analytify 2.0 is here! Google Analytics Like Never Before! Must check those stunning [Screenshots](https://wordpress.org/plugins/wp-analytify/screenshots/)!**
+**[Google Analytics Dashboard Plugin for WordPress](https://analytify.io/details)** - by Analytify makes **Google Analytics** simple for everyone using WordPress. We know how important it is to keep track of website analytics.
 
-**Premium Version:**<br>
-> This plugin has a premium version, which is more easy to install, and shows **Real-Time Stats**, **Campaign Stats**, **ShortCodes**, *Front-end Stats*  and more reports in backend and front-end. Also premium version has better e-commerce tracking (Buy [Add-ons](http://analytify.io/add-ons/) with premium), and campaigns management. Get the affordable Premium Version from [analytify.io](http://analytify.io/upgrade-from-free) . **Bundle price** is also available with Add-ons.
+Analytify allows you to present the statistics from Google Analytics in a beautiful and useful manner. The integration is super simple and does not require the help of a developer to set up the integration. Once you integrate Google Analytics in WordPress using Analytify, you will be able to view the dashboard both at the front end and the backend. 
 
-**Google Analytics Premium Partner** - [Read](https://www.google.com/analytics/partners/company/5179388639313920/gadp/5629499534213120/app/5707702298738688/listing/5639274879778816) what Google is saying about us.
+Unlike other WordPress analytics plugins, Analytify brings a lot of actionable data in a single view at the dashboard. The Free version will let you view statistics like Visitors, Page views, New vs Returning Visitors, Top Pages, Geographic data, and much more. 
+
+The best part about Analytify is that it lets you view page-level statistics like views, users, bounce rate, average time on the page while being logged in the Admin panel of your WordPress website.
+
+The premium version of this WordPress plugin is built to leverage the power of website analytics to let you know how people find and use your website. 
+
+Now you can get Google Analytics Dashboard inside your WordPress Dashboard with just a few clicks. Our goal at Analytify is pretty simple, to make data Analytics fun In WordPress.
+
+Analytify is one of the few WordPress analytics plugins, which is the Google Analytics Technology Partner. This means our plugin is carefully tested and vetted to make sure you get the kind of support you need to be successful. 
+
+**Analytify 4.0 is here! Discover Google Analytics Like Never Before! Must check those stunning [Screenshots](https://wordpress.org/plugins/wp-analytify/screenshots/)!**
+
+**ANALYTIFY PRO VERSION:**<br>
+> This is the free version of Analytify, there is a Premium version that comes with basic plus advanced features to help you get Google Analytics in WordPress. The Pro version is more easy to install, and shows **Real-Time Stats**, **Campaign Stats**, **ShortCodes**, **Front-end Stats** and more reports in backend and front-end. Also the premium version has better ecommerce tracking (Buy [Add-ons](https://analytify.io/add-ons/) with premium), and campaigns management. Get the affordable Premium Version from [analytify.io](https://analytify.io/upgrade-from-free) . Bundle price is also available with Addons.
+
+## ANALYTIFY IS A MULTILINGUAL PLUGIN, AVAILABLE IN THE FOLLOWING LANGUAGES ##
+
+The plugin is fully available in French, Turkish and Hungarian languages. However Dutch, German and Russian are just about to be fully translated. We are working hard to make sure the plugin is fully available in all the mentioned languages. 
+
+* French 100%
+* Turkish 100%
+* Hungarian 100%
+* Dutch 96%
+* German 96%
+* Russian 82%
+* Norwegian 79%
+* Spanish 50%
+
+> 100% Multilingual, Translatable and WPML Compatible <br />
 
 
-## Features: ##
+## INSTALLATION PROCESS OF ANALYTIFY WORDPRESS ANALYTICS PLUGIN ##
 
-*  Super easy installation. 1-Click Authentication process.
-*  Statistics (**General**) under the single posts/pages as a block in **wp-admin**
-*  Statistics (**Full**) under the single posts, pages & Custom Post Types as a block in **wp-admin** (Premium)
-*  Statistics (**Full**) under the single posts, pages & Custom Post Types as a block at **front-end** (Premium)
-*  **General Statistics** (Sessions, Users, Bounce rate, Average time on site, Average pages, Page views, new or returning Visitors)
-*  How people are finding you (**TOP KEYWORDS**)
-*  **List of top Countries**
-*  **List of top Cities**
-*  **SOCIAL MEDIA Statistics**
-*  **List of top Referrers Browsers**
-*  **List of top Referrers**
-*  **Mobile device Statistics**
-*  See What’s happening when users come to your site (**Bounce rate of top pages**)
-*  **REAL-TIME** Statistics of your site in dashboard.(Premium)
-*  **Campaigns** Statistics (Premium)
-*  **ShortCodes** (Simple and Advanced) for Custom Statistics of your own choice (Premium)
-*  Use ShortCodes in Widgets (Premium)
-*  Helps in SEO optimization and allows you to see traffic data for individual blog posts and pages.
-*  It can be easy customizable with CSS, you can give it any shape you want.
-*  **E-commerce Tracking Add-ons for WooCommerce (available) & Easy Digital Downloads (coming very soon)** (Premium)
-*  You can extend it to at any level. Usage of API’s are very easy to work with.
+Connect your WordPress site with Google Analytics with 1-Click Authentication process and It add Google Analytics tracking code to your WordPress website without the help of a developer.
 
-**[WooCommerce Enhanced eCommerce](https://analytify.io/go/WooCommerce)** tracking and report dashboard right inside your WordPress is now available. [Take a look](https://analytify.io/go/WooCommerce).
+> It is highly recommended by Google Analytics Team to use your own Custom API keys. You need to create a Project in Google Console.
+Here is a short [Video guide](https://analytify.io/custom-api-keys-video) to get your own ClientID, Client Secret and Redirect URL. Add these API Keys in Advanced Tab before connecting Analytify with Google Analytics.
 
-> <strong>Development on Github</strong><br>
-> This plugin is also [available on github](https://github.com/Analytify/wp-analytify) and ready to take bugs and pull requests. For Support, you can buy the **PRO version**, this will give access to premium updates, support and features.
+
+## TOP FEATURES OF THIS GOOGLE ANALYTICS PLUGIN FOR WORDPRESS ##
+
+Enhanced eCommerce Google analytics Tracking Add-ons for WooCommerce 
+
+Ecommerce tracking is a tricky process and requires the time and help of a developer to properly set up events and tracking. Analytify allows solid integration with WooCommerce to ensure you do not miss out on important eCommerce data of your business. It allows you to track product clicks, impressions, add to cart clicks, product performance, and much more right in your WordPress dashboard. The report also generates key insights on following factors:
+
+* Average Order Value
+* Transaction Revenues
+* Total Transactions
+* Products removed from the cart
+
+Enhanced eCommerce Tracking for Easy Digital Downloads
+
+Analytify’s addon for Easy Digital Downloads, lets you track digital sales, transactions, and revenue. We have made sure to sync the addon with Google Analytics for Easy Digital Downloads so that you can keep a close eye on the entire shopping behavior funnel of your website.
+
+Geographical Data
+
+The geographic data in the analytics report presents a beautiful visualization with the list of every country and city bringing traffic to your website. The low to high scale on the map makes it easy to identify the top traffic countries. You can easily identify those countries by hovering the mouse over the map. 
+
+Social Media Statistics in WordPress
+
+Social media is a powerful source of traffic, and our plugin lets you know the effectiveness of your social media efforts inside your WordPress dashboard.
+
+Real-Time Reporting
+
+You must have seen real-time data in Google Analytics. But that nifty feature can be shown in your WordPress dashboard by connecting your WordPress site with Analytify. 
+
+Helps with Search Engine Optimization 
+
+Analytify lets you see traffic data for individual blog posts and pages, this keeps you aware of your top-performing content and allows you to take actionable steps. 
+
+Automated Email Reports
+
+If you are an agency, or a business owner with multiple websites then our automated email reporting will come very handy for you. You can send individual post stats directly to your client by simply clicking “Send Email” within the dashboard. 
+
+Google Analytics System Stats Report 
+
+In the Analytify plugin, users can also view System stats report that includes how many visitors are coming from which platforms which include Operating systems, Browsers, and Mobile devices statistics.
+
+Google Analytics Report for Goals
+
+In the Analytify dashboard, you can also view your goals report that includes Goal Completions, Goals Value, Goals Conversion rate, Page per session, and Pages. The dashboard is further extended to show traffic sources and the goal completion from those sources.
+
+Frontend Tracking Reports ShortCodes
+
+If you want to show your stats to your user on the frontend side of your website or any post, you can easily do that. As Analytify provides you this amazing option by using shortcodes you can integrate tracking on your post or page for your users of visitors by adding shortcodes.
+
+## GDPR Compatible Plugins ##
+* CookieYes
+* Cookie Notice & Compliance.
+
+## OTHER FEATURES YOU CAN GET BY CONNECTING YOUR SITE WITH GOOGLE ANALYTICS PLUGIN FOR WORDPRESS ##
+
+* List of top Referrers Browsers
+* List of top Referrers
+* Mobile device Statistics
+* See What’s happening when users come to your site (Bounce rate of top pages)
+* It can be easily customizable with CSS, you can give it any shape you want.
+* You can extend it to any level. Usage of API’s are very easy to work with.
+* General Statistics (Sessions, Users, Bounce rate, Average time on site, Average pages, Pageviews, New/Returning Visitors)
+* How people are finding you (TOP KEYWORDS)	
+* [New] Dashboard dropdown menu now remembers your last selection of time period.
+
+
+## PREMIUM FEATURES ##
+
+* Campaigns Statistics
+* Events Tracking
+* Google AMP
+* Google Optimize
+* Forms Tracking
+* Custom Dimensions
+* Use ShortCodes in Widgets
+* Google Analytics Stats (Full) under the single posts,pages & Custom Post Types as a block in wp-admin
+* ShortCodes (Simple and Advanced) for Custom Statistics of your own choice
+
+[WooCommerce Enhanced eCommerce tracking](https://analytify.io/go/WooCommerce) and report dashboard right inside your WordPress is now available. [Take a look.](https://analytify.io/go/WooCommerce)
+
+Following are the important add-ons which empower you to set up Google Analytics like a boss. It really helps your clients, online stores, etc.
+
+* Google Analytics [Goals Dashboard](https://analytify.io/add-ons/google-analytics-goals-wordpress/)
+* Google Analytics [eCommerce Tracking for WooCommerce](https://analytify.io/go/WooCommerce)
+* Google Analytics [eCommerce Tracking for Easy Digital Downloads](https://analytify.io/add-ons/easy-digital-downloads/)
+* [Automated Email Notifications](https://analytify.io/add-ons/email-notifications/)
+* Google Analytics [Campaigns Tracking](https://analytify.io/add-ons/campaigns/)
+* [Free] Google Analytics [Dashboard Widget](https://wordpress.org/plugins/analytify-analytics-dashboard-widget/)
+
+FOLLOWING IS A COMPLETE HIERARCHY STRUCTURE OF ANALYTIFY PRODUCTS SUITE
+
+* Analytify Core (Free and Required for all add-ons)
+    * [Dashboard widget](https://analytify.io/add-ons/google-analytics-dashboard-widget-wordpress/) (Free) Google Analytics Widget in your WordPress Dashboard.
+    * Analytify Pro (Paid)
+        * Campaign Tracking (Paid)
+        * Email Notifications (Paid)
+        * Google Analytics Goals Tracking and Dashboard (Paid)
+        * Google Analytics Forms Tracking and Dashboard (Paid)
+        * Google Analytics Authors Tracking and Dashboard (Paid)
+        * Enhanced Ecommerce Google Analytics Tracking for WooCommerce (Paid)
+        * Enhanced Ecommerce Google Analytics Tracking for Easy Digital Downloads (Paid)
+
+It is highly recommended by Google Analytics Team to use your own Custom API keys. You need to create a Project in [Google Console](https://console.developers.google.com/project).
+
+Here is a short [Video guide](https://analytify.io/custom-api-keys-video) or a [tutorial](https://analytify.io/google-api-tutorial) to get your own ClientID, Client Secret and Redirect URL. Add these API Keys in Advanced Tab before connecting Analytify with Google Analytics.
+
+> This Google analytics plugin is also [available on github](https://github.com/Analytify/wp-analytify) and ready to take bugs and pull requests. For Support, you can buy the **[PRO version](https://analytify.io/details)**, this will give access to premium updates, support and features.
 
 
 ##  Installation ##
@@ -76,18 +188,29 @@ This section describes how to install the Google Analytics Dashboard By Analytif
 3. Connect and give Analytify App access to your Google Analytics account.
 4. After Authentication, Select your Profiles for front/admin Statistics from Settings-> Profile tab.
 
-*If you want to use your own app, you need to create a Project in Google [Console](https://console.developers.google.com/project). Read this simple 3 minutes [tutorial](http://analytify.io/google-api-tutorial) to get your ClientID, Client Secret and API Key and enter them Settings Page.
+*If you want to use your own app, you need to create a Project in Google [Console](https://console.developers.google.com/project). Read this simple 3 minutes [tutorial](https://analytify.io/google-api-tutorial) to get your ClientID, Client Secret and API Key and enter them Settings Page.
 
 
 ##  Frequently Asked Questions ##
+
+= Should I install a Google Analytics plugin or I can simply add Google analytics javascript code in my WordPress theme ? =
+You can add Google Analytics JS code in your theme but We recommend for Analytify that you connect your Google Analytics account and Analytify together So I could pull your Analytics from Google Analytics and show it in WordPress Dashboard.
+
+
+= Do I need to have an account on Google Analytics to use this plugin ? =
+Yes, a Google Analytics account is necessary to use this plugin. You can create a free account on <a href="https://analytics.google.com">Google Analytics</a> site. After creating a Google analytics account. You need to setup a website profile at Google Analytics. After that you can connect Analytify plugin and Google Analytics together.
 
 = How to Authenticate and Connect my Google Analytics Account in this plugin ? =
 
 Go to Analytify->settings and see the Authentication tab.
 
-= How to select GA profiles ? =
+= How to select Google Analytics profiles ? =
 
-First, you need to Authenticate your GA account then you can select your web profiles from Profiles tab in Analytify->settings page. click the "Log in with Google Analytics Account" button. Connect and give Analytify App access to your Google Analytics account.
+First, you need to Authenticate your Google analytics account then you can select your web profiles from Profiles tab in Analytify->settings page. click the "Log in with Google Analytics Account" button. Connect and give Analytify App access to your Google Analytics account.
+
+= Does Google Analytics dashboard by Analytify Affects My Site's Loading Speed? =
+
+Not at all. Analytify uses Google Analytics Universal tracking JS code to track every event. Nothing is saved to your Database. Google Analytics are shown on the fly by default. To cache them on the specific Analytify dashboard, you can enable this option. Other than that, no page will save anything to the database.
 
 
 ##  Screenshots ##
@@ -99,12 +222,243 @@ First, you need to Authenticate your GA account then you can select your web pro
 5. Google Analytics by Analytify - Enhanced eCommerce Google Analytics Tracking for WooCommerce [Paid Add-on Required](https://analytify.io/add-ons/woocommerce/?utm_source=analytify-lite&amp;utm_medium=readme-org-screenshots&amp;utm_content=woocommerce&amp;utm_campaign=pro-upgrade).
 6. Google Analytics Dashboard By Analytify - Settings Screen.
 7. Google Analytics by Analytify - Automated Email Reports [Paid Add-on Required](https://analytify.io/add-ons/email-notifications/?utm_source=analytify-lite&amp;utm_medium=readme-org-screenshots&amp;utm_content=email-notifications&amp;utm_campaign=pro-upgrade).
-8. Google Analytics by Analytify - Shopping Behaviour funnel for WooCommerce Google Analytics [Paid Add-on Required](https://analytify.io/add-ons/woocommerce/?utm_source=analytify-lite&amp;utm_medium=readme-org-screenshots&amp;utm_content=woocommerce-funnel&amp;utm_campaign=pro-upgrade).
+8. Google Analytics by Analytify - Shopping Behavior funnel for WooCommerce Google Analytics [Paid Add-on Required](https://analytify.io/add-ons/woocommerce/?utm_source=analytify-lite&amp;utm_medium=readme-org-screenshots&amp;utm_content=woocommerce-funnel&amp;utm_campaign=pro-upgrade).
 9. Google Analytics by Analytify - UTM Campaigns Dashboard [Add-on Required](https://analytify.io/add-ons/campaigns/?utm_source=analytify-lite&amp;utm_medium=readme-org-screenshots&amp;utm_content=campaigns&amp;utm_campaign=pro-upgrade).
 10. Google Analytics by Analytify - Google Analytics dashboard widget for WordPress [ Free Add-on](https://analytify.io/add-ons/google-analytics-dashboard-widget-wordpress/?utm_source=analytify-lite&amp;utm_medium=readme-org-screenshots&amp;utm_content=dashboard-widget&amp;utm_campaign=pro-upgrade).
 
 
 ##  Changelog ##
+
+### 4.1.1 - 2021-07-29 ###
+* New Feature: Add compatibility with GDPR compliance plugins, CookieYes and Cookie Notice & Compliance. 
+* New Feature: Add navigation and animation filters in Analytify dashboard.
+* Enhancement: Add Notice to acknowledge gtag.js tracking mode.
+* Compatibility: Compatible to WordPress 5.8
+
+### 4.1.0 - 2021-06-21 ###
+* New Feature: Added the Global Site Tag (gtag.js) tracking to make GA4 Google Analytics 4 Compatible. 
+* New Feature: Migrate all tracking to gtag.js - recommend by Google Analytics.
+* Enhancement: Update diagnostic information for additional details.
+* Enhancement: Update email greeting heading line.
+* Enhancement: Compatibility with new email note settings field.
+* Enhancement: Adjust dashboard widget styling.
+
+### 4.0.3 - 2021-05-10 ###
+* Enhancement: Enable all modules on installation.
+* Bug Fix: Fatal error on calling exception after authentication.
+
+### 4.0.2 - 2021-04-19 ###
+* Bug Fix: Bounce rate arrow missed in last release.
+
+### 4.0.1 - 2021-04-08 ###
+* New Feature: Add filter to change email notification note.
+* Enhancement: Update jQuery event triggers.
+* Enhancement: Update Analytify icon in shortcode.
+* Enhancement: Make email notification strings translatable.
+* Enhancement: Make miscellaneous strings translatable.
+* Bug Fix: Fix opt-in screen.
+
+### 4.0.0 - 2021-03-12 ###
+* New Feature: New Analytics Dashboard Layout.
+* New Feature: Events Tracking.
+* New Feature: Authors Tracking and Dashboard.
+* New Feature: Custom Dimensions Tracking.
+* New Feature: Affiliates Tracking.
+* New Feature: Links Tracking.
+* New Feature: Clicks Tracking.
+* New Feature: Google AMP Support.
+* New Feature: Google Optimize Support.
+* New Feature: Forms Tracking for Gravity Forms, WPForms, Contact Form 7, Custom Forms, Formidable Forms, Ninja Forms.
+* New Feature: New Settings Page Design.
+* Enhancement: Upgrade addons page active/deactive functionality.
+* Bug Fix: Post edit page reloading on save.
+* Bug Fix: Avia builder was not able to edit.
+* Compatibility: Compatible to WordPress 5.7
+
+### 3.1.6 - 2021-01-26 ###
+* New Feature: Turkish translation is added.
+* Enhancement: Update social media and browser icons.
+* Bug Fix: Bounce rate stats in dashboard and email notification.
+* Bug Fix: Invalid date format issue while fetching stats from Google Analytics.
+* Compatibility: Compatible to WordPress 5.6
+
+### 3.1.5 - 2020-09-14 ###
+* Enhancement: Code refactor for disable email reports option.
+* Enhancement: Code refactor for profiles check in email settings.
+* Compatibility: Compatible to WordPress 5.5
+
+### 3.1.4 - 2020-08-24 ###
+* Bug Fix: Fix rest api permission callback issue.
+* Bug Fix: Fix jQuery deprication.
+* Compatibility: Compatible to WordPress 5.5
+
+### 3.1.3 - 2020-08-12 ###
+* Bug Fix: Fix send to email address option.
+* Bug Fix: Fix bounce rate stats in email report.
+
+### 3.1.2 - 2020-08-11 ###
+* New Feature: Add disable email reports option.
+
+### 3.1.1 - 2020-08-06 ###
+* Bug Fix: Fix email reports corn job.
+* Bug Fix: Fix widget addon status on addons page.
+* Bug Fix: Fix social and flag icons.
+
+### 3.1.0 - 2020-07-25 ###
+* New Feature: Introducing Google Analytics Email Reports in HTML format.
+* Enhancement: Add fallback method for formating dates in RTL Languages.
+* Enhancement: Make depth Scroll tracking for all posts/pages.
+* Enhancement: Update admin notices layout.
+* Compatibility : Compatible to WordPress 5.4
+* Compatibility : Compatible to PHP 7.4
+
+### 3.0.1 - 2020-07-25 ###
+* Enhancement: Update admin notices layout.
+* Compatibility : Compatible to WordPress 5.4
+* Compatibility : Compatible to PHP 7.4
+
+### 3.0.0 - 2020-02-19 ###
+* New Feature: Manually add UA Tracking code adding capability with Global Site Tag (gtag.js) Tracking method.
+* New Feature: Page scroll depth stats.
+* Bug Fix: Datepicker issue when locale is other than English.
+* Bug Fix: Confliction with WordPress Real Media Library - Media Categories / Folders File Manager plugin.
+* Bug Fix: Confliction with WPC Frequently Bought Together for WooCommerce plugin.
+* Bug Fix: Confliction with Resume Manager – WP Job Manager plugin.
+* Bug Fix: Admin settings layout break with WordPress 5.3 update.
+* Bug Fix: Optin page layout break.
+* Compatibility: Compatible to WordPress 5.3
+
+### 2.2.13 - 2019-06-02 ###
+* Enhancement: Prettify PAGES/SESSION stats.
+* Enhancement: Add Curl version in Diagnostic logs.
+* Bug Fix: Fix confliction with Bridge theme.
+
+### 2.2.12 - 2019-05-02 ###
+* Enhancement: Layout issue on Campaigns addon.
+* Enhancement: Confliction with Edit Flow.
+* Enhancement: Confliction with Huber theme.
+
+### 2.2.11 - 2019-04-12 ###
+* Bug Fix: User Rate Limit error occur in some cases.
+* Enhancement: Show message when REST API endpoint is disabled.
+* Enhancement: Addons list fetched from server.
+
+### 2.2.10 - 2019-02-21 ###
+* Enhancement: Added filter to change Analytics.js source i.e Compatibility with CAOS | Host Google Analytics Locally plugin.
+* Compatibility: Compatible to WordPress 5.1
+
+### 2.2.9 - 2019-02-14 ###
+* Bug Fix: Hide Profile generate error sometime.
+* Enhancement: Fix Widget Options confliction.
+
+### 2.2.8 - 2019-01-21 ###
+* Bug Fix: Undefined variable warning.
+
+### 2.2.7 - 2018-12-31 ###
+* Bug Fix: Subscriber can see the Analytify Page Icon.
+* Bug Fix: Incorrect Google Analytics Returning visitors.
+* Enhancement: Pagination script updated.
+* Enhancement: Code improvement.
+
+### 2.2.6 - 2018-12-10 ###
+* Bug Fix: Admin notice style break.
+
+### 2.2.5 - 2018-12-10 ###
+* New Feature: Introducing detailed stats on Google Analytics.
+* Bug Fix: Optimization, Profile Summary used more space in database.
+* Enhancement: Nonce implementation.
+* Enhancement: Code Refactor.
+* Enhancement: Fix translatable stings issue.
+* Enhancement: Restrict CSS only on Analytify pages.
+* Enhancement: New Social icons like Yelp added
+* Enhancement: Add default icons if specific icon is not available.
+* Enhancement: Calendar dates are translatable now.
+* Enhancement: Format Stats numbers.
+* Enhancement: csv export icon is available on hover each Stats section.
+* Compatibility: Compatible with WordPress 5.0.
+
+### 2.2.4 - 2018-11-22 ###
+* Enhancement: Confliction with Elementor.
+
+### 2.2.3 - 2018-11-03 ###
+* Enhancement: Update Pikaday library.
+* Enhancement: Error Handling.
+* Enhancement: Confliction with WooCommerce Pre Order.
+
+### 2.2.2 - 2018-11-02 ###
+* Bug Fix: Fix style confliction.
+
+### 2.2.1 - 2018-11-01 ###
+* Bug Fix: Fetch fresh stats when custom key added.
+* Bug Fix: Fix style confliction.
+* Bug Fix: Contact Form 7 addon notice.
+* Enhancement: Delete Exception when on delete cache.
+* Enhancement: Code Refactor.
+
+### 2.2.0 - 2018-10-26 ###
+* Enhancement: Better User Experience.
+* Enhancement: French language added.
+* Enhancement: Settings Text updated.
+* Enhancement: New Settings page design.
+* Enhancement: Better Cache handling.
+* Enhancement: Error Handling.
+* Enhancement: Add Error logs.
+* Enhancement: Code Refactor.
+* Bug Fix: Fix confliction with Music Club Theme.
+
+### 2.1.23 - 2018-10-24 ###
+* Enhancement: Better Cache Algorithm.
+* Enhancement: Add cache for single page/post stats.
+* Enhancement: Error Handling.
+* Enhancement: Add Error logs.
+* Enhancement: Code Refactor.
+* Enhancement: Better User Experience.
+* Enhancement: French language added.
+* Enhancement: Settings Text updated.
+* Enhancement: Settings page design update.
+* Bug Fix: Fix confliction with Music Club Theme.
+
+### 2.1.22 - 2018-10-03 ###
+* New Feature: Add user optin shortcode for GDPR Compatibility `analytify_user_optin`.
+* Enhancement: Error Handling.
+* Bug Fix: Fix confliction with Bridge Theme.
+
+### 2.1.21 - 2018-09-20 ###
+* Bug Fix: Fix ModSecurity issue when user use custom Google API Keys.
+* Bug Fix: Compare stats when no previous stats available.
+* Bug Fix: Fix conflict with Massive Cryptocurrency plugin.
+* Enhancement: Add Instagram icon in Analytics dashboard.
+
+### 2.1.20 - 2018-08-19 ###
+* Bug Fix: WPMU Popup Pro CSS Conflict fixed.
+* Enhancement: Code improvement and changed Youtube Video URL for setting up Custom Google Analytics API Keys.
+
+### 2.1.19 - 2018-08-08 ###
+* Enhancement: Update text for New sessions.
+* Enhancement: Code improvement.
+
+### 2.1.18 - 2018-07-14 ###
+* New Feature: Add Filter for Cookie Notice compatibility.
+* Enhancement: Client Secret removed form debug logs.
+* Enhancement: Code improvement.
+
+### 2.1.17 - 2018-06-29 ###
+* Bug Fix: Geographic Stats conflict with Cloudflare.
+* Enhancement: Refactored Settings JavaScript code.
+* Enhancement: When Install Google Analytics message when WooCommerce Addon is installed.
+
+### 2.1.16 - 2018-05-24 ###
+* Enhancement: GDPR Compatible.
+
+### 2.1.15 - 2018-04-18 ###
+* Bug Fix: Single Page/Post for Non-English title.
+
+### 2.1.14 - 2018-04-02 ###
+* Enhancement: Add 'Today' option in date range selection.
+* Enhancement: Add BounceRate and Avg.Time on top pages section.
+* Bug Fix: Remove Settings meta from database on Uninstall.
+* Bug Fix: Remove Export CSV button on single page/post.
+* Bug Fix: Help logs on Multisite.
 
 ### 2.1.13 - 2018-03-21 ###
 * Bug Fix: Remove useless jquery-ui-tooltip dependency
@@ -149,7 +503,7 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 ### 2.1.5 - 2017-07-27 ###
 * Bug Fix : Fixed conflict with TheEventsCalendar
-* Bug Fix : Code Cleanup and optimise
+* Bug Fix : Code Cleanup and optimize
 * Enhancement : update momentjs library to 2.18.1 version
 * Enhancement : Responsive Dashboard
 
@@ -166,7 +520,7 @@ First, you need to Authenticate your GA account then you can select your web pro
 * Bug Fix : Advanced short-code CSS conflict on new Post/Page.
 * Bug Fix : Prevent loading css if admin bar hidden.
 * Enhancement : Fix bounce rate arrow notification image.
-* Enhancement : Add link to pages on Entrance/Exit section in analytify dashboard.
+* Enhancement : Add link to pages on Entrance/Exit section in Analytify dashboard.
 
 ### 2.1.1 - 2017-04-14 ###
 * Bug Fix : Average Time on Page stats under pages/posts etc. Thanks to user **@danielson79** for this [ticket](https://wordpress.org/support/topic/post-average-session-time-instead-time-on-page/).
@@ -327,7 +681,7 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 ### 1.1.1 - 2015-08-30 ###
 * New Feature : Added Cache for Keywords and Browser stats.
-* Enhancement : Compatibility with Wordpress 4.3
+* Enhancement : Compatibility with WordPress 4.3
 
 ### 1.1.0 - 2015-07-10 ###
 * New Feature : Added Cache for Country and City stats.
@@ -365,4 +719,4 @@ First, you need to Authenticate your GA account then you can select your web pro
 
 You may buy the premium version to support the development.
 
-http://analytify.io/details
+https://analytify.io/details
