@@ -49,4 +49,3 @@ function fetch_referrers_stats( $current, $stats, $return = false ) {
 
 
 	}
-	?>

@@ -1,0 +1,126 @@
+.analytify_page_analytify-settings .wrap .notice{
+  margin: 15px 0 15px;
+}
+/* Analytify Notice */
+.wp-analytify-notification{
+  padding: 15px;
+  border-radius: 3px;
+  margin: 20px 20px 10px 0;
+  position: relative;
+}
+.wp-analytify-notice-logo{
+  width: 34px;
+  float: left;
+  margin-right: 30px;
+  overflow: hidden;
+}
+.wp-analytify-notice-logo img{
+  vertical-align: middle;
+}
+.wp-analytify-notice-discription{
+  overflow: hidden;
+  width: calc(100% - 50px);
+}
+.wp-analytify-notification.wp-analytify-danger{
+  border:1px solid #ba7b7b;
+  background: #f7e6e6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wp-analytify-notice-discription p{
+  margin: 0;
+}
+.wp-analytify-danger .wp-analytify-notice-discription p{
+  color: #592626;
+}
+.wp-analytify-notification:after{
+  content: '';
+  display: table;
+  clear: both;
+}
+.wp-analytify-notification .wp-analytify-notification-close{
+  text-decoration: none;
+  padding: 2px;
+}
+.wp-analytify-notification.wp-analytify-danger .wp-analytify-notification-close:before{
+  color: #592626;
+}
+.wp-analytify-notification.wp-analytify-success{
+  border:1px solid #6ab074;
+  background: #e6f0e8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wp-analytify-success .wp-analytify-notice-discription p{
+  color: #21573a;
+}
+.wp-analytify-notification.wp-analytify-success .wp-analytify-notification-close:before{
+  color: #21573a;
+}
+.wp-analytify-notice-link{
+  text-decoration: none;
+}
+.analytify-review-notice{
+  padding: 15px 15px 15px 0;
+  background-color: #fff;
+  border-radius: 3px;
+  margin: 20px 20px 20px 0;
+  border-left: 4px solid transparent;
+}
+.analytify-review-notice:after{
+  content: '';
+  display: table;
+  clear: both;
+}
+.analytify-review-thumbnail{
+  width: 114px;
+  float: left;
+  line-height: 80px;
+  text-align: center;
+  border-right: 4px solid transparent;
+}
+.analytify-review-thumbnail img{
+  width: 60px;
+  vertical-align: middle;
+}
+.analytify-review-text{
+  overflow: hidden;
+}
+.analytify-review-text h3{
+  font-size: 24px;
+  margin: 0 0 5px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+.analytify-review-text p{
+  font-size: 13px;
+  margin: 0 0 5px;
+}
+.analytify-review-ul{
+  margin: 0;
+  padding: 0;
+}
+.analytify-review-ul li{
+  display: inline-block;
+  margin-right: 15px;
+}
+.analytify-review-ul li a{
+  display: inline-block;
+  color: #10738B;
+  text-decoration: none;
+  padding-left: 26px;
+  position: relative;
+}
+.analytify-review-ul li a span{
+  position: absolute;
+  left: 0;
+  top: -2px;
+}

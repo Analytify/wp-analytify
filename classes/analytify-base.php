@@ -121,6 +121,3 @@ class Analytify_Base{
 
 	}
 }
-
-
-?>

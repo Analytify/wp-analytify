@@ -11,7 +11,7 @@ function pa_include_operating( $current, $operating_stats ) {
 				<?php foreach ( $operating_stats['rows'] as $op_stats ) { ?>
 						<div class="stats">
 							<div class="row-visits">
-								<span class="large-count"><?php echo $current->wpa_number_format( $op_stats[2] ); ?></span>
+								<span class="large-count"><?php echo number_format( $op_stats[2] ); ?></span>
 							Visits
 							</div>
 							<div class="visits-count">
@@ -31,4 +31,4 @@ function pa_include_operating( $current, $operating_stats ) {
 		<span class="information-txt"><?php esc_html_e( 'Listing statistics of top five operating systems.', 'wp-analytify' ); ?></span>
 	</div>
 </div>
-<?php } ?>
+<?php }

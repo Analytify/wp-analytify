@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 /*
 * View of Geographic Statistics
 */
-function fetch_geographic_stats ( $current, $countries_stats, $cities_stats, $show_map = true ) {
+function fetch_geographic_stats ( $current, $countries_stats, $cities_stats, $show_map = true, $report_url = '', $report_date_range = '' ) {
 
   if ( isset( $countries_stats['rows'] ) && $countries_stats['rows'] > 0  ):
 
@@ -18,7 +18,7 @@ function fetch_geographic_stats ( $current, $countries_stats, $cities_stats, $sh
       $lowest_number = $_lowest_number[1]
 
       ?>
-      <script>
+      <script data-cfasync="false" >
       jQuery(document).ready(function ($) {
 
         // configure for module loader
@@ -126,8 +126,11 @@ function fetch_geographic_stats ( $current, $countries_stats, $cities_stats, $sh
       <table class="analytify_data_tables analytify_border_th_tp analytify_half analytify_pull_left">
         <thead>
           <tr>
-            <th class="analytify_txt_left analytify_top_geographic_detials_wraper">
+            <th class="analytify_txt_left analytify_vt_middle analytify_top_geographic_detials_wraper">
               <?php esc_html_e( 'Top countries', 'wp-analytify' ); ?>
+              
+              <?php $referral_url = 'https://analytics.google.com/analytics/web/#report/visitors-geo/' ; ?>
+              <a href="<?php echo $referral_url . $report_url . $report_date_range ?>" target="_blank" class="analytify_tooltip"><span class="analytify_tooltiptext"><?php _e( 'View All Top Countries', 'wp-analytify' ) ?></span><span aria-hidden="true" class="dashicons dashicons-external"></span></a>
               <?php do_action( 'analytify_after_top_country_text' ) ?>
             </th>
             <th class="analytify_value_row"><?php esc_html_e( 'Visitors', 'wp-analytify' ); ?></th>
@@ -140,7 +143,7 @@ function fetch_geographic_stats ( $current, $countries_stats, $cities_stats, $sh
             <?php $counter++ ?>
             <tr>
               <td><span class="<?php echo pretty_class( $country[0] )   ?> analytify_flages"></span> <?php echo $country[0] ?></td>
-              <td class="analytify_txt_center"> <?php echo $country[1] ?></td>
+              <td class="analytify_txt_center"> <?php echo WPANALYTIFY_Utils::pretty_numbers( $country[1] ) ?></td>
             </tr>
             <?php  if( $counter > 4 ) break ?>
           <?php endforeach; ?>
@@ -150,8 +153,11 @@ function fetch_geographic_stats ( $current, $countries_stats, $cities_stats, $sh
       <table class="analytify_data_tables analytify_border_th_tp p analytify_half analytify_pull_left">
         <thead>
           <tr>
-            <th class="analytify_txt_left analytify_top_geographic_detials_wraper analytify_brd_lft">
+            <th class="analytify_txt_left analytify_vt_middle analytify_top_geographic_detials_wraper analytify_brd_lft">
               <?php esc_html_e( 'Top cities', 'wp-analytify' ); ?>
+              
+              <?php $referral_url = 'https://analytics.google.com/analytics/web/#report/visitors-geo/' ; ?>
+              <a href="<?php echo $referral_url . $report_url . $report_date_range . '&geo-table.plotKeys=%5B%5D&geo-table.secSegmentId=analytics.country&geo-segmentExplorer.segmentId=analytics.city&geo-table-dataTable.sortColumnName=analytics.visits&geo-table-dataTable.sortDescending=true/' ?>" target="_blank" class="analytify_tooltip"><span class="analytify_tooltiptext"><?php _e( 'View All Top Cities', 'wp-analytify' ) ?></span><span aria-hidden="true" class="dashicons dashicons-external"></span></a>
               <?php do_action( 'analytify_after_top_city_text' ) ?>
             </th>
             <th class="analytify_value_row"><?php esc_html_e( 'Visitors', 'wp-analytify' ); ?></th>
@@ -162,7 +168,7 @@ function fetch_geographic_stats ( $current, $countries_stats, $cities_stats, $sh
           <?php foreach ( $cities_stats['rows'] as $city ): ?>
             <tr>
               <td class="analytify_boder_left"><span class="analytify_<?php echo str_replace( ' ', '_', strtolower( $city[1] ) )  ?> analytify_flages"></span> <?php echo $city[0] ?></td>
-              <td class="analytify_txt_center"><?php echo $city[2] ?></td>
+              <td class="analytify_txt_center"><?php echo WPANALYTIFY_Utils::pretty_numbers( $city[2] ) ?></td>
             </tr>
           <?php endforeach; ?>
 
@@ -172,4 +178,4 @@ function fetch_geographic_stats ( $current, $countries_stats, $cities_stats, $sh
   <?php else:
     echo  $current->no_records();
   endif;
-} ?>
+}

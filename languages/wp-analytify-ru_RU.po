@@ -80,7 +80,7 @@ msgid "Access denied for: %s"
 msgstr "Доступ запрещен для: %s"
 
 #: analytify-general.php:473
-msgid "No activity this period"
+msgid "No Activity During This Period."
 msgstr "Нет активности в этот период"
 
 #: classes/analytify-sanitize.php:39

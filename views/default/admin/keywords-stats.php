@@ -65,4 +65,3 @@ function fetch_keywords_stats( $current, $stats , $return = false ) {
 			}
 
 	}
-	?>

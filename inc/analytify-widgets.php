@@ -106,4 +106,3 @@ class ANALYTIFY_WIDGET_REALTIME extends WP_Widget {
 // register widget
 add_action( 'widgets_init', create_function( '', 'return register_widget("ANALYTIFY_WIDGET_REALTIME");' ) );
 
-?>

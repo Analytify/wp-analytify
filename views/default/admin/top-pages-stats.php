@@ -11,6 +11,8 @@ function fetch_top_pages_stats( $current, $stats ) { ?>
 				<th class="analytify_num_row">#</th>
 				<th class="analytify_txt_left"><?php esc_html_e( 'Title', 'wp-analytify' ); ?></th>
 				<th class="analytify_value_row"><?php esc_html_e( 'Views', 'wp-analytify' ); ?></th>
+				<th class="analytify_value_row"><?php esc_html_e( 'Avg. Time', 'wp-analytify' ); ?></th>
+				<th class="analytify_value_row"><?php esc_html_e( 'Bounce Rate', 'wp-analytify' ); ?></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -28,6 +30,8 @@ function fetch_top_pages_stats( $current, $stats ) { ?>
 						<td class="analytify_txt_center"><?php echo $i; ?></td>
 						<td><a target='_blank' href="<?php echo $site_url . $top_page[1] ?>"><?php echo $top_page[0]; ?></a></td>
 						<td class="analytify_txt_center analytify_value_row"><?php echo WPANALYTIFY_Utils::pretty_numbers( $top_page[2] ); ?></td>
+						<td class="analytify_txt_center analytify_value_row"><?php echo isset( $top_page[3] ) ? WPANALYTIFY_Utils::pretty_time( $top_page[3] ) : ''; ?></td>
+						<td class="analytify_txt_center analytify_value_row"><?php echo isset( $top_page[4] ) ? WPANALYTIFY_Utils::pretty_numbers( $top_page[4] ) . '%' : ''; ?></td>
 					</tr>
 					<?php
 
@@ -45,4 +49,3 @@ function fetch_top_pages_stats( $current, $stats ) { ?>
 	</table>
 <?php
 }
-?>

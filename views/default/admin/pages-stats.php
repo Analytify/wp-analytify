@@ -11,7 +11,7 @@ function fetch_pages_stats( $current, $stats ) {
 	<table class="analytify_data_tables analytify_page_stats_table">
 		<thead>
 			<tr>
-				<th class="analytify_txt_left analytify_link_title"><?php esc_html_e( 'Url link', 'wp-analytify' ); ?></th>
+				<th class="analytify_txt_left analytify_link_title"><?php esc_html_e( 'Title / link', 'wp-analytify' ); ?></th>
 				<th class="analytify_compair_value_row"><?php esc_html_e( 'Entrance', 'wp-analytify' ); ?></th>
 				<th class="analytify_compair_value_row"><?php esc_html_e( 'Exits', 'wp-analytify' ); ?></th>
 				<th class="analytify_compair_row"><?php esc_html_e( 'Entrance% Exits%', 'wp-analytify' ); ?></th>
@@ -21,6 +21,8 @@ function fetch_pages_stats( $current, $stats ) {
 
 			<?php
 
+			$url = 0;
+			$top_entrance = 0;
 			if ( isset( $stats['rows'] ) && $stats['rows'] > 0 ) :
 				$i            = 0;
 				$url          = $stats['rows'][0][1];
@@ -67,12 +69,11 @@ function fetch_pages_stats( $current, $stats ) {
 
 	$body = ob_get_clean();
 
-	echo json_encode(
+	return json_encode(
 		array(
-			'message' => sprintf( esc_html__( 'Did you know that %1$s people landed directly to your site at %2$s', 'wp-analytify' ), WPANALYTIFY_Utils::pretty_numbers( $top_entrance ), $url ),
+			'message' => sprintf( esc_html__( 'Did you know that %1$s people landed directly to your site at %2$s?', 'wp-analytify' ), WPANALYTIFY_Utils::pretty_numbers( $top_entrance ), $url ),
 			'body'    => $body,
 		)
 	);
 
 }
-?>

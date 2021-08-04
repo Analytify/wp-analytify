@@ -203,7 +203,7 @@
           e.stopPropagation();
         });
 
-        $(document).click(function(){
+        $(document).on('click', function(){
           close_popup();
         });
         $('.wp-analytify-reason label').on('click', function(){

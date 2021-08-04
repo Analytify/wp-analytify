@@ -256,7 +256,7 @@ class Analytify_Welcome {
 
 			<div class="analytify-welcome-settings">
 				<a href="<?php echo esc_url( admin_url( 'admin.php?page=analytify-settings') ); ?>"><?php esc_html_e( 'Go to Analytify Settings', 'wp-analytify' ); ?></a> &middot;
-				<a href="http://analytify.io/changelog/" target="_blank"><?php esc_html_e( 'View the Full Changelog', 'wp-analytify' ); ?></a>
+				<a href="https://analytify.io/changelog/" target="_blank"><?php esc_html_e( 'View the Full Changelog', 'wp-analytify' ); ?></a>
 			</div>
 		</div>
 		<?php
@@ -284,7 +284,7 @@ class Analytify_Welcome {
 			<?php $this->tabs(); ?>
 
 			<p class="about-description">
-			<?php echo sprintf( esc_html__( 'Getting started with Analytify plugin settings are very easy to use and ready to go in minutes. If there is something you don\'t understand or confusing, do ask us on %1$sWordPress.org support forum%2$s without hesitation.', 'wp-analytify' ), ' <a href="http://wordpress.org/support/plugin/wp-analytify/" tagget="_blank">', '</a>');?>
+			<?php echo sprintf( esc_html__( 'Getting started with Analytify plugin settings are very easy to use and ready to go in minutes. If there is something you don\'t understand or confusing, do ask us on %1$sWordPress.org support forum%2$s without hesitation.', 'wp-analytify' ), ' <a href="https://wordpress.org/support/plugin/wp-analytify/" tagget="_blank">', '</a>');?>
 			</p>
 
 			<div class="changelog">
@@ -405,7 +405,7 @@ class Analytify_Welcome {
 
 			<div class="analytify-welcome-settings">
 				<a href="<?php echo esc_url( admin_url( 'admin.php?page=analytify-settings') ); ?>"><?php esc_html_e( 'Go to Analytify Settings', 'wp-analytify' ); ?></a> &middot;
-				<a href="http://analytify.io/changelog/" target="_blank"><?php esc_html_e( 'View the Full Changelog', 'wp-analytify' ); ?></a>
+				<a href="https://analytify.io/changelog/" target="_blank"><?php esc_html_e( 'View the Full Changelog', 'wp-analytify' ); ?></a>
 			</div>
 
 		</div>
@@ -431,7 +431,7 @@ class Analytify_Welcome {
 
 			<?php $this->tabs(); ?>
 
-			<p class="about-description"><?php echo sprintf( esc_html__( 'Analytify is developed by %1$s WPBrigade%2$s i.e brigade of WordPress developers.', 'wp-analytify' ), '<a href="http://wpbrigade.com/">', '</a>');?></p>
+			<p class="about-description"><?php echo sprintf( esc_html__( 'Analytify is developed by %1$s WPBrigade%2$s - A WordPress Development Agency.', 'wp-analytify' ), '<a href="https://wpbrigade.com/" target="_blank">', '</a>');?></p>
 		</div>
 		<?php
 	}

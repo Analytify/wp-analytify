@@ -113,18 +113,23 @@
 				<img src="<?php echo plugins_url( 'assets/images/logo_pro_section.png',dirname( __FILE__ )) ?>">
 			</div>
 			<ul class="analytify_compair_features">
-				<li><?php _e( 'Dashboard (Advanced)', 'wp-analytify' ) ?></li>
+				<li><?php _e( 'Dashboards (Advanced)', 'wp-analytify' ) ?></li>
 				<li><?php _e( 'Analytics under Posts (admin)', 'wp-analytify' ) ?></li>
+				<li><?php _e( 'Email Notifications (addon)', 'wp-analytify' ) ?></li>
 				<li><?php _e( 'Analytics under Pages (admin)', 'wp-analytify' ) ?></li>
 				<li><?php _e( 'Comparison Stats (Visitors & Views monthly/yearly)', 'wp-analytify' ) ?></li>
-				<li><?php _e( 'Live Stats', 'wp-analytify' ) ?></li>
+				<li><?php _e( 'Real-Time Live Stats', 'wp-analytify' ) ?></li>
 				<li><?php _e( 'ShortCodes', 'wp-analytify' ) ?></li>
-				<li><?php _e( 'Extentions', 'wp-analytify' ) ?></li>
 				<li><?php _e( 'Analytics under Custom Post Types (front/admin)', 'wp-analytify' ) ?></li>
-				<li><?php _e( 'Ajax & JS Error Stats', 'wp-analytify' ) ?></li>
-				<li><?php _e( '404 Page Error Stats', 'wp-analytify' ) ?></li>
+				<li><?php _e( '404 Page, Ajax & JS Error Stats', 'wp-analytify' ) ?></li>
+				<li><?php _e( 'Events Tracking', 'wp-analytify' ) ?></li>
+				<li><?php _e( 'Google Optimize Support', 'wp-analytify' ) ?></li>
+				<li><?php _e( 'Google AMP Support', 'wp-analytify' ) ?></li>
+				<li><?php _e( 'Custom Dimensions', 'wp-analytify' ) ?></li>
+				<li><?php _e( 'Authors Tracking (addon)', 'wp-analytify' ) ?></li>
+				<li><?php _e( 'Forms Tracking (addon)', 'wp-analytify' ) ?></li>
 				<li><?php _e( 'Priority Email Support', 'wp-analytify' ) ?></li>
-				<li><?php _e( 'No promotional ads','wp-analytify' ) ?></li>
+				
 			</ul>
 		</div>
 		<div class="analytify_features analytify_simillar_feature">
@@ -140,6 +145,7 @@
 				<li><?php _e( 'Similar but limited', 'wp-analytify' ) ?></li>
 				<li><?php _e( 'Similar but limited', 'wp-analytify' ) ?></li>
 				<li><?php _e( 'Similar but limited', 'wp-analytify' ) ?></li>
+				<li><?php _e( 'Similar but limited', 'wp-analytify' ) ?></li>
 			</ul>
 		</div>
 
@@ -149,8 +155,9 @@
 				<img src="<?php echo plugins_url( 'assets/images/logo_free_section.png',dirname( __FILE__ )) ?>">
 			</div>
 			<ul class="analytify_compair_features">
-				<li><?php _e( 'Dashboard' , 'wp-analytify' ) ?></li>
+				<li><?php _e( 'Dashboards' , 'wp-analytify' ) ?></li>
 				<li><?php _e( 'Analytics under Posts (admin)', 'wp-analytify' ) ?></li>
+				<li><?php _e( 'Email Notifications', 'wp-analytify' ) ?></li>				
 				<li><?php _e( 'Analytics under Pages (admin)', 'wp-analytify' ) ?></li>
 				<li><?php _e( 'No', 'wp-analytify' ) ?></li>
 				<li><?php _e( 'No', 'wp-analytify' ) ?></li>
@@ -160,13 +167,13 @@
 				<li><?php _e( 'Only Tracking', 'wp-analytify' ) ?></li>
 				<li><?php _e( 'Only Tracking', 'wp-analytify' ) ?></li>
 				<li><?php _e( 'WordPress.org Forum Support', 'wp-analytify' ) ?></li>
-				<li><?php _e( 'Promotional Ads', 'wp-analytify' ) ?></li>
+				
 
 
 			</ul>
 		</div>
 		<div class="analytify_discount_code">
-			<?php printf( __( '%1$sUpgrade Now%2$s use %3$s discount code for 10&#37; OFF ' ) , '<a href="https://analytify.io/go/PRO" class="analytify_btn_buy">', '</a>' , '<span>GOPRO10</span>' ) ?>
+			<?php printf( __( '%1$sUpgrade Now%2$s use %3$s discount code for 10&#37; OFF ' ) , '<a target="_blank" href="https://analytify.io/free-vs-pro/?utm_source=analytify-lite&utm_medium=free-vs-pro-page&utm_campaign=pro-upgrade&utm_content=upgrade-now" class="analytify_btn_buy">', '</a>' , '<span>GOPRO10</span>' ); ?>
 		</div>
 
 	</div>

@@ -34,7 +34,7 @@ function fetch_system_stats ( $current, $browser_stats, $os_stats, $mobile_stats
                   <span class="<?php echo pretty_class( $browser[1] ) ?> analytify_social_icons"></span>
                   <?php echo "{$browser[0]} {$browser[1]}" ?>
                 </td>
-                <td class="analytify_txt_center analytify_value_row"><?php echo $browser[2] ?></td>
+                <td class="analytify_txt_center analytify_value_row"><?php echo  WPANALYTIFY_Utils::pretty_numbers( $browser[2] ) ?></td>
               </tr>
             <?php endforeach; ?>
           <?php else: ?>
@@ -65,7 +65,7 @@ function fetch_system_stats ( $current, $browser_stats, $os_stats, $mobile_stats
             <?php foreach ( $os_stats['rows'] as $os_stat ): ?>
               <tr>
                 <td class="analytify_boder_left" nowrap><span class="<?php echo pretty_class( $os_stat[0] )  ?> analytify_social_icons"></span> <?php echo "{$os_stat[0]} {$os_stat[1]}" ?> </td>
-                <td class="analytify_txt_center analytify_value_row"><?php echo $os_stat[2] ?></td>
+                <td class="analytify_txt_center analytify_value_row"><?php echo WPANALYTIFY_Utils::pretty_numbers( $os_stat[2] ) ?></td>
               </tr>
             <?php endforeach; ?>
           <?php else: ?>
@@ -96,7 +96,7 @@ function fetch_system_stats ( $current, $browser_stats, $os_stats, $mobile_stats
             <?php foreach ( $mobile_stats['rows'] as $mobile ): ?>
               <tr>
                 <td class="analytify_boder_left" nowrap><span class="<?php echo pretty_class( $mobile[0] )  ?> analytify_social_icons"></span> <?php echo "{$mobile[0]} {$mobile[1]}"; ?></td>
-                <td class="analytify_txt_center analytify_value_row"><?php echo $mobile[2]; ?></td>
+                <td class="analytify_txt_center analytify_value_row"><?php echo WPANALYTIFY_Utils::pretty_numbers( $mobile[2] ); ?></td>
               </tr>
             <?php endforeach; ?>
           <?php else: ?>
@@ -112,9 +112,8 @@ function fetch_system_stats ( $current, $browser_stats, $os_stats, $mobile_stats
     </div>
   </div>
   <div class="analytify_status_footer">
-    <span class="analytify_info_stats"><?php esc_html_e( 'Listing statistics of top Mobile, Browsers and Operating System Stats.', 'wp-analytify' ); ?></span>
+    <span class="analytify_info_stats"><?php esc_html_e( 'Top Web Browsers, Operating Systems, and Mobile Devices', 'wp-analytify' ); ?></span>
   </div>
   <?php
 
 }
-?>

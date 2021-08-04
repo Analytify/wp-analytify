@@ -22,6 +22,11 @@
  */
 
 require_once ANALYTIFY_LIB_PATH . 'Google/IO/Abstract.php';
+include_once ANALYTIFY_LIB_PATH . 'Google/Guzzle/autoload.php';
+use GuzzleHttp\Client;
+
+use GuzzleHttp\Psr7;
+
 
 class Analytify_Google_IO_Curl extends Analytify_Google_IO_Abstract
 {
@@ -39,6 +44,14 @@ class Analytify_Google_IO_Curl extends Analytify_Google_IO_Abstract
    */
   public function executeRequest(Analytify_Google_Http_Request $request)
   {
+    $curl = curl_version();
+    
+    // if ( true ) {
+    // // if ( '7.67.0' <= $curl['version'] ) {
+    //   $response = $this->guzzle_request( $request );
+    //   return $response;
+    // }
+
     $curl = curl_init();
 
     if ($request->getPostBody()) {
@@ -91,6 +104,118 @@ class Analytify_Google_IO_Curl extends Analytify_Google_IO_Abstract
 
     return array( $responseBody, $responseHeaders, $responseCode );
   }
+
+  // /**
+  //  * Execute an HTTP Request with Guzzel
+  //  *
+  //  * response headers and response body filled in
+  //  * @throws Analytify_Google_IO_Exception on guzzle or IO error
+  //  */
+  // public function guzzle_request( $request ) {
+	// 	$client = new Client();
+	// 	$request_header = $request->getRequestHeaders();
+  //   $headers = array();
+  //   $headers_def = array(
+	// 		CURLOPT_SSL_VERIFYPEER  => false,
+	// 		CURLOPT_FOLLOWLOCATION  => true,
+	// 		CURLOPT_RETURNTRANSFER  => true,
+	// 		CURLOPT_HEADER          => true,
+	// 		CURLOPT_HTTP_VERSION    => CURL_HTTP_VERSION_1_0
+	// 	);
+
+	// 	if ( $request->getPostBody() ) {
+	// 		$headers = array(
+	// 			'Content-Type' => 'application/x-www-form-urlencoded',
+	// 			'Content-Length' => strlen($request->getPostBody()),
+	// 		);
+	// 	}
+
+	// 	if ( array_key_exists( 'authorization', $request_header ) ) {
+	// 		$headers['Authorization'] = $request_header['authorization'];
+	// 	}
+
+	// 	if ( $request->canGzip() ) {
+	// 		$headers['Accept-Encoding'] = "identity";
+	// 	}
+		
+	// 	if ( $request->getUserAgent() ) {
+  //     $headers['User-Agent'] = $request->getUserAgent();
+  //   }
+    		
+	// 	foreach ($this->options as $key => $var) {
+  //     $headers_def[$key] = $var;
+  //   }
+		
+  //   if ( ! isset( $this->options[CURLOPT_CAINFO] ) ) {
+  //     $headers['Cert'] =  dirname(__FILE__) . '/cacerts.pem';
+	// 	}
+
+  //   // Send request
+  //   try {
+  //       if ( $request->getPostBody() ) {
+  //         $response = $client->request( $request->getRequestMethod(), $request->getUrl(), array(
+  //           'headers' => $headers,
+  //           'body'    => $request->getPostBody(),
+  //         ));
+  //       } else {
+  //         $response = $client->request( $request->getRequestMethod(), $request->getUrl(), array(
+  //           'headers' => $headers,
+  //           'curl'    => $headers_def
+  //         ));
+  //       }
+  //   } catch ( ClientErrorResponseException $exception ) {
+  //       $exception_body = $exception->getResponse()->getBody(true);
+  //       throw new Analytify_Google_IO_Exception( $exception_body );
+  //   }
+
+	// 	$body = $response->getBody();
+  //   $content = $body->getContents();
+  //   $status_code = $response->getStatusCode();
+  //   $headers_respose = $response->getHeaders();
+
+  //   // Return successfull response
+	// 	if ( ! $request->getPostBody() ) {
+
+  //     // Get proper json response
+  //     // $filter_json = preg_replace( '~\{(?:[^{}]|(?R))*\}~', '', $content );
+  //     // if ( empty( $filter_json ) ) {
+  //     //   $explode_response =  explode( '"kind"', $content );
+  //     //   $json_response = '{"kind"'.$explode_response[1];
+  //     // } else {
+  //     //   $json_response = str_replace( trim( $filter_json ), '', $content );
+  //     //   $json_response = trim( $json_response );
+  //     // }
+
+  //     /**
+  //      * Extract header content form body string
+  //      */
+  //     $inner_header_vals= '';
+  //     foreach ( $response->getHeaders() as $name => $values ) {
+  //       $str_remv =  $name . ': ' . implode(', ', $values) . "\r\n";
+  //       if ( 1 < count( $values ) ) {
+  //         foreach ($values as $value) {
+  //           $inner_header_vals .= $name.': ' . $value . "\r\n";
+  //         }
+  //       }
+  //       if ( isset( $cleansed ) && !empty( $cleansed ) ) {
+  //         $content = $cleansed;
+  //       }
+  //       $cleansed = str_replace( $str_remv, '', $content );
+  //     }
+  //     $cleansed = str_replace( $inner_header_vals, '', $cleansed );
+  //     $cleansed = str_replace( 'HTTP/1.0 200 OK', '', $cleansed );
+  //     $json_response = trim( $cleansed );
+
+  //     // Response for GET request
+  //     $final_resposne = array( $json_response, $headers_respose, $status_code );
+  //   } else {
+
+  //     // Response for POST request
+  //     $final_resposne = array( $content, $headers_respose, $status_code );
+  //   }
+    
+  //   return $final_resposne;
+	// }
 
   /**
    * Set options that update the transport implementation's behavior.

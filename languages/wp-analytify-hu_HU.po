@@ -81,7 +81,7 @@ msgid "Access denied for: %s"
 msgstr "Hozzáférés megtagadva: %s"
 
 #: analytify-general.php:473
-msgid "No activity this period"
+msgid "No Activity During This Period."
 msgstr "Tevékenység nélküli időszak"
 
 #: classes/analytify-sanitize.php:39

@@ -39,7 +39,7 @@ function pa_include_browser( $current, $browser_stats ) {
 		<span class="dot"></span>
 		<span class="line"></span>
 	  </span>
-	  <span class="information-txt"><?php esc_html_e( 'listing statistics of top five browsers.', 'wp-analytify' );?></span>
+	  <span class="information-txt"><?php esc_html_e( 'listing statistics of top five browsers', 'wp-analytify' );?></span>
 	</div>
 </div>
-<?php } ?>
+<?php }

@@ -1,0 +1,2376 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Project-Id-Version: Analytify - Google Analytics Dashboard\n"
+"POT-Creation-Date: 2018-12-28 10:18+0500\n"
+"PO-Revision-Date: 2020-11-23 10:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: Turkish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: wp-analytify.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"Report-Msgid-Bugs-To: \n"
+"Language: tr_TR\n"
+"X-Loco-Version: 2.4.4; wp-5.5.3"
+
+#: analytify-general.php:116
+#, php-format
+msgid ""
+"%1$s Oops, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
+"message is only visible to Administrators. %4$s %2$s "
+msgstr ""
+"%1$s Hata, bir şeyler ters gitti. %2$s %5$s %2$s %3$s Merak etmeyin, bu hata "
+"mesajı sadece yöneticiler tarafından görülebilir. %4$s %2$s "
+
+#: analytify-general.php:123
+#, php-format
+msgid ""
+"%1$s Oops, Try to %2$s Reset %3$s Authentication. %4$s %7$s %4$s %5$s Don't "
+"worry, This error message is only visible to Administrators. %6$s %4$s"
+msgstr ""
+"%1$s Hata, %2$s %3$s Kimlik doğrulamasını sıfırlamayı deneyin. %4$s %7$s "
+"%4$s %5$s Merak etmeyin, bu hata mesajı sadece yöneticiler tarafından "
+"görülebilir. %6$s %4$s"
+
+#: analytify-general.php:234 analytify-general.php:406
+#, php-format
+msgid ""
+"%1$s Oops, Something went wrong. %2$s %5$s %2$s %3$s Don't worry, This error "
+"message is only visible to Administrators. %4$s %2$s"
+msgstr ""
+"%1$s Hata, bir şeyler ters gitti. %2$s %5$s %2$s %3$s Merak etmeyin, bu hata "
+"mesajı sadece yöneticiler tarafından görülebilir. %4$s %2$s"
+
+#: analytify-general.php:242 analytify-general.php:338
+#: analytify-general.php:413 analytify-general.php:645
+#, php-format
+msgid ""
+"%1$s Oops, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s Don't "
+"worry, This error message is only visible to Administrators. %6$s %2$s"
+msgstr ""
+"%1$s Hata, %3$s %4$s Kimlik doğrulamasını sıfırlamayı deneyin. %2$s %7$s "
+"%2$s %5$s Merak etmeyin, bu hata mesajı sadece yöneticiler tarafından "
+"görülebilir. %6$s %2$s"
+
+#: analytify-general.php:250 analytify-general.php:348
+#: analytify-general.php:420 analytify-general.php:656
+#, php-format
+msgid ""
+"%1$s Oops! %2$s %5$s %2$s %3$s Don't worry, This error message is only "
+"visible to Administrators. %4$s %2$s"
+msgstr ""
+"%1$s Hata! %2$s %5$s %2$s %3$s Merak etmeyin, bu hata mesajı sadece "
+"yöneticiler tarafından görülebilir. %4$s %2$s"
+
+#: analytify-general.php:442
+#, php-format
+msgid "Invalid nonce for: %s"
+msgstr "Geçersiz nonce: %s"
+
+#: analytify-general.php:450
+#, php-format
+msgid "Access denied for: %s"
+msgstr "Erişim reddedildi: %s"
+
+#: analytify-general.php:526
+msgid "No Activity During This Period."
+msgstr "Bu dönem hiçbir aktivite yok"
+
+#: classes/analytify-dashboard-widget.php:35
+msgid "Google Analytics Dashboard By Analytify"
+msgstr "Analytify tarafından Google Analytics Gösterge Tabloları"
+
+#: classes/analytify-dashboard-widget.php:53
+msgid "View All Analytics on the WordPress Dashboard"
+msgstr "WordPress Gösterge Tablolarında Tüm Analizleri Görüntüleyin"
+
+#: classes/analytify-dashboard-widget.php:54
+msgid ""
+"Once you install Analytify Dashboard Widget Addon, this dashboard widget "
+"will be filled with Analytics."
+msgstr ""
+"Analytify Dashboard Widget Addon'u yüklediğinizde, bu pano widget'ı "
+"Analytics ile doldurulacaktır."
+
+#: classes/analytify-dashboard-widget.php:57
+#: classes/analytify-dashboard-widget.php:61
+msgid "Activate Dashboard Add-on"
+msgstr "Gösterge Tablosu Eklentisini Etkinleştirin"
+
+#: classes/analytify-dashboard-widget.php:60
+msgid "Install Dashboard Add-on Free"
+msgstr "Dashboard Eklentisini Ücretsiz Yükleyin"
+
+#: classes/analytify-logs.php:82
+msgid "Analytify Logs"
+msgstr "Analytify Günlükleri"
+
+#: classes/analytify-logs.php:131
+msgid "Action failed. Please refresh the page and retry."
+msgstr "Eylem başarısız. Lütfen sayfayı yenileyin ve tekrar deneyin."
+
+#: classes/analytify-rest-api.php:46
+msgid "You are not allowed to access Analytify Dashboard."
+msgstr "Analytify Dashboard'a erişme izniniz yok."
+
+#: classes/analytify-rest-api.php:63
+msgid "Invalid endpoint."
+msgstr "Geçersiz uç nokta."
+
+#: classes/analytify-sanitize.php:39
+#, php-format
+msgid "%1$s was not expecting data to be an array."
+msgstr "%1$s Verilerin bir dizi olmasını beklemiyordu."
+
+#: classes/analytify-sanitize.php:60
+#, php-format
+msgid "%1$s was expecting an array but got something else: \"%2$s\""
+msgstr "%1$s bir dizi bekliyordu ancak başka bir şey aldı: \"%2$s\""
+
+#: classes/analytify-sanitize.php:66
+#, php-format
+msgid "%1$s was expecting a string but got something else: \"%2$s\""
+msgstr "%1$s Bir dize bekliyordu ancak başka bir şey aldı: \"%2$s\""
+
+#: classes/analytify-sanitize.php:73
+#, php-format
+msgid "%1$s was expecting a valid key but got something else: \"%2$s\""
+msgstr "%1$s Geçerli bir anahtar bekliyordu ancak başka bir şey aldı: \"%2$s\""
+
+#: classes/analytify-sanitize.php:81
+#, php-format
+msgid "%1$s was expecting text but got something else: \"%2$s\""
+msgstr "%1$s Kısa mesaj bekliyordu ancak başka bir şey aldı: \"%2$s\""
+
+#: classes/analytify-sanitize.php:88
+#, php-format
+msgid "%1$s was expecting serialized data but got something else: \"%2$s\""
+msgstr ""
+"%1$s Serileştirilmiş veri bekliyordu ancak başka bir şey aldı: \"%2$s\""
+
+#: classes/analytify-sanitize.php:109
+#, php-format
+msgid "%1$s was expecting a valid numeric but got something else: \"%2$s\""
+msgstr ""
+"%1$s Geçerli bir sayısal değer bekliyordu ancak başka bir şey aldı: \"%2$s\""
+
+#: classes/analytify-sanitize.php:116
+#, php-format
+msgid "%1$s was expecting an integer but got something else: \"%2$s\""
+msgstr "%1$s Bir tam sayı bekliyordu ancak başka bir şey aldı: \"%2$s\""
+
+#: classes/analytify-sanitize.php:123
+#, php-format
+msgid ""
+"%1$s was expecting a positive number (int) but got something else: \"%2$s\""
+msgstr "%1$s Pozitif bir sayı bekliyordu ancak başka bir şey aldı: \"%2$s\""
+
+#: classes/analytify-sanitize.php:130
+#, php-format
+msgid ""
+"%1$s was expecting a negative number (int) but got something else: \"%2$s\""
+msgstr "%1$s Negatif bir sayı bekliyordu ancak başka bir şey aldı: \"%2$s\""
+
+#: classes/analytify-sanitize.php:137
+#, php-format
+msgid "%1$s was expecting 0 (int) but got something else: \"%2$s\""
+msgstr "%1$s 0 (int) bekliyordu ancak başka bir şey aldı: \"%2$s\""
+
+#: classes/analytify-sanitize.php:144
+#, php-format
+msgid "%1$s was expecting an empty value but got something else: \"%2$s\""
+msgstr "%1$s boş bir değer bekliyordu ancak başka bir şey aldı: \"%2$s\""
+
+#: classes/analytify-sanitize.php:151
+#, php-format
+msgid "%1$s was expecting a URL but got something else: \"%2$s\""
+msgstr "%1$s Bir URL bekliyordu ancak başka bir şey aldı: \"%2$s\""
+
+#: classes/analytify-sanitize.php:159
+#, php-format
+msgid "%1$s was expecting a bool but got something else: \"%2$s\""
+msgstr "%1$s Bir bool bekliyordu ancak başka bir şey aldı: \"%2$s\""
+
+#: classes/analytify-sanitize.php:165
+#, php-format
+msgid "Unknown sanitization rule \"%1$s\" supplied by %2$s"
+msgstr "%2$s tarafından sağlanan bilinmeyen temizleme kuralı \"%1$s\""
+
+#: classes/analytify-settings.php:104 welcome.php:296
+msgid "Authentication"
+msgstr "Doğrulama"
+
+#: classes/analytify-settings.php:109
+msgid "Profile"
+msgstr "Profil"
+
+#: classes/analytify-settings.php:116
+msgid "Admin"
+msgstr "Yönetici"
+
+#: classes/analytify-settings.php:122
+msgid "Advanced"
+msgstr "Gelişmiş"
+
+#: classes/analytify-settings.php:128
+msgid "Help"
+msgstr "Yardım"
+
+#: classes/analytify-settings.php:172
+msgid "Install Google Analytics tracking code"
+msgstr "Google Analytics izleme kodunu yükleyin"
+
+#: classes/analytify-settings.php:173
+msgid ""
+"Insert Google Analytics (GA) JavaScript code between the HEADER tags in your "
+"website. Uncheck this option if you have already inserted the GA code."
+msgstr ""
+"Google Analytics (GA) JavaScript kodunu web sitenizdeki HEADER etiketleri "
+"arasına yerleştirin. GA kodunu zaten eklediyseniz bu seçeneğin işaretini "
+"kaldırın."
+
+#: classes/analytify-settings.php:178
+msgid "Exclude users from tracking"
+msgstr "Kullanıcıları izlemenin dışında tutun"
+
+#: classes/analytify-settings.php:179
+msgid "Don't insert the tracking code for the above user roles."
+msgstr "Yukarıdaki kullanıcı rolleri için izleme kodunu eklemeyin."
+
+#: classes/analytify-settings.php:187
+msgid "Profile for posts (Backend/Front-end)"
+msgstr "Gönderi profili (Arka yüz / Ön yüz)"
+
+#: classes/analytify-settings.php:188
+msgid ""
+"Select your Google Analytics website profile for Analytify front-end/back-"
+"end statistics."
+msgstr ""
+"Ön yüz / arka yüz istatistiklerini analiz etmek için Google Analytics web "
+"sitesi profilinizi seçin."
+
+#: classes/analytify-settings.php:197
+msgid "Profile for dashboard"
+msgstr "Gösterge tablosu profili"
+
+#: classes/analytify-settings.php:198
+msgid ""
+"Select your Google Analytics website profile for Analytify dashboard "
+"statistics."
+msgstr ""
+"Gösterge tablosu istatistiklerini analiz etmek için Google Analytics web "
+"sitesi profilinizi seçin."
+
+#: classes/analytify-settings.php:205
+msgid "Hide profiles list"
+msgstr "Profil listesini gizle"
+
+#: classes/analytify-settings.php:206
+msgid ""
+"Hide the selection of profiles for the back-end/front-end dashboard and "
+"posts. You might want to do this so clients cannot see other profiles "
+"available."
+msgstr ""
+"Arka yüz / ön yüz gösterge tablosu ve yayınlar için profil seçimlerini "
+"gizleyin. İstemcilerin diğer mevcut profilleri görememesi için bunu yapmak "
+"isteyebilirsiniz."
+
+#: classes/analytify-settings.php:220
+msgid "Disable analytics under posts/pages (wp-admin)"
+msgstr ""
+"Gönderiler/sayfalar 'ın (wp-admin) altındaki analizi devre dışı bırakın "
+
+#: classes/analytify-settings.php:221
+msgid ""
+"Enable if you don't want to load statistics on all pages by default. "
+"Remember, you can still view statistics under each post/page."
+msgstr ""
+"Varsayılan olarak tüm sayfalara istatistik yüklemek istemiyorsanız "
+"etkinleştirin. Unutmayın, istatistikleri yine de her gönderi / sayfa altında "
+"görüntüleyebilirsiniz."
+
+#: classes/analytify-settings.php:226
+msgid "Display analytics to roles (posts & pages)"
+msgstr "Analitiği rollere göster (yazılar ve sayfalar)"
+
+#: classes/analytify-settings.php:227
+msgid ""
+"Show analytics under posts and pages to the above selected user roles only."
+msgstr ""
+"Analizleri yalnızca yukarıda seçilen kullanıcı rollerine gönderiler ve "
+"sayfalar altında gösterin."
+
+#: classes/analytify-settings.php:235
+msgid "Analytics on post types"
+msgstr "Gönderi türlerinde Analyics"
+
+#: classes/analytify-settings.php:236
+msgid "Show Analytics under the above post types only"
+msgstr "Analytics'i yalnızca yukarıdaki gönderi türleri altında göster"
+
+#: classes/analytify-settings.php:236
+#, php-format
+msgid ""
+"Show analytics below these post types only. Buy %1$sPremium%1$s version for "
+"Custom Post Types."
+msgstr ""
+"Analitiği yalnızca bu gönderi türlerinin altında gösterin. Özel Yazı Türleri "
+"için %1$sPremium%1$s sürümünü satın alın."
+
+#: classes/analytify-settings.php:244
+msgid "Edit posts/pages analytics panels"
+msgstr "Gönderileri / sayfaları analiz panellerini düzenleyin"
+
+#: classes/analytify-settings.php:245
+msgid "Select which statistic panels you want to display under posts/pages."
+msgstr ""
+"Yazıların / sayfaların altında görüntülemek istediğiniz istatistik "
+"panellerini seçin."
+
+#: classes/analytify-settings.php:245
+#, php-format
+msgid ""
+"Select which statistic panels you want to display under posts/pages. Only "
+"\"General Stats\" will visible in Free Version. Buy %1$sPremium%2$s version "
+"to see the full statistics."
+msgstr ""
+"Yazıların / sayfaların altında görüntülemek istediğiniz istatistik "
+"panellerini seçin. Ücretsiz Sürümde yalnızca \"Genel İstatistikler\" "
+"görünecektir. Tüm istatistikleri görmek için %1$sPremium%2$s sürümünü satın "
+"alın."
+
+#: classes/analytify-settings.php:249
+msgid "General Stats"
+msgstr "Genel İstatistikler "
+
+#: classes/analytify-settings.php:250
+#: views/default/admin/geographic-stats.php:53
+msgid "Geographic Stats"
+msgstr "Coğrafi İstatistikler"
+
+#: classes/analytify-settings.php:251 inc/analytics-dashboard.php:292
+msgid "System Stats"
+msgstr "Sistem İstatistikleri"
+
+#: classes/analytify-settings.php:252
+msgid "Keywords Stats"
+msgstr "Anahtar Kelime İstatistikleri"
+
+#: classes/analytify-settings.php:253
+msgid "Social Media Stats"
+msgstr "Sosyal Medya İstatistikleri"
+
+#: classes/analytify-settings.php:254
+msgid "Referrers Stats"
+msgstr "Yönlendiren İstatistikleri"
+
+#: classes/analytify-settings.php:259
+msgid "Exclude analytics on specific pages"
+msgstr "Analizleri belirli sayfalarda hariç tutun"
+
+#: classes/analytify-settings.php:260
+msgid ""
+"Enter a comma-separated list of the post/page ID's you do not want to "
+"display analytics for. For example: 21,44,66"
+msgstr ""
+"Analizlerini görüntülemek istemediğiniz yazı / sayfa kimliklerinin virgülle "
+"ayrılmış bir listesini girin. Örneğin: 21,44,66"
+
+#: classes/analytify-settings.php:268
+msgid "Do you want to use your own API keys ?"
+msgstr "Kendi API anahtarlarınızı kullanmak ister misiniz?"
+
+#: classes/analytify-settings.php:269
+#, php-format
+msgid ""
+"It is highly recommended by Google to use your own API keys. %1$sYou need to "
+"create a Project in Google %2$s. %3$sHere is a short %4$svideo guide%5$s to "
+"get your own ClientID, Client Secret and Redirect URL and enter them in "
+"below inputs."
+msgstr ""
+"Google tarafından kendi API anahtarlarınızı kullanmanız şiddetle tavsiye "
+"edilir. %1$s Google %2$s'de bir proje oluşturmanız gerekiyor. %3$sBurada, "
+"kendi İstemci Kimliğinizi, İstemci Sırrınızı ve Yeniden Yönlendirme URL'nizi "
+"almak ve bunları aşağıdaki girişlere girmek için kısa bir %4$svideo "
+"kılavuzu%5$s var."
+
+#: classes/analytify-settings.php:276
+msgid "Client ID"
+msgstr "Müşteri Kimliği"
+
+#: classes/analytify-settings.php:277
+msgid "Your Client ID"
+msgstr "Müşteri Kimliğiniz"
+
+#: classes/analytify-settings.php:284
+msgid "Client secret"
+msgstr "Müşteri gizliliği"
+
+#: classes/analytify-settings.php:285
+msgid "Your Client Secret"
+msgstr "Müşteri Sırrınız"
+
+#: classes/analytify-settings.php:292
+msgid "Redirect URL"
+msgstr "yönlendirme bağlantısı"
+
+#: classes/analytify-settings.php:293
+#, php-format
+msgid ""
+"( Redirect URL is very important when you are using your own keys. Paste "
+"this into the above field: %1$s )"
+msgstr ""
+"( Kendi anahtarlarınızı kullanırken URL'yi yeniden yönlendirmek çok "
+"önemlidir. Bunu yukarıdaki alana yapıştırın: %1$s )"
+
+#: classes/analytify-settings.php:306
+msgid "Anonymize IP addresses"
+msgstr "IP adreslerini anonimleştirin"
+
+#: classes/analytify-settings.php:307
+#, php-format
+msgid ""
+"Detailed information about IP anonymization in Google Analytics can be found "
+"%1$shere%2$s."
+msgstr ""
+"Google Analytics'te IP anonimleştirme hakkında ayrıntılı bilgi %1$shere%2$s "
+"bulunabilir."
+
+#: classes/analytify-settings.php:312
+msgid "Force Analytics Traffic Over SSL"
+msgstr "Analytics Trafiğini SSL Üzerinden Zorla"
+
+#: classes/analytify-settings.php:313
+msgid ""
+"Analytics traffic will always be encrypted if your site uses HTTPS. Enable "
+"this option if you don’t use HTTPS and want your analytics to be encrypted."
+msgstr ""
+"Siteniz HTTPS kullanıyorsa, Analytics trafiği her zaman şifrelenecektir. "
+"HTTPS kullanmıyorsanız ve analizlerinizin şifrelenmesini istiyorsanız bu "
+"seçeneği etkinleştirin."
+
+#: classes/analytify-settings.php:318
+msgid "Track User ID"
+msgstr "Kullanıcı Kimliğini İzle"
+
+#: classes/analytify-settings.php:319
+#, php-format
+msgid ""
+"Detailed information about Track User ID in Google Analytics can be found "
+"%1$shere%2$s."
+msgstr ""
+"Google Analytics'teki İzleme Kullanıcı Kimliği hakkında ayrıntılı bilgi "
+"%1$shere%2$s bulunabilir."
+
+#: classes/analytify-settings.php:324
+msgid "Demographic & Interest Tracking"
+msgstr "Demografik ve İlgi Alanı İzleme"
+
+#: classes/analytify-settings.php:325
+msgid ""
+"This allows you to view extra dimensions about users: Age, gender, affinity "
+"categories, in-market segments, etc."
+msgstr ""
+"Bu, kullanıcılarla ilgili ekstra boyutları görüntülemenize olanak tanır: Yaş,"
+" cinsiyet, yakın ilgi alanı kategorileri, pazar içi segmentler vb."
+
+#: classes/analytify-settings.php:330
+msgid "Page Not Found (404)"
+msgstr "Sayfa Bulunamadı (404)"
+
+#: classes/analytify-settings.php:331
+msgid "Track all 404 pages."
+msgstr "Tüm 404 hata sayfalarını izleyin."
+
+#: classes/analytify-settings.php:336
+msgid "JavaScript Errors"
+msgstr "JavaScript Hataları"
+
+#: classes/analytify-settings.php:337
+msgid "Track all JavaScript errors."
+msgstr "Tüm JavaScript hatalarını izleyin."
+
+#: classes/analytify-settings.php:342
+msgid "AJAX Errors"
+msgstr "AJAX Hataları"
+
+#: classes/analytify-settings.php:343
+msgid "Track all AJAX errors."
+msgstr "Tüm AJAX hatalarını izleyin."
+
+#: classes/analytify-settings.php:348
+msgid "Setup Cross-domain Tracking"
+msgstr "Web Alanları Arası İzlemeyi Kurun"
+
+#: classes/analytify-settings.php:349
+#, php-format
+msgid ""
+"This will add the %1$s tag to your tracking code. Read this %2$sguide%3$s "
+"for more information."
+msgstr ""
+"Bu, %1$s etiketini izleme kodunuza ekleyecektir. Daha fazla bilgi için bu "
+"%2$skılavuz%3$s sayfasını okuyun."
+
+#: classes/analytify-settings.php:354
+msgid "Custom JavaScript Code"
+msgstr "Özel JavaScript Kodu"
+
+#: classes/analytify-settings.php:355
+msgid ""
+"This will add inline tracking code before sending the pageview hit to Google "
+"Analytics."
+msgstr ""
+"Bu, sayfa görüntüleme isabetini Google Analytics'e göndermeden önce satır "
+"içi izleme kodunu ekleyecektir."
+
+#: classes/analytify-settings.php:706
+#, php-format
+msgid ""
+"%5$s%1$sDaily Limit Exceeded:%2$s This Indicates that user has exceeded the "
+"daily quota (either per project or per view (profile)). Please %3$sfollow "
+"this tutorial%4$s to fix this issue. let us know this issue (if it still "
+"doesn't work) in the Help tab of Analytify->settings page.%6$s"
+msgstr ""
+"%5$s%1$sGünlük Limit Aşıldı:%2$s Bu, kullanıcının günlük kotayı (proje "
+"başına veya görünüm (profil) başına) aştığını gösterir. Bu sorunu çözmek "
+"için lütfen %3$sbu öğreticiyi%4$sizleyin. Analytify-> ayarlar sayfasının "
+"Yardım sekmesinde bu sorunu bize bildirin (hala çalışmıyorsa).%6$s"
+
+#: classes/analytify-settings.php:832
+msgid "Choose Image"
+msgstr "Görüntü Seç"
+
+#: classes/analytify-settings.php:853
+msgid "Choose File"
+msgstr "Dosya Seç"
+
+#: classes/analytify-settings.php:937
+msgid "Log in with your Google Analytics Account"
+msgstr "Google Analytics hesabınızla giriş yapın"
+
+#: classes/analytify-settings.php:990
+msgid "Support"
+msgstr "Destek"
+
+#: classes/analytify-settings.php:992
+#, php-format
+msgid ""
+"As this is a free plugin, Post all of your questions to the %1$s WordPress."
+"org support forum %2$s. Response time can range from a couple of days to a "
+"week as this is a free support."
+msgstr ""
+"Bu ücretsiz bir eklenti olduğundan, tüm sorularınızı %1$s WordPress.org "
+"destek forumuna %2$s gönderin. Bu ücretsiz bir destek olduğu için yanıt "
+"süresi birkaç günden bir haftaya kadar değişebilir."
+
+#: classes/analytify-settings.php:994
+#, php-format
+msgid ""
+"If you want a %1$s timely response via email from a developer %2$s who works "
+"on this plugin, %3$s upgrade to WP Analytify Pro %4$s and send us an email."
+msgstr ""
+"Bu eklenti üzerinde çalışan bir geliştiriciden %2$s e-postayla %3$s "
+"zamanında yanıt almak istiyorsanız, %4$s WP Analytify Pro% 4 $ s'e yükseltin "
+"ve bize bir e-posta gönderin."
+
+#: classes/analytify-settings.php:996
+#, php-format
+msgid "If you've found a bug, please %1$s submit an issue at Github %2$s."
+msgstr ""
+"Bir hata bulduysanız, lütfen %1$s Github %2$s adresinden bir sorun gönderin."
+
+#: classes/analytify-settings.php:1010
+msgid "Diagnostic Information"
+msgstr "Teşhis Bilgileri"
+
+#: classes/analytify-settings.php:1019
+msgid "Videos"
+msgstr "Videolar"
+
+#: classes/analytify-settings.php:1047
+msgid "Test Email"
+msgstr "Test maili"
+
+#: classes/analytify-settings.php:1048
+msgid "Note: Please save changes before sending a test email."
+msgstr ""
+"Not: Lütfen bir test e-postası göndermeden önce değişiklikleri kaydedin."
+
+#: classes/analytify-utils.php:61 wp-analytify.php:1167
+msgctxt "Hour Time"
+msgid "h"
+msgstr "sa"
+
+#: classes/analytify-utils.php:64 wp-analytify.php:1170
+msgctxt "Minute Time"
+msgid "m"
+msgstr "dak"
+
+#: classes/analytify-utils.php:67 wp-analytify.php:1173
+msgctxt "Second Time"
+msgid "s"
+msgstr "s"
+
+#: classes/analytify-utils.php:154
+#, php-format
+msgid ""
+"%1$sDaily Limit Exceeded:%2$s This Indicates that user has exceeded the "
+"daily quota (either per project or per view (profile)). Please %3$sfollow "
+"this tutorial%4$s to fix this issue. let us know this issue (if it still "
+"doesn't work) in the Help tab of Analytify->settings page."
+msgstr ""
+"%1$sGünlük Sınır Aşıldı:%2$s Bu, kullanıcının günlük kotayı (proje başına "
+"veya görünüm (profil) başına) aştığını gösterir. Bu sorunu çözmek için "
+"lütfen %3$sbu öğreticiyi%4$s izleyin. Analiz-> ayarlar sayfasının Yardım "
+"sekmesinde bu sorunu bize bildirin (hala çalışmıyorsa)."
+
+#: classes/analytify-utils.php:167
+msgid ""
+"Insufficient Permissions: Indicates that the user does not have sufficient "
+"permissions for the entity specified in the query. let us know this issue in "
+"Help tab of Analytify->settings page."
+msgstr ""
+"Yetersiz İzinler: Kullanıcının sorguda belirtilen varlık için yeterli izne "
+"sahip olmadığını gösterir. Analytify-> ayarlar sayfasının Yardım sekmesinde "
+"bu sorunu bize bildirin."
+
+#: classes/analytify-utils.php:180
+#, php-format
+msgid ""
+"%1$susageLimits.userRateLimitExceededUnreg:%2$s Indicates that the "
+"application needs to be registered in the Google API Console. Read %3$sthis "
+"guide%4$s for to make it work. let us know this issue in (if it still "
+"doesn't work) Help tab of Analytify->settings page."
+msgstr ""
+"%1$susageLimits.userRateLimitExceededUnreg:%2$s Uygulamanın Google API "
+"Konsolu'na kaydedilmesi gerektiğini belirtir. Çalışması için %3$sbu "
+"kılavuzu%4$s okuyun. Analytify-> ayarlar sayfasının (hala çalışmıyorsa) "
+"Yardım sekmesinden bu sorunu bize bildirin."
+
+#: classes/analytify-utils.php:194
+#, php-format
+msgid ""
+"%1$sUser Rate Limit Exceeded:%2$s Indicates that the user rate limit has "
+"been exceeded. The maximum rate limit is 10 qps per IP address. The default "
+"value set in Google API Console is 1 qps per IP address. You can increase "
+"this limit in the %3$sGoogle API Console%4$s to a maximum of 10 qps. let us "
+"know this issue in Help tab of Analytify->settings page."
+msgstr ""
+"%1$sKullanıcı Oranı Sınırı Aşıldı:%2$s Kullanıcı oranı sınırının aşıldığını "
+"gösterir. Maksimum hız sınırı, IP adresi başına 10 qps'dir. Google API "
+"Konsolunda ayarlanan varsayılan değer, IP adresi başına 1 qps'dir. Bu sınırı "
+"%3$sGoogle API Konsolu%4$s'de maksimum 10 qps'ye yükseltebilirsiniz. "
+"Analytify-> ayarlar sayfasının Yardım sekmesinde bu sorunu bize bildirin."
+
+#: classes/analytify-utils.php:207
+#, php-format
+msgid ""
+"%1$sRate Limit Exceeded:%2$s Indicates that the global or overall project "
+"rate limits have been exceeded. let us know this issue in Help tab of "
+"Analytify->settings page."
+msgstr ""
+"%1$sOran Sınırı Aşıldı:%2$s Genel veya genel proje oranı sınırlarının "
+"aşıldığını gösterir. Analytify-> ayarlar sayfasının Yardım sekmesinde bu "
+"sorunu bize bildirin."
+
+#: classes/analytify-utils.php:220
+#, php-format
+msgid ""
+"%1$sQuota Exceeded:%2$s This indicates that the 10 concurrent requests per "
+"view (profile) in the Core Reporting API has been reached. let us know this "
+"issue in Help tab of Analytify->settings page."
+msgstr ""
+"%1$sKota Aşıldı:%2$s Bu, Çekirdek Raporlama API'sinde görünüm (profil) "
+"başına 10 eşzamanlı isteğe ulaşıldığını gösterir. Analytify-> ayarlar "
+"sayfasının Yardım sekmesinde bu sorunu bize bildirin."
+
+#: classes/analytify-utils.php:234
+#, php-format
+msgid ""
+"%1$sAccess Not Configured:%2$s Google Analytics API has not been used in "
+"this project before or it is disabled. Enable it by visiting your project in "
+"%3$sGoogle Project Console%4$s then retry. If you enabled this API recently, "
+"wait a few minutes for the action to propagate to our systems and retry."
+msgstr ""
+"%1$sErişim Yapılandırılmadı:%2$s Google Analytics API bu projede daha önce "
+"kullanılmamış veya devre dışı bırakılmış. %3$sGoogle Proje Konsolu%4$s'de "
+"projenizi ziyaret ederek etkinleştirin ve ardından yeniden deneyin. Bu "
+"API'yi yakın zamanda etkinleştirdiyseniz, işlemin sistemlerimize yayılması "
+"için birkaç dakika bekleyin ve yeniden deneyin."
+
+#: classes/analytify-utils.php:284
+msgid "Today"
+msgstr "Bugün"
+
+#: classes/analytify-utils.php:286
+msgid "Last 7 days"
+msgstr "Son 7 gün"
+
+#: classes/analytify-utils.php:288
+msgid "Last 14 days"
+msgstr "Son 14 gün"
+
+#: classes/analytify-utils.php:290
+msgid "Last 30 days"
+msgstr "Son 30 gün"
+
+#: classes/analytify-utils.php:292
+msgid "This month"
+msgstr "Bu ay"
+
+#: classes/analytify-utils.php:294
+msgid "Last month"
+msgstr "Son ay"
+
+#: classes/analytify-utils.php:296
+msgid "Last 3 months"
+msgstr "Son 3 ay"
+
+#: classes/analytify-utils.php:298
+msgid "Last 6 months"
+msgstr "Son 6 ay"
+
+#: classes/analytify-utils.php:300
+msgid "Last year"
+msgstr "Son yıl"
+
+#: classes/analytify-utils.php:302
+msgid "Custom Range"
+msgstr "Özel Aralık"
+
+#: classes/analytify-utils.php:302
+msgid "Select a custom date"
+msgstr "Analytics'i göstermek istemediğiniz yayınları veya sayfaları seçin."
+
+#: classes/user_optout.php:56
+msgid "Click here to opt-out."
+msgstr "Çıkmak için burayı tıklayın."
+
+#: classes/user_optout.php:71
+msgid "Thanks. Google Analytics data collection is disabled for you."
+msgstr ""
+"Teşekkürler. Google Analytics veri toplama sizin için devre dışı bırakıldı."
+
+#: classes/user_optout.php:114
+msgid "Click here to opt-in."
+msgstr " Kaydolmak için burayı tıklayın."
+
+#: classes/user_optout.php:128
+msgid "Thanks. Google Analytics data collection is enabled for you."
+msgstr "Teşekkürler. Google Analytics veri toplama sizin için etkinleştirildi."
+
+#: inc/analytics-dashboard.php:134 inc/analytify-go-pro.php:152
+#: inc/class-wpa-adminbar.php:39
+msgid "Dashboard"
+msgstr "Genel Bakış"
+
+#: inc/analytics-dashboard.php:135
+msgid "Complete Statistics of the Site"
+msgstr "Sitenin Tam İstatistikleri"
+
+#: inc/analytics-dashboard.php:153 wp-analytify.php:394
+msgid "From:"
+msgstr "Başlangıç:"
+
+#: inc/analytics-dashboard.php:156 wp-analytify.php:397
+msgid "To:"
+msgstr "Bitiş:"
+
+#: inc/analytics-dashboard.php:161 wp-analytify.php:404
+msgid "View Stats"
+msgstr "İstatistikleri Görüntüle"
+
+#: inc/analytics-dashboard.php:183
+#: views/default/admin/single-general-stats.php:16
+msgid "General Statistics"
+msgstr "Genel Bakış"
+
+#: inc/analytics-dashboard.php:192
+msgid "days"
+msgstr "gün"
+
+#: inc/analytics-dashboard.php:213
+msgid "Did you know that total time on your site is"
+msgstr ""
+"\n"
+
+#: inc/analytics-dashboard.php:223
+msgid "Top pages by views"
+msgstr "En Aktif Sayfalar"
+
+#: inc/analytics-dashboard.php:225
+msgid "View All Top Pages"
+msgstr "Tüm üst sayfaları görüntüle"
+
+#: inc/analytics-dashboard.php:247
+msgid "Top pages and posts"
+msgstr "En aktif sayfalar"
+
+#: inc/analytics-dashboard.php:261
+msgid "Geographic"
+msgstr "Coğrafi"
+
+#: inc/analytics-dashboard.php:281
+msgid "Top countries and cities"
+msgstr "En aktif ülkeler ve şehirler"
+
+#: inc/analytics-dashboard.php:336
+msgid "How people are finding you (keywords)"
+msgstr "Kullanıcılar hangi anahtar kelimeleri aratıyor "
+
+#: inc/analytics-dashboard.php:340 inc/analytics-dashboard.php:391
+#: inc/analytics-dashboard.php:440
+msgid "Total Visits"
+msgstr "Toplam Görüntüleme "
+
+#: inc/analytics-dashboard.php:368
+msgid "Ranked keywords"
+msgstr "Sıralanmış anahtar kelimeler"
+
+#: inc/analytics-dashboard.php:382
+msgid "Social Media"
+msgstr "Sosyal Medya"
+
+#: inc/analytics-dashboard.php:384
+msgid "View All Social Traffic"
+msgstr "Tüm Sosyal Trafiği Görüntüle"
+
+#: inc/analytics-dashboard.php:418
+msgid "Number of users coming to your site from social media"
+msgstr "Sosyal medyadan sitenize gelen kullanıcı sayısı"
+
+#: inc/analytics-dashboard.php:431
+msgid "Top Referrers"
+msgstr "En Çok Yönlendirenler"
+
+#: inc/analytics-dashboard.php:433
+msgid "View All Top Referrers"
+msgstr "Tüm en çok yönlendirenleri görüntüle"
+
+#: inc/analytics-dashboard.php:476
+msgid "Top referrers to your website"
+msgstr "Web sitenize en çok yönlendirenler"
+
+#: inc/analytics-dashboard.php:488
+msgid "What's happening when users come to your site."
+msgstr "Kullanıcılar sitenize geldiğinde neler oluyor "
+
+#: inc/analytics-dashboard.php:533
+msgid "You must be authenticated to see the Analytics Dashboard."
+msgstr ""
+"Analytics Gösterge Tablosunu görmek için kimliğinizin doğrulanması gerekir."
+
+#: inc/analytics-dashboard.php:537
+msgid "You don't have access to Analytify Dashboard."
+msgstr "Analytify Gösterge Tabloları'na erişiminiz yok."
+
+#: inc/analytify-deactivate-form.php:90
+msgid "Quick feedback about Analytify (Google Analytics for WordPress)"
+msgstr ""
+"Analytify hakkında hızlı geri bildirim (WordPress için Google Analytics)"
+
+#: inc/analytify-deactivate-form.php:93
+msgid "If you have a moment, please let us know why you are deactivating:"
+msgstr "Vaktiniz varsa lütfen neden devre dışı bıraktığınızı bize bildirin:"
+
+#: inc/analytify-deactivate-form.php:100
+msgid "I upgraded to Analytify Pro"
+msgstr "Analytify Pro'ya yükselttim"
+
+#: inc/analytify-deactivate-form.php:102
+msgid ""
+"No need to deactivate this Analytify Core version. Pro version works as an "
+"add-on with Core version."
+msgstr ""
+"Bu Analytify Core sürümünü devre dışı bırakmanıza gerek yoktur. Pro sürümü, "
+"Core sürümü ile bir eklenti olarak çalışır."
+
+#: inc/analytify-deactivate-form.php:109
+msgid "I only needed the plugin for a short period"
+msgstr "Eklentiye sadece kısa bir süre ihtiyacım vardı"
+
+#: inc/analytify-deactivate-form.php:118
+msgid "I found a better plugin"
+msgstr "I found a better plugin"
+
+#: inc/analytify-deactivate-form.php:121
+msgid "Kindly tell us the name of plugin"
+msgstr "Lütfen bize eklentinin adını söyleyin"
+
+#: inc/analytify-deactivate-form.php:128
+msgid "The plugin broke my site"
+msgstr "Eklenti sitemi bozdu"
+
+#: inc/analytify-deactivate-form.php:137
+msgid "The plugin suddenly stopped working"
+msgstr "Eklenti aniden çalışmayı durdurdu"
+
+#: inc/analytify-deactivate-form.php:146
+msgid "I no longer need the plugin"
+msgstr "Artık eklentiye ihtiyacım yok"
+
+#: inc/analytify-deactivate-form.php:155
+msgid "It's a temporary deactivation. I'm just debugging an issue."
+msgstr "Geçici bir devre dışı bırakmadır. Ben sadece bir sorunu ayıklıyorum."
+
+#: inc/analytify-deactivate-form.php:164
+msgid "Other"
+msgstr "Diğer"
+
+#: inc/analytify-deactivate-form.php:167
+msgid "Kindly tell us the reason so we can improve."
+msgstr "İyileştirebilmemiz için lütfen bize nedenini söyleyin."
+
+#: inc/analytify-deactivate-form.php:172
+msgid "Anonymous feedback"
+msgstr "Anonim geribildirim"
+
+#: inc/analytify-deactivate-form.php:177
+msgid "Cancel"
+msgstr "İptal et"
+
+#: inc/analytify-go-pro.php:116
+msgid "Dashboard (Advanced)"
+msgstr "Genel Bakış (Gelişmiş)"
+
+#: inc/analytify-go-pro.php:117 inc/analytify-go-pro.php:153
+msgid "Analytics under Posts (admin)"
+msgstr "Gönderiler altında Analytics (yönetici)"
+
+#: inc/analytify-go-pro.php:118 inc/analytify-go-pro.php:154
+msgid "Analytics under Pages (admin)"
+msgstr "Sayfalar altında Analytics (yönetici)"
+
+#: inc/analytify-go-pro.php:119
+msgid "Comparison Stats (Visitors & Views monthly/yearly)"
+msgstr ""
+"Karşılaştırma İstatistikleri (Ziyaretçiler ve Görüntülemeler aylık / yıllık)"
+
+#: inc/analytify-go-pro.php:120
+msgid "Live Stats"
+msgstr "Canlı İstatistikler"
+
+#: inc/analytify-go-pro.php:121
+msgid "ShortCodes"
+msgstr "Kısa kodlar"
+
+#: inc/analytify-go-pro.php:122
+msgid "Extensions"
+msgstr "Uzantılar"
+
+#: inc/analytify-go-pro.php:123
+msgid "Analytics under Custom Post Types (front/admin)"
+msgstr "Özel Gönderi Türleri altında Analytics (ön / yönetici)"
+
+#: inc/analytify-go-pro.php:124
+msgid "Ajax & JS Error Stats"
+msgstr "Ajax ve JS Hata İstatistikleri"
+
+#: inc/analytify-go-pro.php:125
+msgid "404 Page Error Stats"
+msgstr "404 Sayfa Hata İstatistikleri"
+
+#: inc/analytify-go-pro.php:126
+msgid "Priority Email Support"
+msgstr "Öncelikli E-posta Desteği"
+
+#: inc/analytify-go-pro.php:127
+msgid "No promotional ads"
+msgstr "Promosyon reklam yok"
+
+#: inc/analytify-go-pro.php:140 inc/analytify-go-pro.php:141
+#: inc/analytify-go-pro.php:142
+msgid "Similar but limited"
+msgstr "Benzer ama sınırlı"
+
+#: inc/analytify-go-pro.php:155 inc/analytify-go-pro.php:156
+#: inc/analytify-go-pro.php:157 inc/analytify-go-pro.php:158
+#: inc/analytify-go-pro.php:159
+msgid "No"
+msgstr "Hayır"
+
+#: inc/analytify-go-pro.php:160 inc/analytify-go-pro.php:161
+msgid "Only Tracking"
+msgstr "Sadece Takip"
+
+#: inc/analytify-go-pro.php:162
+msgid "WordPress.org Forum Support"
+msgstr "WordPress.org Forum Destek"
+
+#: inc/analytify-go-pro.php:163
+msgid "Promotional Ads"
+msgstr "Promosyon Reklamları"
+
+#: inc/analytify-go-pro.php:169
+#, php-format
+msgid "%1$sUpgrade Now%2$s use %3$s discount code for 10&#37; OFF "
+msgstr "%1$sŞimdi Güncelle%2$s %3$s indirim kodunu 10&#37; İNDİRİM için kullan"
+
+#: inc/analytify-logs.php:69
+msgid "Delete log"
+msgstr "Kaydı sil"
+
+#: inc/analytify-logs.php:80
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s'de %2$s"
+
+#: inc/analytify-logs.php:85
+msgid "View"
+msgstr "Görünüm"
+
+#: inc/analytify-logs.php:94
+msgid "There are currently no logs to view."
+msgstr "Şu anda görüntülenecek günlük yok."
+
+#: inc/analytify-optin-form.php:310
+msgid "Welcome to Google Analytics by Analytify"
+msgstr "Analytify'dan Google Analytics'e hoş geldiniz"
+
+#: inc/analytify-optin-form.php:316
+#, php-format
+msgid ""
+"Hey %2$s,  %4$s If you opt-in some data about your installation of Analytify "
+"will be sent to analytify.io (This doesn't include stats)%4$s and You will "
+"receive new feature updates, security notifications etc %7$sNo Spam, I "
+"promise.%8$s %4$s%4$s Help us %5$sImprove Google Analytics by Analytify%6$s "
+"%4$s %4$s "
+msgstr ""
+"Merhaba %2$s,  %4$s Analytify kurulumunuzla ilgili bazı verilerinizi "
+"etkinleştirirseniz analytify.io'ya (Bu, istatistikleri içermez)%4$s "
+"gönderilecek ve yeni özellik güncellemeleri alacaksınız, güvenlik "
+"bildirimler vb. %7$sSpam yok, söz veriyorum.%8$s %4$s%4$s Bize yardımcı olun "
+"%5$s Analytify ile Google Analytics'i iyileştirin%6$s %4$s %4$s "
+
+#: inc/analytify-optin-form.php:317
+msgid "Allow and Continue  "
+msgstr "İzin Ver ve Devam Et"
+
+#: inc/analytify-optin-form.php:318
+msgid "Skip This Step"
+msgstr "Bu adımı atla"
+
+#: inc/analytify-optin-form.php:320
+msgid "What permissions are being granted?"
+msgstr "Hangi izinler veriliyor?"
+
+#: inc/analytify-optin-form.php:322
+msgid "Your Website Overview"
+msgstr "Web Sitenize Genel Bakış"
+
+#: inc/analytify-optin-form.php:323
+msgid ""
+"Your Site URL, WordPress & PHP version, plugins & themes. This data lets us "
+"make sure this plugin always stays compatible with the most popular plugins "
+"and themes."
+msgstr ""
+"Site URL'niz, WordPress ve PHP sürümü, eklentiler ve temalar. Bu veriler, bu "
+"eklentinin her zaman en popüler eklentiler ve temalarla uyumlu olduğundan "
+"emin olmamızı sağlar.\n"
+" \n"
+
+#: inc/analytify-optin-form.php:325
+msgid "Your Profile Overview"
+msgstr "Profilinize Genel Bakış"
+
+#: inc/analytify-optin-form.php:326
+msgid "Your name and email address."
+msgstr "Adınız ve mail adresiniz."
+
+#: inc/analytify-optin-form.php:328
+msgid "Admin Notices"
+msgstr "Yönetici Bildirimleri"
+
+#: inc/analytify-optin-form.php:329
+msgid "Updates, Announcement, Marketing. No Spam, I promise."
+msgstr "Güncellemeler, Duyuru, Pazarlama. Spam yok, söz veriyorum."
+
+#: inc/analytify-optin-form.php:331
+msgid "Plugin Actions"
+msgstr "Eklenti İşlemleri"
+
+#: inc/analytify-optin-form.php:332
+msgid ""
+"Active, Deactive, Uninstallation and How you use this plugin's features and "
+"settings. This is limited to usage data. It does not include any of your "
+"sensitive Google Analytics data, such as traffic. This data helps us learn "
+"which features are most popular, so we can improve the plugin further."
+msgstr ""
+"Etkin, Devre Dışı Bırakma, Kaldırma ve bu eklentinin özelliklerini ve "
+"ayarlarını kullanma şekliniz. Bu, kullanım verileriyle sınırlıdır. Trafik "
+"gibi hassas Google Analytics verilerinizin hiçbirini içermez. Bu veriler, "
+"hangi özelliklerin en popüler olduğunu öğrenmemize yardımcı olur, böylece "
+"eklentiyi daha da geliştirebiliriz."
+
+#: inc/analytify-optin-form.php:376 welcome.php:147
+msgid "Getting Started"
+msgstr "Başlayın"
+
+#: inc/analytify-optin-form.php:379 welcome.php:144
+msgid "What's New"
+msgstr "Yeni ne var"
+
+#: inc/analytify-optin-form.php:382 welcome.php:150
+msgid "Credits"
+msgstr "Kredi"
+
+#: inc/analytify-optin-form.php:387
+#, php-format
+msgid ""
+"Getting started with Analytify, plugin settings are very easy to use and "
+"ready to go in minutes. If there is something you don't understand or "
+"confusing, do ask us on %1$sWordPress.org support forum%2$s without "
+"hesitation."
+msgstr ""
+"Analytify ile başlarken, eklenti ayarlarının kullanımı çok kolaydır ve "
+"dakikalar içinde kullanıma hazırdır. Anlamadığınız veya kafa karıştıran bir "
+"şey varsa, çekinmeden %1$sWordPress.org destek forumunda%2$s bize sorun."
+
+#: inc/analytify-optin-form.php:396
+msgid "Step 1: Authentication"
+msgstr "1. Adım: Kimlik Doğrulama"
+
+#: inc/analytify-optin-form.php:397 welcome.php:297
+msgid ""
+"You must have a registered Google Analytics account and setup your website "
+"profiles to use with Analytify on your WordPress based sites. Click on Login "
+"button and It will redirect you to separate Google access page. Allow this "
+"plugin to fetch the data from Google Analytics and It will take you back to "
+"your profile tab."
+msgstr ""
+"Kayıtlı bir Google Analytics hesabına sahip olmanız ve web sitesi "
+"profillerinizi, WordPress tabanlı sitelerinizde Analytify ile kullanmak için "
+"ayarlamanız gerekir. Giriş düğmesine tıklayın, sizi ayrı Google erişim "
+"sayfasına yönlendirecektir. Bu eklentinin verileri Google Analytics'ten "
+"almasına izin verin, sizi profil sekmenize geri götürür."
+
+#: inc/analytify-optin-form.php:406
+msgid "Step 2: Setting up profiles"
+msgstr "2. Adım: Profilleri ayarlama"
+
+#: inc/analytify-optin-form.php:411 welcome.php:309
+msgid "Profile Tab"
+msgstr "Profil Sekmesi"
+
+#: inc/analytify-optin-form.php:412 welcome.php:310
+msgid ""
+"This tab section consists of many important settings. After Authentication, "
+"Setup your profiles here. All of the options are easy to understand."
+msgstr ""
+"Bu sekme bölümü birçok önemli ayardan oluşmaktadır. Kimlik Doğrulamadan "
+"sonra, profillerinizi buradan ayarlayın. Tüm seçeneklerin anlaşılması "
+"kolaydır."
+
+#: inc/analytify-optin-form.php:414 welcome.php:312
+msgid "a) Install Google Analytics tracking code"
+msgstr "a) Google Analytics izleme kodunu yükleyin"
+
+#: inc/analytify-optin-form.php:415 welcome.php:313
+msgid ""
+"First, you need to check if you want to install Google Analytics tracking "
+"code by Analytify or uncheck it if you have already installed it manually or "
+"via some other way. "
+msgstr ""
+"Öncelikle, Google Analytics izleme kodunu Analytify yoluyla yüklemek isteyip "
+"istemediğinizi kontrol etmeniz veya manuel olarak veya başka bir yolla zaten "
+"yüklediyseniz işaretini kaldırmanız gerekir."
+
+#: inc/analytify-optin-form.php:417 welcome.php:315
+msgid "b) Exclude users from tracking"
+msgstr "b) Kullanıcıları izlemenin dışında tutun"
+
+#: inc/analytify-optin-form.php:418 welcome.php:316
+msgid ""
+"Usually Administrators don't want to track themselves. So, this option can "
+"be commonly used if you want to exclude your special users from tracking "
+"data."
+msgstr ""
+"Yöneticiler genellikle kendilerini izlemek istemezler. Bu nedenle, özel "
+"kullanıcılarınızı izleme verilerinden hariç tutmak istiyorsanız bu seçenek "
+"yaygın olarak kullanılabilir."
+
+#: inc/analytify-optin-form.php:420 welcome.php:318
+msgid "c) Tracking code type"
+msgstr "c) İzleme kodu türü"
+
+#: inc/analytify-optin-form.php:421 welcome.php:319
+msgid ""
+"Google recommends to use Analytics.js (Universal Tracking) now. So, we "
+"recommend to use this option."
+msgstr ""
+"Google şimdi Analytics.js'yi (Evrensel İzleme) kullanmanızı önerir. Bu "
+"nedenle, bu seçeneği kullanmanızı tavsiye ederiz."
+
+#: inc/analytify-optin-form.php:423 welcome.php:321
+msgid "d) Profile for posts (Backend/Front-end)"
+msgstr "Gönderiler için Profil (Arka/Ön yüz)"
+
+#: inc/analytify-optin-form.php:424 welcome.php:322
+msgid ""
+"Select your website profile for wp-admin edit pages and Front-end pages. "
+"Select profile which matches your current WordPress website."
+msgstr ""
+"Wp-admin düzenleme sayfaları ve Ön yüz sayfaları için web sitesi profilinizi "
+"seçin. Mevcut WordPress web sitenizle eşleşen profili seçin."
+
+#: inc/analytify-optin-form.php:426 welcome.php:324
+msgid "e) Profile for Dashboard"
+msgstr "e) Gösterge Tablosu Profili"
+
+#: inc/analytify-optin-form.php:427 welcome.php:325
+msgid ""
+"Select your website profile for Dashboard Stats. You can select your any "
+"Website profile. It will show Analytics for your selected website profile."
+msgstr ""
+"Gösterge Tablosu İstatistikleri için web sitesi profilinizi seçin. Herhangi "
+"bir Web sitesi profilinizi seçebilirsiniz. Seçtiğiniz web sitesi profili "
+"için Analytics'i gösterecektir."
+
+#: inc/analytify-optin-form.php:434
+msgid "Step 3: Display Statistics at front-end pages"
+msgstr "3. Adım: İstatistikleri ön yüz sayfalarda görüntüleyin"
+
+#: inc/analytify-optin-form.php:440 welcome.php:337
+msgid "Front Tab"
+msgstr "Ön sekme "
+
+#: inc/analytify-optin-form.php:441 welcome.php:338
+#, php-format
+msgid ""
+"In version %4$s, We have introduced the %1$s New Front-end Analytics%2$s "
+"which will fetch the stats like backend but with an awesome UI for front-end "
+"stats. It was a long awaited feature which was under development since 1.0 "
+"but finally It is here. It can be customized (if you are good at CSS) "
+"according to your website look and feel. %3$s Below are it's important "
+"options: "
+msgstr ""
+"%4$s sürümünde, istatistikleri arka uç gibi getirecek, ancak ön uç "
+"istatistikleri için harika bir kullanıcı arayüzüne sahip %1$s Yeni Ön yüz "
+"Analytics%2$s'i kullanıma sunduk. 1.0'dan beri geliştirilmekte olan uzun "
+"zamandır beklenen bir özellikti ama nihayet burada. Web sitenizin görünümüne "
+"ve hissine göre özelleştirilebilir (CSS'de iyiyseniz). %3$s Aşağıda önemli "
+"seçenekler verilmiştir:"
+
+#: inc/analytify-optin-form.php:444 inc/analytify-optin-form.php:571
+#: welcome.php:229 welcome.php:341
+msgid "Disable front-end"
+msgstr "Ön yüzü devre dışı bırak"
+
+#: inc/analytify-optin-form.php:445 inc/analytify-optin-form.php:573
+#: welcome.php:231 welcome.php:342
+msgid ""
+"We introduced the ability to disable the front-end stats on the full site. "
+"Check it, if you don't want to load Analytics at all. Remember, you can use "
+"Shortcodes still."
+msgstr ""
+"Tüm sitede ön uç istatistiklerini devre dışı bırakma özelliğini getirdik. "
+"Analytics'i hiç yüklemek istemiyorsanız kontrol edin. Unutmayın, Kısa "
+"Kodları yine de kullanabilirsiniz."
+
+#: inc/analytify-optin-form.php:447 inc/analytify-optin-form.php:482
+#: inc/analytify-optin-form.php:576 welcome.php:234 welcome.php:344
+#: welcome.php:378
+msgid "Display Analytics to Users"
+msgstr "Analytics'i Kullanıcılara Göster"
+
+#: inc/analytify-optin-form.php:448 welcome.php:345
+#, php-format
+msgid "Show %1$sfront-end%2$s Analytics to selected user roles only."
+msgstr ""
+"Show %1$sön yüz%2$s Analytics'i yalnızca seçili kullanıcı rollerine gösterin."
+
+#: inc/analytify-optin-form.php:452 inc/analytify-optin-form.php:487
+#: inc/analytify-optin-form.php:583 welcome.php:241 welcome.php:349
+#: welcome.php:383
+msgid "Analytics on Post types"
+msgstr "Gönderi türlerinde Analytics"
+
+#: inc/analytify-optin-form.php:453 inc/analytify-optin-form.php:488
+#: inc/analytify-optin-form.php:584 welcome.php:242 welcome.php:350
+#: welcome.php:384
+msgid ""
+"Show Analytics under the selected post types only. You can select your "
+"custom post types as well."
+msgstr ""
+"Analytics'i yalnızca seçili gönderi türleri altında gösterin. Özel gönderi "
+"türlerinizi de seçebilirsiniz."
+
+#: inc/analytify-optin-form.php:455 inc/analytify-optin-form.php:586
+#: welcome.php:244 welcome.php:352
+msgid "Front-end Analytics panels"
+msgstr "Ön yüz Analytics Panelleri"
+
+#: inc/analytify-optin-form.php:456 inc/analytify-optin-form.php:587
+#: welcome.php:245 welcome.php:353
+msgid ""
+"Select which Stats panels you want to display at front-end. We recommend to "
+"use upto 8 Panels for better page speed."
+msgstr ""
+"Ön yüzde hangi İstatistik panellerini görüntülemek istediğinizi seçin. Daha "
+"iyi sayfa hızı için 8 Panele kadar kullanmanızı öneririz."
+
+#: inc/analytify-optin-form.php:460 inc/analytify-optin-form.php:495
+#: inc/analytify-optin-form.php:591 welcome.php:249 welcome.php:357
+#: welcome.php:391
+msgid "Exclude Analytics on specific pages"
+msgstr "Analytics'i belirli sayfalarda hariç tutun"
+
+#: inc/analytify-optin-form.php:461 inc/analytify-optin-form.php:496
+#: inc/analytify-optin-form.php:592 welcome.php:250 welcome.php:358
+#: welcome.php:392
+msgid "Select posts or pages on which you don't want to show Analytics."
+msgstr "Analytics'i göstermek istemediğiniz yayınları veya sayfaları seçin."
+
+#: inc/analytify-optin-form.php:468
+msgid "Step 4: Display Statistics under Edit pages (backend)"
+msgstr "Adım 4: Sayfaları düzenle altında İstatistikleri Görüntüle (arka yüz)"
+
+#: inc/analytify-optin-form.php:474 welcome.php:370
+msgid "Admin Tab"
+msgstr "Yönetici Sekmesi"
+
+#: inc/analytify-optin-form.php:475 welcome.php:371
+msgid ""
+"Admin tab section is to manage the Analytics panels under EDIT screen of "
+"post/pages in wp-admin."
+msgstr ""
+"Yönetici sekmesi bölümü, wp-admin'de yazının / sayfaların DÜZENLE ekranı "
+"altındaki Analytics panellerini yönetmek içindir."
+
+#: inc/analytify-optin-form.php:479 welcome.php:375
+msgid "Disable Analytics under posts/pages."
+msgstr "Gönderiler/sayfalar 'ın altındaki analizi devre dışı bırakın"
+
+#: inc/analytify-optin-form.php:480 welcome.php:376
+msgid ""
+"Check it, If you don't want to load Stats by default on all pages. If you "
+"disable it, you can still fetch the stats under each post/page on single "
+"click."
+msgstr ""
+"Tüm sayfalarda İstatistikleri varsayılan olarak yüklemek istemiyorsanız, "
+"kontrol edin. Devre dışı bırakırsanız, tek bir tıklamayla her gönderi/sayfa "
+"'nın altındaki istatistikleri yine de alabilirsiniz."
+
+#: inc/analytify-optin-form.php:483 welcome.php:379
+#, php-format
+msgid "Show %1$s Google %2$s Analytics to selected user roles only."
+msgstr ""
+"Show %1$s Google %2$s Analytics'i yalnızca seçili kullanıcı rollerine "
+"gösterin."
+
+#: inc/analytify-optin-form.php:490 welcome.php:386
+msgid "Edit pages/posts Analytics panels"
+msgstr "Sayfaları / yayınları Analytics panellerini düzenleyin"
+
+#: inc/analytify-optin-form.php:491 welcome.php:387
+msgid ""
+"Select which Stats panels you want to display at backend. We recommend to "
+"use upto 10 Panels for better page speed."
+msgstr ""
+"Arka yüzde hangi istatistik panellerini görüntülemek istediğinizi seçin. "
+"Daha iyi sayfa hızı için 10 Panele kadar kullanmanızı öneririz."
+
+#: inc/analytify-optin-form.php:504 welcome.php:399
+msgid "Licensing"
+msgstr "Lisanslama"
+
+#: inc/analytify-optin-form.php:507 welcome.php:402
+msgid ""
+"We have a year based pricing model as we think this is the best model to "
+"keep our normal lives easier and down the costs of support servers etc. You "
+"need a valid license key if you want to get support and updates in the "
+"future for a year. After a year, you will get discount to renew your license."
+" "
+msgstr ""
+"Hayatımızı kolaylaştırmak ve destek sunucularının maliyetlerini düşürmek "
+"için en iyi model olduğunu düşündüğümüz yıl bazlı bir fiyatlandırma "
+"modelimiz var. Gelecekte bir yıl boyunca destek ve güncelleme almak "
+"istiyorsanız, geçerli bir lisans anahtarına ihtiyacınız var. Bir yıl sonra, "
+"lisansınızı yenilemek için indirim alacaksınız."
+
+#: inc/analytify-optin-form.php:515 welcome.php:176 welcome.php:196
+msgid "New features"
+msgstr "Yeni özellikler"
+
+#: inc/analytify-optin-form.php:521 welcome.php:182
+msgid "Simple Authentication"
+msgstr "Basit Kimlik Doğrulama"
+
+#: inc/analytify-optin-form.php:523 welcome.php:184
+msgid "You don't need to worry about copy and paste access code any more. "
+msgstr ""
+"Artık erişim kodunu kopyalayıp yapıştırma konusunda endişelenmenize gerek "
+"yok."
+
+#: inc/analytify-optin-form.php:526 welcome.php:187
+msgid "Translation ready"
+msgstr "Tercüme hazır"
+
+#: inc/analytify-optin-form.php:528 welcome.php:189
+#, php-format
+msgid ""
+"Analytify %1$s contains all the strings ready to translate in any language. "
+"%2$s Click here %3$s to start translating this plugin into your language and "
+"don't forget to share your language files with us to ease for other users."
+msgstr ""
+"Analytify %1$s herhangi bir dilde çevrilmeye hazır tüm dizeleri içerir. %2$s "
+"Bu eklentiyi kendi dilinize çevirmeye başlamak için burayı tıklayın %3$s ve "
+"diğer kullanıcılara kolaylık sağlamak için dil dosyalarınızı bizimle "
+"paylaşmayı unutmayın.\n"
+" \n"
+
+#: inc/analytify-optin-form.php:542 welcome.php:202
+msgid "Analytify Shortcodes"
+msgstr "Analytify Kısa Kodlar"
+
+#: inc/analytify-optin-form.php:544 welcome.php:204
+#, php-format
+msgid ""
+"Analytify shortcodes can be used for multiple purposes. It gives you more "
+"flexibility than the front-end statistics. You can disable front-end stats "
+"and use these shortcodes in any of your pages/posts to show Analytics in "
+"tabular style. If you are familiar with CSS, It can be easily modified to "
+"match with your website look and feel. %1$s Following are two types of "
+"shortcodes:"
+msgstr ""
+"Analytify kısa kodlar birden çok amaç için kullanılabilir. Size ön uç "
+"istatistiklerinden daha fazla esneklik sağlar. Ön uç istatistiklerini devre "
+"dışı bırakabilir ve bu kısa kodları, Analytics'i tablo biçiminde göstermek "
+"için sayfalarınızın / gönderilerinizin herhangi birinde kullanabilirsiniz. "
+"CSS'ye aşina iseniz, web sitenizin görünümü ve hissine uyacak şekilde "
+"kolayca değiştirilebilir. %1$s Aşağıda iki tür kısa kod verilmiştir:"
+
+#: inc/analytify-optin-form.php:547 welcome.php:207
+msgid "a) Simple:"
+msgstr "a) basit:"
+
+#: inc/analytify-optin-form.php:549 welcome.php:209
+#, php-format
+msgid ""
+"Simple Analytify shortcode returns you only the numbers i.e results. It is "
+"useful when you want results of only 1 Metrics and can apply permissions "
+"using roles. You can fetch numbers of %1$s Sessions, Pageviews, Bounce Rate "
+"and Users %2$s etc"
+msgstr ""
+"Basit Çözümleme kısa kodu size yalnızca sayıları, yani sonuçları döndürür. "
+"Yalnızca 1 Metriğin sonuçlarını istediğinizde kullanışlıdır ve rolleri "
+"kullanarak izinleri uygulayabilirsiniz. %1$s Oturum, Sayfa Görüntüleme, "
+"Hemen Çıkma Oranı ve Kullanıcı %2$s gibi sayıları getirebilirsiniz."
+
+#: inc/analytify-optin-form.php:552 welcome.php:212
+msgid "b) Advanced:"
+msgstr "b) Gelişmiş:"
+
+#: inc/analytify-optin-form.php:554 welcome.php:214
+#, php-format
+msgid ""
+"With this Advanced option, You can choose %1$s more than 1 Metrics and "
+"Dimensions, Sort the results, get maximum rows, apply permissions and fetch "
+"Analytics with specified start-date and end-date. %2$s Advanced shortcode "
+"returns results in table form which can be styled according to your website."
+msgstr ""
+"Bu Gelişmiş seçenekle, 1'den fazla Metrik ve Boyut seçebilir, sonuçları "
+"sıralayabilir, maksimum satır alabilir, izinleri uygulayabilir ve belirtilen "
+"başlangıç ve bitiş tarihi ile Analytics'i getirebilirsiniz. %2$s Gelişmiş "
+"kısa kod, web sitenize göre şekillendirilebilen tablo biçiminde sonuç "
+"döndürür."
+
+#: inc/analytify-optin-form.php:564 welcome.php:222
+msgid "Front-end Statistics"
+msgstr "Ön yüz İstatistikleri"
+
+#: inc/analytify-optin-form.php:566 welcome.php:224
+#, php-format
+msgid ""
+"We have introduced the %1$s New Front-end Analytics %2$s which will fetch "
+"the stats like backend but with an awesome UI for front-end stats. It was a "
+"long awaited feature which was under development but finally It is here. It "
+"can be customized (if you are good at CSS) according to your website look "
+"and feel. %3$s below are it's important options: "
+msgstr ""
+"Arka uç gibi istatistikleri ön uç istatistikleri için harika bir kullanıcı "
+"arayüzüyle getirecek %1$s Yeni Ön Uç Analytics %2$s'i kullanıma sunduk. "
+"Geliştirilme aşamasında olan uzun zamandır beklenen bir özellikti ama "
+"nihayet burada. Web sitenizin görünümüne ve hissine göre özelleştirilebilir "
+"(CSS'de iyiyseniz). Aşağıdaki %3$s önemli seçenekler:"
+
+#: inc/analytify-optin-form.php:578 welcome.php:236
+#, php-format
+msgid "Show %1$s front-end %2$s Analytics to selected user roles only."
+msgstr ""
+"Show %1$s ön yüz %2$s Analytics'i yalnızca seçili kullanıcı rollerine "
+"gösterin."
+
+#: inc/analytify-optin-form.php:657
+msgctxt "as in terms and conditions"
+msgid "Terms"
+msgstr "Koşullar"
+
+#: inc/analytify-optin-form.php:657
+msgctxt "as in privacy policy"
+msgid "Privacy"
+msgstr "Gizlilik"
+
+#: inc/analytify-optin-form.php:658 welcome.php:258 welcome.php:407
+msgid "Go to Analytify Settings"
+msgstr "Analytify Ayarlar'a git"
+
+#: inc/analytify-optin-form.php:659 welcome.php:259 welcome.php:408
+msgid "View the Full Changelog"
+msgstr "Tam Değişiklik Günlüğünü Görüntüleyin"
+
+#: inc/analytify-widgets.php:9
+msgid "Analytify Live Stats"
+msgstr "Analytify Canlı İstatistikleri"
+
+#: inc/analytify-widgets.php:10
+msgid "It shows Live Stats of your site."
+msgstr "Sitenizin Canlı İstatistiklerini gösterir."
+
+#: inc/analytify-widgets.php:28 views/default/admin/top-pages-stats.php:12
+msgid "Title"
+msgstr "Sayfa Başlığı"
+
+#: inc/analytify-widgets.php:33
+msgid "Description:"
+msgstr "Açıklama:"
+
+#: inc/class-analytify-logging.php:47
+msgid "Logs"
+msgstr "Kayıtlar"
+
+#: inc/class-wpa-adminbar.php:35
+msgid "View complete Analytics of your site"
+msgstr ""
+"Sitenizin tüm Analytics verilerini görüntüleyin\n"
+
+#: inc/class-wpa-adminbar.php:44 wp-analytify.php:862
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: inc/class-wpa-adminbar.php:58
+msgid "Edit Post"
+msgstr "Gönderiyi düzenle"
+
+#: inc/page-addons.php:30
+msgid "Enhanced E-Commerce Tracking for WooCommerce"
+msgstr "WooCommerce için Gelişmiş E-Ticaret İzleme"
+
+#: inc/page-addons.php:32 inc/page-addons.php:39
+msgid ""
+"This Add-on will track the e-commerce behaviour of users, digital Sales, "
+"Transactions and Revenues in Google Analytics and Displays Stats in a unique "
+"and intiutive way which is very understandable even for non-technical "
+"WordPress users."
+msgstr ""
+"Bu eklenti, kullanıcıların e-ticaret davranışlarını, Google Analytics'teki "
+"dijital satışları, işlemleri ve gelirleri ve görüntü istatistiklerini, "
+"teknik bilgisi olmayan WordPress kullanıcıları için bile çok anlaşılır bir "
+"şekilde benzersiz ve sezgisel bir şekilde izleyecektir."
+
+#: inc/page-addons.php:37
+msgid "Enhanced E-Commerce Tracking for Easy Digital Downloads"
+msgstr "Kolay Dijital İndirmeler için Gelişmiş E-Ticaret İzleme"
+
+#: inc/page-addons.php:44
+msgid "Campaigns Tracking "
+msgstr "Kampanya İzleme"
+
+#: inc/page-addons.php:46
+msgid ""
+"Everyone runs campaigns through social media or create backlinks. This add-"
+"on helps you to show your campaigns stats in a beautiful dashboard."
+msgstr ""
+"Herkes sosyal medya aracılığıyla kampanyalar yürütür veya geri bağlantı "
+"oluşturur. Bu eklenti, kampanyalarınızın istatistiklerini güzel bir kontrol "
+"panelinde göstermenize yardımcı olur."
+
+#: inc/page-addons.php:51
+msgid "Google Analytics Dashboard widget (FREE)"
+msgstr "Google Analytics Gösterge Tablosu Aracı (ÜCRETSİZ)"
+
+#: inc/page-addons.php:53
+msgid ""
+"Google Analytics Dashboard widget is a FREE Add-on by Analytify to show "
+"Google Analytics widget at WordPress dashboard."
+msgstr ""
+"Google Analytics Gösterge Tablosu aracı, Google Analytics aracını WordPress "
+"gösterge tablosunda göstermek için Analytify tarafından sunulan ÜCRETSİZ bir "
+"Eklentidir."
+
+#: inc/page-addons.php:59
+msgid "Email Notifications"
+msgstr "E-posta Bildirimleri"
+
+#: inc/page-addons.php:61
+msgid ""
+"Our Analytify For Email Notifications add-on sends your website analytics "
+"reports in email weekly and monthly."
+msgstr ""
+"Analytify E-posta Bildirimleri eklentiniz için web sitesi analiz "
+"raporlarınızı haftalık ve aylık e-postayla gönderir."
+
+#: inc/page-addons.php:66
+msgid "Contact form 7 Google Analytics Tracking (FREE)"
+msgstr "İletişim formu 7 Google Analytics İzleme (ÜCRETSİZ)"
+
+#: inc/page-addons.php:68
+msgid ""
+"It is a FREE plug and play Add-on by Analytify for Contact form 7 to Track "
+"Form Submissions with Google Analytics. No settings needed as all, Add-on "
+"settings should have already setup from Analytify settings page."
+msgstr ""
+"Google Analytics ile Form Gönderimlerini Takip Etmek için Analytify for "
+"Contact form 7 tarafından sunulan ÜCRETSİZ bir tak ve çalıştır eklentisidir. "
+"Hiçbir ayara gerek yok, Eklenti ayarlarının Analiz ayarları sayfasından "
+"zaten yapılmış olması gerekir."
+
+#: inc/page-addons.php:86
+#, php-format
+msgid "%1$s Already Installed %2$s"
+msgstr "%1$s %2$s Yüklendi"
+
+#: inc/page-addons.php:91
+#, php-format
+msgid "%1$s Activate Plugin %2$s"
+msgstr "%1$s %2$s Eklentisini etkinleştir"
+
+#: inc/page-addons.php:96
+#, php-format
+msgid "%1$s Download %2$s"
+msgstr "%1$s İndir %2$s"
+
+#: inc/page-addons.php:97
+#, php-format
+msgid "%1$s Get this add-on %2$s"
+msgstr "%1$s Bu eklentiyi %2$s edinin"
+
+#: inc/page-addons.php:111
+msgid "Extend the functionality of Analytify with these awesome Add-ons"
+msgstr "Analytify'ın işlevselliğini bu harika eklentilerle genişletin"
+
+#: inc/wpa-core-functions.php:61
+#, php-format
+msgid ""
+"If you like %1$s Analytify %2$s please leave us a %5$s %3$s %6$s rating. "
+"%4$s A huge thank you from %1$s WPBrigade %2$s in advance!"
+msgstr ""
+"%1$s Analytify %2$s 'i beğendiyseniz, lütfen bize bir %5$s %3$s %6$s "
+"değerlendirmesi bırakın. %4$s WPBrigade %2$s 'den şimdiden çok teşekkür "
+"ederiz!"
+
+#: inc/wpa-core-functions.php:69
+msgid "Thank you for tracking with Analytify."
+msgstr "Analytify ile izlediğiniz için teşekkür ederiz."
+
+#: inc/wpa-core-functions.php:303
+#, php-format
+msgid "%1$s %2$s"
+msgstr "%1$s %2$s"
+
+#: lib/logs/class-analytify-logger.php:117
+#, php-format
+msgid "%1$s was called with an invalid level \"%2$s\"."
+msgstr "%1$s Geçersiz bir \"%2$s\" düzeyiyle çağrıldı."
+
+#: views/default/admin/browser-stats.php:6
+msgid "Browsers Statistics"
+msgstr "Tarayıcı İstatistikleri"
+
+#: views/default/admin/browser-stats.php:42
+msgid "listing statistics of top five browsers"
+msgstr "En iyi beş tarayıcının istatistiklerini listelemek"
+
+#: views/default/admin/general-stats.php:28
+#: views/default/admin/general-stats.php:106
+msgid "Mobile"
+msgstr "Mobil"
+
+#: views/default/admin/general-stats.php:30
+#: views/default/admin/general-stats.php:106
+msgid "Tablet"
+msgstr "Tablet"
+
+#: views/default/admin/general-stats.php:32
+#: views/default/admin/general-stats.php:106
+msgid "Desktop"
+msgstr "Masaüstü "
+
+#: views/default/admin/general-stats.php:78
+#: views/default/admin/general-stats.php:89
+msgid "New"
+msgstr "Yeni"
+
+#: views/default/admin/general-stats.php:78
+#: views/default/admin/general-stats.php:90
+msgid "Returning"
+msgstr "Geri gelenler"
+
+#: views/default/admin/general-stats.php:111
+msgid "User Devices"
+msgstr "Kullanıcı Cihazları"
+
+#: views/default/admin/general-stats.php:140
+msgid "No Activity Found"
+msgstr "Etkinlik Bulunamadı"
+
+#: views/default/admin/general-stats.php:188
+#: views/default/admin/single-general-stats.php:21
+msgid "Sessions"
+msgstr "Oturum "
+
+#: views/default/admin/general-stats.php:190
+#: views/default/admin/single-general-stats.php:23
+msgid ""
+"Total number of Sessions within the date range. A session is the period time "
+"a user is actively engaged with your website. app. etc."
+msgstr ""
+"Belirli bir tarih aralığındaki toplam oturum sayısı. Oturum, bir "
+"kullanıcının web sitenizle, uygulamanızla vb. aktif olarak etkileşimde "
+"bulunduğu süredir."
+
+#: views/default/admin/general-stats.php:195
+#: views/default/admin/geographic-stats.php:136
+#: views/default/admin/geographic-stats.php:163
+#: views/default/admin/single-general-stats.php:27
+msgid "Visitors"
+msgstr "Kullanıcılar"
+
+#: views/default/admin/general-stats.php:197
+#: views/default/admin/single-general-stats.php:29
+msgid ""
+"Users that have had at least one session within the selected date range. "
+"Includes both new and returning users."
+msgstr ""
+"Seçilen tarih aralığında en az bir oturumu olan kullanıcılar. Hem yeni hem "
+"de geri gelen kullanıcıları içerir."
+
+#: views/default/admin/general-stats.php:202
+#: views/default/admin/single-general-stats.php:33
+msgid "Page views"
+msgstr "Sayfa Görüntüleme Sayısı"
+
+#: views/default/admin/general-stats.php:204
+#: views/default/admin/single-general-stats.php:35
+msgid ""
+"Pageviews is the total number of pages viewed. Repeated views of a single "
+"page are counted."
+msgstr ""
+"Sayfa görüntüleme sayısı, görüntülenen toplam sayfa sayısıdır. Tek bir "
+"sayfanın tekrarlanan görüntülemeleri de sayılır."
+
+#: views/default/admin/general-stats.php:209
+msgid "Avg. time on site"
+msgstr "Ort. Oturum Süresi"
+
+#: views/default/admin/general-stats.php:211
+msgid "The amount of time a user spends on your site."
+msgstr "Bir kullanıcının sitenizde geçirdiği süredir."
+
+#: views/default/admin/general-stats.php:216
+#: views/default/admin/single-general-stats.php:45
+#: views/default/admin/top-pages-stats.php:15
+msgid "Bounce Rate"
+msgstr "Hemen Çıkma Oranı"
+
+#: views/default/admin/general-stats.php:218
+#: views/default/admin/single-general-stats.php:47
+msgid ""
+"Bounce Rate is the percentage of single-page visits (i.e. visits in which "
+"the person left your site from the entrance page without interacting with "
+"the page )."
+msgstr ""
+"Hemen Çıkma Oranı, tek sayfalık ziyaretlerin yüzdesidir. Başka bir deyişle, "
+"kişinin sitenizi giriş sayfasından, sayfayla etkileşime girmeden terk ettiği "
+"ziyaretlerdir."
+
+#: views/default/admin/general-stats.php:223
+msgid "pages/session"
+msgstr "sayfa/oturum"
+
+#: views/default/admin/general-stats.php:225
+msgid ""
+"Pages/Session is the average number of pages viewed during a session. "
+"Repeated views of a single page are counted."
+msgstr ""
+"Sayfa/Oturum, bir oturum sırasında görüntülenen ortalama sayfa sayısıdır. "
+"Tek bir sayfanın tekrarlanan görüntülemeleri de sayılır.\n"
+
+#: views/default/admin/general-stats.php:230
+#: views/default/admin/single-general-stats.php:51
+msgid "% New sessions"
+msgstr "% Yeni Oturum"
+
+#: views/default/admin/general-stats.php:232
+#: views/default/admin/single-general-stats.php:53
+msgid ""
+"Percentage of New Sessions within the date range. A new session is the "
+"period time when a new user is actively engaged with your website."
+msgstr ""
+"Belirli bir tarih aralığındaki yeni oturumların yüzdesi. Yeni bir oturum, "
+"yeni bir kullanıcının web sitenizle aktif olarak etkileşime girdiği dönemdir."
+
+#: views/default/admin/general-stats.php:237
+msgid "New vs Returning visitors"
+msgstr "Yeni kullanıcılar ve Geri gelenler"
+
+#: views/default/admin/general-stats.php:244
+msgid "Devices of visitors"
+msgstr "Kullanıcıların cihazları"
+
+#: views/default/admin/general-stats.php:276
+msgid " ago"
+msgstr " önce"
+
+#: views/default/admin/geographic-stats.php:77
+msgid "High"
+msgstr "Yüksek"
+
+#: views/default/admin/geographic-stats.php:77
+msgid "Low"
+msgstr "Düşük"
+
+#: views/default/admin/geographic-stats.php:130
+msgid "Top countries"
+msgstr "En Aktif Ülkeler "
+
+#: views/default/admin/geographic-stats.php:133
+msgid "View All Top Countries"
+msgstr "Tüm en iyi ülkeleri görüntüle"
+
+#: views/default/admin/geographic-stats.php:157
+msgid "Top cities"
+msgstr "En Aktif Şehirler "
+
+#: views/default/admin/geographic-stats.php:160
+msgid "View All Top Cities"
+msgstr "Tüm en iyi şehirleri görüntüle"
+
+#: views/default/admin/keywords-stats.php:23
+msgid "(not provided)"
+msgstr "(sağlanmadı)"
+
+#: views/default/admin/keywords-stats.php:25
+msgid "(not set)"
+msgstr "(ayarlanmadı)"
+
+#: views/default/admin/os-stats.php:6
+msgid "Operating System Statistics"
+msgstr "İşletim Sistemi İstatistikleri"
+
+#: views/default/admin/os-stats.php:31
+msgid "Listing statistics of top five operating systems."
+msgstr "İlk beş işletim sisteminin istatistiklerini listeleme."
+
+#: views/default/admin/pages-stats.php:14
+msgid "Url link"
+msgstr "URL bağlantısı"
+
+#: views/default/admin/pages-stats.php:15
+msgid "Entrance"
+msgstr "Giriş"
+
+#: views/default/admin/pages-stats.php:16
+msgid "Exits"
+msgstr "Çıkış"
+
+#: views/default/admin/pages-stats.php:17
+msgid "Entrance% Exits%"
+msgstr "Giriş% Çıkış%"
+
+#: views/default/admin/pages-stats.php:74
+#, php-format
+msgid "Did you know that %1$s people landed directly to your site at %2$s?"
+msgstr ""
+"%1$s kişinin %2$s adresiyle doğrudan sitenize geldiğini biliyor muydunuz?"
+
+#: views/default/admin/single-general-stats.php:39
+msgid "Avg. time on Page"
+msgstr "Ort. Sayfada geçirilen süre"
+
+#: views/default/admin/single-general-stats.php:41
+msgid "The amount of time (session) a user spends on this page."
+msgstr "Bir kullanıcının bu sayfada geçirdiği süre (oturum)."
+
+#: views/default/admin/single-general-stats.php:58
+msgid "Did you know that Average Session Duration of this page is"
+msgstr "Bu sayfanın Ortalama Oturum Süresinin olduğunu biliyor muydunuz?"
+
+#: views/default/admin/system-stats.php:21
+msgid "Browsers statistics"
+msgstr "Tarayıcı"
+
+#: views/default/admin/system-stats.php:24
+#: views/default/admin/system-stats.php:59
+#: views/default/admin/system-stats.php:90
+msgid "Visits"
+msgstr "Kullanıcılar"
+
+#: views/default/admin/system-stats.php:56
+msgid "Operating system statistics"
+msgstr "İşletim Sistemi"
+
+#: views/default/admin/system-stats.php:87
+msgid "Mobile device statistics"
+msgstr "Mobil Cihaz"
+
+#: views/default/admin/system-stats.php:115
+msgid "Top Web Browsers, Operating Systems, and Mobile Devices"
+msgstr "En iyi Web Tarayıcılar, İşletim Sistemleri ve Mobil Cihazlar"
+
+#: views/default/admin/top-pages-stats.php:13
+msgid "Views"
+msgstr "Sayfa Görüntüleme Sayısı"
+
+#: views/default/admin/top-pages-stats.php:14
+msgid "Avg. Time"
+msgstr "Ort. Süre"
+
+#: welcome.php:49 welcome.php:50
+msgid "Welcome to Analytify"
+msgstr "Analytify'a Hoşgeldiniz"
+
+#: welcome.php:58 welcome.php:59
+msgid "Getting started with Analytify"
+msgstr "Analytify ile Başlayın"
+
+#: welcome.php:67 welcome.php:68
+msgid "The people that build Analytify"
+msgstr "Analytify'ı oluşturan insanlar"
+
+#: welcome.php:167 welcome.php:278 welcome.php:426
+#, php-format
+msgid "Welcome to Analytify %1$s"
+msgstr "Analytify'a %1$s Hoşgeldiniz "
+
+#: welcome.php:169 welcome.php:428
+#, php-format
+msgid ""
+"%1$s Thank you for updating to the latest version! %2$s %3$s Analytify %4$s "
+"is ready to make people lives easier for those who love Google Analytics and "
+"WordPress. It makes Analytics simple for WordPress users that everyone can "
+"understand about their Website statistics and behavior. "
+msgstr ""
+"%1$s En son sürüme güncellediğiniz için teşekkür ederiz! %2$s %3$s Analytify "
+"%4$s Google Analytics ve WordPress'i sevenler için insanların hayatını "
+"kolaylaştırmaya hazır. Analitiği, WordPress kullanıcıları için herkesin web "
+"Sitesi istatistikleri ve davranışlarını anlayabileceği basit bir hale "
+"getirir."
+
+#: welcome.php:280
+#, php-format
+msgid ""
+" %1$s Thank you for updating to the latest version! %2$s %3$s Analytify %4$s "
+"is ready to make people lives easier for those who love Google Analytics and "
+"WordPress. It makes Analytics simple for WordPress users that everyone can "
+"understand about their Website statistics and behavior. "
+msgstr ""
+"%1$s En son sürüme güncellediğiniz için teşekkür ederiz! %2$s %3$s Analytify "
+"%4$s, Google Analytics ve WordPress'i sevenler için insanların hayatını "
+"kolaylaştırmaya hazır. Analitiği, WordPress kullanıcıları için herkesin Web "
+"Sitesi istatistikleri ve davranışlarını anlayabileceği basit bir hale "
+"getirir."
+
+#: welcome.php:287
+#, php-format
+msgid ""
+"Getting started with Analytify plugin settings are very easy to use and "
+"ready to go in minutes. If there is something you don't understand or "
+"confusing, do ask us on %1$sWordPress.org support forum%2$s without "
+"hesitation."
+msgstr ""
+"Analytify eklenti ayarlarına başlamak, kullanımı çok kolaydır ve dakikalar "
+"içinde kullanıma hazırdır. Anlamadığınız veya kafa karıştıran bir şey varsa, "
+"çekinmeden %1$sWordPress.org destek forumunda%2$s bize sorun."
+
+#: welcome.php:291
+#, php-format
+msgid "%1$s Connect with Analytify %2$s"
+msgstr "%1$s Analytify %2$s ile bağlanın"
+
+#: welcome.php:305
+msgid "Setting up profiles"
+msgstr "Profil oluşturma"
+
+#: welcome.php:331
+msgid "Display Statistics at front-end pages"
+msgstr "İstatistikleri ön yüz sayfalarda görüntüle"
+
+#: welcome.php:364
+msgid "Display Statistics under Edit pages (backend)"
+msgstr "Sayfaları düzenle altında İstatistikleri Görüntüle (arka yüz)"
+
+#: welcome.php:434
+#, php-format
+msgid ""
+"Analytify is developed by %1$s WPBrigade%2$s i.e brigade of WordPress "
+"developers."
+msgstr ""
+"Analytify %1$s WPBrigade%2$s yani WordPress geliştiricileri ekibi tarafından "
+"geliştirilmiştir."
+
+#: wp-analytify.php:292
+msgid "Analytify - Stats of this Post/Page"
+msgstr "Analytify - Bu Yazının / Sayfanın İstatistikleri"
+
+#: wp-analytify.php:362
+msgid "This post is excluded and will NOT show Analytics."
+msgstr "Bu gönderi hariç tutulur ve Analytics'i GÖSTERMEZ."
+
+#: wp-analytify.php:417
+msgid "You are not allowed to see stats"
+msgstr "İstatistikleri görme izniniz yok"
+
+#: wp-analytify.php:485
+#, php-format
+msgid "%2$s This code is added by WP Analytify (%1$s) %4$s %3$s"
+msgstr "%2$s Bu kod, WP Analytify (%1$s) %4$s %3$s tarafından eklendi"
+
+#: wp-analytify.php:532
+#, php-format
+msgid "%2$s This code is added by WP Analytify (%1$s) %3$s"
+msgstr "%2$s Bu kod, WP Analytify (%1$s) %3$s tarafından eklendi"
+
+#: wp-analytify.php:554
+#, php-format
+msgid "%1$s Settings %2$s | "
+msgstr "%1$s Ayarlar %2$s | "
+
+#: wp-analytify.php:556
+#, php-format
+msgid "%1$s Support %2$s | "
+msgstr "%1$s Destek %2$s | "
+
+#: wp-analytify.php:559
+#, php-format
+msgid "%1$s Get Analytify Pro %2$s |"
+msgstr "%1$s Analytify Pro'yu edinin %2$s |"
+
+#: wp-analytify.php:563
+#, php-format
+msgid "%1$s Opt Out %2$s | "
+msgstr "%1$s Çıkma %2$s | "
+
+#: wp-analytify.php:565
+#, php-format
+msgid "%1$s Opt In %2$s | "
+msgstr "%1$s Etkinleştir %2$s | "
+
+#: wp-analytify.php:569
+#, php-format
+msgid "%1$s Dashboard %2$s "
+msgstr "%1$s Genel Bakış %2$s "
+
+#: wp-analytify.php:594
+#, php-format
+msgid "%1$s Get FREE Help %2$s"
+msgstr "%1$s ÜCRETSİZ yardım alın %2$s"
+
+#: wp-analytify.php:595
+#, php-format
+msgid "%1$s Explore Add Ons %2$s"
+msgstr "%1$s Eklentileri keşfedin %2$s"
+
+#: wp-analytify.php:596
+msgid "Vote!"
+msgstr "Oy ver!"
+
+#: wp-analytify.php:721
+msgid "Previous Month"
+msgstr "Bir önceki ay"
+
+#: wp-analytify.php:722
+msgid "Next Month"
+msgstr "Sonraki Ay"
+
+#: wp-analytify.php:724
+msgid "January"
+msgstr "Ocak"
+
+#: wp-analytify.php:725
+msgid "February"
+msgstr "Şubat"
+
+#: wp-analytify.php:726
+msgid "March"
+msgstr "Mart"
+
+#: wp-analytify.php:727
+msgid "April"
+msgstr "Nisan"
+
+#: wp-analytify.php:728
+msgid "May"
+msgstr "Mayıs"
+
+#: wp-analytify.php:729
+msgid "June"
+msgstr "Haziran"
+
+#: wp-analytify.php:730
+msgid "July"
+msgstr "Temmuz"
+
+#: wp-analytify.php:731
+msgid "August"
+msgstr "Ağustos"
+
+#: wp-analytify.php:732
+msgid "September"
+msgstr "Eylül"
+
+#: wp-analytify.php:733
+msgid "October"
+msgstr "Ekim"
+
+#: wp-analytify.php:734
+msgid "November"
+msgstr "Kasım"
+
+#: wp-analytify.php:735
+msgid "December1"
+msgstr "Aralık1"
+
+#: wp-analytify.php:738
+msgid "Sunday"
+msgstr "Pazar"
+
+#: wp-analytify.php:739
+msgid "Monday"
+msgstr "Pazartesi"
+
+#: wp-analytify.php:740
+msgid "Tuesday"
+msgstr "Salı"
+
+#: wp-analytify.php:741
+msgid "Wednesday"
+msgstr "Çarşamba"
+
+#: wp-analytify.php:742
+msgid "Thursday"
+msgstr "Perşembe"
+
+#: wp-analytify.php:743
+msgid "Friday"
+msgstr "Cuma"
+
+#: wp-analytify.php:744
+msgid "Saturday"
+msgstr "Cumartesi"
+
+#: wp-analytify.php:747
+msgid "Sun"
+msgstr "Paz"
+
+#: wp-analytify.php:748
+msgid "Mon"
+msgstr "Pzt"
+
+#: wp-analytify.php:749
+msgid "Tue"
+msgstr "Sal"
+
+#: wp-analytify.php:750
+msgid "Wed"
+msgstr "Çar"
+
+#: wp-analytify.php:751
+msgid "Thu"
+msgstr "Per"
+
+#: wp-analytify.php:752
+msgid "Fri"
+msgstr "Cum"
+
+#: wp-analytify.php:753
+msgid "Sat"
+msgstr "Cmt"
+
+#: wp-analytify.php:792
+msgid "Please enter your license key."
+msgstr "Lütfen lisans anahtarınızı girin."
+
+#: wp-analytify.php:793
+msgid ""
+"A problem occurred when trying to register the license, please try again."
+msgstr "Lisansı kaydetmeye çalışırken bir sorun oluştu, lütfen tekrar deneyin."
+
+#: wp-analytify.php:794
+msgid "A problem occurred when trying to check the license, please try again."
+msgstr ""
+"Lisansı kontrol etmeye çalışırken bir sorun oluştu, lütfen tekrar deneyin."
+
+#: wp-analytify.php:795
+msgid ""
+"Your license has been activated. You will now receive automatic updates and "
+"access to email support."
+msgstr ""
+"Lisansınız etkinleştirildi. Artık otomatik güncellemeler alacak ve e-posta "
+"desteğine erişeceksiniz."
+
+#: wp-analytify.php:846
+msgid "Activate"
+msgstr "Etkinleştir"
+
+#: wp-analytify.php:853
+msgid " Dashboard"
+msgstr " Genel Bakış"
+
+#: wp-analytify.php:867
+msgid " list of all Add-ons"
+msgstr " tüm eklentilerin listesi"
+
+#: wp-analytify.php:867
+msgid "Add-ons"
+msgstr "Eklentiler"
+
+#: wp-analytify.php:872
+msgid "PRO vs FREE"
+msgstr "PRO vs ÜCRETSİZ"
+
+#: wp-analytify.php:929
+msgid "You must authenticate to access your web profiles."
+msgstr "Web profillerinize erişmek için kimlik doğrulamalısınız."
+
+#: wp-analytify.php:932
+#, php-format
+msgid ""
+"%1$s %2$s Oops, Something went wrong!%3$s %4$s Try to %5$s Reset %6$s "
+"Authentication."
+msgstr ""
+"%1$s %2$s Hata, Bir şeyler ters gitti!%3$s %4$s %5$s %6$s Kimlik "
+"doğrulamasını sıfırlamayı deneyin."
+
+#: wp-analytify.php:953
+msgid "Notice: You must authenticate to access your web profiles."
+msgstr ""
+"Uyarı: Web profillerinize erişmek için kimlik doğrulaması yapmalısınız."
+
+#: wp-analytify.php:999
+#, php-format
+msgid ""
+"Analytify is not active. Please %1$sAuthenticate%2$s in order to get started "
+"using this plugin."
+msgstr ""
+"Analytify etkin değil. Bu eklentiyi kullanmaya başlamak için lütfen "
+"%1$sdoğrula%2$s "
+
+#: wp-analytify.php:1003
+#, php-format
+msgid "%1$s Google Analytics Profile is not set. Set the %2$s Profile %3$s"
+msgstr "%1$s Google Analytics profili ayarlanmadı. %2$s Profili %3$s ayarlayın"
+
+#: wp-analytify.php:1036
+msgid ""
+"Select your website profile at Analytify->settings->profile tab to load "
+"stats."
+msgstr ""
+"İstatistikleri yüklemek için Analytify-> settings-> profil sekmesinde web "
+"sitesi profilinizi seçin."
+
+#: wp-analytify.php:1084
+#, php-format
+msgid "%1$s Displaying Analytics of this page from %2$s to %3$s %4$s"
+msgstr ""
+"%1$s Bu sayfanın %2$s ile %3$s %4$s arasındaki analizleri görüntüleniyor"
+
+#: wp-analytify.php:1240
+#, php-format
+msgid ""
+"%1$s %2$s %3$sNotice:%4$s %5$sConnect%6$s %4$s Analytify with your Google "
+"account. %7$s %8$s"
+msgstr ""
+"%1$s %2$s %3$sUyarı:%4$s %5$s %6$s %4$s Analytify ile Google hesabınızı "
+"bağlayın. %7$s %8$s"
+
+#: wp-analytify.php:1245
+#, php-format
+msgid ""
+"Congratulations! Analytify is now authenticated. Please select your website "
+"profile %1$s here %2$s to get started."
+msgstr ""
+"Tebrikler! Analytify artık doğrulanmıştır. Başlamak için lütfen %1$s web "
+"sitesi profilinizi %2$s seçin."
+
+#: wp-analytify.php:1312
+msgid "Thankyou!\\nYour Coupon code is Analytify2016"
+msgstr "Teşekkür Ederiz! \\ Kupon kodunuz Analytify 2016"
+
+#: wp-analytify.php:1419
+msgid "Leave A Review?"
+msgstr "Yorum bırakır mısınız?"
+
+#: wp-analytify.php:1420
+msgid ""
+"We hope you've enjoyed using Analytify! Would you consider leaving us a "
+"review on WordPress.org?"
+msgstr ""
+"Analytify'ı kullanmaktan keyif aldığınızı umuyoruz! WordPress.org'da bize "
+"bir yorum bırakmayı düşünür müsünüz?"
+
+#: wp-analytify.php:1421
+msgid "Sure! I'd love to!"
+msgstr "Elbette! İsterim!"
+
+#: wp-analytify.php:1422
+msgid "I've already left a review"
+msgstr "Zaten bir inceleme bıraktım"
+
+#: wp-analytify.php:1423
+msgid "Maybe Later"
+msgstr "Belki sonra"
+
+#: wp-analytify.php:1424
+msgid "Never show again"
+msgstr "Bir daha gösterme"
+
+#: wp-analytify.php:1604
+#, php-format
+msgid "%1$s %2$s %3$s Authentication Cleared login again. %4$s %5$s %6$s"
+msgstr ""
+"%1$s %2$s %3$s Kimlik Doğrulama Girişi tekrar temizlendi. %4$s %5$s %6$s"
+
+#. Plugin Name of the plugin/theme
+msgid "Analytify - Google Analytics Dashboard"
+msgstr "Analytify - Google Analytics Gösterge Tablosu"
+
+#. Plugin URI of the plugin/theme
+msgid "https://analytify.io/details"
+msgstr "https://analytify.io/details"
+
+#. Description of the plugin/theme
+msgid ""
+"Analytify brings a brand new and modern feeling Google Analytics superbly "
+"integrated with WordPress Dashboard. It presents the statistics in a "
+"beautiful way under the WordPress Posts/Pages at front end, backend and in "
+"its own Dashboard. This provides Stats from Country, Referrers, Social media,"
+" General stats, New visitors, Returning visitors, Exit pages, Browser wise "
+"and Top keywords. This plugin provides the RealTime statistics in a new UI "
+"which is easy to understand & looks good."
+msgstr ""
+"Analytify, Google Analytics'e WordPress Dashboard ile mükemmel bir şekilde "
+"entegre edilmiş yepyeni ve modern bir his getiriyor. İstatistikleri, ön "
+"yüzde, arka yüzde ve kendi Gösterge Tablosunda WordPress Yazıları / "
+"Sayfaları altında güzel bir şekilde sunar. Bu, Ülkeden İstatistikler, "
+"Yönlendirenler, Sosyal medya, Genel istatistikler, Yeni ziyaretçiler, Geri "
+"gelen ziyaretçiler, Çıkış sayfaları, Tarayıcı açısından ve En iyi anahtar "
+"kelimeler sağlar. Bu eklenti, RealTime istatistiklerini anlaşılması kolay ve "
+"iyi görünen yeni bir kullanıcı ara yüzünde sağlar."
+
+#. Author of the plugin/theme
+msgid "Analytify"
+msgstr "Analytify"
+
+#. Author URI of the plugin/theme
+msgid "https://analytify.io"
+msgstr "https://analytify.io"

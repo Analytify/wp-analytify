@@ -4,6 +4,19 @@
 
   jQuery(document).ready(function ($) {
 
+		// Fallback method for formating dates.
+		function formatDate(date) {
+			var d = new Date(date),
+					month = '' + (d.getMonth() + 1),
+					day = '' + d.getDate(),
+					year = d.getFullYear();
+	
+			if (month.length < 2) month = '0' + month;
+			if (day.length < 2) day = '0' + day;
+	
+			return [year, month, day].join('-');
+		}
+
 	/**
 	 * [Redirect to the stats box from all posts link]
 	 */
@@ -53,35 +66,24 @@
 
 	 $('.remove-stats').remove();
 
-	 $("#start_date").datepicker({
-	 	dateFormat : 'yy-mm-dd',
-	 	changeMonth : true,
-	 	changeYear : true,
-	 	beforeShow: function() {
-	 		$('#ui-datepicker-div').addClass('mycalander');
-	 	},
-	 	yearRange: '-9y:c+nn'
-	 });
-
-	 $("#end_date").datepicker({
-	 	dateFormat : 'yy-mm-dd',
-	 	changeMonth : true,
-	 	changeYear : true,
-	 	beforeShow: function() {
-	 		$('#ui-datepicker-div').addClass('mycalander');
-	 	},
-	 	yearRange: '-9y:c+nn'
-	 }).datepicker('setDate',new Date());
-
-
-	 $("#view_analytics").click(function (e) {
+	 $("#view_analytics").on('click', function (e) {
 
     e.preventDefault();
 	 	var start_date = $("#analytify_start").val();
     start_date = moment(start_date, 'MMM DD, YYYY').format("YYYY-MM-DD");
 
+		// If invalid date due to invalid locale string use fallback method.
+		if (start_date == 'Invalid date') {
+			start_date = formatDate($("#analytify_start").val())
+		}
+
 	 	var end_date = $("#analytify_end").val();
     end_date =  moment(end_date, 'MMM DD, YYYY').format("YYYY-MM-DD");
+
+		// If invalid date due to invalid locale string use fallback method.
+		if (end_date == 'Invalid date') {
+			end_date = formatDate($("#analytify_end").val())
+		}
 
 	 	var urlpost = $("#post_ID").val();
 
@@ -89,7 +91,7 @@
 
 	 		type: 'POST',
 	 		url: ajaxurl,
-	 		data: 'action=get_ajax_single_admin_analytics&start_date=' + start_date + "&end_date=" + end_date+"&post_id="+urlpost,
+	 		data: 'action=get_ajax_single_admin_analytics&start_date=' + start_date + "&end_date=" + end_date+"&post_id="+urlpost + "&nonce=" + wpanalytify_data.nonces.single_post_stats,
 
 	 		beforeSend: function () {
         $(".show-hide").html('');

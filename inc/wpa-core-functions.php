@@ -60,7 +60,7 @@ function wpa_admin_rate_footer_text( $footer_text ) {
 		if ( ! get_option( 'analytify_admin_footer_text_rated' ) ) {
 				$rate_text = sprintf( esc_html__( 'If you like %1$s Analytify %2$s please leave us a %5$s %3$s %6$s rating. %4$s A huge thank you from %1$s WPBrigade %2$s in advance!', 'wp-analytify' ), '<strong>', '</strong>', '&#9733;&#9733;&#9733;&#9733;&#9733;', '<br />', '<a href="https://analytify.io/go/rate-analytify" target="_blank" class="wpa-rating-footer" data-rated="Thanks dude ;)">', '</a>' );
 					wpa_enqueue_js( "
-                        jQuery('a.wpa-rating-footer').click(function() {
+                        jQuery('a.wpa-rating-footer').on('click', function() {
                             jQuery.post( '" . admin_url( 'admin-ajax.php' ) . "', { action: 'analytify_rated' } );
                             jQuery(this).parent().text( jQuery(this).data( 'rated' ) );
                         });
@@ -173,7 +173,7 @@ function pretty_class( $class ) {
 		return "analytify_not_set";
 	}
 
- 	return	"analytify_" . transliterateString( str_replace( array("’",' & ','-',' '), '_', strtolower( $class ) ) );
+ 	return	"analytify_" . transliterateString( str_replace( array("’","‘",' & ','-',' '), '_', strtolower( $class ) ) );
 
 }
 
@@ -215,178 +215,431 @@ if ( ! function_exists( 'analytify_e' ) ) {
 	}
 }
 
-class WP_ANALYTIFY_FUNCTIONS {
+
+/**
+ * Get Analytify site link with refferal data.
+ * @param  string $url          Page url default set to pricing page.
+ * @param  string $campaing_url Campaings parameters.
+ *
+ * @since 2.1.21
+ */
+function analytify_get_update_link( $url = '', $campaing_url = '' ) {
+
+	if ( defined( 'ANALYTIFY_AFFILIATE_ID' ) ) {
+		$ref_id = ANALYTIFY_AFFILIATE_ID;
+	}
+
+	if ( $url == '' ) {
+		$url = 'https://analytify.io/pricing/';
+	}
+
+	if ( empty( $ref_id ) ) {
+		return $url . $campaing_url;
+	}
+
+	return $url . 'ref/' . $ref_id . '/' . $campaing_url;
+
+}
+
+/**
+* Ignore tracking if user excluded.
+*
+* @since 2.1.21
+*/
+function analytify_is_track_user() {
+
+	global $current_user;
+	$roles = $current_user->roles;
+	$is_track = $GLOBALS['WP_ANALYTIFY']->settings->get_option( 'exclude_users_tracking','wp-analytify-profile', array() );
+
+	if ( is_user_logged_in() && in_array( $roles[0], $is_track ) ) {
+		return false;
+	} else {
+		return true;
+	}
+
+}
+
+/**
+ * Add custom admin notice
+ * @param  string $message Custom Message
+ * @param  string $class   wp-analytify-success,wp-analytify-danger
+ *
+ * @since 2.1.22
+ */
+ function analytify_notice( $message, $class = 'wp-analytify-success' ) {
+		echo '<div class="wp-analytify-notification '. $class .'">
+							<a class="" href="#" aria-label="Dismiss the welcome panel"></a>
+							<div class="wp-analytify-notice-logo">
+								<img src="' . plugins_url( 'assets/images/notice-logo.svg', dirname ( __FILE__ ) ) . '" alt="">
+							</div>
+							<div class="wp-analytify-notice-discription">
+								<p>' . $message .'</p>
+							</div>
+				</div>';
+ }
 
 
-	/**
+
+
+ class WP_ANALYTIFY_FUNCTIONS {
+
+
+	 /**
 	 * @param  [string] page name
 	 * @param  string custom message
 	 * @return [boolean] true or false
 	 *
 	 * @since  [1.3]
 	 */
-	public static function wpa_check_profile_selection( $type, $message = '' ) {
+	 public static function wpa_check_profile_selection( $type, $message = '' ) {
 
-		$_analytify_profile = get_option( 'wp-analytify-profile' );
-		$dashboard_profile = isset ( $_analytify_profile['profile_for_dashboard'] ) ? $_analytify_profile['profile_for_dashboard'] : '';
+		 $_analytify_profile = get_option( 'wp-analytify-profile' );
+		 $dashboard_profile = isset ( $_analytify_profile['profile_for_dashboard'] ) ? $_analytify_profile['profile_for_dashboard'] : '';
 
-		if ( empty( $dashboard_profile ) ) {
+		 if ( empty( $dashboard_profile ) ) {
 
-			if ( $message == '' ) {
-				echo sprintf( esc_html__( '%1$s %2$s' . $type . ' Dashboard can\'t be loaded until your select your website profile %3$s here %4$s %5$s %6$s', 'wp-analytify' ), '<div class="error notice is-dismissible">', '<p>', '<a style="text-decoration:none" href="' . menu_page_url( 'analytify-settings', false ) . '#wp-analytify-profile">', '</a>', '</p>', '</div>' ); } else {
-				echo $message; }
+			 if ( $message == '' ) {
+				//  echo sprintf( esc_html__( '%1$s %2$s' . $type . ' Dashboard can\'t be loaded until your select your website profile %3$s here %4$s %5$s %6$s', 'wp-analytify' ), '<div class="error notice is-dismissible">', '<p>', '<a style="text-decoration:none" href="' . menu_page_url( 'analytify-settings', false ) . '#wp-analytify-profile">', '</a>', '</p>', '</div>' ); 
 
+				 $class   = 'wp-analytify-danger';
+				 $link    = menu_page_url( 'analytify-settings', false ) . '#wp-analytify-profile';
+				 $notice_message = sprintf( esc_html__( $type . ' Dashboard can\'t be loaded until you select your website profile %1$s here%2$s.', 'wp-analytify' ), '<a style="text-decoration:none" href="'. $link .'">', '</a>' );
+				 analytify_notice( $notice_message, $class );
+				}	else {
+					echo $message; 
+				}
+				
 				return true;
-		} else {
-			return false;
-		}
 
+			} else {
+				return false;
+		}
 	}
 
 
 
 
-	/**
-	 * General Redirect URL to
-	 *
-	 * @return [type] [description]
-	 */
-	public static function generate_login_url() {
+			 /**
+			 * General Redirect URL to
+			 *
+			 * @return [type] [description]
+			 */
+			 public static function generate_login_url() {
 
-		$wp_analytify = $GLOBALS['WP_ANALYTIFY'];
-		$url = '';
+				 $wp_analytify = $GLOBALS['WP_ANALYTIFY'];
+				 $url = array(
+					 'next'            => $wp_analytify->pa_setting_url(),
+					 'scope'           => ANALYTIFY_SCOPE,
+					 'response_type'   => 'code',
+					 'access_type'     => 'offline',
+					 'approval_prompt' => 'force',
+				 );
 
-		if ( 'on' == $wp_analytify->settings->get_option( 'user_advanced_keys','wp-analytify-advanced' ) ) {
+				 if ( 'on' == $wp_analytify->settings->get_option( 'user_advanced_keys','wp-analytify-advanced' ) ) {
 
-			$redirect_url   = $wp_analytify->settings->get_option( 'redirect_uri','wp-analytify-advanced' );
-			$client_id      = $wp_analytify->settings->get_option( 'client_id','wp-analytify-advanced' );
+					 $redirect_url   = $wp_analytify->settings->get_option( 'redirect_uri','wp-analytify-advanced' );
+					 $client_id      = $wp_analytify->settings->get_option( 'client_id','wp-analytify-advanced' );
 
-		} else {
+					 $url['redirect_uri'] = $redirect_url;
+					 $url['client_id']    = $client_id;
 
-			$redirect_url   = ANALYTIFY_REDIRECT;
-			$client_id      = ANALYTIFY_CLIENTID;
+				 } else {
+
+					 $url['redirect_uri'] = ANALYTIFY_REDIRECT;
+					 $url['client_id']    = ANALYTIFY_CLIENTID;
+					 // used to redirect the user back to site.
+					 $url['state']        = get_admin_url() . 'admin.php?page=analytify-settings';
+				 }
+
+				 return http_build_query( $url );
+
+			 }
+
+
+
+			 static function fetch_profiles_list() {
+
+				 $wp_analytify = $GLOBALS['WP_ANALYTIFY'];
+				 $profiles = get_transient( 'profiles_list' );
+
+				 if ( ! $profiles && get_option( 'pa_google_token' ) ) {
+
+					 $profiles = $wp_analytify->pt_get_analytics_accounts();
+					 set_transient( 'profiles_list' , $profiles, 0 );
+				 }
+
+				 return $profiles;
+			 }
+
+			 /**
+			 * Fetch list of all profiles in dropdown
+			 *
+			 * @since  2.0.0
+			 * @return object accounts list
+			 */
+			 static function fetch_profiles_list_summary() {
+
+				 $wp_analytify = $GLOBALS['WP_ANALYTIFY'];
+				 $profiles = get_option( 'profiles_list_summary' );
+
+				 if ( ! $profiles && get_option( 'pa_google_token' ) ) {
+
+					 $profiles = $wp_analytify->pt_get_analytics_accounts_summary();
+					 update_option( 'profiles_list_summary' , $profiles );
+				 }
+
+				 return $profiles;
+			 }
+
+
+			 /**
+			 * This function is used to fetch the profile name, UA Code from selected account/property.
+			 *
+			 */
+			 static function search_profile_info( $id, $index ) {
+
+				 if ( ! get_option( 'pa_google_token' ) ) { return; }
+
+				 $accounts = self::fetch_profiles_list_summary();
+
+				 if ( ! $accounts ) {
+					 return false;
+				 }
+
+				 // if array that means the hide profile is enabled.
+				 if ( is_array( $accounts ) ) {
+					 foreach ( $accounts as $key => $account ) {
+						 foreach ( $account->getProfiles() as $profile ) {
+
+							 // Get Property ID i.e UA Code
+							 if ( $profile->getId() === $id && $index === 'webPropertyId') {
+								 return $account->getId();
+							 }
+
+							 // Get Property URL i.e analytify.io
+							 if ( $profile->getId() === $id && $index === 'websiteUrl') {
+								 return $account->getWebsiteUrl();
+							 }
+
+							 // Get Profile view i.e All website data
+							 if ( $profile->getId() === $id && $index === 'name') {
+								 return $profile->getName();
+							 }
+
+							 // Get Account Id .
+							 if ( $profile->getId() === $id && $index === 'accountId') {
+								 return $key;
+							 }
+
+							 // Get Internal Web Property Id.
+							 if ( $profile->getId() === $id && $index === 'internalWebPropertyId') {
+								 return $account->getInternalWebPropertyId();
+							 }
+
+							 // Get Profile view id i.e for the goals addons.
+							 if ( $profile->getId() === $id && $index === 'viewId' ) {
+								 return $profile->getId();
+							 }
+
+						 }
+					 }
+
+
+				 } else {
+
+					 foreach ( $accounts->getItems() as $account ) {
+						 foreach ( $account->getWebProperties() as  $property ) {
+							 foreach ( $property->getProfiles() as $profile ) {
+
+								 // Get Property ID i.e UA Code
+								 if ( $profile->getId() === $id && $index === 'webPropertyId') {
+									 return $property->getId();
+								 }
+
+								 // Get Property URL i.e analytify.io
+								 if ( $profile->getId() === $id && $index === 'websiteUrl') {
+									 return $property->getWebsiteUrl();
+								 }
+
+								 // Get Profile view i.e All website data
+								 if ( $profile->getId() === $id && $index === 'name') {
+									 return $profile->getName();
+								 }
+
+								 // Get Account Id .
+								 if ( $profile->getId() === $id && $index === 'accountId') {
+									 return $account->getId();
+								 }
+
+								 // Get Internal Web Property Id.
+								 if ( $profile->getId() === $id && $index === 'internalWebPropertyId') {
+									 return $property->getInternalWebPropertyId();
+								 }
+
+								 // Get Profile view i.e All website data
+								 if ( $profile->getId() === $id && $index === 'viewId' ) {
+									 return $profile->getId();
+								 }
+							 }
+						 }
+					 }
+
+				 }
+
+			 }
+
+			 /**
+			 * Return the UA Code for selected profile.
+			 *
+			 * @since 2.0.4
+			 */
+			 static function get_UA_code() {
+
+				 $_ua_code = get_option( 'analytify_ua_code' );
+				 if ( $_ua_code ) {
+					 return $_ua_code;
+				 } else {
+					 $_ua_code =	WP_ANALYTIFY_FUNCTIONS::search_profile_info( $GLOBALS['WP_ANALYTIFY']->settings->get_option( 'profile_for_posts', 'wp-analytify-profile' ), 'webPropertyId' );
+					 update_option( 'analytify_ua_code', $_ua_code );
+					 return $_ua_code;
+				 }
+
+			 }
+
+			 static function is_connected() {
+
+			 }
+
+			 static function is_profile_selected() {
+
+				 $load_profile_settings = get_option( 'wp-analytify-profile' );
+
+				 if ( !empty( $load_profile_settings['profile_for_posts'] ) && !empty( $load_profile_settings['profile_for_dashboard'] ) ) {
+
+					 return true;
+				 }
+
+			 }
+
+			 static function get_ga_report_url( $dashboard_profile_ID ) {
+				 return 'a' .  WP_ANALYTIFY_FUNCTIONS::search_profile_info( $dashboard_profile_ID, 'accountId' ) . 'w' . WP_ANALYTIFY_FUNCTIONS::search_profile_info( $dashboard_profile_ID, 'internalWebPropertyId' ) . 'p' . $dashboard_profile_ID . '/';
+			 }
+
+			 static function get_ga_report_range( $start_date, $end_date, $compare_start_date, $compare_end_date ) {
+				 return '%3F_u.date00%3D' . str_replace( '-', '', $start_date ) .'%26_u.date01%3D' . str_replace( '-', '', $end_date ) . '%26_u.date10%3D' . str_replace( '-', '', $compare_start_date ) .'%26_u.date11%3D' . str_replace( '-', '', $compare_end_date ) ;
+			 }
+		 }
+
+function analytify_get_logger() {
+	static $logger = null;
+
+	$class = apply_filters( 'woocommerce_logging_class', 'ANALYTIFY_Logger' );
+
+	if ( null === $logger || ! is_a( $logger, $class ) ) {
+		$implements = class_implements( $class );
+
+		if ( is_array( $implements ) && in_array( 'ANALYTIFY_Logger_Interface', $implements, true ) ) {
+			if ( is_object( $class ) ) {
+				$logger = $class;
+			} else {
+				$logger = new $class();
+			}
+
 		}
-
-		$url = http_build_query( array(
-			'next'            => $wp_analytify->pa_setting_url(),
-			'scope'           => ANALYTIFY_SCOPE,
-			'response_type'   => 'code',
-			'state'           => get_admin_url() . 'admin.php?page=analytify-settings',
-			'redirect_uri'    => $redirect_url,
-			'client_id'       => $client_id,
-			'access_type'     => 'offline',
-			'approval_prompt' => 'force',
-			)
-		);
-
-		return $url;
-
 	}
 
+	return $logger;
+}
 
 
-	static function fetch_profiles_list() {
-
-		$wp_analytify = $GLOBALS['WP_ANALYTIFY'];
-		$profiles = get_transient( 'profiles_list' );
-
-		if ( ! $profiles && get_option( 'pa_google_token' ) ) {
-
-			$profiles = $wp_analytify->pt_get_analytics_accounts();
-			set_transient( 'profiles_list' , $profiles, 0 );
-		}
-
-		return $profiles;
+/**
+ * Registers the default log handler.
+ *
+ * @since 2.1.23
+ * @param array $handlers Handlers.
+ * @return array
+ */
+function analytify_register_default_log_handler( $handlers ) {
+	if ( defined( 'ANALYTIFY_LOG_HANDLER' ) && class_exists( ANALYTIFY_LOG_HANDLER ) ) {
+		$handler_class   = ANALYTIFY_LOG_HANDLER;
+		$default_handler = new $handler_class();
+	} else {
+		$default_handler = new ANALYTIFY_Log_Handler_File();
 	}
 
-	/**
-	 * Fetch list of all profiles in dropdown
-	 *
-	 * @since  2.0.0
-	 * @return object accounts list
-	 */
-	static function fetch_profiles_list_summary() {
+	array_push( $handlers, $default_handler );
 
-		$wp_analytify = $GLOBALS['WP_ANALYTIFY'];
-		$profiles = get_option( 'profiles_list_summary' );
+	return $handlers;
+}
+add_filter( 'analytify_register_log_handlers', 'analytify_register_default_log_handler' );
 
-		if ( ! $profiles && get_option( 'pa_google_token' ) ) {
 
-			$profiles = $wp_analytify->pt_get_analytics_accounts_summary();
-			update_option( 'profiles_list_summary' , $profiles );
-		}
-
-		return $profiles;
+/**
+ * Remove non-Analytify notices from Analytify page.
+ *
+ * @since 2.1.23
+ */
+function hide_non_analytify_notice () {
+	// Return if not Analytify page.
+	if ( empty( $_REQUEST['page'] ) || strpos( $_REQUEST['page'], 'analytify' ) === false ) {
+		return;
 	}
 
+	global $wp_filter;
+	if ( !empty( $wp_filter['user_admin_notices']->callbacks ) && is_array( $wp_filter['user_admin_notices']->callbacks ) ) {
+		foreach( $wp_filter['user_admin_notices']->callbacks as $priority => $hooks ) {
+			foreach ( $hooks as $name => $arr ) {
 
-	/**
-	 * This function is used to fetch the profile name, UA Code from selected account/property.
-	 *
-	 */
-	static function search_profile_info( $id, $index ) {
+				if ( is_object( $arr['function'] ) && $arr['function'] instanceof Closure ) {
+					unset( $wp_filter['user_admin_notices']->callbacks[ $priority ][ $name ] );
+					continue;
+				}
 
-		if ( ! get_option( 'pa_google_token' ) ) { return; }
-
-		$accounts = self::fetch_profiles_list_summary();
-
-		if ( ! $accounts ) {
-			return false;
-		}
-
-		foreach ( $accounts->getItems() as $account ) {
-			foreach ( $account->getWebProperties() as  $property ) {
-				foreach ( $property->getProfiles() as $profile ) {
-
-					// Get Property ID i.e UA Code
-					if ( $profile->getId() === $id && $index === 'webPropertyId') {
-						return $property->getId();
-					}
-
-					// Get Property URL i.e analytify.io
-					if ( $profile->getId() === $id && $index === 'websiteUrl') {
-						return $property->getWebsiteUrl();
-					}
-
-					// Get Profile view i.e All website data
-					if ( $profile->getId() === $id && $index === 'name') {
-						return $profile->getName();
-					}
+				if ( ( ! empty( $arr['function'][0] ) && is_object( $arr['function'][0] ) && strpos( strtolower( get_class( $arr['function'][0] ) ), 'analytify' ) !== false ) || 'WPANALYTIFY_Utils' == $arr['function'][0] ) {
+					continue;
+				}
+				if ( !empty( $name ) && strpos( $name, 'analytify' ) === false ) {
+					unset( $wp_filter['user_admin_notices']->callbacks[$priority][$name] );
 				}
 			}
 		}
 	}
 
-	/**
-	 * Return the UA Code for selected profile.
-	 *
-	 * @since 2.0.4
-	 */
-	static function get_UA_code() {
-
-		$_ua_code = get_option( 'analytify_ua_code' );
-		if ( $_ua_code ) {
-			return $_ua_code;
-		} else {
-			$_ua_code =	WP_ANALYTIFY_FUNCTIONS::search_profile_info( $GLOBALS['WP_ANALYTIFY']->settings->get_option( 'profile_for_posts', 'wp-analytify-profile' ), 'webPropertyId' );
-			update_option( 'analytify_ua_code', $_ua_code );
-			return $_ua_code;
+	if ( !empty( $wp_filter['admin_notices']->callbacks ) && is_array( $wp_filter['admin_notices']->callbacks ) ) {
+		foreach( $wp_filter['admin_notices']->callbacks as $priority => $hooks ) {
+			foreach ( $hooks as $name => $arr ) {
+				if ( is_object( $arr['function'] ) && $arr['function'] instanceof Closure ) {
+					unset( $wp_filter['admin_notices']->callbacks[ $priority ][ $name ] );
+					continue;
+				}
+				if ( ( ! empty( $arr['function'][0] ) && is_object( $arr['function'][0] ) && strpos( strtolower( get_class( $arr['function'][0] ) ), 'analytify' ) !== false ) || 'WPANALYTIFY_Utils' == $arr['function'][0] ) {
+					continue;
+				}
+				if ( !empty( $name ) && strpos( $name, 'analytify' ) === false ) {
+					unset( $wp_filter['admin_notices']->callbacks[$priority][$name] );
+				}
+			}
 		}
-
 	}
 
-	static function is_connected() {
+	if ( !empty( $wp_filter['all_admin_notices']->callbacks ) && is_array( $wp_filter['all_admin_notices']->callbacks ) ) {
+		foreach( $wp_filter['all_admin_notices']->callbacks as $priority => $hooks ) {
+			foreach ( $hooks as $name => $arr ) {
 
-	}
-
-	static function is_profile_selected() {
-
-		$load_profile_settings = get_option( 'wp-analytify-profile' );
-
-		if ( !empty( $load_profile_settings['profile_for_posts'] ) && !empty( $load_profile_settings['profile_for_dashboard'] ) ) {
-
-			return true;
+				if ( is_object( $arr['function'] ) && $arr['function'] instanceof Closure ) {
+					unset( $wp_filter['all_admin_notices']->callbacks[ $priority ][ $name ] );
+					continue;
+				}
+				if ( ( ! empty( $arr['function'][0] ) && is_object( $arr['function'][0] ) && strpos( strtolower( get_class( $arr['function'][0] ) ), 'analytify' ) !== false ) || 'WPANALYTIFY_Utils' == $arr['function'][0] ) {
+					continue;
+				}
+				if ( !empty( $name ) && strpos( $name, 'analytify' ) === false ) {
+					unset( $wp_filter['all_admin_notices']->callbacks[$priority][$name] );
+				}
+			}
 		}
-
 	}
 }
+add_action( 'admin_print_scripts', 'hide_non_analytify_notice' );
+add_action( 'admin_head', 'hide_non_analytify_notice', PHP_INT_MAX  );

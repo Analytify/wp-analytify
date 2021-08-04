@@ -12,4 +12,4 @@ function show_realtime_dashboard ( $current ) {
 
   <?php
 
-} ?>
+}

@@ -79,7 +79,7 @@ msgid "Access denied for: %s"
 msgstr "Toegang geweigerd voor: %s"
 
 #: analytify-general.php:473
-msgid "No activity this period"
+msgid "No Activity During This Period."
 msgstr "Geen activiteiten deze periode"
 
 #: classes/analytify-sanitize.php:39

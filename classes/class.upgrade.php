@@ -163,4 +163,45 @@ if ( ! get_option( 'analytify_free_upgrade_routine' ) ) {
 	$WP_Analytify_Compatibility_Upgrade = new WP_Analytify_Compatibility_Upgrade();
 	update_option( 'analytify_free_upgrade_routine', 'done' );
 }
-?>
+
+// Add modules options array, if not available.
+if ( ! get_option( 'wp_analytify_modules' ) ) {
+	update_option( 'wp_analytify_modules', [
+		'events-tracking' => [
+			'status' => 'active',
+			'slug' => 'events-tracking',
+			'page_slug' => 'analytify-events',
+			'title' => __( 'Events Tracking', 'wp-analytify' ),
+			'description' => __( 'This Add-on will track custom events in a unique and intiutive way which is very understandable even for non-technical WordPress users.', 'wp-analytify' ),
+			'image' => 'https://analytify.io/wp-content/uploads/2021/02/analytify-events-tracking.svg',
+			'url' => 'https://analytify.io/add-ons/',
+		],
+		'custom-dimensions' => [
+			'status' => 'active',
+			'slug' => 'custom-dimensions',
+			'page_slug' => 'analytify-dimensions',
+			'title' => __( 'Custom Dimensions', 'wp-analytify' ),
+			'description' => __( 'With the Custom Dimensions addon you can view data which can be segmented and organized according to your businesses.', 'wp-analytify' ),
+			'image' => 'https://analytify.io/wp-content/uploads/2021/02/analytify-custom-dimensions.svg',
+			'url' => 'https://analytify.io/add-ons/',
+		],
+		'google-optimize' => [
+			'status' => 'active',
+			'slug' => 'google-optimize',
+			'page_slug' => 'analytify-optimize',
+			'title' => __( 'Google Optimize', 'wp-analytify' ),
+			'description' => __( 'Google Optimize addon will easily track the results from different Google Ads campaigns and display within your WordPress dashboard.', 'wp-analytify' ),
+			'image' => 'https://analytify.io/wp-content/uploads/2021/02/analytify-google-optimize.svg',
+			'url' => 'https://analytify.io/add-ons/',
+		],
+		'amp' => [
+			'status' => false,
+			'slug' => 'amp',
+			'page_slug' => 'analytify-amp',
+			'title' => __( 'AMP', 'wp-analytify' ),
+			'description' => __( 'Analytify\'s AMP Addon will enable accurate reporting and tracking of mobile visitors to your AMP pages. ', 'wp-analytify' ),
+			'image' => 'https://analytify.io/wp-content/uploads/2021/02/analytify-google-amp.svg',
+			'url' => 'https://analytify.io/add-ons/',
+		],
+	] );
+}

@@ -52,4 +52,3 @@ function fetch_socialmedia_stats( $current, $stats, $return = false ) {
 
 
 }
-?>

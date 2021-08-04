@@ -17,7 +17,7 @@
   margin: auto
 }
 #analytify-splash {
-  width: 80%;
+  width: calc(100% - 40px);
   margin: auto;
   background-color: #fdfdfd;
   text-align: center
@@ -25,7 +25,12 @@
 #analytify-splash h1 {
   margin-top: 40px;
   margin-bottom: 25px;
-  font-size: 26px
+  font-size: 26px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.admin_page_analytify-optin .wp-analytify-notification.wp-analytify-danger{
+  margin-left: 20px;
 }
 #analytify-splash-main {
   padding-bottom: 0
@@ -48,7 +53,8 @@
   margin: 0
 }
 #analytify-splash-footer {
-  width: 80%;
+  width: calc(100% - 40px);
+  max-width: 1260px;
   padding: 15px 0;
   border: 1px solid #d5d5d5;
   font-size: 10px;
@@ -142,8 +148,7 @@
   padding-right: 0;
 }
 #analytify-splash{
-  max-width: calc(100% - 64px);
-
+  max-width: 1260px;
   background: #f1f1f1;
 }
 .analytify-splash-box{
@@ -154,10 +159,9 @@
 }
 .about-wrap {
   position: relative;
-  margin: 25px 35px 0 35px;
-  max-width: 80%;
+  max-width: 1260px;
   font-size: 15px;
-  width: calc(100% - 64px);
+  width: calc(100% - 40px);
   margin: 0 auto;
 }
 .wp-analytify-left-screenshot{
@@ -172,8 +176,18 @@
 .about-wrap .about-description, .about-wrap .about-text{
   font-size: 16px;
 }
-.about-wrap .feature-section h4,.about-wrap .changelog h3{
-  font-size: 1em;
+.about-wrap .feature-section h4{
+  font-size: 1.1em;
+  line-height: 1.2;
+  margin: 25px 0 5px;
+}
+.about-wrap .changelog h3{
+  font-size: 1.6em;
+  line-height: 1.6;
+  margin: 25px 0 10px;
+}
+.changelog.optin-licens-section .feature-section{
+  margin-top: 0;
 }
 h5{
   font-size: 1em;
@@ -183,8 +197,8 @@ h5{
   margin-right: 30px !important;
 }
 .about-wrap img{
-
-  width: 50%;
+  width: 56%;
+  box-sizing: border-box;
 }
 .analytify-text-settings{
   overflow: hidden;
@@ -218,9 +232,9 @@ h5{
 #analytify-splash-footer{
   font-size: 12px;
 }
-.about-wrap .changelog.analytify-backend-settings{
+/* .about-wrap .changelog.analytify-backend-settings{
   margin-bottom: 20px;
-}
+} */
 .analytify-backend-settings .feature-section{
   padding-bottom: 20px;
 }
@@ -235,55 +249,121 @@ a.analytify-ga-button.button.button-primary{
 }
 
 #analytify-logo-text{
-  margin-right: 40px;
+  margin-right: 20px;
   position: relative;
-  bottom: -5px;
+  top: -3px;
   width: 55px;
+  vertical-align: middle;
 }
-    .wp-analytify-badge {
-      height: 200px;
-      width: 200px;
-      margin: -12px -5px;
-      background: url("<?php echo plugins_url( 'assets/images/welcome-analytify.png', __FILE__ ); ?>") no-repeat;
-      background-size: 100% auto;
-    }
+.wp-analytify-badge {
+  height: 200px;
+  width: 200px;
+  margin: -12px -5px;
+  background: url("<?php echo plugins_url( 'assets/images/welcome-analytify.png', __FILE__ ); ?>") no-repeat;
+  background-size: 100% auto;
+}
+.about-wrap .wp-analytify-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.wp-analytify-welcome-screenshots {
+  float: right;
+  margin-left: 30px !important;
+  /* border:1px solid #ccc; */
+  padding:0;
+  /* box-shadow:4px 4px 0px rgba(0,0,0,.05); */
+}
+.about-wrap .feature-section {
+  overflow: hidden;
+  margin-top: 20px;
+}
+.about-wrap .feature-section p{
+  max-width: none !important;
+}
+.analytify-welcome-settings{
+  clear: both;
+  padding-top: 20px;
+}
+.wp-analytify-left-screenshot {
+  float: left !important;
+}
+html[dir="rtl"] .step-wrapper .step{
+  float: right;
+}
+html[dir="rtl"] .step-wrapper.slide{
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+}
+.analytify-optin-loader{
+  margin-top: 35px;
+  display:none;
+}
+.analytify-skip-loader{
+  margin-left: 10px;
+  display:none;
+}
+.newfeatures .feature-section{
+  margin-bottom: 0px;
+  margin-top: 0;
+}
+.newfeatures:not(:last-child) {
+  margin-bottom: 50px;
+}
 
-    .about-wrap .wp-analytify-badge {
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-
-    .wp-analytify-welcome-screenshots {
-      float: right;
-      margin-left: 10px !important;
-      border:1px solid #ccc;
-      padding:0;
-      box-shadow:4px 4px 0px rgba(0,0,0,.05)
-    }
-
-    .about-wrap .feature-section {
-      margin-top: 20px;
-    }
-
-    .about-wrap .feature-section p{
-      max-width: none !important;
-    }
-
-    .analytify-welcome-settings{
-      clear: both;
-      padding-top: 20px;
-    }
-    .wp-analytify-left-screenshot {
-      float: left !important;
+@media only screen and (max-width: 1100px){
+  .about-wrap img {
+    width: 100%;
+    margin-bottom: 20px;
   }
-  html[dir="rtl"] .step-wrapper .step{
-    float: right;
+  .about-wrap img {
+    float: none;
+    margin-left: 0px !important;
+    border: 1px solid #ccc;
+    padding: 0;
   }
-  html[dir="rtl"] .step-wrapper.slide{
-    -webkit-transform: translateX(50%);
-    transform: translateX(50%);
+  .analytify-text-settings {
+    overflow: visible;
   }
+  .about-wrap .changelog .feature-section .analytify-text-settings>h4:first-child, 
+  .about-wrap .changelog .feature-section>h4{
+    margin-top: 0;
+  }
+  .changelog.optin-licens-section h3{
+    margin-top: 0;
+  }
+  .changelog.analytify-backend-settings{
+    margin-bottom: 0;
+  }
+  .about-wrap .feature-section img.wp-analytify-left-screenshot {
+    margin-right: 0 !important;
+  }
+  .about-wrap .changelog {
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 767px){
+  .about-wrap .nav-tab {
+    font-size: 14px;
+  }
+  .about-wrap .changelog h3 {
+    font-size: 1.4em;
+    line-height: 1.4;
+  }
+  #analytify-splash h1 {
+    margin-top: 40px;
+    font-size: 20px;
+  }
+  #analytify-logo-text {
+    margin-right: 10px;
+    width: 40px;
+  }
+  #analytify-ga-submit-btn{
+    margin-top: 0;
+  }
+}
+
+
 </style>
 <?php
 
@@ -311,8 +391,8 @@ echo '<h1> <img id="analytify-logo-text" src="' . plugins_url( 'assets/images/no
     if ( get_site_option( '_analytify_optin' ) == 'no' || ! get_site_option( '_analytify_optin' ) ) {
     echo "<div class='first-step step'>";
       echo '<p id="analytify-splash-main-text">' .  sprintf ( __( 'Hey %2$s,  %4$s If you opt-in some data about your installation of Analytify will be sent to analytify.io (This doesn\'t include stats)%4$s and You will receive new feature updates, security notifications etc %7$sNo Spam, I promise.%8$s %4$s%4$s Help us %5$sImprove Google Analytics by Analytify%6$s %4$s %4$s ', 'wp-analytify' ), '<br>', '<strong>' . $name . '</strong>', '<strong>' . $website . '</strong>', '<br>', '<strong>', '</strong>', '<i>', '</i>' ) . '</p>';
-      echo "<button type='submit' id='analytify-ga-submit-btn' class='analytify-ga-button button button-primary' name='analytify-submit-optin' >" . __( 'Allow and Continue  ', 'analytify-ga') . "</button><br>";
-      echo "<button type='submit' id='analytify-ga-optout-btn' name='analytify-submit-optout' >" . __( 'Skip This Step', 'analytify-ga') . "</button>";
+      echo "<button type='submit' id='analytify-ga-submit-btn' class='analytify-ga-button button button-primary' name='analytify-submit-optin' >" . __( 'Allow and Continue  ', 'analytify-ga') . "</button><img class='analytify-optin-loader' src='". admin_url( 'images/spinner.gif' ) ."'/><br>";
+      echo "<button type='submit' id='analytify-ga-optout-btn' name='analytify-submit-optout' >" . __( 'Skip This Step', 'analytify-ga') . "</button><img class='analytify-skip-loader' src='". admin_url( 'images/spinner.gif' ) ."'/>";
       echo '<div id="analytify-splash-permissions" class="analytify-splash-box">';
         echo '<a id="analytify-splash-permissions-toggle" href="#" >' . __( 'What permissions are being granted?', 'wp-analytify' ) . '</a>';
         echo '<div id="analytify-splash-permissions-dropdown" style="display: none;">';
@@ -360,8 +440,8 @@ echo '</form>';
 <script type="text/javascript">
 jQuery(document).ready(function(s) {
   var o = parseInt(s("#analytify-splash-footer").css("margin-top"));
-  s("#analytify-splash-permissions-toggle").click(function(a) {
-    a.preventDefault(), s("#analytify-splash-permissions-dropdown").toggle(), 1 == s("#analytify-splash-permissions-dropdown:visible").length ? s("#analytify-splash-footer").css("margin-top", o - 208 + "px") : s("#analytify-splash-footer").css("margin-top", o + "px")
+  s("#analytify-splash-permissions-toggle").on('click', function(a) {
+    a.preventDefault(), s("#analytify-splash-permissions-dropdown").toggle(), 1 == s("#analytify-splash-permissions-dropdown:visible").length ? s("#analytify-splash-footer").css("margin-top", o + "px") : s("#analytify-splash-footer").css("margin-top", o + "px")
   })
 });
 
@@ -381,13 +461,13 @@ jQuery(document).ready(function(s) {
   </h2>
   <div class="analytify-tab-content active" id="get-started">
     <p class="about-description">
-      <?php echo sprintf( esc_html__( 'Getting started with Analytify, plugin settings are very easy to use and ready to go in minutes. If there is something you don\'t understand or confusing, do ask us on %1$sWordPress.org support forum%2$s without hesitation.', 'wp-analytify' ), ' <a href="http://wordpress.org/support/plugin/wp-analytify/" tagget="_blank">', '</a>');?>
+      <?php echo sprintf( esc_html__( 'Getting started with Analytify, plugin settings are very easy to use and ready to go in minutes. If there is something you don\'t understand or confusing, do ask us on %1$sWordPress.org support forum%2$s without hesitation.', 'wp-analytify' ), ' <a href="https://wordpress.org/support/plugin/wp-analytify/" target="_blank">', '</a>');?>
     </p>
 
     <div class="changelog">
     <br />
       <div class="feature-section">
-        <img width="414" src="<?php echo plugins_url( 'assets/images/authenticate2.png',dirname( __FILE__ ) );?>" alt="" class="wp-analytify-welcome-screenshots">
+        <img width="414" src="<?php echo plugins_url( 'assets/images/authenticate2-new.png',dirname( __FILE__ ) );?>" alt="" class="wp-analytify-welcome-screenshots">
         <div class="analytify-text-settings">
 
           <h4><?php esc_html_e( 'Step 1: Authentication', 'wp-analytify' );?></h4>
@@ -403,7 +483,7 @@ jQuery(document).ready(function(s) {
       <h3><?php esc_html_e( 'Step 2: Setting up profiles', 'wp-analytify' );?></h3>
 
       <div class="feature-section">
-        <img src="<?php echo plugins_url( 'assets/images/profile-data.png', dirname( __FILE__ ) );?>" alt="" class="wp-analytify-welcome-screenshots wp-analytify-left-screenshot">
+        <img src="<?php echo plugins_url( 'assets/images/profile-data-new.png', dirname( __FILE__ ) );?>" alt="" class="wp-analytify-welcome-screenshots wp-analytify-left-screenshot">
         <div class="analytify-text-settings">
           <h4><?php esc_html_e( 'Profile Tab', 'wp-analytify' );?></h4>
           <p><?php esc_html_e( 'This tab section consists of many important settings. After Authentication, Setup your profiles here. All of the options are easy to understand.', 'wp-analytify' );?></p>
@@ -432,7 +512,7 @@ jQuery(document).ready(function(s) {
 
       <div class="feature-section col three-col">
 
-        <img src="<?php echo plugins_url( 'assets/images/front-end.png', dirname( __FILE__ ) );?>" alt="" class="wp-analytify-welcome-screenshots">
+        <img src="<?php echo plugins_url( 'assets/images/front-end-new.png', dirname( __FILE__ ) );?>" alt="" class="wp-analytify-welcome-screenshots">
 
         <h4><?php esc_html_e( 'Front Tab', 'wp-analytify' );?></h4>
         <p><?php echo sprintf( esc_html__( 'In version %4$s, We have introduced the %1$s New Front-end Analytics%2$s which will fetch the stats like backend but with an awesome UI for front-end stats. It was a long awaited feature which was under development since 1.0 but finally It is here. It can be customized (if you are good at CSS) according to your website look and feel. %3$s Below are it\'s important options: ', 'wp-analytify' ), '<em>', '</em>', '<br /><br />', ANALYTIFY_VERSION);?></p>
@@ -466,7 +546,7 @@ jQuery(document).ready(function(s) {
 
         <div class="feature-section col three-col">
 
-          <img src="<?php echo plugins_url( 'assets/images/admin-end.png', dirname( __FILE__ ) );?>" alt="" class="wp-analytify-welcome-screenshots wp-analytify-left-screenshot">
+          <img src="<?php echo plugins_url( 'assets/images/admin-end-new.png', dirname( __FILE__ ) );?>" alt="" class="wp-analytify-welcome-screenshots wp-analytify-left-screenshot">
           <div class="analytify-text-settings">
             <h4><?php esc_html_e( 'Admin Tab', 'wp-analytify' );?></h4>
             <p><?php esc_html_e( 'Admin tab section is to manage the Analytics panels under EDIT screen of post/pages in wp-admin.', 'wp-analytify' );?></p>
@@ -497,7 +577,7 @@ jQuery(document).ready(function(s) {
         </div>
       </div>
 
-      <div class="changelog">
+      <div class="changelog optin-licens-section">
         <h3><?php esc_html_e( 'Licensing', 'wp-analytify' );?></h3>
 
         <div class="feature-section">
@@ -513,7 +593,7 @@ jQuery(document).ready(function(s) {
 
         <div class="feature-section">
 
-          <img width="414" src="<?php echo plugins_url( 'assets/images/authenticate2.png', dirname( __FILE__ ) ); ?>" class="wp-analytify-welcome-screenshots"/>
+          <img width="414" src="<?php echo plugins_url( 'assets/images/authenticate2-new.png', dirname( __FILE__ ) ); ?>" class="wp-analytify-welcome-screenshots"/>
           <div class="analytify-text-settings">
             <h4><?php esc_html_e( 'Simple Authentication', 'wp-analytify' );?></h4>
             <p>
@@ -556,7 +636,7 @@ jQuery(document).ready(function(s) {
           </div>
 
           <div class="newfeatures">
-            <img width="414" height="" src="<?php echo plugins_url( 'assets/images/front-end.png', dirname( __FILE__ ) ); ?>" class="wp-analytify-welcome-screenshots"/>
+            <img width="414" height="" src="<?php echo plugins_url( 'assets/images/front-end-new.png', dirname( __FILE__ ) ); ?>" class="wp-analytify-welcome-screenshots"/>
             <div class="analytify-text-settings">
               <h3><?php esc_html_e( 'Front-end Statistics', 'wp-analytify' );?></h3>
               <p>
@@ -595,7 +675,7 @@ jQuery(document).ready(function(s) {
           </div>
           <div class="analytify-tab-content" id="credits">
 
-            <p class="about-description">Analytify is developed by <a href="http://wpbrigade.com/"> WPBrigade</a> i.e brigade of WordPress developers.</p>
+            <p class="about-description">Analytify is developed by <a href="https://wpbrigade.com/" target="_blank">WPBrigade</a> - A WordPress Development Agency.</p>
           </div>
 
         </div>
@@ -610,25 +690,39 @@ jQuery(document).ready(function(s) {
 
           $('#analytify-ga-submit-btn').on('click', function(e){
             e.preventDefault();
-            $('.step-wrapper').addClass('slide');
+            // $('.step-wrapper').addClass('slide');
             $.ajax({
               url: ajaxurl,
               type: 'POST',
               data: {
                 action: 'analytify_optin_yes'
+              },
+              beforeSend: function(){
+                $('#analytify-ga-submit-btn').attr('disabled', 'disabled');
+                $('.analytify-optin-loader').css('display', 'initial');
               }
+            })
+            .always(function() {
+              $(location).attr('href', '<?php echo esc_url( admin_url( 'admin.php?page=analytify-settings') ) ?>')
             });
           });
 
           $('#analytify-ga-optout-btn').on('click', function(event) {
             event.preventDefault();
-            $('.step-wrapper').addClass('slide');
+            // $('.step-wrapper').addClass('slide');
             $.ajax({
               url: ajaxurl,
               type: 'POST',
               data: {
                 action: 'analytify_optin_skip'
+              },
+              beforeSend: function(){
+                $('#analytify-ga-optout-btn').attr('disabled', 'disabled');
+                $('.analytify-skip-loader').css('display', 'initial');
               }
+            })
+            .always(function() {
+              $(location).attr('href', '<?php echo esc_url( admin_url( 'admin.php?page=analytify-settings') ) ?>')
             });
 
           });
@@ -637,8 +731,7 @@ jQuery(document).ready(function(s) {
         </script>
         <?php
         echo '<div id="analytify-splash-footer">';
-        echo '<a target="_blank" href="#">' . _x( 'Terms', 'as in terms and conditions', 'wp-analytify' ) . '</a> | <a target="_blank" href="#">' . _x( 'Privacy', 'as in privacy policy', 'wp-analytify' ) . '</a> | ';
+        echo '<a target="_blank" href="https://analytify.io/pricing/">' . _x( 'Terms', 'as in terms and conditions', 'wp-analytify' ) . '</a> | <a target="_blank" href="https://analytify.io/pricing/">' . _x( 'Privacy', 'as in privacy policy', 'wp-analytify' ) . '</a> | ';
         echo '<a href="'. esc_url( admin_url( 'admin.php?page=analytify-settings') ) .'" > '. __( 'Go to Analytify Settings', 'wp-analytify' ) .'</a>  | ';
-        echo '<a href="http://analytify.io/changelog/" > '. __( 'View the Full Changelog', 'wp-analytify' ) .'</a>';
+        echo '<a href="https://analytify.io/changelog/" > '. __( 'View the Full Changelog', 'wp-analytify' ) .'</a>';
         echo '</div>';
-        ?>
