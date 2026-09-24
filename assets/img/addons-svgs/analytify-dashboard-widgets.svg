@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="84px" height="70px" viewBox="0 0 84 70" style="enable-background:new 0 0 84 70;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#F1F1F1;}
+	.st1{fill:#B4B9BE;}
+	.st2{fill:#D4D6D8;}
+	.st3{fill:#9EA3A8;}
+	.st4{fill:#00B9EB;}
+	.st5{fill:#FF5252;}
+</style>
+<g>
+	<g>
+		<path class="st0" d="M6,69.5c-3,0-5.5-2.5-5.5-5.5V6C0.5,3,3,0.5,6,0.5h72c3,0,5.5,2.5,5.5,5.5v58c0,3-2.5,5.5-5.5,5.5H6z"/>
+		<path class="st1" d="M78,1c2.8,0,5,2.2,5,5v58c0,2.8-2.2,5-5,5H6c-2.8,0-5-2.2-5-5V6c0-2.8,2.2-5,5-5H78 M78,0H6C2.7,0,0,2.7,0,6    v58c0,3.3,2.7,6,6,6h72c3.3,0,6-2.7,6-6V6C84,2.7,81.3,0,78,0L78,0z"/>
+	</g>
+	<rect x="7" y="8" class="st2" width="33" height="24"/>
+	<rect x="10" y="11" class="st1" width="27" height="4"/>
+	<rect x="17" y="18" class="st1" width="13" height="4"/>
+	<rect x="15" y="25" class="st1" width="17" height="4"/>
+	<rect x="7" y="39" class="st2" width="33" height="24"/>
+	<rect x="45" y="39" class="st2" width="33" height="24"/>
+	<path class="st3" d="M62,60L62,60c-5,0-9-4-9-9l0,0c0-5,4-9,9-9l0,0c5,0,9,4,9,9l0,0C71,56,67,60,62,60z"/>
+	<rect x="45" y="8" class="st2" width="33" height="24"/>
+	<rect x="10" y="42" class="st1" width="27" height="3"/>
+	<rect x="10" y="47" class="st1" width="27" height="3"/>
+	<rect x="10" y="52" class="st1" width="27" height="3"/>
+	<rect x="10" y="57" class="st1" width="27" height="3"/>
+	<rect x="57" y="11" class="st1" width="18" height="3"/>
+	<rect x="57" y="16" class="st1" width="18" height="3"/>
+	<rect x="57" y="21" class="st1" width="18" height="3"/>
+	<rect x="57" y="26" class="st1" width="18" height="3"/>
+	<rect x="48" y="11" class="st1" width="5" height="3"/>
+	<rect x="48" y="16" class="st1" width="5" height="3"/>
+	<rect x="48" y="21" class="st1" width="5" height="3"/>
+	<rect x="48" y="26" class="st1" width="5" height="3"/>
+	<g>
+		<path class="st4" d="M57.1,58.5c4.2,2.7,9.7,1.6,12.5-2.6L62,51L57.1,58.5z"/>
+		<path class="st5" d="M70.7,48.6L62,51l0,0l7.5,4.9C71,53.7,71.3,51,70.7,48.6z"/>
+	</g>
+</g>
+</svg>

@@ -1,15 +1,37 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName.InvalidClassFileName -- File naming is acceptable
+/**
+ * Update routine class.
+ *
+ * This class handles plugin update routines and version-specific updates.
+ *
+ * @package WP_Analytify
+ * @since 1.0.0
+ */
+
+// phpcs:ignore WordPress.Files.FileName.InvalidClassFileName -- File name follows project convention
+
+/**
+ * Update routine class.
+ *
+ * @package WP_Analytify
+ * @since 1.0.0
+ */
 class Analytify_Update_Routine {
 
-	private $current_verison = '';
+	/**
+	 * Current version.
+	 *
+	 * @var string
+	 */
+	private $current_version = '';
 
 	/**
-	 * Private constructor for singliton class.
-	 * 
+	 * Constructor.
+	 *
+	 * @param string $current_version The current version.
 	 */
-	function __construct( $current_verison ) {
-		
-		$this->current_verison = $current_verison;
+	public function __construct( $current_version ) {
+		$this->current_version = $current_version;
 		$this->run_routines();
 	}
 
@@ -19,14 +41,14 @@ class Analytify_Update_Routine {
 	 *
 	 * @return void
 	 */
-	function run_routines() {
+	private function run_routines() {
 
-		if ( version_compare( $this->current_verison, '4.1.1', '<' ) ) {
+		if ( version_compare( $this->current_version, '4.1.1', '<' ) ) {
 			$this->update_routine_411();
 		}
 
 		// Update version to latest release.
-		update_option( 'analytify_current_version', ANALYTIFY_VERSION );
+		update_option( 'analytify_current_version', defined( 'ANALYTIFY_VERSION' ) ? ANALYTIFY_VERSION : '1.0.0' );
 	}
 
 	/**
@@ -34,7 +56,7 @@ class Analytify_Update_Routine {
 	 *
 	 * @return void
 	 */
-	function update_routine_411() {
+	private function update_routine_411() {
 		update_option( 'analytify_gtag_move_to_notice', 'visible' );
 	}
 }

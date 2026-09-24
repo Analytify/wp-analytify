@@ -1,46 +1,33 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName.InvalidClassFileName
 /**
- * Base Class to use for the Add-ons
- * It will be used to extend the functionality of Analytify WordPress Plugin.
+ * Analytify General Class
  *
- *  @package WP_Analytify
+ * This is the core class that sets the foundation for the Analytify plugin.
+ * It handles analytics wrappers, SDK calls to fetch data from Google Analytics,
+ * and provides the base functionality for all other plugin components.
+ *
+ * @package WP_Analytify
+ * @since 1.0.0
+ * @version 8.0.0
+ *
+ * @author Analytify Team
+ * @license GPL-2.0+
+ *
+ * @see https://analytify.io/
+ * @see https://wordpress.org/plugins/wp-analytify/
  */
 
-// Setting Global Values.
-define( 'ANALYTIFY_LIB_PATH', dirname( __FILE__ ) . '/lib/' );
-define( 'ANALYTIFY_ID', 'wp-analytify-options' );
-define( 'ANALYTIFY_NICK', 'Analytify' );
-define( 'ANALYTIFY_ROOT_PATH', dirname( __FILE__ ) );
-define( 'ANALYTIFY_VERSION', '4.1.1' );
-define( 'ANALYTIFY_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-define( 'ANALYTIFY_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
-// Grab ClientID and ClientSecret from https://console.developers.google.com/ after creating a project there.
+		// Include core classes first.
+		require_once __DIR__ . '/classes/analytify-utils.php';
+		require_once __DIR__ . '/classes/analytify-settings.php';
+		require_once __DIR__ . '/classes/analytify-mp-ga4.php';
 
-if ( get_option( 'wpa_current_version' ) ) { // Pro Keys
-
-	define( 'ANALYTIFY_CLIENTID', '707435375568-9lria1uirhitcit2bhfg0rgbi19smjhg.apps.googleusercontent.com' );
-	define( 'ANALYTIFY_CLIENTSECRET', 'b9C77PiPSEvrJvCu_a3dzXoJ' );
-} else { // Free Keys
-
-	define( 'ANALYTIFY_CLIENTID', '958799092305-7p6jlsnmv1dn44a03ma00kmdrau2i31q.apps.googleusercontent.com' );
-	define( 'ANALYTIFY_CLIENTSECRET', 'Mzs1ODgJTpjk8mzQ3mbrypD3' );
-}
-
-define( 'ANALYTIFY_REDIRECT', 'https://analytify.io/api/' );
-define( 'ANALYTIFY_SCOPE', 'https://www.googleapis.com/auth/analytics.readonly' ); // Readonly scope.
-define( 'ANALYTIFY_DEV_KEY', 'AIzaSyDXjBezSlaVMPk8OEi8Vw5aFvteouXHZpI' );
-
-define( 'ANALYTIFY_STORE_URL', 'https://analytify.io' );
-define( 'ANALYTIFY_PRODUCT_NAME', 'Analytify WordPress Plugin' );
-
-// require_once WP_PLUGIN_DIR . '/wp-analytify-pro/inc/class-analytify-logging.php';
-include_once ANALYTIFY_PLUGIN_DIR . '/classes/analytify-settings.php';
-include_once ANALYTIFY_PLUGIN_DIR . '/classes/analytify-utils.php';
-include_once ANALYTIFY_PLUGIN_DIR . '/classes/analytify-sanitize.php';
-
-// Update routine.
-include_once ANALYTIFY_PLUGIN_DIR . '/classes/analytify-update-routine.php';
+		// Include all trait files.
+		require_once __DIR__ . '/inc/analytify-authentication.php';
+		require_once __DIR__ . '/inc/analytify-ga4-core.php';
+		require_once __DIR__ . '/inc/analytify-utilities.php';
+		require_once __DIR__ . '/inc/analytify-navigation.php';
 
 if ( ! class_exists( 'Analytify_General' ) ) {
 
@@ -49,173 +36,260 @@ if ( ! class_exists( 'Analytify_General' ) ) {
 	 */
 	class Analytify_General {
 
+		// Use all the traits.
+		use Analytify_Authentication;
+		use Analytify_GA4_Core;
+		use Analytify_General_Utilities;
+		use Analytify_Navigation;
+
+		/**
+		 * Plugin settings object.
+		 *
+		 * @var object
+		 */
 		public $settings;
+
+		/**
+		 * Google Analytics service object.
+		 *
+		 * @var object
+		 */
+		public $service;
+
+		/**
+		 * Google Analytics client object.
+		 *
+		 * @var object
+		 */
+		public $client;
+
+		/**
+		 * Authentication token.
+		 *
+		 * @var string
+		 */
+		public $token;
+
+		/**
+		 * State data for authentication.
+		 *
+		 * @var array
+		 */
 		protected $state_data;
+
+		/**
+		 * Transient timeout duration.
+		 *
+		 * @var int
+		 */
 		protected $transient_timeout;
+
+		/**
+		 * Load settings flag.
+		 *
+		 * @var bool
+		 */
 		protected $load_settings;
+
+		/**
+		 * Plugin base URL.
+		 *
+		 * @var string
+		 */
 		protected $plugin_base;
+
+		/**
+		 * Plugin settings base URL.
+		 *
+		 * @var string
+		 */
 		protected $plugin_settings_base;
+
+		/**
+		 * Cache timeout duration.
+		 *
+		 * @var int
+		 */
 		protected $cache_timeout;
+
+		/**
+		 * Exception data.
+		 *
+		 * @var mixed
+		 */
 		private $exception;
 
-		// option for modules
+		/**
+		 * GA4 exception data.
+		 *
+		 * @var mixed
+		 */
+		private $ga4_exception;
+
+		/**
+		 * Available modules.
+		 *
+		 * @var array
+		 */
 		private $modules;
 
 		/**
-		 * Constructer of analytify-general class.
+		 * GA4 reporting flag.
+		 *
+		 * @var bool
 		 */
-		function __construct() {
+		protected $is_reporting_in_ga4;
 
-			$this->transient_timeout    = 60 * 60 * 12;
-			// $this->cache_timeout    		= 60 * 60 * 24; // 24 hours into seconds. Use for transient cache.
+		/**
+		 * User added client ID.
+		 *
+		 * @var string
+		 */
+		private $user_client_id;
+
+		/**
+		 * User added client secret.
+		 *
+		 * @var string
+		 */
+		private $user_client_secret;
+
+		/**
+		 * Authentication date format.
+		 *
+		 * @var string
+		 */
+		protected $auth_date_format;
+
+		/**
+		 * Google token data.
+		 *
+		 * @var array|false
+		 */
+		protected $google_token;
+
+		/**
+		 * GA4 streams data.
+		 *
+		 * @var array
+		 */
+		protected $ga4_streams;
+
+		/**
+		 * Constructor of analytify-general class.
+		 *
+		 * Initializes the core plugin settings, authentication data, and prepares
+		 * the environment for Google Analytics operations.
+		 *
+		 * @since 1.0.0
+		 */
+		public function __construct() {
+			// Set cache timeout to 12 hours (60 * 60 * 12 seconds).
+			$this->transient_timeout = 60 * 60 * 12;
+
+			// Define admin page URLs for navigation.
 			$this->plugin_base          = 'admin.php?page=analytify-dashboard';
 			$this->plugin_settings_base = 'admin.php?page=analytify-settings';
-			$this->exception            = get_option( 'analytify_profile_exception' );
-			$this->modules				= get_option( 'wp_analytify_modules' );
 
-			if ( ! class_exists( 'Analytify_Google_Client' ) ) {
-
-				require_once ANALYTIFY_LIB_PATH . 'Google/Client.php';
-				require_once ANALYTIFY_LIB_PATH . 'Google/Service/Analytics.php';
-
+			// Set authentication date format with timezone.
+			$this->auth_date_format = gmdate( 'l jS F Y h:i:s A' ) . ' ' . date_default_timezone_get();
+			// Sanitize page parameter for security.
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Reading URL parameter for display purposes
+			$current_page = isset( $_GET['page'] ) ? sanitize_text_field( wp_unslash( $_GET['page'] ) ) : '';
+			if ( $current_page && strpos( $current_page, 'analytify-settings' ) === 0 ) {
+				$this->exception     = get_option( 'analytify_profile_exception' );
+				$this->ga4_exception = get_option( 'analytify_ga4_exceptions' );
 			}
-
+			$this->modules = WPANALYTIFY_Utils::get_pro_modules();
 			// Setup Settings.
-			$this->settings = new WP_Analytify_Settings();
-
-			$this->client = new Analytify_Google_Client();
-			$this->client->setApprovalPrompt( 'force' );
-			$this->client->setAccessType( 'offline' );
-
-			if ( $this->settings->get_option( 'user_advanced_keys', 'wp-analytify-advanced', '' ) == 'on' ) {
-
-				$this->client->setClientId( $this->settings->get_option( 'client_id' ,'wp-analytify-advanced' ) );
-				$this->client->setClientSecret( $this->settings->get_option( 'client_secret', 'wp-analytify-advanced' ));
-				$this->client->setRedirectUri( $this->settings->get_option( 'redirect_uri', 'wp-analytify-advanced' ) );
-				// $this->client->setDeveloperKey( get_option( 'ANALYTIFY_DEV_KEY' ) );
-			} else {
-
-				$this->client->setClientId( ANALYTIFY_CLIENTID );
-				$this->client->setClientSecret( ANALYTIFY_CLIENTSECRET );
-				$this->client->setRedirectUri( ANALYTIFY_REDIRECT );
-				// $this->client->setDeveloperKey( ANALYTIFY_DEV_KEY );
+			if ( class_exists( 'WP_Analytify_Settings' ) ) {
+				$this->settings = new WP_Analytify_Settings();
 			}
 
-			$this->client->setScopes( ANALYTIFY_SCOPE );
+			$this->is_reporting_in_ga4 = 'ga4' === WPANALYTIFY_Utils::get_ga_mode() ? true : false;
 
-			try {
-
-				$this->service = new Analytify_Google_Service_Analytics( $this->client );
-
-				$this->pa_connect();
-
-				// This function refresh token and use for debugging
-				//$this->client->refreshToken( $this->token->refresh_token );
-
-
-			} catch ( Analytify_Google_Service_Exception $e ) {
-
-				// Show error message only for logged in users.
-				if ( current_user_can( 'manage_options' ) ) {
-
-					echo sprintf( esc_html__( '%1$s Oops, Something went wrong. %2$s %5$s %2$s %3$s Don\'t worry, This error message is only visible to Administrators. %4$s %2$s ', 'wp-analytify' ), '<br /><br />', '<br />', '<i>', '</i>', esc_textarea( $e->getMessage() ) );
-				}
-			} catch ( Analytify_Google_Auth_Exception $e ) {
-
-				// Show error message only for logged in users.
-				if ( current_user_can( 'manage_options' ) ) {
-
-					echo sprintf( esc_html__( '%1$s Oops, Try to %2$s Reset %3$s Authentication. %4$s %7$s %4$s %5$s Don\'t worry, This error message is only visible to Administrators. %6$s %4$s', 'wp-analytify' ), '<br /><br />', '<a href=' . esc_url( admin_url( 'admin.php?page=analytify-settings&tab=authentication' ) ) . 'title="Reset">', '</a>', '<br />', '<i>', '</i>', esc_textarea( $e->getMessage() ) );
-				}
-			}
-
-			add_action( 'admin_init', array( $this, 'set_cache_time' ) );
-
-			$this->set_tracking_mode();
+			// Initialize connection on init hook to ensure themes are loaded.
+			add_action( 'init', array( $this, 'init_connection' ) );
 		}
 
 		/**
-		 * Check the tracking method.
+		 * Initialize connection to Google Analytics.
 		 *
-		 * @return string ga/gtag
+		 * This method is hooked to 'init' to ensure that themes (functions.php) are loaded
+		 * before the connection is attempted. This allows custom hooks to fire correctly.
+		 *
+		 * @since 7.1.4
 		 */
-		public function set_tracking_mode() {
+		public function init_connection() {
+			if ( true === $this->is_reporting_in_ga4 ) {
+				// Rankmath Instant Indexing addon Compatibility.
+				// Sanitize page parameter for security.
+				// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Reading URL parameter for display purposes
+				$current_page = isset( $_GET['page'] ) ? sanitize_text_field( wp_unslash( $_GET['page'] ) ) : '';
+				if ( ( $current_page && 'instant-indexing' === $current_page ) || strpos( wp_get_referer(), 'instant-indexing' ) !== false ) {
+					return;
+				}
 
-			if ( ! defined( 'ANALYTIFY_TRACKING_MODE' ) ) {
-				define( 'ANALYTIFY_TRACKING_MODE', $this->settings->get_option( 'gtag_tracking_mode', 'wp-analytify-advanced', 'ga' ) );
-			}
-		}
-
-		/**
-		 * Connect with Google Analytics API and get authentication token and save it.
-		 */
-
-		public function pa_connect() {
-
-			$ga_google_authtoken = get_option( 'pa_google_token' );
-
-			if ( ! empty( $ga_google_authtoken ) ) {
-
-				$this->client->setAccessToken( $ga_google_authtoken );
-			} else {
-
-				$auth_code = get_option( 'post_analytics_token' );
-
-				if ( empty( $auth_code ) ) { return false; }
+				if ( 'on' === $this->settings->get_option( 'user_advanced_keys', 'wp-analytify-advanced', '' ) ) {
+					$this->user_client_id     = $this->settings->get_option( 'client_id', 'wp-analytify-advanced' );
+					$this->user_client_secret = $this->settings->get_option( 'client_secret', 'wp-analytify-advanced' );
+				}
 
 				try {
-
-					$access_token = $this->client->authenticate( $auth_code );
+					$this->analytify_pa_connect_v2();
 				} catch ( Exception $e ) {
-					echo 'Analytify (Bug): ' . esc_textarea( $e->getMessage() );
-					return false;
-				}
-
-				if ( $access_token ) {
-
-					$this->client->setAccessToken( $access_token );
-
-					update_option( 'pa_google_token', $access_token );
-					update_option( 'analytify_authentication_date', date( 'l jS F Y h:i:s A' ) . date_default_timezone_get() );
-
-					return true;
-				} else {
-
-					return false;
+					// Show error message only for logged in users.
+					if ( current_user_can( 'manage_options' ) ) {
+						// translators: Reset authentication error message.
+						printf( esc_html__( '%1$s Oops, Try to %2$s Reset %3$s Authentication. %4$s %7$s %4$s %5$s Don\'t worry, This error message is only visible to Administrators. %6$s %2$s', 'wp-analytify' ), '<br /><br />', '<a href=' . esc_url( admin_url( 'admin.php?page=analytify-settings&tab=authentication' ) ) . 'title="Reset">', '</a>', '<br />', '<i>', '</i>', esc_textarea( $e->getMessage() ) );
+					}
 				}
 			}
 
-			$this->token = json_decode( $this->client->getAccessToken() );
+			// Set cache time directly since after_setup_theme has already fired before init.
+			$this->set_cache_time();
 
-			return true;
+			$this->analytify_set_tracking_mode();
 		}
 
 		/**
-		 * This function grabs the data from Google Analytics
-		 * For individual posts/pages.
+		 * This function grabs the data from Google Analytics for individual posts/pages.
+		 *
+		 * @param string  $metrics     The metrics to retrieve.
+		 * @param string  $start_date  The start date for the report.
+		 * @param string  $end_date    The end date for the report.
+		 * @param boolean $dimensions  Optional dimensions for the report.
+		 * @param boolean $sort        Optional sorting for the report.
+		 * @param boolean $filter      Optional filters for the report.
+		 * @param boolean $limit       Optional limit for the report.
+		 * @param string  $name        Optional name for caching.
+		 * @return void
 		 */
-		public function pa_get_analytics( $metrics, $start_date, $end_date, $dimensions = false, $sort = false, $filter = false, $limit = false, $name = ''  ) {
+		public function pa_get_analytics( $metrics, $start_date, $end_date, $dimensions = false, $sort = false, $filter = false, $limit = false, $name = '' ) {
+
+			if ( $this->is_reporting_in_ga4 ) {
+				return;
+			}
 
 			try {
-
 				$this->service = new Analytify_Google_Service_Analytics( $this->client );
 				$params        = array();
 
 				if ( $dimensions ) {
 					$params['dimensions'] = $dimensions;
-				} //$dimensions
+				}
 
 				if ( $sort ) {
 					$params['sort'] = $sort;
-				} //$sort
+				}
 
 				if ( $filter ) {
 					$params['filters'] = $filter;
-				} //$filter
+				}
 
 				if ( $limit ) {
 					$params['max-results'] = $limit;
-				} //$limit
+				}
 
 				$profile_id = $this->settings->get_option( 'profile_for_posts', 'wp-analytify-profile' );
 
@@ -225,170 +299,119 @@ if ( ! class_exists( 'Analytify_General' ) ) {
 
 				$transient_key = 'analytify_transient_';
 				$cache_result  = get_transient( $transient_key . md5( $name . $profile_id . $start_date . $end_date . $filter ) );
+
+				// Note: This hard coded setting should be removed in future versions.
+
 				$is_custom_api = $this->settings->get_option( 'user_advanced_keys', 'wp-analytify-advanced' );
 
 				if ( 'on' !== $is_custom_api ) {
-					// if exception, return if the cache result else return the error.
-					if ( $exception = get_transient( 'analytify_quota_exception' ) ) {
+					// If exception, return if the cache result else return the error.
+					$exception = get_transient( 'analytify_quota_exception' );
+					if ( $exception ) {
 						return $this->tackle_exception( $exception, $cache_result );
 					}
 				}
 
-				// if custom keys set. Fetch fresh result always.
-				if ( 'on' === $is_custom_api || $cache_result === false ) {
+				// If custom keys set. Fetch fresh result always.
+				if ( 'on' === $is_custom_api || false === $cache_result ) {
 					$result = $this->service->data_ga->get( 'ga:' . $profile_id, $start_date, $end_date, $metrics, $params );
-					set_transient( $transient_key . md5( $name . $profile_id . $start_date . $end_date . $filter ) , $result, $this->cache_timeout );
+					set_transient( $transient_key . md5( $name . $profile_id . $start_date . $end_date . $filter ), $result, $this->get_cache_time() );
 					return $result;
 
 				} else {
 					return $cache_result;
 				}
-
 			} catch ( Analytify_Google_Service_Exception $e ) {
-
 				// Show error message only for logged in users.
 				if ( current_user_can( 'manage_options' ) ) {
 					echo "<div class='wp_analytify_error_msg'>";
-					echo sprintf( esc_html__( '%1$s Oops, Something went wrong. %2$s %5$s %2$s %3$s Don\'t worry, This error message is only visible to Administrators. %4$s %2$s', 'wp-analytify' ), '<br /><br />', '<br />', '<i>', '</i>', esc_html( $e->getMessage() ) );
-					echo "</div>";
+					// translators: Error message for logged in users.
+					printf( esc_html__( '%1$s Oops, Something went wrong. %2$s %5$s %2$s %3$s Don\'t worry, This error message is only visible to Administrators. %4$s %2$s ', 'wp-analytify' ), '<br /><br />', '<br />', '<i>', '</i>', esc_html( $e->getMessage() ) );
+					echo '</div>';
 				}
 			} catch ( Analytify_Google_Auth_Exception $e ) {
-
 				// Show error message only for logged in users.
 				if ( current_user_can( 'manage_options' ) ) {
 					echo "<div class='wp_analytify_error_msg'>";
-					echo sprintf( esc_html__( '%1$s Oops, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s Don\'t worry, This error message is only visible to Administrators. %6$s %2$s', 'wp-analytify' ), '<br /><br />', '<br />', '<a href=' . esc_url( admin_url( 'admin.php?page=analytify-settings&tab=authentication' ) ) . ' title="Reset">', '</a>', '<i>', '</i>', esc_textarea( $e->getMessage() ) );
-					echo "</div>";
+					// translators: Reset authentication error message.
+					printf( esc_html__( '%1$s Oops, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s Don\'t worry, This error message is only visible to Administrators. %6$s %2$s', 'wp-analytify' ), '<br /><br />', '<br />', '<a href=' . esc_url( admin_url( 'admin.php?page=analytify-settings&tab=authentication' ) ) . ' title="Reset">', '</a>', '<i>', '</i>', esc_textarea( $e->getMessage() ) );
+					echo '</div>';
 				}
 			} catch ( Analytify_Google_IO_Exception $e ) {
-
 				// Show error message only for logged in users.
 				if ( current_user_can( 'manage_options' ) ) {
 					echo "<div class='wp_analytify_error_msg'>";
-					echo sprintf( esc_html__( '%1$s Oops! %2$s %5$s %2$s %3$s Don\'t worry, This error message is only visible to Administrators. %4$s %2$s', 'wp-analytify' ), '<br /><br />', '<br />', '<i>', '</i>', esc_html( $e->getMessage() ) );
-					echo "</div>";
+					// translators: Error message.
+					printf( esc_html__( '%1$s Oops! %2$s %5$s %2$s %3$s Don\'t worry, This error message is only visible to Administrators. %4$s %2$s', 'wp-analytify' ), '<br /><br />', '<br />', '<i>', '</i>', esc_html( $e->getMessage() ) );
+					echo '</div>';
 				}
 			}
-
 		}
 
 		/**
-		 * This function grabs the data from Google Analytics
-		 * For dashboard.
+		 * Mock Function to resist GA3 removal conflicts.
+		 *
+		 * @param string  $metrics     The metrics to retrieve.
+		 * @param string  $start_date  The start date for the report.
+		 * @param string  $end_date    The end date for the report.
+		 * @param boolean $dimensions  Optional dimensions for the report.
+		 * @param boolean $sort        Optional sorting for the report.
+		 * @param boolean $filter      Optional filters for the report.
+		 * @param boolean $limit       Optional limit for the report.
+		 * @param string  $name        Optional name for caching.
+		 * @return null|false
 		 */
-		public function pa_get_analytics_dashboard( $metrics, $start_date, $end_date, $dimensions = false, $sort = false, $filter = false, $limit = false, $name = '' ) {
-
-
-			try {
-
-				//$this->service = new Analytify_Google_Service_Analytics( $this->client );
-				$params        = array();
-
-				if ( $dimensions ) {
-					$params['dimensions'] = $dimensions;
-				}
-				if ( $sort ) {
-					$params['sort'] = $sort;
-				}
-				if ( $filter ) {
-					$params['filters'] = $filter;
-				}
-				if ( $limit ) {
-					$params['max-results'] = $limit;
-				}
-
-				// $profile_id = get_option("pt_webprofile_dashboard");
-				$profile_id = $this->settings->get_option( 'profile_for_dashboard', 'wp-analytify-profile' );
-
-				if ( ! $profile_id ) {
-					return false;
-				}
-
-				$transient_key = 'analytify_transient_';
-
-				$is_custom_api = $this->settings->get_option( 'user_advanced_keys', 'wp-analytify-advanced' );
-				$cache_result = get_transient( $transient_key . md5( $name . $profile_id . $start_date . $end_date . $filter ) );
-
-				if ( 'on' !== $is_custom_api ) {
-					// if exception, return if the cache result else return the error.
-					if ( $exception = get_transient( 'analytify_quota_exception' ) ) {
-						return $this->tackle_exception( $exception, $cache_result );
-					}
-				}
-
-				// if custom keys set. Fetch fresh result always.
-				if ( 'on' === $is_custom_api || $cache_result === false ) {
-					$result = $this->service->data_ga->get( 'ga:' . $profile_id, $start_date, $end_date, $metrics, $params );
-					set_transient( $transient_key . md5( $name . $profile_id . $start_date . $end_date . $filter ) , $result, $this->cache_timeout );
-					return $result;
-
-				} else {
-					return $cache_result;
-				}
-
-
-			} catch ( Analytify_Google_Service_Exception $e ) {
-
-				$logger = analytify_get_logger();
-				$logger->warning( $e->getMessage(), array( 'source' => 'analytify_fetch_data' ) );
-
-				set_transient( 'analytify_quota_exception', $e->getMessage(), HOUR_IN_SECONDS );
-
-				// Show error message only for logged in users.
-				if ( current_user_can( 'manage_options' ) ) {
-				  $error_code = $e->getErrors();
-				  if ( $error_code[0]['reason'] == 'userRateLimitExceeded' ) {
-				    echo $this->show_error_box( 'API error: User Rate Limit Exceeded <a href="https://analytify.io/user-rate-limit-exceeded-guide" target="_blank" class="error_help">help?</a>' );
-				  } elseif( $error_code[0]['reason'] == 'dailyLimitExceeded' ) {
-						echo $this->show_error_box( 'API error: Daily Limit Exceeded <a href="https://analytify.io/daily-limit-exceeded" target="_blank" class="error_help">help?</a>' );
-					} else{
-				    echo $this->show_error_box( $e->getMessage() );
-				  }
-				}
-			} catch ( Analytify_Google_Auth_Exception $e ) {
-
-				$logger = analytify_get_logger();
-				$logger->warning( $e->getMessage(), array( 'source' => 'analytify_fetch_data' ) );
-
-				// Show error message only for logged in users.
-				if ( current_user_can( 'manage_options' ) ) {
-
-					echo sprintf( esc_html__( '%1$s Oops, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s Don\'t worry, This error message is only visible to Administrators. %6$s %2$s', 'wp-analytify' ), '<br /><br />', '<br />', '<a href=' . esc_url( admin_url( 'admin.php?page=analytify-settings&tab=authentication' ) ) . ' title="Reset">', '</a>', '<i>', '</i>', esc_html( $e->getMessage() ) );
-				}
-			} catch ( Analytify_Google_IO_Exception $e ) {
-
-				$logger = analytify_get_logger();
-				$logger->warning( $e->getMessage(), array( 'source' => 'analytify_fetch_data' ) );
-
-				// Show error message only for logged in users.
-				if ( current_user_can( 'manage_options' ) ) {
-
-					echo sprintf( esc_html__( '%1$s Oops! %2$s %5$s %2$s %3$s Don\'t worry, This error message is only visible to Administrators. %4$s %2$s', 'wp-analytify' ), '<br /><br />', '<br />', '<i>', '</i>', esc_html( $e->getMessage() ) );
-				}
+		public function pa_get_analytics_dashboard( $metrics, $start_date, $end_date, $dimensions = false, $sort = false, $filter = false, $limit = false, $name = '' ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
+			if ( $this->is_reporting_in_ga4 ) {
+				return null;
 			}
+			return false;
 		}
 
-
+		/**
+		 * Mock Function to resist GA3 removal conflicts.
+		 *
+		 * @param string  $metrics     The metrics to retrieve.
+		 * @param string  $start_date  The start date for the report.
+		 * @param string  $end_date    The end date for the report.
+		 * @param boolean $dimensions  Optional dimensions for the report.
+		 * @param boolean $sort        Optional sorting for the report.
+		 * @param boolean $filter      Optional filters for the report.
+		 * @param boolean $limit       Optional limit for the report.
+		 * @param string  $name        Optional name for caching.
+		 * @return null|false
+		 */
+		public function pa_get_analytics_dashboard_via_rest( $metrics, $start_date, $end_date, $dimensions = false, $sort = false, $filter = false, $limit = false, $name = '' ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
+			if ( $this->is_reporting_in_ga4 ) {
+				return null;
+			}
+			return false;
+		}
 
 		/**
 		 * This function grabs the data from Google Analytics For dashboard.
 		 *
-		 * @param  [string] $profile    Google Analytic Profile Id.
-		 * @param  [string] $metrics    Metrics.
-		 * @param  [string] $start_date Start date of stats.
-		 * @param  [string] $end_date   End date of stats.
-		 * @param  [string] $dimensions Dimensions.
-		 * @param  [string] $sort       Sort.
-		 * @param  [string] $filter     Filter.
-		 * @param  [string] $limit      How many stats to show.
-		 * @return [array]             Return array of stats
+		 * @param string $profile    Google Analytic Profile Id.
+		 * @param string $metrics    Metrics.
+		 * @param string $start_date Start date of stats.
+		 * @param string $end_date   End date of stats.
+		 * @param string $dimensions Dimensions.
+		 * @param string $sort       Sort.
+		 * @param string $filter     Filter.
+		 * @param string $limit      How many stats to show.
+		 *
+		 * @return array Return array of stats.
 		 */
-		public function wpa_get_analytics( $profile, $metrics, $start_date, $end_date, $dimensions = false, $sort = false, $filter = false, $limit = false ) {
+		public function analytify_get_analytics( $profile, $metrics, $start_date, $end_date, $dimensions = false, $sort = false, $filter = false, $limit = false ) {
 
+			if ( $this->is_reporting_in_ga4 ) {
+				return null;
+			}
 			try {
-
-				$this->service = new Analytify_Google_Service_Analytics( $this->client );
-				$params        = array();
+				if ( class_exists( 'Analytify_Google_Service_Analytics' ) ) {
+					$this->service = new Analytify_Google_Service_Analytics( $this->client );
+				}
+				$params = array();
 
 				if ( $dimensions ) {
 					$params['dimensions'] = $dimensions;
@@ -403,7 +426,7 @@ if ( ! class_exists( 'Analytify_General' ) ) {
 					$params['max-results'] = $limit;
 				}
 
-				if ( 'single' == $profile ) {
+				if ( 'single' === $profile ) {
 					$profile_id = $this->settings->get_option( 'profile_for_posts', 'wp-analytify-profile' );
 				} else {
 					$profile_id = $this->settings->get_option( 'profile_for_dashboard', 'wp-analytify-profile' );
@@ -414,708 +437,652 @@ if ( ! class_exists( 'Analytify_General' ) ) {
 				}
 
 				return $this->service->data_ga->get( 'ga:' . $profile_id, $start_date, $end_date, $metrics, $params );
-
 			} catch ( Analytify_Google_Service_Exception $e ) {
-
-				// Show error message only for logged in users.
 				// Show error message only for logged in users.
 				if ( current_user_can( 'manage_options' ) ) {
-
-					echo sprintf( esc_html__( '%1$s Oops, Something went wrong. %2$s %5$s %2$s %3$s Don\'t worry, This error message is only visible to Administrators. %4$s %2$s', 'wp-analytify' ), '<br /><br />', '<br />', '<i>', '</i>', esc_textarea( $e->getMessage() ) );
+					// translators: Error message.
+					printf( esc_html__( '%1$s Oops, Something went wrong. %2$s %5$s %2$s %3$s Don\'t worry, This error message is only visible to Administrators. %4$s %2$s ', 'wp-analytify' ), '<br /><br />', '<br />', '<i>', '</i>', esc_textarea( $e->getMessage() ) );
 				}
 			} catch ( Analytify_Google_Auth_Exception $e ) {
-
 				// Show error message only for logged in users.
 				if ( current_user_can( 'manage_options' ) ) {
-
-					echo sprintf( esc_html__( '%1$s Oops, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s Don\'t worry, This error message is only visible to Administrators. %6$s %2$s', 'wp-analytify' ), '<br /><br />', '<br />', '<a href=' . esc_url( admin_url( 'admin.php?page=analytify-settings&tab=authentication' ) ) . ' title="Reset">', '</a>', '<i>', '</i>', esc_textarea( $e->getMessage() ) );
+					// translators: Error message.
+					printf( esc_html__( '%1$s Oops, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s Don\'t worry, This error message is only visible to Administrators. %6$s %2$s', 'wp-analytify' ), '<br /><br />', '<br />', '<a href=' . esc_url( admin_url( 'admin.php?page=analytify-settings&tab=authentication' ) ) . ' title="Reset">', '</a>', '<i>', '</i>', esc_textarea( $e->getMessage() ) );
 				}
 			} catch ( Analytify_Google_IO_Exception $e ) {
-
 				// Show error message only for logged in users.
 				if ( current_user_can( 'manage_options' ) ) {
-
-					echo sprintf( esc_html__( '%1$s Oops! %2$s %5$s %2$s %3$s Don\'t worry, This error message is only visible to Administrators. %4$s %2$s', 'wp-analytify' ), '<br /><br />', '<br />', '<i>', '</i>', esc_html( $e->getMessage() ) );
+					// translators: Error message.
+					printf( esc_html__( '%1$s Oops! %2$s %5$s %2$s %3$s Don\'t worry, This error message is only visible to Administrators. %4$s %2$s', 'wp-analytify' ), '<br /><br />', '<br />', '<i>', '</i>', esc_html( $e->getMessage() ) );
+					echo '</div>';
 				}
 			}
-
-		}
-
-
-		/**
-		 * @param mixed $return Value to be returned as response.
-		 */
-		function end_ajax( $return = false ) {
-
-			$return = apply_filters( 'wpanalytify_before_response', $return );
-			echo ( false === $return ) ? '' : $return;
-			exit;
-		}
-
-		function check_ajax_referer( $action ) {
-
-			$result = check_ajax_referer( $action, 'nonce', false );
-
-			if ( false === $result ) {
-				$return = array( 'wpanalytify_error' => 1, 'body' => sprintf( __( 'Invalid nonce for: %s', 'wp-analytify' ), $action ) );
-				$this->end_ajax( json_encode( $return ) );
-			}
-
-			$cap = ( is_multisite() ) ? 'manage_network_options' : 'export';
-			$cap = apply_filters( 'wpanalytify_ajax_cap', $cap );
-
-			if ( ! current_user_can( $cap ) ) {
-				$return = array( 'wpanalytify_error' => 1, 'body' => sprintf( __( 'Access denied for: %s', 'wp-analytify' ), $action ) );
-				$this->end_ajax( json_encode( $return ) );
-			}
-		}
-
-
-		/**
-		* Returns the function name that called the function using this function.
-		*
-		* @return string
-		*/
-		function get_caller_function() {
-			list( , , $caller ) = debug_backtrace( false );
-
-			if ( ! empty( $caller['function'] ) ) {
-				$caller = $caller['function'];
-			} else {
-				$caller = '';
-			}
-
-			return $caller;
 		}
 
 		/**
-		 * Sets $this->state_data from $_POST, potentially un-slashed and sanitized.
+		 * Fetch reports from Google Analytics Data API.
 		 *
-		 * @param array  $key_rules An optional associative array of expected keys and their sanitization rule(s).
-		 * @param string $context   The method that is specifying the sanitization rules. Defaults to calling method.
+		 * @param string        $name 'test-report-name' Its the key used to store reports in transient as cache.
+		 * @param array         $metrics Array of metrics to fetch.
+		 * @param array         $date_range Date range for the report.
+		 * @param array         $dimensions Array of dimensions.
+		 * @param array         $order_by Sorting configuration.
+		 * @param array         $filters Filter configuration.
+		 * @param integer array $limit       Positive integer to limit report rows.
+		 * @param boolean       $cached      Whether to use cached results.
 		 *
-		 * @since 2.0
-		 * @return array
+		 * @return array {
+		 *     'headers' => {
+		 *         ...
+		 *     },
+		 *     'rows' => {
+		 *         ...
+		 *     }
+		 * }
+		 * @version 7.0.1
+		 * @throws Exception When API request fails.
 		 */
-		function set_post_data( $key_rules = array(), $context = '' ) {
+		public function get_reports( $name, $metrics, $date_range, $dimensions = array(), $order_by = array(), $filters = array(), $limit = 0, $cached = true ) {
+			$logger = function_exists( 'analytify_get_logger' ) ? analytify_get_logger() : null;
 
-			if ( defined( 'DOING_WPANALYTIFY_TESTS' ) ) {
-				$this->state_data = $_POST;
-			} elseif ( is_null( $this->state_data ) ) {
-				$this->state_data = WPANALYTIFY_Utils::safe_wp_unslash( $_POST );
-			} else {
-				return $this->state_data;
+			$property_id = WPANALYTIFY_Utils::get_reporting_property();
+
+			// Don't use cache if custom API keys are in use.
+			if ( 'on' === $this->settings->get_option( 'user_advanced_keys', 'wp-analytify-advanced' ) ) {
+				$cached = false;
 			}
 
-			// From this point on we're handling data originating from $_POST, so original $key_rules apply.
-			global $wpanalytify_key_rules;
+			// To override the caching.
+			$cached = apply_filters( 'analytify_set_caching_to', $cached );
 
-			if ( empty( $key_rules ) && ! empty( $wpanalytify_key_rules ) ) {
-				$key_rules = $wpanalytify_key_rules;
-			}
+			if ( $cached ) {
+				$cache_key    = 'analytify_transient_' . md5( $name . $property_id . $date_range['start'] . $date_range['end'] );
+				$report_cache = get_transient( $cache_key );
 
-			// Sanitize the new state data.
-			if ( ! empty( $key_rules ) ) {
-				$wpanalytify_key_rules = $key_rules;
-
-				$context          = empty( $context ) ? $this->get_caller_function() : trim( $context );
-				$this->state_data = WPANALYTIFY_Sanitize::sanitize_data( $this->state_data, $key_rules, $context );
-
-				if ( false === $this->state_data ) {
-					exit;
+				if ( $report_cache ) {
+					return $report_cache;
 				}
 			}
 
-			return $this->state_data;
-		}
-
-		/**
-		* [no_records description].
-		*/
-		function no_records() {
-			?>
-
-			<div class="analytify-stats-error-msg">
-				<div class="wpb-error-box">
-					<span class="blk">
-						<span class="line"></span>
-						<span class="dot"></span>
-					</span>
-					<span class="information-txt"><?php esc_html_e( 'No Activity During This Period.', 'wp-analytify' ); ?></span>
-				</div>
-			</div>
-
-			<?php
-		}
-
-		/**
-		 * Get Exception value.
-		 *
-		 * @since 2.1.22
-		 */
-		function get_exception() {
-			return $this->exception;
-		}
-
-		/**
-		 * Set Exception value.
-		 *
-		 * @since 2.1.22
-		 */
-		function set_exception( $exception ) {
-			$this->exception = $exception;
-		}
-
-		/**
-		* This function grabs the data from Google Analytics
-		* For dashboard.
-		*/
-		public function pa_get_analytics_dashboard_via_rest( $metrics, $start_date, $end_date, $dimensions = false, $sort = false, $filter = false, $limit = false, $name = '' ) {
-
-			try {
-
-				//$this->service = new Analytify_Google_Service_Analytics( $this->client );
-				$params        = array();
-
-				if ( $dimensions ) {
-					$params['dimensions'] = $dimensions;
-				}
-				if ( $sort ) {
-					$params['sort'] = $sort;
-				}
-				if ( $filter ) {
-					$params['filters'] = $filter;
-				}
-				if ( $limit ) {
-					$params['max-results'] = $limit;
-				}
-
-				// $profile_id = get_option("pt_webprofile_dashboard");
-				$profile_id = $this->settings->get_option( 'profile_for_dashboard', 'wp-analytify-profile' );
-
-				if ( ! $profile_id ) {
-					return false;
-				}
-
-				$is_custom_api = $this->settings->get_option( 'user_advanced_keys', 'wp-analytify-advanced' );
-				$cache_result = get_transient( md5( $name . $profile_id . $start_date . $end_date . $filter ) );
-
-				if ( 'on' !== $is_custom_api ) {
-
-					// if exception, return if the cache result else return the error.
-					if ( $exception = get_transient( 'analytify_quota_exception' ) ) {
-						if ( $cache_result ) {
-							return $cache_result;
-						}
-
-						return array( 'api_error' => $this->show_error_box( $exception ) );
-					}
-				}
-
-				// if custom keys set. Fetch fresh result always.
-				if ( 'on' === $is_custom_api || $cache_result === false ) {
-					$result = $this->service->data_ga->get( 'ga:' . $profile_id, $start_date, $end_date, $metrics, $params );
-					set_transient( md5( $name . $profile_id . $start_date . $end_date . $filter ) , $result, $this->cache_timeout );
-					return $result;
-
-				} else {
-					return $cache_result;
-				}
-
-
-			} catch ( Analytify_Google_Service_Exception $e ) {
-
-				set_transient( 'analytify_quota_exception', $e->getMessage(), HOUR_IN_SECONDS );
-				$logger = analytify_get_logger();
-				$logger->warning( $e->getMessage(), array( 'source' => 'analytify_fetch_data' ) );
-				// Show error message only for logged in users.
-				if ( current_user_can( 'manage_options' ) ) {
-
-				  $error_code = $e->getErrors();
-					$error = "<div class=\"analytify-stats-error-msg\">
-					<div class=\"wpb-error-box\">
-					<span class=\"blk\">
-					<span class=\"line\"></span>
-					<span class=\"dot\"></span>
-					</span>
-					<span class=\"information-txt\">";
-					if ( $error_code[0]['reason'] == 'userRateLimitExceeded'  ) {
-						$error .= 'API error: User Rate Limit Exceeded <a href="https://analytify.io/user-rate-limit-exceeded-guide" target="_blank" class="error_help">help</a>';
-					} elseif( $error_code[0]['reason'] == 'dailyLimitExceeded' ) {
-						$error .= 'API error: Daily Limit Exceeded <a href="https://analytify.io/daily-limit-exceeded" target="_blank" class="error_help">help?</a>';
-					} else{
-						$error .= $e->getMessage();
-					}
-					$error .= "</span>
-					</div>
-					</div>";
-
-					return array( 'api_error' => $error ) ;
-
-				}
-			} catch ( Analytify_Google_Auth_Exception $e ) {
-
-				$logger = analytify_get_logger();
-				$logger->warning( $e->getMessage(), array( 'source' => 'analytify_fetch_data' ) );
-				// Show error message only for logged in users.
-				if ( current_user_can( 'manage_options' ) ) {
-
-					$error = sprintf( esc_html__( '%1$s Oops, Try to %3$s Reset %4$s Authentication. %2$s %7$s %2$s %5$s Don\'t worry, This error message is only visible to Administrators. %6$s %2$s', 'wp-analytify' ), '<br /><br />', '<br />', '<a href=' . esc_url( admin_url( 'admin.php?page=analytify-settings&tab=authentication' ) ) . ' title="Reset">', '</a>', '<i>', '</i>', esc_html( $e->getMessage() ) );
-					return array( 'api_error' => $error ) ;
-
-				}
-			} catch ( Analytify_Google_IO_Exception $e ) {
-
-				$logger = analytify_get_logger();
-				$logger->warning( $e->getMessage(), array( 'source' => 'analytify_fetch_data' ) );
-				// Show error message only for logged in users.
-				if ( current_user_can( 'manage_options' ) ) {
-
-					$error = sprintf( esc_html__( '%1$s Oops! %2$s %5$s %2$s %3$s Don\'t worry, This error message is only visible to Administrators. %4$s %2$s', 'wp-analytify' ), '<br /><br />', '<br />', '<i>', '</i>', esc_html( $e->getMessage() ) );
-					return array( 'api_error' => $error ) ;
-
-				}
-			}
-		}
-
-		/**
-		 * Generate the Error box.
-		 *
-		 * @since 2.1.23
-		 */
-		protected function show_error_box( $message ) {
-			$error = '<div class="analytify-stats-error-msg">
-								<div class="wpb-error-box">
-									<span class="blk">
-										<span class="line"></span>
-										<span class="dot"></span>
-									</span>
-									<span class="information-txt">'
-									. $message .
-									'</span>
-								</div>
-							</div>';
-
-			return $error;
-
-		}
-
-		/**
-		 * If error, return cache result else return error.
-		 *
-		 * @since 2.1.23
-		 */
-		function tackle_exception ( $exception, $cache_result ) {
-			if ( $cache_result ) {
-				return $cache_result;
-			}
-
-			echo $this->show_error_box( $exception );
-		}
-
-
-
-		/**
-		 * Set Cache time for Stats.
-		 *
-		 * @since 2.2.1
-		 */
-		function set_cache_time() {
-			$this->cache_timeout = $this->get_cache_time();
-		}
-
-		/**
-		 * Get Cache time for Stats.
-		 *
-		 * @since 2.2.1
-		 */
-		function get_cache_time() {
-
-			// if cache is on set cache time to 10hours else 24hours.
-			$cache_time = $this->settings->get_option( 'delete_dashboard_cache','wp-analytify-dashboard','off' ) === 'on' ?  60 * 60 * 10 :  60 * 60 * 24;
-
-			if ( 'on' == $this->settings->get_option( 'user_advanced_keys','wp-analytify-advanced' ) ) {
-				$cache_time = apply_filters( 'analytify_stats_cache_time', $cache_time );
-			}
-
-			return $cache_time;
-
-		}
-
-		/**
-		 * Check the active/deactive state of addon/moudle.
-		 * 
-		 * @param string $slug Slug of addon/moudle 
-		 * @return string $addon_state: active or deactive
-		 */
-		public function analytify_module_state( $slug ) {
-
-			$WP_ANALYTIFY = $GLOBALS['WP_ANALYTIFY'];
-			$addon_state = '';
-
-			$pro_inner = [
-				'detail-realtime',
-				'detail-demographic',
-				'search-terms'
-			];
-			$pro_addon = [
-				'wp-analytify-woocommerce',
-				'wp-analytify-goals',
-				'wp-analytify-authors',
-				'wp-analytify-edd',
-				'wp-analytify-forms',
-				'wp-analytify-campaigns'
-			];
-			$pro_features = [
-				'custom-dimensions',
-				'events-tracking'
-			];
-
-			if ( in_array( $slug, $pro_features ) ) {
-				$analytify_modules = get_option( 'wp_analytify_modules' );
-
-				if ( 'active' === $analytify_modules[$slug]['status'] ) {
-					$addon_state = 'active';
-				}
-
-				$addon_state = 'deactive';
-
-			} elseif ( in_array( $slug, $pro_addon ) || in_array( $slug, $pro_inner ) ) {
-
-				if ( in_array( $slug, $pro_inner ) ) {
-					$slug = 'wp-analytify-pro';
-				}
-
-				if ( $WP_ANALYTIFY->addon_is_active( $slug ) ) {
-					$addon_state = 'active';
-				}
-
-				$addon_state = 'deactive';
-			}
-
-			return $addon_state;
-		}
-
-		/**
-		 * Check if external addon is active.
-		 * 
-		 * @param string $slug Slug of addon 
-		 * 
-		 * @return bool $addon_active
-		 */
-		public function addon_is_active( $slug ) {
-
-			$addon_active = false;
-
-			switch ( $slug ) {
-				case 'wp-analytify':
-					if ( class_exists( 'Analytify_General' ) ) {
-						$addon_active = true;
-					}
-					break;
-
-				case 'wp-analytify-goals':
-					if ( class_exists( 'WP_Analytify_Goals' ) ) {
-						$addon_active = true;
-					}
-					break;
-				
-				case 'wp-analytify-woocommerce':
-					if ( class_exists( 'WP_Analytify_Woocommerce' ) ) {
-						$addon_active = true;
-					}
-					break;
-
-				case 'wp-analytify-campaigns':
-					if ( class_exists( 'ANALYTIFY_PRO_CAMPAINGS' ) ) {
-						$addon_active = true;
-					}
-					break;
-
-				case 'wp-analytify-authors':
-					if ( class_exists( 'Analytify_Authors' ) ) {
-						$addon_active = true;
-					}
-					break;
-
-				case 'wp-analytify-edd':
-					if ( class_exists( 'WP_Analytify_Edd' ) ) {
-						$addon_active = true;
-					}
-					break;
-
-				case 'wp-analytify-forms':
-					if ( class_exists( 'Analytify_Forms' ) ) {
-						$addon_active = true;
-					}
-					break;
-
-				case 'wp-analytify-pro':
-					if ( class_exists( 'WP_Analytify_Pro_Base' ) ) {
-						$addon_active = true;
-					}
-					break;
-
-				default:
-					$addon_active = false;
-					break;
-			}
-
-			return $addon_active;
-		}
-
-		/**
-		 * Create dashboard navigation anchors.
-		 * 
-		 * @param array $nav_item Single navigation item data array.
-		 * 
-		 * @return mixed $anchor
-		 */
-		private function navigation_anchors( array $nav_item ) {
-			
-			$current_screen = get_current_screen()->base;
-			$current_addon_name = '';
-
-			// Check if child dashboard page for addon/module.
-			if ( isset( $_GET['addon'] ) ) {
-				$current_addon_name = $_GET['addon'];
-			} elseif ( isset( $_GET['show'] ) ) {
-				$current_addon_name = $_GET['show'];
-			}
-
-			if ( 'pro_feature' === $nav_item['module_type'] ) {
-				// Module availbe in pro version as switchable feature.
-
-				$nav_link = $this->addon_is_active( 'wp-analytify-pro' ) && 'active' === $this->modules[ $nav_item['addon_slug'] ]['status'] ? admin_url( 'admin.php?page=' . $nav_item['page_slug'] ) : admin_url( 'admin.php?page=analytify-promo&addon=' . $nav_item['addon_slug'] );
-				$active_tab = ( 'analytify_page_' . $nav_item['page_slug'] === $current_screen || $nav_item['addon_slug'] === $current_addon_name ) ? 'nav-tab-active' : '';
-			
-			} elseif ( 'pro_inner' === $nav_item['module_type'] ) {
-				// Module build in pro version.
-
-				$nav_link = $this->addon_is_active( 'wp-analytify-pro' ) ? admin_url( 'admin.php?page=' . $nav_item['page_slug'] .'&show=' . $nav_item['addon_slug'] ) : admin_url( 'admin.php?page=analytify-promo&addon=' . $nav_item['addon_slug'] );
-				$active_tab = ( 'analytify_page_' . $nav_item['page_slug'] === $current_screen || $nav_item['addon_slug'] === $current_addon_name ) ? 'nav-tab-active' : '';
-			
-			} elseif ( 'pro_addon' === $nav_item['module_type'] ) {
-				// Not inner module, rather a seperate plugin.
-
-				$nav_link = $this->addon_is_active( $nav_item['addon_slug'] ) ? admin_url( 'admin.php?page=' . $nav_item['page_slug'] ) : admin_url( 'admin.php?page=analytify-promo&addon=' . $nav_item['addon_slug'] );
-				$active_tab = ( 'analytify_page_' . $nav_item['page_slug'] === $current_screen || $nav_item['addon_slug'] === $current_addon_name ) ? 'nav-tab-active' : '';
-			
-			} elseif ( 'free' === $nav_item['module_type'] ) {
-				// Free version main dashboard page.
-				
-				$nav_link = admin_url( 'admin.php?page='. $nav_item['page_slug'] );
-				$active_tab = ( 'toplevel_page_' . $nav_item['page_slug'] === $current_screen && empty( $current_addon_name ) ) ? 'nav-tab-active' : '';
-
-			}
-
-			$anchor = '<a href="' . esc_url( $nav_link ) . '" class="analytify_nav_tab ' . $active_tab. '">' . $nav_item['name'];
-			$anchor .= (isset($nav_item['sub_name']) AND !empty($nav_item['sub_name'])) ? '<span>'.$nav_item['sub_name'].'</span>' : '';
-			$anchor .= '</a>';
-
-			return $anchor;
-		}
-
-		/**
-		 * Generate dashboard navigation markup.
-		 * 
-		 * @param array $nav_items Navigation items data array.
-		 */
-		private function navigation_markup( array $nav_items ) {
-			if ( is_array( $nav_items ) && 0 < count( $nav_items ) ) {
-				echo '<div class="analytify_nav_tab_wrapper nav-tab-wrapper">';
-				echo $this->generate_submenu_markup( $nav_items, 'analytify_nav_tab_wrapper', 'analytify_nav_tab_parent' );
-				echo '</div>';
-			}
-		}
-
-		/**
-		 * Create HTML markup for navigation on dashboard.
-		 * 
-		 * @param array $nav_items Navigation items data array.
-		 * @param string $wrapper_classes Class attribute for navigation wrapper.
-		 * @param string $list_item_classes Class attribute for list item.
-		 * 
-		 * @return mixed $markup
-		 */
-		private function generate_submenu_markup( array $nav_items, $wrapper_classes = false, $list_item_classes = false ) {
-
-			// Hide tabs filter.
-			$hide_tabs = apply_filters( 'analytify_hide_dashboard_tabs', array() );
-			
-			// Wrapper
-			$markup = '<ul';
-			$markup .= $wrapper_classes ? ' class="'.$wrapper_classes.'"' : '';
-			$markup .= '>';
-
-			// Loop over all the menu items
-			foreach ( $nav_items as $items ) {
-
-				// Exclude hidden tabs from dashboard as in filter.
-				if ( $hide_tabs && in_array( $items['name'], $hide_tabs ) ) {
-					continue;
-				}
-
-				$markup .= '<li';
-				$markup .= $list_item_classes ? ' class="'.$list_item_classes.'"' : '';
-				$markup .= '>';
-
-				// generate anchor
-				$markup .= $this->navigation_anchors( $items );
-				
-				// check if the menu has children, then call itself to generate the child menu
-				if ( isset( $items['children'] ) && is_array( $items['children'] ) ) {
-					$markup .= $this->generate_submenu_markup( $items['children'] );
-				}
-
-				$markup .= '</li>';
-			}
-
-			// End wrapper
-			$markup .= '</ul>';
-
-			return $markup;
-		}
-
-		/**
-		 * Register dashboard navigation menu.
-		 * 
-		 */
-		function dashboard_navigation() {
-
-			$nav_items = array(
-
-				array(
-					'name'			=> 'Audience',
-					'sub_name'		=> 'Overview',
-					'page_slug'		=> 'analytify-dashboard',
-					'addon_slug'	=> 'wp-analytify',
-					'module_type'	=> 'free',
-				),
-
-				array(
-					'name'			=> 'Conversions',
-					'sub_name'		=> 'All Events',
-					'page_slug'		=> 'analytify-forms',
-					'addon_slug'	=> 'wp-analytify-forms',
-					'module_type'	=> 'pro_addon',
-					'children' 		=> array(
-						array(
-							'name'			=> 'Forms Tracking',
-							'sub_name'		=> 'View Forms Analytics',
-							'page_slug'		=> 'analytify-forms',
-							'addon_slug'	=> 'wp-analytify-forms',
-							'module_type'	=> 'pro_addon',
-						),
-						array(
-							'name'			=> 'Events Tracking',
-							'sub_name'		=> 'Affiliates, clicks and links tracking',
-							'page_slug'		=> 'analytify-events',
-							'addon_slug'	=> 'events-tracking',
-							'module_type'	=> 'pro_feature',
-						)
-					)
-				),
-
-				array(
-					'name'			=> 'Acquisition',
-					'sub_name'		=> 'Goals, Campaigns',
-					'page_slug'		=> 'analytify-campaigns',
-					'addon_slug'	=> 'wp-analytify-campaigns',
-					'module_type'	=> 'pro_addon',
-					'children'		=> array(
-						array(
-							'name'			=> 'Campaigns',
-							'sub_name'		=> 'UTM Overview',
-							'page_slug'		=> 'analytify-campaigns',
-							'addon_slug'	=> 'wp-analytify-campaigns',
-							'module_type'	=> 'pro_addon',
-						),
-						array(
-							'name'			=> 'Goals',
-							'sub_name'		=> 'Overview',
-							'page_slug'		=> 'analytify-goals',
-							'addon_slug'	=> 'wp-analytify-goals',
-							'module_type'	=> 'pro_addon',
-						)
-					)
-				),
-
-				array(
-					'name'			=> 'Monetization',
-					'sub_name'		=> 'Overview',
-					'page_slug'		=> 'analytify-woocommerce',
-					'addon_slug'	=> 'wp-analytify-woocommerce',
-					'module_type'	=> 'pro_addon',
-					'clickable'		=> true,
-					'children' 		=> array(
-						array(
-							'name'			=> 'WooCommerce',
-							'sub_name'		=> 'eCommerce Stats',
-							'page_slug'		=> 'analytify-woocommerce',
-							'addon_slug'	=> 'wp-analytify-woocommerce',
-							'module_type'	=> 'pro_addon',
-						),
-						array(
-							'name'			=> 'EDD',
-							'sub_name'		=> 'Checkout behavior',
-							'page_slug'		=> 'edd-dashboard',
-							'addon_slug'	=> 'wp-analytify-edd',
-							'module_type'	=> 'pro_addon',
-						)
-					)
-				),
-
-				array(
-					'name'			=> 'Engagement',
-					'sub_name'		=> 'Authors, Dimensions',
-					'page_slug'		=> 'analytify-authors',
-					'addon_slug'	=> 'wp-analytify-authors',
-					'module_type'	=> 'pro_addon',
-					'children'		=> array(
-						array(
-							'name'			=> 'Authors',
-							'sub_name'		=> 'Authors Content Overview',
-							'page_slug'		=> 'analytify-authors',
-							'addon_slug'	=> 'wp-analytify-authors',
-							'module_type'	=> 'pro_addon',
-						),
-						array(
-							'name'			=> 'Demographics',
-							'sub_name'		=> 'Age & Gender Overview',
-							'page_slug'		=> 'analytify-dashboard',
-							'addon_slug'	=> 'detail-demographic',
-							'module_type'	=> 'pro_inner',
-						),
-						array(
-							'name'			=> 'Search Terms',
-							'sub_name'		=> 'On Site Searches',
-							'page_slug'		=> 'analytify-dashboard',
-							'addon_slug'	=> 'search-terms',
-							'module_type'	=> 'pro_inner',
-						),
-						array(
-							'name'			=> 'Dimensions',
-							'sub_name'		=> 'Custom Dimensions',
-							'page_slug'		=> 'analytify-dimensions',
-							'addon_slug'	=> 'custom-dimensions',
-							'module_type'	=> 'pro_feature',
-						)
-					)
-				),
-
-				array(
-					'name'			=> 'Real-Time',
-					'sub_name'		=> 'Live Stats',
-					'page_slug'		=> 'analytify-dashboard',
-					'addon_slug'	=> 'detail-realtime',
-					'module_type'	=> 'pro_inner',
-				)
+			$reports           = array();
+			$dimension_filters = array();
+
+			// Default response array.
+			$default_response = array(
+				'headers'      => array(),
+				'rows'         => array(),
+				'error'        => array(),
+				'aggregations' => array(),
 			);
 
-			$this->navigation_markup( $nav_items );
+			try {
+				// Main request body for the report.
+				$request_body = array(
+					'dateRanges'         => array(
+						array(
+							'startDate' => isset( $date_range['start'] ) ? $date_range['start'] : 'today',
+							'endDate'   => isset( $date_range['end'] ) ? $date_range['end'] : 'today',
+						),
+					),
+					'metricAggregations' => array( 1 ), // TOTAL = 1; COUNT = 4; MINIMUM = 5; MAXIMUM = 6.
+				);
+
+				// Set metrics.
+				if ( $metrics ) {
+					$send_metrics = array();
+					foreach ( $metrics as $value ) {
+						$send_metrics[] = array( 'name' => $value );
+					}
+					$request_body['metrics'] = $send_metrics;
+				}
+
+				// Add dimensions.
+				if ( $dimensions ) {
+					$send_dimensions = array();
+					foreach ( $dimensions as $value ) {
+						$send_dimensions[] = array( 'name' => $value );
+					}
+					$request_body['dimensions'] = $send_dimensions;
+				}
+
+				// Order report by metric or dimension.
+				if ( $order_by ) {
+					$order_by_request = array();
+					$is_desc          = ( empty( $order_by['order'] ) || 'desc' !== $order_by['order'] ) ? false : true;
+
+					if ( 'metric' === $order_by['type'] ) {
+						$order_by_request = array(
+							'metric' => array(
+								'metric_name' => isset( $order_by['name'] ) ? $order_by['name'] : '',
+							),
+							'desc'   => $is_desc,
+						);
+					} elseif ( 'dimension' === $order_by['type'] ) {
+						$order_by_request = array(
+							'dimension' => array(
+								'dimension_name' => $order_by['name'],
+							),
+							'desc'      => $is_desc,
+						);
+					}
+
+					$request_body['orderBys'] = array( $order_by_request );
+				}
+
+				// Filters for the report.
+				if ( $filters ) {
+					$dimension_filters = array(); // Initialize an empty array for filters.
+
+					foreach ( $filters['filters'] as $filter_data ) {
+						if ( 'dimension' === $filter_data['type'] ) {
+							if ( isset( $filter_data['not_expression'] ) && $filter_data['not_expression'] ) {
+								// Handle 'not_expression' logic.
+								$dimension_filters[] = array(
+									'not_expression' => array(
+										'filter' => array(
+											'field_name' => $filter_data['name'],
+											'string_filter' => array(
+												'match_type' => $filter_data['match_type'],
+												'value' => $filter_data['value'],
+												'case_sensitive' => true,
+											),
+										),
+									),
+								);
+							} else {
+								// Standard dimension filter.
+								$dimension_filters[] = array(
+									'filter' => array(
+										'field_name'    => $filter_data['name'],
+										'string_filter' => array(
+											'match_type' => $filter_data['match_type'],
+											'value'      => $filter_data['value'],
+											'case_sensitive' => true,
+										),
+									),
+								);
+							}
+						} elseif ( 'metric' === $filter_data['type'] ) {
+							// Note: Add metric filter handling here.
+							// Currently no implementation for metric filters.
+							// This is intentionally left empty for future implementation.
+							// No action needed for metric filters at this time.
+							// Skip metric filters without affecting dimension_filters array.
+							continue;
+						}
+					}
+
+					if ( $dimension_filters ) {
+						$group_type = ( isset( $filters['logic'] ) && 'OR' === $filters['logic'] ) ? 'or_group' : 'and_group';
+
+						$dimension_filter_construct = array(
+							$group_type => array(
+								'expressions' => $dimension_filters,
+							),
+						);
+
+						$request_body['dimensionFilter'] = $dimension_filter_construct;
+					}
+				}
+
+				// Set limit.
+				if ( 0 < $limit ) {
+					$request_body['limit'] = $limit;
+				}
+
+				// Get access token (this function should be implemented by you).
+				$token = $this->analytify_get_google_token();
+
+				// Validate that token is an array and has the expected structure.
+				if ( ! is_array( $token ) || ! isset( $token['access_token'] ) ) {
+					if ( $logger && method_exists( $logger, 'warning' ) ) {
+						$logger->warning(
+							'Invalid or missing Google Analytics token in get_reports.',
+							array(
+								'source'           => 'get_reports',
+								'report_name'      => $name,
+								'token_type'       => gettype( $token ),
+								'has_access_token' => isset( $token['access_token'] ),
+							)
+						);
+					}
+					return array();
+				}
+
+				$access_token = $token['access_token'];
+
+				// Prepare the cURL request URL for GA4 API.
+				$url = 'https://analyticsdata.googleapis.com/v1beta/properties/' . $property_id . ':runReport';
+
+				// Send the request using wp_remote_post.
+				$response = wp_remote_post(
+					$url,
+					array(
+						'headers' => array(
+							'Authorization' => 'Bearer ' . $access_token,
+							'Content-Type'  => 'application/json',
+						),
+						'body'    => wp_json_encode( $request_body ),
+					)
+				);
+
+				// Check for errors in the response.
+				if ( is_wp_error( $response ) ) {
+					throw new Exception( $response->get_error_message() );
+				}
+
+				// Parse the response body.
+				$reports = json_decode( wp_remote_retrieve_body( $response ), true );
+
+				// If the response doesn't contain rows, handle it accordingly.
+				if ( ! isset( $reports['rows'] ) ) {
+					return $default_response;
+				}
+			} catch ( \Throwable $th ) {
+				if ( method_exists( $th, 'getStatus' ) && method_exists( $th, 'getBasicMessage' ) ) {
+					$default_response['error'] = array(
+						'status'  => $th->getStatus(),
+						'message' => $th->getBasicMessage(),
+					);
+					if ( $logger && method_exists( $logger, 'warning' ) ) {
+						$logger->warning(
+							'Exception in get_reports API call.',
+							array(
+								'source'         => 'get_reports',
+								'report_name'    => $name,
+								'status'         => $th->getStatus(),
+								'message'        => $th->getBasicMessage(),
+								'exception_type' => get_class( $th ),
+							)
+						);
+					}
+				} elseif ( method_exists( $th, 'getMessage' ) ) {
+					$default_response['error'] = array(
+						'status'  => 'Token Expired',
+						'message' => $th->getMessage(),
+					);
+					if ( $logger && method_exists( $logger, 'warning' ) ) {
+						$logger->warning(
+							'Exception in get_reports API call - token expired.',
+							array(
+								'source'         => 'get_reports',
+								'report_name'    => $name,
+								'message'        => $th->getMessage(),
+								'exception_type' => get_class( $th ),
+							)
+						);
+					}
+				}
+
+				return $default_response;
+			}
+
+			// Format the reports using your existing function.
+			$formatted_reports = $this->analytify_format_ga_reports( $reports );
+
+			if ( empty( $formatted_reports ) ) {
+				return $default_response;
+			}
+
+			// Cache the response if caching is enabled.
+			if ( $cached ) {
+				$this->analytify_handle_report_cache( $cache_key, $formatted_reports, $name, $cached );
+			}
+
+			return $formatted_reports;
 		}
 
-	}
+		/**
+		 * Format reports data fetched from Google Analytics Data API.
+		 *
+		 * For references check folder for class definitions: lib\Google\vendor\google\analytics-data\src\V1beta.
+		 *
+		 * @param array $reports The reports data to format.
+		 * @return array
+		 */
+		public function analytify_format_ga_reports( $reports ) {
+			$metric_header_data    = array();
+			$dimension_header_data = array();
+			$aggregations          = array();
+			$rows                  = array();
 
-}
+			// Get metric headers.
+			if ( isset( $reports['metricHeaders'] ) ) {
+				foreach ( $reports['metricHeaders'] as $metric_header ) {
+					$metric_header_data[] = $metric_header['name'];
+				}
+			}
+
+			// Get dimension headers.
+			if ( isset( $reports['dimensionHeaders'] ) ) {
+				foreach ( $reports['dimensionHeaders'] as $dimension_header ) {
+					$dimension_header_data[] = $dimension_header['name'];
+				}
+			}
+
+			$headers = array_merge( $metric_header_data, $dimension_header_data );
+
+			// Bind metrics and dimensions to rows.
+			if ( isset( $reports['rows'] ) ) {
+				foreach ( $reports['rows'] as $row ) {
+					$metric_data    = array();
+					$dimension_data = array();
+
+					// Process metric values.
+					if ( isset( $row['metricValues'] ) ) {
+						$index_metric = 0;
+						foreach ( $row['metricValues'] as $value ) {
+							$metric_data[ $metric_header_data[ $index_metric ] ] = $value['value'];
+							++$index_metric;
+						}
+					}
+
+					// Process dimension values.
+					if ( isset( $row['dimensionValues'] ) ) {
+						$index_dimension = 0;
+						foreach ( $row['dimensionValues'] as $value ) {
+							$dimension_data[ $dimension_header_data[ $index_dimension ] ] = $value['value'];
+							++$index_dimension;
+						}
+					}
+
+					// Combine metric and dimension data.
+					$rows[] = array_merge( $metric_data, $dimension_data );
+				}
+			}
+
+			// Get metric aggregations (totals).
+			if ( isset( $reports['totals'] ) ) {
+				foreach ( $reports['totals'] as $total ) {
+					$index_metric = 0;
+
+					if ( isset( $total['metricValues'] ) ) {
+						foreach ( $total['metricValues'] as $value ) {
+							$aggregations[ $metric_header_data[ $index_metric ] ] = $value['value'];
+							++$index_metric;
+						}
+					}
+				}
+			}
+
+			// Format and return the data.
+			$formatted_data = array(
+				'headers'      => $headers,
+				'rows'         => $rows,
+				'aggregations' => $aggregations,
+			);
+
+			return $formatted_data;
+		}
+
+
+		/**
+		 * Query the search console api and return the response.
+		 * Since SC can have two types of domain properties.
+		 * We will first go with the sc-domain prefix with property
+		 * if it fails we will use the second domain type using 'https://'
+		 *
+		 * @param string $transient_name The transient name for caching.
+		 * @param array  $dates The date range for the query.
+		 * @param int    $limit The limit for the results.
+		 *
+		 * @since 5.0.0
+		 * @version 9.0.0
+		 */
+		public function get_search_console_stats( $transient_name, $dates = array(), $limit = 10 ) {
+
+			$logger = function_exists( 'analytify_get_logger' ) ? analytify_get_logger() : null;
+
+			if ( class_exists( 'QM' ) ) {
+				QM::info( 'Analytify: Getting Google Analytics token for Search Console stats.' );
+			}
+
+			$token = $this->analytify_get_google_token();
+
+			if ( ! is_array( $token ) || ! isset( $token['access_token'] ) ) {
+				return array( 'error' => array( 'Invalid or missing Google Analytics token.' ) );
+			}
+
+			$access_token = $token['access_token'];
+
+			$tracking_stream_info = get_option( 'analytify_tracking_property_info' );
+
+			try {
+				$stream_url = ( isset( $tracking_stream_info['url'] ) && ! empty( $tracking_stream_info['url'] ) ) ? $tracking_stream_info['url'] : null;
+			} catch ( \Throwable $th ) {
+				if ( $logger && method_exists( $logger, 'warning' ) ) {
+					$logger->warning(
+						'Error fetching stream URL',
+						array(
+							'source'  => 'analytify_fetch_stream_url',
+							'message' => $th->getMessage(),
+						)
+					);
+				}
+
+				if ( empty( $stream_url ) ) {
+					return array(
+						'error' => array(
+							'status'  => 'No Stats Available',
+							'message' => __( 'No URL found for the selected stream', 'wp-analytify' ),
+						),
+					);
+				}
+			}
+
+			// Validate stream URL.
+			if ( empty( $stream_url ) ) {
+				return array(
+					'error' => array(
+						'status'  => 'No Stats Available',
+						'message' => __( 'No URL found for the selected stream', 'wp-analytify' ),
+					),
+				);
+			}
+
+			// Sanitize URL.
+			$stream_url = trim( $stream_url );
+			$stream_url = esc_url_raw( $stream_url );
+
+			// Extract domain (handles ports and IPv6).
+			$domain_stream_url_filtered = preg_replace( '/^(https?:\/\/)?(www\.)?([^\/\s:]+(?::\d+)?|\[[^\]]+\])(\/.*)?$/i', '$3', $stream_url );
+			$domain_stream_url_filtered = preg_replace( '/:\d+$/', '', $domain_stream_url_filtered ); // Remove port.
+			$domain_stream_url_filtered = str_replace( array( '[', ']' ), '', $domain_stream_url_filtered ); // Remove IPv6 brackets.
+
+			// Build candidate URLs for Search Console API.
+			$urls = array(
+				'sc-domain:' . $domain_stream_url_filtered,
+				'https://' . $domain_stream_url_filtered,
+				'https://www.' . $domain_stream_url_filtered,
+				'http://' . $domain_stream_url_filtered,
+				'http://www.' . $domain_stream_url_filtered,
+				'https://' . rtrim( $domain_stream_url_filtered, '/' ) . '/', // URL-prefix format.
+			);
+
+			// Remove duplicates to avoid redundant API calls.
+			$urls = array_unique( $urls );
+
+			$base_url   = ANALYTIFY_GOOGLE_SEARCH_CONSOLE_API_URL;
+			$start_date = $dates['start'] ?? 'yesterday';
+			$end_date   = $dates['end'] ?? 'today';
+
+			// Track responses: prefer domains with data, fallback to any accepted domain.
+			$accepted_domains_with_data = array();
+			$accepted_domains_no_data   = array();
+
+			foreach ( $urls as $url ) {
+				try {
+					$query_data = array(
+						'startDate'  => $start_date,
+						'endDate'    => $end_date,
+						'dimensions' => array( 'query' ),
+						'rowLimit'   => $limit,
+					);
+
+					// Make request to Search Console API using WordPress HTTP API.
+					$http_response = wp_remote_post(
+						$base_url . rawurlencode( $url ) . '/searchAnalytics/query',
+						array(
+							'headers'   => array(
+								'Authorization' => 'Bearer ' . $access_token,
+								'Content-Type'  => 'application/json',
+							),
+							'body'      => wp_json_encode( $query_data ),
+							'timeout'   => 30,
+							'sslverify' => true, // Explicitly ensure SSL verification.
+						)
+					);
+
+					if ( is_wp_error( $http_response ) ) {
+						if ( $logger && method_exists( $logger, 'warning' ) ) {
+							$logger->warning(
+								sprintf( 'HTTP request failed for domain "%s": %s', $url, $http_response->get_error_message() ),
+								array(
+									'source' => 'analytify_fetch_search_console_stats',
+									'domain' => $url,
+								)
+							);
+						}
+						continue; // Continue to next URL.
+					}
+
+					$http_code     = wp_remote_retrieve_response_code( $http_response );
+					$response_body = wp_remote_retrieve_body( $http_response );
+
+					// Log all HTTP responses for debugging, but categorize them.
+					if ( 200 === $http_code ) {
+						$decoded = json_decode( $response_body, true );
+
+						// Validate JSON decode result.
+						if ( json_last_error() !== JSON_ERROR_NONE ) {
+							if ( $logger && method_exists( $logger, 'error' ) ) {
+								$logger->error(
+									sprintf( 'JSON decode failed for domain "%s": %s', $url, json_last_error_msg() ),
+									array(
+										'source' => 'analytify_fetch_search_console_stats',
+										'domain' => $url,
+									)
+								);
+							}
+							continue;
+						}
+
+						// Ensure decoded result is an array.
+						if ( ! is_array( $decoded ) ) {
+							if ( $logger && method_exists( $logger, 'error' ) ) {
+								$logger->error(
+									sprintf( 'Unexpected JSON response for domain "%s": not an array', $url ),
+									array(
+										'source' => 'analytify_fetch_search_console_stats',
+										'domain' => $url,
+									)
+								);
+							}
+							continue;
+						}
+
+						$row_count = count( $decoded['rows'] ?? array() );
+
+						// Log domain check result for debugging.
+						if ( $logger && method_exists( $logger, 'info' ) ) {
+							$logger->info(
+								sprintf( 'Domain "%s" - HTTP %d, %d rows found', $url, $http_code, $row_count ),
+								array(
+									'source'    => 'analytify_fetch_search_console_stats',
+									'domain'    => $url,
+									'http_code' => $http_code,
+									'row_count' => $row_count,
+								)
+							);
+						}
+
+						// Store this response - prefer domains with data.
+						if ( $row_count > 0 ) {
+							$accepted_domains_with_data[] = array(
+								'url'  => $url,
+								'data' => $decoded,
+							);
+							if ( $logger && method_exists( $logger, 'info' ) ) {
+								$logger->info(
+									'Domain categorized as HAVING DATA',
+									array(
+										'source'    => 'analytify_fetch_search_console_stats',
+										'domain'    => $url,
+										'row_count' => $row_count,
+									)
+								);
+							}
+						} else {
+							$accepted_domains_no_data[] = array(
+								'url'  => $url,
+								'data' => $decoded,
+							);
+							if ( $logger && method_exists( $logger, 'info' ) ) {
+								$logger->info(
+									'Domain categorized as NO DATA',
+									array(
+										'source'    => 'analytify_fetch_search_console_stats',
+										'domain'    => $url,
+										'row_count' => $row_count,
+									)
+								);
+							}
+						}
+					} elseif ( 200 !== $http_code ) {
+						// Log non-200 with code only; do not log response body (may contain sensitive data).
+						if ( $logger && method_exists( $logger, 'warning' ) ) {
+							$logger->warning(
+								sprintf( 'Domain "%s" returned HTTP %d', $url, $http_code ),
+								array(
+									'source'    => 'analytify_fetch_search_console_stats',
+									'domain'    => $url,
+									'http_code' => $http_code,
+								)
+							);
+						}
+					}
+				} catch ( \Throwable $th ) {
+					// Continue to next URL on exception.
+					continue;
+				}
+			}
+
+			// Choose the best domain after checking ALL URLs.
+			$chosen_domain = null;
+
+			// Priority 1: Any domain with actual keyword data (prefer first one found).
+			if ( ! empty( $accepted_domains_with_data ) ) {
+				$chosen_domain = $accepted_domains_with_data[0]; // Use first domain that has data.
+			} // phpcs:ignore Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace
+			// Priority 2: If NO domains have data, use first accepted domain (fallback).
+			elseif ( ! empty( $accepted_domains_no_data ) ) {
+				$chosen_domain = $accepted_domains_no_data[0]; // Use first accepted domain as fallback.
+			}
+
+			// Return the chosen domain's data.
+			if ( $chosen_domain ) {
+				return array(
+					'response' => $chosen_domain['data'],
+				);
+			}
+
+			// No domains were accepted at all.
+			if ( $logger && method_exists( $logger, 'warning' ) ) {
+				$logger->warning(
+					'FINAL FAILURE: No domain accepted',
+					array(
+						'source' => 'analytify_fetch_search_console_stats',
+						'site'   => $domain_stream_url_filtered,
+					)
+				);
+			}
+
+			return array(
+				'error' => array(
+					'status'  => "No Stats Available for $domain_stream_url_filtered",
+					'message' => __( 'Analytify gets GA4 keyword stats from Search Console. Make sure the site is verified and you have owner access.', 'wp-analytify' ),
+				),
+			);
+		}
+	} // End of class
+} // End of if class exists

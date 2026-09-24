@@ -1,0 +1,151 @@
+/**
+ * Floating Pro license notice on Analytify admin screens.
+ *
+ * @package WP_Analytify
+ */
+
+.analytify-license-sticky {
+	align-items: center;
+	background: #fff;
+	border-radius: 8px;
+	border-top: 3px solid #00c853;
+	bottom: 24px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	max-width: 330px;
+	padding: 20px 22px 18px;
+	position: fixed;
+	right: 24px;
+	text-align: center;
+	width: calc(100% - 48px);
+	z-index: 100100;
+}
+
+.analytify-license-sticky__head {
+	align-items: center;
+	display: flex;
+	gap: 12px;
+	justify-content: center;
+	margin-bottom: 12px;
+	width: 100%;
+}
+
+.analytify-license-sticky__icon {
+	background: #e8f9ef;
+	border-radius: 8px;
+	flex-shrink: 0;
+	height: 44px;
+	position: relative;
+	width: 44px;
+}
+
+.analytify-license-sticky__icon::before {
+	color: #00c853;
+	content: "\f332";
+	display: block;
+	font-family: dashicons;
+	font-size: 24px;
+	left: 50%;
+	line-height: 1;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.analytify-license-sticky__title {
+	color: #1d2327;
+	flex: 1;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 1.35;
+	margin: 0;
+	max-width: 260px;
+	text-align: left;
+}
+
+.analytify-license-sticky__text {
+	color: #50575e;
+	font-size: 13px;
+	hyphens: auto;
+	line-height: 1.5;
+	margin: 0 0 16px;
+	text-align: left;
+	width: 100%;
+}
+
+/* Top row: contextual text link (renew / activate). */
+.analytify-license-sticky__secondary {
+	align-items: center;
+	background: transparent;
+	border: 0;
+	border-radius: 4px;
+	box-sizing: border-box;
+	color: #1d2327;
+	display: inline-flex;
+	font-size: 13px;
+	font-weight: 500;
+	gap: 4px;
+	justify-content: center;
+	line-height: 1.4;
+	margin: 0 0 12px;
+	padding: 8px 10px;
+	text-decoration: none;
+	transition: background-color 0.15s ease;
+	width: 100%;
+}
+
+.analytify-license-sticky__secondary:hover,
+.analytify-license-sticky__secondary:focus {
+	background-color: rgba(0, 0, 0, 0.02);
+	color: #1d2327;
+	outline: none;
+	text-decoration: none;
+}
+
+/* Bottom row: primary green CTA (purchase). */
+.analytify-license-sticky__cta {
+	align-items: center;
+	background: #00c853;
+	border-radius: 4px;
+	box-sizing: border-box;
+	color: #fff !important;
+	display: inline-flex;
+	font-size: 13px;
+	font-weight: 600;
+	gap: 6px;
+	justify-content: center;
+	line-height: 1.4;
+	margin: 0;
+	padding: 10px 14px;
+	text-align: center;
+	text-decoration: none;
+	width: 100%;
+}
+
+.analytify-license-sticky__cta:hover,
+.analytify-license-sticky__cta:focus {
+	background: #00a844;
+	color: #fff !important;
+	outline: none;
+	text-decoration: none;
+}
+
+.analytify-license-sticky__external::before {
+	color: #fff;
+	content: "\f504";
+	font-family: dashicons;
+	font-size: 16px;
+	line-height: 1;
+	font-weight: 400;
+}
+
+
+@media screen and (max-width: 782px) {
+	.analytify-license-sticky {
+		bottom: 16px;
+		right: 16px;
+		width: calc(100% - 32px);
+	}
+}

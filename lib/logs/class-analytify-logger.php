@@ -89,10 +89,14 @@ class ANALYTIFY_Logger implements ANALYTIFY_Logger_Interface {
 	public function add( $handle, $message, $level = ANALYTIFY_Log_Levels::NOTICE ) {
 
 		$message = apply_filters( 'analytify_logger_add_message', $message, $handle );
-		$this->log( $level, $message, array(
-			'source'  => $handle,
-			'_legacy' => true,
-		) );
+		$this->log(
+			$level,
+			$message,
+			array(
+				'source'  => $handle,
+				'_legacy' => true,
+			)
+		);
 		return true;
 	}
 
@@ -114,7 +118,15 @@ class ANALYTIFY_Logger implements ANALYTIFY_Logger_Interface {
 	public function log( $level, $message, $context = array() ) {
 
 		if ( ! ANALYTIFY_Log_Levels::is_valid_level( $level ) ) {
-			_doing_it_wrong( __METHOD__, sprintf( __( '%1$s was called with an invalid level "%2$s".', 'wp-analytify' ), '<code>ANALYTIFY_Logger::log</code>', $level ), '3.0' );
+			_doing_it_wrong(
+				__METHOD__,
+				sprintf( // translators: Invalid level
+					__( '%1$s was called with an invalid level "%2$s".', 'wp-analytify' ),
+					'<code>ANALYTIFY_Logger::log</code>',
+					$level
+				),
+				'3.0'
+			);
 		}
 
 		if ( $this->should_handle( $level ) ) {
@@ -122,7 +134,20 @@ class ANALYTIFY_Logger implements ANALYTIFY_Logger_Interface {
 			$message   = apply_filters( 'analytify_logger_log_message', $message, $level, $context );
 
 			foreach ( $this->handlers as $handler ) {
-				$handler->handle( $timestamp, $level, $message, $context );
+				try {
+					$handler->handle( $timestamp, $level, $message, $context );
+				} catch ( \Throwable $e ) {
+					/**
+					 * Fires when a log handler throws. Failures are isolated so other handlers still run
+					 * and the request is not terminated by logging.
+					 *
+					 * @since 9.0.1
+					 *
+					 * @param \Throwable $e       The error or exception.
+					 * @param object     $handler Handler instance.
+					 */
+					do_action( 'analytify_log_handler_failed', $e, $handler );
+				}
 			}
 		}
 	}
@@ -270,7 +295,7 @@ class ANALYTIFY_Logger implements ANALYTIFY_Logger_Interface {
 	 * @since 3.4.0
 	 */
 	public function clear_expired_logs() {
-		$days      = absint( apply_filters( 'analytify_logger_days_to_retain_logs', 30 ) );
+		$days      = absint( apply_filters( 'analytify_logger_days_to_retain_logs', 1 ) );
 		$timestamp = strtotime( "-{$days} days" );
 
 		foreach ( $this->handlers as $handler ) {

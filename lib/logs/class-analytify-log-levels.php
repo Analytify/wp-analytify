@@ -110,5 +110,4 @@ abstract class ANALYTIFY_Log_Levels {
 			return false;
 		}
 	}
-
 }

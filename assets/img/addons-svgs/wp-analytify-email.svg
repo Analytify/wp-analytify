@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="78px" height="70px" viewBox="0 0 78 70" style="enable-background:new 0 0 78 70;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#9EA3A8;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:#D4D6D8;}
+	.st3{fill:#B4B9BE;}
+	.st4{fill:#00B9EB;}
+	.st5{fill:#FF5252;}
+</style>
+<g>
+	<polygon class="st0" points="78,70 0,70 0,28 39,0 78,28  "/>
+	<g>
+		<rect x="8.5" y="0.5" class="st1" width="61" height="69"/>
+		<path class="st2" d="M69,1v68H9V1H69 M70,0H8v70h62V0L70,0z"/>
+	</g>
+	<rect x="32" y="6" class="st0" width="15" height="4"/>
+	<rect x="12" y="13" class="st2" width="51" height="3"/>
+	<rect x="12" y="19" class="st2" width="29" height="3"/>
+	<rect x="12" y="25" class="st2" width="26" height="3"/>
+	<rect x="12" y="31" class="st2" width="26" height="3"/>
+	<rect x="12" y="37" class="st2" width="29" height="3"/>
+	<rect x="12" y="43" class="st2" width="32" height="3"/>
+	<g>
+		<path class="st3" d="M54,38L54,38c-5,0-9-4-9-9l0,0c0-5,4-9,9-9l0,0c5,0,9,4,9,9l0,0C63,34,59,38,54,38z"/>
+		<path class="st4" d="M49.1,36.5c4.2,2.7,9.7,1.6,12.5-2.6L54,29L49.1,36.5z"/>
+		<path class="st5" d="M62.7,26.6L54,29l0,0l7.5,4.9C63,31.7,63.3,29,62.7,26.6z"/>
+	</g>
+	<polygon class="st3" points="78,70 0,70 0,28  "/>
+	<polygon class="st2" points="78,70 0,70 0,70 78,28  "/>
+</g>
+</svg>

@@ -5,112 +5,44 @@
  * @package WP_Analytify
  */
 
-if ( ! defined( 'ABSPATH' ) ) { exit; // Exit if accessed directly.
-}
-
-/**
- * Show Old dashboard to users.
- * We are keeping the old dashboard and will use it later.
- */
-if ( isset( $_COOKIE['wp_analytify_current_dashboard'] ) and $_COOKIE['wp_analytify_current_dashboard'] === 'old' ) {
-	include( ANALYTIFY_ROOT_PATH . '/inc/analytics-dashboard-old.php' );
-	return;
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
 $wp_analytify   = $GLOBALS['WP_ANALYTIFY'];
+$selected_stats = $wp_analytify->settings->get_option( 'show_analytics_panels_dashboard', 'wp-analytify-dashboard', array() );
 
-$start_date_val = strtotime( '-1 month' );
-$end_date_val   = strtotime( 'now' );
-$start_date     = date( 'Y-m-d', $start_date_val );
-$end_date       = date( 'Y-m-d', $end_date_val );
+$dashboard_profile_id = WPANALYTIFY_Utils::get_reporting_property();
+$access_token         = get_option( 'post_analytics_token' );
+	$version          = defined( 'ANALYTIFY_PRO_VERSION' ) ? ANALYTIFY_PRO_VERSION : ( defined( 'ANALYTIFY_VERSION' ) ? ANALYTIFY_VERSION : '1.0.0' );
 
-$selected_stats = $wp_analytify->settings->get_option( 'show_analytics_panels_dashboard','wp-analytify-dashboard', array() );
+// Get the start date and end date from wpa-core-functions.
+$date_picker_dates = analytify_datepicker_dates();
+$start_date        = $date_picker_dates['start_date'] ?? '';
+$end_date          = $date_picker_dates['end_date'] ?? '';
 
-$classes = '';
-foreach ( $selected_stats as $value ) {
-	$classes .= $value . ' ';
-}
+// Get compare dates for legacy version (before v5.0.0).
+$date_diff          = WPANALYTIFY_Utils::calculate_date_diff( $start_date, $end_date );
+$compare_start_date = $date_diff['start_date'];
+$compare_end_date   = $date_diff['end_date'];
 
-if ( isset( $_POST['analytify_date_diff'] ) && ! empty( $_POST['analytify_date_diff'] ) ) {
-	update_option( 'analytify_date_differ', $_POST['analytify_date_diff'] );
-}
+// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Reading URL parameters for display purposes.
+$dashboard_page = isset( $_GET['page'] ) ? sanitize_text_field( wp_unslash( $_GET['page'] ) ) : '';
+// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Reading URL parameters for display purposes.
+$dashboard_show = isset( $_GET['show'] ) ? sanitize_text_field( wp_unslash( $_GET['show'] ) ) : '';
 
-$_differ = get_option( 'analytify_date_differ' );
+$show_dashboard_export = class_exists( 'WP_Analytify_Pro_Base' )
+	&& 'analytify-dashboard' === $dashboard_page
+	&& empty( $dashboard_show );
 
-if ( $_differ ) {
-	if ( $_differ == 'current_day' ) {
-		$start_date = date( 'Y-m-d' );
-	} elseif ( $_differ == 'last_7_days' ) {
-		$start_date = date( 'Y-m-d', strtotime( '-7 days' ) );
-	} elseif ( $_differ == 'last_14_days' ) {
-		$start_date = date( 'Y-m-d', strtotime( '-14 days' ) );
-	} elseif ( $_differ == 'last_30_days' ) {
-		$start_date = date( 'Y-m-d', strtotime( '-1 month' ) );
-	} elseif (  $_differ == 'this_month' ) {
-		$start_date =  date('Y-m-01') ;
-	} elseif ( $_differ == 'last_month' ) {
-		$start_date =  date('Y-m-01', strtotime('-1 month') );
-		$end_date =  date('Y-m-t', strtotime('-1 month') );
-	} elseif ( $_differ == 'last_3_months' ) {
-		$start_date =  date('Y-m-01', strtotime('-3 month') );
-		$end_date =  date('Y-m-t', strtotime('-1 month') );
-	} elseif ( $_differ == 'last_6_months' ) {
-		$start_date =  date('Y-m-01', strtotime('-6 month') );
-		$end_date =  date('Y-m-t', strtotime('-1 month') );
-	} elseif ( $_differ == 'last_year' ) {
-		$start_date =  date('Y-m-01', strtotime('-1 year') );
-		$end_date =  date('Y-m-t', strtotime('-1 month') );
-	}
-
-}
-
-if ( isset( $_POST['analytify_date_start'] ) && ! empty( $_POST['analytify_date_start'] ) && isset( $_POST['analytify_date_end'] ) && ! empty( $_POST['analytify_date_end'] ) ) {
-	$start_date	= sanitize_text_field( wp_unslash( $_POST['analytify_date_start'] ) );
-	$end_date	= sanitize_text_field( wp_unslash( $_POST['analytify_date_end'] ) );
-}
-
-$date1 = date_create( $start_date );
-$date2 = date_create( $end_date );
-$diff  = date_diff( $date2, $date1 );
-
-$compare_start_date = strtotime( $start_date . $diff->format( '%R%a days' ) );
-$compare_start_date = date( 'Y-m-d', $compare_start_date );
-$compare_end_date  	= $start_date;
-
-// var_dump( $start_date );
-// var_dump( $end_date );
-// var_dump( $compare_start_date );
-// var_dump( $compare_end_date );
-// Fetch Dashboard Profile ID.
-$dashboard_profile_ID = $wp_analytify->settings->get_option( 'profile_for_dashboard','wp-analytify-profile' );
-$nonce = wp_create_nonce( 'analytify-get-dashboard-stats' );
-$acces_token  = get_option( 'post_analytics_token' );
-
-$version = defined( 'ANALYTIFY_PRO_VERSION' ) ? ANALYTIFY_PRO_VERSION : ANALYTIFY_VERSION;
-
-// if ( ! $acces_token ) {
-// 	return ;
-// } else {
-// 	if (  WP_ANALYTIFY_FUNCTIONS::wpa_check_profile_selection( 'Analytify' )  ) { return; }
-// }
-
-/*
-* Check with roles assigned at dashboard settings.
-*/
-// $is_access_level = $wp_analytify->settings->get_option( 'show_analytics_roles_dashboard','wp-analytify-dashboard' );
-// //var_dump($is_access_level);
-// // Show dashboard to admin incase of empty access roles.
-// if ( empty( $is_access_level ) ) { $is_access_level = array( 'Administrator' ); }
-// //var_dump($is_access_level);
-// //var_dump($wp_analytify->pa_check_roles( $is_access_level ));
-// if ( $wp_analytify->pa_check_roles( $is_access_level ) ) {
-
-// 	if ( $acces_token ) {
-
-// dequeue event calendar js
-wp_dequeue_script( 'tribe-common' );
-wp_dequeue_script( 'mcw-crypto-common' ); ?>
-
+/**
+ * To be used by the 'view stats' on GA's website link.
+ * Date range is for legacy support, 5.0.0 or later will use date generated by JS.
+ */
+$report_url        = WP_ANALYTIFY_FUNCTIONS::get_ga_report_url( $dashboard_profile_id );
+$report_date_range = WP_ANALYTIFY_FUNCTIONS::get_ga_report_range( $start_date, $end_date, $compare_start_date, $compare_end_date );
+?>
 <div class="wpanalytify analytify-dashboard-nav">
 	<div class="wpb_plugin_wraper">
 		<div class="wpb_plugin_header_wraper">
@@ -118,440 +50,430 @@ wp_dequeue_script( 'mcw-crypto-common' ); ?>
 			<div class="wpb_plugin_header">
 				<div class="wpb_plugin_header_title"></div>
 				<div class="wpb_plugin_header_info">
-					<a href="https://analytify.io/changelog/" target="_blank" class="btn">Changelog - v<?php echo $version; ?></a>
+					<a href="https://analytify.io/changelog/?utm-source=main-dashboard" target="_blank" class="btn"><?php echo esc_html__( 'View Changelog', 'wp-analytify' ); ?></a>
 				</div>
 				<div class="wpb_plugin_header_logo">
-					<img src="<?php echo ANALYTIFY_PLUGIN_URL . '/assets/images/logo.svg'?>" alt="Analytify">
+					<img src="<?php echo esc_url( ( defined( 'ANALYTIFY_PLUGIN_URL' ) ? ANALYTIFY_PLUGIN_URL : '' ) . 'assets/img/logo.svg' ); ?>" alt="Analytify">
 				</div>
 			</div>
 		</div>
-				
+
 		<div class="analytify-dashboard-body-container">
 			<div class="wpb_plugin_body_wraper">
 				<div class="wpb_plugin_body">
-					<div class="wpa-tab-wrapper"><?php echo $wp_analytify->dashboard_navigation(); ?></div>
+					<div class="wpa-tab-wrapper"><?php $wp_analytify->dashboard_navigation(); ?></div>
 					<div class="wpb_plugin_tabs_content analytify-dashboard-content">
-						<div class="analytify_wraper <?php echo $classes ?>">
-							<div class="analytify_main_title_section">
+						<div class="analytify_wraper <?php echo esc_attr( implode( ' ', $selected_stats ) ); ?>">
+							<div class="analytify_main_title_section analytify-dashboard-header-toolbar">
 								<div class="analytify_dashboard_title">
-									<h1 class="analytify_pull_left analytify_main_title"><?php esc_html_e( 'Dashboard', 'wp-analytify' ); ?></h1>
-									<?php
-									$_analytify_profile = get_option( 'wp-analytify-profile' );
+									<div class="analytify_dashboard_title_row">
+										<h1 class="analytify_pull_left analytify_main_title"><?php esc_html_e( 'Overview Dashboard', 'wp-analytify' ); ?></h1>
+										<?php if ( $show_dashboard_export ) { ?>
+											<span class="analytify_export_dropdown">
+												<button type="button" class="analytify_export_btn" aria-expanded="false" aria-haspopup="true">
+													<?php esc_html_e( 'Export', 'wp-analytify' ); ?>
+												</button>
+												<ul class="analytify_export_menu" role="menu">
+													<li role="none">
+														<button type="button" class="analytify_export_menu_item" data-export-type="excel" role="menuitem">
+															<?php esc_html_e( 'Export to Excel', 'wp-analytify' ); ?>
+														</button>
+													</li>
+													<li role="none">
+														<button type="button" class="analytify_export_menu_item" data-export-type="pdf" role="menuitem">
+															<?php esc_html_e( 'Export to PDF', 'wp-analytify' ); ?>
+														</button>
+													</li>
+													<li role="none">
+														<button type="button" class="analytify_export_menu_item" data-export-type="csv" role="menuitem">
+															<?php esc_html_e( 'Export to CSV', 'wp-analytify' ); ?>
+														</button>
+													</li>
+												</ul>
+											</span>
+										<?php } ?>
+									</div>
+									<?php WPANALYTIFY_Utils::dashboard_subtitle_section(); ?>
 									
-									if ( $acces_token && isset( $_analytify_profile['profile_for_dashboard'] ) && ! empty( $_analytify_profile['profile_for_dashboard'] ) ) : ?>
-										<span class="analytify_stats_of"><a href="<?php echo WP_ANALYTIFY_FUNCTIONS::search_profile_info( $dashboard_profile_ID, 'websiteUrl' ) ?>" target="_blank"><?php echo WP_ANALYTIFY_FUNCTIONS::search_profile_info( $dashboard_profile_ID, 'websiteUrl' ) ?></a> (<?php echo WP_ANALYTIFY_FUNCTIONS::search_profile_info( $dashboard_profile_ID, 'name' ) ?>)</span>
-									<?php endif; ?>
-
-								</div>
-
+								</div>							
 								<div class="analytify_main_setting_bar">
 									<div class="analytify_pull_right analytify_setting">
 										<div class="analytify_select_date">
-
-											<?php 
-											if ( method_exists( 'WPANALYTIFY_Utils', 'date_form' )  ) {
-												WPANALYTIFY_Utils::date_form( $start_date, $end_date );
-											} ?>
-
+											<?php WPANALYTIFY_Utils::date_form( $start_date, $end_date ); ?>
 										</div>
 									</div>
 								</div>
-								<!-- <div class="analytify_select_dashboard analytify_pull_right"><?php // do_action( 'analytify_dashboad_dropdown' ); ?></div> -->
 							</div>
 
-							<?php 
-							if ( ! WP_ANALYTIFY_FUNCTIONS::wpa_check_profile_selection('Analytify') ) {
+							<?php
+							// Show notice if the user is using UA or has'nt selected any property yet.
+							if ( WP_ANALYTIFY_FUNCTIONS::wpa_check_ga_version() && ! WP_ANALYTIFY_FUNCTIONS::wpa_check_profile_selection( 'Analytify' ) ) {
+								/*
+								* Check with roles assigned at dashboard settings.
+								*/
+								$is_access_level = $wp_analytify->settings->get_option( 'show_analytics_roles_dashboard', 'wp-analytify-dashboard' );
 
-							/*
-							* Check with roles assigned at dashboard settings.
-							*/
-							$is_access_level = $wp_analytify->settings->get_option( 'show_analytics_roles_dashboard','wp-analytify-dashboard' );
-							
-							// Show dashboard to admin incase of empty access roles.
-							if ( empty( $is_access_level ) ) { $is_access_level = array( 'Administrator' ); }
+								// Show dashboard to admin incase of empty access roles.
+								if ( empty( $is_access_level ) ) {
+									$is_access_level = array( 'administrator' ); }
 
-							$report_url        = WP_ANALYTIFY_FUNCTIONS::get_ga_report_url( $dashboard_profile_ID ) ;
-							$report_date_range = WP_ANALYTIFY_FUNCTIONS::get_ga_report_range( $start_date, $end_date, $compare_start_date, $compare_end_date ); 
-							//var_dump($is_access_level);
-							//var_dump($wp_analytify->pa_check_roles( $is_access_level ));
-							if ( $wp_analytify->pa_check_roles( $is_access_level ) ) {
+								if ( $wp_analytify->pa_check_roles( $is_access_level ) ) {
+									if ( $access_token ) {
 
-								if ( $acces_token ) {
-								// if ( in_array( 'show-real-time', $selected_stats ) ) {
-								// 	do_action( 'wp_analytify_view_real_time_stats' );
-								// }
+										// 'Compare Chart' section added by the Pro version.
+										if ( in_array( 'show-compare-stats', $selected_stats, true ) ) {
+											/**
+											 * All 4 dates are for Pro versions that are older then v5.0.0.
+											 * Version 5.0.0 and above will use dates via AJAX.
+											 */
+											do_action( 'wp_analytify_view_compare_stats', $start_date, $end_date, $compare_start_date, $compare_end_date );
+										}
 
-								if ( in_array( 'show-compare-stats', $selected_stats ) ) {
-									do_action( 'wp_analytify_view_compare_stats', $start_date, $end_date, $compare_start_date, $compare_end_date );
-								}
-								?>
-
-								<!-- General Stats -->
-								<?php if (  in_array( 'show-overall-dashboard', $selected_stats ) ) :  ?>
-									<div class="analytify_general_status analytify_status_box_wraper">
-										<div class="analytify_status_header">
-											<h3><?php esc_html_e( 'General Statistics', 'wp-analytify' ); ?></h3>
-										</div>
-										<div class="analytify_status_body stats_loading">
-
-											<script>
-											//<![CDATA[
-
-											jQuery( function($) {
-												setTimeout(function(){
-													$.get(ajaxurl, { action:'analytify_load_default_general_stats', dashboard_profile_ID:"<?php echo $dashboard_profile_ID ;?>", start_date:"<?php echo $start_date ;?>", end_date: "<?php echo $end_date ;?>" , compare_start_date : "<?php echo $compare_start_date ?>" , compare_end_date : "<?php echo $compare_end_date ?>" , date_different: "<?php echo $diff->format( '%a' ) . ' ' . __( 'days', 'wp-analytify' )  ?>", nonce : '<?php echo $nonce ?>'  },function(data){
-
-														try {
-															var data_array = $.parseJSON(data);
-															$('.analytify_general_status_boxes_wraper').html(data_array.body).parent().removeClass("stats_loading");
-															equalheight('.analytify_general_status_boxes');
-															$('.general_stats_message').html(data_array.message).children().removeClass('analytify_xl_f');
-														} catch (e) {
-															$('.analytify_general_status_boxes_wraper').html(data).parent().removeClass("stats_loading");
-														}
-
-													});
-												},1500);
-
-											});
-											//]]>
-											</script>
-											<div class="analytify_general_status_boxes_wraper">
+										// 'General Stats' section.
+										if ( in_array( 'show-overall-dashboard', $selected_stats, true ) ) {
+											?>
+											<div class="analytify_general_status analytify_section_general_stats analytify_status_box_wraper" data-endpoint="general-stats" data-target=".analytify_section_general_stats">
+												<div class="analytify_status_header">
+													<h3><?php esc_html_e( 'General Statistics', 'wp-analytify' ); ?>
+													<?php if ( class_exists( 'WP_Analytify_Pro_Base' ) ) { ?>
+														<a href="#" class="analytify-export-data analytify_tooltip" data-stats-type="general-stats">
+															<span class="analytify_tooltiptext"><?php esc_html_e( 'Export General Stats', 'wp-analytify' ); ?></span>
+														</a>
+														<img src="<?php echo esc_url( admin_url( 'images/spinner.gif' ) ); ?>" class='analytify-export-loader' style="display:none">
+													<?php } ?>
+													</h3>
+												</div>
+												<div class="analytify_status_body">
+													<div class="analytify_general_status_boxes_wraper stats-wrapper"></div>
+												</div>
+												<div class="analytify_stats_loading analytify_general_status_boxes_wraper">
+													<?php for ( $i = 0; $i < 9; $i++ ) { ?>
+													<div class="analytify_general_status_boxes">
+														<p class="skt-loading loading-width-sm inline"></p>
+														<div>
+															<p class="skt-loading loading-width-lg inline large"></p>
+														</div>
+														<p class="skt-loading"></p>
+														<p class="skt-loading"></p>
+														<div class="analytify_general_status_footer_info">
+															<p class="skt-loading light-gray"></p>
+														</div>
+													</div>
+													<?php } ?>
+												</div>
 											</div>
-										</div>
-										<div class="analytify_status_footer">
-											<span class="analytify_info_stats"><?php _e( 'Did you know that total time on your site is', 'wp-analytify' )?>  <span class="analytify_red  general_stats_message"></span>?</span>
-										</div>
-									</div>
-								<?php endif ?>
-								<!-- End of General Stats -->
+											<?php
+										}
 
-								<!-- Top Pages Statistics -->
-								<?php if (  in_array( 'show-top-pages-dashboard', $selected_stats ) ) :  ?>
-									<div class="analytify_general_status analytify_status_box_wraper">
-										<div class="analytify_status_header">
-											<h3><?php esc_html_e( 'Top pages by views', 'wp-analytify' ); ?>
-												<?php $referral_url = 'https://analytics.google.com/analytics/web/#report/content-pages/' ; ?>
-												<a href="<?php echo $referral_url . $report_url . $report_date_range ?>" target="_blank" class="analytify_tooltip"><span class="analytify_tooltiptext"><?php _e( 'View All Top Pages', 'wp-analytify' ) ?></span><span aria-hidden="true" class="dashicons dashicons-external"></span></a>
-												<?php do_action( 'analytify_after_top_page_text' ) ?>
-											</h3>
-											<div class="analytify_top_page_detials analytify_tp_btn"></div>
-										</div>
-										<div class="analytify_status_body stats_loading">
-											<script>
-											//<![CDATA[
-
-											jQuery( function($) {
-												setTimeout(function(){
-													$.get(ajaxurl, { action:'analytify_load_default_top_pages', dashboard_profile_ID:"<?php echo $dashboard_profile_ID ;?>", start_date:"<?php echo $start_date ;?>", end_date: "<?php echo $end_date ;?>" , compare_start_date : "<?php echo $compare_start_date ?>" , compare_end_date : "<?php echo $compare_end_date ?>" , date_different: "<?php echo $diff->format( '%a days' ) ?>", nonce : '<?php echo $nonce ?>'  },function(data){
-
-														$('.analytify_top_pages_boxes_wraper').html(data).parent().removeClass("stats_loading");
-														wp_analytify_paginated();
-													});
-												},2000);
-											});
-											//]]>
-											</script>
-											<div class="analytify_top_pages_boxes_wraper">
+										// 'Top Pages' section.
+										if ( in_array( 'show-top-pages-dashboard', $selected_stats, true ) ) {
+											?>
+											<div class="analytify_general_status analytify_section_top_pages analytify_status_box_wraper" data-endpoint="top-pages-stats" data-target=".analytify_section_top_pages">
+												<div class="analytify_status_header">
+													<h3>
+														<?php esc_html_e( 'Top pages by views', 'wp-analytify' ); ?>
+														<a href="javascript: return false;" data-ga-dashboard-link="<?php echo esc_attr( WPANALYTIFY_Utils::get_all_stats_link( $report_url, 'top_pages', false ) ); ?>" target="_blank" class="analytify_tooltip"><span class="analytify_tooltiptext"><?php esc_html_e( 'View All Top Pages', 'wp-analytify' ); ?></span><span aria-hidden="true" class="dashicons dashicons-external"></span></a>
+														<?php do_action( 'analytify_after_top_page_text' ); ?>
+													</h3>
+												</div>
+												<div class="analytify_status_body">
+													<div class="analytify_top_pages_boxes_wraper stats-wrapper"></div>
+												</div>
+												<div class="analytify_stats_loading">
+													<table class="analytify_data_tables">
+														<thead>
+															<tr>
+																<th class="analytify_num_row"><p class="skt-loading light-gray"></p></th>
+																<th class="analytify_txt_left"><p class="skt-loading light-gray"></p></th>
+																<th class="analytify_value_row"><p class="skt-loading light-gray"></p></th>
+																<th class="analytify_value_row"><p class="skt-loading light-gray"></p></th>
+																<th class="analytify_value_row"><p class="skt-loading light-gray"></p></th>
+															</tr>
+														</thead>
+														<tbody>
+															<?php for ( $i = 0; $i < 5; $i++ ) { ?>
+															<tr>
+																<td class="analytify_txt_center"><p class="skt-loading"></p></td>
+																<td><p class="skt-loading"></p></td>
+																<td class="analytify_txt_center"><p class="skt-loading"></p></td>
+																<td class="analytify_txt_center"><p class="skt-loading"></p></td>
+																<td class="analytify_txt_center"><p class="skt-loading"></p></td>
+															</tr>
+															<?php } ?>
+														</tbody>
+													</table>
+												</div>
 											</div>
-										</div>
-										<div class="analytify_status_footer">
-											<span class="analytify_info_stats"><?php esc_html_e( 'Top pages and posts', 'wp-analytify' ); ?></span>
-											<div class="wp_analytify_pagination"></div>
+											<?php
+										}
 
-										</div>
-									</div>
-								<?php endif ?>
-								<!-- End Top Pages Statistics -->
-
-								<!-- Geographic Statistics -->
-								<?php if ( in_array( 'show-geographic-dashboard', $selected_stats ) ) :  ?>
-									<div class="analytify_general_status analytify_status_box_wraper">
-										<div class="analytify_status_header">
-											<h3><?php esc_html_e( 'Geographic', 'wp-analytify' ); ?></h3>
-										</div>
-										<div class="analytify_status_body stats_loading">
-											<script>
-											//<![CDATA[
-
-											jQuery( function($) {
-												$.get(ajaxurl, { action:'analytify_load_default_geographic', dashboard_profile_ID:"<?php echo $dashboard_profile_ID ;?>", start_date:"<?php echo $start_date ;?>", end_date: "<?php echo $end_date ;?>", report_url: "<?php echo $report_url ?>", report_date_range: "<?php echo $report_date_range ?>", nonce : '<?php echo $nonce ?>' },function(data){
-
-													$('.analytify_geographic_stats_boxes_wraper').html(data).parent().removeClass("stats_loading");
-
-												});
-											});
-											//]]>
-											</script>
-											<div class="analytify_geographic_stats_boxes_wraper">
+										// 'Geographic' section.
+										if ( in_array( 'show-geographic-dashboard', $selected_stats, true ) ) {
+											?>
+											<div class="analytify_general_status analytify_section_geo_stats analytify_status_box_wraper" data-endpoint="geographic-stats" data-target=".analytify_section_geo_stats">
+												<div class="analytify_status_header">
+													<h3><?php esc_html_e( 'Geographic Stats', 'wp-analytify' ); ?></h3>
+												</div>
+												<div class="analytify_status_body">
+													<div class="analytify_geographic_stats_boxes_wraper stats-wrapper"></div>
+												</div>
+												<div class="analytify_stats_loading">
+													<div class="analytify_clearfix">
+														<?php for ( $i = 0; $i < 2; $i++ ) { ?>
+														<table class="analytify_data_tables analytify_half analytify_pull_left">
+															<thead>
+																<tr>
+																	<th class="analytify_txt_left"><p class="skt-loading light-gray"></p></th>
+																	<th class="analytify_value_row"><p class="skt-loading light-gray"></p></th>
+																</tr>
+															</thead>
+															<tbody>
+																<?php for ( $k = 0; $k < 5; $k++ ) { ?>
+																<tr>
+																	<td><p class="skt-loading"></p></td>
+																	<td class="analytify_txt_center"><p class="skt-loading"></p></td>
+																</tr>
+																<?php } ?>
+															</tbody>
+														</table>
+														<?php } ?>
+													</div>
+												</div>
 											</div>
-										</div>
+											<?php
+										}
 
-										<div class="analytify_status_footer">
-											<span class="analytify_info_stats"><?php esc_html_e( 'Top countries and cities', 'wp-analytify' ); ?></span>
-										</div>
-									</div>
-								<?php endif ?>
-								<!-- End Geographic Statistics -->
-
-
-								<!-- System Statistics -->
-								<?php if ( in_array( 'show-system-stats', $selected_stats ) ) :  ?>
-									<div class="analytify_general_status analytify_status_box_wraper">
-										<div class="analytify_status_header">
-											<h3><?php esc_html_e( 'Tech Stats', 'wp-analytify' ); ?></h3>
-										</div>
-										<div class="stats_loading">
-											<script>
-											//<![CDATA[
-
-											jQuery( function($) {
-												setTimeout(function(){
-													$.get(ajaxurl, { action:'analytify_load_default_system', dashboard_profile_ID:"<?php echo $dashboard_profile_ID ;?>", start_date:"<?php echo $start_date ;?>", end_date: "<?php echo $end_date ;?>", nonce : '<?php echo $nonce ?>'  },function(data){
-
-														$('.analytify_system_stats_boxes_wraper').html(data).parent().removeClass("stats_loading");
-
-													});
-												},2500);
-											});
-											//]]>
-											</script>
-											<div class="analytify_system_stats_boxes_wraper">
+										// 'System' section.
+										if ( in_array( 'show-system-stats', $selected_stats, true ) ) {
+											?>
+											<div class="analytify_general_status analytify_section_system_stats analytify_status_box_wraper" data-endpoint="system-stats" data-target=".analytify_section_system_stats">
+												<div class="analytify_status_header">
+													<h3><?php esc_html_e( 'System Stats', 'wp-analytify' ); ?></h3>
+												</div>
+												<div class="analytify_status_body">
+													<div class="analytify_system_stats_boxes_wraper stats-wrapper"></div>
+												</div>
+												<div class="analytify_stats_loading">
+													<div class="analytify_clearfix">
+														<?php for ( $i = 0; $i < 3; $i++ ) { ?>
+														<div class="analytify_one_tree_table">
+															<table class="analytify_data_tables">
+																<thead>
+																	<tr>
+																		<th class="analytify_txt_left"><p class="skt-loading light-gray"></p></th>
+																		<th class="analytify_value_row"><p class="skt-loading light-gray"></p></th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<?php for ( $k = 0; $k < 5; $k++ ) { ?>
+																	<tr>
+																		<td><p class="skt-loading"></p></td>
+																		<td class="analytify_txt_center"><p class="skt-loading"></p></td>
+																	</tr>
+																	<?php } ?>
+																</tbody>
+															</table>
+														</div>
+														<?php } ?>
+													</div>
+												</div>
 											</div>
-										</div>
-									</div>
-									<!-- End System Statistics -->
-								<?php endif ?>
+											<?php
+										}
 
-								<!-- Gif Add Start -->
-								<?php if ( ! class_exists( 'WP_Analytify_Pro' ) && get_option( 'analytify_remove_comparison_gif' ) != 'yes' ) : ?>
-								<div class="analytify_general_status analytify_general_status-gif">
-									<span class="dashicons dashicons-no-alt analytify_general_status-icon">Dismiss</span>
-									<a href="https://analytify.io/upgrade-from-free" class="analytify_block" target="_blank">
-										<img src="<?php echo plugins_url( '../assets/images/analytify_compare.gif', __FILE__ )  ?>" alt="Upgrade to Pro" style="width:100%">
-										<a href="https://analytify.io/upgrade-from-free" class="analytify_go_pro_overlay" target="_blank">
-
-											<span class="analytify_go_pro_overlay_inner">
-												<span class="analytify_h2">Premium feature</span>
-												<span class="analytify_btn" target="_blank">Upgrade Now</span>
-											</span>
-									</a>
-								</div>
-								<?php endif ?>
-								<!-- Gif Add End -->
-
-								<!-- Keyword Statistics -->
-								<?php if ( in_array( 'show-keywords-dashboard', $selected_stats ) ) :  ?>
-									<div class="analytify_general_status analytify_status_box_wraper">
-										<div class="analytify_status_header analytify_header_adj">
-											<h3>
-												<?php esc_html_e( 'How people are finding you (keywords)', 'wp-analytify' ); ?>
-												<?php do_action( 'analytify_after_top_keyword_text' ) ?>
-											</h3>
-											<div class="analytify_status_header_value keywords_total">
-												<span class="analytify_medium_f"><?php esc_html_e( 'Total Visits', 'wp-analytify' ); ?></span>
+										// Free vs Pro comparison gif.
+										if ( ! class_exists( 'WP_Analytify_Pro' ) && 'yes' !== get_option( 'analytify_remove_comparison_gif' ) ) {
+											?>
+											<div class="analytify_general_status analytify_general_status-gif">
+												<span class="dashicons dashicons-no-alt analytify_general_status-icon"><?php esc_html_e( 'Dismiss', 'wp-analytify' ); ?></span>
+												<a href="https://analytify.io/pricing?utm_source=analytify-lite&utm_medium=overview-dashboard&utm_campaign=pro-upgrade&utm_content=Upgrade-Banner-CTA" class="analytify_block" target="_blank">
+													<img src="<?php echo esc_url( plugins_url( '../assets/img/analytify_compare.gif', __FILE__ ) ); ?>" alt="<?php esc_attr_e( 'Upgrade to Pro', 'wp-analytify' ); ?>" style="width:100%">
+												</a>
+												<a href="https://analytify.io/pricing?utm_source=analytify-lite&utm_medium=overview-dashboard&utm_campaign=pro-upgrade&utm_content=Upgrade-Banner-CTA" class="analytify_go_pro_overlay" target="_blank">
+													<span class="analytify_go_pro_overlay_inner">
+														<span class="analytify_h2"><?php esc_html_e( 'Premium feature', 'wp-analytify' ); ?></span>
+														<span class="analytify_btn" target="_blank"><?php esc_html_e( 'Upgrade Now', 'wp-analytify' ); ?></span>
+													</span>
+												</a>
 											</div>
-											<div class="analytify_top_keywords_detials analytify_tp_btn">
+											<?php
+										}
 
+										// phpcs:ignore Squiz.PHP.CommentedOutCode.Found -- Kept for reference.
+										/*if ( 'ga4' === WPANALYTIFY_Utils::get_ga_mode()  ) { ?><div class="analytify_column"><div class="analytify_half analytify_left_flow"><?php }*/
+
+										// 'Keywords' section.
+										if ( in_array( 'show-keywords-dashboard', $selected_stats, true ) ) {
+											?>
+											<div class="analytify_general_status analytify_section_keywords_stats analytify_status_box_wraper" data-endpoint="keyword-stats" data-target=".analytify_section_keywords_stats">
+												<div class="analytify_status_header analytify_header_adj">
+													<h3>
+														<?php
+														esc_html_e( 'Keywords (How People Are Finding Your Website)', 'wp-analytify' );
+														do_action( 'analytify_after_top_keyword_text' );
+														?>
+													</h3>
+													<div class="analytify_status_header_value keywords_total empty-on-loading title-total-wrapper"></div>
+												</div>
+												<div class="analytify_status_body">
+													<div class="analytify_keyword_stats_boxes_wraper stats-wrapper"></div>
+												</div>
+												<div class="analytify_stats_loading">
+													<table class="analytify_data_tables">
+														<thead>
+															<tr>
+															<th class="analytify_txt_left"><p class="skt-loading light-gray"></p></th>
+															<th class="analytify_value_row"><p class="skt-loading light-gray"></p></th>
+															</tr>
+														</thead>
+														<tbody>
+															<?php for ( $i = 0; $i < 5; $i++ ) { ?>
+															<tr>
+																<td><p class="skt-loading"></p></td>
+																<td class="analytify_txt_center"><p class="skt-loading"></p></td>
+															</tr>
+															<?php } ?>
+														</tbody>
+													</table>
+												</div>
 											</div>
-										</div>
-										<div class="analytify_status_body stats_loading">
-											<script>
-											//<![CDATA[
+											<?php
+										}
 
-											jQuery( function($) {
-												$.get(ajaxurl, { action:'analytify_load_default_keyword', dashboard_profile_ID:"<?php echo $dashboard_profile_ID ;?>", start_date:"<?php echo $start_date ;?>", end_date: "<?php echo $end_date ;?>", nonce : '<?php echo $nonce ?>'  },function(data){
-
-													try {
-														var data_array = $.parseJSON(data);
-														$(".keywords_total").append( data_array.total_stats );
-														$('.analytify_keyword_stats_boxes_wraper').html( data_array.body ).parent().removeClass("stats_loading");
-													} catch (e) {
-														$('.analytify_keyword_stats_boxes_wraper').html(data).parent().removeClass("stats_loading");
-													}
-
-												});
-											});
-											//]]>
-											</script>
-											<div class="analytify_keyword_stats_boxes_wraper"></div>
-										</div>
-										<div class="analytify_status_footer">
-											<span class="analytify_info_stats"><?php esc_html_e( 'Ranked keywords', 'wp-analytify' ); ?></span>
-										</div>
-									</div>
-								<?php endif ?>
-								<!-- Enf of Keywords Stats -->
-
-								<div class="analytify_column">
-										<div class="analytify_half analytify_left_flow">
-
-											<!-- Social Network Statistics -->
-											<?php if ( in_array( 'show-social-dashboard', $selected_stats ) ) :  ?>
-												<div class="analytify_general_status analytify_status_box_wraper">
+										if ( in_array( 'show-social-dashboard', $selected_stats, true ) ) {
+											?>
+											<div class="analytify_column"><div class="analytify_half analytify_left_flow">
+											<div class="analytify_general_status analytify_section_social_media_stats analytify_status_box_wraper" data-endpoint="social-stats" data-target=".analytify_section_social_media_stats">
 													<div class="analytify_status_header analytify_header_adj">
 														<h3>
 															<?php esc_html_e( 'Social Network', 'wp-analytify' ); ?>
-															<?php $referral_url = 'https://analytics.google.com/analytics/web/#report/social-overview/' ; ?>
-															<a href="<?php echo $referral_url . $report_url . $report_date_range ?>" target="_blank" class="analytify_tooltip"><span class="analytify_tooltiptext"><?php _e( 'View All Social Traffic', 'wp-analytify' ) ?></span><span aria-hidden="true" class="dashicons dashicons-external"></span></a>
-															<?php do_action( 'analytify_after_top_social_media_text' ) ?>
+															<?php do_action( 'analytify_after_top_social_media_text' ); ?>
 														</h3>
-														<div class="analytify_top_keywords_detials analytify_tp_btn">
-
-														</div>
-														<div class="analytify_status_header_value social_total">
-															<span class="analytify_medium_f"><?php esc_html_e( 'Total Visits', 'wp-analytify' ); ?></span>
-														</div>
+														<div class="analytify_status_header_value social_total empty-on-loading title-total-wrapper"></div>
 													</div>
-													<div class="analytify_status_body stats_loading">
-
-														<script>
-														//<![CDATA[
-
-														jQuery( function($) {
-															$.get(ajaxurl, { action:'analytify_load_default_social_media', dashboard_profile_ID:"<?php echo $dashboard_profile_ID ;?>", start_date:"<?php echo $start_date ;?>", end_date: "<?php echo $end_date ;?>", nonce : '<?php echo $nonce ?>'   },function(data){
-
-																try {
-																	var data_array = $.parseJSON(data);
-																	$(".social_total").append( data_array.total_stats );
-																	$('.analytify_social_media_stats_boxes_wraper').html( data_array.body ).parent().removeClass("stats_loading");
-																} catch (e) {
-
-																	$('.analytify_social_media_stats_boxes_wraper').html( data ).parent().removeClass("stats_loading");
-																}
-															});
-														});
-														//]]>
-														</script>
-														<div class="analytify_social_media_stats_boxes_wraper"></div>
-
+													<div class="analytify_status_body">
+														<div class="stats-wrapper"></div>
 													</div>
-													<div class="analytify_status_footer">
-														<span class="analytify_info_stats"><?php esc_html_e( 'Number of Visitors Coming from Social Channels', 'wp-analytify' ); ?></span>
+													<div class="analytify_stats_loading">
+														<table class="analytify_data_tables">
+															<thead>
+																<tr>
+																<th class="analytify_txt_left"><p class="skt-loading light-gray"></p></th>
+																<th class="analytify_value_row"><p class="skt-loading light-gray"></p></th>
+																</tr>
+															</thead>
+															<tbody>
+																<?php for ( $i = 0; $i < 5; $i++ ) { ?>
+																<tr>
+																	<td><p class="skt-loading"></p></td>
+																	<td class="analytify_txt_center"><p class="skt-loading"></p></td>
+																</tr>
+																<?php } ?>
+															</tbody>
+														</table>
 													</div>
 												</div>
-												<!-- End Social Stats -->
-											<?php endif ?>
-										</div>
+											<?php
+										}
 
-										<div class="analytify_half analytify_right_flow">
-											<!-- Top Reffers -->
-											<?php if ( in_array( 'show-referrer-dashboard', $selected_stats ) ) :  ?>
-												<div class="analytify_general_status analytify_status_box_wraper">
-													<div class="analytify_status_header analytify_header_adj">
-														<h3>
-															<?php esc_html_e( 'Top Referrers', 'wp-analytify' ); ?>
-															<?php $referral_url = 'https://analytics.google.com/analytics/web/#/report/trafficsources-all-traffic/' ; ?>
-															<a href="<?php echo $referral_url . $report_url . $report_date_range . '&explorer-table-dataTable.sortColumnName=analytics.visits&explorer-table-dataTable.sortDescending=true&explorer-table.plotKeys=%5B%5D&explorer-table.secSegmentId=analytics.sourceMedium' ?>" target="_blank" class="analytify_tooltip"><span class="analytify_tooltiptext"><?php _e( 'View All Top Referrers', 'wp-analytify' ) ?></span><span aria-hidden="true" class="dashicons dashicons-external"></span></a>
-															<?php do_action( 'analytify_after_top_reffers_text' ) ?>
-														</h3>
-														<div class="analytify_top_keywords_detials analytify_tp_btn">
+										?>
+										</div><div class="analytify_half analytify_right_flow">
+										<?php
 
-														</div>
-														<div class="analytify_status_header_value  reffers_total">
-															<span class="analytify_medium_f"><?php esc_html_e( 'Total Visits', 'wp-analytify' ); ?></span>
-														</div>
-													</div>
-													<div class="analytify_status_body stats_loading">
-
-														<script>
-														//<![CDATA[
-
-														jQuery( function($) {
-
-															$.ajax({
-																url:  <?php echo wp_json_encode( esc_url_raw( rest_url( "wp-analytify/v1/get_report/$dashboard_profile_ID/refferer" ) ) ); ?>,
-																data: {
-																	sd : '<?php echo $start_date ;?>',
-																	ed : '<?php echo $end_date ?>'
-																},
-																beforeSend: function ( xhr ) {
-																	xhr.setRequestHeader( 'X-WP-Nonce', '<?php echo wp_create_nonce( 'wp_rest' ) ?>' );
-																},
-															})
-															.fail(function() {
-																var _html = '<table class="analytify_data_tables analytify_no_header_table"><tbody><tr><td class="analytify_td_error_msg"><div class="analytify-stats-error-msg"><div class="wpb-error-box"><span class="blk"><span class="line"></span><span class="dot"></span></span><span class="information-txt">REST API endpoint is disabled.</span></div></div></td></tr></tbody></table>'
-																$('.analytify_reffers_stats_boxes_wraper').html(_html).parent().removeClass("stats_loading");
-															})
-															.done(function(data) {
-																var data_array = $.parseJSON(data);
-																$(".reffers_total").append( data_array.total_stats );
-																$('.analytify_reffers_stats_boxes_wraper').html( data_array.body ).parent().removeClass("stats_loading");
-															});
-														});
-
-
-														//]]>
-														</script>
-														<div class="analytify_reffers_stats_boxes_wraper"></div>
-
-													</div>
-													<div class="analytify_status_footer">
-														<span class="analytify_info_stats"><?php esc_html_e( 'Top referrers to your website', 'wp-analytify' ); ?></span>
-													</div>
+										if ( in_array( 'show-referrer-dashboard', $selected_stats, true ) ) {
+											?>
+											<div class="analytify_general_status analytify_status_box_wraper analytify_section_referer_stats" data-endpoint="referer-stats" data-target=".analytify_section_referer_stats">
+												<div class="analytify_status_header analytify_header_adj">
+													<h3>
+														<?php esc_html_e( 'Top Referrers', 'wp-analytify' ); ?>
+														<a href="javascript: return false;" data-ga-dashboard-link="<?php echo esc_attr( WPANALYTIFY_Utils::get_all_stats_link( $report_url, 'referer', false ) ); ?>" target="_blank" class="analytify_tooltip"><span class="analytify_tooltiptext"><?php esc_html_e( 'View All Top Referrers', 'wp-analytify' ); ?></span><span aria-hidden="true" class="dashicons dashicons-external"></span></a>
+											<?php do_action( 'analytify_after_top_reffers_text' ); ?>
+													</h3>
+													<div class="analytify_status_header_value reffers_total empty-on-loading title-total-wrapper"></div>
 												</div>
-											<?php endif; ?>
-										</div>
-								</div>
-
-								<!-- Page Statistics -->
-								<?php if ( in_array( 'show-page-stats-dashboard', $selected_stats ) ) :  ?>
-									<div class="analytify_general_status analytify_status_box_wraper">
-										<div class="analytify_status_header">
-											<h3><?php esc_html_e( 'What\'s happening when users come to your site.', 'wp-analytify' ); ?> <?php do_action( 'analytify_after_top_page_stats_text' ) ?></h3>
-											<div class="analytify_top_page_detials analytify_tp_btn">
-
+												<div class="analytify_status_body">
+													<div class="stats-wrapper"></div>
+												</div>
+												<div class="analytify_stats_loading">
+													<table class="analytify_data_tables">
+														<thead>
+															<tr>
+															<th class="analytify_txt_left"><p class="skt-loading light-gray"></p></th>
+															<th class="analytify_value_row"><p class="skt-loading light-gray"></p></th>
+															</tr>
+														</thead>
+														<tbody>
+											<?php for ( $i = 0; $i < 10; $i++ ) { ?>
+															<tr>
+																<td><p class="skt-loading"></p></td>
+																<td class="analytify_txt_center"><p class="skt-loading"></p></td>
+															</tr>
+															<?php } ?>
+														</tbody>
+													</table>
+												</div>
 											</div>
-										</div>
-										<div class="analytify_status_body stats_loading">
-											<script>
-											//<![CDATA[
+											<?php
+										}
 
-											jQuery( function($) {
-												$.ajax({
-													url:  <?php echo wp_json_encode( esc_url_raw( rest_url( "wp-analytify/v1/get_report/$dashboard_profile_ID/what-happen" ) ) ); ?>,
-													data: {
-														sd : '<?php echo $start_date ?>',
-														ed : '<?php echo $end_date ?>'
-													},
-													beforeSend: function ( xhr ) {
-														xhr.setRequestHeader( 'X-WP-Nonce', '<?php echo wp_create_nonce( 'wp_rest' ) ?>' );
-													},
-												})
-												.fail(function() {
-													var _html = '<table class="analytify_data_tables analytify_no_header_table"><tbody><tr><td class="analytify_td_error_msg"><div class="analytify-stats-error-msg"><div class="wpb-error-box"><span class="blk"><span class="line"></span><span class="dot"></span></span><span class="information-txt">REST API endpoint is disabled.</span></div></div></td></tr></tbody></table>'
-													$('.analytify_page_stats_boxes_wraper').html(_html).parent().removeClass("stats_loading");
-												})
-												.done(function(data) {
-													var data_array = $.parseJSON(data);
-													$('.analytify_page_stats_boxes_wraper').html(data_array.body).parent().removeClass("stats_loading");
-													$('.top_pages_message').html(data_array.message);
-												});
-											});
-											//]]>
-											</script>
-											<div class="analytify_page_stats_boxes_wraper"></div>
+										?>
 										</div>
-										<div class="analytify_status_footer">
-											<span class="analytify_info_stats top_pages_message"></span>
-										</div>
-									</div>
-								<?php endif ?>
-								<!-- End Page Statistics -->
+										<?php
 
-								<?php do_action( 'wp_analytify_view_ajax_error', $start_date, $end_date, $dashboard_profile_ID, $report_url, $report_date_range ) ?>
-								<?php do_action( 'wp_analytify_view_404_error', $start_date, $end_date, $dashboard_profile_ID, $report_url, $report_date_range ) ?>
-								<?php do_action( 'wp_analytify_view_javascript_error', $start_date, $end_date, $dashboard_profile_ID, $report_url, $report_date_range ) ?>
+										if ( in_array( 'show-page-stats-dashboard', $selected_stats, true ) ) {
+											?>
+											<div class="analytify_general_status analytify_status_box_wraper analytify_section_whats_happening_stats" data-endpoint="what-is-happening-stats" data-target=".analytify_section_whats_happening_stats">
+												<div class="analytify_status_header">
+													<h3><?php esc_html_e( 'What\'s happening when users come to your site', 'wp-analytify' ); ?> <?php do_action( 'analytify_after_top_page_stats_text' ); ?></h3>
+												</div>
+												<div class="analytify_status_body">
+													<div class="analytify_page_stats_boxes_wraper stats-wrapper"></div>
+												</div>
+												<div class="analytify_stats_loading">
+													<table class="analytify_data_tables">
+														<thead>
+															<tr>
+																<th class="analytify_txt_left"><p class="skt-loading light-gray"></p></th>
+																<th class="analytify_compair_value_row"><p class="skt-loading light-gray"></p></th>
+																<th class="analytify_compair_value_row"><p class="skt-loading light-gray"></p></th>
+																<th class="analytify_compair_row"><p class="skt-loading light-gray"></p></th>
+															</tr>
+														</thead>
+														<tbody>
+											<?php for ( $i = 0; $i < 5; $i++ ) { ?>
+															<tr>
+																<td class="analytify_txt_center"><p class="skt-loading"></p></td>
+																<td class="analytify_txt_center"><p class="skt-loading"></p></td>
+																<td class="analytify_txt_center"><p class="skt-loading"></p></td>
+																<td class="analytify_txt_center"><p class="skt-loading"></p></td>
+															</tr>
+															<?php } ?>
+														</tbody>
+													</table>
+												</div>
+											</div>
+											<?php
+										}
 
-								<?php
+										/**
+										 * Pro adds these sections.
+										 * All 4 dates, $dashboard_profile_id, $report_url, $report_date_range are
+										 * for Pro versions that are older then v5.0.0.
+										 * Version 5.0.0 and above will use dates via AJAX.
+										 */
+										do_action( 'wp_analytify_view_ajax_error', $start_date, $end_date, $dashboard_profile_id, $report_url, $report_date_range );
+										do_action( 'wp_analytify_view_404_error', $start_date, $end_date, $dashboard_profile_id, $report_url, $report_date_range );
+										do_action( 'wp_analytify_view_javascript_error', $start_date, $end_date, $dashboard_profile_id, $report_url, $report_date_range );
+
+									} else {
+										esc_html_e( 'You must be authenticated to see the Analytics Dashboard.', 'wp-analytify' );
+									}
 								} else {
-									esc_html_e( 'You must be authenticated to see the Analytics Dashboard.', 'wp-analytify' );
+									esc_html_e( 'You don\'t have access to Analytify Dashboard.', 'wp-analytify' );
 								}
-							} else {
-								esc_html_e( 'You don\'t have access to Analytify Dashboard.', 'wp-analytify' );
 							}
-						} ?>
-
+							?>
+						</>
 					</div>
 				</div>
 			</div>

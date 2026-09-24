@@ -8,8 +8,9 @@
  * @since       1.2.4
  */
 
-// Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; }
 
 /**
  * Analytify_Logging Class
@@ -26,12 +27,11 @@ class Analytify_Logging {
 	 * @since 1.2.4
 	 */
 	public function __construct() {
-		// Create the log post type
+		// Create the log post type.
 		add_action( 'init', array( $this, 'register_post_type' ), 1 );
 
-		// Create types taxonomy and default types
+		// Create types taxonomy and default types.
 		add_action( 'init', array( $this, 'register_taxonomy' ), 1 );
-
 	}
 
 	/**
@@ -44,16 +44,16 @@ class Analytify_Logging {
 	public function register_post_type() {
 		/* Logs post type */
 		$log_args = array(
-			'labels'			  => array( 'name' => __( 'Logs', 'wp-analytify' ) ),
-			'public'			  => false,
+			'labels'              => array( 'name' => __( 'Logs', 'wp-analytify' ) ),
+			'public'              => false,
 			'exclude_from_search' => true,
 			'publicly_queryable'  => false,
 			'show_ui'             => false,
-			'query_var'			  => false,
-			'rewrite'			  => false,
-			'capability_type'	  => 'post',
-			'supports'			  => array( 'title', 'editor' ),
-			'can_export'		  => true,
+			'query_var'           => false,
+			'rewrite'             => false,
+			'capability_type'     => 'post',
+			'supports'            => array( 'title', 'editor' ),
+			'can_export'          => true,
 		);
 
 		register_post_type( 'analytify_log', $log_args );
@@ -79,12 +79,12 @@ class Analytify_Logging {
 	 *
 	 * @access public
 	 * @since 1.2.4
-	 * @return  array $terms
+	 * @return  array<string, mixed> $terms
 	 */
 	public function log_types() {
 		$terms = array(
 			'errors',
-		'messages',
+			'messages',
 		);
 
 		return apply_filters( 'analytify_log_types', $terms );
@@ -98,11 +98,11 @@ class Analytify_Logging {
 	 * @access public
 	 * @since 1.2.4
 	 * @uses Analytify_Logging::log_types()
-	 * @param string $type Log type
+	 * @param string $type Log type.
 	 * @return bool Whether log type is valid
 	 */
-	function valid_type( $type ) {
-		return in_array( $type, $this->log_types() );
+	public function valid_type( $type ) {
+		return in_array( $type, $this->log_types(), true );
 	}
 
 	/**
@@ -114,18 +114,18 @@ class Analytify_Logging {
 	 * @access public
 	 * @since 1.2.4
 	 * @uses _Logging::insert_log()
-	 * @param string $title Log entry title
-	 * @param string $message Log entry message
-	 * @param int    $parent Log entry parent
-	 * @param string $type Log type (default: null)
+	 * @param string $title Log entry title.
+	 * @param string $message Log entry message.
+	 * @param int    $parent Log entry parent.
+	 * @param string $type Log type (default: null).
 	 * @return int Log ID
 	 */
-	public function add( $title = '', $message = '', $parent = 0, $type = null ) {
+	public function add( $title = '', $message = '', $parent = 0, $type = null ) { // phpcs:ignore Universal.NamingConventions.NoReservedKeywordParameterNames.parentFound,WordPress.DB.SlowDBQuery.slow_db_query_tax_query,WordPress.DB.SlowDBQuery.slow_db_query_meta_query -- Parameter name is acceptable and slow query warnings are acknowledged.
 		$log_data = array(
-			'post_title' 	=> $title,
-			'post_content'	=> $message,
-			'post_parent'	=> $parent,
-			'log_type'		=> $type,
+			'post_title'   => $title,
+			'post_content' => $message,
+			'post_parent'  => $parent,
+			'log_type'     => $type,
 		);
 
 		return $this->insert_log( $log_data );
@@ -137,13 +137,19 @@ class Analytify_Logging {
 	 * @access public
 	 * @since 1.2.4
 	 * @uses Analytify_Logging::get_connected_logs()
-	 * @param int    $object_id (default: 0)
-	 * @param string $type Log type (default: null)
-	 * @param int    $paged Page number (default: null)
-	 * @return array Array of the connected logs
+	 * @param int    $object_id (default: 0).
+	 * @param string $type Log type (default: null).
+	 * @param int    $paged Page number (default: null).
+	 * @return array<string, mixed> Array of the connected logs
 	 */
 	public function get_logs( $object_id = 0, $type = null, $paged = null ) {
-		return $this->get_connected_logs( array( 'post_parent' => $object_id, 'paged' => $paged, 'log_type' => $type ) );
+		return $this->get_connected_logs(
+			array(
+				'post_parent' => $object_id,
+				'paged'       => $paged,
+				'log_type'    => $type,
+			)
+		);
 	}
 
 	/**
@@ -152,32 +158,31 @@ class Analytify_Logging {
 	 * @access public
 	 * @since 1.2.4
 	 * @uses Analytify_Logging::valid_type()
-	 * @param array $log_data Log entry data
-	 * @param array $log_meta Log entry meta
+	 * @param array<string, mixed> $log_data Log entry data.
+	 * @param array<string, mixed> $log_meta Log entry meta.
 	 * @return int The ID of the newly created log item
 	 */
-	function insert_log( $log_data = array(), $log_meta = array() ) {
+	public function insert_log( $log_data = array(), $log_meta = array() ) {
 		$defaults = array(
-			'post_type' 	=> 'analytify_log',
-			'post_status'	=> 'publish',
-			'post_parent'	=> 0,
-			'post_content'	=> '',
-			'log_type'		=> false,
+			'post_type'    => 'analytify_log',
+			'post_status'  => 'publish',
+			'post_parent'  => 0,
+			'post_content' => '',
+			'log_type'     => false,
 		);
 
 		$args = wp_parse_args( $log_data, $defaults );
-		// print_r($args);
 		do_action( 'analytify_pre_insert_log', $log_data, $log_meta );
 
-		// Store the log entry
+		// Store the log entry.
 		$log_id = wp_insert_post( $args );
 
-		// Set the log type, if any
+		// Set the log type, if any.
 		if ( $log_data['log_type'] && $this->valid_type( $log_data['log_type'] ) ) {
 			wp_set_object_terms( $log_id, $log_data['log_type'], 'analytify_log_type', false );
 		}
 
-		// Set log meta, if any
+		// Set log meta, if any.
 		if ( $log_id && ! empty( $log_meta ) ) {
 			foreach ( (array) $log_meta as $key => $meta ) {
 				update_post_meta( $log_id, '_analytify_log_' . sanitize_key( $key ), $meta );
@@ -185,7 +190,6 @@ class Analytify_Logging {
 		}
 
 		do_action( 'analytify_post_insert_log', $log_id, $log_data, $log_meta );
-		// print_r($log_id);
 		return $log_id;
 	}
 
@@ -194,8 +198,8 @@ class Analytify_Logging {
 	 *
 	 * @access public
 	 * @since 1.2.4
-	 * @param array $log_data Log entry data
-	 * @param array $log_meta Log entry meta
+	 * @param array<string, mixed> $log_data Log entry data.
+	 * @param array<string, mixed> $log_meta Log entry meta.
 	 * @return bool True if successful, false otherwise
 	 */
 	public function update_log( $log_data = array(), $log_meta = array() ) {
@@ -203,14 +207,14 @@ class Analytify_Logging {
 		do_action( 'analytify_pre_update_log', $log_data, $log_meta );
 
 		$defaults = array(
-			'post_type' 	=> 'analytify_log',
-			'post_status'	=> 'publish',
-			'post_parent'	=> 0,
+			'post_type'   => 'analytify_log',
+			'post_status' => 'publish',
+			'post_parent' => 0,
 		);
 
 		$args = wp_parse_args( $log_data, $defaults );
 
-		// Store the log entry
+		// Store the log entry.
 		$log_id = wp_update_post( $args );
 
 		if ( $log_id && ! empty( $log_meta ) ) {
@@ -221,6 +225,8 @@ class Analytify_Logging {
 		}
 
 		do_action( 'analytify_post_update_log', $log_id, $log_data, $log_meta );
+
+		return $log_id ? true : false;
 	}
 
 	/**
@@ -230,7 +236,7 @@ class Analytify_Logging {
 	 *
 	 * @access private
 	 * @since 1.2.4
-	 * @param array $args Query arguments
+	 * @param array<string, mixed> $args Query arguments.
 	 * @return mixed array if logs were found, false otherwise
 	 */
 	public function get_connected_logs( $args = array() ) {
@@ -245,21 +251,27 @@ class Analytify_Logging {
 		$query_args = wp_parse_args( $args, $defaults );
 
 		if ( $query_args['log_type'] && $this->valid_type( $query_args['log_type'] ) ) {
+			// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- Taxonomy query is necessary for log filtering by type.
 			$query_args['tax_query'] = array(
 				array(
-					'taxonomy' 	=> 'analytify_log_type',
-					'field'		=> 'slug',
-					'terms'		=> $query_args['log_type'],
+					'taxonomy' => 'analytify_log_type',
+					'field'    => 'slug',
+					'terms'    => $query_args['log_type'],
 				),
 			);
 		}
+
+		// Add caching to improve performance.
+		$query_args['cache_results']          = true;
+		$query_args['update_post_meta_cache'] = false;
+		$query_args['update_post_term_cache'] = true;
 
 		$logs = get_posts( $query_args );
 
 		if ( $logs ) {
 			return $logs; }
 
-		// No logs found
+		// No logs found.
 		return false;
 	}
 
@@ -268,10 +280,10 @@ class Analytify_Logging {
 	 *
 	 * @access public
 	 * @since 1.2.4
-	 * @param int    $object_id (default: 0)
-	 * @param string $type Log type (default: null)
-	 * @param array  $meta_query Log meta query (default: null)
-	 * @param array  $date_query Log data query (default: null) (since 1.9)
+	 * @param int                  $object_id (default: 0).
+	 * @param string               $type Log type (default: null).
+	 * @param array<string, mixed> $meta_query Log meta query (default: null).
+	 * @param array<string, mixed> $date_query Log data query (default: null) (since 1.9).
 	 * @return int Log count
 	 */
 	public function get_log_count( $object_id = 0, $type = null, $meta_query = null, $date_query = null ) {
@@ -279,24 +291,30 @@ class Analytify_Logging {
 		global $pagenow, $typenow;
 
 		$query_args = array(
-			'post_parent' 	   => $object_id,
-			'post_type'		   => 'analytify_log',
-			'posts_per_page'   => -1,
-			'post_status'	   => 'publish',
-			'fields'           => 'ids',
+			'post_parent'            => $object_id,
+			'post_type'              => 'analytify_log',
+			'posts_per_page'         => -1,
+			'post_status'            => 'publish',
+			'fields'                 => 'ids',
+			// Improve query performance with caching.
+			'cache_results'          => true,
+			'update_post_meta_cache' => false,
+			'update_post_term_cache' => true,
 		);
 
 		if ( ! empty( $type ) && $this->valid_type( $type ) ) {
+			// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- Taxonomy query is necessary for log filtering by type.
 			$query_args['tax_query'] = array(
 				array(
-					'taxonomy' 	=> 'analytify_log_type',
-					'field'		=> 'slug',
-					'terms'		=> $type,
+					'taxonomy' => 'analytify_log_type',
+					'field'    => 'slug',
+					'terms'    => $type,
 				),
 			);
 		}
 
 		if ( ! empty( $meta_query ) ) {
+			// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query -- Meta query is necessary for log filtering by metadata.
 			$query_args['meta_query'] = $meta_query;
 		}
 
@@ -315,31 +333,37 @@ class Analytify_Logging {
 	 * @access public
 	 * @since 1.2.4
 	 * @uses Analytify_Logging::valid_type
-	 * @param int    $object_id (default: 0)
-	 * @param string $type Log type (default: null)
-	 * @param array  $meta_query Log meta query (default: null)
+	 * @param int                  $object_id (default: 0).
+	 * @param string               $type Log type (default: null).
+	 * @param array<string, mixed> $meta_query Log meta query (default: null).
 	 * @return void
 	 */
 	public function delete_logs( $object_id = 0, $type = null, $meta_query = null ) {
 		$query_args = array(
-			'post_parent' 	=> $object_id,
-			'post_type'		=> 'analytify_log',
-			'posts_per_page' => -1,
-			'post_status'	=> 'publish',
-			'fields'        => 'ids',
+			'post_parent'            => $object_id,
+			'post_type'              => 'analytify_log',
+			'posts_per_page'         => -1,
+			'post_status'            => 'publish',
+			'fields'                 => 'ids',
+			// Improve query performance with caching.
+			'cache_results'          => true,
+			'update_post_meta_cache' => false,
+			'update_post_term_cache' => true,
 		);
 
 		if ( ! empty( $type ) && $this->valid_type( $type ) ) {
+			// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- Taxonomy query is necessary for log filtering by type.
 			$query_args['tax_query'] = array(
 				array(
-					'taxonomy' 	=> 'analytify_log_type',
-					'field'		=> 'slug',
-					'terms'		=> $type,
+					'taxonomy' => 'analytify_log_type',
+					'field'    => 'slug',
+					'terms'    => $type,
 				),
 			);
 		}
 
 		if ( ! empty( $meta_query ) ) {
+			// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query -- Meta query is necessary for log filtering by metadata.
 			$query_args['meta_query'] = $meta_query;
 		}
 
@@ -353,8 +377,10 @@ class Analytify_Logging {
 	}
 }
 
-// Initiate the logging system
+// Initiate the logging system.
 $GLOBALS['analytify_logs'] = new Analytify_Logging();
+
+// phpcs:ignore Universal.Files.SeparateFunctionsFromOO.Mixed -- Mixed structure is acceptable for this type of file
 
 /**
  * Record a log entry
@@ -363,10 +389,10 @@ $GLOBALS['analytify_logs'] = new Analytify_Logging();
  *
  * @since 1.3.3
  *
- * @param string $title
- * @param string $message
- * @param int    $parent
- * @param null   $type
+ * @param string $title Log title.
+ * @param string $message Log message.
+ * @param int    $parent Parent ID.
+ * @param mixed  $type Log type.
  *
  * @global $analytify_logs Analytify Logs Object
  *
@@ -374,7 +400,7 @@ $GLOBALS['analytify_logs'] = new Analytify_Logging();
  *
  * @return mixed ID of the new log entry
  */
-function analytify_record_log( $title = '', $message = '', $parent = 0, $type = null ) {
+function analytify_record_log( $title = '', $message = '', $parent = 0, $type = null ) { // phpcs:ignore Universal.NamingConventions.NoReservedKeywordParameterNames.parentFound,Universal.Files.SeparateFunctionsFromOO.Mixed -- Parameter name and mixed structure are acceptable
 	global $analytify_logs;
 	$log = $analytify_logs->add( $title, $message, $parent, $type );
 	return $log;

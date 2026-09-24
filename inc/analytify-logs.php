@@ -11,55 +11,61 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <style media="screen">
 #analytify-log-viewer-wrap{
-  margin: 10px 20px 0 2px;
+	margin: 10px 20px 0 2px;
 }
 #log-viewer-select {
-  padding: 10px 0 8px;
-  line-height: 28px;
-  margin-top: 10px;
+	padding: 10px 0 8px;
+	line-height: 28px;
+	margin-top: 10px;
 }
 #log-viewer {
-  background: #fff;
-  border: 1px solid #e5e5e5;
-  box-shadow: 0 1px 1px rgba(0,0,0,.04);
-  padding: 5px 20px;
+	background: #fff;
+	border: 1px solid #e5e5e5;
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	padding: 5px 20px;
 }
 #log-viewer pre {
-  font-family: monospace;
-  white-space: pre-wrap;
-  word-wrap: break-word;
+	font-family: monospace;
+	white-space: pre-wrap;
+	word-wrap: break-word;
 }
 #analytify-log-viewer-wrap .page-title-action{
-  margin-left: 4px;
-  padding: 4px 8px;
-  padding-top: 4px;
-  padding-right: 8px;
-  padding-bottom: 4px;
-  padding-left: 8px;
-  position: relative;
-  top: -3px;
-  text-decoration: none;
-  border: none;
-  border: 1px solid #ccc;
-  border-radius: 2px;
-  background: #f7f7f7;
-  text-shadow: none;
-  font-weight: 600;
-  font-size: 13px;
-  line-height: normal;
-  color: #0073aa;
-  cursor: pointer;
-  outline: 0;
+	margin-left: 4px;
+	padding: 4px 8px;
+	padding-top: 4px;
+	padding-right: 8px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+	position: relative;
+	top: -3px;
+	text-decoration: none;
+	border: none;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	background: #f7f7f7;
+	text-shadow: none;
+	font-weight: 600;
+	font-size: 13px;
+	line-height: normal;
+	color: #0073aa;
+	cursor: pointer;
+	outline: 0;
 }
 #analytify-log-viewer-wrap .page-title-action:hover {
-  border-color: #008EC2;
-  background: #00a0d2;
-  color: #fff;
+	border-color: #008EC2;
+	background: #00a0d2;
+	color: #fff;
 }
 </style>
 
 <div id='analytify-log-viewer-wrap'>
-<?php if ( $logs ) : ?>
+<?php
+// Ensure variables are defined.
+$logs       = isset( $logs ) ? $logs : array();
+$viewed_log = isset( $viewed_log ) ? $viewed_log : '';
+
+if ( $logs ) :
+	?>
 
 	<div id="log-viewer-select">
 		<div class="alignleft">
@@ -75,7 +81,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<select name="log_file">
 					<?php foreach ( $logs as $log_key => $log_file ) : ?>
 						<?php
-							$timestamp = filemtime( ANALYTIFY_LOG_DIR . $log_file );
+							$timestamp = filemtime( WP_ANALYTIFY_LOG_DIR . $log_file );
 							/* translators: 1: last access date 2: last access time */
 							$date = sprintf( __( '%1$s at %2$s', 'wp-analytify' ), date_i18n( 'F j, Y', $timestamp ), date_i18n( 'g:i a', $timestamp ) );
 						?>
@@ -88,7 +94,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="clear"></div>
 	</div>
 	<div id="log-viewer">
-		<pre><?php echo esc_html( file_get_contents( ANALYTIFY_LOG_DIR . $viewed_log ) ); ?></pre>
+		<?php
+		// phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Reading local log file is acceptable.
+		$log_contents = file_get_contents( WP_ANALYTIFY_LOG_DIR . $viewed_log );
+		?>
+		<pre><?php echo esc_html( $log_contents ? $log_contents : '' ); ?></pre>
 	</div>
 <?php else : ?>
 	<div class="updated wp-analytify-message inline"><p><?php esc_html_e( 'There are currently no logs to view.', 'wp-analytify' ); ?></p></div>

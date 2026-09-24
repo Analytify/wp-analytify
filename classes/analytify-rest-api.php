@@ -1,111 +1,194 @@
-<?php
-
-
+<?php // phpcs:ignore WordPress.Files.FileName.InvalidClassFileName -- File naming is acceptable
 /**
- * Rest API EndPoints
+ * Analytify REST API class.
+ *
+ * @package WP_Analytify
+ * @since 1.0.0
  */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+require_once __DIR__ . '/analytify-rest/bootstrap.php';
+require_once __DIR__ . '/analytify-rest/endpoints-general.php';
+require_once __DIR__ . '/analytify-rest/endpoints-content.php';
+require_once __DIR__ . '/analytify-rest/endpoints-dimensions.php';
+
+	/**
+	 * Handle Analytify REST API endpoints.
+	 *
+	 * @package WP_Analytify
+	 * @since 1.0.0
+	 */
 class Analytify_Rest_API {
+	use Analytify_Rest_Bootstrap;
+	use Analytify_Rest_Endpoints_General;
+	use Analytify_Rest_Endpoints_Content;
+	use Analytify_Rest_Endpoints_Dimensions;
 
 
-	function __construct() {
-		add_action( 'rest_api_init', array( $this, 'rest_api_init' ) );
+	/**
+	 * Adds 'General Statistics', 'Scroll Depth Reach' sections for single post stats.
+	 *
+	 * @param array<string, mixed> $sections Sections.
+	 * @param int                  $post_id  Post id.
+	 * @param array<int, string>   $date     Start and End date.
+	 * @return array<string, mixed>
+	 */
+	public function single_post_sections( $sections, $post_id, $date ): array {
+
+		$show_settings = $this->wp_analytify->settings->get_option( 'show_panels_back_end', 'wp-analytify-admin', array( 'show-overall-dashboard' ) );
+		if ( empty( $show_settings ) || ( ! in_array( 'show-overall-dashboard', $show_settings, true ) && ! in_array( 'show-scroll-depth-stats', $show_settings, true ) ) ) {
+			return $sections;
+		}
+
+		$report = new Analytify_Report(
+			array(
+				'dashboard_type' => 'single_post',
+				'start_date'     => $date[0],
+				'end_date'       => $date[1],
+				'post_id'        => $post_id,
+			)
+		);
+
+		if ( in_array( 'show-overall-dashboard', $show_settings, true ) ) {
+			$general_stats             = $report->get_general_stats();
+			$sections['general_stats'] = array(
+				'title'            => esc_html__( 'General Statistics', 'wp-analytify' ),
+				'type'             => 'boxes',
+				'stats'            => $general_stats['boxes'],
+				'new_vs_returning' => $general_stats['new_vs_returning_boxes'],
+				'device_visitors'  => $general_stats['device_visitors_boxes'],
+				// TODO: add footer.
+			);
+		}
+
+		if ( in_array( 'show-scroll-depth-stats', $show_settings, true ) && 'on' === $this->wp_analytify->settings->get_option( 'depth_percentage', 'wp-analytify-advanced' ) ) {
+
+			$scroll_depth_stats = $report->get_scroll_depth_stats();
+
+			$sections['scroll_depth'] = array(
+				'title'       => esc_html__( 'Scroll Depth Reach', 'wp-analytify' ),
+				'type'        => 'table',
+				'table_class' => 'analytify_bar_tables',
+				'headers'     => array(
+					'percentage' => array(
+						'label'    => esc_html__( 'Scroll Percentage', 'wp-analytify' ),
+						'th_class' => 'analytify_txt_left',
+						'td_class' => '',
+					),
+					'events'     => array(
+						'label'    => esc_html__( 'Total Reached', 'wp-analytify' ),
+						'th_class' => '',
+						'td_class' => 'analytify_txt_center analytify_value_row',
+					),
+				),
+				'stats'       => $scroll_depth_stats['stats'],
+			);
+		}
+
+		return $sections;
 	}
 
 	/**
-	 * Register End Point.
+	 * Formate 'general_statistics' footer, add labels and description.
 	 *
+	 * @param string               $number Number to format.
+	 * @param array<string, mixed> $data   Start and End date (unused).
+	 *
+	 * @return string
 	 */
-	function rest_api_init() {
-		$namespace = 'wp-analytify/v1';
+	public function general_stats_footer( $number, $data ): string { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed -- Parameter required by filter
+		$time_value = is_numeric( $number ) ? WPANALYTIFY_Utils::pretty_time( (float) $number ) : '0';
+		// translators: %s is the formatted time duration.
+		return sprintf( __( 'Total time visitors spent on your site: %s.', 'wp-analytify' ), '<span class="analytify_red general_stats_message">' . $time_value . '</span>' );
+	}
 
-		register_rest_route(
-			$namespace,
-			'/get_report/(?P<profile_id>\d+)/(?P<request_type>[a-zA-Z0-9-]+)',
-			array(
-				array(
-					'methods'  => WP_REST_Server::READABLE, // Get Request
-					'callback' => array( $this, 'handle_request' ),
-					'permission_callback' => '__return_true',
-				),
-			)
+	/**
+	 * Get profile related data based on the key (option) provided.
+	 *
+	 * @param string $key Option name.
+	 * @return string|null
+	 */
+	private function get_profile_info( $key ) {
+		$dashboard_profile_id = $this->wp_analytify->settings->get_option( 'profile_for_dashboard', 'wp-analytify-profile' );
+		switch ( $key ) {
+			case 'profile_id':
+				return $dashboard_profile_id;
+			case 'website_url':
+				return WP_ANALYTIFY_FUNCTIONS::search_profile_info( $dashboard_profile_id, 'websiteUrl' );
+			default:
+				return null;
+		}
+	}
+
+	/**
+	 * Sets compare dates based on the start an end dates.
+	 *
+	 * @return void
+	 */
+	private function set_compare_dates() {
+		$date_diff = WPANALYTIFY_Utils::calculate_date_diff( $this->start_date, $this->end_date );
+		if ( ! $date_diff ) {
+			return;
+		}
+
+		$this->compare_start_date = $date_diff['start_date'];
+		$this->compare_end_date   = $date_diff['end_date'];
+		$this->compare_days       = $date_diff['diff_days'];
+	}
+
+	/**
+	 * Compares current stat with the previous one and returns the formatted difference.
+	 *
+	 * @param int    $current_stat Current stat.
+	 * @param int    $old_stat     Old stat to compare with.
+	 * @param string $type         Type of stat (key).
+	 *
+	 * @return array<string, mixed>|false
+	 */
+	private function compare_stat( $current_stat, $old_stat, $type ) {
+
+		// Check for compare dates.
+		if ( is_null( $this->compare_start_date ) || is_null( $this->compare_end_date ) || is_null( $this->compare_days ) ) {
+			return false;
+		}
+
+		// So we don't divide by zero.
+		if ( ! $old_stat || 0 === $old_stat ) {
+			return false;
+		}
+		$number = number_format( ( ( $current_stat - $old_stat ) / $old_stat ) * 100, 2 );
+
+		if ( 'bounce_rate' === $type ) {
+			$arrow_type = ( $number < 0 ) ? 'analytify_green_inverted' : 'analytify_red_inverted';
+		} else {
+			$arrow_type = ( $number > 0 ) ? 'analytify_green' : 'analytify_red';
+		}
+
+		return array(
+			'arrow_type' => $arrow_type,
+			'main_text'  => $number . esc_html__( '%', 'wp-analytify' ),
+			// translators: Days.
+			'sub_text'   => sprintf( esc_html__( '%s days ago', 'wp-analytify' ), $this->compare_days ),
 		);
 	}
 
 	/**
-	 * Handle the Request.
+	 * Returns start and end date as an array to be used for GA4's get_reports()
 	 *
-	 * @since 2.1.23
+	 * @return array<string, mixed>
 	 */
-	function handle_request( WP_REST_Request $request ) {
-		$wp_analytify    = $GLOBALS['WP_ANALYTIFY'];
-		$is_access_level = $wp_analytify->settings->get_option( 'show_analytics_roles_dashboard', 'wp-analytify-dashboard', array( 'Administrator' ) );
-
-
-		// Generate error if unauthorized user send the request.
-		if ( ! $wp_analytify->pa_check_roles( $is_access_level ) ) {
-			return new WP_Error( 'analytify_forbidden', __( 'You are not allowed to access Analytify Dashboard.', 'wp-analytify' ), array( 'status' => 403 ) );
-		}
-
-
-		$dashboard_profile_ID = $request->get_param( 'profile_id' );
-		$start_date           = $request->get_param( 'sd' );
-		$end_date             = $request->get_param( 'ed' );
-		$request_type         = $request->get_param( 'request_type' );
-
-
-		if ( $request_type == 'what-happen' ) {
-			return $this->get_what_happen_stats( $wp_analytify, $start_date, $end_date );
-		} elseif ( $request_type == 'refferer' ) {
-			return $this->get_refferer_stats( $wp_analytify, $start_date, $end_date );
-		}
-
-		// if no request type match. Return Error
-		return new WP_Error( 'analytify_invalid_endpoint', __( 'Invalid endpoint.', 'wp-analytify' ), array( 'status' => 404 ) );
-
+	private function get_dates(): array {
+		return array(
+			'start' => $this->start_date,
+			'end'   => $this->end_date,
+		);
 	}
-
-
-  /**
-   * Load Default Page Stats.
-   *
-   * @since 2.1.23
-   */
-	function get_what_happen_stats( $wp_analytify, $start_date, $end_date ) {
-
-		$page_stats = $wp_analytify->pa_get_analytics_dashboard_via_rest( 'ga:entrances,ga:exits,ga:entranceRate,ga:exitRate', $start_date, $end_date, 'ga:pageTitle,ga:pagePath', '-ga:entrances', false, 5, 'show-default-what-happen' );
-
-		if ( isset( $page_stats['api_error'] ) ) {
-			return json_encode( array( 'body' => $page_stats['api_error'] ) );
-		}
-
-		if ( $page_stats ) {
-			include ANALYTIFY_ROOT_PATH . '/views/default/admin/pages-stats.php';
-			return fetch_pages_stats( $wp_analytify, $page_stats );
-		}
-
-	}
-
-
-  /**
-   * Load Refferer Stats.
-   *
-   * @since 2.1.23
-   *
-   */
-	function get_refferer_stats( $wp_analytify, $start_date, $end_date ) {
-
-		$referr_stats = $wp_analytify->pa_get_analytics_dashboard_via_rest( 'ga:sessions', $start_date, $end_date, 'ga:source,ga:medium', '-ga:sessions', false, 7, 'show-default-refferer' );
-
-		if ( isset( $referr_stats['api_error'] ) ) {
-			return json_encode( array( 'body' => $referr_stats['api_error'] ) );
-		}
-
-		if ( $referr_stats ) {
-			include ANALYTIFY_ROOT_PATH . '/views/default/admin/referrers-stats.php';
-			return fetch_referrers_stats( $wp_analytify, $referr_stats, true );
-		}
-	}
-
 }
 
-new Analytify_Rest_API();
+/**
+ * Init the instance.
+ */
+Analytify_Rest_API::get_instance();
